@@ -1,0 +1,78 @@
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+
+<?component name="legendaAgenda" inline="true" macroURI="/web/ui/sinssnt/agenda/legendaAgenda.zul"?>
+
+<window title="${c:l('agendaRegistra.formTitle')}" border="normal"
+	apply="it.caribel.app.sinssnt.controllers.agenda.AgendaRegistraFormCtrl"
+	mode="modal"
+	closable="true" sizable="true" width="90%" height="80%">
+
+<style>
+tr.z-listitem-seld .z-listcell-cnt, tr.z-listitem-over-seld .z-listcell-cnt, tr.z-listitem-over .z-listcell-cnt {
+color: black;
+
+</style>
+
+	<vlayout vflex="true">
+
+		<caribelFormMenu visible_btn_delete="false" />
+		<vlayout vflex="true" sclass="asterOverflow asterLayout" style="margin-left:3px;" >
+			<hlayout>
+<!-- 				<vlayout> -->
+					<hlayout hflex="60%" sclass="normalText">
+						<button id="settPrec" label="${c:l('agenda.btn.prec')}" forward="onPrec"></button>
+						<button id="settSucc" label="${c:l('agenda.btn.suc')}" forward="onSucc"></button>
+						<label id="meseAnno"></label>
+					</hlayout>
+<!-- 				</vlayout> -->
+				<legendaAgenda hflex="40%" />
+			</hlayout>
+			<hlayout>
+				<caribeltextbox id="riepilogoAltroAssistito" hflex="100%" readonly="true"/>
+			</hlayout>
+<!-- 			<checkbox id="selTutti"></checkbox> -->
+			<hlayout style="text-align:center" vflex="true">
+				<caribellistbox id="caribellbAgendaAssistito"  nonselectableTags="*" checkmark="false"  multiple="false" oddRowSclass="non-odd" 
+					 vflex="true">
+						<auxhead id="headers1">
+	            			<auxheader colspan="3">${c:l('agendaRegistra.percorrenza')}</auxheader>
+	            			<auxheader sclass="headerListbox"><caribelintbox db_name="km0" width="50%" id="kmIntBox0" maxlength="3" constraint="no negative" forward="onBlur=onBlurMMKM"/></auxheader>
+	            			<auxheader sclass="headerListbox"><caribelintbox db_name="km1" width="50%" id="kmIntBox1" maxlength="3" constraint="no negative"/></auxheader>
+	            			<auxheader sclass="headerListbox"><caribelintbox db_name="km2" width="50%" id="kmIntBox2" maxlength="3" constraint="no negative"/></auxheader>
+	            			<auxheader sclass="headerListbox"><caribelintbox db_name="km3" width="50%" id="kmIntBox3" maxlength="3" constraint="no negative"/></auxheader>
+	            			<auxheader sclass="headerListbox"><caribelintbox db_name="km4" width="50%" id="kmIntBox4" maxlength="3" constraint="no negative"/></auxheader>
+	            			<auxheader sclass="headerListbox"><caribelintbox db_name="km5" width="50%" id="kmIntBox5" maxlength="3" constraint="no negative"/></auxheader>
+	            			<auxheader sclass="headerListbox"><caribelintbox db_name="km6" width="50%" id="kmIntBox6" maxlength="3" constraint="no negative"/></auxheader>
+	        			</auxhead>
+						<auxhead id="headers2">
+	            			<auxheader colspan="3">${c:l('agendaRegistra.oreLavorate')}</auxheader>
+	            			<auxheader sclass="headerListbox"><caribelintbox db_name="mm0" width="50%" id="mmIntBox0" maxlength="3" constraint="no negative"/></auxheader>
+	            			<auxheader sclass="headerListbox"><caribelintbox db_name="mm1" width="50%" id="mmIntBox1" maxlength="3" constraint="no negative"/></auxheader>
+	            			<auxheader sclass="headerListbox"><caribelintbox db_name="mm2" width="50%" id="mmIntBox2" maxlength="3" constraint="no negative"/></auxheader>
+	            			<auxheader sclass="headerListbox"><caribelintbox db_name="mm3" width="50%" id="mmIntBox3" maxlength="3" constraint="no negative"/></auxheader>
+	            			<auxheader sclass="headerListbox"><caribelintbox db_name="mm4" width="50%" id="mmIntBox4" maxlength="3" constraint="no negative"/></auxheader>
+	            			<auxheader sclass="headerListbox"><caribelintbox db_name="mm5" width="50%" id="mmIntBox5" maxlength="3" constraint="no negative"/></auxheader>
+	            			<auxheader sclass="headerListbox"><caribelintbox db_name="mm6" width="50%" id="mmIntBox6" maxlength="3" constraint="no negative"/></auxheader>
+	        			</auxhead>
+					<listhead sizable="false">
+						<caribellistheader db_name="assistito" width="22%" label="${c:l('agendaPianSett.assistito')}" />
+						<caribellistheader db_name="matt_pom"  width="5%"  label="${c:l('agendaPianSett.matt_pom')}" />
+						<caribellistheader db_name="" 		   width="3%"  label="" column_editable="true" column_type="boolean" ><checkbox id="selTutti"></checkbox></caribellistheader>  
+						<caribellistheader db_name="0"         width="10%" sclass="headerListbox" label="${c:l('agendaPianSett.sett.0')}" ><checkbox id="jCheckBox1"></checkbox></caribellistheader>  
+						<caribellistheader db_name="1"         width="10%" sclass="headerListbox" label="${c:l('agendaPianSett.sett.1')}" ><checkbox id="jCheckBox2"></checkbox></caribellistheader>  
+						<caribellistheader db_name="2"         width="10%" sclass="headerListbox" label="${c:l('agendaPianSett.sett.2')}" ><checkbox id="jCheckBox3"></checkbox></caribellistheader>  
+						<caribellistheader db_name="3"         width="10%" sclass="headerListbox" label="${c:l('agendaPianSett.sett.3')}" ><checkbox id="jCheckBox4" ></checkbox></caribellistheader>  
+						<caribellistheader db_name="4"         width="10%" sclass="headerListbox" label="${c:l('agendaPianSett.sett.4')}" ><checkbox id="jCheckBox5" ></checkbox></caribellistheader>  
+						<caribellistheader db_name="5"         width="10%" sclass="headerListbox" label="${c:l('agendaPianSett.sett.5')}" ><checkbox id="jCheckBox6" ></checkbox></caribellistheader>  
+						<caribellistheader db_name="6"         width="10%" sclass="headerListbox" label="${c:l('agendaPianSett.sett.6')}" ><checkbox id="jCheckBox7" ></checkbox></caribellistheader>  
+					</listhead>
+
+				</caribellistbox>
+			</hlayout>
+			<hlayout>
+				<label value=" " />
+			</hlayout>
+		</vlayout>
+	</vlayout>
+
+</window>

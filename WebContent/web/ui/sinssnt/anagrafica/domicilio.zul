@@ -1,0 +1,52 @@
+<vlayout>
+	<vlayout vflex="true" spacing="3px" style="text-align:right;">
+		<hlayout>
+			<label hflex="20%"
+				value="${c:l('cartella.domicilio.indirizzo')}:" />
+			<caribeltextbox hflex="70%" id="indirizzo_dom" 
+				db_name="dom_indiriz" maxlength="30"/>
+			<label hflex="10%" />
+		</hlayout>
+		<hlayout>
+			<label hflex="20%"
+				value="${c:l('cartella.domicilio.citta')}:" />
+			<caribelSearch hflex="70%" db_name_cod="dom_citta" required="true"
+				id_cod="dom_citta" id_descr="comdomdescr"
+				db_name_descr="comdomdescr" id="comuneDomicilioSearch"
+				ctrl="it.caribel.app.sinssnt.controllers.tabelle.comuni.ComuniSearchCtrl" />
+			<label hflex="5%"
+				value="${c:l('cartella.domicilio.provincia')}:">
+			</label>
+			<caribeltextbox hflex="5%" id="provincia_dom"
+				db_name="dom_prov"  maxlength="2" readonly="true"/>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%"
+				value="${c:l('cartella.domicilio.localita')}:" />
+			<caribeltextbox hflex="70%" id="localita_dom"
+				db_name="dom_localita"  maxlength="30"/>
+			<caribelcombobox hflex="10%" id="cbx_localizzazione"
+				db_name="localizzazione" />
+		</hlayout>
+
+		<hlayout>
+			<label hflex="20%"
+				value="${c:l('cartella.domicilio.telefono')}:" />
+			<caribeltextbox hflex="25%" id="telefono1_dom"
+				db_name="telefono1" maxlength="50" />
+			<caribeltextbox hflex="25%" id="telefono2_dom"
+				db_name="telefono2" maxlength="50" />
+			<label hflex="30%"></label>
+		</hlayout>
+
+		<hlayout>
+			<label hflex="20%"
+				value="${c:l('cartella.domicilio.areaDistrettuale')}:" />
+			<caribelSearch hflex="70%" id_descr="desc_areadis_dom" id_cod="cod_areadis_dom" required="true"
+				db_name_cod="dom_areadis" db_name_descr="desc_area_dom"
+				ctrl="it.caribel.app.common.controllers.areadis.AreadisSearchCtrl" />
+			<label value="" hflex="10%" />
+		</hlayout>
+		<label value=" "/>
+	</vlayout>
+</vlayout>

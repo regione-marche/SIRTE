@@ -1,0 +1,4 @@
+<vlayout id="panel_fascia_eta"
+	apply="it.caribel.app.sinssnt.controllers.report.common.PanelFasciaEtaCtrl">
+
+</vlayout>

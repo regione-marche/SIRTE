@@ -1,0 +1,76 @@
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+
+<window id="agendaPianSettForm"
+	title="${c:l('agendaPianSett.formTitle')}" border="normal"
+	apply="it.caribel.app.sinssnt.controllers.agenda.AgendaPianSettFormCtrl"
+	
+	mode="modal"
+	closable="true" sizable="true" width="90%" height="80%">
+
+	<vlayout vflex="true">
+
+		<caribelFormMenu />
+		<vlayout vflex="true" sclass="asterLayout" style="margin-left:3px">
+			<hlayout visible="false">
+				<caribeldatebox id="dateCartIni" db_name="cont_ini" />
+				<caribeldatebox id="dateCartFin" db_name="cont_fin" />
+
+				<caribeldatebox id="jCariDateTextFieldHiddenProg" db_name="" />
+				<caribeltextbox id="JCariTextFieldNProgetto" db_name="n_progetto" />
+				<caribeltextbox id="cartella" db_name="n_cartella" />
+				<caribeltextbox id="contatto" db_name="int_contatto" />
+
+				<caribeltextbox id="JCariTextFieldCodObiettivo" db_name="cod_obbiettivo" />
+				<caribeltextbox id="JCariTextFieldNIntervento" db_name="n_intervento" />
+				<caribeltextbox id="JCariTextFieldTipoOper" db_name="pa_tipo_oper" />
+
+				<caribeltextbox id="JCariTextFieldTipoAccesso" db_name="tipo_accesso" />
+				<caribeltextbox id="JCariTextFieldTipo_oper" db_name="int_tipo_oper" />
+				<caribeltextbox id="JCariTextFieldUsl" db_name="codazsan" />
+				<caribeltextbox id="JCariTextFieldRegione" db_name="codreg" />
+
+				<caribeltextbox id="JCariTextFieldIndHide" db_name="indirizzo" />
+				<caribeltextbox id="JCariTextFieldProgHide" db_name="pi_prog" />
+			</hlayout>
+			<hlayout style="text-align:left;">
+				<label id="riepilogoAssistito"/>
+			</hlayout>
+			<hlayout>
+				<caribellistbox id="caribellbAgendaAssistito" sizedByContent="true"  oddRowSclass="non-odd"
+					span="true" rows="${CostntiAgenda.NUMFASCEORARIE}" hflex="true">
+					<listhead sizable="false">
+						<caribellistheader db_name="assistito" label="${c:l('agendaPianSett.assistito')}" />
+						<caribellistheader db_name="matt_pom"  label="${c:l('agendaPianSett.matt_pom')}" />
+						<caribellistheader db_name="0"         label="${c:l('agendaPianSett.sett.0')}" />
+						<caribellistheader db_name="1"         label="${c:l('agendaPianSett.sett.1')}" />
+						<caribellistheader db_name="2"         label="${c:l('agendaPianSett.sett.2')}" />
+						<caribellistheader db_name="3"         label="${c:l('agendaPianSett.sett.3')}" />
+						<caribellistheader db_name="4"         label="${c:l('agendaPianSett.sett.4')}" />
+						<caribellistheader db_name="5"         label="${c:l('agendaPianSett.sett.5')}" />
+						<caribellistheader db_name="6"         label="${c:l('agendaPianSett.sett.6')}" />
+					</listhead>
+				</caribellistbox>
+			</hlayout>
+			<hlayout>
+				<label value="${c:l('agendaPianSett.riepilogoAltroAssistito')}:" />
+				<caribeltextbox id="riepilogoAltroAssistito" hflex="80%" />
+			</hlayout>
+			<hlayout vflex="true">
+				<caribellistbox id="caribellbAgenda" span="true" sizedByContent="true"  oddRowSclass="non-odd" hflex="true" vflex="true">
+					<listhead sizable="false">
+						<caribellistheader db_name="assistito" label="${c:l('agendaPianSett.assistito')}" />
+						<caribellistheader db_name="matt_pom"  label="${c:l('agendaPianSett.matt_pom')}" />
+						<caribellistheader db_name="0"         label="${c:l('agendaPianSett.sett.0')}" />  
+						<caribellistheader db_name="1"         label="${c:l('agendaPianSett.sett.1')}" />  
+						<caribellistheader db_name="2"         label="${c:l('agendaPianSett.sett.2')}" />  
+						<caribellistheader db_name="3"         label="${c:l('agendaPianSett.sett.3')}" />  
+						<caribellistheader db_name="4"         label="${c:l('agendaPianSett.sett.4')}" />  
+						<caribellistheader db_name="5"         label="${c:l('agendaPianSett.sett.5')}" />  
+						<caribellistheader db_name="6"         label="${c:l('agendaPianSett.sett.6')}" />  
+					</listhead>
+				</caribellistbox>
+			</hlayout>
+		</vlayout>
+	</vlayout>
+
+</window>

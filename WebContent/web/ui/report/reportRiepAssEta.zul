@@ -1,0 +1,88 @@
+<?component name="panel_ubicazione_nesdiv" inline="true" macroURI="/web/ui/report/common/PanelUbicazione_NesDiv.zul"?>
+<?component name="panel_fascia_eta" inline="true" macroURI="/web/ui/report/common/PanelFasceEta.zul"?>
+<window 
+apply="it.caribel.app.sinssnt.controllers.report.ReportRiepAssEtaCtrl"
+title="${c:l('menu.stampe.riep_ass_eta')}" 
+closable="true" sizable="true"
+mode="overlapped"
+border="normal"
+position="center"
+width="700px"
+height="500px">
+
+<zscript><![CDATA[
+	void dadataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}
+	void adataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}	
+]]>
+</zscript>
+	
+	<vlayout vflex="true">
+	<caribelFormMenu visible_btn_print="true" visible_btn_delete="false" visible_btn_save="false"/>
+	<vlayout sclass="asterLayout asterOverflow" vflex="true">		
+	
+		
+		<hlayout>
+			<label hflex="20%" value="${c:l('operatori.tipoOperatore')}:" />
+			<caribelcombobox hflex="80%" id="tipo_op" readonly="true"/>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('RichiestaMMG.principale.intensita_ass')}:" />
+			<caribelcombobox hflex="80%" id="motivo" readonly="true"/>
+		</hlayout>
+	
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.dadata')}:" />
+			<div hflex="80%" width="100%">
+				<hlayout width="100%">
+					<caribeldatebox id="dadata" hflex="20%"
+						required="true" onChange="dadataChanged()" />
+					<label hflex="60%"/>
+				</hlayout>
+			</div>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.adata')}:" />
+			<div hflex="80%" width="100%">
+				<hlayout width="100%">
+					<caribeldatebox id="adata" hflex="20%"
+						required="true" onChange="adataChanged()" />
+					<label hflex="60%"/>
+				</hlayout>
+			</div>
+		</hlayout>	
+	
+		<panel_ubicazione_nesdiv />
+		
+		<panel_fascia_eta/>
+		
+		<hlayout>
+				<label hflex="20%" value="${c:l('generic.formato')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="formatoStampa">
+						<radio id="pdf" value="PDF" label="${c:l('generic.formato.pdf')}" checked="true"/>
+						<radio id="html" value="XLS" label="${c:l('generic.formato.html')}"/>						
+					</caribelradiogroup>
+				</div>
+		</hlayout>
+		<hlayout></hlayout>
+		<hlayout></hlayout>
+		<hlayout></hlayout>
+		<hlayout></hlayout>
+		<hlayout>
+				<label hflex="5%"/>
+				<div hflex="90%" align="left">
+					<label hflex="90%"  value="${c:l('ReportRiepAssEta.msg')}" sclass="normalText" style="border-style: solid;border-color: gray; border-width:0.5px"/>
+				</div>
+				<label hflex="5%"/>
+		</hlayout>
+		
+		
+		
+		
+		</vlayout>
+	</vlayout>
+</window>

@@ -1,0 +1,8 @@
+<vlayout id="SOScalaValutazione" vflex="true"  
+apply="it.caribel.app.sinssnt.controllers.scaleValutazione.ScalePanelCtr">
+	<vlayout width="100%" spacing="3px" sclass="asterLayout">
+		<hlayout width="100%">
+			<label hflex="100%"
+				value="${c:l('contatto.medico.patologie.scale.valutazione')}" />
+		</hlayout>
+	</vlayout>

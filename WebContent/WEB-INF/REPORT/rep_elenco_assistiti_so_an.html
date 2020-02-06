@@ -1,0 +1,114 @@
+<!--mfo:section.start="layout"-->
+<html>
+<body>
+<p>ELENCO ASSISTITI #periodo#</p>
+<!--mfo:section.end-->
+
+
+<!--mfo:section.start="tabella_ini_din"-->
+<table width="98%" border="1">
+  <tr align="left">
+<!--mfo:section.end-->
+  
+<!--mfo:section.start="tabella_colonna_din"-->
+<th bgcolor="lightgrey">#label#</th>
+<!--mfo:section.end-->
+
+<!--mfo:section.start="tabella_fine_colonna_din"-->
+	</tr>
+<!--mfo:section.end-->
+
+<!--mfo:section.start="saltopagina"-->
+<!--mfo:section.end-->
+
+
+<!--mfo:section.start="tabella_corpo_intestazione"-->
+  <tr>
+<!--mfo:section.end-->
+<!--mfo:section.start="tabella_corpo_dati"-->  
+        <td>#valore#</td>
+<!--mfo:section.end-->        
+<!--mfo:section.start="tabella_corpo_fine"-->
+  </tr>
+<!--mfo:section.end--> 
+
+<!--mfo:section.start="tabella_fine_din"-->
+</table>
+<!--mfo:section.end-->
+
+
+<!-- mfo:section.start="tab_riepilogo" -->
+<table border="1">
+  <tr></tr>
+  <tr></tr>
+  <tr align="left">
+	  <td>Riepilogo dati</td>
+  </tr>
+<!-- mfo:section.end -->
+<!-- mfo:section.start="tab_riepilogo_righe_intestazioni" -->
+<tr>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td>#label#</td>
+  <td>#numero#</td>
+</tr>
+<!-- mfo:section.end -->   
+<!-- mfo:section.start="tab_riepilogo_righe" -->
+<tr>
+  <td>&#0160;&#0160;&#0160;&#0160;&#0160;&#0160; #label#</td>
+  <td>#numero#</td>
+</tr>
+<!-- mfo:section.end -->   
+<!-- mfo:section.start="tab_riepilogo_fine" -->
+</table>
+ <!-- mfo:section.end -->   
+
+
+
+
+
+
+
+
+
+<!--mfo:section.start="iniziotab"-->
+<table width="98%" border="1">
+  <tr align="left">
+      <th bgcolor="lightgrey" >Data attivazione</th>
+      <th bgcolor="lightgrey" >Cartella</th>
+      <th bgcolor="lightgrey" >Cognome</th>
+      <th bgcolor="lightgrey" >Nome</th>
+      <th bgcolor="lightgrey" >Data attivazione</th>
+      <th bgcolor="lightgrey" >Data inizio periodo</th>
+      <th bgcolor="lightgrey" >Data inizio fine</th>
+      <th bgcolor="lightgrey" >Data presa carico</th>      
+  </tr>
+<!--mfo:section.end-->
+
+<!--mfo:section.start="tabella"-->
+  <tr>
+        <td>#pr_data_puac#</td>
+        <td>#n_cartella#</td>
+        <td>#cognome#</td>
+        <td>#nome#</td>
+        <td>#pr_data_puac#</td>
+		<td>#data_inizio#</td>
+		<td>#data_fine#</td>
+        <td>#data_presa_carico_skso#</td>       
+  </tr>
+<!--mfo:section.end-->
+
+<!-- mfo:section.start="finetab" rem="TERMINAZIONE TABELLA" -->
+</table>
+<!-- mfo:section.end -->
+
+<!--mfo:section.start="messaggio"-->
+<p align="center"><b> NON ESISTONO DATI RISPONDENTI AI REQUISITI SELEZIONATI</b> </p>
+<!--mfo:section.end-->
+
+<!--mfo:section.start="finale"-->
+</body>
+</html>
+<!--mfo:section.end-->

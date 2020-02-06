@@ -1,0 +1,1258 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+
+<!-- mfo:section.start="layout" rem="IMPOSTAZIONI DI PAGINA" -->
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="simple"
+        page-height="29.7cm"	page-width="21cm"
+        margin-top="0.2cm"	margin-bottom="0cm"
+        margin-left="0.5cm"	margin-right="0.5cm" >
+      <fo:region-body margin-top="1cm" margin-bottom="1cm"/>
+      <fo:region-before extent="1cm"/>
+      <fo:region-after extent="1cm"/>
+    </fo:simple-page-master>
+  </fo:layout-master-set>
+
+  <fo:page-sequence master-name="simple">
+    <fo:static-content flow-name="xsl-region-before">
+  <fo:table font-size="9pt">
+  <fo:table-column column-width="17.5cm"/>
+  <fo:table-body>
+  <fo:table-row height="9pt">
+   <fo:table-cell text-align="start" >
+
+	<fo:table font-size="9pt">
+	<fo:table-column column-width="11.5cm"/>
+	<fo:table-column column-width="8cm"/>
+	 <fo:table-body>
+	  <fo:table-row height="9pt">
+	    <fo:table-cell text-align="start" >
+		<fo:block start-indent="1mm" end-indent="1mm"
+		padding-top="0.5mm" font-weight="bold">
+			Cognome e Nome: #assistito#
+		</fo:block>
+	    </fo:table-cell>
+	    <fo:table-cell text-align="start" >
+		<fo:block start-indent="1mm" end-indent="1mm"
+		padding-top="0.5mm" font-weight="bold" text-align="end">
+			Scala SIAD del: #data#
+		</fo:block>
+	    </fo:table-cell>
+	  </fo:table-row>
+          <fo:table-row height="1pt">
+             <fo:table-cell text-align="start" number-columns-spanned='2'>
+                  <fo:block>
+                          <fo:leader leader-pattern="rule"
+                             rule-thickness="0.5pt"
+                             leader-length="19.5cm"/>
+                  </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+
+	 </fo:table-body>
+	</fo:table>
+	    </fo:table-cell>
+	  </fo:table-row>
+	 </fo:table-body>
+	</fo:table>
+
+
+    </fo:static-content>
+
+
+    <!-- TITOLO DI PIEDE -->
+    <fo:static-content flow-name="xsl-region-after">
+      <fo:table font-size="8pt" width="auto" space-before.optimum="0.3cm">
+        <fo:table-column column-width="11.5cm"/>
+        <fo:table-column column-width="8cm"/>
+        <fo:table-body>
+          <fo:table-row height="5pt">
+            <fo:table-cell text-align="start">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >#txt#</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="end">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >elaborato del #data_stampa# (scl_valutazione.fo)</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body">
+<!-- mfo:section.end -->
+<!--mfo:section.start="continuo" -->
+
+        <fo:block font-size="9pt"  end-indent="1mm" space-before.optimum="1pt"
+		  font-weight="bold" text-align="start">
+		  Patologia
+	</fo:block>
+
+	<fo:table>
+        	<fo:table-column column-width="0.5cm"/>
+        	<fo:table-column column-width="3cm"/>
+        	<fo:table-column column-width="16cm"/>
+        	<fo:table-column column-width="3cm"/>
+        	<fo:table-column column-width="11cm"/>
+
+          <fo:table-body>
+
+
+	    <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                >Prevalente:
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="justify"
+                >#prevalente#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt" >
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                >Concomitante:
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="justify"
+                >#concomitante#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+       </fo:table-body>
+    </fo:table>
+
+    <fo:block font-size="9pt"  end-indent="1mm"
+		  font-weight="bold" text-align="start" space-before.optimum="5pt">
+		  Disturbi
+    </fo:block>
+
+    <fo:table space-before.optimum="5pt">
+            <fo:table-column column-width="0.5cm"/>
+            <fo:table-column column-width="3cm"/>
+            <fo:table-column column-width="0.6cm"/>
+            <fo:table-column column-width="4cm"/>
+            <fo:table-column column-width="0.6cm"/>
+            <fo:table-column column-width="4cm"/>
+            <fo:table-column column-width="0.6cm"/>
+            <fo:table-column column-width="4cm"/>
+          <fo:table-body>
+
+	    <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                >Cognitivi:
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	>
+             	<fo:block start-indent="1mm" end-indent="1mm" 	text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#cog_assenti#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                > Assenti/Lievi
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	>
+             	<fo:block start-indent="1mm" end-indent="1mm" 	text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#cog_moderati#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                >Moderati
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	>
+             	<fo:block start-indent="1mm" end-indent="1mm" 	text-align="end" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#cog_gravi#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                >Gravi
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" padding-top="2mm">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                >Comportamentali:
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" 	text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#com_assenti#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" padding-top="2mm">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                > Assenti/Lievi
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" 	text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#com_moderati#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" padding-top="2mm">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                >Moderati
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" 	text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#com_gravi#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" padding-top="2mm">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                >Gravi
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+       </fo:table-body>
+    </fo:table>
+
+
+    <fo:table space-before.optimum="5pt">
+        	<fo:table-column column-width="4cm"/>
+        	<fo:table-column column-width="12cm"/>
+          <fo:table-body>
+
+	    <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start" space-before="0.3cm"
+                >Autonomia
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start" space-before="0.3cm"
+                >#autonomia#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt" >
+          </fo:table-row>
+
+          <fo:table-row height="5pt" >
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                >Grado mobilit&#0224;:
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                >#mobilita#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt" >
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                >Supporto sociale:
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                >#supporto#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt" >
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                >Livello assistenziale:
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                >#assistenza#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt" >
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                >Assist.rischio infettivo:
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                >#rischio#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+       </fo:table-body>
+    </fo:table>
+
+    <fo:table space-before.optimum="0.5cm">
+        	<fo:table-column column-width="8cm"/>
+                <fo:table-column column-width="0.6cm"/>
+        	<fo:table-column column-width="0.6cm"/>
+                <fo:table-column column-width="4cm"/>
+                <fo:table-column column-width="0.6cm"/>
+                <fo:table-column column-width="0.6cm"/>
+                <fo:table-column column-width="1cm"/>
+          <fo:table-body>
+
+	    <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start" font-weight="bold">
+                    Descrizione bisogno
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell number-columns-spanned="3" font-size="9pt">
+                 <fo:block start-indent="1mm" end-indent="1mm" text-align="start" font-weight="bold">
+                    Presente
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" number-columns-spanned="3" >
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start" font-weight="bold">
+                    Assente
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt" >
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                    Alimentazione assistita
+                </fo:block>
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#1_pres#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#1_ass#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                    Alimentazione enterale
+                </fo:block>
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#2_pres#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#2_ass#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                    Alimentazione parentale
+                </fo:block>
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#3_pres#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#3_ass#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                    Broncorespirazione/drenaggio posturale
+                </fo:block>
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#4_pres#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#4_ass#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                    Ossigeno terapia
+                </fo:block>
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#5_pres#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#5_ass#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                    Ventiloterapia
+                </fo:block>
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#6_pres#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#6_ass#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                    Tracheotomia
+                </fo:block>
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#7_pres#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#7_ass#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                    Gestione della stomia
+                </fo:block>
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#8_pres#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#8_ass#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                    Eliminazione urinaria/intestinale
+                </fo:block>
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#9_pres#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#9_ass#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                    Educazione terapeutica
+                </fo:block>
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#10_pres#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#10_ass#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                    Assistenza per alterazione del ritmo sonno/veglia
+                </fo:block>
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#11_pres#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#11_ass#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                    Ulcere cutanee 1 e 2 Grado
+                </fo:block>
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#12_pres#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#12_ass#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                    Ulcere cutanee 3 e 4 Grado
+                </fo:block>
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#13_pres#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#13_ass#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                    Prelievi venosi non occasionali
+                </fo:block>
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#14_pres#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#14_ass#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                    Supporto al caregiver
+                </fo:block>
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#15_pres#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#15_ass#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                    ECG
+                </fo:block>
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#16_pres#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#16_ass#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                    Telemetria
+                </fo:block>
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#17_pres#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#17_ass#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                    Proctoterapia sottocutanea/intram/infusionale
+                </fo:block>
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#18_pres#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#18_ass#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                    Catetere centrale
+                </fo:block>
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#19_pres#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#19_ass#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                    Trasfusioni
+                </fo:block>
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#20_pres#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#20_ass#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                    Controllo del dolore
+                </fo:block>
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#21_pres#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#21_ass#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                    Assistenza in caso di terminalit&#0224; oncologica
+                </fo:block>
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#22_pres#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#22_ass#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                    Assistenza in caso di terminalit&#0224; non oncologica
+                </fo:block>
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#29_pres#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#29_ass#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start" font-weight="bold" space-before="0.1cm">
+                    Utenti disabili
+                </fo:block>
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt" >
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                    Trattamento riabilitativo neurologico
+                </fo:block>
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#23_pres#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#23_ass#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                    Trattamento riabilitativo ortopedico
+                </fo:block>
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#24_pres#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#24_ass#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                    Trattattamento riabilitativo di mantenimento
+                </fo:block>
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#25_pres#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#25_ass#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                    Supervisione continua
+                </fo:block>
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#26_pres#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#26_ass#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                    Assistenza nelle IADL
+                </fo:block>
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#27_pres#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#27_ass#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row height="5pt">
+             <fo:table-cell font-size="9pt">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                    Assistenza nelle ADL
+                </fo:block>
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#28_pres#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+              <fo:table-cell font-size="9pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" font-weight="bold"	padding-top="2mm">
+             	<fo:block start-indent="1mm" end-indent="1mm" text-align="start" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#28_ass#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt">
+              </fo:table-cell>
+          </fo:table-row>
+    </fo:table-body>
+    </fo:table>
+
+    <fo:table>
+        	<fo:table-column column-width="2cm"/>
+        	<fo:table-column column-width="17cm"/>
+        	<fo:table-column column-width="0.5cm"/>
+        <fo:table-body>
+
+          <fo:table-row>
+ 	      <fo:table-cell font-size="9pt"
+			>
+              	<fo:block start-indent="1mm" space-before="0.4cm"
+                 font-weight="normal" text-align="start"
+                 >Note:
+		 </fo:block>
+              </fo:table-cell>
+ 	      <fo:table-cell font-size="9pt"
+			>
+              	<fo:block start-indent="1mm" space-before="0.4cm"
+                 font-weight="bold" text-align="justify"
+                 >#nome_test#
+		 </fo:block>
+              </fo:table-cell>
+              
+          </fo:table-row>
+
+          <fo:table-row>
+ 	      <fo:table-cell font-size="9pt" >
+              	<fo:block start-indent="1mm" space-before="0.1cm"
+                 font-weight="normal"
+                 >Data Test:
+		 </fo:block>
+              </fo:table-cell>
+ 	      <fo:table-cell font-size="9pt" >
+              	<fo:block start-indent="1mm" space-before="0.1cm"
+                 font-weight="bold"
+                 >#data_test#
+		 </fo:block>
+              </fo:table-cell>
+              
+          </fo:table-row>
+
+          <fo:table-row>
+ 	      <fo:table-cell font-size="9pt" >
+              	<fo:block start-indent="1mm" space-before="0.1cm"
+                 font-weight="normal"
+                 >Tempo T:
+		 </fo:block>
+              </fo:table-cell>
+ 	      <fo:table-cell font-size="9pt" >
+              	<fo:block start-indent="1mm" space-before="0.1cm"
+                 font-weight="bold"
+                 >#tempo#
+		 </fo:block>
+              </fo:table-cell>
+              
+          </fo:table-row>
+
+    </fo:table-body>
+   </fo:table>
+
+    </fo:flow> <!-- closes the flow element-->
+  </fo:page-sequence> <!-- closes the page-sequence -->
+<!-- mfo:section.end -->
+</fo:root>
+
+

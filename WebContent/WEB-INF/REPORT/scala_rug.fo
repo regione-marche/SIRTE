@@ -1,0 +1,3720 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+
+<!-- mfo:section.start="layout" rem="IMPOSTAZIONI DI PAGINA" -->
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="simple"
+        page-height="29.7cm"	page-width="21cm"
+        margin-top="0.5cm"	margin-bottom="0.5cm"
+        margin-left="1cm"	margin-right="1cm" >
+      <fo:region-body margin-top="0.1cm" margin-bottom="1cm"/>
+      <fo:region-before extent="0.1cm"/>
+      <fo:region-after extent="0.5cm"/>
+    </fo:simple-page-master>
+  </fo:layout-master-set>
+
+  <fo:page-sequence master-name="simple">
+    <fo:static-content flow-name="xsl-region-before">
+  
+	 
+    </fo:static-content>
+
+
+    <!-- TITOLO DI PIEDE -->
+    <fo:static-content flow-name="xsl-region-after">
+      <fo:table font-size="8pt" width="auto" >
+        <fo:table-column column-width="12cm"/>
+        <fo:table-column column-width="7cm"/>
+        <fo:table-body>
+          <fo:table-row height="10pt">
+            <fo:table-cell text-align="start">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >#txt#</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="end">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >elaborato del #data_stampa#</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body">
+     
+	   
+<!-- mfo:section.end -->
+<!--mfo:section.start="tabRug" -->
+ <fo:block font-size="12pt"  end-indent="1mm"
+		  font-weight="bold" text-align="center" >
+		 RUG III Home Care
+	  </fo:block>
+
+	  <fo:block font-size="12pt" start-indent="1.1mm"
+		  end-indent="1mm" space-before="0.1cm"
+		  text-align="center" padding-top="1mm">
+		  (Condizione degli ultimi 3 giorni se non indicato diversamente)
+	  </fo:block>
+	<fo:table space-before.optimum="0.5cm" font-size="10pt" font-family="sans-serif" >
+	<fo:table-column column-width="1cm"/>
+	<fo:table-column column-width="5cm"/>
+	<fo:table-column column-width="10cm"/>
+	<fo:table-column column-width="3cm"/>
+	
+	<fo:table-body>
+		<fo:table-row>
+			<fo:table-cell number-columns-spanned="5">
+				<fo:block text-align="start" font-weight="bold"  >
+					SEZIONE A. INFORMAZIONI GENERALI
+				</fo:block>
+			</fo:table-cell>			
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					1
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					NOME DELLA PERSONA UTENTE
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					a. Cognome
+				</fo:block>
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					b. Nome
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#cognome#
+				</fo:block>
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#nome#
+				</fo:block>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					2
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					SESSO
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					1. Maschio&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;2. Femmina
+				</fo:block>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#sesso#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					3
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					DATA DI NASCITA
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" number-columns-spanned="2">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#data_nascita#
+				</fo:block>				
+			</fo:table-cell>			
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					4
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					STATO CIVILE
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					1. Celibe/Nubile
+				</fo:block>	
+				<fo:block text-align="start" start-indent="0.2cm">
+					2. Coniugato
+				</fo:block>
+				<fo:block text-align="start" start-indent="0.2cm">
+					3. Convivente/Partner stabile
+				</fo:block>
+				<fo:block text-align="start" start-indent="0.2cm">
+					4. Vedovo
+				</fo:block>		
+				<fo:block text-align="start" start-indent="0.2cm">
+					5. Separato
+				</fo:block>	
+				<fo:block text-align="start" start-indent="0.2cm">
+					6. Divorziato
+				</fo:block>				
+			</fo:table-cell>	
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#stato_civile#
+				</fo:block>				
+			</fo:table-cell>		
+		</fo:table-row>
+			<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					6
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					NUMERO DELLA CARTELLA
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" number-columns-spanned="2">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#cartella#
+				</fo:block>								
+			</fo:table-cell>					
+		</fo:table-row>		
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					8
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					MOTIVO DELLA VALUTAZIONE
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					1. Valutazione iniziale
+				</fo:block>	
+				<fo:block text-align="start" start-indent="0.2cm">
+					2. Rivalutazione di routine
+				</fo:block>
+				<fo:block text-align="start" start-indent="0.2cm">
+					3. Rivalutazione al rientro in assistenza domiciliare
+				</fo:block>
+				<fo:block text-align="start" start-indent="0.2cm">
+					4. Rivalutazione per significativa variazione delle condizioni della persona utente
+				</fo:block>		
+				<fo:block text-align="start" start-indent="0.2cm">
+					5. Dimissione (considerare gli ultimi 3 giorni di presa in carico)
+				</fo:block>	
+				<fo:block text-align="start" start-indent="0.2cm">
+					6. Registrazione della dimissione
+				</fo:block>	
+				<fo:block text-align="start" start-indent="0.2cm">
+					7. Altro (es.a scopo di ricerca)
+				</fo:block>				
+			</fo:table-cell>	
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#a8#
+				</fo:block>				
+			</fo:table-cell>		
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					9
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					DATA DELLA VALUTAZIONE 
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" number-columns-spanned="2">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#data_val#
+				</fo:block>				
+			</fo:table-cell>			
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					11
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					INDIRIZZO
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" number-columns-spanned="2">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#indirizzo#
+				</fo:block>				
+			</fo:table-cell>			
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					12
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					DOVE VIVE LA PERSONA UTENTE AL MOMENTO DELLA VALUTAZIONE
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					1. Casa di propriet&#224;/appartamento o in affitto
+				</fo:block>	
+				<fo:block text-align="start" start-indent="0.2cm">
+					2. Casa privata con uso di servizi territoriali/casa protetta/comunit&#224; alloggio
+				</fo:block>
+				<fo:block text-align="start" start-indent="0.2cm">
+					5. Struttura per disabili
+				</fo:block>
+				<fo:block text-align="start" start-indent="0.2cm">
+					8. Senzatetto
+				</fo:block>		
+				<fo:block text-align="start" start-indent="0.2cm">
+					9. Struttura di lungodegenza
+				</fo:block>	
+				<fo:block text-align="start" start-indent="0.2cm">
+					10. Unit&#224; riabilitativa
+				</fo:block>	
+				<fo:block text-align="start" start-indent="0.2cm">
+					11. Hospice/unit&#224; di cure palliative
+				</fo:block>		
+				<fo:block text-align="start" start-indent="0.2cm">
+					12. Ospedale per acuti
+				</fo:block>		
+				<fo:block text-align="start" start-indent="0.2cm">
+					13. Carcere
+				</fo:block>		
+				<fo:block text-align="start" start-indent="0.2cm">
+					14. Altro
+				</fo:block>				
+			</fo:table-cell>	
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#a12#
+				</fo:block>				
+			</fo:table-cell>		
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					13
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					CON CHI VIVE LA PERSONA UTENTE AL MOMENTO DELLA VALUTAZIONE
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" font-weight="bold" >
+								a. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" font-weight="bold" >
+								Attualmente vive
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>
+						<fo:table-row>
+						<fo:table-cell number-columns-spanned="2">
+							<fo:block text-align="start" start-indent="0.4cm">
+								1. Sola
+							</fo:block>
+							<fo:block text-align="start" start-indent="0.4cm">
+								2. Con il coniuge/partner stabile
+							</fo:block>
+							<fo:block text-align="start" start-indent="0.4cm">
+								3. Con il coniuge ed altri
+							</fo:block>	
+							<fo:block text-align="start" start-indent="0.4cm">
+								4. Con un figlio ma non con il coniuge
+							</fo:block>
+							<fo:block text-align="start" start-indent="0.4cm">
+								5. Con un genitore o tutore legale
+							</fo:block>
+							<fo:block text-align="start" start-indent="0.4cm">
+								6. Con fratelli/sorelle
+							</fo:block>	
+							<fo:block text-align="start" start-indent="0.4cm">
+								7. Con altri parenti
+							</fo:block>
+							<fo:block text-align="start" start-indent="0.4cm">
+								8. Con altre persone, non familiari
+							</fo:block>	
+						</fo:table-cell>
+					</fo:table-row>
+				</fo:table-body>
+			</fo:table>
+			</fo:table-cell>			
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#a13a#
+				</fo:block>				
+			</fo:table-cell>		
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" font-weight="bold" >
+								b. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								<fo:inline font-weight="bold">Rispetto a 90 giorni fa (o dall'ultima valutazione) &#232; cambiata la situazione abitativa della persona utente?</fo:inline> (es. vive con un'altra persona, oppure si &#232; trasferito)
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>
+						<fo:table-row>
+						<fo:table-cell number-columns-spanned="2">
+							<fo:block text-align="start" start-indent="0.4cm" space-before="0.4cm">
+								0. No&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1.Si
+							</fo:block>							
+						</fo:table-cell>
+					</fo:table-row>
+				</fo:table-body>
+			</fo:table>
+			</fo:table-cell>			
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#a13b#
+				</fo:block>				
+			</fo:table-cell>		
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" font-weight="bold" >
+								c. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block font-weight="bold" text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								La persona utente o il familiare o chi vive con la persona pensa che la persona utente starebbe meglio se vivesse altrove?
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>
+						<fo:table-row>
+						<fo:table-cell number-columns-spanned="2">
+							<fo:block text-align="start" start-indent="0.4cm" space-before="0.4cm">
+								0. No
+							</fo:block>	
+							<fo:block text-align="start" start-indent="0.4cm">
+								1.Si, ma non in una istituzione
+							</fo:block>	
+							<fo:block text-align="start" start-indent="0.4cm">
+								2.Si, ma in una istituzione
+							</fo:block>							
+						</fo:table-cell>
+					</fo:table-row>
+				</fo:table-body>
+			</fo:table>
+			</fo:table-cell>			
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#a13c#
+				</fo:block>				
+			</fo:table-cell>		
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					14
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					ULTIMO RICOVERO OSPEDALIERO
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" font-style="italic">
+					identificare il pi&#249; recente ricovero ospedaliero negli ultimi 90 giorni
+				</fo:block>	
+				<fo:block text-align="start" start-indent="0.2cm" space-before="0.4cm">
+					0. Nessuna ospedalizzazione
+				</fo:block>
+				<fo:block text-align="start" start-indent="0.2cm">
+					1. 31-90 giorni fa
+				</fo:block>
+				<fo:block text-align="start" start-indent="0.2cm">
+					2. 15-30 giorni fa
+				</fo:block>		
+				<fo:block text-align="start" start-indent="0.2cm">
+					3. 8-14 giorni fa
+				</fo:block>	
+				<fo:block text-align="start" start-indent="0.2cm">
+					4. Negli ultimi 7 giorni
+				</fo:block>	
+				<fo:block text-align="start" start-indent="0.2cm">
+					5. Attualmente in ospedale
+				</fo:block>				
+			</fo:table-cell>	
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#a14#
+				</fo:block>				
+			</fo:table-cell>		
+		</fo:table-row>
+		
+		<fo:table-row>
+			<fo:table-cell number-columns-spanned="5">
+				<fo:block text-align="start" font-weight="bold"  space-before="0.5cm">
+					SEZIONE C. STATO COGNITIVO
+				</fo:block>				
+			</fo:table-cell>			
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					1
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					CAPACIT&#192; DI PRENDERE LE DECISIONI QUOTIDIANE
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell number-columns-spanned="2">
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" number-columns-spanned="2">
+								Come la persona utente prende decisioni circa l'organizzazione della giornata 
+							</fo:block>	
+						</fo:table-cell>
+					</fo:table-row>					
+					<fo:table-row>						
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								0. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								INDIPENDENTE - decisioni sempre ragionevoli
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+						<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								1. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								SEMI-INDIPENDENTE - qualche difficolt&#224; in situazioni nuove
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+						<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								2. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								COMPROMISSIONE MINIMA - in specifiche situazioni, decisioni inadeguate; richiesti suggerimenti/supervisione in tali occasioni
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>		
+						<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								3. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								COMPROMISSIONE MODERATA - decisioni inadeguate; richiesti suggerimenti/supervisione in tutte le occasioni
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+						<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								4. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								COMPROMISSIONE SEVERA - raramente/mai prende decisioni 
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>		
+						<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								5. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								PERSONA UTENTE NON COSCIENTE/COMA
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>							
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#c1#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		
+		<fo:table-row>
+			<fo:table-cell number-columns-spanned="5">
+				<fo:block text-align="start" font-weight="bold"  space-before="0.5cm">
+					SEZIONE E. UMORE E COMPORTAMENTO
+				</fo:block>				
+			</fo:table-cell>			
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					3
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					DISTURBI DEL COMPORTAMENTO
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-bottom-style="none">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								0. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Non Presente
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+						<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								1. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Presente ma non manifestatosi negli ultimi 3 giorni
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+						<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								2. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Manifestatosi 1 o 2 volte negli ultimi 3 giorni
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>		
+						<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								3. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Manifestatosi in ognuno degli ultimi 3 giorni
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>											
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-left-style="none" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-top-style="none"  border-bottom-style="none">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								a. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								<fo:inline font-weight="bold">VAGABONDAGGIO</fo:inline> (senza alcun motivo razionale, apparentemente senza badare ai proprio bisogni ed alla sicurezza)
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#e3a#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-top-style="none" border-bottom-style="none">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								b. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								<fo:inline font-weight="bold">AGGRESSIVIT&#192; VERBALE</fo:inline> (ha spaventato, insultato, minacciato, gridato ad altre persone)
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>														
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#e3b#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-top-style="none" border-bottom-style="none">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								c. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								<fo:inline font-weight="bold">AGGRESSIVIT&#192; FISICA</fo:inline> (ha colpito, ferito, graffiato, abusato di altre persone)
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>														
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#e3c#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+			<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-top-style="none" border-bottom-style="none">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								d. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								<fo:inline font-weight="bold">COMPORTAMENTO SOCIALMENTE INADEGUATO</fo:inline> (emette suoni fastidiosi, rumori, urla, compie gesti di autolesionismo, compie atti osceni, o si spoglia in pubblico, lancia cibo/feci, rovista tra le cose degli altri)
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>														
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#e3d#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-top-style="none" border-bottom-style="none">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								e. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								<fo:inline font-weight="bold">COMPORTAMENTO SESSUALE SOCIALMENTE INADEGUATO/SPOGLIARSI IN PUBBLICO</fo:inline>
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>														
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#e3e#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-top-style="none" >
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								f. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell >
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								<fo:inline font-weight="bold">RIFIUTO DELL'ASSISTENZA</fo:inline> (prendere le medicine, fare le iniezioni, ricevere aiuto nelle ADL o nel mangiare)
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>														
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#e3f#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		
+        
+
+		<fo:table-row>
+			<fo:table-cell number-columns-spanned="5">
+			<fo:block break-after="page">
+        </fo:block>
+				<fo:block text-align="start" font-weight="bold"  space-before="0.5cm">
+					SEZIONE G. FUNZIONE FISICA
+				</fo:block>				
+			</fo:table-cell>			
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" number-columns-spanned="5">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					1. Autonomia nelle IADL
+				</fo:block>
+				<fo:block text-align="start" font-style="italic" start-indent="0.2cm">
+					Codificare <fo:inline text-decoration="underline">per l'autonomia</fo:inline> della persona utente nelle attivit&#224; consuete in casa o al di fuori DURANTE GLI ULTIMI TRE GIORNI
+				</fo:block>
+				<fo:block text-align="start" font-weight="bold" space-before="0.4cm" start-indent="0.2cm">
+					CODICI: (A)
+				</fo:block>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell  >
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="18.5cm"/>	
+					<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell border-width="0.1mm" border-left-style="solid" >
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+								0.
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell border-width="0.1mm" border-right-style="solid" >
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+								<fo:inline font-style="italic">INDIPENDENTE</fo:inline> - non ha bisogno di organizzazione, supervisione, aiuto
+							</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					</fo:table-body>
+				</fo:table>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell  >
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="18.5cm"/>	
+					<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell border-width="0.1mm" border-left-style="solid" >
+							<fo:block text-align="start"  start-indent="0.2cm">
+								1.
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell border-width="0.1mm" border-right-style="solid" >
+							<fo:block text-align="start" start-indent="0.2cm">
+								<fo:inline font-style="italic">ORGANIZZAZIONE</fo:inline>
+							</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					</fo:table-body>
+				</fo:table>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell  >
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="18.5cm"/>	
+					<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell border-width="0.1mm" border-left-style="solid" >
+							<fo:block text-align="start"  start-indent="0.2cm">
+								2.
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell border-width="0.1mm" border-right-style="solid" >
+							<fo:block text-align="start" start-indent="0.2cm">
+								<fo:inline font-style="italic">SUPERVISIONE</fo:inline> - controllo, incoraggiamento, suggerimento
+							</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					</fo:table-body>
+				</fo:table>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell  >
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="18.5cm"/>	
+					<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell border-width="0.1mm" border-left-style="solid" >
+							<fo:block text-align="start"  start-indent="0.2cm">
+								0.
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell border-width="0.1mm" border-right-style="solid" >
+							<fo:block text-align="start" start-indent="0.2cm">
+								<fo:inline font-style="italic">ASSISTENZA LIMITATA</fo:inline> - aiuto in alcune occasioni
+							</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					</fo:table-body>
+				</fo:table>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell  >
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="18.5cm"/>	
+					<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell border-width="0.1mm" border-left-style="solid" >
+							<fo:block text-align="start"  start-indent="0.2cm">
+								1.
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell border-width="0.1mm" border-right-style="solid" >
+							<fo:block text-align="start" start-indent="0.2cm">
+								<fo:inline font-style="italic">ASSISTENZA INTENSIVA</fo:inline> - aiuto per tutta l'attivit&#224;, ma &#232; in grado di svolgere da solo il 50% delle attivit&#224;
+							</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					</fo:table-body>
+				</fo:table>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell  >
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="18.5cm"/>	
+					<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell border-width="0.1mm" border-left-style="solid" >
+							<fo:block text-align="start"  start-indent="0.2cm">
+								2.
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell border-width="0.1mm" border-right-style="solid" >
+							<fo:block text-align="start" start-indent="0.2cm">
+								<fo:inline font-style="italic">MASSIMA ASSISTENZA</fo:inline> - aiuto per tutta l'attivit&#224;, ma &#232; in grado di svolgere meno del 50% delle attivit&#224; da solo
+							</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					</fo:table-body>
+				</fo:table>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell  >
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="18.5cm"/>	
+					<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell border-width="0.1mm" border-left-style="solid" >
+							<fo:block text-align="start"  start-indent="0.2cm">
+								3.
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell border-width="0.1mm" border-right-style="solid" >
+							<fo:block text-align="start" start-indent="0.2cm">
+								<fo:inline font-style="italic">DIPENDENZA TOTALE</fo:inline> - l'attivit&#224; viene svolta completamente da sola
+							</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					</fo:table-body>
+				</fo:table>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell  >
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="18.5cm"/>	
+					<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell border-width="0.1mm" border-left-style="solid" >
+							<fo:block text-align="start"  start-indent="0.2cm">
+								8.
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell border-width="0.1mm" border-right-style="solid" >
+							<fo:block text-align="start" start-indent="0.2cm">
+								<fo:inline font-style="italic">ATTIVIT&#192; NON ESEGUITA</fo:inline>
+							</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					</fo:table-body>
+				</fo:table>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>			
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" number-columns-spanned="3">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="13.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								a. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								<fo:inline font-weight="bold">PREPARAZIONE DEI PASTI</fo:inline> - Come prepara i pasti (p.es. programmare i pasti, cuocere, preparare il cibo, usare gli utensili)
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>														
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#g1a#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>			
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-top-style="none" number-columns-spanned="3">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="13.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								d. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								<fo:inline font-weight="bold">GESTIONE DEI FARMACI</fo:inline> - Come gestire i farmaci (p.es. ricordarsi di prendere le pillole, aprire i flaconi, prendere le dosi giuste, fare le iniezioni, applicare pomate)
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>														
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-top-style="none" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#g1d#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>			
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" number-columns-spanned="3">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="13.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								e. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								<fo:inline font-weight="bold">USO DEL TELEFONO</fo:inline> - Come fa o riceve telefonate (se necessario con ausili come grnadi numeri sulla tastiera, amplificatore acustico)
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>														
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#g1e#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" number-columns-spanned="5">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					1. Autonomia nelle ADL
+				</fo:block>
+				<fo:block text-align="start" font-style="italic" start-indent="0.2cm">
+					Codifica per tutti gli episodi verificatisi nei 3 giorni precedenti
+				</fo:block>		
+				<fo:block text-align="start" space-before="0.3cm" font-style="italic" start-indent="0.2cm">
+					Se il livello di autonomia in una ADL &#232; lo stesso in tutti gli episodi, codifica per quel livello
+				</fo:block>	
+				<fo:block text-align="start" font-style="italic" start-indent="0.2cm">
+					Se un singolo episodio &#232; codificabile come livello 6, ma negli altri episodi il livello di dipendenza &#232; meno grave, codifica quella ADL come 5
+				</fo:block>	
+				<fo:block text-align="start" font-style="italic" start-indent="0.2cm">
+					Se in generale la persona utente &#232; autonoma in una ADL, ma in un singolo episodio ha avuto bisogno di organizzazione, codifica quella ADL come 1
+				</fo:block>	
+				<fo:block text-align="start" font-style="italic" start-indent="0.2cm">
+					Negli altri casi considera l'episodio di <fo:inline text-decoration="underline">minore</fo:inline> dipendenza (da 2 a 5)
+				</fo:block>			
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell  >
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="18.5cm"/>	
+					<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell border-width="0.1mm" border-left-style="solid" >
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+								0.
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell border-width="0.1mm" border-right-style="solid" >
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+								INDIPENDENTE - nessuna necessit&#224; di aiuto, organizzazione o supervisione
+							</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					</fo:table-body>
+				</fo:table>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell  >
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="18.5cm"/>	
+					<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell border-width="0.1mm" border-left-style="solid" >
+							<fo:block text-align="start"  start-indent="0.2cm">
+								1.
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell border-width="0.1mm" border-right-style="solid" >
+							<fo:block text-align="start" start-indent="0.2cm">
+								ORGANIZZAZIONE - mezzo o dispositivo fornito o messo a portata di mano della persona utente anche solo in una occasione
+							</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					</fo:table-body>
+				</fo:table>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell  >
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="18.5cm"/>	
+					<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell border-width="0.1mm" border-left-style="solid" >
+							<fo:block text-align="start"  start-indent="0.2cm">
+								2.
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell border-width="0.1mm" border-right-style="solid" >
+							<fo:block text-align="start" start-indent="0.2cm">
+								SUPERVISIONE - controllo, incoraggiamento o suggerimento
+							</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					</fo:table-body>
+				</fo:table>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell  >
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="18.5cm"/>	
+					<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell border-width="0.1mm" border-left-style="solid" >
+							<fo:block text-align="start"  start-indent="0.2cm">
+								3.
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell border-width="0.1mm" border-right-style="solid" >
+							<fo:block text-align="start" start-indent="0.2cm">
+								ASSISTENZA LIMITATA - aiuto fisico nella manovra guidata degli arti, senza neccessit&#224; di sostenere il peso del corpo
+							</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					</fo:table-body>
+				</fo:table>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell  >
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="18.5cm"/>	
+					<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell border-width="0.1mm" border-left-style="solid" >
+							<fo:block text-align="start"  start-indent="0.2cm">
+								4.
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell border-width="0.1mm" border-right-style="solid" >
+							<fo:block text-align="start" start-indent="0.2cm">
+								ASSISTENZA INTENSIVA - aiuto nel sostenere il peso corporeo (incluso il sollevamento degli arti) fornito da una persona, mentre la persona utente &#232; in grado di effettuare almeno il 50% delle sottoattivit&#224;
+							</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					</fo:table-body>
+				</fo:table>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell  >
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="18.5cm"/>	
+					<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell border-width="0.1mm" border-left-style="solid" >
+							<fo:block text-align="start"  start-indent="0.2cm">
+								5.
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell border-width="0.1mm" border-right-style="solid" >
+							<fo:block text-align="start" start-indent="0.2cm">
+								MASSIMA ASSISTENZA - aiuto di 2 o pi&#249; persone nel sostenere il peso corporeo (incluso il sollevamento degli arti) OPPURE aiuto nel sostenere il peso del corpo per pi&#249; del 50% delle sottoattivit&#224;
+							</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					</fo:table-body>
+				</fo:table>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell  >
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="18.5cm"/>	
+					<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell border-width="0.1mm" border-left-style="solid" >
+							<fo:block text-align="start"  start-indent="0.2cm">
+								6.
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell border-width="0.1mm" border-right-style="solid" >
+							<fo:block text-align="start" start-indent="0.2cm">
+								DIPENDENZA TOTALE - l'attivit&#224; viene svolta completamente da un'altra persona
+							</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					</fo:table-body>
+				</fo:table>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell  >
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="18.5cm"/>	
+					<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell border-width="0.1mm" border-left-style="solid" >
+							<fo:block text-align="start"  start-indent="0.2cm">
+								8.
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell border-width="0.1mm" border-right-style="solid" >
+							<fo:block text-align="start" start-indent="0.2cm">
+								ATTIVIT&#192; MAI ESEGUITA (durante l'intero periodo)
+							</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					</fo:table-body>
+				</fo:table>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>			
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" number-columns-spanned="3">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="13.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								g. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								<fo:inline font-weight="bold">TRASFERIMENTO SUL W.C.</fo:inline> - come esegue il trasferimento sul W.C. (o sulla comoda)
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>														
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#g2g#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>			
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-top-style="none" number-columns-spanned="3">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="13.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								h. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								<fo:inline font-weight="bold">USO DEL W.C.</fo:inline> - Come usa il W.C. (o la comoda, o la padella, o il pappagallo), come si pulisce (anche in caso di episodio/i di incontinenza), come cambia il pannolone, come gestisce la colostomia o il catetere, come si sistema i vestiti (escluso trasferirsi sul/dal W.C.)
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>														
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-top-style="none" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#g2h#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>			
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" number-columns-spanned="3">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="13.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								i. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								<fo:inline font-weight="bold">MOBILIT&#192; A LETTO</fo:inline> - Come si sdraia e si alza, si gira da un lato all'altro, assume posizioni nel letto
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>														
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#g2i#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>			
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" number-columns-spanned="3">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="13.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								j. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								<fo:inline font-weight="bold">MANGIARE</fo:inline> - Come si alimenta (inclusa nutrizione con sondino naso-gastrico o con nutrizione parenterale)
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>														
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#g2j#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		
+		<fo:table-row>
+			<fo:table-cell number-columns-spanned="5">
+			<fo:block break-after="page">
+        </fo:block>
+				<fo:block text-align="start" font-weight="bold"  space-before="0.5cm">
+					SEZIONE I. DIAGNOSI DI MALATTIA
+				</fo:block>				
+			</fo:table-cell>			
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" number-columns-spanned="5">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" font-style="italic">
+					Codificare le diagnosi come segue
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell  >
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="18.5cm"/>	
+					<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell border-width="0.1mm" border-left-style="solid" >
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+								0.
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell border-width="0.1mm" border-right-style="solid" >
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+								Non presente
+							</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					</fo:table-body>
+				</fo:table>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell  >
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="18.5cm"/>	
+					<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell border-width="0.1mm" border-left-style="solid" >
+							<fo:block text-align="start"  start-indent="0.2cm">
+								1.
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell border-width="0.1mm" border-right-style="solid" >
+							<fo:block text-align="start" start-indent="0.2cm">
+								Motivo presa in carico
+							</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					</fo:table-body>
+				</fo:table>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell  >
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="18.5cm"/>	
+					<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell border-width="0.1mm" border-left-style="solid" >
+							<fo:block text-align="start"  start-indent="0.2cm">
+								2.
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell border-width="0.1mm" border-right-style="solid" >
+							<fo:block text-align="start" start-indent="0.2cm">
+								Diagnosi presente, in trattamento
+							</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					</fo:table-body>
+				</fo:table>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell  >
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="18.5cm"/>	
+					<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell border-width="0.1mm" border-left-style="solid" >
+							<fo:block text-align="start"  start-indent="0.2cm">
+								3.
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell border-width="0.1mm" border-right-style="solid" >
+							<fo:block text-align="start" start-indent="0.2cm">
+									Diagnosi presente, monitorizzata ma non in trattamento specifico
+							</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					</fo:table-body>
+				</fo:table>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-top-style="none" border-bottom-style="none" number-columns-spanned="5">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" font-weight="bold" font-style="italic">
+					1. Diagnosi di malattia
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		
+		<fo:table-row>					
+			<fo:table-cell border-width="0.1mm" border-style="solid" number-columns-spanned="5" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" font-weight="bold" font-style="italic">
+					Patologie neurologiche
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>			
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-top-style="none" number-columns-spanned="3">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="13.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								e. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Emiplegia
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>														
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-top-style="none" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#i1e#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>			
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" number-columns-spanned="3">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="13.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								f. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Sclerosi multipla
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>														
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#i1f#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		
+		<fo:table-row>			
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" number-columns-spanned="3">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="13.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								i. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Quadriplegia
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>														
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#i1i#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>					
+			<fo:table-cell border-width="0.1mm" border-style="solid" number-columns-spanned="5" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" font-weight="bold" font-style="italic">
+					Malattie infettive
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>			
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" number-columns-spanned="3">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="13.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								r. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Polmonite
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>														
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#i1r#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>					
+			<fo:table-cell border-width="0.1mm" border-style="solid" number-columns-spanned="5" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" font-weight="bold" font-style="italic">
+					Altre
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>			
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" number-columns-spanned="3">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="13.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								u. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Diabete mellito
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>														
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#i1u#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>					
+			<fo:table-cell border-width="0.1mm" border-style="solid" number-columns-spanned="5" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					2.ALTRE DIAGNOSI DI MALATTIA (il sistema controlla se sono registrate queste diagnosi)
+				</fo:block>	
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					Diagnosi
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>			
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" number-columns-spanned="3">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="13.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								a. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Paralisi cerebrale infantile, non specificata
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>														
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#i2a#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		
+		<fo:table-row>			
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" number-columns-spanned="3">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="13.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								b. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Setticemia non specificata
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>														
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#i2b#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell number-columns-spanned="5">
+				<fo:block text-align="start" font-weight="bold"  space-before="0.5cm">
+					SEZIONE J. CONDIZIONI DI SALUTE
+				</fo:block>				
+			</fo:table-cell>			
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					3
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					FREQUENZA DEI PROBLEMI
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" number-columns-spanned="2">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" font-style="italic">
+					(Codifica per la presenza del problema negli ultimi tre giorni)
+				</fo:block>
+			</fo:table-cell>
+			</fo:table-row>
+			<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-bottom-style="none" border-top-style="none">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								0. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Non Presente
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+						<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" start-indent="0.2cm" >
+								1. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" start-indent="0.2cm" >
+								Presente ma non manifestatosi negli ultimi 3 giorni
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+						<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" start-indent="0.2cm" >
+								2. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" start-indent="0.2cm" >
+								Manifestatosi in 1 degli ultimi 3 giorni
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>		
+						<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" start-indent="0.2cm" >
+								3. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" start-indent="0.2cm" >
+								Manifestatosi in 2 degli ultimi 3 giorni
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>			
+						<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" start-indent="0.2cm" >
+								4. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" start-indent="0.2cm" >
+								Manifestatosi in ognuno degli ultimi 3 giorni
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>											
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-left-style="none" border-top-style="none">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="end" font-weight="bold" space-before="0.2cm" start-indent="0.2cm" font-style="italic">
+					Psichiatrici
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-top-style="none"  border-bottom-style="none">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								h. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Illusioni (false credenze)
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#j3h#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="end" font-weight="bold" space-before="0.2cm" start-indent="0.2cm" font-style="italic">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-top-style="none"  border-bottom-style="none">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								i. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Allucinazioni (false percezioni sensoriali)
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#j3i#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="end" font-weight="bold" space-before="0.2cm" start-indent="0.2cm" font-style="italic">
+					Neurologici
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-top-style="none"  border-bottom-style="none">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								j. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Afasia
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#j3j#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="end" font-weight="bold" space-before="0.2cm" start-indent="0.2cm" font-style="italic">
+					Gastro-intestinali
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-top-style="none"  border-bottom-style="none">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								n. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Vomito
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#j3n#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="end" font-weight="bold" space-before="0.2cm" start-indent="0.2cm" font-style="italic">
+					Altri
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-top-style="none"  border-bottom-style="none">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								r. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Febbre
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#j3r#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="end" font-weight="bold" space-before="0.2cm" start-indent="0.2cm" font-style="italic">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-top-style="none"  border-bottom-style="none">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								s. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Sanguinamento gastro-intestinale o genito-urinario
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#j3s#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					7
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					INSTABILIT&#192; DELLE CONDIZIONI
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" number-columns-spanned="2">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+					0. No&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1. Si
+				</fo:block>
+			</fo:table-cell>
+			</fo:table-row>
+			
+		
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-top-style="none">
+				<fo:block text-align="end" font-weight="bold" space-before="0.2cm" start-indent="0.2cm" font-style="italic">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-top-style="none"  >
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								c. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Malattia terminale
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#j7#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell number-columns-spanned="5">
+			<fo:block break-after="page">
+        </fo:block>
+				<fo:block text-align="start" font-weight="bold"  space-before="0.5cm">
+					SEZIONE K. STATO NUTRIZIONALE/CAVO ORALE
+				</fo:block>				
+			</fo:table-cell>			
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					2
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					VALUTAZIONE NUTRIZIONALE
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" number-columns-spanned="2">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+					0. No&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1. Si
+				</fo:block>
+			</fo:table-cell>
+			</fo:table-row>
+			
+		
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-top-style="none" border-bottom-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-top-style="none" border-bottom-style="none">
+				<fo:block text-align="end" font-weight="bold" space-before="0.2cm" start-indent="0.2cm" font-style="italic">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-top-style="none"  border-bottom-style="none" >
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								a. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Perdita di peso indesiderata >=5% negli ULTIMI 30 GIORNI (o >=10% negli ULTIMI 180 GIORNI)
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#k2a#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		
+				<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-top-style="none">
+				<fo:block text-align="end" font-weight="bold" space-before="0.2cm" start-indent="0.2cm" font-style="italic">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-top-style="none"  >
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								b. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Disidratazione (rapporto azoto ureico/creatinina >25)
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#k2b#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					3
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" >
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					DEGLUTIZIONE
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-right-style="none">
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								0. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								NORMALE - appropriata deglutizione di alimenti di qualsiasi consistenza
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>		
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-right-style="solid" border-left-style="none" border-bottom-style="none">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+					&#160;
+				</fo:block>				
+			</fo:table-cell>
+			</fo:table-row>
+			
+			<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-right-style="none" border-top-style="none">
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								1. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								NON VALUTABILE - la persona utente limita l'assunzione di alimenti
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>		
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-right-style="solid" border-left-style="none" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+					&#160;
+				</fo:block>				
+			</fo:table-cell>
+			</fo:table-row>
+			
+			<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none"  border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-right-style="none" border-top-style="none">
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								2. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								NECESSIT&#192; DI MODIFICHE DIETETICHE PER DEGLUTIRE CIBI SOLIDI
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>		
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-right-style="solid" border-left-style="none" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+					&#160;
+				</fo:block>				
+			</fo:table-cell>
+			</fo:table-row>
+			
+			<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-right-style="none" border-top-style="none">
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								3. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								NECESSIT&#192; DI MODIFICHE DIETETICHE SOLO PER DEGLUTIRE CIBI LIQUIDI (utilizzo di addensati)
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>		
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-right-style="solid" border-left-style="none" border-bottom-style="none"  border-top-style="none">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+					&#160;
+				</fo:block>				
+			</fo:table-cell>
+			</fo:table-row>
+			
+			<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-right-style="none" border-top-style="none">
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								4. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								NECESSIT&#192; DI MODIFICHE DIETETICHE PER DEGLUTIRE SIA SOLIDI CHE LIQUIDI
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>		
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-right-style="solid" border-left-style="none" border-bottom-style="none"  border-top-style="none">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+					&#160;
+				</fo:block>				
+			</fo:table-cell>
+			</fo:table-row>
+			<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-right-style="none" border-top-style="none">
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								5. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								NUTRIZIONE COMBINATA ORALE E ENTERALE/PARENTERALE
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>		
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-right-style="solid" border-left-style="none" border-bottom-style="none"  border-top-style="none">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+					&#160;
+				</fo:block>				
+			</fo:table-cell>
+			</fo:table-row>
+			
+			<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-right-style="none" border-top-style="none">
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								6. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								SOLO NUTRIZIONE TRAMITE SONDINO NASO-GASTRICO
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>		
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-right-style="solid" border-left-style="none" border-bottom-style="none"  border-top-style="none">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+					&#160;
+				</fo:block>				
+			</fo:table-cell>
+			</fo:table-row>
+			
+			<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-right-style="none" border-top-style="none">
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								7. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								SOLO NUTRIZIONE TRAMITE GASTROSTOMIA (es.PEG)
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>		
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-right-style="solid" border-left-style="none" border-bottom-style="none"  border-top-style="none">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+					&#160;
+				</fo:block>				
+			</fo:table-cell>
+			</fo:table-row>
+			
+			<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-right-style="none" border-top-style="none">
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								8. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								SOLO NUTRIZIONE PARENTERALE
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>		
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-right-style="solid" border-left-style="none" border-bottom-style="none"  border-top-style="none">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+					&#160;
+				</fo:block>				
+			</fo:table-cell>
+			</fo:table-row>
+			
+			<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-right-style="none" border-top-style="none">
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								9. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								NESSUN APPORTO DI CIBO PER VIA ORALE E NESSUN TIPO DI NUTRIZIONE ARTIFICIALE
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>		
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+					#k3#
+				</fo:block>				
+			</fo:table-cell>
+			</fo:table-row>
+			
+			<fo:table-row>
+			<fo:table-cell number-columns-spanned="5">
+				<fo:block text-align="start" font-weight="bold"  space-before="0.5cm">
+					SEZIONE L. CONDIZIONI DELLA CUTE
+				</fo:block>				
+			</fo:table-cell>			
+		</fo:table-row>
+		
+		
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					1
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" >
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					STADIO PI&#217; GRAVE DI ULCERA DA PRESSIONE
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-right-style="none">
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								0. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Nessuna ulcera da pressione
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>		
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-right-style="solid" border-top-style="solid" border-left-style="none" border-bottom-style="none">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+					&#160;
+				</fo:block>				
+			</fo:table-cell>
+			</fo:table-row>
+			
+			<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-right-style="none" border-top-style="none">
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" start-indent="0.2cm" >
+								1. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" start-indent="0.2cm" >
+								Area di arrossamento cutaneo persistente
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>		
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-right-style="solid" border-left-style="none" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" start-indent="0.2cm" >
+					&#160;
+				</fo:block>				
+			</fo:table-cell>
+			</fo:table-row>
+			
+			<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none"  border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-right-style="none" border-top-style="none">
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" start-indent="0.2cm" >
+								2. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" start-indent="0.2cm" >
+								Parziale perdita di strati della cute
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>		
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-right-style="solid" border-left-style="none" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" start-indent="0.2cm" >
+					&#160;
+				</fo:block>				
+			</fo:table-cell>
+			</fo:table-row>
+			
+			<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold"  start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-right-style="none" border-top-style="none">
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" start-indent="0.2cm" >
+								3. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" start-indent="0.2cm" >
+								Presenza di profondo cratere cutaneo
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>		
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-right-style="solid" border-left-style="none" border-bottom-style="none"  border-top-style="none">
+				<fo:block text-align="start" start-indent="0.2cm" >
+					&#160;
+				</fo:block>				
+			</fo:table-cell>
+			</fo:table-row>
+			
+			<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-right-style="none" border-top-style="none">
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" start-indent="0.2cm" >
+								4. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" start-indent="0.2cm" >
+								Perdita a tutto spessore di cute e sottocute con esposizione di muscolo ed osso
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>		
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-right-style="solid" border-left-style="none" border-bottom-style="none"  border-top-style="none">
+				<fo:block text-align="start" start-indent="0.2cm" >
+					&#160;
+				</fo:block>				
+			</fo:table-cell>
+			</fo:table-row>
+			<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-right-style="none" border-top-style="none">
+				<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" start-indent="0.2cm" >
+								6. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" start-indent="0.2cm" >
+								Non stadiabile (p.es per la presenza di predominante escara necrotica)
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>		
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start"  start-indent="0.2cm" >
+					#l1#
+				</fo:block>				
+			</fo:table-cell>
+			</fo:table-row>
+			<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					4
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					ALTRI PROBLEMI CUTANEI
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" number-columns-spanned="2">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" font-style="italic">
+					p.es. lesioni, ustioni di secondo o terzo grado, ferite chirurgiche in via di guarigione
+				</fo:block>				
+			</fo:table-cell>
+			</fo:table-row>
+			
+			<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none"  border-top-style="none">				
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+					0. No&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1. Si
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+					#l4#
+				</fo:block>				
+			</fo:table-cell>
+			</fo:table-row>
+			
+			<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					5
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-bottom-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					LACERAZIONI O TAGLI
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-bottom-style="none" number-columns-spanned="2">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+					Lacerazioni o tagli non chirurgici
+				</fo:block>				
+			</fo:table-cell>
+			</fo:table-row>
+			
+			<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"   border-top-style="none">				
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+					0. No&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1. Si
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+					#l5#
+				</fo:block>				
+			</fo:table-cell>
+			</fo:table-row>
+			
+			<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					7
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					PROBLEMI AI PIEDI CHE INTERFERISCONO CON IL CAMMINARE
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  number-columns-spanned="2" font-style="italic" border-bottom-style="none">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+					P.es.: calli, duroni, dita sovrapposte, problemi strutturali, infezioni, ulcere (diverse da 1 e 2)
+				</fo:block>				
+			</fo:table-cell>
+			</fo:table-row>
+			
+			<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-top-style="none" border-bottom-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-top-style="none" border-bottom-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"   border-top-style="none" border-bottom-style="none" border-right-style="none">				
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+					0. No
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-top-style="none" border-bottom-style="none" border-left-style="none">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+					&#160;
+				</fo:block>				
+			</fo:table-cell>
+			</fo:table-row>
+			<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-top-style="none" border-bottom-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-top-style="none" border-bottom-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"   border-top-style="none" border-bottom-style="none" border-right-style="none">				
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+					1. Si, ma la persona utente pu&#242; camminare
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-top-style="none" border-bottom-style="none" border-left-style="none">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+					&#160;
+				</fo:block>				
+			</fo:table-cell>
+			</fo:table-row>
+			
+			<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-top-style="none" border-bottom-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-top-style="none" border-bottom-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"   border-top-style="none" border-bottom-style="none" border-right-style="none">				
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+					2. Si, il problema limita la capacit&#224; della persona utente di deambulare
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-top-style="none" border-bottom-style="none" border-left-style="none">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+					&#160;
+				</fo:block>				
+			</fo:table-cell>
+			</fo:table-row>
+			
+			<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-top-style="none" border-bottom-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-top-style="none" border-bottom-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"   border-top-style="none" border-bottom-style="none" border-right-style="none">				
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+					3. Si, il problema impedisce alla persona utente di deambulare
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-top-style="none" border-bottom-style="none"  border-left-style="none">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+					&#160;
+				</fo:block>				
+			</fo:table-cell>
+			</fo:table-row>
+			
+			<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-top-style="none" >
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-top-style="none" >
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"   border-top-style="none" >				
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+					4. Si, ma la persona utente non cammina per altre ragioni
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+					#l7#
+				</fo:block>				
+			</fo:table-cell>
+			</fo:table-row>
+			
+			
+			<fo:table-row>
+			<fo:table-cell number-columns-spanned="5">
+			
+			<fo:block break-after="page"></fo:block>
+				<fo:block text-align="start" font-weight="bold"  space-before="0.5cm">
+					SEZIONE N. TRATTAMENTO E PREVENZIONE
+				</fo:block>				
+			</fo:table-cell>			
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					2
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					TRATTAMENTI SPECIALI, PIANI DI TRATTAMENTO
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" number-columns-spanned="2">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+					Trattementi speciali ricevuti o previsti NEGLI ULTIMI 3 GIORNI (o dalla data dell'ultima valutazione se inferiore a 3 giorni)
+				</fo:block>
+			</fo:table-cell>
+			</fo:table-row>
+			<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-bottom-style="none" border-top-style="none">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								0. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Non effettuati, non programmati
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+						<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" start-indent="0.2cm" >
+								1. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" start-indent="0.2cm" >
+								Programmati, non effettuati
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+						<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" start-indent="0.2cm" >
+								2. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" start-indent="0.2cm" >
+								Effettuati in 1-2 degli ultimi 3 giorni
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>		
+						<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" start-indent="0.2cm" >
+								3. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" start-indent="0.2cm" >
+								Effettuati quotidianamente negli ultimi 3 giorni
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>																
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-left-style="none" border-top-style="none">
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="end" font-weight="bold" space-before="0.2cm" start-indent="0.2cm" font-style="italic">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" number-columns-spanned="2">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					TRATTAMENTI SPECIALI
+				</fo:block>
+			</fo:table-cell>
+			
+		</fo:table-row>
+		
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="end" font-weight="bold" space-before="0.2cm" start-indent="0.2cm" font-style="italic">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-top-style="none"  border-bottom-style="none">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								a. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Chemioterapia
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#n2a#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="end" font-weight="bold" space-before="0.2cm" start-indent="0.2cm" font-style="italic">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-top-style="none"  border-bottom-style="none">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								b. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Dialisi
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#n2b#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="end" font-weight="bold" space-before="0.2cm" start-indent="0.2cm" font-style="italic">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-top-style="none"  border-bottom-style="none">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								d. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Terapie e.v.
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#n2d#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="end" font-weight="bold" space-before="0.2cm" start-indent="0.2cm" font-style="italic">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-top-style="none"  border-bottom-style="none">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								e. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Ossigeno-terapia
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#n2e#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="end" font-weight="bold" space-before="0.2cm" start-indent="0.2cm" font-style="italic">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-top-style="none"  border-bottom-style="none">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								f. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Terapia radiante
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#n2f#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="end" font-weight="bold" space-before="0.2cm" start-indent="0.2cm" font-style="italic">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-top-style="none"  border-bottom-style="none">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								g. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Aspirazione
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#n2g#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="end" font-weight="bold" space-before="0.2cm" start-indent="0.2cm" font-style="italic">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-top-style="none"  border-bottom-style="none">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								h. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Cura della tracheostomia
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#n2h#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="end" font-weight="bold" space-before="0.2cm" start-indent="0.2cm" font-style="italic">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-top-style="none"  border-bottom-style="none">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								i. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Trasfusioni
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#n2i#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-bottom-style="none" border-top-style="none">
+				<fo:block text-align="end" font-weight="bold" space-before="0.2cm" start-indent="0.2cm" font-style="italic">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-top-style="none"  border-bottom-style="none">
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								j. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Ventilazione assistita (invasiva o non invasiva)
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#n2j#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+		
+		<fo:table-row>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-top-style="none">
+				<fo:block text-align="start" font-weight="bold" space-before="0.2cm" start-indent="0.2cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" border-top-style="none">
+				<fo:block text-align="end" font-weight="bold" space-before="0.2cm" start-indent="0.2cm" font-style="italic">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid"  border-right-style="none" border-top-style="none"  >
+			<fo:table>
+				<fo:table-column column-width="0.5cm"/>
+				<fo:table-column column-width="8.5cm"/>	
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								k. 
+							</fo:block>	
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm" >
+								Cura della ferita
+							</fo:block>	
+						</fo:table-cell>
+						</fo:table-row>	
+													
+				</fo:table-body>
+			</fo:table>				
+			</fo:table-cell>
+			<fo:table-cell border-width="0.1mm" border-style="solid" >
+				<fo:block text-align="start" space-before="0.2cm" start-indent="0.2cm">
+					#n2k#
+				</fo:block>				
+			</fo:table-cell>
+		</fo:table-row>
+	</fo:table-body>
+</fo:table>
+    </fo:flow> <!-- closes the flow element-->
+  </fo:page-sequence> <!-- closes the page-sequence -->
+<!-- mfo:section.end -->
+</fo:root>
+
+

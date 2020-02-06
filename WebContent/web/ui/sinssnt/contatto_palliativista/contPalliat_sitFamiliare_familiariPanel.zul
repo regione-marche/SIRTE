@@ -1,0 +1,37 @@
+<vlayout sclass="asterLayout asterOverflow asterLayoutLastSpace" height="100%">
+
+	<hlayout>
+		<label value="${c:l('schedaPalliat.familiariPanel.familiariGradoParentela')}:" hflex="20%" />
+		<caribeltextbox id="fam_grado_par" hflex="60%" db_name="skm_interlocutori" style="resize:none"/>
+		<label hflex="20%" />
+	</hlayout>
+	
+	<hlayout>
+		<label value="${c:l('schedaPalliat.familiariPanel.gradoConsapevolezza')}:" hflex="20%" />
+		<caribelcombobox id="grado_consapevolezza" hflex="25%" db_name="skm_consap_fam" />
+		<label hflex="55%" />
+	</hlayout>
+	
+	<hlayout>
+		<label value="${c:l('schedaPalliat.familiariPanel.quantiSonoConsapevoli')}:" hflex="20%" />
+		<caribelradiogroup hflex="15%" id="quanti_consapevoli" db_name="skm_consap_fam_t">
+			<radio id="consapevoli_tutti" label="${c:l('schedaPalliat.familiariPanel.tutti')}" value="0" checked="true" />
+			<radio id="consapevoli_tutti_eccetto" label="${c:l('schedaPalliat.familiariPanel.tuttiEccetto')}" value="1" />
+		</caribelradiogroup>
+		<caribeltextbox id="familiari_consapevoli" db_name="skm_consap_fam_ecc" hflex="45%" 
+						rows="2" style="resize:none" readonly="true"/>
+		<label hflex="20%" />
+	</hlayout>
+	
+	<hlayout>
+		<label value="${c:l('schedaPalliat.familiariPanel.preferenzaLuogoCura')}:" hflex="20%" />
+		<caribeltextbox id="prefFam_luogo_cura" hflex="60%" db_name="skm_pref_luogo_fam" style="resize:none"
+						maxlength="100" rows="2"/>
+		<label hflex="20%" />
+	</hlayout>
+	
+
+</vlayout>
+
+
+

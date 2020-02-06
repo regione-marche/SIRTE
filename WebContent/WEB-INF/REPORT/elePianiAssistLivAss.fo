@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+
+	<!-- mfo:section.start="layout" rem="IMPOSTAZIONI DI PAGINA" -->
+	<fo:layout-master-set>   
+		<fo:simple-page-master master-name="simple" page-height="29.7cm"
+			page-width="21.0cm" margin-top="0.5cm" margin-bottom="0.5cm"
+			margin-left="1cm" margin-right="1cm">
+			<fo:region-body margin-top="2.5cm" margin-bottom="2cm" />
+			<fo:region-before extent="2cm" />
+			<fo:region-after extent="1cm" />
+		</fo:simple-page-master>
+	</fo:layout-master-set>
+	<fo:page-sequence master-name="simple">
+		<fo:static-content flow-name="xsl-region-before">
+			<fo:table font-size="10pt" width="auto">
+				<fo:table-column column-width="16cm" />
+				<fo:table-column column-width="3cm" />
+				<fo:table-body>
+					<fo:table-row height="10pt">
+						<fo:table-cell text-align="start">
+							<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+								font-weight="bold">ELENCO ASSISTITI PER LIVELLO ASSISTENZIALE
+								 NEL PERIODO #d1# - #d2#</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="end">
+							<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+								Pag. <fo:page-number /> di <fo:page-number-citation
+									ref-id="last-page" />
+							</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+				</fo:table-body>
+			</fo:table>
+			<fo:block font-size="10pt" font-weight="bold"
+				font-family="sans-serif" line-height="12pt" background-color="white"
+				color="black" text-align="start" padding-top="0.5cm"
+				padding-bottom="0.1mm">
+				#filtri#
+	</fo:block>
+			<fo:block font-size="10pt" font-weight="bold"
+				font-family="sans-serif" line-height="12pt" background-color="white"
+				color="black" text-align="start" padding-top="2pt"
+				padding-bottom="0.1mm">
+				#filtri1#
+	</fo:block>
+		</fo:static-content>
+		<fo:static-content flow-name="xsl-region-after">
+			<fo:table font-size="8pt" width="auto">
+				<fo:table-column column-width="10cm" />
+				<fo:table-column column-width="9cm" />
+				<fo:table-body>
+					<fo:table-row height="10pt">
+						<fo:table-cell text-align="start">
+							<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">#txt#</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="end">
+							<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">elaborato del #data_stampa#(elePianiAssistLivAss.fo)</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+				</fo:table-body>
+			</fo:table>
+		</fo:static-content>
+		<fo:flow flow-name="xsl-region-body">
+			<!-- mfo:section.end -->
+			<!--mfo:section.start="zona" -->
+			<fo:block font-size="10pt" font-weight="bold" space-before="10pt"
+				font-family="sans-serif" line-height="12pt" background-color="white"
+				color="black" text-align="start" space-before.optimum="3pt"
+				padding-top="0.2cm" padding-bottom="0.1mm">
+				Zona : #descrizione_zona# - Distretto : #des_distr# - #pace# : #descrizione#
+			</fo:block>
+			<!--mfo:section.end -->
+
+			<!-- mfo:section.start="totali" -->
+			<fo:table font-size="10pt" width="auto" space-after="5pt">
+				<fo:table-column column-width="19cm" />
+				<fo:table-body>
+					<fo:table-row>
+						<!-- <fo:table-cell text-align="end" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">-->
+						<fo:table-cell text-align="end">
+							<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+								<fo:table font-size="10pt" width="auto" space-after="5pt">
+									<fo:table-column column-width="17cm" />
+									<fo:table-column column-width="2cm" />
+									<fo:table-body>
+										<fo:table-row>
+											<fo:table-cell text-align="end">
+												<fo:block start-indent="1mm" end-indent="1mm"
+													padding-top="0.5mm">
+													<fo:inline font-weight="bold">Totale assistiti #descrPace#</fo:inline>
+												</fo:block>
+											</fo:table-cell>
+											<fo:table-cell text-align="end">
+												<fo:block start-indent="1mm" end-indent="1mm"
+													padding-top="0.5mm">
+													<fo:inline font-weight="bold"> #numero_assist#</fo:inline>
+												</fo:block>
+											</fo:table-cell>
+										</fo:table-row>
+										<!-- mfo:section.end -->
+										<!-- mfo:section.start="totali_dettaglio" -->
+										<fo:table-row>
+											<fo:table-cell text-align="end">
+												<fo:block start-indent="1mm" end-indent="1mm"
+													padding-top="0.5mm">
+							di cui #descrizione_livello#</fo:block>
+											</fo:table-cell>
+											<fo:table-cell text-align="end">
+												<fo:block start-indent="1mm" end-indent="1mm"
+													padding-top="0.5mm">
+													 #numero_assist#
+												</fo:block>
+											</fo:table-cell>
+										</fo:table-row>
+										<!-- mfo:section.end -->
+										<!-- mfo:section.start="totali_dettaglio_fine" -->
+									</fo:table-body>
+								</fo:table>
+							</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+				</fo:table-body>
+			</fo:table>
+			<!-- mfo:section.end -->
+			<!-- mfo:section.start="totale_Sintetico" -->
+			<fo:table font-size="10pt" width="auto" space-after="5pt">
+				<fo:table-column column-width="19cm" />
+				<fo:table-body>
+					<fo:table-row>
+						<!-- <fo:table-cell text-align="end" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">-->
+						<fo:table-cell text-align="end">
+							<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+								<fo:table font-size="10pt" width="auto" space-after="5pt">
+									<fo:table-column column-width="17cm" />
+									<fo:table-column column-width="2cm" />
+									<fo:table-body>
+										<fo:table-row>
+											<fo:table-cell text-align="center" number-columns-spanned="2">
+												<fo:block start-indent="1mm" end-indent="1mm"
+													padding-top="0.5mm">
+													<fo:inline font-weight="bold">Totale Generale</fo:inline>
+												</fo:block>
+											</fo:table-cell>
+										</fo:table-row>
+										<!-- mfo:section.end -->
+										<!-- mfo:section.start="totale_Sintetico_dett" -->
+										<fo:table-row>
+											<fo:table-cell text-align="end">
+												<fo:block start-indent="1mm" end-indent="1mm"
+													padding-top="0.5mm">
+							#descrizione_livello#</fo:block>
+											</fo:table-cell>
+											<fo:table-cell text-align="end">
+												<fo:block start-indent="1mm" end-indent="1mm"
+													padding-top="0.5mm">
+													 #numero_assist#
+												</fo:block>
+											</fo:table-cell>
+										</fo:table-row>
+										<!-- mfo:section.end -->
+										<!-- mfo:section.start="totale_Sintetico_fine" -->
+									</fo:table-body>
+								</fo:table>
+							</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+				</fo:table-body>
+			</fo:table>
+			<!-- mfo:section.end -->
+			<!-- mfo:section.start="totali_dettaglio_html" -->
+			<!-- mfo:section.end -->
+			<!-- mfo:section.start="iniziotabConclusioni" -->
+			<fo:table font-size="10pt" width="auto" space-after="10pt"
+				table-omit-header-at-break="false" border-width="1pt">
+				<fo:table-column column-width="1.5cm" />
+				<fo:table-column column-width="5cm" />
+				<fo:table-column column-width="2cm" />
+				<fo:table-column column-width="2cm" />
+				<fo:table-column column-width="3.5cm" />
+				<fo:table-column column-width="5cm" />
+
+				<fo:table-header background-color="rgb(200,200,200)"
+					font-weight="bold">
+					<fo:table-row height="10pt" font-size="8pt">
+						<fo:table-cell text-align="start" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+								Cartella </fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="start" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+								Assistito</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="start" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+								Data nascita</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="start" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+								Data scala</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="start" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+								Livello assistenziale</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="start" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+								Prevalenti</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+				</fo:table-header>
+				<fo:table-body>
+					<!-- mfo:section.end -->
+					<!-- mfo:section.start="tabellaConclusioni" -->
+					<fo:table-row height="15pt" font-size="8pt">
+						<fo:table-cell text-align="start" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+								#n_cartella#</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="start" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+								#assistito#</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="center" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+								#dt_nascita#</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="center" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+								#dt_scala#</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="start" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+								#liv_intensita#</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="start" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+								#prevalente#</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					<!-- mfo:section.end -->
+					<!-- mfo:section.start="finetabConclusioni" -->
+				</fo:table-body>
+			</fo:table>
+			<!-- mfo:section.end -->
+			<!-- mfo:section.start="messaggio" -->
+			<fo:block font-size="12pt" font-weight="bold"
+				font-family="sans-serif" line-height="10pt" background-color="white"
+				color="black" text-align="center" padding-top="3pt">
+				NON SONO STATE REPERITE INFORMAZIONI DA STAMPARE
+    </fo:block>
+			<!-- mfo:section.end  -->
+
+			<!-- mfo:section.start="finale" -->
+			<fo:block id="last-page" />
+		</fo:flow>
+	</fo:page-sequence>
+	<!-- mfo:section.end -->
+</fo:root>
+
+

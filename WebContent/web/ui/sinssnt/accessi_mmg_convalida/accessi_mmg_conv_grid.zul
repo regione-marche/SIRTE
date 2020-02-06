@@ -1,0 +1,172 @@
+<window title="${c:l('menu.operazioni.accessi_mmg_convalida')}"
+	apply="it.caribel.app.sinssnt.controllers.accessi_mmg_convalida.AccessiMmgConvalidaCtrl"
+	id="myWindow"
+	border="normal"
+	width="950px" height="550px" vflex="false" 
+	closable="true" sizable="true" position="center" maximizable="true"
+	minwidth="950"  minheight="550">
+<style>
+	tr.z-listbox-row-white {
+	    background: none repeat scroll 0% 0% #FFFFFF;
+	}
+	tr.z-listbox-row-pink {
+	    background: none repeat scroll 0% 0% pink;
+	}
+	tr.z-listbox-row-celeste {
+	    background: none repeat scroll 0% 0% #5AE6FC;
+	}
+	tr.z-listbox-row-red {
+	    background: none repeat scroll 0% 0% red;
+	}
+	tr.z-listbox-row-orange {
+	    background: none repeat scroll 0% 0% #ECB022;
+	}
+	tr.z-listbox-row-yellow {
+	    background: none repeat scroll 0% 0% yellow;
+	}
+	tr.z-listbox-row-gray {
+	    background: none repeat scroll 0% 0% #BDC3C1;
+	}
+	tr.z-listbox-row-verdino {
+	    background: none repeat scroll 0% 0% #98DB98;
+	}
+	tr.z-listitem-seld .z-listcell-cnt, tr.z-listitem-over-seld .z-listcell-cnt, tr.z-listitem-over .z-listcell-cnt {
+	    color: black;
+	}
+	
+</style>
+	<vlayout vflex="true" spacing="0px">
+				
+			
+			
+			<hlayout spacing="0px">
+				<toolbar height="26px" align="start" hflex="true">
+					<!-- 
+					<toolbarbutton id="btn_print"
+						image="~./zul/img/print24x24.png"
+						tooltiptext="${c:l('btn.print')}"
+						visible="${arg.visible_btn_print}" />
+					<toolbarbutton id="btn_new"
+						image="~./zul/img/new24x24.png"
+						tooltiptext="${c:l('btn.new')}"
+						visible="${arg.visible_btn_new}" />
+					<toolbarbutton id="btn_open"
+						image="~./zul/img/open24x24.png"
+						tooltiptext="${c:l('btn.open')}"
+						visible="${arg.visible_btn_open}" />
+					<toolbarbutton id="btn_transfer"
+						image="~./zul/img/transfer24x24.png"
+						tooltiptext="${c:l('btn.transfer')}"
+						visible="${arg.visible_btn_transfer}" />
+					-->
+					<toolbarbutton id="btn_clear"
+						image="~./zul/img/erase24x24.png"
+						tooltiptext="${c:l('btn.clear')}"
+						/>
+					<toolbarbutton id="btn_find"
+						image="~./zul/img/find24x24.png"
+						tooltiptext="${c:l('btn.find')}"
+						/>
+					<toolbarbutton id="btn_forza"
+						image="/web/img/settings.gif"
+						tooltiptext="${c:l('accessi_mmg_convalida.btn_forza.tooltiptext')}"
+						/>	
+				</toolbar>
+		</hlayout>
+			
+			
+			
+			
+			<vlayout  sclass="asterLayout">
+				<hlayout valign="middle" width="100%">
+					<label hflex="20%"  value="${c:l('accessi_mmg_convalida.tipo_del')}:" />				
+					<div hflex="25%" align="left">
+						<caribelradiogroup id="tipo_data" db_name="tipo_data">
+							<radio value="1" label="${c:l('accessi_mmg_convalida.tipo_data_prestazione')}"  checked="true" />
+							<radio value="2" label="${c:l('accessi_mmg_convalida.tipo_data_registrazione')}"/>	
+						</caribelradiogroup>
+					</div>
+					<div hflex="20%" align="left">
+						<caribelcheckbox label="${c:l('accessi_mmg_convalida.check_errati')}" hflex="15%" id="ck_errati" value="S" />
+						<caribelcheckbox label="${c:l('accessi_mmg_convalida.check_anomali')}" hflex="15%" id="ck_anomali" value="S" />
+			 			<caribelcheckbox label="${c:l('accessi_mmg_convalida.check_corretti')}" hflex="15%" id="ck_corretti" value="S" />
+					</div>
+					<label hflex="10%"
+						value="${c:l('regPrestazioniMMG.anno')}/${c:l('regPrestazioniMMG.mese')}:" />
+					<caribelintbox hflex="10%" id="reg_anno"
+						maxlength="4" required="true" />
+					<caribelcombobox hflex="15%" id="cbx_reg_mese"
+						required="true" />
+				</hlayout>
+				<!-- 
+				<hlayout id="riga_assistito">
+					<label value="${c:l('common.assistito')}:"
+						hflex="20%" />
+					<caribelSearch id="assistito" hflex="80%"
+						id_cod="n_cartella"
+						id_descr="cognomeAss"
+						hflex_cod="20%" hflex_descr="80%"
+						ctrl="it.caribel.app.common.controllers.cartella.CartellaSearchCtrl" />
+				</hlayout>
+				 -->
+				<hlayout id="riga_medico">
+					<label hflex="20%"
+						value="${c:l('regPrestazioniMMG.medico')}:" />
+					<caribelSearch id="medicoSearch" hflex="80%" maxlength="6" id_cod="cod_medico"
+						id_descr="desc_medico" hflex_cod="20%" hflex_descr="80%"
+						ctrl="it.caribel.app.common.controllers.medici.MediciSearchCtrl" />
+				</hlayout>
+				
+
+				<hlayout>
+					<label hflex="20%" value="${c:l('accessi_mmg_convalida.legenda')}:" />
+					<div align="left" hflex="80%">
+						<label value="Prestazione caricata"	  		style="background: #FFFFFF; white-space: nowrap;"  />
+						<label value="Prestazione da caricare"		style="background: #98DB98; white-space: nowrap;"  />
+						<label value="Prestazione rimossa" 			style="background: #BDC3C1; white-space: nowrap;"  />
+						<label value="Manca autorizzazione" 		style="background: red; white-space: nowrap;"  />
+						<label value="Autor. fuori range" 			style="background: #ECB022; white-space: nowrap;"  />
+						<label value="Prestazione duplicata" 		style="background: yellow; white-space: nowrap;"  />
+						<label value="Non esiste l'assistito" 		style="background: pink; white-space: nowrap;"  />
+						<label value="Non esiste la prestazione" 	style="background: #5AE6FC; white-space: nowrap;"  />
+					</div>
+				</hlayout>
+			</vlayout>
+			
+			<caribelPaging pageSize="10"/>
+			<caribellistbox sizedByContent="true" checkmark="true" multiple="true" vflex="true" hflex="true" >
+				<frozen columns="5"/>
+				<listhead sizable="true" >
+					<caribellistheader id="colCheck" width="31px" label=" " align="center"  />
+					<caribellistheader id="colDel"						label="" width="3em" sort="auto" />	  		
+					<caribellistheader db_name="flag_caricato"	  		label="${c:l('accessi_mmg_convalida.flag_caricato')}"/>	  		
+					<caribellistheader db_name="medico"	  				label="${c:l('accessi_mmg_convalida.medico')}"/>		
+					<caribellistheader db_name="data_prestazione"	  	label="${c:l('accessi_mmg_convalida.data_prestazione')}"/>	  		
+					<caribellistheader db_name="desc_tipo_prestazione"	label="${c:l('accessi_mmg_convalida.desc_tipo_prestazione')}"/>	  		
+					<caribellistheader db_name="cod_prestazione"	  	label="${c:l('accessi_mmg_convalida.cod_prestazione')}"/>	  		
+					<caribellistheader db_name="des_prestazione"	  	label="${c:l('accessi_mmg_convalida.des_prestazione')}"/>	  		
+					<caribellistheader db_name="n_cartella"	  			label="${c:l('accessi_mmg_convalida.n_cartella')}"/>
+					<caribellistheader db_name="cognome"	  			label="${c:l('accessi_mmg_convalida.cognome')}"/>	  				
+					<caribellistheader db_name="nome"	  				label="${c:l('accessi_mmg_convalida.nome')}"/>	  		
+					<caribellistheader db_name="cod_fiscale"	  		label="${c:l('accessi_mmg_convalida.cod_fiscale')}"/>	  		
+					<caribellistheader db_name="sesso"	  				label="${c:l('accessi_mmg_convalida.sesso')}"/>	  				
+					<caribellistheader db_name="data_nascita"	  		label="${c:l('accessi_mmg_convalida.data_nascita')}"/>	  		
+					<caribellistheader db_name="id_trasmissione"	  	label="${c:l('accessi_mmg_convalida.id_trasmissione')}"/>	  	
+					<caribellistheader db_name="data_reg"	  			label="${c:l('accessi_mmg_convalida.data_reg')}"/>	  			
+					<caribellistheader db_name="cod_operatore"	  		label="${c:l('accessi_mmg_convalida.cod_operatore')}"/>  	
+					<caribellistheader db_name="des_errore"	  			label="${c:l('accessi_mmg_convalida.des_errore')}"/>	  		
+					<caribellistheader db_name="data_caricato"	  		label="${c:l('accessi_mmg_convalida.data_caricato')}"/>
+					<caribellistheader db_name="descr_forzatura"	  	label="${c:l('accessi_mmg_convalida.forzatura')}"/>
+				</listhead>
+			</caribellistbox>
+	</vlayout>	
+</window>  
+    
+    
+    
+    
+    
+    
+    
+    
+    

@@ -1,0 +1,186 @@
+<?component name="principale" 	     inline="true" macroURI="/web/ui/sinssnt/segreteriaOrganizzativa/richiesta_mmg_principale.zul"?>
+<?component name="patologie"    	 inline="true" macroURI="~./ui/sinssnt/segreteriaOrganizzativa/contatto_medico_patologie.zul"?>
+<!--  <?component name="prob_sanitari" 	inline="true" macroURI="/web/ui/sinssnt/segreteriaOrganizzativa/richiesta_mmg_prob_sani.zul"?>-->
+<?component name="quadro_san" 	     inline="true" macroURI="~./ui/sinssnt/segreteriaOrganizzativa/richiesta_mmg_quadro_sani.zul"?>
+<?component name="quadro_socio_ass"  inline="true" macroURI="~./ui/sinssnt/segreteriaOrganizzativa/richiesta_mmg_quadro_soc_ass.zul"?>
+
+<window id="richiestaMMGForm" title="${c:l('RichiestaMMG.formTitle')}"
+	apply="it.caribel.app.sinssnt.controllers.segreteriaOrganizzativa.RichiestaMMGFormCtrl"
+	border="normal" vflex="true" hflex="true"
+	sclass="asterOverflow">
+
+<vlayout vflex="true" hflex="true">
+
+		<caribelFormMenu visible_btn_print="true" />
+		
+		<vlayout vflex="true" hflex="true" sclass="asterLayout">
+		
+		<hlayout width="100%" visible="false">
+			<label value="${c:l('SchedaInfForm.cartella')}:"
+				hflex="10%" />
+			<caribelintbox id="n_cartella" db_name="n_cartella"
+				hflex="15%" maxlength="13" required="true" readonly="true" isDbKey="true"/>
+			<caribelintbox id="id_rich" db_name="id_rich"
+				hflex="15%" maxlength="13" readonly="true"  isDbKey="true" value="0"/>	
+		<caribelintbox id="id_scheda_so" db_name="id_scheda_so"
+				hflex="15%" maxlength="13" readonly="true"/>	
+		</hlayout>
+	
+		<tabbox vflex="true" width="100%" sclass="nav_tabs" id="tabbox_rich_mmg">
+			<tabs id="tabs_richiesta_mmg">
+				<tab id="principale_tab" label="${c:l('RichiestaMMG.principale.richiesta')}" />
+				<tab id="anamnesi_tab" label="${c:l('SchedaInfForm.tabAnamnesi')}" />
+				<!-- <tab id="prob_sanitari_tab" label="${c:l('RichiestaMMG.prob_sanitari')}" /> -->
+				<tab id="quadro_san_tab" label="${c:l('RichiestaMMG.quadro_san')}" />
+				<tab id="tab_allergie" label="${c:l('intolleranze.allergie.formTitle')}" />
+				<tab id="pquadro_socio_ass_tab" label="${c:l('RichiestaMMG.quadro_socio_ass')}" />
+			</tabs>
+			<tabpanels id="tabpanels_richiesta_mmg"  apply="it.caribel.app.sinssnt.controllers.segreteriaOrganizzativa.QuadroSanitarioMMGCtrl">
+				<tabpanel id="principale">
+					<principale />
+				</tabpanel>
+				<tabpanel id ="patologie">
+				 
+					<!--
+					<patologie />
+					-->
+					 
+				<groupbox closable="false" style="text-align:left">
+					<caption>
+						<div id="patologiaMMG">
+							<label value="${c:l('diagnosi.patologie.lista.patologie')}">	</label>
+						</div>
+					</caption>
+					<vlayout sclass="asterLayout" width="100%">
+						<hlayout>
+							<label hflex="20%" value="${c:l('diagnosi.data')}:" />
+							<caribeldatebox hflex="15%" id="data_diag" 
+										db_name="data_diag" required="true"/>
+							<label hflex="65%" value=""></label>		
+						</hlayout>						
+						<hlayout width="100%">
+							<label hflex="20%" value="${c:l('diagnosi.patologia1')}:" />
+							<caribelSearch id="patologiadet1" 
+								hflex_cod="20%" hflex_descr="58%" hflex="78%"
+								required="true" db_name_cod="diag1"
+								db_name_descr="desc_diag1" id_cod="pato1"
+								id_descr="desc_pato1" 
+							 ctrl="it.caribel.app.sinssnt.controllers.tabelle.diagnosi.DiagnosiSearchCtrl" />
+							 <label hflex="2%" value=""></label> 
+						</hlayout>
+						
+						<hlayout width="100%">
+							<label hflex="20%" value="${c:l('diagnosi.patologia2')}:" />
+							<caribelSearch hflex_cod="20%" hflex_descr="58%" hflex="78%"
+								required="false" db_name_cod="diag2"
+								db_name_descr="desc_diag2" id_cod="pato2"
+								id_descr="desc_pato2" 
+							 ctrl="it.caribel.app.sinssnt.controllers.tabelle.diagnosi.DiagnosiSearchCtrl" />
+							 <label hflex="2%" value=""></label> 
+						</hlayout>
+
+						<hlayout width="100%">
+							<label hflex="20%" value="${c:l('diagnosi.patologia3')}:" />
+							<caribelSearch hflex_cod="20%" hflex_descr="58%" hflex="78%"
+								required="false" db_name_cod="diag3"
+								db_name_descr="desc_diag3" id_cod="pato3"
+								id_descr="desc_pato3" 
+							 ctrl="it.caribel.app.sinssnt.controllers.tabelle.diagnosi.DiagnosiSearchCtrl" /> 
+							 <label hflex="2%" value=""></label>
+						</hlayout>
+						
+						<hlayout width="100%">
+							<label hflex="20%" value="${c:l('diagnosi.patologia4')}:" />
+							<caribelSearch hflex_cod="20%" hflex_descr="58%" hflex="78%"
+								required="false" db_name_cod="diag4"
+								db_name_descr="desc_diag4" id_cod="pato4"
+								id_descr="desc_pato4" 
+							 ctrl="it.caribel.app.sinssnt.controllers.tabelle.diagnosi.DiagnosiSearchCtrl" />
+							 <label hflex="2%" value=""></label> 
+						</hlayout>
+						
+						<hlayout width="100%">
+							<label hflex="20%" value="${c:l('diagnosi.patologia5')}:" />
+							<caribelSearch hflex_cod="20%" hflex_descr="58%" hflex="78%"
+								required="false" db_name_cod="diag5"
+								db_name_descr="desc_diag5" id_cod="pato5"
+								id_descr="desc_pato5" 
+							 ctrl="it.caribel.app.sinssnt.controllers.tabelle.diagnosi.DiagnosiSearchCtrl" />
+							 <label hflex="2%" value=""></label>
+						</hlayout>
+					</vlayout>
+				</groupbox>
+					
+					<vlayout width="100%"  sclass="asterLayout">
+						<hlayout width="100%">
+							<label hflex="100%"></label>
+						</hlayout>
+						<hlayout width="100%">
+							<label hflex="20%"
+								value="${c:l('SchedaInfForm.patologie.Anamnesi.remota')}:" />
+							<caribeltextbox hflex="80%"
+								id="ski_anamnesi_1" db_name="ski_anamnesi_1" maxlength="2000"
+								multiline="true" rows="4" sclass="asterTextArea" />
+							
+						</hlayout>
+						<hlayout width="100%">
+							<label hflex="20%"
+								value="${c:l('SchedaInfForm.patologie.Anamnesi.prossima')}:" />
+							<caribeltextbox hflex="80%"
+								id="ski_anamnesi_2" db_name="ski_anamnesi_2" maxlength="2000"
+								multiline="true" rows="4" sclass="asterTextArea" />
+						
+						</hlayout>
+						
+	
+			<groupbox hflex="100" closable="false" vflex="100%" style="text-align:left">
+				<caption>
+					<div id="elevato_livello">
+						<label value="${c:l('RichiestaMMG.patologie.elevato_livello')}">	</label>
+					</div>
+				</caption>
+				<vlayout sclass="asterLayout">
+															
+						<hlayout width="100%">
+							<label hflex="18.5%"/>
+							<caribelcheckbox hflex="4%" value="S" 
+								id="fase_terminale" db_name="fase_terminale" />
+							<label hflex="77.5%"
+								value="${c:l('RichiestaMMG.patologie.fase_terminale')}" sclass="normalText" />		
+						</hlayout>
+						<hlayout width="100%">		
+						<label hflex="18.5%"/>			
+							<caribelcheckbox hflex="4%" value="S" 
+								id="neuro_degen" db_name="neuro_degen" />
+							<label hflex="77.5%"
+								value="${c:l('RichiestaMMG.patologie.neuro_degen')}" sclass="normalText" />							
+						</hlayout>
+						<hlayout width="100%">
+						<label hflex="18.5%"/>
+							<caribelcheckbox hflex="4%" value="S" 
+								id="croniche_avanzate" db_name="croniche_avanzate"  />
+							<label hflex="77.5%"
+								value="${c:l('RichiestaMMG.patologie.croniche_avanzate')}" sclass="normalText" />
+						</hlayout>
+						<hlayout width="100%"/>
+					</vlayout>
+			</groupbox>	
+					</vlayout>
+				</tabpanel>
+				<!-- <tabpanel id="prob_sanitari">
+					<prob_sanitari />
+				</tabpanel> -->
+				<tabpanel id="quadro_san">
+					<quadro_san />
+				</tabpanel>
+				<tabpanel id="quadro_into_alle">
+					<!-- aggiungo il pannello dal controller-->
+				</tabpanel>
+				<tabpanel id="quadro_socio_ass">
+					<quadro_socio_ass />
+				</tabpanel>				
+			</tabpanels>
+		</tabbox>
+	</vlayout>
+</vlayout>
+</window>

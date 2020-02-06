@@ -1,0 +1,6 @@
+<?page title="AsTer" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window apply="it.caribel.zk.generic_controllers.CaribelForwardComposer">
+
+</window>
+</zk>

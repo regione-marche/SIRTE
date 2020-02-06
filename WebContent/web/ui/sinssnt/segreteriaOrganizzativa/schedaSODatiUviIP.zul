@@ -1,0 +1,61 @@
+<vlayout >
+<hlayout width="100%">
+					<label hflex="18%" id="lbx_case_manager" 
+					value="${c:l('menu.segreteria.organizzativa.scheda.dati.uvi.case.manager')}:" />
+					<caribelSearch id="searchCaseManager" hflex="60%" 
+						db_name_cod="cod_case_manager" db_name_descr="cod_case_manager_descr"
+						id_cod="cod_case_manager" id_descr="cod_case_manager_descr"
+						ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl" />
+					<!-- 
+					<caribelcheckbox hflex="4%" value="S" 
+						id="case_manager_mmg_pai" db_name="case_manager_mmg"  />
+						<label hflex="16%"
+									value="${c:l('menu.segreteria.organizzativa.scheda.uvm.case.manager.mmg.pai')}" sclass="normalText" />
+					 -->
+<!-- 					<label value="" hflex="22%" /> -->
+					<button id="btn_obiettivi" hflex="22%" label="Ricalcola obiettivi" forward="onCalcolaObiettivi"/>
+				</hlayout>
+				<hlayout width="100%">
+					<label value="${c:l('menu.segreteria.organizzativa.scheda.dati.uvi.case.manager.telefono')}:" hflex="18%" />
+					<caribeltextbox hflex="25%" id="telefono1" db_name="telefono1" maxlength="20" readonly="true" />
+					<label value="" hflex="57%" />
+				</hlayout>
+				<hlayout>
+					<label hflex="18%" value="${c:l('menu.segreteria.organizzativa.scheda.dati.uvi.presa.carico.livello')}:" 
+					id="lbx_presacarico_livello"/>
+					<caribelcombobox hflex="40%" db_name="presa_carico_livello"  id="cbx_presa_carico_livello" />
+					<label hflex="25%" value="${c:l('menu.segreteria.organizzativa.scheda.dati.uvi.presa.carico.data')}:" />
+					<caribeldatebox id="dt_presa_carico_livello" hflex="15%" db_name="dt_presa_carico_livello"  />						
+					<label hflex="2%" />
+				</hlayout>
+		<!-- 		<hlayout width="100%"> -->
+		<!-- 			<label hflex="18%" value="${c:l('menu.segreteria.organizzativa.scheda.dati.uvi.valutazione')}:"  /> -->
+		<!-- 			<caribeltextbox hflex="80%" id="pr_valutazione" db_name="pr_valutazione" maxlength="2000" -->
+		<!-- 											multiline="true" rows="3" sclass="asterTextArea" /> -->
+		<!-- 			<label value="" hflex="2%" /> -->
+		<!-- 		</hlayout> -->
+				<hlayout width="100%">
+					<label hflex="18%" id="lbx_obiettivi" value="${c:l('menu.segreteria.organizzativa.scheda.dati.uvi.obiettivi')}:" />
+					<caribeltextbox hflex="80%" id="pr_obiettivo" db_name="pr_obiettivo" maxlength="2000"
+								multiline="true" rows="2" sclass="asterTextArea" />
+					<label value="" hflex="2%" />
+				</hlayout>
+				 
+		<!-- 		<hlayout width="100%"> -->
+		<!-- 			<label  hflex="18%" value="${c:l('menu.segreteria.organizzativa.scheda.dati.uvi.piano.terapeutico')}:"/> -->
+		<!-- 			<caribeltextbox hflex="80%" id="pr_piano_terapeutico" db_name="pr_piano_terapeutico" maxlength="2000" -->
+		<!-- 							multiline="true" rows="3" sclass="asterTextArea" /> -->
+		<!-- 			<label hflex="2%" /> -->
+		<!-- 		</hlayout> -->
+				<hlayout width="100%">
+					<label hflex="18%" id="lbx_valutazione_successiva" 
+					value="${c:l('menu.segreteria.organizzativa.scheda.dati.uvi.valutazioni.successive')}:" />
+					<caribelcombobox hflex="20%" db_name="pr_revisione" id="cbx_pr_revisione" forward="onChange=onChangeDataRevisione" />
+					<label hflex="45%" value="${c:l('menu.segreteria.organizzativa.scheda.dati.uvi.data.prevista')}:" />
+					<caribeldatebox id="pr_data_revisione" hflex="15%" db_name="pr_data_revisione" />
+					<label hflex="2%" />
+				</hlayout>
+				<hlayout width="100%">
+					<label hflex="2%" value="" />
+				</hlayout>
+			</vlayout>	

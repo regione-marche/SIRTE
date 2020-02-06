@@ -1,0 +1,59 @@
+<vlayout id="protocoliProcedure" vflex="true">
+	<vlayout vflex="true" hflex="1" spacing="3px" style="text-align:left">
+		<hlayout  width="100%">
+			<label value="" hflex="15%" />
+			<caribelcheckbox hflex="5%" db_name="skpa_pp1" value="S" />
+ 			<label value="${c:l('pianoAssistenziale.protocolliProcedure.prevenzione')}" hflex="30%" />
+			<caribelcheckbox hflex="5%" db_name="skpa_pp7" value="S" />
+ 			<label value="${c:l('pianoAssistenziale.protocolliProcedure.tracheotomia')}" hflex="35%" />
+			<label hflex="10%" />
+		</hlayout>
+		<hlayout  width="100%">
+			<label value="" hflex="15%" />
+			<caribelcheckbox hflex="5%" db_name="skpa_pp2" value="S" />
+ 			<label value="${c:l('pianoAssistenziale.protocolliProcedure.catetere')}" hflex="30%" />
+			<caribelcheckbox hflex="5%" db_name="skpa_pp8" value="S" />
+ 			<label value="${c:l('pianoAssistenziale.protocolliProcedure.ossigenoterapia')}" hflex="35%" />
+			<label hflex="10%" />
+		</hlayout>
+		<hlayout  width="100%">
+			<label value="" hflex="15%" />
+			<caribelcheckbox hflex="5%" db_name="skpa_pp3" value="S" />
+ 			<label value="${c:l('pianoAssistenziale.protocolliProcedure.sng')}" hflex="30%" />
+			<caribelcheckbox hflex="5%" db_name="skpa_pp9" value="S" />
+ 			<label value="${c:l('pianoAssistenziale.protocolliProcedure.mobilizzazione')}" hflex="35%" />
+			<label hflex="10%" />
+		</hlayout>
+		<hlayout  width="100%">
+			<label value="" hflex="15%" />
+			<caribelcheckbox hflex="5%" db_name="skpa_pp4" value="S" />
+ 			<label value="${c:l('pianoAssistenziale.protocolliProcedure.cvc')}" hflex="30%" />
+			<caribelcheckbox hflex="5%" db_name="skpa_pp10" value="S" />
+ 			<label value="${c:l('pianoAssistenziale.protocolliProcedure.igiene')}" hflex="35%" />
+			<label hflex="10%" />
+		</hlayout>
+		<hlayout  width="100%">
+			<label value="" hflex="15%" />
+			<caribelcheckbox hflex="5%" db_name="skpa_pp5" value="S" />
+ 			<label value="${c:l('pianoAssistenziale.protocolliProcedure.nad')}" hflex="30%" />
+			<caribelcheckbox hflex="5%" db_name="skpa_pp11" value="S" />
+ 			<label value="${c:l('pianoAssistenziale.protocolliProcedure.eliminazioneIntestinale')}" hflex="35%" />
+			<label hflex="10%" />
+		</hlayout>
+		<hlayout  width="100%">
+			<label value="" hflex="15%" />
+			<caribelcheckbox hflex="5%" db_name="skpa_pp6" value="S" />
+ 			<label value="${c:l('pianoAssistenziale.protocolliProcedure.fratturaFemore')}" hflex="30%" />
+			<caribelcheckbox hflex="5%" db_name="skpa_pp13" value="S" />
+ 			<label value="${c:l('pianoAssistenziale.protocolliProcedure.terapiaInfusiva')}" hflex="40%" />
+			<label hflex="5%" />
+		</hlayout>
+		<hlayout  width="100%">
+			<label value="" hflex="15%" />
+			<caribelcheckbox hflex="5%" db_name="skpa_pp12" value="S" />
+ 			<label value="${c:l('pianoAssistenziale.protocolliProcedure.eic')}" hflex="30%" />
+ 			<label value="" />
+			<label hflex="50%" />
+		</hlayout>
+	</vlayout>
+</vlayout>

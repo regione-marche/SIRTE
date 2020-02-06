@@ -1,0 +1,16 @@
+<!-- <?component name="dati_so_quadro_generale" inline="true" macroURI="/web/ui/sinssnt/segreteriaOrganizzativa/schedaSO_quadro_generale.zul"?> -->
+<!-- <?component name="dati_scheda_valutazione" inline="true" macroURI="/web/ui/sinssnt/segreteriaOrganizzativa/schedaSO_valutazione.zul"?> -->
+
+<?component name="scheda_so_tab" inline="true" macroURI="~./ui/sinssnt/segreteriaOrganizzativa/schedaSegreteriaOrganizzativaTab.zul"?>
+
+<window id="puacSchedaCorrForm"
+	title="${c:l('menu.segreteria.organizzativa.formTitle')}" closable="true"
+	apply="it.caribel.app.sinssnt.controllers.segreteriaOrganizzativa.SegreteriaOrganizzativaFormCtrl"
+	border="normal" vflex="true" width="100%">
+	
+	<vlayout vflex="true" hflex="true">
+		<caribelFormMenu id="soMenu" visible_btn_print="false" />
+		<scheda_so_tab />
+	</vlayout>
+
+</window>

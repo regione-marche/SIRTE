@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+
+
+<!-- mfo:section.start="layout" rem="IMPOSTAZIONI DI PAGINA" -->
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="simple"
+        page-height="21cm"	page-width="29.7cm"
+        margin-top="1cm"	margin-bottom="1cm"
+        margin-left="1cm"	margin-right="1cm" >
+      <fo:region-body margin-top="1cm" margin-bottom="1cm"/>
+      <fo:region-before margin-top="0.5cm" extent="2cm"/>
+      <fo:region-after extent="1cm"/>
+    </fo:simple-page-master>
+  </fo:layout-master-set>
+
+  <fo:page-sequence master-name="simple">
+
+    <!-- TITOLO DI TESTA -->
+    <fo:static-content flow-name="xsl-region-before">
+		
+		<fo:table font-size="10pt">
+          <fo:table-column column-width="27.7cm"/>
+           <fo:table-body>
+            <fo:table-row height="9pt">
+              <fo:table-cell text-align="start" >
+                  <fo:block start-indent="1mm" end-indent="1mm"
+                  padding-top="0.5mm" font-weight="bold">
+                          Cognome e Nome: #assistito#
+                  </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+  <fo:table-row height="1pt">
+     <fo:table-cell text-align="start" >
+          <fo:block>
+          <fo:leader leader-pattern="rule"
+                     rule-thickness="0.5pt"
+                     leader-length="27.7cm"/>
+          </fo:block>
+     </fo:table-cell>
+  </fo:table-row>
+  <fo:table-row height="10pt">
+     <fo:table-cell text-align="justify"
+          font-weight="bold" >
+          <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.7mm">Intensita' percepita del dolore (N.R.S)</fo:block>
+     </fo:table-cell>
+  </fo:table-row>
+  </fo:table-body>
+  </fo:table>
+</fo:static-content>
+
+
+    <!-- TITOLO DI PIEDE -->
+    <fo:static-content flow-name="xsl-region-after">
+      <fo:table font-size="8pt" width="auto" space-before.optimum="5mm">
+        <fo:table-column column-width="17cm"/>
+        <fo:table-column column-width="10.7cm"/>
+        <fo:table-body>
+          <fo:table-row height="10pt">
+            <fo:table-cell text-align="start">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >#ragione_sociale#</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="end">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >elaborato del #data_stampa# (sc_nrs.fo)</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+    </fo:static-content>
+	<fo:flow flow-name="xsl-region-body">
+<!-- mfo:section.end -->
+
+
+<!-- mfo:section.start="inizioTab" rem="TITOLI DELLA TABELLA" -->
+        <fo:table space-before.optimum="2.0cm" font-size="10pt" font-family="sans-serif" table-omit-header-at-break="false">
+        <fo:table-column column-width="3.0cm"/>
+        <fo:table-column column-width="5.0cm"/>
+        <fo:table-column column-width="3.0cm"/>
+	    <fo:table-column column-width="9.7cm"/>
+        <fo:table-column column-width="3.0cm"/>
+	    <fo:table-column column-width="0.8cm"/>
+	    <fo:table-column column-width="0.4cm"/>
+	    <fo:table-column column-width="0.8cm"/>
+	    <fo:table-column column-width="0.8cm"/>
+	    <fo:table-column column-width="0.4cm"/>
+	    <fo:table-column column-width="0.8cm"/>
+
+        <fo:table-header font-weight="bold" font-size="10pt">
+          <fo:table-row height="10pt" background-color="rgb(200,200,200)">
+
+            <fo:table-cell text-align="center"
+              border-width="1pt" border-style="solid" border-color="rgb(200,200,200)">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >Data </fo:block>
+            </fo:table-cell>
+
+            <fo:table-cell text-align="center"
+              border-width="1pt" border-style="solid" border-color="rgb(200,200,200)">
+              <fo:block start-indent="2mm" end-indent="1mm" padding-top="0.5mm"
+                >Tipo di dolore</fo:block>
+            </fo:table-cell>
+
+            <fo:table-cell text-align="center"
+              border-width="1pt" border-style="solid" border-color="rgb(200,200,200)">
+              <fo:block start-indent="2mm" end-indent="1mm" padding-top="0.5mm"
+                >Intensita'</fo:block>
+            </fo:table-cell>
+
+            <fo:table-cell text-align="center"
+              border-width="1pt" border-style="solid" border-color="rgb(200,200,200)">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >Intervento</fo:block>              
+            </fo:table-cell>
+
+            <fo:table-cell text-align="center"
+              border-width="1pt" border-style="solid" border-color="rgb(200,200,200)">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >Intensita' post-intervento</fo:block>
+            </fo:table-cell>
+
+            <fo:table-cell text-align="center" number-columns-spanned='6'
+              border-width="1pt" border-style="solid" border-color="rgb(200,200,200)">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >Esito positivo</fo:block>			  
+            </fo:table-cell>
+
+          </fo:table-row>
+        </fo:table-header>
+
+        <!-- INIZIO DI TABELLA -->
+        <fo:table-body>
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="rigaTab" rem="RIGA RIPETITIVA" -->
+       <fo:table-row height="8pt" font-size="8pt" >
+        <fo:table-cell text-align="center"
+              border-start-width="1pt" border-start-style="solid" border-start-color="rgb(200,200,200)"
+              border-after-width="1pt" border-after-style="solid" border-after-color="rgb(200,200,200)">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >#data#</fo:block>
+        </fo:table-cell>
+
+        <fo:table-cell text-align="start"
+              border-start-width="1pt" border-start-style="solid" border-start-color="rgb(200,200,200)"
+              border-after-width="1pt" border-after-style="solid" border-after-color="rgb(200,200,200)">
+              <fo:block start-indent="2mm" end-indent="1mm" padding-top="0.5mm"
+                >#nrs_tipo#</fo:block>
+        </fo:table-cell>
+
+        <fo:table-cell text-align="end"
+              border-start-width="1pt" border-start-style="solid" border-start-color="rgb(200,200,200)"
+              border-after-width="1pt" border-after-style="solid" border-after-color="rgb(200,200,200)">
+              <fo:block start-indent="2mm" end-indent="1mm" padding-top="0.5mm"
+                >#nrs_intensita#</fo:block>
+        </fo:table-cell>
+
+        <fo:table-cell text-align="start"
+              border-start-width="1pt" border-start-style="solid" border-start-color="rgb(200,200,200)"
+              border-after-width="1pt" border-after-style="solid" border-after-color="rgb(200,200,200)">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >#nrs_intervento#</fo:block>              
+          </fo:table-cell>
+
+          <fo:table-cell text-align="end"
+              border-start-width="1pt" border-start-style="solid" border-start-color="rgb(200,200,200)"
+              border-after-width="1pt" border-after-style="solid" border-after-color="rgb(200,200,200)">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >#nrs_intensita_dopo#</fo:block>
+          </fo:table-cell>
+
+		  <fo:table-cell text-align="end" end-indent="1mm"
+              border-start-width="1pt" border-start-style="solid" border-start-color="rgb(200,200,200)"
+              border-after-width="1pt" border-after-style="solid" border-after-color="rgb(200,200,200)">
+			<fo:block line-height="12pt" color="black" padding-top="4pt">
+			&#160;</fo:block>
+		  </fo:table-cell>	  
+		  <fo:table-cell
+              border-after-width="1pt" border-after-style="solid" border-after-color="rgb(200,200,200)">
+         	<fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-before-color="black" border-start-color="black" border-end-color="black"
+			  border-bottom-color="black"
+			  border-width="0.1pt" border-style="solid">
+			&#160;#checkS#
+          	</fo:block>
+		  </fo:table-cell>
+		  <fo:table-cell text-align="end" end-indent="1mm"
+              border-after-width="1pt" border-after-style="solid" border-after-color="rgb(200,200,200)">
+			<fo:block line-height="12pt" color="black" padding-top="4pt">
+			&#160;Si</fo:block>
+		  </fo:table-cell>
+
+		  <fo:table-cell text-align="end" end-indent="1mm"
+              border-after-width="1pt" border-after-style="solid" border-after-color="rgb(200,200,200)">
+			<fo:block line-height="12pt" color="black" padding-top="4pt">
+			&#160;</fo:block>
+		  </fo:table-cell>	  
+		  <fo:table-cell
+              border-after-width="1pt" border-after-style="solid" border-after-color="rgb(200,200,200)">
+         	<fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-before-color="black" border-start-color="black" border-end-color="black"
+			  border-bottom-color="black"
+			  border-width="0.1pt" border-style="solid">
+			&#160;#checkN#
+          	</fo:block>
+		  </fo:table-cell>
+		  <fo:table-cell text-align="end" end-indent="1mm"
+              border-end-width="1pt" border-end-style="solid" border-end-color="rgb(200,200,200)"
+              border-after-width="1pt" border-after-style="solid" border-after-color="rgb(200,200,200)">
+			<fo:block line-height="12pt" color="black" padding-top="4pt">
+			&#160;No</fo:block>
+		  </fo:table-cell>
+
+        </fo:table-row>
+<!-- mfo:section.end -->
+
+
+<!-- mfo:section.start="fineTab" rem="TERMINAZIONE TABELLA" -->
+	</fo:table-body>
+	</fo:table>
+<!-- mfo:section.end -->
+
+
+
+
+
+<!-- mfo:section.start="rigaSpazio" -->
+        <!-- TABELLA SPAZIATURA -->
+	      <fo:table font-size="10pt" width="auto">
+	        <fo:table-column column-width="27.7cm" />
+	        <fo:table-body>
+
+	          <fo:table-row height="10pt">
+				<fo:table-cell>
+                  <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                  ></fo:block>
+            	</fo:table-cell>
+	          </fo:table-row>
+
+        </fo:table-body>
+      </fo:table>
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="messaggio" rem="MESSAGGIO DI ERRORE" -->
+      <fo:block font-size="12pt"
+        font-family="sans-serif"	font-weight="bold"
+        line-height="10pt"		background-color="white"
+        color="black"			text-align="center"
+        padding-top="3pt"
+      >NESSUNA INFORMAZIONE REPERITA</fo:block>
+<!-- mfo:section.end -->
+
+
+
+<!-- mfo:section.start="finale" -->
+    </fo:flow> <!-- closes the flow element-->
+  </fo:page-sequence> <!-- closes the page-sequence -->
+<!-- mfo:section.end -->
+</fo:root>
+
+

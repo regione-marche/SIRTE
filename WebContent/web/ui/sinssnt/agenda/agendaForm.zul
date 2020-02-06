@@ -1,0 +1,200 @@
+<zk xmlns:w="client">
+	<window title="${c:l('agenda.formTitle')}" border="normal"
+		mode="overlapped" closable="true" sizable="false" height="60%"
+		width="80%"
+		apply="it.caribel.app.sinssnt.controllers.agenda.AgendaFormCtrl">
+
+		<style>
+			.custom-selected-node { background-color: red !important; }
+		    tr.overseld,td.overseld,tr.z-listitem-over,tr.z-listitem-over-seld	{ 
+  				background-image: none; 
+  				background-color: none; 
+  				border-color:none;
+   			}
+			tr.z-listitem-over>td.z-listcell {
+			    border-bottom: 1px solid white;
+			    border-top: 1px solid white;
+			}
+ 		</style>
+		<vlayout vflex="true">
+			<hlayout visible="true">
+			<toolbar align="start" hflex="true">
+				<toolbarbutton id="btn_delete"
+					image="~./zul/img/delete24x24.png"
+					tooltiptext="${c:l('btn.delete')}"
+					visible="false" />
+				<toolbarbutton id="btn_save"
+					image="~./zul/img/save24x24.png"
+					tooltiptext="${c:l('btn.save')}"
+					visible="false" />
+				<toolbarbutton id="btn_undo"
+					image="~./zul/img/undo24x24.png"
+					tooltiptext="${c:l('btn.undo')}"
+					visible="true" />	
+				<toolbarbutton id="btn_print"
+					image="~./zul/img/print24x24.png"
+					tooltiptext="${c:l('btn.print')}"
+					visible="false" />
+				<toolbarbutton id="btn_print_qrc"
+					image="~./zul/img/print24x24QR.png"
+					tooltiptext="${c:l('btn.print.qrc')}"
+					visible="false" />
+				<toolbarbutton id="btn_search"
+					image="~./zul/img/find24x24.png"
+					tooltiptext="${c:l('btn.search')}"
+					visible="false" />
+				<toolbarbutton id="btn_nuovo" forward="onNuovo"
+					image="~./zul/img/new24x24.png"
+					tooltiptext="${c:l('agenda.btn.nuovo.tooltiptext')}"
+					visible="true" />
+			</toolbar>
+			</hlayout>
+<!-- 			<caribelFormMenu visible_btn_save="false" -->
+<!-- 				visible_btn_delete="false" /> -->
+			<vlayout vflex="true" sclass="asterLayout asterOverflow">
+				<hlayout visible="false">
+					<caribeldatebox id="dateCartIni" db_name="cont_ini" />
+					<caribeldatebox id="dateCartFin" db_name="cont_fin" />
+
+					<caribeltextbox id="tipo_operatore"
+						db_name="tipo_operatore" />
+					<caribeltextbox id="tipo_operatoretmp"
+						db_name="tipo_op" />
+					<caribeltextbox id="mese" db_name="mese" />
+					<caribeltextbox id="anno" db_name="anno" />
+				</hlayout>
+				<hlayout>
+					<label hflex="20%"
+						value="${c:l('agenda.operatore')}:" />
+					<caribelSearch id="operatore" hflex="80%"
+						required="false" db_name_cod="referente" id_cod="cod_operatore"
+						maxlength="10" db_name_descr="referente_nome"
+						id_descr="desc_operatore"
+						ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl" />
+				</hlayout>
+				<hlayout>
+					<label value="${c:l('agenda.operatoreEsecutore')}:"
+						hflex="20%" />
+					<caribelSearch id="operatoreEsec" hflex="80%"
+						maxlength="10" required="false" db_name_cod="esecutivo"
+						id_cod="cod_operatore_esec" db_name_descr="esecutivo_nome"
+						id_descr="desc_operatore_esec"
+						ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl" />
+				</hlayout>
+				<hlayout  >
+					<vlayout 	hflex="20%">
+					</vlayout>
+					<vlayout 	hflex="20%" style="text-align: left; ">
+						<label value="Settimane caricate" />
+						<listbox rows="7" id="caricate" hflex="100%" disabled="true" nonselectableTags="*" style="text-align: center ">
+						        <template name="model">
+					            	<listitem>
+        	        					<listcell label="${each}" />
+					    	        </listitem>
+ 						       </template>
+						</listbox>
+ 						<textbox rows="7" id="tbx" style="resize:none;" hflex="100%" readonly="true" visible="false"/>
+					</vlayout>
+					<vlayout hflex="30%" style="text-align: left; ">
+						<label value="Calendario" width="100%"/>
+						<hlayout style="padding:0px; margin:0px;">
+							<!-- 			<hlayout sclass="normalText"> -->
+							<calendar id="cal"
+								use="it.caribel.app.sinssnt.controllers.agenda.TestComposer"
+								weekOfYear="true" forward="onChange=onCalendar">
+								<!-- 	        <attribute w:name="_markCal"><![CDATA[ -->
+								<!--               function (opts) { -->
+								<!--                    // clear old custom-selected-node -->
+								<!--                    jq('.custom-selected-node').each(function () { -->
+								<!--                    					      jq(this).removeClass('custom-selected-node'); -->
+								<!--                    					}); -->
+								<!--                    this.$_markCal(opts); -->
+
+								<!--                    if (this._view == 'day') { -->
+								<!--                       // target: current focused date (td) -->
+								<!--                       // parent: tr -->
+								<!--                       var target = jq('.z-calendar-seld')[0], -->
+								<!--                                       parent = target.parentNode, -->
+								<!--                                       node = parent.firstChild, -->
+								<!--                                       beforeCnt = 0, -->
+								<!--                                       found; -->
+								<!--                       // loop through each td -->
+								<!--                       jq(target).addClass('custom-selected-node'); -->
+								<!--                       alert(target); -->
+
+								<!--                       while (node) { -->
+								<!--                                       // add selected style -->
+								<!--                                       jq(node).addClass('custom-selected-node'); -->
+								<!--                                       if (node == target) { -->
+								<!--                                                       found = true; -->
+								<!--                                       } else if (!found) { -->
+								<!--                                                       // count nodes before target -->
+								<!--                                                       beforeCnt++; -->
+								<!--                                       } -->
+								<!--                                       node = node.nextSibling; -->
+								<!--                       } -->
+								// fire event to server
+								<!-- 					  alert(beforeCnt); -->
+								<!--                         this.fire('onCustomSelect', {bcnt: beforeCnt}); -->
+								<!--                    } -->
+								<!--               } -->
+								<!-- 	        ]]></attribute> -->
+								<attribute name="onCustomSelect"><![CDATA[
+										List dates = self.getSelectedDates();
+										java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat(
+												"dd / MM / yyyy");
+										String value = "";
+										for (int i = 0; i < dates.size(); i++) {
+											value = value + sdf.format((Date) dates.get(i)) + "\n";
+										}
+										tbx.setValue(value);
+									]]>
+								</attribute>
+							</calendar>
+						</hlayout>
+					</vlayout>
+					<vlayout hflex="30%" style="text-align: left; ">
+						<label value="" />
+						<hlayout>
+							<toolbarbutton id="btn_registraNew"
+								width="65px" forward="onRegistraNew" image="/web/img/agRegG.png"
+								label="Nuovo ${c:l('agenda.btn.registra')}" sclass="buttonAlignment" />
+<!-- 							<toolbarbutton id="btn_nuovo" width="65px" -->
+<!-- 								forward="onNuovo" image="~./zul/img/new32x32.png" -->
+<!-- 								label="${c:l('agenda.btn.nuovo')}" sclass="buttonAlignment" -->
+<!-- 								tooltiptext="${c:l('agenda.btn.nuovo.tooltiptext')}" /> -->
+						</hlayout>
+						<hlayout>
+							<toolbarbutton id="btn_carica" width="65px"
+								forward="onCarica" image="~./img/agApriG.png"
+								label="${c:l('agenda.btn.carica')}" sclass="buttonAlignment" />
+							<hlayout >
+								<label value="${c:l('agenda.settimane')}:" />
+								<caribelintbox id="JCariTextFieldNumSett" maxlength="2" />
+							</hlayout>
+						</hlayout>
+						<hlayout visible="false">
+							<toolbarbutton id="btn_registra"
+								width="65px" forward="onRegistra" image="/web/img/agRegG.png"
+								label="${c:l('agenda.btn.registra')}" sclass="buttonAlignment" />
+							<toolbarbutton id="btn_sposta" width="65px"
+								forward="onSposta" image="/web/img/agSpostaG.png"
+								label="${c:l('agenda.btn.sposta')}" sclass="buttonAlignment" />
+<!-- 							<toolbarbutton id="btn_help" width="65px" -->
+<!-- 								forward="onHelp" image="/web/img/agHelpG.png" -->
+<!-- 								label="${c:l('agenda.btn.help')}" sclass="buttonAlignment" /> -->
+							<toolbarbutton id="btn_cambia" width="65px"
+								forward="onCambia" visible="true" image="/web/img/agOperG.png"
+								label="${c:l('agenda.btn.cambia')}" sclass="buttonAlignment" />
+						</hlayout>
+					</vlayout>
+				</hlayout>
+				<hlayout>
+					<label hflex="20%" value="" />
+					<label hflex="30%" value="" />
+					<label hflex="50%" value="" />
+				</hlayout>
+			</vlayout>
+		</vlayout>
+	</window>
+</zk>

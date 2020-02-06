@@ -1,0 +1,37 @@
+<vlayout vflex="true">
+	<vlayout vflex="true" spacing="3px" style="text-align:right;">
+		<hlayout>
+			<label hflex="20%"
+				value="${c:l('cartella.stranieri.tipoDocumento')}:" />
+			<caribelcombobox hflex="40%" id="cbx_documento"
+				db_name="str_tipo_doc" />
+			<label hflex="40%" value="" />
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('cartella.stranieri.numero')}:" />
+			<caribeltextbox hflex="40%" db_name="str_numero_doc" maxlength="20" />
+			<label hflex="25%" value="${c:l('cartella.stranieri.scadenza')}:"/>
+			<caribeldatebox hflex="15%" db_name="str_scadenza_doc" />
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('cartella.stranieri.intestatario')}:" />
+			<caribeltextbox hflex="80%" id="intestatario" maxlength="100" sclass="asterTextArea"
+				db_name="str_intestatario_doc" multiline="true" rows="3"/>
+		</hlayout>
+	</vlayout>
+	
+	<vlayout vflex="true" spacing="3px" style="text-align:right;margin-top:15px" >
+		<hlayout>
+			<label hflex="20%"
+				value="${c:l('cartella.stranieri.stp')}:" />
+			<caribeltextbox hflex="20%" db_name="stp" maxlength="20" />
+			<label hflex="60%" value="" />
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('cartella.stranieri.stp.inizio')}:" />
+			<caribeldatebox hflex="15%" db_name="stp_dt_inizio" />
+			<label hflex="50%" value="${c:l('cartella.stranieri.stp.scadenza')}:" />
+			<caribeldatebox hflex="15%" db_name="stp_dt_scad" />	
+		</hlayout>
+	</vlayout>
+</vlayout>

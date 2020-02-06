@@ -1,0 +1,102 @@
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+
+<window
+	title="${c:l('contatto_palliat_grid.titolo')}"
+	apply="it.caribel.app.sinssnt.controllers.contattoPalliativista.ContattoPalliatGridCtrl"
+	sclass="asterOverlappedWindow" 
+	height="${c:l('style.windowGrid.overlapped.height')}" sizable="true"
+	closable="true" mode="overlapped" position="center" border="normal">
+
+	<vlayout>
+		<vlayout spacing="0px" width="100%">
+
+			<hlayout width="100%">
+				<caribellistbox rows="10" hflex="true" >
+					<listhead sizable="true">
+						<caribellistheader db_name="skm_medico_da"
+							width="15%" 
+							label="${c:l('schedaPalliat.grigliaStorico.dataInizio')}" />
+						<caribellistheader db_name="skm_medico" width="55%"							
+							label="${c:l('schedaPalliat.grigliaStorico.medicoReferente')}" />
+						<caribellistheader db_name=""
+							width="30%" 
+							label="${c:l('schedaPalliat.grigliaStorico.zona')}" />
+					</listhead>
+				</caribellistbox>
+			</hlayout>
+			<hlayout style="margin-top: -1px;" hflex="true"
+				width="100%">
+<!-- 				<caribelGridFormMenuHoriz /> -->
+				<panel hflex="true" border="normal"
+					style="${arg.style}">
+					<panelchildren>
+						<div align="left">
+							<hlayout>
+								<toolbarbutton id="btn_formgrid_new"
+									image="~./zul/img/new24x24.png"
+									tooltiptext="${c:l('btn.formgrid.new')}" />
+
+								<toolbarbutton id="btn_formgrid_edit"
+									image="~./zul/img/open24x24.png"
+									tooltiptext="${c:l('btn.formgrid.edit')}" />
+
+								<toolbarbutton id="btn_formgrid_update"
+									image="~./zul/img/saveTable24x24.png"
+									tooltiptext="${c:l('btn.formgrid.update')}" />
+
+								<toolbarbutton id="btn_formgrid_delete"
+									image="~./zul/img/delete24x24.png"
+									tooltiptext="${c:l('btn.formgrid.delete')}" />
+
+								<toolbarbutton id="btn_formgrid_undo"
+									image="~./zul/img/undo24x24.png"
+									tooltiptext="${c:l('btn.formgrid.undo')}" />
+
+								<toolbarbutton id="btn_formgrid_copy"
+									image="~./zul/img/copy24x24.png"
+									tooltiptext="${c:l('btn.formgrid.copy')}"
+									visible="${arg.visible_btn_formgrid_copy}" />
+
+								<toolbarbutton id="btn_formgrid_print"
+									image="~./zul/img/print24x24.png"
+									tooltiptext="${c:l('btn.formgrid.print')}"
+									visible="${arg.visible_btn_formgrid_print}" />
+
+							</hlayout>
+						</div>
+					</panelchildren>
+				</panel>
+			</hlayout>
+			<hlayout width="100%">
+				<groupbox style="margin-top: -1px;" hflex="true"
+					closable="false">
+					<vlayout hflex="true" vflex="true" 
+						sclass="asterLayout">
+						<hlayout>
+							<label hflex="20%" 
+								value="${c:l('schedaPalliat.grigliaStorico.dataInizioIncarico')}" />
+							<caribeldatebox id="dataInizioIncarico"
+								hflex="20%" db_name="skm_medico_da" required="true"
+								constraint="no future" />							
+							<label hflex="60%" />
+						</hlayout>
+						<hlayout>
+							<label hflex="20%"
+								value="${c:l('schedaPalliat.grigliaStorico.medicoReferente')}" />
+							<caribelSearch hflex="67%" required="true" hflex_cod="25%" hflex_descr="75%"
+								id_cod="codMedicoReferente" id_descr="desc_medico"
+								db_name_cod="skm_medico" db_name_descr=""
+								id="cs_medicoReferente"
+								ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl" />
+							<label hflex="13%" />
+						</hlayout>
+					</vlayout>
+
+				</groupbox>
+
+			</hlayout>
+
+		</vlayout>
+
+	</vlayout>
+</window>

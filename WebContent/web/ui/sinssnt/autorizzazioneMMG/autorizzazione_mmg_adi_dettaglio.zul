@@ -1,0 +1,85 @@
+<!-- <vlayout id="autorizzazioneMMGAdiDettaglio" > -->
+<!-- 	<vlayout hflex="1" spacing="3px"  -->
+<!-- 		sclass="asterLayout"> -->
+		<hlayout width="100%" style="text-align:left;margin:1px" >
+			<groupbox hflex="100" closable="false">
+				<caption>
+					<div> 
+						<label
+							value="${c:l('autorizzazionemmg.adi.dettaglio.proposta.attivazione')}">
+						</label>
+					</div>
+				</caption>
+				<hlayout width="100%" style="text-align:left" >
+					<caribelcheckbox hflex="5%" db_name="skadi_attiv1" value="N" />
+					<label value="${c:l('autorizzazionemmg.adi.dettaglio.malato.terminale')}" hflex="20%" />
+					<caribelcheckbox hflex="5%" db_name="skadi_attiv2" value="N" />
+					<label value="${c:l('autorizzazionemmg.adi.dettaglio.malattia.progressivamente')}" hflex="35%" />
+						<label hflex="10%"></label>
+					<caribelcheckbox hflex="5%" db_name="skadi_atttiv3" value="N" />
+					<label value="${c:l('autorizzazionemmg.adi.dettaglio.incidente.vascolare')}" hflex="15%" />
+					<label hflex="5%" />
+				</hlayout>
+				<hlayout width="100%" style="text-align:left">
+					<caribelcheckbox hflex="5%" db_name="skadi_attiv4" value="N" />
+					<label	value="${c:l('autorizzazionemmg.adi.dettaglio.grave.fattura')}"	hflex="20%" />
+					<caribelcheckbox hflex="5%" db_name="skadi_attiv7"			value="N" />
+					<label	value="${c:l('autorizzazionemmg.adi.dettaglio.malattia.acuta')}" hflex="35%" />
+					<label hflex="10%"></label>
+					<caribelcheckbox hflex="5%" db_name="skadi_attiv8"	value="N" />
+					<label		value="${c:l('autorizzazionemmg.adi.dettaglio.dimissione.prot')}" hflex="15%" />
+					<label hflex="5%" />
+				</hlayout>
+				<hlayout width="100%" style="text-align:left">
+					<caribelcheckbox hflex="5%" db_name="skadi_attiv6" 	value="N" />
+					<label 	value="${c:l('autorizzazionemmg.adi.dettaglio.riabilitazione.neuroleso')}" hflex="20%" />
+					<caribelcheckbox hflex="5%" id="ch_skadi_attiv9" db_name="skadi_attiv9"	value="N" />
+					<label value="${c:l('autorizzazionemmg.adi.dettaglio.altro')}" hflex="10%" />
+					<caribeltextbox hflex="30%" db_name="akadi_altro"  id="akadi_altro" readonly="true" />
+					<label hflex="5%" />   
+					<caribelcheckbox hflex="5%" db_name="skadi_atttiv3" value="N" />
+					<label value="${c:l('autorizzazionemmg.adi.dettaglio.incidente.vascolare')}" hflex="15%" />
+					<label hflex="5%" />
+				</hlayout>
+			</groupbox>
+		</hlayout>
+		 <!-- 
+		<hlayout width="100%" style="text-align:left;margin:1px" hflex="1" vflex="100">
+			<groupbox hflex="100" closable="false">
+				<caption>
+					<div>
+						<label value="${c:l('autorizzazionemmg.adi.dettaglio.operatori.coinvolti')}"></label>
+					</div>
+				</caption>   
+				<hlayout width="100%" style="text-align:left">
+					<caribelcheckbox hflex="5%" db_name="skadi_oper_inf" value="N" />
+					<label value="${c:l('autorizzazionemmg.adi.dettaglio.inferimiere')}" hflex="15%" />
+					<caribelcheckbox hflex="5%" db_name="skadi_oper_fis" value="N" />
+					<label value="${c:l('autorizzazionemmg.adi.dettaglio.fisioterapista')}" hflex="15%" />
+					<caribelcheckbox hflex="5%" db_name="skadi_med" value="N" />
+					<label value="${c:l('autorizzazionemmg.adi.dettaglio.medico')}" hflex="15%" />
+					<caribelcheckbox hflex="5%" db_name="skad_ass" value="N" />
+					<label value="${c:l('autorizzazionemmg.adi.dettaglio.assistente.sociale')}" hflex="15%" />
+					<caribelcheckbox hflex="5%" db_name="skadi_oss" value="N" />
+					<label value="${c:l('autorizzazionemmg.adi.dettaglio.oss')}" hflex="15%" />
+				</hlayout>
+				<hlayout width="100%" style="text-align:left">
+					<caribelcheckbox hflex="5%" id="ch_skadi_spe" db_name="skadi_spe" value="N" />
+					<label value="${c:l('autorizzazionemmg.adi.dettaglio.specialista')}" hflex="15%" />
+					<caribeltextbox hflex="35%" id="skadi_spe_des" db_name="skadi_spe_des" readonly="true" />
+					<label hflex="5%"></label>    
+					<caribelcheckbox hflex="5%" id="ch_skadi_alt" db_name="skadi_alt" value="N" />
+					<label value="${c:l('autorizzazionemmg.adi.dettaglio.altro')}" hflex="15%" />
+					<caribeltextbox hflex="15%" id="skadi_alt_des" db_name="skadi_alt_des"  readonly="true"/>
+					<label hflex="5%"></label>
+				</hlayout>
+			</groupbox>    
+		 
+		</hlayout>
+		
+		
+		-->
+		
+<!-- 	</vlayout> -->
+	
+<!-- </vlayout> -->

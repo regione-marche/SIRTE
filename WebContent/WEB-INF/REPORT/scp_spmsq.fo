@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+
+<!-- mfo:section.start="layout" rem="IMPOSTAZIONI DI PAGINA" -->
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="simple"
+        page-height="29.7cm"	page-width="21cm"
+        margin-top="1cm"	margin-bottom="1cm"
+        margin-left="1cm"	margin-right="1cm" >
+      <fo:region-body margin-top="2.5cm" margin-bottom="1cm"/>
+      <fo:region-before extent="3cm"/>
+      <fo:region-after extent="1cm"/>
+    </fo:simple-page-master>
+  </fo:layout-master-set>
+
+  <fo:page-sequence master-name="simple">
+    <fo:static-content flow-name="xsl-region-before">
+  <fo:table font-size="10pt">
+  <fo:table-column column-width="19cm"/>
+  <fo:table-body>
+  <fo:table-row height="9pt">
+   <fo:table-cell text-align="start" >
+
+	<fo:table font-size="10pt">
+	<fo:table-column column-width="11cm"/>
+	<fo:table-column column-width="8cm"/>
+	 <fo:table-body>
+	  <fo:table-row height="9pt">
+	    <fo:table-cell text-align="start" >
+		<fo:block start-indent="1mm" end-indent="1mm"
+		padding-top="0.5mm" font-weight="bold">
+			Cognome e Nome: #assistito#
+		</fo:block>
+	    </fo:table-cell>
+	    <fo:table-cell text-align="end" >
+		<fo:block start-indent="1mm" end-indent="1mm"
+		padding-top="0.5mm" font-weight="bold">
+			Data scheda: #data#
+		</fo:block>
+	    </fo:table-cell>
+	  </fo:table-row>
+          <fo:table-row height="1pt">
+             <fo:table-cell text-align="start" number-columns-spanned='2'>
+                  <fo:block>
+                          <fo:leader leader-pattern="rule"
+                             rule-thickness="0.5pt"
+                             leader-length="19cm"/>
+                  </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+
+	 </fo:table-body>
+	</fo:table>
+	    </fo:table-cell>
+	  </fo:table-row>
+	 </fo:table-body>
+	</fo:table>
+
+	  <fo:block font-size="12pt"  end-indent="1mm"
+		  font-weight="bold" text-align="start" space-before.optimum="12pt">
+		  S.P.M.S.Q. (Short Portable Mental Status Questionaire )
+	  </fo:block>
+
+	  <!--<fo:block font-size="12pt" start-indent="1.1mm"
+		  end-indent="1mm" font-style="italic"
+		  text-align="start" padding-top="1mm">
+		  Pfeiffer E.: J. Am. Geriatr. Soc. 23, 433-441, 1975.
+	  </fo:block>-->
+
+    </fo:static-content>
+
+
+    <!-- TITOLO DI PIEDE -->
+    <fo:static-content flow-name="xsl-region-after">
+      <fo:table font-size="8pt" width="auto" space-before.optimum="0.5cm">
+        <fo:table-column column-width="12cm"/>
+        <fo:table-column column-width="7cm"/>
+        <fo:table-body>
+          <fo:table-row height="10pt">
+            <fo:table-cell text-align="start">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >#txt#</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="end">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >elaborato del #data_stampa#</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body">
+<!-- mfo:section.end -->
+
+<!--mfo:section.start="tabScpSpmsq" -->
+
+	<fo:table padding-top="1cm">
+        	<fo:table-column column-width="0.6cm"/>
+        	<fo:table-column column-width="16cm"/>
+          <fo:table-body>
+
+	    <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold"
+                >Errata
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold"
+                >
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+          
+
+
+        <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt" font-weight="bold"
+		padding-top="3mm">
+             	<fo:block start-indent="1mm" end-indent="1mm"
+                	text-align="end" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#d01#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start"
+                >SP 1. Qual &#0232; la data di oggi (giorno, mese, anno)?
+                </fo:block>
+             </fo:table-cell>
+        </fo:table-row>
+        
+         <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt" font-weight="bold"
+		padding-top="3mm">
+             	<fo:block start-indent="1mm" end-indent="1mm"
+                	text-align="end" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#d02#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start"
+                >SP 2. Che giorno &#0232; della settimana?
+                </fo:block>
+             </fo:table-cell>
+        </fo:table-row>
+        
+         <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt" font-weight="bold"
+		padding-top="3mm">
+             	<fo:block start-indent="1mm" end-indent="1mm"
+                	text-align="end" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#d03#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start"
+                >SP 3. In quale luogo ci troviamo?
+                </fo:block>
+             </fo:table-cell>
+        </fo:table-row>
+        
+         <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt" font-weight="bold"
+		padding-top="3mm">
+             	<fo:block start-indent="1mm" end-indent="1mm"
+                	text-align="end" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#d04#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start"
+                >SP 4. Quale &#0232; il suo numero di telefono?
+                </fo:block>
+             </fo:table-cell>
+        </fo:table-row>
+        
+        <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt" font-weight="bold"
+		padding-top="3mm">
+             	<fo:block start-indent="1mm" end-indent="1mm"
+                	text-align="end" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#d11#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start"
+                >SP 4A. Quale &#0232; il suo indirizzo?
+                </fo:block>
+             </fo:table-cell>
+        </fo:table-row>
+     
+         <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt" font-weight="bold"
+		padding-top="3mm">
+             	<fo:block start-indent="1mm" end-indent="1mm"
+                	text-align="end" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#d05#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start"
+                >SP 5. Quanti anni ha?
+                </fo:block>
+             </fo:table-cell>
+        </fo:table-row>
+        
+         <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt" font-weight="bold"
+		padding-top="3mm">
+             	<fo:block start-indent="1mm" end-indent="1mm"
+                	text-align="end" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#d06#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start"
+                >SP 6. Quando &#0232; nato/a?
+                </fo:block>
+             </fo:table-cell>
+        </fo:table-row>
+        
+         <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt" font-weight="bold"
+		padding-top="3mm">
+             	<fo:block start-indent="1mm" end-indent="1mm"
+                	text-align="end" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#d07#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start"
+                >SP 7. Chi &#0232; l'attuale Presidente della Repubblica (o il Papa)?
+                </fo:block>
+             </fo:table-cell>
+        </fo:table-row>
+      
+         <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt" font-weight="bold"
+		padding-top="3mm">
+             	<fo:block start-indent="1mm" end-indent="1mm"
+                	text-align="end" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#d08#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start"
+                >SP 8. Chi era il Presidente precedente?
+                </fo:block>
+             </fo:table-cell>
+        </fo:table-row>
+        
+         <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt" font-weight="bold"
+		padding-top="3mm">
+             	<fo:block start-indent="1mm" end-indent="1mm"
+                	text-align="end" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#d09#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start"
+                >SP 9. Quale era il cognome di sua madre da ragazza?
+                </fo:block>
+             </fo:table-cell>
+        </fo:table-row>
+        
+         <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt" font-weight="bold"
+		padding-top="3mm">
+             	<fo:block start-indent="1mm" end-indent="1mm"
+                	text-align="end" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#d10#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start"
+                >SP 10. Sottragga 03 da 20 e da ogni numero fino in fondo
+                </fo:block>
+             </fo:table-cell>
+        </fo:table-row>
+    </fo:table-body>
+   </fo:table>
+
+	<fo:table padding-top="1cm">
+        	<fo:table-column column-width="9cm"/>
+        	<fo:table-column column-width="10cm"/>
+        <fo:table-body>
+
+          <fo:table-row>
+ 	      <fo:table-cell font-size="10pt" padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm" font-weight="bold"
+                 >(SP-TOT) Punteggio Totale S.P.M.S.Q. (Range 0-10) 
+		 </fo:block>
+              </fo:table-cell>
+ 	      <fo:table-cell font-size="10pt" padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm"
+		 font-weight="bold" text-align="start"
+                 > #scp_spmsq_punt#
+		 </fo:block>
+              </fo:table-cell>
+          </fo:table-row >
+
+
+    </fo:table-body>
+   </fo:table>
+    </fo:flow> <!-- closes the flow element-->
+  </fo:page-sequence> <!-- closes the page-sequence -->
+<!-- mfo:section.end -->
+
+
+<!-- mfo:section.start="istruzioni" rem="Istruzioni" -->
+<fo:table font-size="10pt">
+	<fo:table-column column-width="19cm"/>
+	 <fo:table-body>
+	 <fo:table-row height="9pt">
+           <fo:table-cell text-align="start">
+            </fo:table-cell>
+      </fo:table-row>
+      <fo:table-row height="9pt">
+           <fo:table-cell text-align="start">
+            </fo:table-cell>
+      </fo:table-row>
+      <fo:table-row height="9pt">
+           <fo:table-cell text-align="start">
+           <fo:table font-size="10pt">
+			<fo:table-column column-width="0.5cm"/>
+			<fo:table-column column-width="18.5cm"/>
+	 		<fo:table-body>
+	 		<fo:table-row height="9pt">
+           		<fo:table-cell text-align="start">
+           			<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"> 
+           				1.
+					</fo:block>
+				</fo:table-cell>
+				<fo:table-cell text-align="start">
+           			<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"> 
+           				Porre le domande da 01 a 10;
+					</fo:block>
+				</fo:table-cell>	
+				</fo:table-row>
+				<fo:table-row height="9pt">
+           		<fo:table-cell text-align="start">
+           			<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"> 
+           				2.
+					</fo:block>
+				</fo:table-cell>
+				<fo:table-cell text-align="start">
+           			<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"> 
+           				Chiedere la domanda 4A solo se il soggetto non ha il telefono;
+					</fo:block>
+				</fo:table-cell>	
+				</fo:table-row>
+				<fo:table-row height="9pt">
+           		<fo:table-cell text-align="start">
+           			<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"> 
+           				3.
+					</fo:block>
+				</fo:table-cell>
+				<fo:table-cell text-align="start">
+           			<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"> 
+           				Sommare le risposte errate sottraendo un errore se il soggetto ha frequentato fino alle scuole elementari e aggiungendo un errore se ha frequentato scuole oltre le medie superiori
+					</fo:block>
+				</fo:table-cell>	
+				</fo:table-row>
+				</fo:table-body>
+				</fo:table>			
+            </fo:table-cell>
+      </fo:table-row>
+      <fo:table-row height="9pt">
+           <fo:table-cell text-align="start">
+            </fo:table-cell>
+      </fo:table-row>
+	  <fo:table-row height="9pt">
+           <fo:table-cell text-align="start">
+            	<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"> 
+					<fo:inline font-weight="bold">0-2 errori: </fo:inline>
+					 assenza di deterioramento
+				</fo:block>
+            	<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"> 	
+					<fo:inline font-weight="bold">3-4 errori:  </fo:inline>
+					deterioramento lieve
+				</fo:block>
+            	<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"> 	
+					<fo:inline font-weight="bold">5-7 errori: </fo:inline>
+					deterioramento moderato
+				</fo:block>
+				<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"> 	
+					<fo:inline font-weight="bold">8-10 errori: </fo:inline>
+					deterioramento grave
+				</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+      
+<!-- mfo:section.end -->
+
+
+</fo:root>
+
+

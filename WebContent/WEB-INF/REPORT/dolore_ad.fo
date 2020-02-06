@@ -1,0 +1,498 @@
+<?xml version ="1.0" encoding="ISO-8859-1"?>
+
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+
+<!-- mfo:section.start="layout"  -->
+<fo:layout-master-set>
+  <fo:simple-page-master master-name="simple"
+    page-height="29.7cm"                 page-width="21cm"
+    margin-top="1cm"                  	 margin-bottom="0.5cm"
+    margin-left="1cm"                  margin-right="1cm">
+    <fo:region-before margin-top="0.5cm" extent="2cm"/>
+    <fo:region-after extent="1cm"/>
+    <fo:region-body margin-top="1cm" margin-bottom="1cm"/>
+  </fo:simple-page-master>
+</fo:layout-master-set>
+
+<fo:page-sequence master-name="simple">
+<fo:static-content flow-name="xsl-region-before">
+
+  <fo:table font-size="10pt">
+  <fo:table-column column-width="19cm"/>
+  <fo:table-body>
+  <fo:table-row height="9pt">
+     <fo:table-cell text-align="start" >
+
+          <fo:table font-size="10pt">
+          <fo:table-column column-width="12.0cm"/>
+          <fo:table-column column-width="7cm"/>
+           <fo:table-body>
+            <fo:table-row height="9pt">
+              <fo:table-cell text-align="start" >
+                  <fo:block start-indent="1mm" end-indent="1mm"
+                  padding-top="0.5mm" font-weight="bold">
+                          Cognome e Nome: #assistito#
+                  </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="end" >
+                  <fo:block start-indent="1mm" end-indent="1mm"
+                  padding-top="0.5mm" font-weight="bold">
+                          Data: #data#
+                  </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+           </fo:table-body>
+          </fo:table>
+
+     </fo:table-cell>
+  </fo:table-row>
+  <fo:table-row height="1pt">
+     <fo:table-cell text-align="start" >
+          <fo:block>
+          <fo:leader leader-pattern="rule"
+                     rule-thickness="0.5pt"
+                     leader-length="19cm"/>
+          </fo:block>
+     </fo:table-cell>
+  </fo:table-row>
+  
+  </fo:table-body>
+  </fo:table>
+</fo:static-content>
+
+    <!-- TITOLO DI PIEDE -->
+    <fo:static-content flow-name="xsl-region-after">
+      <fo:table font-size="8pt" width="auto" >
+        <fo:table-column column-width="11cm"/>
+        <fo:table-column column-width="8cm"/>
+        <fo:table-body>
+          <fo:table-row height="10pt">
+            <fo:table-cell text-align="start">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >#txt#</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="end">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >elaborato del #data_stampa#</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+    </fo:static-content>
+
+<fo:flow flow-name="xsl-region-body">
+<!--mfo:section.end -->
+
+
+
+<!-- mfo:section.start="inizioTab"  -->
+	<fo:block font-weight="bold" text-align="center" start-indent="1mm" end-indent="1mm" space-before="0.3cm" font-size="14pt">
+  		RILEVAZIONE DEL DOLORE NELL'ADULTO
+  	</fo:block>
+  
+  	<fo:block font-weight="bold" text-align="start" start-indent="1mm" end-indent="1mm" space-before="0.8cm" font-size="14pt">
+  		Scala di valutazione del dolore NRS
+  	</fo:block>
+  <fo:table space-before.optimum="0.2cm" font-size="10pt" font-family="sans-serif"  >
+    <fo:table-column column-width="1.9cm"/>
+    <fo:table-column column-width="1.9cm"/>
+    <fo:table-column column-width="1.9cm"/>
+    <fo:table-column column-width="1.9cm"/>
+    <fo:table-column column-width="1.9cm"/>
+    <fo:table-column column-width="1.9cm"/>
+    <fo:table-column column-width="1.9cm"/>
+    <fo:table-column column-width="1.9cm"/>
+    <fo:table-column column-width="1.9cm"/>
+    <fo:table-column column-width="1.9cm"/>
+
+	<fo:table-body>
+	<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center" font-weight="bold" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block> 
+			<fo:block color="black" >
+        		#domanda1_1#
+        	</fo:block> 
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>        	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="center" font-weight="bold" border-width="0.1mm" border-style="solid"  >
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block> 
+			<fo:block color="black" >
+        		#domanda1_2#
+        	</fo:block>   
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>      	
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" font-weight="bold" border-width="0.1mm" border-style="solid"  >
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block> 
+			<fo:block color="black" >
+        		#domanda1_3#
+        	</fo:block>      
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>   	
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" font-weight="bold" border-width="0.1mm" border-style="solid"  >
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block> 
+			<fo:block color="black" >
+        		#domanda1_4#
+        	</fo:block>  
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>       	
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" font-weight="bold" border-width="0.1mm" border-style="solid"  >
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block> 
+			<fo:block color="black" >
+        		#domanda1_5#
+        	</fo:block>    
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>     	
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" font-weight="bold" border-width="0.1mm" border-style="solid"  >
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block> 
+			<fo:block color="black" >
+        		#domanda1_6#
+        	</fo:block>  
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>       	
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" font-weight="bold" border-width="0.1mm" border-style="solid"  >
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block> 
+			<fo:block color="black" >
+        		#domanda1_7#
+        	</fo:block>    
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>     	
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" font-weight="bold" border-width="0.1mm" border-style="solid"  >
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block> 
+			<fo:block color="black" >
+        		#domanda1_8#
+        	</fo:block>    
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>     	
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" font-weight="bold" border-width="0.1mm" border-style="solid"  >
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block> 
+			<fo:block color="black" >
+        		#domanda1_9#
+        	</fo:block>  
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>       	
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" font-weight="bold" border-width="0.1mm" border-style="solid"  >
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block> 
+			<fo:block color="black" >
+        		#domanda1_10#
+        	</fo:block>      
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>   	
+		  </fo:table-cell>	
+		</fo:table-row>
+		</fo:table-body>
+  	</fo:table>
+  	<fo:table font-size="8pt">
+  	<fo:table-column column-width="1.9cm"/>
+    <fo:table-column column-width="1.9cm"/>
+    <fo:table-column column-width="1.9cm"/>
+    <fo:table-column column-width="1.9cm"/>
+    <fo:table-column column-width="1.9cm"/>
+    <fo:table-column column-width="1.9cm"/>
+    <fo:table-column column-width="1.9cm"/>
+    <fo:table-column column-width="1.9cm"/>
+    <fo:table-column column-width="1.9cm"/>
+    <fo:table-column column-width="1.9cm"/>
+    	<fo:table-body>
+			<fo:table-row>
+				<fo:table-cell text-align="start" number-columns-spanned="8">
+					<fo:block color="black" >
+        				Nessun dolore
+        			</fo:block>        	
+		  		</fo:table-cell>
+		  		<fo:table-cell text-align="end" number-columns-spanned="2">
+					<fo:block color="black" >
+        				Massimo dolore
+        			</fo:block>        	
+		  		</fo:table-cell>
+			</fo:table-row>
+		</fo:table-body>
+  	</fo:table>
+  	
+  	<fo:table font-size="10pt" space-before="0.5cm">
+  		<fo:table-column column-width="0.5cm"/>
+    	<fo:table-column column-width="18.5cm"/>
+    	<fo:table-body>
+			<fo:table-row >
+				<fo:table-cell>
+					<fo:block color="black" >
+						&#8226;
+					</fo:block> 
+				</fo:table-cell>
+				<fo:table-cell>
+					<fo:block color="black" >
+						Andr&#224; chiesto: &#8220;Mi dica, quanto dolore avverte in questo momento con un numero da 0 a 10. Sapendo che 0 vuol dire assenza di dolore e 10 corrisponde al peggiore dolore possibile.&#8221;
+					</fo:block> 
+				</fo:table-cell>
+			</fo:table-row >
+			<fo:table-row >
+				<fo:table-cell>
+					<fo:block color="black" >
+						&#8226;
+					</fo:block> 
+				</fo:table-cell>
+				<fo:table-cell>
+					<fo:block color="black" >
+						Ascoltare, ma non stimolare o accettare spiegazioni verbali. Ricordargli che dovr&#224; riferire un numero compreso tra 0 e 10.  La misurazione va riferita a quel particolare momento in cui viene rilevata.
+					</fo:block> 
+				</fo:table-cell>
+			</fo:table-row >
+			<fo:table-row >
+				<fo:table-cell>
+					<fo:block color="black" >
+						&#8226;
+					</fo:block> 
+				</fo:table-cell>
+				<fo:table-cell>
+					<fo:block color="black" >
+						Ricordare sempre che &#232; una valutazione soggettiva e personale. Il valore 10 massimo a cui fare riferimento, &#232; quello che lui immagina poter essere il peggiore dolore possibile.
+					</fo:block> 
+				</fo:table-cell>
+			</fo:table-row >
+			<fo:table-row >
+				<fo:table-cell>
+					<fo:block color="black" >
+						&#8226;
+					</fo:block> 
+				</fo:table-cell>
+				<fo:table-cell>
+					<fo:block color="black" >
+						Non ricordare al paziente il valore dato in precedenza, anche se ne fa richiesta.  La sua valutazione del dolore &#232; riferita a questo preciso momento.
+					</fo:block> 
+				</fo:table-cell>
+			</fo:table-row >
+			<fo:table-row >
+				<fo:table-cell>
+					<fo:block color="black" >
+						&#8226;
+					</fo:block> 
+				</fo:table-cell>
+				<fo:table-cell>
+					<fo:block color="black" >
+						Non commentare eventuali risposte, n&#232; tantomeno contestare le risposte ricevute.
+					</fo:block> 
+				</fo:table-cell>
+			</fo:table-row >
+			<fo:table-row >
+				<fo:table-cell>
+					<fo:block color="black" >
+						&#8226;
+					</fo:block> 
+				</fo:table-cell>
+				<fo:table-cell>
+					<fo:block color="black" >
+						La valutazione fatta dal paziente pu&#242; essere influenzata da molteplici fattori soggettivi e che lo strumento di misura che noi utilizziamo non &#232; un &#8220;termometro&#8221;. &#200; possibile talvolta rilevare delle incongruenze che sono modulate da convinzioni o paure che lo inducono a sovra - o sottostimare l'intensit&#224; 
+					</fo:block> 
+				</fo:table-cell>
+			</fo:table-row >
+		</fo:table-body>
+    </fo:table>
+    
+	<fo:table font-size="10pt" space-before="1cm">
+		<fo:table-column column-width="4.75cm"/>
+    	<fo:table-column column-width="4.75cm"/>
+    	<fo:table-column column-width="4.75cm"/>
+    	<fo:table-column column-width="4.75cm"/>
+		<fo:table-body>
+		<fo:table-row >
+		  <fo:table-cell font-size="14pt" text-align="center" font-weight="bold" border-width="0.1mm" border-style="solid" number-columns-spanned="6">
+			<fo:block color="black" >
+        		Rilevazione del dolore nell'adulto non comunicante PAINAD
+        	</fo:block>        	
+		  </fo:table-cell>		  
+		</fo:table-row>
+		<fo:table-row background-color="white">
+		  <fo:table-cell start-indent="0.3cm" text-align="start" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block>        	
+		  </fo:table-cell>
+		  <fo:table-cell font-size="14pt" font-weight="bold"  start-indent="0.3cm" text-align="center" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		0
+        	</fo:block>        	
+		  </fo:table-cell>		      	
+		  
+		  <fo:table-cell font-size="14pt" font-weight="bold"  start-indent="0.3cm" text-align="center" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		1
+        	</fo:block>        	
+		  </fo:table-cell>
+		  <fo:table-cell font-size="14pt" font-weight="bold"  start-indent="0.3cm" text-align="center" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		2
+        	</fo:block>        	
+		  </fo:table-cell>
+		</fo:table-row>
+		<fo:table-row background-color="white">
+		  <fo:table-cell font-weight="bold"  start-indent="0.3cm" text-align="start" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		Respiro(indipendente dalla vocalizzazione)
+        	</fo:block>        	
+		  </fo:table-cell>
+		 <fo:table-cell start-indent="0.3cm" text-align="start" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		#domanda3_1#
+        	</fo:block>        	
+		  </fo:table-cell>	
+		  <fo:table-cell start-indent="0.3cm" text-align="start" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		#domanda3_2#
+        	</fo:block>        	
+		  </fo:table-cell>
+		  <fo:table-cell start-indent="0.3cm" text-align="start" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		#domanda3_3#
+        	</fo:block>        	
+		  </fo:table-cell>
+		</fo:table-row>
+		<fo:table-row background-color="white">
+		  <fo:table-cell font-weight="bold"  start-indent="0.3cm" text-align="start" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		Vocalizzazione
+        	</fo:block>        	
+		  </fo:table-cell>
+		 <fo:table-cell start-indent="0.3cm" text-align="start" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		#domanda4_1#
+        	</fo:block>        	
+		  </fo:table-cell>	
+		  <fo:table-cell start-indent="0.3cm" text-align="start" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		#domanda4_2#
+        	</fo:block>        	
+		  </fo:table-cell>
+		  <fo:table-cell start-indent="0.3cm" text-align="start" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		#domanda4_3#
+        	</fo:block>        	
+		  </fo:table-cell>
+		</fo:table-row>
+		<fo:table-row background-color="white">
+		  <fo:table-cell font-weight="bold"  start-indent="0.3cm" text-align="start" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		Espressione facciale
+        	</fo:block>        	
+		  </fo:table-cell>
+		 <fo:table-cell start-indent="0.3cm" text-align="start" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		#domanda5_1#
+        	</fo:block>        	
+		  </fo:table-cell>	
+		  <fo:table-cell start-indent="0.3cm" text-align="start" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		#domanda5_2#
+        	</fo:block>        	
+		  </fo:table-cell>
+		  <fo:table-cell start-indent="0.3cm" text-align="start" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		#domanda5_3#
+        	</fo:block>        	
+		  </fo:table-cell>
+		</fo:table-row>
+		
+		<fo:table-row background-color="white">
+		  <fo:table-cell font-weight="bold"  start-indent="0.3cm" text-align="start" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		Linguaggio del corpo
+        	</fo:block>        	
+		  </fo:table-cell>
+		 <fo:table-cell start-indent="0.3cm" text-align="start" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		#domanda6_1#
+        	</fo:block>        	
+		  </fo:table-cell>	
+		  <fo:table-cell start-indent="0.3cm" text-align="start" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		#domanda6_2#
+        	</fo:block>        	
+		  </fo:table-cell>
+		  <fo:table-cell start-indent="0.3cm" text-align="start" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		#domanda6_3#
+        	</fo:block>        	
+		  </fo:table-cell>
+		</fo:table-row>
+		<fo:table-row background-color="white">
+		  <fo:table-cell font-weight="bold"  start-indent="0.3cm" text-align="start" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		Consolabilit&#224;
+        	</fo:block>        	
+		  </fo:table-cell>
+		 <fo:table-cell start-indent="0.3cm" text-align="start" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		#domanda7_1#
+        	</fo:block>        	
+		  </fo:table-cell>	
+		  <fo:table-cell start-indent="0.3cm" text-align="start" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		#domanda7_2#
+        	</fo:block>        	
+		  </fo:table-cell>
+		  <fo:table-cell start-indent="0.3cm" text-align="start" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		#domanda7_3#
+        	</fo:block>        	
+		  </fo:table-cell>
+		</fo:table-row>
+<!--mfo:section.end -->
+
+
+<!-- mfo:section.start="rigaTab"  -->
+		
+<!--mfo:section.end -->
+
+<!-- mfo:section.start="fineTab"  -->
+	</fo:table-body>
+  </fo:table>
+<!--mfo:section.end -->
+
+
+<!-- mfo:section.start="totale"  -->
+  
+<!-- mfo:section.end -->
+
+
+<!-- mfo:section.start="finale" -->
+    </fo:flow>
+  </fo:page-sequence>
+<!-- mfo:section.end -->
+</fo:root>

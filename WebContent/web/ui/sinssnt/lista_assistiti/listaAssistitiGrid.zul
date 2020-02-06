@@ -1,0 +1,182 @@
+<window 
+	id="listaAssistitiGrid"
+	title="${c:l('listaAssistitiGrid.formTitle')}"
+	apply="it.caribel.app.sinssnt.controllers.lista_assistiti.ListaAssistitiGridCtrl"
+	width="100%" vflex="true" style="overflow:auto"
+	border="normal">
+<zscript><![CDATA[
+	void dadataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}
+	void adataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}
+]]>
+</zscript>
+
+	<vlayout vflex="true" spacing="0px">
+		<caribelGridMenu visible_btn_print="true"
+			visible_btn_transfer="false" visible_btn_new="false"
+			visible_btn_open="true" visible_btn_find="true" />
+		<vlayout width="100%" vflex="true" spacing="0px">
+			<hlayout>
+			<groupbox id="gb3" mold="3d" hflex="1" open="true">
+				<attribute name="onOpen"><![CDATA[
+						arrow.setSclass("open-" + self.isOpen());
+						caribellb.invalidate();
+				]]>
+				</attribute>
+				<caption width="100%">
+					<div id="arrow" class="open-${self.parent.parent.open}" style="">
+					<label style="position: relative; top: -5px;"
+									value="${c:l('common.filtriDiRicerca')}">
+					</label>
+					 </div>
+				</caption>
+				
+				<hlayout width="100%" 
+					valign="middle"
+					style="text-align:left;margin:1px">
+					<groupbox hflex="5" closable="false">
+						<caption>
+							<div>
+								<label
+									value="${c:l('listaAssistitiGrid.periodo')}">
+								</label>
+							</div>
+						</caption>
+						<hbox>
+							<label
+								value="${c:l('listaAttivitaGrid.data.da')}:" />
+							<caribeldatebox id="dadata" required="false"
+								onChange="dadataChanged()" />
+							<label value="${c:l('listaAttivitaGrid.data.a')}:" />
+							<caribeldatebox id="adata" required="false"
+								onChange="adataChanged()" />
+								
+							<caribelcheckbox id="checkContattiChiusi"
+								label="${c:l('listaAssistitiGrid.filtro.contatti.chiusi')}"
+								checked="false" />
+						</hbox>
+					</groupbox>
+
+					<groupbox hflex="5" closable="false">
+						<caption>
+							<div>
+								<label
+									value="${c:l('listaAttivitaGrid.ordinamento.tipo')}">
+								</label>
+							</div>
+						</caption>
+						<hbox>
+							<caribelcheckbox id="checkOrdAssistito"
+								label="${c:l('listaAssistitiGrid.ordinamento.assistito')}"
+								checked="false" />
+							<caribelcheckbox id="checkOrdData"
+								label="${c:l('listaAssistitiGrid.ordinamento.data')}"
+								checked="false" />
+						</hbox>
+					</groupbox>
+				</hlayout>
+				
+				<hlayout width="100%" 
+					valign="middle"
+					style="text-align:left;margin:1px">
+					<groupbox hflex="5" closable="false">
+						<caption>
+							<div>
+								<label
+									value="${c:l('listaAssistitiGrid.attiva.tutte')}">
+								</label>
+								<caribelcheckbox id="checkAllAttiv"
+									checked="true" />
+							</div>
+						</caption>
+						<vlayout id="elenco_schede">
+							<hlayout id="riga_schede">
+							</hlayout>
+						</vlayout>
+						<!-- 
+						<hbox id="">
+							<caribelcheckbox id="checkAssistiti1"
+								label="${c:l('listaAssistitiGrid.attivita.1')}" value="1"
+								checked="true" />
+							<caribelcheckbox id="checkAssistiti2"
+								label="${c:l('listaAssistitiGrid.attivita.2')}" value="2"
+								checked="true"  />
+							<caribelcheckbox id="checkAssistiti3"
+								label="${c:l('listaAssistitiGrid.attivita.3')}" value="3"
+								checked="true"  />
+						</hbox>
+						<hbox>
+							<caribelcheckbox id="checkAssistiti11"
+								label="${c:l('listaAssistitiGrid.attivita.1')}" value="1"
+								checked="true" />
+							<caribelcheckbox id="checkAssistiti21"
+								label="${c:l('listaAssistitiGrid.attivita.2')}" value="2"
+								checked="true"  />
+							<caribelcheckbox id="checkAssistiti31"
+								label="${c:l('listaAssistitiGrid.attivita.3')}" value="3"
+								checked="true"  />
+						</hbox>
+						 -->
+					</groupbox>
+					
+					<groupbox hflex="5" closable="false">
+						<caption>
+							<div>
+								<label id="attivitaDestinatari"
+									value="${c:l('lista.assistiti.filtro.ricerca.filtro')}">
+								</label>
+							</div>
+						</caption>
+						<hbox>
+							
+						<div hflex="55%" align="left">
+							<caribelradiogroup id="metodoRicerca" db_name="metodo"  forward="onChangeScheltaSede">
+									<radio label="${c:l('lista.assistiti.filtro.ricerca.distretto')}" value="dist" selected="true" />
+									<radio label="${c:l('lista.assistiti.filtro.ricerca.sede')}" value="sede" />
+									<radio id="rich_operatore" label="${c:l('lista.assistiti.filtro.ricerca.operatore')}" value="oper" />
+							</caribelradiogroup>
+						</div>				
+							
+<!-- 							<caribelcheckbox id="checkDestMeStesso" -->
+<!-- 								label="${c:l('listaAttivitaGrid.attivita.dest.me_stesso')}" -->
+<!-- 								checked="true" /> -->
+<!-- 							<caribelcheckbox id="checkDestAltrui" -->
+<!-- 								label="${c:l('listaAttivitaGrid.attivita.dest.altri')}" -->
+<!-- 								checked="true"  /> -->
+						</hbox>
+					</groupbox>
+					
+				</hlayout>     
+			</groupbox>
+			</hlayout>
+			
+		<caribelPaging sortable="true"  pageSize="25"/>
+			<caribellistbox vflex="true">
+				<frozen columns="3"/>
+				<listhead  sizable="true" >
+					<caribellistheader db_name="n_cartella"	  order_by="n_cartella"			  width="8em" label="${c:l('lista.assistiti.col.n_cartella')}" />
+					<caribellistheader db_name="cognome"  		order_by="cognome"		  width="8em" label="${c:l('lista.assistiti.col.cognome')}" />				
+					<caribellistheader db_name="nome"	  		order_by="nome"			  width="8em" label="${c:l('lista.assistiti.col.nome')}" />
+					<caribellistheader db_name="data_inizio" 	order_by="data_inizio"			  width="8em" label="${c:l('lista.assistiti.col.data_inizio')}" />
+					<caribellistheader db_name="sede_descr" 	order_by="sede_descr"			  width="10em" label="${c:l('lista.assistiti.col.operatore.sede.descr')}" />
+					<caribellistheader db_name="cod_med_descr"   	order_by="cod_med_descr"		  width="10em" label="${c:l('lista.assistiti.col.mmg')}" />		
+					<caribellistheader db_name="operatore_referente_desc" order_by="operatore_referente_desc"	id="opReferente" width="10em" label="${c:l('lista.assistiti.col.operatore.referente.descr')}" />
+					<caribellistheader db_name="tipocura_descr"		order_by="tipocura_descr"		  width="10em" label="${c:l('lista.assistiti.col.intensita_assistenziale')}" />
+					<caribellistheader db_name="stato_descr"   		order_by=""		  width="8em" label="${c:l('lista.assistiti.col.stato')}" />
+					<caribellistheader db_name="dt_attivazione"	   order_by="dt_attivazione"	       width="8em" label="${c:l('lista.assistiti.col.dt_attivazione')}" />
+					<caribellistheader db_name="data_conclusione"	order_by="data_conclusione"	      width="10em" label="${c:l('lista.assistiti.col.data_conclusione')}" />
+					<caribellistheader db_name="motivo_conclusione"  order_by="motivo_conclusione"	     width="10em" label="${c:l('lista.assistiti.col.motivo_conclusione')}" />			
+					<caribellistheader db_name="data_piano_inizio"   order_by="data_piano_inizio"		  width="8em" label="${c:l('lista.assistiti.col.data_piano_inizio')}" />
+					<caribellistheader db_name="data_piano_fine" 	order_by="data_piano_fine"		  width="8em" label="${c:l('lista.assistiti.col.data_piano_fine')}" />
+					<caribellistheader db_name="proroga_inizio" 	order_by="proroga_inizio"		  width="8em" label="${c:l('lista.assistiti.col.proroga.inizio')}" />
+					<caribellistheader db_name="proroga_fine"   	order_by="proroga_fine"		  width="8em" label="${c:l('lista.assistiti.col.proroga.fine')}" />
+					<caribellistheader db_name="sospeso_inizio" 	order_by="sospeso_inizio"		  width="8em" label="${c:l('lista.assistiti.col.sospeso.inizio')}" />
+					<caribellistheader db_name="sospeso_fine"   	order_by="sospeso_fine"		  width="8em" label="${c:l('lista.assistiti.col.sospeso.fine')}" />					
+				</listhead>
+			</caribellistbox>
+		</vlayout>
+	</vlayout>
+</window>

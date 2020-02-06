@@ -1,0 +1,29 @@
+<window id="attivitaPrestForm" title="${c:l('attivitaPrestForm.formTitle')}"
+	apply="it.caribel.app.common.controllers.attivita_prest.AttivitaPrestFormCtrl"
+	closable="true" sizable="true"
+border="normal" mode="modal"
+position="center"
+width="650px"
+>
+
+	<vlayout vflex="true">
+
+		<caribelFormMenu />
+ 		<vlayout vflex="true" sclass="asterLayout asterOverflow asterLayoutLastSpace">
+ 		
+			<hlayout>
+				<label hflex="20%" value="${c:l('attivitaPrestGrid.codice')}:" />
+				<caribelintbox isDbKey="true" focus="true" hflex="15%" id="codice" db_name="cod_attivita" maxlength="13" required="true" />
+				<label hflex="65%" />
+			</hlayout>
+ 		 		
+			<hlayout >
+				<label hflex="20%"  value="${c:l('attivitaPrestGrid.descrizione')}:" />
+				<caribeltextbox hflex="80%" id="descrizione" db_name="des_attivita" maxlength="80" required="true" />
+			</hlayout>
+			
+			
+ 		</vlayout>
+	</vlayout>
+
+</window>

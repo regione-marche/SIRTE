@@ -1,0 +1,53 @@
+<vlayout id="dimissioniForm" vflex="true">
+	<vlayout vflex="true" hflex="1" spacing="3px" sclass="asterLayout">
+ 		<hlayout  width="100%" >
+ 			<label value="${c:l('SchedaFisioForm.dimissioni.datachiusura')}:" hflex="20%" id="lb_skf_data_chiusura" />
+			<caribeldatebox id="skf_data_chiusura" hflex="15%" db_name="skf_data_chiusura" />
+			<label hflex="10%" />
+			<button id="btn_riapri" label="Riapri" hflex="20%"></button>
+			<label hflex="35%"></label>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('SchedaFisioForm.dimissioni.motivo')}:" />
+			<caribelcombobox hflex="50%" db_name="skf_motivo_chius" id="cbx_motchiusura" />
+			<label hflex="30%"></label>			
+		</hlayout>
+		<!-- hlayout  width="100%" >
+			<label hflex="20%" value="${c:l('SchedaFisioForm.dimissioni.barthel_in')}:"  />
+			<caribeltextbox hflex="30%" id="skf_barthel_in" db_name="skf_barthel_in" maxlength="8"  />
+			 <label hflex="50%"></label>				
+		</hlayout>	
+		<hlayout  width="100%" >
+			<label hflex="20%" value="${c:l('SchedaFisioForm.dimissioni.barthel_out')}:"  />
+			<caribeltextbox hflex="30%" id="skf_barthel_out" db_name="skf_barthel_out" maxlength="8"  />
+			 <label hflex="50%"></label>				
+		</hlayout>	
+		
+		<hlayout  width="100%" >
+			<label hflex="20%" value="${c:l('SchedaFisioForm.dimissioni.euroqol_in')}:"  />
+			<caribeldecimalbox hflex="20%" db_name="skf_euroqol_in"  format="#,##0.00" maxlength="16"/>
+			 <label hflex="60%"></label>				
+		</hlayout>	
+		<hlayout  width="100%" >
+			<label hflex="20%" value="${c:l('SchedaFisioForm.dimissioni.euroqol_out')}:"  />
+			<caribeldecimalbox hflex="20%" db_name="skf_euroqol_out"  format="#,##0.00" maxlength="16"/>
+			 <label hflex="60%"></label>				
+		</hlayout-->	
+		
+		<hlayout  width="100%" >
+			<label value="${c:l('SchedaFisioForm.dimissioni.raggobiett')}:" hflex="20%" />
+			<div hflex="20%" align="left">
+				<caribelradiogroup db_name="skf_raggobb" id="skf_raggobb" style="text-align:left">
+					<radio label="${c:l('common.no')}" value="0" checked="true"/>
+					<radio label="${c:l('common.yes')}" value="1" />
+					<radio label="${c:l('SchedaFisioForm.dimissioni.inparte')}" value="2"/>
+				</caribelradiogroup>
+			</div>	
+			<label hflex="60%"></label>			
+		</hlayout>
+		<label value=" " visible="true"/>
+		<label value=" " visible="true"/>
+		<label value=" " visible="true"/>
+		<label value=" " visible="true"/>
+	</vlayout>
+</vlayout>

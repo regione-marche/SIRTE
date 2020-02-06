@@ -1,0 +1,325 @@
+<window title="${c:l('schedaPalliat.sintomi.formTitle')}" id="sintomiForm"
+	apply="it.caribel.app.sinssnt.controllers.palliat_sintomi.SintomiGridCRUDCtrl"
+	height="${c:l('style.windowGrid.overlapped.height')}"
+	vflex="true" 
+	border="normal">
+
+	<vlayout id="sintomi">
+		<vlayout spacing="0px">
+			<toolbar align="start" hflex="true">				
+				<toolbarbutton id="btn_print"
+					image="~./zul/img/print24x24.png" tooltiptext="${c:l('btn.print')}"
+					visible="true" />
+				<toolbarbutton id="btn_undo"
+					image="~./zul/img/undo24x24.png" tooltiptext="${c:l('btn.undo')}"
+					visible="true" />			
+			</toolbar>
+
+			<hlayout hflex="true">
+				<caribelintbox hflex="15%" readonly="true" 
+					id="n_cartella" db_name="n_cartella" visible="false"/>
+				<caribelintbox hflex="15%" readonly="true" 
+					id="n_contatto" db_name="n_contatto" visible="false"/>
+<!-- 				<caribeldatebox hflex="15%" readonly="true" -->
+<!-- 					id="key_data_apertura" db_name="data_apertura" visible="false"/> -->
+<!-- 				<caribeldatebox hflex="15%" readonly="true" -->
+<!-- 					id="key_data_chiusura" db_name="data_chiusura" visible="false"/> -->
+			</hlayout>
+			<hlayout hflex="true">
+					<caribellistbox  showBtnDeleteInRow="true" showBtnEditInRow="true" 
+						rows="6" db_name="griglia" id="griglia" hflex="true">
+						<listhead sizable="true">
+							<caribellistheader db_name="sks_progr"
+								label="${c:l('schedaPalliat.sintomi.numero')}" width="10%" />
+							<caribellistheader db_name="sks_data"
+								label="${c:l('schedaPalliat.sintomi.dataScheda')}" width="10%"  />
+							<caribellistheader db_name="sks_presa_carico"
+							label="${c:l('schedaPalliat.sintomi.presaCarico')}" width="10%" />
+							<caribellistheader db_name="sks_note"
+							label="${c:l('schedaPalliat.sintomi.note')}" width="70%" />
+						</listhead>
+					</caribellistbox>
+			</hlayout>
+			<hlayout style="margin-top: -1px;" hflex="true" width="100%">
+				<caribelGridFormMenuHoriz />
+			</hlayout>
+			
+			<hlayout width="100%">
+				<groupbox style="margin-top: -1px;" hflex="100%" closable="false">
+					<vlayout hflex="true" vflex="true" id="myForm" sclass="asterLayout" >
+					
+						<hlayout>
+							<label hflex="20%" value="${c:l('schedaPalliat.sintomi.dataApertura')}:" />
+							<caribeldatebox id="sks_data" db_name="sks_data" hflex="10%" required="true"/>
+							
+							<label hflex="20%" value="${c:l('schedaPalliat.sintomi.presaCarico')}:" />
+							<div style="text-align:left" hflex="20%">
+								<caribelradiogroup id="presa_carico"
+									db_name="sks_presa_carico" style="text-align:left">
+									<radio label="${c:l('schedaPalliat.sintomi.presaCaricoSi')}"
+										value="S" />
+									<radio label="${c:l('schedaPalliat.sintomi.presaCaricoNo')}"
+										value="N" />
+								</caribelradiogroup>
+							</div>
+							
+							<label hflex="40%" />
+						</hlayout>
+						
+						<hlayout>
+							<label hflex="10%"
+								value="${c:l('schedaPalliat.sintomi.dolore')}" />
+
+							<div style="text-align:left" hflex="5%">
+								<caribelcheckbox id="sks_dolore"
+									db_name="sks_dolore" value="S" unCheckedValue="N" />
+							</div>
+							
+							<label hflex="15%"
+								value="${c:l('schedaPalliat.sintomi.vomito')}" />
+
+							<div style="text-align:left" hflex="5%">
+								<caribelcheckbox id="sks_vomito"
+									db_name="sks_vomito" value="S" unCheckedValue="N" />
+							</div>
+							
+							<label hflex="15%"
+								value="${c:l('schedaPalliat.sintomi.nausea')}" />
+
+							<div style="text-align:left" hflex="5%">
+								<caribelcheckbox id="sks_nausea"
+									db_name="sks_nausea" value="S" unCheckedValue="N" />
+							</div>
+							
+							<label hflex="15%"
+								value="${c:l('schedaPalliat.sintomi.febbre')}" />
+
+							<div style="text-align:left" hflex="5%">
+								<caribelcheckbox id="sks_febbre"
+									db_name="sks_febbre" value="S" unCheckedValue="N" />
+							</div>
+							
+							<label hflex="15%"
+								value="${c:l('schedaPalliat.sintomi.astenia')}" />
+
+							<div style="text-align:left" hflex="5%">
+								<caribelcheckbox id="sks_astenia"
+									db_name="sks_astenia" value="S" unCheckedValue="N" />
+							</div>
+							
+							<label hflex="5%" />
+						</hlayout>
+						
+						<hlayout>
+							<label hflex="10%"
+								value="${c:l('schedaPalliat.sintomi.anemia')}" />
+
+							<div style="text-align:left" hflex="5%">
+								<caribelcheckbox id="sks_anemia"
+									db_name="sks_anemia" value="S" unCheckedValue="N" />
+							</div>
+							
+							<label hflex="15%"
+								value="${c:l('schedaPalliat.sintomi.dispnea')}" />
+
+							<div style="text-align:left" hflex="5%">
+								<caribelcheckbox id="sks_dispnea"
+									db_name="sks_dispnea" value="S" unCheckedValue="N" />
+							</div>
+							
+							<label hflex="15%"
+								value="${c:l('schedaPalliat.sintomi.edemiDeclivi')}" />
+
+							<div style="text-align:left" hflex="5%">
+								<caribelcheckbox id="sks_edemi"
+									db_name="sks_edemi" value="S" unCheckedValue="N" />
+							</div>
+							
+							<label hflex="15%"
+								value="${c:l('schedaPalliat.sintomi.micosi')}" />
+
+							<div style="text-align:left" hflex="5%">
+								<caribelcheckbox id="sks_micosi"
+									db_name="sks_micosi" value="S" unCheckedValue="N" />
+							</div>
+							
+							<label hflex="15%"
+								value="${c:l('schedaPalliat.sintomi.ascite')}" />
+
+							<div style="text-align:left" hflex="5%">
+								<caribelcheckbox id="sks_ascite"
+									db_name="sks_ascite" value="S" unCheckedValue="N" />
+							</div>
+							
+							<label hflex="5%" />
+						</hlayout>
+						
+						<hlayout>
+							<label hflex="10%"
+								value="${c:l('schedaPalliat.sintomi.calo')}" />
+
+							<div style="text-align:left" hflex="5%">
+								<caribelcheckbox id="sks_calo"
+									db_name="sks_calo" value="S" unCheckedValue="N" />
+							</div>
+							
+							<label hflex="15%"
+								value="${c:l('schedaPalliat.sintomi.cachessia')}" />
+
+							<div style="text-align:left" hflex="5%">
+								<caribelcheckbox id="sks_cachessia"
+									db_name="sks_cachessia" value="S" unCheckedValue="N" />
+							</div>
+							
+							<label hflex="15%"
+								value="${c:l('schedaPalliat.sintomi.stipsi')}" />
+
+							<div style="text-align:left" hflex="5%">
+								<caribelcheckbox id="sks_stipsi"
+									db_name="sks_stipsi" value="S" unCheckedValue="N" />
+							</div>
+							
+							<label hflex="15%"
+								value="${c:l('schedaPalliat.sintomi.inappetenza')}" />
+
+							<div style="text-align:left" hflex="5%">
+								<caribelcheckbox id="sks_inappetenza"
+									db_name="sks_inappetenza" value="S" unCheckedValue="N" />
+							</div>
+							
+							<label hflex="15%"
+								value="${c:l('schedaPalliat.sintomi.ittero')}" />
+
+							<div style="text-align:left" hflex="5%">
+								<caribelcheckbox id="sks_ittero"
+									db_name="sks_ittero" value="S" unCheckedValue="N" />
+							</div>
+							
+							<label hflex="5%" />
+						</hlayout>
+						
+						<hlayout>
+							<label hflex="10%"
+								value="${c:l('schedaPalliat.sintomi.diarrea')}" />
+
+							<div style="text-align:left" hflex="5%">
+								<caribelcheckbox id="sks_diarrea"
+									db_name="sks_diarrea" value="S" unCheckedValue="N" />
+							</div>
+							
+							<label hflex="15%"
+								value="${c:l('schedaPalliat.sintomi.disuria')}" />
+
+							<div style="text-align:left" hflex="5%">
+								<caribelcheckbox id="sks_disuria"
+									db_name="sks_disuria" value="S" unCheckedValue="N" />
+							</div>
+							
+							<label hflex="15%"
+								value="${c:l('schedaPalliat.sintomi.disidratazione')}" />
+
+							<div style="text-align:left" hflex="5%">
+								<caribelcheckbox id="sks_disidratazione"
+									db_name="sks_disidratazione" value="S" unCheckedValue="N" />
+							</div>
+							
+							<label hflex="15%"
+								value="${c:l('schedaPalliat.sintomi.insonnia')}" />
+
+							<div style="text-align:left" hflex="5%">
+								<caribelcheckbox id="sks_insonnia"
+									db_name="sks_insonnia" value="S" unCheckedValue="N" />
+							</div>
+							
+							<label hflex="15%"
+								value="${c:l('schedaPalliat.sintomi.confusione')}" />
+
+							<div style="text-align:left" hflex="5%">
+								<caribelcheckbox id="sks_confusione"
+									db_name="sks_confusione" value="S" unCheckedValue="N" />
+							</div>
+							
+							<label hflex="5%" />
+						</hlayout>
+						
+						<hlayout>
+							<label hflex="10%"
+								value="${c:l('schedaPalliat.sintomi.depressione')}" />
+
+							<div style="text-align:left" hflex="5%">
+								<caribelcheckbox id="sks_depressione"
+									db_name="sks_depressione" value="S" unCheckedValue="N" />
+							</div>
+							
+							<label hflex="15%"
+								value="${c:l('schedaPalliat.sintomi.lesioniDaDecubito')}" />
+
+							<div style="text-align:left" hflex="5%">
+								<caribelcheckbox id="sks_lesioni_decubito"
+									db_name="sks_lesioni_decubito" value="S" unCheckedValue="N" />
+							</div>
+							
+							<label hflex="15%"
+								value="${c:l('schedaPalliat.sintomi.ansia')}" />
+
+							<div style="text-align:left" hflex="5%">
+								<caribelcheckbox id="sks_ansia"
+									db_name="sks_ansia" value="S" unCheckedValue="N" />
+							</div>
+							
+							<label hflex="15%"
+								value="${c:l('schedaPalliat.sintomi.vertigine')}" />
+
+							<div style="text-align:left" hflex="5%">
+								<caribelcheckbox id="sks_vertigine"
+									db_name="sks_vertigine" value="S" unCheckedValue="N" />
+							</div>
+							
+							<label hflex="15%"
+								value="${c:l('schedaPalliat.sintomi.afasia')}" />
+
+							<div style="text-align:left" hflex="5%">
+								<caribelcheckbox id="sks_afasia"
+									db_name="sks_afasia" value="S" unCheckedValue="N" />
+							</div>
+							
+							<label hflex="5%" />
+						</hlayout>
+						
+						<hlayout>
+							<label hflex="10%"
+								value="${c:l('schedaPalliat.sintomi.disfagia')}" />
+
+							<div style="text-align:left" hflex="5%">
+								<caribelcheckbox id="sks_disfagia"
+									db_name="sks_disfagia" value="S" unCheckedValue="N" />
+							</div>
+							
+							<label hflex="15%"
+								value="${c:l('schedaPalliat.sintomi.altro')}" />
+
+							<div style="text-align:left" hflex="5%">
+								<caribelcheckbox id="sks_altro"
+									db_name="sks_altro" value="S" unCheckedValue="N" />
+							</div>
+							
+							<label hflex="65%" />
+						</hlayout>
+						
+						<hlayout>
+							<label hflex="10%"
+								value="${c:l('schedaPalliat.sintomi.note')}" />
+							<caribeltextbox id="note" db_name="sks_note" hflex="81%" maxlength="500"
+								rows="2" style="resize:none"/>
+							<label hflex="9%" />
+						</hlayout>
+
+					</vlayout>
+				</groupbox>	
+			</hlayout>
+			
+			
+			
+		</vlayout>
+	</vlayout>
+</window>

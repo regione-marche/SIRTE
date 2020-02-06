@@ -1,0 +1,30 @@
+<window title="${c:l('tipoAssistito.formTitle')}"
+	apply="it.caribel.app.sinssnt.controllers.tabelle.tipo_assistito.TipoAssistitoGridCtrl"
+	width="650px" height="510px" style="overflow:auto" sizable="true"
+	closable="true" mode="overlapped" position="center" border="normal">
+
+	<vlayout height="100%">
+				
+		<caribelGridMenu  visible_btn_clear="true"/>
+		<vlayout sclass="asterLayout" vflex="true" spacing="0px">
+			<hlayout>
+				<label hflex="20%"  value="${c:l('generic.descrizione')}:" />
+				<caribeltextbox hflex="60%" id="tb_filter1" db_name="descrizione"/>
+				<label hflex="20%"  value="" />
+			</hlayout>
+			
+			<caribelPaging/>
+			<caribellistbox vflex="true" hflex="true" >
+				<listhead sizable="true">
+					<caribellistheader db_name="codice"	  width="5em"	label="${c:l('tipoAssistito.codice')}" />
+					<caribellistheader db_name="descrizione" 	width="15em" label="${c:l('tipoAssistito.descrizione')}"  />		
+					<caribellistheader db_name="desc_tipass"	  width="15em"	label="${c:l('tipoAssistito.tipoAss')}" />
+					<caribellistheader db_name="cod_tipass" 	width="8em" label="${c:l('tipoAssistito.codTipoAss')}"  />					
+					<caribellistheader db_name="desc_autosu"	  width="15em"	label="${c:l('tipoAssistito.autosuff')}" />
+					<caribellistheader db_name="cod_autosu" 	width="8em" label="${c:l('tipoAssistito.cod_autosuff')}"  />								
+				</listhead>
+			</caribellistbox>
+		</vlayout>	
+	</vlayout>	
+
+</window>

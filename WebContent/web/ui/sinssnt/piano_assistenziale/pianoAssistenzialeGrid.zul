@@ -1,0 +1,27 @@
+<window title="${c:l('pianoAssistenziale.gridTitle')}"
+	apply="it.caribel.app.sinssnt.controllers.pianoAssistenziale.PianoAssistenzialeGridCtrl"
+	position="center" border="normal" width="100%" vflex="true">
+
+	<vlayout height="100%" spacing="0px">
+			<caribelGridMenu/>
+			<hlayout visible="false" id="searchField" >
+				<caribeltextbox id="jCariTextFieldHiddNCartella" 	db_name="n_cartella"/>
+				<caribeltextbox id="jCariTextFieldHiddNProgetto" 	db_name="n_progetto"/>
+				<caribeltextbox id="jCariTextFieldHiddCodObiettivo" db_name="cod_obbiettivo"/>
+				<caribeltextbox id="jCariTextFieldHiddNIntervento" 	db_name="n_intervento"/>
+				<caribeltextbox id="jCariTextFieldHiddTpOper" 		db_name="pa_tipo_oper"/>
+ 				<caribeldatebox id="jCariDateTextFieldChiusura" 	db_name=""/> 
+ 				<button id="jButtonDuplica"/>
+			</hlayout>
+<!-- 			<caribelPaging /> -->
+			<caribellistbox rows="8" id="caribellb" span="2" vflex="true" width="100%">
+				<listhead sizable="true">
+					<caribellistheader db_name="pa_data"       		label="${c:l('pianoAssistenziale.dataDefinizione')}" hflex="min" />
+<!-- 					<caribellistheader db_name="pa_operatore"  		label="${c:l('')} " /> -->
+					<caribellistheader db_name="operCognNome" 		label="${c:l('common.operatore')}" hflex="min"  />
+					<caribellistheader db_name="pa_progetto"   		label="${c:l('pianoAssistenziale.descrizione')}" hflex="min"  />
+					<caribellistheader db_name="pa_data_chiusura"   label="${c:l('pianoAssistenziale.dataChiusura')}"  hflex="min" />
+				</listhead>
+			</caribellistbox>
+	</vlayout>
+</window>

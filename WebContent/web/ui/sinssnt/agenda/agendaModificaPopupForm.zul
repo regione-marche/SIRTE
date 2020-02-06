@@ -1,0 +1,56 @@
+<window title="${c:l('agendaModificaPopup.formTitle')}" border="normal"
+	apply="it.caribel.app.sinssnt.controllers.agenda.AgendaModificaPopUpFormCtrl" mode="modal"
+	width="90%" height="80%" closable="true" sizable="true">
+
+	<vlayout vflex="true">
+		<caribelFormMenu visible_btn_delete="false" />
+		<vlayout vflex="true" sclass="asterOverflow" style="margin:3px">
+			<vlayout sclass="asterLayout" >
+			<hlayout>
+				<label hflex="20%"
+					value="${c:l('common.assistito')}:" />
+				<caribeltextbox hflex="80%" id="assistito" readonly="true" />
+			</hlayout>
+			<hlayout style="text-align:left;">
+				<vlayout hflex="65%">
+					<label hflex="1" id="lbl_selezionaPrestazioniErogate" value="${c:l('agendaModificaPopup.selezionaPrestazioniDaErogare')}" sclass="prestazioniErogate" />
+				</vlayout>
+				<vlayout hflex="35%">
+					<label hflex="1" value="${c:l('agendaModificaPopup.prestazioniInserireInAgenda')}" sclass="prestazioniNonPrgrammate" />
+				</vlayout>
+			</hlayout>
+			</vlayout>
+			<hlayout>		
+				<vlayout hflex="65%">
+					<vlayout vflex="true" id="hopVLayout">
+						<caribellistbox id="tablePrestazioni" checkmark="true" rows="12" db_name="griglia" hflex="true" span="2" sizedByContent="true">
+							<listhead sizable="true">
+								<caribellistheader hflex="min" label=" " align="center" />
+								<caribellistheader hflex="min" sort="auto" db_name="ap_prest_cod"  label="${c:l('common.codice')}" />
+								<caribellistheader hflex="min" sort="auto" db_name="ap_prest_desc" label="${c:l('agendaRegistraPopup.prestazioniGrid.prestazione')}"/>
+								<caribellistheader hflex="min" sort="auto" db_name="frequenza"     label="${c:l('agendaRegistraPopup.prestazioniGrid.frequenza')}" />
+								<caribellistheader hflex="min" sort="auto" db_name="ap_prest_qta"  label="${c:l('agendaRegistraPopup.prestazioniGrid.quantita')}" />
+								<caribellistheader hflex="min" sort="auto" db_name="ap_stato"      label="${c:l('agendaRegistraPopup.prestazioniGrid.stato')}" />
+							</listhead>
+						</caribellistbox>
+					</vlayout>
+				</vlayout>
+				<vlayout hflex="35%">
+					<button hflex="20%"
+						label="${c:l('accessiPrestazioni.confermaSelezione_btn')}" forward="onConfermaSelezione()"
+						id="btn_confermaSelezione" >
+					</button>
+					<caribellistbox id="tableGrigliaPrestazioni" checkmark="true" rows="13" span="2" sizedByContent="true">
+						<listhead sizable="false">
+							<caribellistheader hflex="min" label=" " align="center" />
+							<caribellistheader hflex="min" sort="auto" db_name="prest_cod" label="${c:l('common.codice')}" />
+							<caribellistheader hflex="min" sort="auto" db_name="prest_des" label="${c:l('common.descrizione')}">
+								<caribeltextbox id="filtroDescrizione" placeholder="${c:l('common.placeholder')}"/>
+							</caribellistheader>
+						</listhead>
+					</caribellistbox>
+				</vlayout>
+			</hlayout>
+		</vlayout>
+	</vlayout>
+</window>

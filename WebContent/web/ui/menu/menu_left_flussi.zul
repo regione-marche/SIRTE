@@ -1,0 +1,13 @@
+<vlayout 
+id="menu_left_flussi" 
+apply="it.caribel.app.sinssnt.controllers.menu.menu_left_flussi.ComposerMenuLeft" >
+
+	<style>
+		div.z-treecell-cnt {
+			white-space: nowrap;
+		}
+    </style>
+    
+	<tree id="menu_tree_flussi" zclass="z-dottree" style="white-space:nowrap;"/>
+
+</vlayout>

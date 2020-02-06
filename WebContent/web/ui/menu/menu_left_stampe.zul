@@ -1,0 +1,13 @@
+<vlayout 
+id="menu_left_stampe" 
+apply="it.caribel.app.sinssnt.controllers.menu.menu_left_stampe.ComposerMenuLeft" >
+	
+	<style>
+		div.z-treecell-cnt {
+			white-space: nowrap;
+		}
+    </style>
+	
+	<tree id="menu_tree_stampe" zclass="z-dottree" style="white-space:nowrap;"/>
+
+</vlayout>

@@ -1,0 +1,41 @@
+<vlayout id="conclusioneForm" vflex="true">
+	<vlayout vflex="true" hflex="1" spacing="3px"
+		sclass="asterLayout">
+		<hlayout width="100%">
+			<label id="lb_skfpg_data_uscita"
+				value="${c:l('schedaPalliat.conclusionePanel.dataChiusura')}:"
+				hflex="20%" />
+			<caribeldatebox id="skm_data_chiusura" hflex="10%"
+				db_name="skm_data_chiusura" />
+			<label hflex="1%" />
+			<button id="btn_riapri"
+				label="${c:l('SchedaInfForm.conclusione.riapri')}" hflex="10%"
+				disabled="true">
+			</button>
+			<label hflex="59%"></label>
+		</hlayout>
+		
+		<hlayout>
+			<label hflex="20%"
+				value="${c:l('schedaPalliat.conclusionePanel.motivo')}:" />
+			<!-- 			<caribeltextbox hflex="50%" db_name="skfpg_motivo_txt" id="txt_motchiusura" /> -->
+			<caribelcombobox hflex="50%" db_name="skm_motivo_chius" id="skm_motivo_chius" />
+			<label hflex="30%"/>
+		</hlayout>
+
+		<hlayout>
+			<label hflex="20%" 
+				value="${c:l('schedaPalliat.conclusionePanel.luogoDecesso')}:" />
+			<caribelcombobox hflex="50%" db_name="skm_deceduto" id="skm_deceduto" />
+			<label hflex="30%" />
+		</hlayout>
+		
+		<hlayout>
+			<label hflex="20%" 
+				value="${c:l('schedaPalliat.conclusionePanel.familiariPresenti')}:" />
+			<caribelcombobox hflex="50%" db_name="skm_presenti" id="skm_presenti" />
+			<label hflex="30%" />
+		</hlayout>
+		
+	</vlayout>
+</vlayout>

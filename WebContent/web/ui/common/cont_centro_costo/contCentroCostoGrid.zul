@@ -1,0 +1,30 @@
+<window title="${c:l('contCentroCostoGrid.formTitle')}"
+	apply="it.caribel.app.common.controllers.cont_centro_costo.ContCentroCostoGridCtrl"	
+	sclass="asterOverlappedWindow" height="${c:l('style.windowGrid.overlapped.height')}" sizable="true"
+	closable="true" mode="overlapped" position="center" border="normal">
+
+	<vlayout height="100%">
+	
+		<caribelGridMenu  visible_btn_clear="true" />
+		<vlayout sclass="asterLayout" vflex="true" spacing="5px">
+		<hlayout valign="middle" width="100%">
+				<label hflex="20%"  value="${c:l('generic.descrizione')}:" />
+				<caribeltextbox hflex="78%" id="tb_filter1" db_name="descrizione"/>
+				<label hflex="2%"  value="" />
+			</hlayout>
+		
+			<caribelPaging/>
+			<caribellistbox vflex="true" hflex="true" >
+			<frozen columns="3"/>
+				<listhead sizable="true">
+					<caribellistheader db_name="codice"	width="5em"    label="${c:l('contCentroCostoGrid.codice')}" />
+					<caribellistheader db_name="descrizione"  width="15em" label="${c:l('contCentroCostoGrid.descrizione')}" />	
+					<caribellistheader db_name="ragsoc"  width="10em" label="${c:l('contCentroCostoGrid.ragsoc')}" />	
+					<caribellistheader db_name="indirizzo"	width="10em"    label="${c:l('contCentroCostoGrid.indirizzo')}" />
+					<caribellistheader db_name="citta"  width="10em" label="${c:l('contCentroCostoGrid.citta')}" />	
+					<caribellistheader db_name="telefono"	width="10em"    label="${c:l('contCentroCostoGrid.telefono')}" />							
+				</listhead>
+			</caribellistbox>
+		</vlayout>		
+	</vlayout>
+</window>

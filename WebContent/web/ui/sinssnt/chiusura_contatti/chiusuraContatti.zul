@@ -1,0 +1,107 @@
+<?component name="panel_ubicazione" inline="true" macroURI="~./ui/common/ubicazione/PanelUbicazione.zul"?>
+
+<window 
+apply="it.caribel.app.sinssnt.controllers.chiusura_contatti.ChiusuraContattiCtrl"
+title="${c:l('menu.operazioni.chiusura_contatti')}"  id="datiDettagli"
+closable="true" sizable="true"
+mode="overlapped"
+border="normal"
+position="center"
+width="900px"
+height="670px">
+
+	<vlayout vflex="true">
+		<toolbar height="26px" align="start" hflex="true">
+			<toolbarbutton id="btn_open"
+				image="~./zul/img/open24x24.png"
+				tooltiptext="${c:l('btn.open')}"
+				visible="true" />			
+			<toolbarbutton id="btn_save"
+				image="~./zul/img/save24x24.png"
+				tooltiptext="${c:l('btn.save')}"
+				visible="true" />
+			<toolbarbutton id="btn_undo"
+				image="~./zul/img/undo24x24.png"
+				tooltiptext="${c:l('btn.undo')}"
+				visible="true" />
+		</toolbar>
+		<vlayout sclass="asterLayout asterOverflow" vflex="true">	
+		<hlayout>
+			<label hflex="20%" value="${c:l('chiusura_contatti.senza_accessi')}:" />
+			<caribelradiogroup hflex="80%"  id="senza_accessi">
+				<div align="left">
+					<radio id="da30" label="${c:l('chiusura_contatti.senza_accessi_30')}" value="30" checked="true"/>
+					<radio id="da60" label="${c:l('chiusura_contatti.senza_accessi_60')}" value="60"/>
+					<radio id="da90" label="${c:l('chiusura_contatti.senza_accessi_90')}" value="90"/>
+					<radio id="da120" label="${c:l('chiusura_contatti.senza_accessi_120')}" value="120"/>
+					<radio id="da180" label="${c:l('chiusura_contatti.senza_accessi_180')}" value="180"/>
+					<radio id="daoggi" label="${c:l('chiusura_contatti.senza_accessi_oggi')}" value="0"/>
+				</div>
+			</caribelradiogroup>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('chiusura_contatti.data_rif')}:" />
+			<div hflex="80%" width="100%">
+				<hlayout width="100%">
+					<caribeldatebox id="data_rif" hflex="20%"
+						required="true"  db_name="periodo"/>
+					<label hflex="60%"/>
+				</hlayout>
+			</div>
+		</hlayout>	
+		<hlayout>
+			<label hflex="20%" value="${c:l('chiusura_contatti.tipo_op')}:" />
+			<caribelcombobox hflex="80%" id="cbx_tipoOper" readonly="true" required="true" db_name="tipo_op"/>
+		</hlayout>
+		
+		<panel_ubicazione />
+		
+		<hlayout>
+			<label hflex="20%" value="${c:l('chiusura_contatti.op_ref')}:" />
+			<caribelSearch hflex="80%" maxlength="10"  id_cod="cod_operatore" id_descr="desc_operatore" required="false" db_name_cod="codice" db_name_descr="cognome"
+				ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl"
+			 />
+		</hlayout>
+		
+		<vlayout >
+			<!--  
+			 <caribelPaging pageSize="6" id="pagcaribellb2"/>
+			 -->
+			<caribellistbox sizedByContent="true" id="caribellb2" multiple="true" checkmark="true" rows="8">
+				<listhead sizable="true">
+					<caribellistheader width="10em" label="${c:l('chiusura_contatti.sel')}"  />
+					<caribellistheader width="5em" db_name="n_cartella" label="${c:l('chiusura_contatti.cartella')}" sort="auto" />
+					<caribellistheader width="5em" db_name="n_contatto" label="${c:l('chiusura_contatti.contatto')}" sort="auto" />
+					<caribellistheader width="15em" db_name="assistito" label="${c:l('chiusura_contatti.assistito')}" sort="auto" />
+					<caribellistheader width="8em" db_name="data_contatto" label="${c:l('chiusura_contatti.data_ap')}" sort="auto" />
+					<caribellistheader width="20em" db_name="descrizione" label="${c:l('chiusura_contatti.descrizione')}" sort="auto" />
+					<caribellistheader width="10em" db_name="data_prest" label="${c:l('chiusura_contatti.ultimo_inter')}" sort="auto" />					
+				</listhead>
+			</caribellistbox>
+		</vlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('chiusura_contatti.data_chisura')}:" />
+			<caribelradiogroup hflex="40%"  id="dt_chiu">
+				<div align="left">
+					<radio label="${c:l('chiusura_contatti.data_chisura_ultimo')}" id="ultimo" value="INT" checked="true"/>
+					<radio label="${c:l('chiusura_contatti.data_chisura_alla_data')}" id="alla_dt" value="DATA"/>					
+				</div>				
+			</caribelradiogroup>
+			<div hflex="40%" width="100%">
+				<hlayout width="100%">
+					<caribeldatebox id="alla_data" hflex="20%" db_name="smsk_dataconco" 
+						 />
+					<label hflex="20%"/>
+				</hlayout>
+			</div>
+			
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('chiusura_contatti.mot_chiusura')}:" />
+			<caribelcombobox hflex="60%" id="mot_ch" readonly="true" required="true" />
+			<label hflex="20%" value="" />
+		</hlayout>
+		
+		</vlayout>
+	</vlayout>
+</window>

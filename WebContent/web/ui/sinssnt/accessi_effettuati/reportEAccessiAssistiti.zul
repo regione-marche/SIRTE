@@ -1,0 +1,71 @@
+<window 
+apply="it.caribel.app.sinssnt.controllers.accessi_effettuati.ReportEAccessiAssistiti"
+title="${c:l('accessi.effettuati.stampa.formTitle')}" 
+closable="true" sizable="true"
+mode="overlapped"
+border="normal"
+position="center"
+width="700px"
+height="150px">
+ 
+<zscript><![CDATA[
+	void dadataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}
+	void adataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}	
+]]>
+</zscript>
+	<vlayout vflex="true">
+	<caribelFormMenu visible_btn_print="true" visible_btn_delete="false" visible_btn_save="false"/>
+	<vlayout sclass="asterLayout asterOverflow" vflex="true">
+	<!-- 
+	<hlayout valign="middle" width="100%">
+				<label hflex="20%"  value="${c:l('accessi.effettuati.cartella')}:" />
+				<caribeltextbox hflex="20%" readonly="true" id="key_cartella" db_name="n_cartella"/>
+				<label hflex="20%"  value="${c:l('accessi.effettuati.contatto')}:" />
+				<caribeltextbox hflex="20%" readonly="true" id="key_contatto" db_name="n_contatto"/>
+				<caribeltextbox hflex="20%" readonly="true" id="key_tipo" db_name="tipo"/>				
+				<label hflex="20%" value="" />
+			</hlayout>		
+	 -->
+		<hlayout>
+			<label hflex="15%"	value="" />
+			<label hflex="10%" value="${c:l('generic.dadata')}:" />
+			<caribeldatebox id="dadata" hflex="20%" onChange="dadataChanged()" />
+			<label hflex="10%"	value="" />
+			<label hflex="10%"	value="${c:l('generic.adata')}:" />
+			<caribeldatebox id="adata" hflex="20%" onChange="adataChanged()" />
+			<label hflex="15%"	value="" />
+		</hlayout>
+<!--  <panel_ubicazione_nesdiv /> 
+		<hlayout>
+				<label hflex="20%" value="${c:l('generic.formato')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="formatoStampa">
+						<radio id="pdf" value="PDF" label="${c:l('generic.formato.pdf')}" checked="true"/>
+						<radio id="html" value="EXCEL" label="${c:l('generic.formato.html')}"/>						
+					</caribelradiogroup>
+				</div>
+		</hlayout>
+-->	
+			<hlayout width="100%">
+				<label hflex="100%" value="" />
+			</hlayout>
+			<hlayout width="100%">
+				<label hflex="25%" value="${c:l('generic.formato')}:" />
+				<div hflex="75%" align="left">
+					<caribelradiogroup id="formatoStampa">
+						<radio id="pdf" value="pdf"
+							label="${c:l('generic.formato.pdf')}" checked="true" />
+						<radio id="html" value="html" label="${c:l('generic.formato.html')}" />
+						<!--  <radio id="rtf" value="rtf" label="${c:l('generic.formato.rtf')}" /> -->
+					</caribelradiogroup>
+				</div>
+			</hlayout>
+
+
+		</vlayout>
+	</vlayout>
+</window>

@@ -1,0 +1,65 @@
+<window id="datiTerapia" closable="true"
+ apply="it.caribel.app.sinssnt.controllers.contattoMedico.DatiTerapiaCtrl"
+ border="none" width="100%">
+
+
+<vlayout id="contattoMedicoTerapia" > 
+	<vlayout width="100%">
+		<vlayout spacing="0px">
+			<hlayout width="100%">
+				<caribellistbox  showBtnDeleteInRow="true" showBtnEditInRow="true" 
+					rows="3" db_name="griglia" hflex="true">
+					<listhead sizable="true">
+						<caribellistheader db_name="skt_data_inizio"	label="${c:l('contatto.medico.patologie.terapia.skt.data.inizio')}" width="10%" />
+						<caribellistheader db_name="skt_data_fine"		label="${c:l('contatto.medico.patologie.terapia.skt.data.fine')}"   width="20%" />
+						<caribellistheader db_name="skt_nome" 		    label="${c:l('contatto.medico.patologie.terapia.skt.nome')}"        width="20%" />
+						<caribellistheader db_name="skt_principio" 		label="${c:l('contatto.medico.patologie.terapia.skt.principio')}"   width="30%" />
+						<caribellistheader db_name="skt_cat_atc" 	    label="${c:l('contatto.medico.patologie.terapia.skt.cat.atc')}"  	width="20%"/>
+						<caribellistheader db_name="skt_cons_dom" 	    label="${c:l('contatto.medico.patologie.terapia.skt.cons.dom')}" 	width="10%"/>
+					</listhead>
+				</caribellistbox>
+			</hlayout>
+			<hlayout style="margin-top: -1px;" hflex="true" width="100%">
+				<caribelGridFormMenuHoriz />
+			</hlayout>
+		
+		<hlayout width="100%">
+				<groupbox style="margin-top: -1px;" hflex="100%" closable="false">
+			<vlayout hflex="100%" id="myForm" >
+					<hlayout>
+						<label id="sktdatainizio" hflex="20%" value="${c:l('contatto.medico.patologie.terapia.skt.data.inizio')}:" />
+						<caribeldatebox id="skt_data_inizio" hflex="15%" db_name="skt_data_inizio"/>
+						<label id="sktdatafine" hflex="32%" value="${c:l('contatto.medico.patologie.terapia.skt.data.fine')}:" />
+						<caribeldatebox id="skt_data_fine" hflex="15%" db_name="skt_data_fine" />
+						<caribeltextbox hflex="15%" readonly="true" id="keyCartella" db_name="n_cartella" visible="false"/>								
+						<caribeltextbox hflex="15%" readonly="true" id="keyContatto" db_name="n_contatto" visible="false"/>
+						<caribeltextbox hflex="10%" readonly="true" id="skt_progr" db_name="skt_progr" visible="false"/>
+						<label hflex="18%" />
+					</hlayout>
+					<hlayout>
+						<label id="sktnome" hflex="20%" value="${c:l('contatto.medico.patologie.terapia.skt.nome')}:" />
+						<caribeltextbox hflex="27%" id="skt_nome" db_name="skt_nome" />
+						<label id="sktprincipio" hflex="20%" value="${c:l('contatto.medico.patologie.terapia.skt.principio')}:" />
+						<caribeltextbox hflex="27%" id="skt_principio" db_name="skt_principio" />
+						<label hflex="6%" />   
+					</hlayout>
+					<hlayout>
+						<label id="sktcatatc" hflex="20%" value="${c:l('contatto.medico.patologie.terapia.skt.cat.atc')}:" />
+						<caribeltextbox hflex="27%" id="skt_cat_atc" db_name="skt_cat_atc" />
+						<label id="sktconsdom" hflex="20%" value="${c:l('contatto.medico.patologie.terapia.skt.cons.dom')}:" />
+						<!-- <div align="left"> -->
+						<caribelradiogroup hflex="27%" db_name="skt_cons_dom" id="skt_cons_dom"
+						sclass="normalText" >
+							<radio label="${c:l('common.no')}" value="N" checked="true"/>
+							<radio label="${c:l('common.yes')}" value="S" />
+						</caribelradiogroup>
+						<!-- </div> --> 
+						<label hflex="6%" />
+					</hlayout>			
+			</vlayout>
+				</groupbox>
+		</hlayout>
+		</vlayout>    
+	</vlayout>
+</vlayout>
+</window>

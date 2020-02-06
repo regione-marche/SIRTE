@@ -1,0 +1,95 @@
+<?component name="panel_ubicazione" inline="true" macroURI="~./ui/common/ubicazione/PanelUbicazione.zul"?>
+
+<window title="${c:l('accessi.effettuati.formTitle')}" id="riepilogoAccessiForm"
+	apply="it.caribel.app.sinssnt.controllers.accessi_effettuati.AccessiEffettuatiGridCtrl"	
+	sclass="asterOverlappedWindow" 
+	height="${c:l('style.windowGrid.overlapped.height')}" 
+	sizable="true"
+	closable="true" 
+	mode="overlapped" 
+	position="center" 
+	border="normal">
+
+	<zscript><![CDATA[
+		void dadataChanged(){
+			it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+		}
+		void adataChanged(){
+			it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+		}	
+	]]>
+	</zscript>
+	<vlayout height="100%">
+		<caribelGridMenu  
+				visible_btn_clear="true" visible_btn_new="false" 
+				visible_btn_open="true" visible_btn_transfer="false" 
+				visible_btn_find="true" visible_btn_print="true"/>	
+		<vlayout sclass="asterLayout" vflex="true" spacing="0px">
+			<hlayout valign="middle" width="100%">
+				<label hflex="20%"  value="${c:l('accessi.effettuati.cartella')}:" visible="false"/>
+				<caribeltextbox hflex="20%" readonly="true" id="key_cartella" db_name="int_cartella" visible="false"/>
+				<label hflex="20%"  value="${c:l('accessi.effettuati.contatto')}:" visible="false"/>
+				<caribeltextbox hflex="20%" readonly="true" id="key_contatto" db_name="int_contatto" visible="false"/>
+				<caribeltextbox hflex="20%" readonly="true" id="key_tipo" db_name="tipo" visible="false"/>				
+				<label hflex="20%" value="" visible="false"/>
+			</hlayout>
+			
+			<hlayout  width="100%">
+				<label hflex="20%" value="${c:l('generic.dadata')}:" />
+				<caribeldatebox id="dadata" hflex="15%" onChange="dadataChanged()" />
+				<label hflex="35%" value="${c:l('generic.adata')}:" />
+				<caribeldatebox id="adata" hflex="15%" onChange="adataChanged()" />
+				<label hflex="15%" value="" />
+			</hlayout>
+			<hlayout style="margin-top:3px; margin-bottom:3px" width="100%">
+				<label hflex="20%" value="${c:l('accessi.effettuati.tb.figure.professionali')}:" />
+				<caribelcombobox id="figure_professionali" hflex="65%" readonly="true"/>
+				<label hflex="15%"	value="" />
+			</hlayout>
+			<hlayout id="hUbicazione" visible="false" style="margin-top:3px; margin-bottom:10px" width="100%"> 
+				<label hflex="9%" />
+					<groupbox hflex="76%" closable="false">
+						<caption style="text-align:left;">
+							<!--  <div> -->
+								<label value="${c:l('accessi.effettuati.ubicazione')}">	</label>
+							<!--  </div>  -->
+						</caption>
+							<panel_ubicazione />
+					</groupbox>
+				<label hflex="15%" value=""/>
+			</hlayout>
+			
+			<hlayout id="hOperatoreSearch" visible="false" style="margin-top:3px; margin-bottom:3px" width="100%">
+				<label hflex="20%"
+					value="${c:l('accessi.effettuati.ricerca.operatore')}:" />
+				<caribelSearch id="caribelSearchOperatore" hflex="65%"
+					db_name_cod="cod_operatore" db_name_descr="cod_operatore_descr"
+					id_cod="cod_operatore" id_descr="cod_operatore_descr"
+					ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl" />
+				<label hflex="15%" />
+			</hlayout>
+
+			<hlayout id="hAssistiti" visible="false" style="margin-top:3px; margin-bottom:3px" width="100%">
+				<label id="lbx_assistito" value="${c:l('accessi.effettuati.ricerca.assistito')}:"
+					hflex="20%" />
+				<caribelSearch id="assistito" hflex="65%"
+					db_name_cod="int_cartella" id_cod="n_cartella"
+					db_name_descr="cognome" id_descr="cognomeAss" 
+					ctrl="it.caribel.app.common.controllers.cartella.CartellaSearchCtrl" />
+				<label hflex="15%" />	
+			</hlayout>
+
+
+			<!-- <caribelPaging/> -->
+			<caribellistbox vflex="true" hflex="true" >
+				<listhead sizable="true">
+					<caribellistheader db_name="data_prest"	 width="11%" label="${c:l('accessi.effettuati.tb.data')}" />
+					<caribellistheader db_name="tipo_prest"  width="15%" label="${c:l('accessi.effettuati.tb.tipo')}" />				
+					<caribellistheader db_name="tempo_prest" width="14%" label="${c:l('accessi.effettuati.tb.tempo')}" />
+					<caribellistheader db_name="operatore"   width="30%" label="${c:l('accessi.effettuati.tb.operatore')}" />		
+					<caribellistheader db_name="prest_des"	 width="30%" label="${c:l('accessi.effettuati.tb.prestazione')}" />
+				</listhead>
+			</caribellistbox>
+		</vlayout>		
+	</vlayout>
+</window>

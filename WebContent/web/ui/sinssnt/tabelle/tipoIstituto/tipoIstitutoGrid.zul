@@ -1,0 +1,40 @@
+<window title="${c:l('tipoIstitutoGrid.formTitle')}"
+	apply="it.caribel.app.sinssnt.controllers.tabelle.tipoIstituto.TipoIstitutoGridCtrl"
+	sclass="asterOverlappedWindow" height="${c:l('style.windowGrid.overlapped.height')}" sizable="true"
+	closable="true" mode="overlapped" position="center" border="normal">
+
+	<vlayout height="100%">
+	
+		<caribelGridMenu  visible_btn_clear="true" />
+		<vlayout sclass="asterLayout" vflex="true" spacing="5px">
+		<hlayout>
+			<label hflex="20%" value="${c:l('tipoIstituto.tipo_istituto')}:" />
+			<caribelcombobox hflex="80%" id="tb_filter1" readonly="true" db_name="tar_tipoist"/>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('tipoIstituto.org_modulare')}:" />
+			<caribelcombobox hflex="80%" id="tb_filter2" readonly="true" db_name="tar_org_mod"/>
+		</hlayout>
+		
+		
+		<hlayout valign="middle" width="100%">
+				<label hflex="20%"  value="${c:l('tipoIstituto.descrizione')}:" />
+				<caribeltextbox hflex="78%" id="tb_filter3" db_name="descrizione"/>
+				<label hflex="2%"  value="" />
+			</hlayout>
+		
+			<caribelPaging/>
+			<caribellistbox vflex="true" hflex="true" >
+			<frozen columns="3"/>
+				<listhead sizable="true">
+					<caribellistheader db_name="tar_codice"	width="5em"    label="${c:l('tipoIstitutoGrid.codice')}" />
+					<caribellistheader db_name="tar_descri"  width="18em" label="${c:l('tipoIstitutoGrid.descrizione')}" />	
+					<caribellistheader db_name="desc_tipoist"  width="10em" label="${c:l('tipoIstitutoGrid.tipo_istituto')}" />	
+					<caribellistheader db_name="desc_tiporg"	width="15em"    label="${c:l('tipoIstitutoGrid.tipo_organizzazione')}" />
+					<caribellistheader db_name="codice_ist_sts11"	width="5em"    label="${c:l('tipoIstitutoGrid.sts11')}" />
+												
+				</listhead>
+			</caribellistbox>
+		</vlayout>		
+	</vlayout>
+</window>

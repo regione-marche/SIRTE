@@ -1,0 +1,69 @@
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<?component name="panel_ubicazione" inline="true" macroURI="~./ui/common/ubicazione/PanelUbicazione.zul"?>
+<?component name="legendaAgenda" inline="true" macroURI="/web/ui/sinssnt/agenda/legendaAgenda.zul"?>
+<zk xmlns:ca="client/attribute">
+<window 
+	title="${c:l('agendaModOperatore.formTitle')}" border="normal"
+	apply="it.caribel.app.sinssnt.controllers.agenda.AgendaModOperatoreFormCtrl"
+	mode="modal"
+	closable="true" sizable="true" width="90%" height="80%">
+
+	<vlayout vflex="true">
+
+		<caribelFormMenu visible_btn_delete="false"/>
+		<vlayout vflex="true" sclass="asterOverflow asterLayout">
+			<hlayout vflex="min">
+				<vlayout hflex="20%" sclass="normalText">
+					<label id="meseAnno"></label>
+					<hlayout>
+						<button id="settPrec" label="${c:l('agenda.btn.prec')}" forward="onPrec"></button>
+						<button id="settSucc" label="${c:l('agenda.btn.suc')}" forward="onSucc"></button>
+					</hlayout>
+				</vlayout>
+				<label id="opReferente" hflex="40%"></label>
+				<legendaAgenda hflex="40%" />
+			</hlayout>
+			<hlayout vflex="min">
+<!-- 				<label value="${c:l('agendaPianSett.riepilogoAltroAssistito')}" /> -->
+				<caribeltextbox id="riepilogoAltroAssistito" hflex="100%" readonly="true"/>
+			</hlayout>
+			<hlayout style="margin-left:3px; text-align:center" vflex="1">
+				<caribellistbox id="caribellbAgendaAssistito"  nonselectableTags="*" checkmark="false"  multiple="false" oddRowSclass="non-odd" 
+					 hflex="75%" vflex="true" >
+					<listhead sizable="false">
+						<caribellistheader db_name="assistito" width="22%" label="${c:l('agendaPianSett.assistito')}" />
+						<caribellistheader db_name="matt_pom"  width="5%"  label="${c:l('agendaPianSett.matt_pom')}" />
+						<caribellistheader db_name="" 		   width="3%"  label="" column_editable="true" column_type="boolean" align="center" ><checkbox id="selTutti"></checkbox></caribellistheader>  
+						<caribellistheader db_name="0"         width="10%" sclass="headerListbox" label="${c:l('agendaPianSett.sett.0')}" ><checkbox id="jCheckBox1"></checkbox></caribellistheader>  
+						<caribellistheader db_name="1"         width="10%" sclass="headerListbox" label="${c:l('agendaPianSett.sett.1')}" ><checkbox id="jCheckBox2"></checkbox></caribellistheader>  
+						<caribellistheader db_name="2"         width="10%" sclass="headerListbox" label="${c:l('agendaPianSett.sett.2')}" ><checkbox id="jCheckBox3"></checkbox></caribellistheader>  
+						<caribellistheader db_name="3"         width="10%" sclass="headerListbox" label="${c:l('agendaPianSett.sett.3')}" ><checkbox id="jCheckBox4" ></checkbox></caribellistheader>  
+						<caribellistheader db_name="4"         width="10%" sclass="headerListbox" label="${c:l('agendaPianSett.sett.4')}" ><checkbox id="jCheckBox5" ></checkbox></caribellistheader>  
+						<caribellistheader db_name="5"         width="10%" sclass="headerListbox" label="${c:l('agendaPianSett.sett.5')}" ><checkbox id="jCheckBox6" ></checkbox></caribellistheader>  
+						<caribellistheader db_name="6"         width="10%" sclass="headerListbox" label="${c:l('agendaPianSett.sett.6')}" ><checkbox id="jCheckBox7" ></checkbox></caribellistheader>  
+					</listhead>
+				</caribellistbox>
+				<vlayout hflex="25%" sclass="asterLayout" vflex="true">
+					<hlayout>
+						<checkbox id="jCheckBoxInteraSettimana" label="${c:l('agenda.interaSettimana')}"  ></checkbox>
+					</hlayout>
+					<panel_ubicazione />
+					<button label="${c:l('agendaModOperatore.btn_caricaOperatori')}" id="btn_caricaOperatori" forward="onCaricaOperatori()" />
+					<caribellistbox id="caribellbOperatori" vflex="true" rows="8">
+						<listhead sizable="false">
+							<caribellistheader db_name="cod_oper" width="25%" label="${c:l('common.codice')}" />
+							<caribellistheader db_name="desc_oper"  width="75%"  label="${c:l('common.operatore')}" />
+						</listhead>
+					</caribellistbox>
+					<label value="${c:l('agendaModOperatore.lblConferma')}" />
+					<button label="${c:l('agendaModOperatore.btn_confermaSpostamento')}" id="btn_confermaSpostamento" forward="onConfermaSelezione()" />
+				</vlayout>
+			</hlayout>
+			<hlayout>
+				<label value=" " />
+			</hlayout>
+		</vlayout>
+	</vlayout>
+
+</window>
+</zk>

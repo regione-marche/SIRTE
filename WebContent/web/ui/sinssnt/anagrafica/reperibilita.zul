@@ -1,0 +1,41 @@
+<vlayout id="cartellaReperibilitaForm" vflex="true">
+	<vlayout vflex="true" spacing="3px" style="text-align:right;">
+		<hlayout>
+			<label hflex="20%" value="${c:l('cartella.reperibilita.indirizzo')}:" />
+			<caribeltextbox id="indirizzo_rep" hflex="80%" db_name="indirizzo_rep" maxlength="30" required="true"/>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" maxlength="30"
+				value="${c:l('cartella.reperibilita.nomeCampanello')}:" />
+			<caribeltextbox id="nome_camp" hflex="80%" db_name="nome_camp"  maxlength="30" />
+		</hlayout>
+		<hlayout>
+			<label hflex="20%"
+				value="${c:l('cartella.reperibilita.citta')}:" />
+			<caribelSearch hflex="60%" db_name_cod="comune_rep" required="true"
+				id_descr="comreperibdescr" id_cod="comune_rep"
+				db_name_descr="comreperibdescr" id="comuneRepSearch"
+				ctrl="it.caribel.app.sinssnt.controllers.tabelle.comuni.ComuniSearchCtrl" />
+			<label hflex="5%" value="${c:l('cartella.reperibilita.cap')}:" />
+			<caribeltextbox hflex="5%" id="rep_cap" db_name="rep_cap" required="false"/>
+			<label hflex="5%" value="${c:l('cartella.reperibilita.provincia')}:" />
+			<caribeltextbox hflex="5%" id="provincia_rep" db_name="prov_rep" required="true"/>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%"
+				value="${c:l('cartella.domicilio.telefono')}:" />
+			<caribeltextbox hflex="25%" id="telefono1_rep"
+				db_name="telefono1_rep" maxlength="20" required="true"/>
+			<caribeltextbox hflex="25%" id="telefono2_rep"
+				db_name="telefono2_rep" maxlength="20" />
+			<label hflex="30%"></label>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%"
+				value="${c:l('cartella.reperibilita.areaDistrettuale')}:" />
+			<caribelSearch hflex="80%" id_descr="desc_com_rep" required="true"
+				db_name_cod="areadis_rep" id_cod="areadis_rep" db_name_descr="desc_area_reperib"
+				ctrl="it.caribel.app.common.controllers.areadis.AreadisSearchCtrl" />
+		</hlayout>
+	</vlayout>
+</vlayout>

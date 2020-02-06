@@ -1,0 +1,60 @@
+<window title="${c:l('contiEcoGrid.formTitle')}"
+	apply="it.caribel.app.common.controllers.rsa_conti.RsaContiGridCtrl"	
+	sclass="asterOverlappedWindow"  sizable="true"
+	closable="true" mode="overlapped" position="center" border="normal" width="750px"
+height="450px">
+
+	<vlayout height="100%">
+	
+		<caribelGridMenu  visible_btn_clear="true" />
+		<vlayout sclass="asterLayout" vflex="true" spacing="5px">
+		<hlayout valign="middle" width="100%">
+				<label hflex="20%"  value="${c:l('ecoConti.anno')}:" />
+				<caribelintbox maxlength="4" hflex="10%" id="tb_filter2" db_name="eco_anno"/>
+				<label hflex="68%"  value="" />
+			</hlayout>
+		
+		<hlayout>
+			<label hflex="20%" value="${c:l('ecoConti.centro_costo')}:" />
+			<caribelSearch hflex="80%" maxlength="6"  id_cod="tb_filter1" db_name_cod="eco_centrocosto"
+				required="false" 
+				ctrl="it.caribel.app.common.controllers.centro_costo.CentroCostoSearchCtrl"
+			 />
+		</hlayout>
+		<hlayout>
+				<label hflex="20%" value="${c:l('ecoConti.tipologia')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="tb_filter3" db_name="eco_socsan">
+						<radio id="tutti" value="2" label="${c:l('ecoConti.tipologia_tutti')}" checked="true"/>
+						<radio id="soc" value="0" label="${c:l('ecoConti.tipologia_sociale')}"/>	
+						<radio id="san" value="1" label="${c:l('ecoConti.tipologia_sanitario')}"/>						
+					</caribelradiogroup>
+				</div>
+		</hlayout>
+		<hlayout valign="middle" width="100%">
+				<label hflex="20%"  value="${c:l('ecoConti.descrizione')}:" />
+				<caribeltextbox hflex="78%" id="tb_filter4" db_name="eco_descri"/>
+				<label hflex="2%"  value="" />
+			</hlayout>
+		
+			<caribelPaging/>
+			<caribellistbox vflex="true" hflex="true" >
+			<frozen columns="3"/>
+				<listhead sizable="true">
+					<caribellistheader db_name="eco_anno"	width="5em"    label="${c:l('ecoContiGrid.anno')}" />
+					<caribellistheader db_name="eco_codice"  width="8em" label="${c:l('ecoContiGrid.codice')}" />	
+					<caribellistheader db_name="eco_descri"  width="10em" label="${c:l('ecoContiGrid.descrizione')}" />	
+					<caribellistheader db_name="desc_socsan"	width="10em"    label="${c:l('ecoContiGrid.tipologia')}" />
+					<caribellistheader db_name="eco_centrocosto"	width="10em"    label="${c:l('ecoContiGrid.centro_costo')}" />	
+					<caribellistheader db_name="desc_cc"	width="10em"    label="${c:l('ecoContiGrid.des_centro_costo')}" />
+					<caribellistheader db_name="eco_previs"	width="10em"    label="${c:l('ecoContiGrid.budget')}" />
+					<caribellistheader db_name="eco_imppresu"	width="10em"    label="${c:l('ecoContiGrid.imp_fittizio')}" />
+					<caribellistheader db_name="eco_impreale"	width="10em"    label="${c:l('ecoContiGrid.imp_reale')}" />	
+					<caribellistheader db_name="disponibile"	width="10em"    label="${c:l('ecoContiGrid.disponibile')}" />
+					<caribellistheader db_name="eco_utiliz"	width="10em"    label="${c:l('ecoContiGrid.liquidato')}" />						
+											
+				</listhead>
+			</caribellistbox>
+		</vlayout>		
+	</vlayout>
+</window>

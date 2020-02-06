@@ -1,0 +1,146 @@
+<vlayout id="anamnesiForm" >
+
+	<vlayout hflex="1" spacing="3px" sclass="asterLayout">
+		
+		<hlayout>
+			<label value="${c:l('schedaPalliat.anamnesiPanel.dataApertura')}:" hflex="14%"/>
+			<caribeldatebox id="skm_data_apertura" db_name="skm_data_apertura" 
+						    constraint="no future"  hflex="10%" required="true" isDbKey="true"/>
+			<label hflex="29%" />
+			<button id="btn_scheda_so" label="${c:l('SchedaInfForm.principale.SchedaSO')}" hflex="25%" />			
+			<label value="" hflex="22%" />
+		</hlayout>
+		
+		<hlayout>
+			<label value="${c:l('schedaPalliat.anamnesiPanel.dataSegnalazione')}:" hflex="14%"/>
+			<caribeldatebox id="skm_segnala_data" db_name="skm_segnala_data" 
+						    constraint="no future"  hflex="10%"/>
+			<label hflex="15%" value="" />
+			<label value="${c:l('schedaPalliat.anamnesiPanel.segnalante')}:" hflex="14%"/>
+			<caribelcombobox id="skm_segnala" db_name="skm_segnala" hflex="25%"/>
+			<label value="" hflex="22%" />
+		</hlayout>
+		
+		<hlayout>
+			<label value="${c:l('schedaPalliat.anamnesiPanel.sedazione')}:" hflex="14%" />
+			<div hflex="14%" style="text-align:left">
+				<caribelradiogroup id="skm_sedazione"
+					db_name="skm_sedazione" style="text-align:left">
+					<radio id="sedazioneSi"
+						label="${c:l('schedaPalliat.anamnesiPanel.sedazioneSi')}"
+						value="S" style="text-align:left" />
+					<radio id="sedazioneNo"
+						label="${c:l('schedaPalliat.anamnesiPanel.sedazioneNo')}"
+						value="N" checked="true" />
+				</caribelradiogroup>
+			</div>
+
+			<label value="" hflex="72%"/>
+		</hlayout>
+		
+<!-- 		<caribelradiogroup id="skm_sedazione" db_name="skm_sedazione" /> -->
+<!-- 		<hlayout> -->
+<!-- 			<label -->
+<!-- 				value="${c:l('schedaPalliat.anamnesiPanel.sedazione')}:" hflex="14%" />			 -->
+
+<!-- 			<div hflex="7%" > -->
+<!-- 				<radio id="sedazioneSi" radiogroup="skm_sedazione" -->
+<!-- 					value="S" label="${c:l('schedaPalliat.anamnesiPanel.sedazioneSi')}" /> -->
+<!-- 			</div> -->
+
+<!-- 			<div hflex="7%" > -->
+<!-- 				<radio id="sedazioneNo" radiogroup="skm_sedazione"  -->
+<!-- 					value="N" label="${c:l('schedaPalliat.anamnesiPanel.sedazioneNo')}" /> -->
+<!-- 			</div> -->
+
+<!-- 			<label hflex="72" /> -->
+<!-- 		</hlayout> -->
+	
+		<hlayout>
+			<label value="${c:l('schedaPalliat.anamnesiPanel.descrizioneContatto')}:" hflex="14%" />
+			<caribeltextbox id="skm_descr_contatto" db_name="skm_descr_contatto" 
+							required="true" maxlength="80" hflex="64%" />
+			<label value="" hflex="22%" />
+		</hlayout>
+		
+		<hlayout>
+			<label value="${c:l('schedaPalliat.anamnesiPanel.medicoReferente')}:" hflex="14%" />
+<!-- 			<caribelSearch hflex="44%" hflex_cod="25%" id_descr="desc_medico" required="true" -->
+<!-- 				db_name_cod="skm_medico" db_name_descr="" hflex_descr="75%" -->
+<!-- 				ctrl="it.caribel.app.common.controllers.medici.MediciSearchCtrl" id="cs_medicoReferente"/> -->
+			
+			<caribelSearch id="cs_medicoReferente" isDbKey="false" hflex_cod="25%" hflex_descr="75%" 
+				required="true" hflex="44%" id_descr="desc_medico" 
+				db_name_cod="skm_medico" id_cod="codMedicoReferente"
+				db_name_descr="" ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl" />
+
+			<label value="${c:l('schedaPalliat.anamnesiPanel.dataMedico')}:" hflex="10%" />
+			<caribeldatebox id="skm_medico_da" hflex="10%" required="true" db_name="skm_medico_da" constraint="no future" />
+			<button id="storico" label="${c:l('schedaPalliat.anamnesiPanel.storico')}" hflex="6%" forward="onStorico"/>
+			<label value="" hflex="16%" />
+		</hlayout>
+		
+		<hlayout>
+			<label value="${c:l('schedaPalliat.anamnesiPanel.presidio')}:" hflex="14%" />
+			<caribelSearch hflex="44%" db_name_cod="skm_cod_presidio"
+				required="true" id="cs_skm_cod_presidio" id_cod="cod_presidio"
+				id_descr="descr_presidio" db_name_descr=""
+				hflex_cod="25%" hflex_descr="75%" 
+				ctrl="it.caribel.app.common.controllers.presidi.PresidiSearchCtrl" />
+			<label value="" hflex="42%" />
+		</hlayout>
+		
+		<hlayout>
+			<label value="${c:l('schedaPalliat.anamnesiPanel.servizioAttivatoDa')}:" hflex="14%" />
+			<!-- ATTENZIONE: verificare il db_name -->
+			<caribelcombobox id="skm_attivazione" db_name="skm_attivazione" hflex="25%" required="true"/>
+			<label value="" hflex="61%"/>
+		</hlayout>
+		
+		<hlayout>
+			<label value="${c:l('schedaPalliat.anamnesiPanel.anamnesi')}:" hflex="14%" />
+			<caribeltextbox maxlength="2000" id="skm_anamnesi" rows="5" hflex="64%" style="resize:none"
+							db_name="skm_anamnesi" />
+			<label hflex="22%" />
+		</hlayout>
+		
+		<hlayout>
+			<label value="${c:l('schedaPalliat.anamnesiPanel.dataDimissione')}:" hflex="14%" />
+			<caribeldatebox id="skm_data_dimiss" db_name="skm_data_dimiss" hflex="10%" />
+			<label hflex="76%" />
+		</hlayout>
+		
+		<hlayout>
+			<label value="${c:l('schedaPalliat.anamnesiPanel.ospedaleDimissione')}:" hflex="14%" />
+			<caribelSearch hflex="44%" id_cod="ospedale_dimiss"
+				id_descr="desc_ospdim" db_name_cod="skm_osp_dim"
+				db_name_descr="" id="cs_ospedali" hflex_cod="25%" hflex_descr="75%"
+				ctrl="it.caribel.app.common.controllers.ospedali.OspedaliSearchCtrl" />
+			<label hflex="42%" />
+		</hlayout>
+		
+		<hlayout>
+			<label value="${c:l('schedaPalliat.anamnesiPanel.repartoDimissione')}:" hflex="14%" />
+			<caribelSearch hflex="44%" id_cod="reparto_dimiss"
+				id_descr="desc_repdim" db_name_cod="skm_uo_dim"
+				db_name_descr="" id="cs_reparti"
+				ctrl="it.caribel.app.common.controllers.reparti.RepartiSearchCtrl"
+				hflex_cod="25%" hflex_descr="75%" />
+			<label hflex="42%" />
+		</hlayout>
+		
+		<!-- verificare se tenere i due seguenti campi -->
+		<hlayout visible="false">
+			<label value="${c:l('schedaPalliat.anamnesiPanel.intensitaAssistenziale')}:" hflex="14%" />
+			<caribelcombobox id="cbx_motivo" db_name="skm_motivo" hflex="25%" required="false"/>
+			<label value="" hflex="61%"/>
+		</hlayout>
+		
+		<hlayout visible="false">
+			<label value="${c:l('schedaPalliat.anamnesiPanel.tipoUtenza')}:" hflex="14%" />
+			<caribelcombobox id="cbx_utenza" db_name="skm_tipout" hflex="25%" required="false"/>
+			<label value="" hflex="61%"/>
+		</hlayout>
+		
+	</vlayout>
+</vlayout>

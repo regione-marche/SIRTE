@@ -1,0 +1,122 @@
+<!-- mfo:section.start="layout" rem="IMPOSTAZIONI DI PAGINA" -->
+<html>
+<body>
+	<table width=98% border=1>
+		<tr>
+			<td width="150"></td>
+			<td width="150"></td>
+			<td width="150"></td>
+			<td width="150"></td>
+			<td width="150"></td>
+			<td width="150"></td>
+			<td width="150"></td>
+			<td width="150"></td>
+		</tr>
+		<tr>
+			<td align="left" colspan="7"><font size="4"> <b>
+						Monitoraggio indicatori cure domiciliari #periodo#</b>
+			</font></td>
+		</tr>
+		<tr>
+			<td align="left" colspan="7"><font size="4"> <b>#filtro1#</b>
+			</font></td>
+		</tr>
+		<tr>
+			<td align="left" colspan="7"><font size="4"> <b>#filtro2#</b>
+			</font></td>
+		</tr>
+	</table>
+	<!-- mfo:section.end -->
+
+	<!--mfo:section.start="tabella_intestazione" -->
+	<br/>
+	<table width=98% border=1>
+		<tr>
+			<th bgcolor=lightgrey  colspan="14">ASSISTITI IN CURE DOMICILIARI</th>
+		</tr>
+		<tr>
+			<th bgcolor=lightgrey  colspan="14">#titolo_tabella#</th>
+		</tr>
+		<tr>
+			<th width="500" bgcolor=lightgrey>GESTIONE CURE DOMICILIARI </th>
+			<th width="150" bgcolor=lightgrey>ADP</th>
+			<th width="150" bgcolor=lightgrey>ARD</th>
+			<th width="150" bgcolor=lightgrey>AID</th>
+			<th width="150" bgcolor=lightgrey>VSD</th>
+			<th width="150" bgcolor=lightgrey>Totale CP</th>
+			<th width="150" bgcolor=lightgrey>C.D.I. 1&#0176; LIV</th>
+			<th width="150" bgcolor=lightgrey>C.D.I. 2&#0176; LIV</th>
+			<th width="150" bgcolor=lightgrey>C.D.I. 3&#0176; LIV</th>
+			<th width="150" bgcolor=lightgrey>C.D.I. LIV NON DEFINITO</th>
+			<th width="150" bgcolor=lightgrey>Totale C.D.I.</th>
+			<th width="150" bgcolor=lightgrey>Totale (C.P. + C.D.I.) (A)</th>
+			<th width="150" bgcolor=lightgrey>Totale Scheda senza SO (B)</th>
+			<th width="150" bgcolor=lightgrey>Totale(A + B) </th>
+		</tr>
+		<!--mfo:section.end -->
+		<!--mfo:section.start="tabella_corpo_dati" -->
+		<tr>
+			<td align="left" width="150">#desc_prestazione#</td>
+			<td align="right" width="150">#adp#</td>
+			<td align="right" width="150">#ard#</td>
+			<td align="right" width="150">#aid#</td>
+			<td align="right" width="150">#vsd#</td>
+			<td align="right" width="150">#cp#</td>
+			<td align="right" width="150">#cdi_1_l#</td>
+			<td align="right" width="150">#cdi_2_l#</td>
+			<td align="right" width="150">#cdi_3_l#</td>
+			<td align="right" width="150">#cdi_non_l#</td>
+			<td align="right" width="150">#cdi#</td>
+			<td align="right" width="150">#totale#</td>
+			<td align="right" width="150">#senza_so#</td>
+			<td align="right" width="150">#totale_cp_cdi_s_so#</td>
+		</tr>
+		<!--mfo:section.end -->
+
+		<!--mfo:section.start="tabella_corpo_figura" -->
+		<tr>
+			<td align="left" width="150" colspan="11" font-weight="bold">#tipo_figura_professionale#: #figura_professionale#</td>
+		</tr>
+		<!--mfo:section.end -->
+
+		<!--mfo:section.start="tabella_fine" -->
+	</table>
+	<!--mfo:section.end -->
+
+
+	<!--mfo:section.start="tabella_accessi" -->
+	<table width=98% border=1>
+		<tr>
+			<td width="500"></td>
+			<td width="150"></td>
+		</tr>
+		<tr>
+			<th bgcolor=lightgrey>ACCESSI PER FIGURA PROFESSIONALE</th>
+			<th bgcolor=lightgrey>Totale</th>
+		</tr>
+
+		<!--mfo:section.end -->
+		<!--mfo:section.start="tabella_accessi_corpo" -->
+		<tr>
+			<td align="left" width="150">#figura_professionale#</td>
+			<td align="right" width="150">#numero#</td>
+		</tr>
+		<!--mfo:section.end -->
+		<!--mfo:section.start="tabella_accessi_fine" -->
+	</table>
+	<!--mfo:section.end -->
+
+
+
+
+	<!-- mfo:section.start="messaggio" rem="MESSAGGIO DI ERRORE" -->
+
+	<tr>
+		<td align="right" width="150"><b>NON SONO STATE REPERITE
+				INFORMAZIONI DA STAMPARE PER: #info#.</b></td>
+	</tr>
+	<!-- mfo:section.end -->
+	<!--mfo:section.start="finale"-->
+</body>
+</html>
+<!--mfo:section.end-->

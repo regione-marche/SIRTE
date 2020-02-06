@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+
+<!-- mfo:section.start="layout" rem="IMPOSTAZIONI DI PAGINA" -->
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="simple"
+        page-height="29.7cm"	page-width="21cm"
+        margin-top="1cm"	margin-bottom="1cm"
+        margin-left="1cm"	margin-right="1cm" >
+      <fo:region-body margin-top="2.5cm" margin-bottom="1cm"/>
+      <fo:region-before extent="2.5cm"/>
+      <fo:region-after extent="1cm"/>
+    </fo:simple-page-master>
+  </fo:layout-master-set>
+
+  <fo:page-sequence master-name="simple">
+    <fo:static-content flow-name="xsl-region-before">
+  <fo:table font-size="10pt">
+  <fo:table-column column-width="17.5cm"/>
+  <fo:table-body>
+  <fo:table-row height="9pt">
+   <fo:table-cell text-align="start" >
+
+	<fo:table font-size="10pt">
+	<fo:table-column column-width="11.5cm"/>
+	<fo:table-column column-width="6cm"/>
+	 <fo:table-body>
+	  <fo:table-row height="9pt">
+	    <fo:table-cell text-align="start" >
+		<fo:block start-indent="1mm" end-indent="1mm"
+		padding-top="0.5mm" font-weight="bold">
+			Cognome e Nome: #assistito#
+		</fo:block>
+	    </fo:table-cell>
+	    <fo:table-cell text-align="start" >
+		<fo:block start-indent="1mm" end-indent="1mm"
+		padding-top="0.5mm" font-weight="bold">
+			Data scheda: #data#
+		</fo:block>
+	    </fo:table-cell>
+	  </fo:table-row>
+	 </fo:table-body>
+	</fo:table>
+	    </fo:table-cell>
+	  </fo:table-row>
+          <fo:table-row height="1pt">
+             <fo:table-cell text-align="start" number-columns-spanned='2'>
+                  <fo:block>
+                          <fo:leader leader-pattern="rule"
+                             rule-thickness="0.5pt"
+                             leader-length="17cm"/>
+                  </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+
+	 </fo:table-body>
+	</fo:table>
+
+	  <fo:block font-size="14pt"  end-indent="1mm"
+		  font-weight="bold" text-align="start" space-before.optimum="12pt">
+		  SCHEDA INFERMIERISTICA
+	  </fo:block>
+    </fo:static-content>
+
+
+    <!-- TITOLO DI PIEDE -->
+    <fo:static-content flow-name="xsl-region-after">
+      <fo:table font-size="8pt" width="auto" space-before.optimum="0.5cm">
+        <fo:table-column column-width="12cm"/>
+        <fo:table-column column-width="7cm"/>
+        <fo:table-body>
+          <fo:table-row height="10pt">
+            <fo:table-cell text-align="start">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >#txt#</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="end">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >elaborato del #data_stampa# (scheda_inf.fo)</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body">
+     <fo:block start-indent="1mm" end-indent="1mm" font-size="10pt"
+		text-align="start" font-weight="bold">
+		  Indicare con una X il bisogno infermieristico rilevato e gli interventi corrispondenti
+	  </fo:block>
+<!-- mfo:section.end -->
+<!--mfo:section.start="iniziotab" -->
+
+	<fo:table space-before.optimum="1cm" >
+        	<fo:table-column column-width="8cm"/>
+         <fo:table-column column-width="9cm"/>
+        	<fo:table-column column-width="1cm"/>
+         <fo:table-column column-width="1cm"/>
+          <fo:table-body>
+           <fo:table-row height="8pt" >
+             <fo:table-cell font-size="11pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" font-weight="bold" space-before="0.1cm"
+                >Bisogno
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="11pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center"  font-weight="bold" space-before="0.1cm"
+                >Intervento
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell  font-size="11pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" 
+                  font-weight="bold" space-before="0.1cm">Att.</fo:block>
+             </fo:table-cell>
+             <fo:table-cell  font-size="11pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" 
+                  font-weight="bold" space-before="0.1cm">Da Att. </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+<!-- mfo:section.end -->
+           
+<!--mfo:section.start="rigatab" rem="RIGA RIPETITIVA" -->
+	    <fo:table-row height="8pt" >
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="start" font-weight="bold" space-before="0.1cm"
+                >#titolo#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="start"  space-before="0.1cm"
+                >#sottotitolo#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell  font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start" 
+                  space-before="0.1cm">#bisinatto# </fo:block>
+             </fo:table-cell>
+             <fo:table-cell  font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start" 
+                  space-before="0.1cm">#bisnoinatto# </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+  <!-- mfo:section.end -->
+           
+<!--mfo:section.start="finetab" -->         
+    </fo:table-body>
+   </fo:table>
+     
+  <fo:block start-indent="1mm" end-indent="1mm" font-size="10pt"
+		text-align="start" font-weight="bold" space-before.optimum="1cm">
+		  Indicare con una X il tipo di risposta assistenziale
+	  </fo:block>
+
+
+
+	<fo:table space-before.optimum="1cm" >
+        	<fo:table-column column-width="17cm"/>
+         <fo:table-column column-width="2cm"/>
+          <fo:table-body>
+           <fo:table-row height="8pt" >
+             <fo:table-cell font-size="11pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" font-weight="bold" space-before="0.1cm"
+                >
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell  font-size="11pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" 
+                  font-weight="bold" space-before="0.1cm">inserire X </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+	    <fo:table-row height="8pt" >
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="start" space-before="0.1cm"
+                >prestazione occasionale
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center"  space-before="0.1cm"
+                >#bisogno_inf_1#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+           
+	    <fo:table-row height="8pt" >
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="start" space-before="0.1cm"
+                >ciclico programmato
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center"  space-before="0.1cm"
+                >#bisogno_inf_2#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>   
+    </fo:table-body>
+   </fo:table>
+
+ <fo:block start-indent="1mm" end-indent="1mm" font-size="10pt"
+		text-align="start" font-weight="bold" space-before.optimum="1cm">
+		  In caso di assistenza di tipo "ciclico programmato" indicare con una X:
+	  </fo:block>
+
+
+
+	<fo:table space-before.optimum="1cm" >
+         <fo:table-column column-width="2cm"/>
+  <fo:table-column column-width="2cm"/>
+  <fo:table-column column-width="2cm"/>
+  <fo:table-column column-width="2cm"/>
+  <fo:table-column column-width="2cm"/>
+  <fo:table-column column-width="2cm"/>
+  <fo:table-column column-width="2cm"/>
+  <fo:table-column column-width="4cm"/>
+          <fo:table-body>
+           <fo:table-row height="8pt" >
+             <fo:table-cell font-size="10pt" border-style="solid" border-width="0.1mm"  number-columns-spanned='5'>
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" font-weight="bold" space-before="0.1cm"
+                >frequenza settimanale stimata
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell  font-size="10pt" border-style="solid" border-width="0.1mm" number-columns-spanned='3'>
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" 
+                  font-weight="bold" space-before="0.1cm">inserire X </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+	    <fo:table-row height="8pt" >
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >1 #f_1#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >2 #f_2#
+                </fo:block>
+             </fo:table-cell>
+      <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >3 #f_3#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >4 #f_4#
+                </fo:block>
+             </fo:table-cell>
+      <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >5 #f_5#
+                </fo:block>
+             </fo:table-cell>
+      <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >6 #f_6#
+                </fo:block>
+             </fo:table-cell>
+      <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >7 #f_7#
+                </fo:block>
+             </fo:table-cell>
+      <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                > #f_mens#/30 
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>     
+    </fo:table-body>
+   </fo:table>
+
+     
+	<fo:table >
+         <fo:table-column column-width="9cm"/>
+		 <fo:table-column column-width="9cm"/>
+          <fo:table-body>
+           <fo:table-row height="8pt" >
+             <fo:table-cell font-size="10pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" font-weight="bold" space-before="0.1cm"
+                >presenza di operatori necessaria
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell  font-size="10pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" 
+                  font-weight="bold" space-before="0.1cm">inserire X </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+	    <fo:table-row height="8pt" >
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >singola #op_1#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >doppia #op_2#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>     
+    </fo:table-body>
+   </fo:table>
+
+  
+ <fo:block start-indent="1mm" end-indent="1mm" font-size="10pt"
+		text-align="start" font-weight="bold" space-before.optimum="1cm">
+		  Fattori che possono modificare il tipo di assistenza
+	  </fo:block>
+
+
+
+	<fo:table space-before.optimum="1cm" >
+  <fo:table-column column-width="17cm"/>
+  <fo:table-column column-width="2cm"/>
+          <fo:table-body>
+           <fo:table-row height="8pt" >
+             <fo:table-cell font-size="10pt" border-style="solid" border-width="0.1mm"  >
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" font-weight="bold" space-before="0.1cm"
+                >Livello di adeguatezza alla cura di se'
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell  font-size="10pt" border-style="solid" border-width="0.1mm" >
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" 
+                  font-weight="bold" space-before="0.1cm">inserire X </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+	    <fo:table-row height="8pt" >
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="start" space-before="0.1cm"
+                >e' in grado di comprendere e di mettere in atto la cura di se'
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >#cur_0#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+     
+	    <fo:table-row height="8pt" >
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="start" space-before="0.1cm"
+                >e' in grado di comprendere ma non di mettere in atto la cura di se'
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >#cur_1#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+           
+	    <fo:table-row height="8pt" >
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="start" space-before="0.1cm"
+                >non e' in grado di comprendere e di mettere in atto la cura di se'
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >#cur_2#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+    </fo:table-body>
+   </fo:table>   
+
+     
+
+	<fo:table space-before.optimum="1cm" >
+  <fo:table-column column-width="17cm"/>
+  <fo:table-column column-width="2cm"/>
+          <fo:table-body>
+           <fo:table-row height="8pt" >
+             <fo:table-cell font-size="10pt" border-style="solid" border-width="0.1mm"  >
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" font-weight="bold" space-before="0.1cm"
+                >Adeguatezza del caregiver all'attuazione del piano assistenziale
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell  font-size="10pt" border-style="solid" border-width="0.1mm" >
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" 
+                  font-weight="bold" space-before="0.1cm">inserire X </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+	    <fo:table-row height="8pt" >
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="start" space-before="0.1cm"
+                >comprende le problematiche assistenziali ed e' in grado di collaborare
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >#car_0#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+     
+	    <fo:table-row height="8pt" >
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="start" space-before="0.1cm"
+                >comprende le problematiche assistenziali ma non e' in grado di collaborare
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >#car_1#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+           
+	    <fo:table-row height="8pt" >
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="start" space-before="0.1cm"
+                >non comprende le problematiche assistenziali. Critica o si oppone alle proposte di piano assistenziale,
+                 non collabora all'assistenza
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >#car_2#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+    </fo:table-body>
+   </fo:table>   
+   
+     
+	<fo:table space-before.optimum="1cm" >
+  <fo:table-column column-width="10cm"/>
+  <fo:table-column column-width="7cm"/>
+  <fo:table-column column-width="2cm"/>
+          <fo:table-body>
+           <fo:table-row height="8pt" >
+             <fo:table-cell font-size="10pt"  border-width="0.1mm"  >
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="start" font-weight="bold" space-before="0.1cm"
+                >In base a:
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell  font-size="10pt" border-style="solid" border-width="0.1mm" >
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" 
+                  font-weight="bold" space-before="0.1cm">complessita' </fo:block>
+             </fo:table-cell>
+             <fo:table-cell  font-size="10pt" border-style="solid" border-width="0.1mm" >
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" 
+                  font-weight="bold" space-before="0.1cm">inserire X </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+	    <fo:table-row height="8pt" >
+             <fo:table-cell font-size="9pt"  border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="start" space-before="0.1cm"
+                >&#8226; bisogni rilevati e relativi interventi
+                </fo:block>
+             </fo:table-cell>
+      
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >bassa
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >#compl_0#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+      <fo:table-row height="8pt" >
+             <fo:table-cell font-size="9pt"  border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="start" space-before="0.1cm"
+                >&#8226; tipo di assistenza, frequenza, operatori necessari,
+                </fo:block>
+             </fo:table-cell>
+      
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >media
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >#compl_1#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+      <fo:table-row height="8pt" >
+             <fo:table-cell font-size="9pt"  border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="start" space-before="0.1cm"
+                >&#8226; adeguatezza alla cura di se' e dell'ambiente(umano e fisico),
+                </fo:block>
+             </fo:table-cell>
+      
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >alta
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >#compl_2#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+     
+    </fo:table-body>
+   </fo:table>     
+     <fo:block start-indent="1mm" end-indent="1mm" font-size="10pt"
+		text-align="start" font-weight="bold" space-before.optimum="1cm">
+		  il professionista deve esprimere un giudizio sulla complessita' del bisogno infermieristico
+	  </fo:block>
+	<fo:table padding-top="1cm">
+        	<fo:table-column column-width="10cm"/>
+        	<fo:table-column column-width="9cm"/>
+        <fo:table-body>
+        
+          <fo:table-row>
+ 	      <fo:table-cell font-size="10pt" padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm"
+                font-weight="normal" text-align="start"
+                >Punteggio:
+				</fo:block>
+          </fo:table-cell>
+ 	      <fo:table-cell font-size="10pt" padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm"
+                font-weight="bold" text-align="start"
+                >#totale#
+		 		</fo:block>
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row>
+ 	      <fo:table-cell font-size="10pt"
+			padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm"
+                 font-weight="normal" text-align="start"
+                 >Nome e qualifica di chi ha eseguito il rilievo:
+		 </fo:block>
+              </fo:table-cell>
+ 	      <fo:table-cell font-size="10pt"
+			padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm"
+                 font-weight="bold" text-align="start"
+                 >#nome_test#
+		 </fo:block>
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row>
+ 	      <fo:table-cell font-size="10pt" padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm"
+                 font-weight="normal"
+                 >Data Test:
+		 </fo:block>
+              </fo:table-cell>
+ 	      <fo:table-cell font-size="10pt" padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm"
+                 font-weight="bold"
+                 >#data_test#
+		 </fo:block>
+              </fo:table-cell>
+          </fo:table-row>
+    </fo:table-body>
+   </fo:table>
+
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="finale" -->
+    </fo:flow> <!-- closes the flow element-->
+  </fo:page-sequence> <!-- closes the page-sequence -->
+<!-- mfo:section.end -->
+</fo:root>
+
+

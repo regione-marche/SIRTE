@@ -1,0 +1,27 @@
+<window 
+	apply="it.caribel.app.sinssnt.controllers.tabelle.commissione_uvm.CommissioneUvmGridCtrl"
+	width="650px" height="510px" style="overflow:auto" sizable="true"
+	closable="true" mode="overlapped" position="center" border="normal">
+
+	<vlayout height="100%">
+				
+		<caribelGridMenu  visible_btn_clear="true"/>
+		<vlayout sclass="asterLayout" vflex="true" spacing="0px">
+			<hlayout>
+				<label hflex="20%"  value="${c:l('generic.descrizione')}:" />
+				<caribeltextbox hflex="60%" id="tb_filter1" db_name="cm_descr"/>
+				<label hflex="20%"  value="" />
+			</hlayout>
+			
+			<caribelPaging/>
+			<caribellistbox vflex="true" hflex="true" >
+				<listhead sizable="true">
+					<caribellistheader db_name="cm_cod_comm"	  width="8em"	label="${c:l('commissioneUVMGrid.codice')}" />
+					<caribellistheader db_name="cm_descr" 	label="${c:l('commissioneUVMGrid.descrizione')}"  />		
+					
+				</listhead>
+			</caribellistbox>
+		</vlayout>	
+	</vlayout>	
+
+</window>

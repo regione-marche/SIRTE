@@ -1,0 +1,75 @@
+<window title="${c:l('riepilogo.storico.fisio.referente.formTitle')}"
+	apply="it.caribel.app.sinssnt.controllers.storico_referente.StoricoFisioReferenteGridCtrl"
+	sclass="asterOverlappedWindow"
+	id="fisioReferente"
+	height="${c:l('style.windowGrid.overlapped.height')}" sizable="true"
+	closable="true" mode="overlapped" position="center" border="normal">
+
+	<vlayout id="strMedicoReferete">
+		<vlayout spacing="0px" width="100%">
+			<hlayout valign="middle" width="100%">
+				<label hflex="20%"
+					value="${c:l('riepilogo.storico.fisio.referente.cartella')}:"  visible="false"/>
+				<caribeltextbox hflex="20%" readonly="true"
+					id="key_cartella" db_name="n_cartella"  visible="false"/>
+				<label hflex="5%" value="" visible="false"></label>
+				<label hflex="15%"
+					value="${c:l('riepilogo.storico.fisio.referente.operatore')}:" visible="false"/>
+				<caribeltextbox hflex="35%" readonly="true"	db_name="JLabelCognomeOp" 
+				id="JLabelCognomeOp" visible="false"/>
+				<label hflex="5%" value="" visible="false"></label>
+			</hlayout>
+			<hlayout valign="middle" width="100%">
+				<label hflex="20%" visible="false"
+					value="${c:l('riepilogo.storico.fisio.referente.contatto')}:" />    
+				<caribeltextbox hflex="20%" readonly="true"
+					id="key_contatto" db_name="n_contatto" visible="false"/>
+				<label hflex="5%" value="" visible="false"></label>
+				<label hflex="15%"
+					value="${c:l('riepilogo.storico.fisio.referente.assistito')}:" visible="false"/>
+				<caribeltextbox hflex="35%" readonly="true" db_name="JLabelAssistito" 
+					id="JLabelAssistito" visible="false"/>
+				<label hflex="5%" value="" visible="false"></label>
+			</hlayout>
+			<hlayout width="100%">
+				<caribellistbox rows="15" hflex="true">
+					<listhead sizable="true">
+						<caribellistheader db_name="skf_fisiot_da"	width="15%" 
+							label="${c:l('riepilogo.storico.fisio.referente.tb.data.inizio')}" />
+						<caribellistheader db_name="descop" width="55%" 
+							label="${c:l('riepilogo.storico.fisio.referente.tb.fisio')}" />
+						<caribellistheader db_name="des_zona" width="30%" 
+							label="${c:l('riepilogo.storico.fisio.referente.tb.zona')}" />
+					</listhead>
+				</caribellistbox>
+			</hlayout>
+			<hlayout style="margin-top: -1px;" hflex="true" width="100%">
+				<caribelGridFormMenuHoriz />
+			</hlayout>
+			<hlayout width="100%">
+				<groupbox style="margin-top: -1px;" hflex="true" closable="false">
+					<vlayout hflex="true" vflex="true" id="myForm" sclass="asterLayout">
+						<hlayout>
+							<label hflex="30%" id="lbSkDataInizio"
+								value="${c:l('riepilogo.storico.fisio.referente.data.inizio.incarico')}:" />
+							<caribeldatebox id="skf_fisiot_da"
+								hflex="15%" db_name="skf_fisiot_da" required="true"
+								constraint="no future" />
+							<caribeltextbox hflex="20%" readonly="true" id="keyCartella" db_name="n_cartella" visible="false"/>								
+							<caribeltextbox hflex="20%" readonly="true" id="keyContatto" db_name="n_contatto" visible="false"/>
+							<label hflex="55%" />
+						</hlayout>
+						<hlayout>
+							<label id="lbSkOperatore" hflex="30%" value="${c:l('riepilogo.storico.fisio.referente.fisio.referente')}:" />
+							<caribelSearch hflex_cod="20%" hflex_descr="45%"    hflex="65%"  required="true" id_cod="skf_fisiot" id_descr="descop"
+								db_name_cod="skf_fisiot" db_name_descr="descop" id="fisioReferenteSearch"
+								ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl" />
+							<label hflex="5%" />
+						</hlayout>
+						<!-- <hlayout><label hflex="100%" value=""></label></hlayout> --> 
+					</vlayout>
+				</groupbox>
+			</hlayout>
+		</vlayout>
+	</vlayout>
+	</window>

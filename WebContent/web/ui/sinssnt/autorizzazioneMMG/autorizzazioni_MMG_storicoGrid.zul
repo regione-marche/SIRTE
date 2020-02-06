@@ -1,0 +1,27 @@
+<window 
+	id="sntAutorizzazioneMMGStorico" 
+	title="${c:l('autorizzazionemmg.gridTitleStorico')}"
+	apply="it.caribel.app.sinssnt.controllers.autorizzazioni.AutorizzazioniMMGGridCtrl"
+	sclass="asterOverlappedWindow" 
+	border="normal"
+	width="100%" vflex="true" >
+	<vlayout height="100%">
+		<caribelGridMenu />
+		<vlayout sclass="asterLayout" vflex="true" spacing="0px">
+			<hlayout valign="middle" width="100%" visible="false">
+				<label hflex="20%"  value="${c:l('schedaFisioGrid.cartella')}:" />
+				<caribeltextbox hflex="60%" id="tb_filter1" db_name="n_cartella" required="false" />
+				<label hflex="20%"  value="" />
+			</hlayout>
+<!-- 			<caribelPaging sortable="true"/> -->
+			<caribellistbox vflex="true" hflex="true">
+				<listhead sizable="true">
+					<caribellistheader db_name="pr_data"	  order_by="pr_data"      label="${c:l('autorizzazionemmg.dataApertura')}"         width="15%" sort="auto"/>
+	 				<caribellistheader db_name="desc_oper"	  order_by="desc_oper"    label="${c:l('autorizzazionemmg.operatore')}"    		   width="20%" sort="auto"/> 
+	 				<caribellistheader db_name="descr_segnal" order_by="descr_segnal" label="${c:l('autorizzazionemmg.segnalante')}"		   width="30%" sort="auto"/> 
+	 				<caribellistheader db_name="desc_patol1"  order_by="desc_patol1"  label="${c:l('autorizzazionemmg.patologia.principale')}" width="35%" sort="auto"/> 
+				</listhead>
+			</caribellistbox>
+		</vlayout>
+	</vlayout>
+</window>

@@ -1,0 +1,4391 @@
+<?xml version ="1.0" encoding="ISO-8859-1"?>
+
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+
+<!-- mfo:section.start="layout"  -->
+<fo:layout-master-set>
+  <fo:simple-page-master master-name="simple"
+    page-height="29.7cm"                 page-width="21cm"
+    margin-top="1cm"                  	 margin-bottom="0.5cm"
+    margin-left="0.25cm"                  margin-right="0.25cm">
+    <fo:region-before margin-top="0.5cm" extent="2cm"/>
+    <fo:region-after extent="1cm"/>
+    <fo:region-body margin-top="1cm" margin-bottom="1cm"/>
+  </fo:simple-page-master>
+</fo:layout-master-set>
+
+<fo:page-sequence master-name="simple">
+<fo:static-content flow-name="xsl-region-before">
+
+  <fo:table font-size="10pt">
+  <fo:table-column column-width="20.5cm"/>
+  <fo:table-body>
+  <fo:table-row height="9pt">
+     <fo:table-cell text-align="start" >
+
+          <fo:table font-size="10pt">
+          <fo:table-column column-width="12.0cm"/>
+          <fo:table-column column-width="8.5cm"/>
+           <fo:table-body>
+            <fo:table-row height="9pt">
+              <fo:table-cell text-align="start" >
+                  <fo:block start-indent="1mm" end-indent="1mm"
+                  padding-top="0.5mm" font-weight="bold">
+                          Cognome e Nome: #assistito#
+                  </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="end" >
+                  <fo:block start-indent="1mm" end-indent="1mm"
+                  padding-top="0.5mm" font-weight="bold">
+                          Data : #data#
+                  </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+           </fo:table-body>
+          </fo:table>
+
+     </fo:table-cell>
+  </fo:table-row>
+  <fo:table-row height="1pt">
+     <fo:table-cell text-align="start" >
+          <fo:block>
+          <fo:leader leader-pattern="rule"
+                     rule-thickness="0.5pt"
+                     leader-length="20.5cm"/>
+          </fo:block>
+     </fo:table-cell>
+  </fo:table-row>
+  
+  </fo:table-body>
+  </fo:table>
+</fo:static-content>
+
+    <!-- TITOLO DI PIEDE -->
+    <fo:static-content flow-name="xsl-region-after">
+      <fo:table font-size="8pt" width="auto" >
+        <fo:table-column column-width="11cm"/>
+        <fo:table-column column-width="9.5cm"/>
+        <fo:table-body>
+          <fo:table-row height="10pt">
+            <fo:table-cell text-align="start">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >#txt#</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="end">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >elaborato del #data_stampa#</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+    </fo:static-content>
+
+<fo:flow flow-name="xsl-region-body">
+<!--mfo:section.end -->
+
+
+
+<!-- mfo:section.start="inizioTab"  -->
+	<fo:block font-weight="bold" text-align="center" start-indent="1mm" end-indent="1mm" space-before="0.3cm" font-size="14pt">
+  		SEDE
+  	</fo:block>
+  <fo:table space-before.optimum="2.0cm" font-size="10pt" font-family="sans-serif"  >
+    <fo:table-column column-width="1cm"/>
+    <fo:table-column column-width="6cm"/>
+    <fo:table-column column-width="4.7cm"/>
+    <fo:table-column column-width="1.5cm"/>
+    <fo:table-column column-width="1.5cm"/>
+    <fo:table-column column-width="1.5cm"/>
+    <fo:table-column column-width="1.5cm"/>
+	<fo:table-column column-width="2.5cm"/>
+    
+	<fo:table-body>
+	<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center" font-weight="bold" border-width="0.1mm" border-style="solid"  number-columns-spanned="3">
+			<fo:block color="black" >
+        		LOCALIZZAZIONE LESIONI DA DECUBITO
+        	</fo:block>        	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="center" font-weight="bold" border-width="0.1mm" border-style="solid" number-columns-spanned="5">
+			<fo:block color="black" >
+        		GRADO
+        	</fo:block>        	
+		  </fo:table-cell>	
+		</fo:table-row>
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+		  	<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.25cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#sede1#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell></fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			     	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="start" start-indent="0.2cm" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		Prominenza occipitale
+        	</fo:block> 
+		  </fo:table-cell>	  
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block> 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado1_1#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							1&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado1_2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							2&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado1_3#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							3&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado1_4#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							4&#176;
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.10cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="1.95cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#nostadio1#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" text-align="start" >
+    							no stadiab.
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		</fo:table-row>
+		
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+		  	<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.25cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#sede2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell></fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			     	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="start" start-indent="0.2cm" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		Scapola
+        	</fo:block> 
+		  </fo:table-cell>	  
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >			
+			<fo:table>
+		  		<fo:table-column column-width="0.4cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="1.4cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="2.4cm"/>
+    			
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#sx2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							sx
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#dx2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							dx
+    						</fo:block>    						
+    					</fo:table-cell>  					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>			 
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado2_1#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							1&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado2_2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							2&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado2_3#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							3&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado2_4#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							4&#176;
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.10cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="1.95cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#nostadio2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" text-align="start" >
+    							no stadiab.
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 	 
+		  </fo:table-cell>	
+		</fo:table-row>
+		
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+		  	<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.25cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#sede3#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell></fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			     	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="start" start-indent="0.2cm" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		Processo spinoso
+        	</fo:block> 
+		  </fo:table-cell>	  
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block> 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado3_1#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							1&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado3_2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							2&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado3_3#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							3&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado3_4#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							4&#176;
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.10cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="1.95cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#nostadio3#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" text-align="start" >
+    							no stadiab.
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 	 
+		  </fo:table-cell>	
+		</fo:table-row>
+		
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+		  	<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.25cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#sede4#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell></fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			     	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="start" start-indent="0.2cm" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		Gomito
+        	</fo:block> 
+		  </fo:table-cell>	  
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >			
+			<fo:table>
+		  		<fo:table-column column-width="0.4cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="1.4cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="2.4cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#sx4#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							sx
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#dx4#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							dx
+    						</fo:block>    						
+    					</fo:table-cell>  					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>			 
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado4_1#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							1&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado4_2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							2&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado4_3#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							3&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado4_4#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							4&#176;
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.10cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="1.95cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#nostadio4#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" text-align="start" >
+    							no stadiab.
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 	 
+		  </fo:table-cell>	
+		</fo:table-row>
+		
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+		  	<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.25cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#sede5#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell></fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			     	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="start" start-indent="0.2cm" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		Sacro
+        	</fo:block> 
+		  </fo:table-cell>	  
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block> 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado5_1#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							1&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado5_2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							2&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado5_3#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							3&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado5_4#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							4&#176;
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.10cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="1.95cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#nostadio5#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" text-align="start" >
+    							no stadiab.
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 		 
+		  </fo:table-cell>	
+		</fo:table-row>
+		
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+		  	<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.25cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#sede6#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell></fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			     	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="start" start-indent="0.2cm" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		Cresta iliaca
+        	</fo:block> 
+		  </fo:table-cell>	  
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >			
+			<fo:table>
+		  		<fo:table-column column-width="0.4cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="1.4cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="2.4cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#sx6#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							sx
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#dx6#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							dx
+    						</fo:block>    						
+    					</fo:table-cell>  					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>			 
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado6_1#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							1&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado6_2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							2&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado6_3#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							3&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado6_4#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							4&#176;
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.10cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="1.95cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#nostadio6#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" text-align="start" >
+    							no stadiab.
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 		 
+		  </fo:table-cell>	
+		</fo:table-row>
+		
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+		  	<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.25cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#sede7#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell></fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			     	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="start" start-indent="0.2cm" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		Trocantere
+        	</fo:block> 
+		  </fo:table-cell>	  
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >			
+			<fo:table>
+		  		<fo:table-column column-width="0.4cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="1.4cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="2.4cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#sx7#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							sx
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#dx7#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							dx
+    						</fo:block>    						
+    					</fo:table-cell>  					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>			 
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado7_1#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							1&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado7_2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							2&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado7_3#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							3&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado7_4#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							4&#176;
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.10cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="1.95cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#nostadio7#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" text-align="start" >
+    							no stadiab.
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 	 
+		  </fo:table-cell>	
+		</fo:table-row>
+		
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+		  	<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.25cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#sede8#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell></fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			     	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="start" start-indent="0.2cm" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		Ischio
+        	</fo:block> 
+		  </fo:table-cell>	  
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >			
+			<fo:table>
+		  		<fo:table-column column-width="0.4cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="1.4cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="2.4cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#sx8#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							sx
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#dx8#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							dx
+    						</fo:block>    						
+    					</fo:table-cell>  					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>			 
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado8_1#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							1&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado8_2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							2&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado8_3#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							3&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado8_4#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							4&#176;
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.10cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="1.95cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#nostadio8#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" text-align="start" >
+    							no stadiab.
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 		 
+		  </fo:table-cell>	
+		</fo:table-row>
+		
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+		  	<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.25cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#sede9#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell></fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			     	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="start" start-indent="0.2cm" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		Piega glutea
+        	</fo:block> 
+		  </fo:table-cell>	  
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >			
+			<fo:table>
+		  		<fo:table-column column-width="0.4cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="1.4cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="2.4cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#sx9#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							sx
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#dx9#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							dx
+    						</fo:block>    						
+    					</fo:table-cell>  					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>			 
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado9_1#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							1&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado9_2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							2&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado9_3#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							3&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado9_4#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							4&#176;
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.10cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="1.95cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#nostadio9#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" text-align="start" >
+    							no stadiab.
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 	 
+		  </fo:table-cell>	
+		</fo:table-row>
+		
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+		  	<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.25cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#sede10#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell></fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			     	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="start" start-indent="0.2cm" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		Ginocchio
+        	</fo:block> 
+		  </fo:table-cell>	  
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >			
+			<fo:table>
+		  		<fo:table-column column-width="0.4cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="1.4cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="2.4cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#sx10#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							sx
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#dx10#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							dx
+    						</fo:block>    						
+    					</fo:table-cell>  					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>			 
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado10_1#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							1&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado10_2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							2&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado10_3#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							3&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado10_4#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							4&#176;
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.10cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="1.95cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#nostadio10#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" text-align="start" >
+    							no stadiab.
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 	 
+		  </fo:table-cell>	
+		</fo:table-row>
+		
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+		  	<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.25cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#sede11#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell></fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			     	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="start" start-indent="0.2cm" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		Cresta tibiale
+        	</fo:block> 
+		  </fo:table-cell>	  
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >			
+			<fo:table>
+		  		<fo:table-column column-width="0.4cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="1.4cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="2.4cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#sx11#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							sx
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#dx11#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							dx
+    						</fo:block>    						
+    					</fo:table-cell>  					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>			 
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado11_1#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							1&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado11_2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							2&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado11_3#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							3&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado11_4#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							4&#176;
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.10cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="1.95cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#nostadio11#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" text-align="start" >
+    							no stadiab.
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			  
+		  </fo:table-cell>	
+		</fo:table-row>
+		
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+		  	<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.25cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#sede12#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell></fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			     	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="start" start-indent="0.2cm" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		Arto inferiore dx
+        	</fo:block> 
+		  </fo:table-cell>	  
+		 <fo:table-cell text-align="start" start-indent="0.2cm" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		#testo12#
+        	</fo:block> 
+		  </fo:table-cell>			 
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado12_1#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							1&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado12_2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							2&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado12_3#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							3&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado12_4#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							4&#176;
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.10cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="1.95cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#nostadio12#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" text-align="start" >
+    							no stadiab.
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 			 
+		  </fo:table-cell>	
+		</fo:table-row>
+		
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+		  	<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.25cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#sede13#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell></fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			     	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="start" start-indent="0.2cm" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		Arto inferiore sx
+        	</fo:block> 
+		  </fo:table-cell>	  
+		 <fo:table-cell text-align="start" start-indent="0.2cm" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		#testo13#
+        	</fo:block> 
+		  </fo:table-cell>			 
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado13_1#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							1&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado13_2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							2&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado13_3#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							3&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado13_4#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							4&#176;
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.10cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="1.95cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#nostadio13#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" text-align="start" >
+    							no stadiab.
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 	 
+		  </fo:table-cell>	
+		</fo:table-row>
+		
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+		  	<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.25cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#sede14#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell></fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			     	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="start" start-indent="0.2cm" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		Malleolo dx
+        	</fo:block> 
+		  </fo:table-cell>	  
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >			
+			<fo:table>
+		  		<fo:table-column column-width="0.4cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="1.4cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="2.4cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#int14#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							interna
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#est14#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							esterna
+    						</fo:block>    						
+    					</fo:table-cell>  					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>			 
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado14_1#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							1&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado14_2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							2&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado14_3#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							3&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado14_4#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							4&#176;
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.10cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="1.95cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#nostadio14#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" text-align="start" >
+    							no stadiab.
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 	 
+		  </fo:table-cell>	
+		</fo:table-row>
+		
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+		  	<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.25cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#sede15#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell></fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			     	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="start" start-indent="0.2cm" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		Malleolo sx
+        	</fo:block> 
+		  </fo:table-cell>	  
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >			
+			<fo:table>
+		  		<fo:table-column column-width="0.4cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="1.4cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="2.4cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#int15#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							interna
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#est15#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							esterna
+    						</fo:block>    						
+    					</fo:table-cell>  					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>			 
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado15_1#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							1&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado15_2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							2&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado15_3#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							3&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado15_4#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							4&#176;
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.10cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="1.95cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#nostadio15#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" text-align="start" >
+    							no stadiab.
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 		 
+		  </fo:table-cell>	
+		</fo:table-row>
+		
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+		  	<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.25cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#sede16#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell></fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			     	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="start" start-indent="0.2cm" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		Tallone
+        	</fo:block> 
+		  </fo:table-cell>	  
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >			
+			<fo:table>
+		  		<fo:table-column column-width="0.4cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="1.4cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="2.4cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#sx16#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							sx
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#dx16#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							dx
+    						</fo:block>    						
+    					</fo:table-cell>  					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>			 
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado16_1#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							1&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado16_2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							2&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado16_3#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							3&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado16_4#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							4&#176;
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.10cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="1.95cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#nostadio16#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" text-align="start" >
+    							no stadiab.
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 		 
+		  </fo:table-cell>	
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell font-weight="bold" start-indent="0.3cm" number-columns-spanned="8" text-align="start" border-width="0.1mm" border-style="solid" >
+				<fo:table>
+		  		<fo:table-column column-width="5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-column column-width="2.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-column column-width="9cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							PRESENZA DI LESIONI
+    						</fo:block>  
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#vasco#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							VASCOLARI
+    						</fo:block>    						
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#diabete#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							DIABETICHE
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			
+			</fo:table-cell>
+		</fo:table-row>
+		
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+		  	<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.25cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#sede17#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell></fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			     	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="start" start-indent="0.2cm" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		Arto inferiore dx
+        	</fo:block> 
+		  </fo:table-cell>	  
+		 <fo:table-cell text-align="start" start-indent="0.2cm" border-width="0.1mm" border-style="solid" number-columns-spanned="6" >
+			<fo:block color="black" >
+        		#testo17#
+        	</fo:block> 
+		  </fo:table-cell>			 
+		  <!--<fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado17_1#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							1&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado17_2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							2&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado17_3#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							3&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado17_4#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							4&#176;
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	-->
+		</fo:table-row>
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+		  	<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.25cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#sede18#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell></fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			     	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="start" start-indent="0.2cm" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		Arto inferiore sx
+        	</fo:block> 
+		  </fo:table-cell>	  
+		 <fo:table-cell text-align="start" start-indent="0.2cm" border-width="0.1mm" border-style="solid" number-columns-spanned="6" >
+			<fo:block color="black" >
+        		#testo18#
+        	</fo:block> 
+		  </fo:table-cell>			 
+		 <!-- <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado18_1#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							1&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado18_2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							2&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado18_3#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							3&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado18_4#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							4&#176;
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	-->
+		</fo:table-row>
+		
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+		  	<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.25cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell >
+    						<fo:block space-before="0.7cm"  font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#sede19#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell></fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			     	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="start" start-indent="0.2cm" border-width="0.1mm" border-style="solid" >
+			<fo:block space-before="0.7cm" color="black" >
+        		Piede dx
+        	</fo:block> 
+		  </fo:table-cell>	  
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >			
+			<fo:table>
+		  		<fo:table-column column-width="1.4cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="3.3cm"/>    			
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#int19#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							interna
+    						</fo:block>    						
+    					</fo:table-cell>      										
+    				</fo:table-row>    	
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#est19#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							esterna
+    						</fo:block>    						
+    					</fo:table-cell>      										
+    				</fo:table-row>   
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#meso19#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							mesopiede
+    						</fo:block>    						
+    					</fo:table-cell>      										
+    				</fo:table-row>   
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#ava19#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							avampiede
+    						</fo:block>    						
+    					</fo:table-cell>      										
+    				</fo:table-row>    	 	 				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>		
+		  <fo:table-cell text-align="start" start-indent="0.2cm" border-width="0.1mm" border-style="solid" number-columns-spanned="5" >
+			<fo:block color="black" >
+        		#testo19#
+        	</fo:block> 
+		  </fo:table-cell>		 
+		  <!--<fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>   
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>   
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado19_1#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							1&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>   				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    			<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>   
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>   
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado19_2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							2&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>   				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    			<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>   
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>   
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado19_3#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							3&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>  
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>     				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    			<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>   
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>   
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado19_4#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							4&#176;
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    	
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>   			
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	-->
+		</fo:table-row>
+		
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+		  	<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.25cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell >
+    						<fo:block space-before="0.7cm"  font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#sede20#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell></fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			     	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="start" start-indent="0.2cm" border-width="0.1mm" border-style="solid" >
+			<fo:block space-before="0.7cm" color="black" >
+        		Piede sx
+        	</fo:block> 
+		  </fo:table-cell>	  
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >			
+			<fo:table>
+		  		<fo:table-column column-width="1.4cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="3.3cm"/>    			
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#int20#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							interna
+    						</fo:block>    						
+    					</fo:table-cell>      										
+    				</fo:table-row>    	
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#est20#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							esterna
+    						</fo:block>    						
+    					</fo:table-cell>      										
+    				</fo:table-row>   
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#meso20#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							mesopiede
+    						</fo:block>    						
+    					</fo:table-cell>      										
+    				</fo:table-row>   
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#ava20#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							avampiede
+    						</fo:block>    						
+    					</fo:table-cell>      										
+    				</fo:table-row>    	 	 				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="start" start-indent="0.2cm" border-width="0.1mm" border-style="solid" number-columns-spanned="5" >
+			<fo:block color="black" >
+        		#testo20#
+        	</fo:block> 
+		  </fo:table-cell>			 
+		  <!--<fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>   
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>   
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado20_1#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							1&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>   				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    			<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>   
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>   
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado20_2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							2&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>    
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>   				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    			<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>   
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>   
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado20_3#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							3&#176;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>  
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>     				
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:table>
+		  		<fo:table-column column-width="0.25cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-body>
+    			<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>   
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>   
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#grado20_4#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							4&#176;
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    	
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>  
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							&#160;
+    						</fo:block>    						
+    					</fo:table-cell>    					
+    				</fo:table-row>   			
+    			</fo:table-body>    			
+		  	</fo:table>			 
+		  </fo:table-cell>	-->
+		</fo:table-row>
+		
+		<fo:table-row>
+			<fo:table-cell font-weight="bold" start-indent="0.3cm" number-columns-spanned="8" text-align="start" border-width="0.1mm" border-style="solid" >
+				<fo:table>
+		  		<fo:table-column column-width="6cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-column column-width="2.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-column column-width="8cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							PRESENZA DI ALTRE LESIONI
+    						</fo:block>  
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#leso_no#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							NO
+    						</fo:block>    						
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#leso_si#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							SI
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			
+			</fo:table-cell>
+		</fo:table-row>
+		
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="start" start-indent="0.3cm" border-width="0.1mm" border-style="solid"  number-columns-spanned="8">
+			<fo:block color="black" >
+        		&#160;#lesioni1#
+        	</fo:block>        	
+		  </fo:table-cell>		 
+		</fo:table-row>
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="start" start-indent="0.3cm" border-width="0.1mm" border-style="solid"  number-columns-spanned="8">
+			<fo:block color="black" >
+        		&#160;#lesioni2#
+        	</fo:block>        	
+		  </fo:table-cell>		 
+		</fo:table-row>
+		
+		<fo:table-row>
+			<fo:table-cell font-weight="bold" start-indent="0.3cm" number-columns-spanned="8" text-align="start" border-width="0.1mm" border-style="solid" >
+				<fo:table>
+		  		<fo:table-column column-width="6cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-column column-width="2.5cm"/>
+    			<fo:table-column column-width="0.75cm"/>
+    			<fo:table-column column-width="8cm"/>
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							PRESENZA DI INFEZIONI
+    						</fo:block>  
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#infe_no#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							NO
+    						</fo:block>    						
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#infe_si#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block color="black" >
+    							SI
+    						</fo:block>    						
+    					</fo:table-cell>
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			
+			</fo:table-cell>
+		</fo:table-row>
+		</fo:table-body>
+  	</fo:table>
+  	<fo:block break-after="page">
+	</fo:block>
+	<fo:block font-weight="bold" text-align="center" start-indent="1mm" end-indent="1mm" space-before="1cm" space-after="0.5cm"  font-size="14pt">
+  		WOUND BED SCORE
+  	</fo:block>
+	<fo:table font-size="10pt">
+		<fo:table-column column-width="4.75cm"/>
+    	<fo:table-column column-width="4.75cm"/>
+    	<fo:table-column column-width="4.75cm"/>
+    	<fo:table-column column-width="4.75cm"/>
+		<fo:table-body>
+		<fo:table-row background-color="orange">
+		  <fo:table-cell text-align="center" font-weight="bold" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		Caratteristiche del letto
+        	</fo:block>        	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="center" font-weight="bold" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		0
+        	</fo:block>        	
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" font-weight="bold" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		1
+        	</fo:block>        	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="center" font-weight="bold" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		2
+        	</fo:block>        	
+		  </fo:table-cell>
+		</fo:table-row>
+		<fo:table-row background-color="white">
+		  <fo:table-cell start-indent="0.3cm" text-align="start" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		Bordi in via di guarigione
+        	</fo:block>        	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid">
+			<fo:table>
+		  		<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="3.75cm"/>    			
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#risposta1_1#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							No
+    						</fo:block>    						
+    					</fo:table-cell>     										
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			      	
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid">
+			<fo:table>
+		  		<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="3.75cm"/>    			
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#risposta1_2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							25-75%
+    						</fo:block>    						
+    					</fo:table-cell>     										
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			          	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="center" font-weight="bold" border-width="0.1mm" border-style="solid">
+			<fo:table>
+		  		<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="3.75cm"/>    			
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#risposta1_3#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							&#62;75%
+    						</fo:block>    						
+    					</fo:table-cell>     										
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			       	
+		  </fo:table-cell>
+		</fo:table-row>
+		<fo:table-row background-color="white">
+		  <fo:table-cell start-indent="0.3cm" text-align="start" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		Escara nera
+        	</fo:block>        	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid">
+			<fo:table>
+		  		<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="3.75cm"/>    			
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#risposta2_1#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							&#62; 25% dell'area della ferita
+    						</fo:block>    						
+    					</fo:table-cell>     										
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			         	
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid">
+			<fo:table>
+		  		<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="3.75cm"/>    			
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#risposta2_2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							0-25%
+    						</fo:block>    						
+    					</fo:table-cell>     										
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			        	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid">
+			<fo:table>
+		  		<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="3.75cm"/>    			
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#risposta2_3#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							Assente
+    						</fo:block>    						
+    					</fo:table-cell>     										
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			        	
+		  </fo:table-cell>
+		</fo:table-row>
+		<fo:table-row background-color="white">
+		  <fo:table-cell start-indent="0.3cm" text-align="start" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		Profondit&#224;/ipergranulazione
+        	</fo:block>        	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid">
+			<fo:table>
+		  		<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="3.75cm"/>    			
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#risposta3_1#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							Severamente depresso o rialzato se comparato con la cute circostante
+    						</fo:block>    						
+    					</fo:table-cell>     										
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			         	
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid">
+			<fo:table>
+		  		<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="3.75cm"/>    			
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#risposta3_2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							Moderato
+    						</fo:block>    						
+    					</fo:table-cell>     										
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			        	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid">
+			<fo:table>
+		  		<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="3.75cm"/>    			
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#risposta3_3#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							Pareggiato o quasi pari
+    						</fo:block>    						
+    					</fo:table-cell>     										
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			          	
+		  </fo:table-cell>
+		</fo:table-row>
+		<fo:table-row background-color="white">
+		  <fo:table-cell start-indent="0.3cm" text-align="start" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		Quantit&#224; di essudato
+        	</fo:block>        	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid">
+			<fo:table>
+		  		<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="3.75cm"/>    			
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#risposta4_1#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							Severo
+    						</fo:block>    						
+    					</fo:table-cell>     										
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			         	
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid">
+			<fo:table>
+		  		<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="3.75cm"/>    			
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#risposta4_2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							Moderato
+    						</fo:block>    						
+    					</fo:table-cell>     										
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			          	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid">
+			<fo:table>
+		  		<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="3.75cm"/>    			
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#risposta4_3#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							Lieve o assente
+    						</fo:block>    						
+    					</fo:table-cell>     										
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			          	
+		  </fo:table-cell>
+		</fo:table-row>
+		
+		<fo:table-row background-color="white">
+		  <fo:table-cell start-indent="0.3cm" text-align="start" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		Edema
+        	</fo:block>        	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="center"  border-width="0.1mm" border-style="solid">
+			<fo:table>
+		  		<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="3.75cm"/>    			
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#risposta5_1#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							Severo
+    						</fo:block>    						
+    					</fo:table-cell>     										
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			       	
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid">
+			<fo:table>
+		  		<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="3.75cm"/>    			
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#risposta5_2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							Moderato
+    						</fo:block>    						
+    					</fo:table-cell>     										
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			         	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid">
+			<fo:table>
+		  		<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="3.75cm"/>    			
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#risposta5_3#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							Lieve o assente
+    						</fo:block>    						
+    					</fo:table-cell>     										
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			          	
+		  </fo:table-cell>
+		</fo:table-row>
+		<fo:table-row background-color="white">
+		  <fo:table-cell start-indent="0.3cm" text-align="start" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		Dermatite perilesionale
+        	</fo:block>        	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid">
+			<fo:table>
+		  		<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="3.75cm"/>    			
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#risposta6_1#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							Severo
+    						</fo:block>    						
+    					</fo:table-cell>     										
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			          	
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid">
+			<fo:table>
+		  		<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="3.75cm"/>    			
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#risposta6_2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							Moderato
+    						</fo:block>    						
+    					</fo:table-cell>     										
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			        	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid">
+			<fo:table>
+		  		<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="3.75cm"/>    			
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#risposta6_3#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							Minima o assente
+    						</fo:block>    						
+    					</fo:table-cell>     										
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			          	
+		  </fo:table-cell>
+		</fo:table-row>
+		<fo:table-row background-color="white">
+		  <fo:table-cell start-indent="0.3cm" text-align="start" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		Bordi callosi/fibrosi
+        	</fo:block>        	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid">
+			<fo:table>
+		  		<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="3.75cm"/>    			
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#risposta7_1#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							Severo
+    						</fo:block>    						
+    					</fo:table-cell>     										
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			          	
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid">
+			<fo:table>
+		  		<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="3.75cm"/>    			
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#risposta7_2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							Moderato
+    						</fo:block>    						
+    					</fo:table-cell>     										
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			        	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid">
+			<fo:table>
+		  		<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="3.75cm"/>    			
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#risposta7_3#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							Minima o assente
+    						</fo:block>    						
+    					</fo:table-cell>     										
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			         	
+		  </fo:table-cell>
+		</fo:table-row>
+		<fo:table-row background-color="white">
+		  <fo:table-cell start-indent="0.3cm" text-align="start" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		Letto della ferita rosa
+        	</fo:block>        	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid">
+			<fo:table>
+		  		<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="3.75cm"/>    			
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#risposta8_1#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							Necrosi/fibrina
+    						</fo:block>    						
+    					</fo:table-cell>     										
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			         	
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid">
+			<fo:table>
+		  		<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="3.75cm"/>    			
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#risposta8_2#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							50-75%
+    						</fo:block>    						
+    					</fo:table-cell>     										
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			          	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid">
+			<fo:table>
+		  		<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="0.5cm"/>
+    			<fo:table-column column-width="3.75cm"/>    			
+    			<fo:table-body>
+    				<fo:table-row>
+    					<fo:table-cell></fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block space-before="1pt" font-size="6pt" border-before-color="black" border-start-color="black" border-end-color="black" border-bottom-color="black" border-width="0.3mm" border-style="solid">
+								&#160;#risposta8_3#
+							</fo:block>
+    					</fo:table-cell>
+    					<fo:table-cell>
+    						<fo:block text-align="start" start-indent="0.1cm" color="black" >
+    							&#62;75%
+    						</fo:block>    						
+    					</fo:table-cell>     										
+    				</fo:table-row>    				
+    			</fo:table-body>    			
+		  	</fo:table>			         	
+		  </fo:table-cell>
+		</fo:table-row>
+		<fo:table-row background-color="white">
+		  <fo:table-cell start-indent="0.3cm"  text-align="start" font-weight="bold" border-width="0.1mm" border-style="solid">
+			<fo:block color="black" >
+        		PUNTEGGIO 0-16
+        	</fo:block>        	
+		  </fo:table-cell>
+		  <fo:table-cell start-indent="0.3cm" text-align="start" font-weight="bold" border-width="0.1mm" border-style="solid" number-columns-spanned="3">
+			<fo:block color="black" >
+        		Valore rilevato=#punteggio#
+        	</fo:block>        	
+		  </fo:table-cell>			  
+		</fo:table-row>
+	
+<!--mfo:section.end -->
+
+
+<!-- mfo:section.start="rigaTab"  -->
+		
+<!--mfo:section.end -->
+
+<!-- mfo:section.start="fineTab"  -->
+	</fo:table-body>
+  </fo:table>
+<!--mfo:section.end -->
+
+
+<!-- mfo:section.start="totale"  -->
+  
+<!-- mfo:section.end -->
+
+
+<!-- mfo:section.start="finale" -->
+    </fo:flow>
+  </fo:page-sequence>
+<!-- mfo:section.end -->
+</fo:root>

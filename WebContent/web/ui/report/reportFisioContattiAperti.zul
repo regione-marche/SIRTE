@@ -1,0 +1,106 @@
+<?component name="panel_ubicazione" inline="true" macroURI="~./ui/common/ubicazione/PanelUbicazione.zul"?>
+
+<window 
+apply="it.caribel.app.sinssnt.controllers.report.ReportFisioContattiApertiCtrl"
+title="${c:l('menu.stampe_fisioterapica.title_assistiti_fisio_contatto_aperto')}" 
+closable="true" sizable="true"
+mode="overlapped"
+border="normal"
+position="center"
+width="750px"
+height="430px">
+
+<zscript><![CDATA[
+	void dadataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}
+	void adataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}	
+]]>
+</zscript>
+	
+	<vlayout vflex="true">
+	<caribelFormMenu visible_btn_print="true" visible_btn_delete="false" visible_btn_save="false"/>
+	<vlayout sclass="asterLayout asterOverflow" vflex="true">	
+	 
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.cod_fisio')}:" />
+			<caribelSearch hflex="80%" maxlength="10" id_cod="codfisio" db_name_cod="codice_inizio" db_name_descr="desfisio"
+				required="false" 
+				ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl"
+			 />
+		</hlayout>
+		<!-- 
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.a_cod_fisio')}:" />
+			<caribelSearch hflex="80%" id_cod="codfisio1" db_name_cod="codice_fine" db_name_descr="desfisio"
+				required="false" maxlength="10"
+				ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl"
+			 />
+		</hlayout>
+		-->
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.dadata')}:" />
+			<div hflex="80%" width="100%">
+				<hlayout width="30%">	
+					<caribeldatebox id="dadata" hflex="30%"
+						required="true"	onChange="adataChanged()" />
+						<label hflex="20%" />
+				</hlayout>
+			</div>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.adata')}:" />
+			<div hflex="80%" width="100%">		
+			<hlayout width="30%">			
+					<caribeldatebox id="adata" hflex="30%"
+						required="true"	onChange="adataChanged()" />
+						<label hflex="20%" />
+				</hlayout>
+			</div>
+		</hlayout>
+		<hlayout>
+		<label hflex="20%" value="${c:l('generic.intensita')}:" />
+			<caribelcombobox hflex="80%" id="motivo" readonly="true"/>
+		</hlayout>
+		<panel_ubicazione/>
+		
+		<hlayout>
+				<label hflex="20%" value="${c:l('generic.modalita_stampa')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="modalitaStampa">
+						<radio id="sin" value="S" label="${c:l('generic.modalita_stampa.sin')}" checked="true"/>
+						<radio id="an" value="A" label="${c:l('generic.modalita_stampa.an')}"/>						
+					</caribelradiogroup>
+				</div>
+		</hlayout>
+		
+		<hlayout>
+				<label hflex="20%" value="${c:l('generic.div_operatore')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="divOp">
+						<radio id="si" value="S" label="${c:l('generic.div_operatore.si')}" checked="true"/>
+						<radio id="no" value="N" label="${c:l('generic.div_operatore.no')}"/>						
+					</caribelradiogroup>
+				</div>
+		</hlayout>		
+		
+		
+		<hlayout></hlayout>
+		<hlayout></hlayout>
+		<hlayout></hlayout>
+		<hlayout></hlayout>
+		<hlayout></hlayout>
+		<hlayout></hlayout>
+		<hlayout>
+				<label hflex="5%"/>
+				<div hflex="90%" align="left">
+					<label hflex="90%"  value="${c:l('ReportFisioContattiAperto.msg')}" sclass="normalText" style="border-style: solid;border-color: gray; border-width:0.5px"/>
+				</div>
+				<label hflex="5%"/>
+		</hlayout>
+		
+		</vlayout>
+	</vlayout>
+</window>

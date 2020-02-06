@@ -1,0 +1,111 @@
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+
+<vlayout id="menu_left_contatto">
+	
+	<zscript>
+		import it.caribel.app.sinssnt.controllers.contattoMedico.ContattoMedicoFormCtrl;
+		import it.caribel.app.sinssnt.controllers.contattoMedico.ContattoMedicoGridCtrl;
+		import it.caribel.app.sinssnt.controllers.relazione_clinica_medico.RelazioneClinicaMedicaGridCtrl;
+		import it.caribel.app.sinssnt.controllers.diario.DiarioGridCtrl;
+		import it.caribel.app.sinssnt.controllers.intolleranzeAllergie.IntolleranzeAllergieGridCRUDCtrl;
+		import it.caribel.app.sinssnt.controllers.segnalazione.SegnalazioneGridCRUDCtrl;
+		import it.caribel.app.webhs.controllers.allegati.AllegatiGridCtrl;
+		import it.caribel.app.sinssnt.controllers.accessi_effettuati.AccessiEffettuatiGridCtrl;
+		
+		String uriMedico      		   = ContattoMedicoFormCtrl.CTS_FILE_ZUL;    
+		String uriGridStorico		   = ContattoMedicoGridCtrl.myPathZul;
+		String uriDiario      		   = DiarioGridCtrl.myPathFormZul;
+		String uriRelazione   	       = RelazioneClinicaMedicaGridCtrl.myPathFormZul;
+		String uriFlussiStoricoFar     = "";
+		String uriIntolleranzeAllergie = IntolleranzeAllergieGridCRUDCtrl.myPathFormZul;
+		String uriRiepilogoAccessi     = AccessiEffettuatiGridCtrl.myPathFormZul;
+		String uriSegnalazione	       = SegnalazioneGridCRUDCtrl.myPathFormZul;;
+		String uriDocumenti		       					 = AllegatiGridCtrl.myPathFormZul;;
+		
+	</zscript>
+
+	<vlayout>
+		<buttonmenucontainer
+		id="btn_sntContattoMedico"
+		idForm="sntContattoMedico"
+		label="${c:l('common.scheda.corrente')}"
+		pathZulForm="${uriMedico}"
+		/>
+		<buttonmenucontainer 
+		id="btn_sntContattoMedicoSto"
+		idForm="sntContattoMedicoSto"
+		label="${c:l('common.scheda.storico')}"
+		pathZulForm="${uriGridStorico}"
+		/>
+		<buttonmenucontainer
+		id="btn_diarioForm"
+		idForm="diarioForm"
+		label="${c:l('diario.formTitle')}"
+		pathZulForm="${uriDiario}"
+		/>
+		<buttonmenucontainer 
+		id="btn_medicoRelCliForm"
+		idForm="medicoRelCliForm"
+		label="${c:l('menu.contatto.medico.rel_cli')}"
+		pathZulForm="${uriRelazione}"
+		/>
+		<buttonmenucontainer
+		id="btn_medicoAccessiForm"
+		idForm="medicoAccessiForm"
+		label="${c:l('menu.contatto.medico.accessi')}"
+		pathZulForm="/web/ui/sinssnt/interventi/accessiPrestazioniForm.zul"
+		/>
+		<buttonmenucontainer
+		id="btn_pianoAssistForm"
+		idForm="pianoAssistForm"
+		label="${c:l('menu.contatto.medico.piano_ass')}"
+		pathZulForm="/web/ui/sinssnt/piano_assistenziale/pianoAssistenzialeGrid.zul"
+		/>
+		<buttonmenucontainer
+		id="btn_riepilogoAccessiForm"
+		idForm="riepilogoAccessiForm"
+		label="${c:l('contatto.medico.anamnesi.accessi')}"
+		pathZulForm="${uriRiepilogoAccessi}"
+		/>
+		<buttonmenucontainer
+		id="btn_intolleranzeAllergieForm"
+		idForm="intolleranzeAllergieForm"
+		label="${c:l('menu.contatto.medico.intolleranze.allergie')}"
+		pathZulForm="${uriIntolleranzeAllergie}"
+		/>
+		<buttonmenucontainer
+		id="btn_segnalazioniForm"
+		idForm="segnalazioniForm"
+		label="${c:l('menu.contatto.medico.segnalazione')}"
+		pathZulForm="${uriSegnalazione}"
+		/>
+		<buttonmenucontainer
+		id="btn_medicofascicolo"  
+		idForm="medicofascicolo"
+		label="${c:l('menu.contatto.medico.fascicolo')}"
+		pathZulForm=""
+		/>
+		<buttonmenucontainer 
+		id="btn_flussiStoForm"
+		idForm="flussiStoForm"
+		label="${c:l('menu.contatto.medico.flussi.storico')}"
+		pathZulForm="${uriFlussiStoricoFar}"
+		/>
+		
+		<buttonmenucontainer
+		id="btn_infFlussiSiadForm"
+		idForm="flussiSiadForm"
+		label="${c:l('menu.contatto.inf.flussi.siad')}"
+		pathZulForm="/web/ui/sinssnt/flussi/flussiSiadForm.zul"
+		/>
+		
+		<buttonmenucontainer
+		id="btn_documenti"
+		idForm="documenti"
+		label="${c:l('menu.contatto.documenti')}"
+		pathZulForm="${uriDocumenti}"
+		/>
+	</vlayout>		
+	
+
+</vlayout>

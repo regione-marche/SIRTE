@@ -1,0 +1,30 @@
+<window title="${c:l('scheda_fimGrid.gridTitleStoricoFim')}"
+	apply="it.caribel.app.sinssnt.controllers.scheda_fim.FimGridCtrl"
+	sclass="asterOverlappedWindow" width="650px" height="510px" style="overflow:auto" sizable="true"
+	border="normal" closable="true" mode="overlapped" position="center"
+	vflex="true" >
+	
+	<vlayout height="100%">
+	
+		<caribelGridMenu/>
+		<vlayout sclass="asterLayout" vflex="true" spacing="0px">
+			<hlayout valign="middle" width="100%" visible="false">
+				<label hflex="10%"  value="${c:l('scheda_fimGrid.cartella')}:" />
+				<caribeltextbox hflex="20%" id="tb_filter1" db_name="n_cartella" required="false" />
+				<label hflex="10%"  value="${c:l('scheda_fimGrid.data')}:" />
+				<caribeldatebox hflex="20%" id="tb_filter2" db_name="fim_spr_data" required="false" />
+				<label hflex="30%"/>
+			</hlayout>
+		
+		<caribelPaging sortable="true"/>
+			<caribellistbox vflex="true" hflex="true">
+				<listhead sizable="true">
+	 				<caribellistheader db_name="fim_data"	  	order_by="fim_data"           label="${c:l('scheda_fimGrid.dataApertura')}" width="25%" sort="auto"/>
+	 				<caribellistheader db_name="fim_progr"	  	order_by="fim_progr"   	      label="${c:l('scheda_fimGrid.progr')}"    	width="10%" sort="auto"/> 
+	 				<caribellistheader db_name="fim_punteggio"	order_by="fim_punteggio"      label="${c:l('scheda_fimGrid.punteggio')}"    	width="15%" sort="auto"/>
+	 				<caribellistheader db_name="des_operatore"	order_by="fim_operatore"      label="${c:l('scheda_fimGrid.operatore')}"    	width="50%" sort="auto"/>
+				</listhead>
+			</caribellistbox>
+		</vlayout>
+	</vlayout>
+</window>

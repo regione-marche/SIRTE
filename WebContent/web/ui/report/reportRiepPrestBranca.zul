@@ -1,0 +1,138 @@
+<?component name="panel_ubicazione" inline="true" macroURI="~./ui/common/ubicazione/PanelUbicazione.zul"?>
+<?component name="panel_fascia_eta" inline="true" macroURI="/web/ui/report/common/PanelFasceEta.zul"?>
+<window 
+apply="it.caribel.app.sinssnt.controllers.report.ReportRiepPrestBrancaCtrl"
+title="${c:l('menu.stampe.riep_prest_branca')}" 
+closable="true" sizable="true"
+mode="overlapped"
+border="normal"
+position="center"
+width="700px"
+height="700px">
+
+<zscript><![CDATA[
+	void dadataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}
+	void adataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}	
+]]>
+</zscript>
+	
+	<vlayout vflex="true">
+	<caribelFormMenu visible_btn_print="true" visible_btn_delete="false" visible_btn_save="false"/>
+	<vlayout sclass="asterLayout asterOverflow" vflex="true">		
+	
+		
+		<hlayout>
+			<label hflex="20%" value="${c:l('operatori.tipoOperatore')}:" />
+			<caribelcombobox hflex="80%" id="tipo_op" readonly="true"/>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('operatori.qualifica')}:" />
+			<caribelcombobox hflex="80%" id="qual_op" readonly="true"/>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.branca')}:" />
+			<caribelcombobox hflex="80%" id="branca" readonly="true"/>
+		</hlayout>
+	
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.dadata')}:" />
+			<div hflex="80%" width="100%">
+				<hlayout width="100%">
+					<caribeldatebox id="dadata" hflex="30%"
+						required="true" onChange="dadataChanged()" />
+					<label hflex="40%"
+						value="${c:l('generic.adata')}:" />
+					<caribeldatebox id="adata" hflex="30%"
+						required="true"	onChange="adataChanged()" />
+				</hlayout>
+			</div>
+		</hlayout>
+		<hlayout>
+				<label hflex="20%" value="${c:l('generic.div_operatore')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="div_op">
+						<radio id="si_op" value="S" label="${c:l('generic.div_operatore.si')}" checked="true"/>
+						<radio id="no_op" value="N" label="${c:l('generic.div_operatore.no')}"/>						
+					</caribelradiogroup>
+				</div>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.operatore')}:" />
+			<caribelSearch hflex="80%" maxlength="10" id_cod="codope" db_name_cod="codice_inizio" db_name_descr="desope"
+				required="false" 
+				ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl"
+			 />
+		</hlayout>
+		<panel_ubicazione />
+		
+		
+		<hlayout>
+				<label hflex="20%" value="${c:l('generic.modalita_stampa')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="modStampa">
+						<radio id="sin" value="sin" label="${c:l('generic.modalita_stampa.sin')}" checked="true"/>
+						<radio id="an" value="an" label="${c:l('generic.modalita_stampa.an')}"/>						
+					</caribelradiogroup>
+				</div>
+		</hlayout>
+		<hlayout>
+				<label hflex="20%" value="${c:l('generic.formato')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="formatoStampa">
+						<radio id="pdf" value="PDF" label="${c:l('generic.formato.pdf')}" checked="true"/>
+						<radio id="html" value="XLS" label="${c:l('generic.formato.html')}"/>						
+					</caribelradiogroup>
+				</div>
+		</hlayout>
+		<hlayout>
+				<label hflex="20%" value="${c:l('generic.tipo_prestazione')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="tipoPrest">
+						<radio id="dom" value="D" label="${c:l('generic.tipo_prestazione_dom')}" checked="true"/>
+						<radio id="amb" value="A" label="${c:l('generic.tipo_prestazione_amb')}"/>				
+						<radio id="en" value="E" label="${c:l('generic.tipo_prestazione_en')}"/>								
+					</caribelradiogroup>
+				</div>
+		</hlayout>
+		<hlayout>
+				<label hflex="20%" value="${c:l('generic.conteggio_su')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="cont_su">
+						<radio id="acc" value="AC" label="${c:l('generic.accessi')}" checked="true"/>
+						<radio id="prest" value="PR" label="${c:l('generic.prestazioni')}"/>				
+						<radio id="ass" value="AS" label="${c:l('generic.assistiti')}"/>								
+					</caribelradiogroup>
+				</div>
+		</hlayout>
+		<hlayout>
+				<label hflex="20%" value="${c:l('generic.layout')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="layout_stampa">
+						<radio id="col" value="AC" label="${c:l('generic.branca_colonna')}" checked="true"/>
+						<radio id="rig" value="PR" label="${c:l('generic.branca_riga')}"/>	
+					</caribelradiogroup>
+				</div>
+		</hlayout>
+		<panel_fascia_eta/>
+		<hlayout></hlayout>
+		<hlayout></hlayout>
+		<hlayout></hlayout>
+		<hlayout></hlayout>
+		<hlayout>
+				<label hflex="5%"/>
+				<div hflex="90%" align="left">
+					<label hflex="90%"  value="${c:l('ReportRiepPrestBranca.msg')}" sclass="normalText" style="border-style: solid;border-color: gray; border-width:0.5px"/>
+				</div>
+				<label hflex="5%"/>
+		</hlayout>
+		
+		
+		
+		
+		</vlayout>
+	</vlayout>
+</window>

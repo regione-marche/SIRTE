@@ -1,0 +1,179 @@
+<window id="terapiaForm" title="${c:l('menu.interventi.terapia.farmaci')}"
+	border="normal" vflex="true" hflex="true" closable="false"
+ 	apply="it.caribel.app.sinssnt.controllers.palliat_terapia.TerapiaGridCRUDCtrl" >
+	
+	<zscript><![CDATA[
+		void dadataChanged() {
+			it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+		}
+		void adataChanged() {
+			it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+		}
+	]]>
+	</zscript>
+	
+	<vlayout vflex="true" hflex="true" spacing="0px" >
+	
+		<hlayout sclass="asterLayout" style="padding-top: 5px; padding-bottom: 5px;">
+			<!--   
+			<button id="btn_convalida" image="~./zul/img/validate16x16.png"
+			label="${c:l('pai.obiettivo.convalida')}" forward="onConvalida" />
+			-->
+			<label hflex="15%" value="${c:l('interventi.terapia.farmaci.tb.stato')}:" />
+			<div hflex="50%" align="left">
+				<caribelradiogroup id="statoTerapiaFilter" forward="onLoadGrid">
+					<radio id="radio_all" label="${c:l('interventi.terapia.farmaci.tb.stato.terapie.tutti')}" value="ALL_VALUE" />
+					<radio id="radio_attive" label="${c:l('interventi.terapia.farmaci.tb.stato.terapie.attive')}" value="ATTIVE"  selected="true"/>
+					<radio id="radio_concluse" label="${c:l('interventi.terapia.farmaci.tb.stato.terapie.concluse')}" value="CONCLUSE" />
+				</caribelradiogroup>
+			</div>
+			<label hflex="10%" value="${c:l('common.data.dal.maiuscolo')}" />
+			<caribeldatebox hflex="10%" id="dadata" required="false" onChange="dadataChanged()" />
+			<label hflex="5%" value="${c:l('common.data.al')}" />
+			<caribeldatebox hflex="10%" id="adata" required="false" onChange="adataChanged()" />
+		</hlayout>
+
+		<hlayout visible="false">
+			<caribelintbox hflex="15%" readonly="true" 
+				id="n_cartella" db_name="n_cartella" visible="false"/>
+			<caribelintbox hflex="15%" readonly="true" 
+				id="n_contatto" db_name="n_contatto" visible="false"/>
+				<caribelintbox hflex="15%" readonly="true" 
+				id="id_terapia" db_name="id_terapia" visible="false" isDbKey="true"/>
+		</hlayout>
+			
+
+		<caribellistbox  showBtnDeleteInRow="false" showBtnEditInRow="false" 
+			rows="6" db_name="griglia" id="griglia" hflex="true">
+			<frozen columns="3"></frozen>
+			<listhead sizable="true">
+				<caribellistheader db_name="mecodi_desc"
+					label="${c:l('interventi.terapia.farmaci.tb.medico')}" />
+				<caribellistheader db_name="sf_codice_desc"
+					id="farmacoTbDescr"
+					label="${c:l('interventi.terapia.farmaci.tb.farmaco')}" />
+				<caribellistheader db_name="data_inizio"
+					label="${c:l('interventi.terapia.farmaci.tb.data.inizio')}" />
+				<caribellistheader db_name="data_fine"
+					label="${c:l('interventi.terapia.farmaci.tb.data.fine')}" />
+				<caribellistheader db_name="frequenza_gg"
+					label="${c:l('interventi.terapia.farmaci.cadenza')}" />
+				<caribellistheader
+					db_name="somministrazione"
+					label="${c:l('interventi.terapia.farmaci.somministrazione')}" />
+				<caribellistheader db_name="orari"
+					label="${c:l('interventi.terapia.farmaci.orari')}" />
+				<caribellistheader db_name="posologia"
+					maxlength="50"
+					label="${c:l('interventi.terapia.farmaci.tb.posologia')}" />
+				<caribellistheader db_name="modalita"
+					maxlength="50"
+					label="${c:l('interventi.terapia.farmaci.tb.modalita')}" />
+				<caribellistheader db_name="note"
+					maxlength="50"
+					label="${c:l('interventi.terapia.farmaci.tb.note')}" />
+				<caribellistheader
+					db_name="cod_operatore_desc"
+					label="${c:l('interventi.terapia.farmaci.tb.operatore')}" />
+			</listhead>
+		</caribellistbox>
+		
+		<hlayout style="margin-top: -1px;" hflex="true" width="100%">
+			<caribelGridFormMenuHoriz />
+		</hlayout>
+			
+		<groupbox style="margin-top: -1px;" vflex="true" hflex="true" closable="false">
+			<vlayout hflex="true" id="myForm" sclass="asterLayout">
+
+				<hlayout>
+					<label hflex="15%"
+						value="${c:l('interventi.terapia.farmaci.operatore')}:" />
+					<caribelSearch id="operatoreSearch"
+						hflex="85%" db_name_cod="cod_operatore"
+						db_name_descr="cod_operatore_desc" id_cod="codOperatore"
+						id_descr="codOperatoreDesc"
+						ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl" />
+				</hlayout>
+
+				<hlayout>
+					<label hflex="15%"
+						value="${c:l('interventi.terapia.farmaci.medico')}:" />
+					<caribelSearch hflex="85%" id_cod="mecodi"
+						id_descr="mecodiDesc" db_name_cod="mecodi"
+						db_name_descr="mecodi_desc" id="medicoSearch"
+						ctrl="it.caribel.app.common.controllers.medici.MediciSearchCtrl"
+						required="true" />
+				</hlayout>
+
+				<hlayout>
+					<label hflex="15%"
+						value="${c:l('interventi.terapia.farmaci.prescrizione.farmaco')}:" />
+					<caribelSearch hflex="85%" id_cod="sfCodice"
+						required="true" id_descr="sfCodiceDesc" db_name_cod="sf_codice"
+						db_name_descr="sf_codice_desc" id="farmaco"
+						ctrl="it.caribel.app.sinssnt.controllers.tabelle.farmaci.FarmaciSearchCtrl" />
+				</hlayout>
+
+				<hlayout>
+					<label hflex="15%"
+						value="${c:l('interventi.terapia.farmaci.data.inizio')}:" />
+					<caribeldatebox hflex="15%" id="dataInizio"
+						db_name="data_inizio" required="true" />
+
+					<label hflex="10%"
+						value="${c:l('interventi.terapia.farmaci.data.fine')}:" />
+					<caribeldatebox hflex="15%" id="dataFine"
+						db_name="data_fine" />
+
+					<label hflex="15%"
+						value="${c:l('interventi.terapia.farmaci.frequenza')}:" />
+					<caribelcombobox hflex="15%"
+						id="cbx_frequenza" db_name="frequenza" required="true" />
+
+					<label hflex="12%"
+						value="${c:l('interventi.terapia.farmaci.cadenza')}:" />
+					<caribelintbox hflex="3%" id="frequenza_gg"
+						db_name="frequenza_gg" required="true" />
+				</hlayout>
+
+				<hlayout>
+					<label hflex="15%"
+						value="${c:l('interventi.terapia.farmaci.orari')}:" />
+					<caribelTimeTables
+						label="${c:l('interventi.terapia.farmaci.orari')}"
+						readonly="true" required="false" db_name="orari" hflex="55%" />
+
+					<label hflex="27%"
+						value="${c:l('interventi.terapia.farmaci.somministrazione')}:" />
+					<caribelintbox hflex="3%"
+						id="somministrazione" db_name="somministrazione" required="true"
+						constraint="no negative,no zero" />
+				</hlayout>
+
+				<hlayout>
+					<label hflex="15%"
+						value="${c:l('interventi.somministrazione.posologia')}:" />
+					<caribeltextbox hflex="85%" id="posologia"
+						db_name="posologia" />
+				</hlayout>
+				<hlayout>
+					<label hflex="15%"
+						value="${c:l('interventi.terapia.farmaci.modalita')}:" />
+					<caribeltextbox rows="3" hflex="85%"
+						id="modalita" db_name="modalita" />
+				</hlayout>
+				<hlayout>
+					<label hflex="15%"
+						value="${c:l('interventi.terapia.farmaci.note')}:" />
+					<caribeltextbox rows="5" hflex="85%"
+						id="note" db_name="note" />
+				</hlayout>
+				<hlayout>
+					<label hflex="100%" />
+				</hlayout>
+			</vlayout>
+		</groupbox>
+
+		
+	</vlayout>
+</window>

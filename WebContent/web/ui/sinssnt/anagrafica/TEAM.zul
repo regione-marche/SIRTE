@@ -1,0 +1,22 @@
+<vlayout vflex="true">
+	<vlayout vflex="true" spacing="3px" >
+		<div align="center">
+			<label value="${c:l('cartella.team.intestazione')}:" />
+		</div>
+		<hlayout hflex="true">
+			<vlayout hflex="90%">
+				<hlayout>
+					<label hflex="20%" value="${c:l('cartella.team.numero')}:" />
+					<caribeltextbox hflex="70%" db_name="team_numero" maxlength="20" />
+					<label hflex="10%" />
+				</hlayout>
+				<hlayout>
+					<label hflex="20%" value="${c:l('cartella.team.dataScadenza')}:" />
+					<caribeldatebox hflex="10%" db_name="team_dt_scad" />
+					<label hflex="70%" />
+				</hlayout>
+			</vlayout>
+			<image hflex="10%" src="~./zul/img/EuropeFlag_81x54.gif" />
+		</hlayout>
+	</vlayout>
+</vlayout>

@@ -1,0 +1,98 @@
+<?component name="dati_contatto_medico_anamnesi" inline="true" macroURI="/web/ui/sinssnt/contatto_medico/contatto_medico_anamnesi.zul"?>
+<?component name="dati_contatto_medico_patologie" inline="true" macroURI="~./ui/sinssnt/segreteriaOrganizzativa/contatto_medico_patologie.zul"?>
+<?component name="dati_contatto_medico_terapia" inline="true" macroURI="/web/ui/sinssnt/contatto_medico/contatto_medico_terapia.zul"?>
+<!--  ?component name="dati_contatto_medico_scale_valutazione" inline="true" macroURI="/web/ui/sinssnt/contatto_medico/contatto_medico_scale_valutazione.zul"? -->
+
+<window id="sntContattoMedico"
+	title="${c:l('contatto.medico.formTitle')}" closable="true"
+	apply="it.caribel.app.sinssnt.controllers.contattoMedico.ContattoMedicoFormCtrl"
+	border="normal" vflex="true" width="100%">
+
+	<vlayout vflex="true">
+		<caribelFormMenu visible_btn_print="true" />
+		<vlayout vflex="true" sclass="asterLayout asterOverflow">
+			<hlayout width="100%">
+				<label value="${c:l('contatto.medico.operatore')}:"
+					hflex="20%" />
+				<caribeltextbox hflex="10%" id="cod_operatore"
+					db_name="cod_operatore" maxlength="40" readonly="true" />
+				<caribeltextbox hflex="45%" id="desc_operat"
+					db_name="desc_operat" maxlength="40" readonly="true" />
+				<label hflex="25%"></label>
+			</hlayout>
+			<tabbox width="100%" sclass="nav_tabs" id="tabbox">
+				<tabs id="tab_ana">
+					<tab label="${c:l('contatto.medico.anamnesi')}" />
+					<tab label="${c:l('contatto.medico.patologie')}" />
+					<tab
+						label="${c:l('contatto.medico.patologie.terapia')}" />
+					<tab id="scaleval_tab"
+						label="${c:l('contatto.medico.patologie.scale.valutazione')}" />
+					<tab id="pa_tab" label="${c:l('generic.piani_assistenziali')}" disabled="true" />
+				</tabs>
+				<tabpanels id="tabpanels">
+					<tabpanel>
+						<dati_contatto_medico_anamnesi />
+					</tabpanel>
+					<tabpanel>
+						<dati_contatto_medico_patologie />
+						<vlayout width="100%" spacing="3px"
+							sclass="asterLayout">
+							<hlayout width="100%">
+								<label hflex="10%"
+									value="${c:l('contatto.medico.patologie.anamnesi')}:" />
+								<caribeltextbox hflex="56%"
+									id="skm_nota_diag" db_name="skm_nota_diag" maxlength="2000"
+									multiline="true" rows="6" sclass="asterTextArea" />
+								
+								<label hflex="15%"
+									value="${c:l('contatto.medico.patologie.data.annotazione')}:" />
+								<caribeldatebox hflex="15%"
+									id="skm_data_diag" db_name="skm_data_diag"
+									constraint="no future" />
+								<label hflex="4%"></label>
+							</hlayout>
+							<!-- 
+							 <hlayout width="100%">
+								<label hflex="20%"
+									value="${c:l('contatto.medico.patologie.data.annotazione')}:" />
+								<caribeldatebox hflex="15%"
+									id="skm_data_diag" db_name="skm_data_diag"
+									constraint="no future" />
+								<label hflex="65%"></label>
+							</hlayout>
+							 -->
+						</vlayout>
+					</tabpanel>
+					<tabpanel id="panello_terapia">
+						<vlayout>
+							<dati_contatto_medico_terapia />
+							<hlayout>
+								<label id="skmnotaterapia"
+									hflex="10%"
+									value="${c:l('contatto.medico.patologie.terapia.skt.note.terapia')}:" />
+								<caribeltextbox hflex="55%"
+									id="skm_nota_terapiaz" db_name="skm_nota_terapia"
+									maxlength="255" multiline="true" rows="6"
+									sclass="asterTextArea" />
+
+								<label id="skmdataterapia"
+									hflex="10%"
+									value="${c:l('contatto.medico.patologie.terapia.skt.data.terapia')}:" />
+								<caribeldatebox
+									id="skm_data_terapiaz" hflex="15%" db_name="skm_data_terapia"
+									constraint="no future" />
+								<label hflex="10%" />
+							</hlayout>
+						</vlayout>
+					</tabpanel>
+					<tabpanel id="tabpanel_scale">
+						<!-- dati_contatto_medico_scale_valutazione / -->
+					</tabpanel>
+					<tabpanel id="tabpanel_pa" style="padding:0px;text-align: left;" >
+					</tabpanel>
+				</tabpanels>
+			</tabbox>
+		</vlayout>
+	</vlayout>
+</window>

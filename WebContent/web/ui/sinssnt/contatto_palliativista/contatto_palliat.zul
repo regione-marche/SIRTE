@@ -1,0 +1,148 @@
+<?component name="situazioneIniziale" 	inline="true" macroURI="/web/ui/sinssnt/contatto_palliativista/contatto_palliat_situazIniziale.zul"?>
+<?component name="conclusione" 	inline="true" macroURI="/web/ui/sinssnt/contatto_palliativista/contatto_palliat_conclusione.zul"?> 
+<?component name="anamnesi" 	inline="true" macroURI="/web/ui/sinssnt/contatto_palliativista/contatto_palliat_anamnesi.zul"?> 
+<?component name="situazFamiliare" 	inline="true" macroURI="/web/ui/sinssnt/contatto_palliativista/contatto_palliat_situazFamiliare.zul"?> 
+<!-- <?component name="patologie" 	inline="true" macroURI="/web/ui/sinssnt/contatto_palliativista/contatto_medico_patologie.zul"?>  -->
+<?component name="patologie" 			inline="true" macroURI="~./ui/sinssnt/segreteriaOrganizzativa/contatto_medico_patologie.zul" ?>
+<!-- <?component name="terapia" 	inline="true" macroURI="/web/ui/sinssnt/contatto_palliativista/contatto_palliat_terapia.zul"?>  -->
+<?component name="segnalazione" 	inline="true" macroURI="/web/ui/sinssnt/contatto_palliativista/contatto_palliat_segnalazione.zul"?>
+
+<?component name="lesioni" 	inline="true" macroURI="contPalliat_principale_lesioniPanel.zul"?> 
+<?component name="chemioRadio" 	inline="true" macroURI="contPalliat_principale_chemioPanel.zul"?> 
+<?component name="allergieIntolleranze" inline="true" macroURI="contPalliat_principale_allergiePanel.zul"?>
+<?component name="neoplasiaPrimitiva" 	inline="true" macroURI="contPalliat_principale_neoplasiaPanel.zul"?>
+
+
+<window id="contattoPalliatForm" title="${c:l('schedaPalliat.palliativista.formTitle')}"
+	apply="it.caribel.app.sinssnt.controllers.contattoPalliativista.ContattoPalliatFormCtrl"
+	border="normal" vflex="true" width="100%">
+
+<zscript>
+	import it.caribel.app.sinssnt.controllers.contattoPalliativista.ContattoPalliatFormCtrl;
+	import it.caribel.app.sinssnt.controllers.login.ManagerProfile;
+	import it.caribel.util.CaribelSessionManager;
+	
+	String tipo_oper = CaribelSessionManager.getInstance().getStringFromProfile(ManagerProfile.TIPO_OPERATORE);
+	String labelScheda = ContattoGenFormCtrl.getLabelScheda(tipo_oper);
+</zscript>	
+
+	<vlayout vflex="true" hflex="1" spacing="3px">
+
+		<caribelFormMenu visible_btn_print="false" />
+		<vlayout vflex="true" sclass="asterLayout asterOverflow">
+			<hlayout width="100%" visible="false">
+				<label value="${c:l('SchedaInfForm.cartella')}:"
+					hflex="10%" />
+				<caribelintbox id="n_cartella" db_name="n_cartella"
+					hflex="15%" maxlength="13" required="true" readonly="true" isDbKey="true"/>
+				<label value="${c:l('SchedaInfForm.contatto')}:"
+					hflex="10%" />
+				<caribelintbox id="n_contatto" db_name="n_contatto"
+					hflex="15%" maxlength="13" readonly="true"  isDbKey="true"/>
+				<caribelintbox id="id_skso" db_name="id_skso"
+					hflex="15%" maxlength="13" />
+				<caribeldatebox id="pr_data" db_name="pr_data"
+					hflex="15%" maxlength="13" readonly="true"  isDbKey="false"/>	
+			</hlayout>
+			
+			<hlayout width="100%">
+				<label value="${c:l('SchedaInfForm.principale.operatore')}"
+					hflex="14%" />
+				<caribelSearch id="cs_operatore"
+								required="true" hflex="66%" id_cod="tb_filter3"
+								db_name_cod="cod_operatore" id_descr="operatore"
+								db_name_descr="operatore_desc"
+								ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl"
+								readonly="true" />
+				
+<!-- 				<caribeltextbox hflex="10%" id="skfpg_operatore" -->
+<!-- 					db_name="skfpg_operatore" maxlength="10" readonly="true" /> -->
+<!-- 				<caribeltextbox hflex="0%" id="skfpg_tipo_operatore" -->
+<!-- 					db_name="skfpg_tipo_operatore" visible="false" /> -->
+<!-- 				<caribeltextbox hflex="40%" id="desc_operat" -->
+<!-- 					db_name="desc_operat" maxlength="80" readonly="true" /> -->
+<!-- 				<label id="label_segnalazione" hflex="10%"></label> -->
+<!-- 				<button id="btn_segnalazione" -->
+<!-- 					label="${c:l('SchedaInfForm.buttonSegnalazione')}" hflex="10%" -->
+<!-- 					forward="onSegnalazione"> -->
+<!-- 				</button> -->
+<!-- 				<button id="btn_rug_svama" hflex="10%" -->
+<!-- 					forward="onRug_Svama"> -->
+<!-- 				</button> -->
+<!-- 				<button id="btn_skUVT" hflex="10%" forward="onSkUVT" -->
+<!-- 					label="${c:l('SchedaInfForm.buttonSkUVT')}"> -->
+<!-- 				</button> -->
+<!-- 				<label id="insteadof_btn_skUVT" hflex="10%"></label> -->
+<!-- 				<label hflex="10%"></label> -->
+				<label hflex="20%" />
+			</hlayout>			
+			
+			<tabbox width="100%" sclass="nav_tabs" id="tabbox_inf">
+				<tabs id="tabs_contatto_palliat">
+					<tab id="anamnesi_tab" label="${c:l('schedaPalliat.tabAnamnesi')}" />
+					<tab id="situazIniziale_tab" label="${c:l('schedaPalliat.tabSituazIniziale')}" />					
+					<tab id="scaleval_tab" 	label="${c:l('contatto.medico.patologie.scale.valutazione')}" />
+					<tab id="situazFamiliare_tab" label="${c:l('schedaPalliat.tabSituazFamiliare')}" />
+					<tab id="patologie_tab" label="${c:l('schedaPalliat.tabPatologie')}" />
+<!-- 					<tab id="terapia_tab" label="${c:l('schedaPalliat.tabTerapia')}" /> -->
+					<tab id="segnalazione_tab" label="${c:l('schedaPalliat.tabSegnalazione')}" visible="false"/>
+					<tab id="conclusione_tab" label="${c:l('SchedaInfForm.tabConclusione')}" />
+				</tabs>
+				<tabpanels id="tabpanels_contatto_palliat">
+					<tabpanel>
+						<anamnesi />
+					</tabpanel>
+					
+					<tabpanel>
+						<situazioneIniziale />
+					</tabpanel>
+										<tabpanel id="tabpanel_scale">
+						<!-- dati_contatto_medico_scale_valutazione / -->
+					</tabpanel>
+					<tabpanel>
+						<situazFamiliare /> 
+					</tabpanel>
+					
+					<tabpanel>
+						<patologie />
+						<hlayout height="50px"/>
+						<vlayout width="100%" spacing="3px"
+							sclass="asterLayout">
+							<hlayout>
+								<label hflex="14%"
+									value="${c:l('schedaPalliat.patologiePanel.annotazioni')}" />
+								<caribeltextbox hflex="64%" id="annotazioni"
+									db_name="" maxlength="2000" multiline="true" rows="6"
+									sclass="asterTextArea" />
+								<label hflex="22%" />
+							</hlayout>
+
+							<hlayout>
+								<label hflex="14%"
+									value="${c:l('schedaPalliat.patologiePanel.dataAnnotazione')}" />
+								<caribeldatebox hflex="10%"
+									id="dataAnnotazione" db_name="" constraint="no future" />
+								<label hflex="76%" />
+							</hlayout>
+						</vlayout>
+					</tabpanel>
+					
+<!-- 					<tabpanel> -->
+<!-- 						<terapia />  -->
+<!-- 					</tabpanel> -->
+					
+					<tabpanel>
+						<segnalazione /> 
+					</tabpanel>
+					
+					<tabpanel>
+						<conclusione /> 
+					</tabpanel>
+										
+
+				</tabpanels>
+			</tabbox>
+		</vlayout>
+	</vlayout>
+
+</window>

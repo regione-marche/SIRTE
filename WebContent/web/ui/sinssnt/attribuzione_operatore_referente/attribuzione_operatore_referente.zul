@@ -1,0 +1,133 @@
+<?component name="panel_ubicazione" inline="true" macroURI="~./ui/common/ubicazione/PanelUbicazione.zul"?>
+<?component name="panel_ubicazioneDp" inline="true" macroURI="~./ui/common/ubicazione/PanelUbicazioneDuplicato.zul"?>
+
+<window
+	apply="it.caribel.app.sinssnt.controllers.attribuzione_operatore_referente.AttribuzioneOperatoreReferenteCtrl"
+	title="${c:l('menu.operazioni.attribuzione.operatore.referente')}"
+	id="attribuzioneReferente" closable="true" sizable="true"
+	mode="overlapped" border="normal" position="center" width="1100px"
+	height="750px">
+
+	<vlayout vflex="true">
+		<toolbar height="26px" align="start" hflex="true">
+			<toolbarbutton id="btn_open"
+				image="~./zul/img/open24x24.png" tooltiptext="${c:l('btn.open')}"
+				visible="true" />
+			<toolbarbutton id="btn_save"
+				image="~./zul/img/save24x24.png" tooltiptext="${c:l('btn.save')}"
+				visible="true" />
+			<toolbarbutton id="btn_undo"
+				image="~./zul/img/undo24x24.png" tooltiptext="${c:l('btn.undo')}"
+				visible="true" />
+		</toolbar>
+		<vlayout sclass="asterLayout asterOverflow" vflex="true">
+			<hlayout>
+				<label hflex="20%"
+					value="${c:l('attribuzione.operatore.referente.attuale.tipo_op')}:" />
+				<caribelcombobox hflex="80%" id="cbx_tipoOperRef"
+					readonly="true" required="true" db_name="tipo_oper_start" />
+			</hlayout>
+			<panel_ubicazione id="ref" />
+			<hlayout>
+				<label hflex="20%" id="lbx_op_attuale_ref"
+					value="${c:l('attribuzione.operatore.referente.attuale.operatore.referente')}:" />
+				<caribelSearch hflex="80%" maxlength="10" 
+					id="attualeOperatoreReferenteSearch" id_cod="cod_operatore"
+					id_descr="desc_operatore" required="true"
+					db_name_cod="codice_oper_start" db_name_descr="cognome"
+					ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl" />
+			</hlayout>
+			
+			<hlayout>
+				<label hflex="20%" value="${c:l('attribuzione.operatore.referente.attuale.tipo')}:" />
+				<div hflex="45%" align="left">
+					<caribelradiogroup id="tipo" db_name="tipo_attribuzione">
+						<radio id="ref" value="R" label="${c:l('attribuzione.operatore.referente.attuale.tipo.ref')}" checked="true"/>
+						<radio id="pian" value="0" label="${c:l('attribuzione.operatore.referente.attuale.tipo.piano')}"/>						
+						<radio id="agenda" value="A" label="${c:l('attribuzione.operatore.referente.attuale.tipo.agenda')}"/>
+					</caribelradiogroup>
+				</div>
+				<label hflex="15%" value="${c:l('attribuzione.operatore.referente.attuale.data_rif')}:" />
+				<caribeldatebox id="data_riferimento" hflex="20%" db_name="data_riferimento" required="false" />
+			</hlayout>
+
+			<vlayout>
+				<caribellistbox sizedByContent="true" id="caribellb2" checkmark="true" multiple="true" rows="8">
+					<listhead sizable="true">
+						<caribellistheader hflex="15%" 
+							label="${c:l('chiusura_contatti.sel')}" />
+						<caribellistheader hflex="15%"  db_name="n_cartella"  
+							label="${c:l('attribuzione.operatore.referente.tb.cartella')}"
+							sort="auto" />
+						<caribellistheader hflex="35%" db_name="assistito"
+							label="${c:l('attribuzione.operatore.referente.tb.assistito')}"
+							sort="auto" />
+						
+						<caribellistheader hflex="35%" db_name="pi_data_inizio" id="pi_data_inizio"
+							label="${c:l('attribuzione.operatore.referente.tb.data_inizio')}"
+							sort="auto" />
+						<caribellistheader hflex="35%" db_name="pi_data_fine" id="pi_data_fine"
+							label="${c:l('attribuzione.operatore.referente.tb.data_fine')}"
+							sort="auto" />
+						<caribellistheader hflex="15%" db_name="n_contatto" id="n_contatto"
+							label="${c:l('attribuzione.operatore.referente.tb.contatto')}"
+							sort="auto" />
+						<caribellistheader hflex="20%" 
+							db_name="data_apertura_contatto" id="data_apertura_contatto"
+							label="${c:l('attribuzione.operatore.referente.tb.data.apertura.contatto')}"
+							sort="auto" />
+						<caribellistheader hflex="5%" 
+							db_name="data" id="pa_data" visible="false"
+							label="${c:l('attribuzione.operatore.referente.tb.data.apertura.contatto')}"
+							sort="auto" />
+						<caribellistheader hflex="5%" 
+							db_name="cod_obbiettivo" id="cod_obbiettivo" visible="false"
+							label="${c:l('attribuzione.operatore.referente.tb.data.apertura.contatto')}"
+							sort="auto" />
+						<caribellistheader hflex="5%" 
+							db_name="n_intervento" id="n_intervento" visible="false"
+							label="${c:l('attribuzione.operatore.referente.tb.data.apertura.contatto')}"
+							sort="auto" />
+						<caribellistheader hflex="5%" 
+							db_name="n_progetto" id="n_progetto" visible="false"
+							label="${c:l('attribuzione.operatore.referente.tb.data.apertura.contatto')}"
+							sort="auto" />
+					</listhead>
+				</caribellistbox>
+			</vlayout>
+			<hlayout>
+				<label hflex="20%" id="lbl_data_attribuzione"
+					value="${c:l('attribuzione.operatore.referente.data.attribuzione')}:" />
+				<caribeldatebox id="data_attribuzione" hflex="20%"
+					db_name="data_attribuzione" required="false" />
+<!-- 				<label hflex="60%" value="" /> -->
+					<div hflex="60%" align="center">   
+						<label hflex="60%" id="lbx_note" value="sssssssss" style="color:red"/>
+					</div>
+			</hlayout>
+			<hlayout>
+				<label hflex="20%"
+					value="${c:l('attribuzione.operatore.referente.nuovo.tipo_op')}:" />
+				<caribelcombobox hflex="80%" id="cbx_tipoOperNewRef"
+					readonly="true" required="true" db_name="tipo_oper_end"
+					disabled="true" />
+			</hlayout>
+
+			<panel_ubicazioneDp />
+			<hlayout>
+				<label hflex="20%"
+					value="${c:l('attribuzione.operatore.referente.nuovo.operatore.referente')}:" />
+				<caribelSearch hflex="80%" maxlength="10"
+					id="nuovoOperatoreReferenteSearch" id_cod="cod_operatoreRef"
+					id_descr="desc_operatoreRef" required="false"
+					db_name_cod="codice_oper_end" db_name_descr="cognome"
+					ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl" />
+			</hlayout>
+			
+			<hlayout >
+					<label hflex="100%" value=""/>
+			</hlayout>
+			
+		</vlayout>
+	</vlayout>
+</window>

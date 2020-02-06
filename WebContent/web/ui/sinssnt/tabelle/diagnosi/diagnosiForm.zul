@@ -1,0 +1,110 @@
+<window title="${c:l('diagnosi.formTitle')}" id="diagnosi"
+	closable="true"
+	apply="it.caribel.app.sinssnt.controllers.tabelle.diagnosi.DiagnosiFormCtrl"
+	sclass="asterOverlappedWindow"
+	height="580px" sizable="true" 
+	mode="modal" position="center" border="normal">
+
+	<vlayout id="diagnosiGenerale">
+		<vlayout spacing="0px">
+			<hlayout hflex="true">
+				<caribelintbox hflex="15%" readonly="true" 
+					id="key_cartella" db_name="n_cartella" visible="false"/>
+				<caribeldatebox hflex="15%" readonly="true"
+					id="key_data_apertura" db_name="data_apertura" visible="false"/>
+				<caribeldatebox hflex="15%" readonly="true"
+					id="key_data_chiusura" db_name="data_chiusura" visible="false"/>
+			</hlayout>
+			<hlayout hflex="true">
+					<caribellistbox rows="6" db_name="griglia" id="griglia" hflex="true">
+						<listhead sizable="true">
+							<caribellistheader db_name="dt_diag"
+								label="${c:l('diagnosi.tabella.data')}" width="13%" />
+							<caribellistheader db_name="progr"
+								label="${c:l('contatto.medico.patologie.tabella.patologia')}" width="12%" />
+							<caribellistheader db_name="cod_alldiag"
+								label="${c:l('diagnosi.tabella.codice')}" width="10%" />
+							<caribellistheader db_name="desc_alldiag"
+								label="${c:l('diagnosi.tabella.descrizione')}" width="65%" maxlength="50" />
+						</listhead>
+					</caribellistbox>
+			</hlayout>
+			<hlayout style="margin-top: -1px;" hflex="true" width="100%">
+				<caribelGridFormMenuHoriz visible_btn_formgrid_copy="true" />
+			</hlayout>
+			
+			<hlayout width="100%">
+					<vlayout hflex="true" vflex="true" id="myForm" sclass="asterLayout" >
+						<hlayout hflex="true">
+							<label hflex="25%" value="${c:l('diagnosi.data')}:" />
+							<caribeldatebox hflex="15%" id="key_data"   
+								db_name="data_diag" required="true" constraint="no future" />
+							<label hflex="60%" value=""></label>		
+						</hlayout>
+						<hlayout width="100%">
+							<label hflex="25%"
+								value="${c:l('diagnosi.patologia1')}:" />
+							<caribelSearch  hflex_cod="20%" hflex_descr="53%" hflex="73%"
+								required="true" db_name_cod="diag1"
+								db_name_descr="desc_diag1" id_cod="pato1"
+								id_descr="desc_pato1" 
+							 ctrl="it.caribel.app.sinssnt.controllers.tabelle.diagnosi.DiagnosiSearchCtrl" />
+							 <label hflex="2%" value=""></label> 
+						</hlayout>
+						<hlayout width="100%">
+							<label hflex="25%"
+								value="${c:l('diagnosi.patologia2')}:" />
+							<caribelSearch hflex_cod="20%" hflex_descr="53%" hflex="73%"
+								required="false" db_name_cod="diag2"
+								db_name_descr="desc_diag2" id_cod="pato2"
+								id_descr="desc_pato2" 
+							 ctrl="it.caribel.app.sinssnt.controllers.tabelle.diagnosi.DiagnosiSearchCtrl" />
+							 <label hflex="2%" value=""></label> 
+						</hlayout>
+						<hlayout width="100%">
+							<label hflex="25%"
+								value="${c:l('diagnosi.patologia3')}:" />
+							<caribelSearch hflex_cod="20%" hflex_descr="53%" hflex="73%"
+								required="false" db_name_cod="diag3"
+								db_name_descr="desc_diag3" id_cod="pato3"
+								id_descr="desc_pato3" 
+							 ctrl="it.caribel.app.sinssnt.controllers.tabelle.diagnosi.DiagnosiSearchCtrl" /> 
+							 <label hflex="2%" value=""></label>
+						</hlayout>
+						<hlayout width="100%">
+							<label hflex="25%"
+								value="${c:l('diagnosi.patologia4')}:" />
+							<caribelSearch hflex_cod="20%" hflex_descr="53%" hflex="73%"
+								required="false" db_name_cod="diag4"
+								db_name_descr="desc_diag4" id_cod="pato4"
+								id_descr="desc_pato4" 
+							 ctrl="it.caribel.app.sinssnt.controllers.tabelle.diagnosi.DiagnosiSearchCtrl" />
+							 <label hflex="2%" value=""></label> 
+						</hlayout>
+						<hlayout width="100%">
+							<label hflex="25%"
+								value="${c:l('diagnosi.patologia5')}:" />
+							<caribelSearch hflex_cod="20%" hflex_descr="53%" hflex="73%"
+								required="false" db_name_cod="diag5"
+								db_name_descr="desc_diag5" id_cod="pato5"
+								id_descr="desc_pato5" 
+							 ctrl="it.caribel.app.sinssnt.controllers.tabelle.diagnosi.DiagnosiSearchCtrl" />
+							 <label hflex="2%" value=""></label>
+						</hlayout>
+						<hlayout width="100%">
+				 			<label hflex="25%" value="${c:l('diagnosi.tabs.note')}:"/>
+							<caribeltextbox hflex="73%" id="note" 
+								db_name="note" maxlength="2000"  multiline="true" rows="6" sclass="asterTextArea"/>
+							<label hflex="2%" value=""></label>	
+						</hlayout>
+						<hlayout width="100%">
+							<label hflex="25%" value="${c:l('diagnosi.operatore')}: " />
+							<caribeltextbox hflex="20%" readonly="true" id="operatore" db_name="cod_operatore" />
+							<caribeltextbox hflex="53%" readonly="true"	id="desc_oper" db_name="desc_oper" />
+							<label hflex="2%" value="" />
+						</hlayout>
+					</vlayout>
+			</hlayout>
+		</vlayout>
+	</vlayout>
+</window>

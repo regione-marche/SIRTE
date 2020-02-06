@@ -1,0 +1,114 @@
+
+<?component name="principale" 			inline="true" macroURI="/web/ui/sinssnt/contatto_infermieristico/contatto_inf_principale.zul"?>
+<?component name="patologie" 			inline="true" macroURI="~./ui/sinssnt/segreteriaOrganizzativa/contatto_medico_patologie.zul" ?>
+<?component name="conclusione" 			inline="true" macroURI="/web/ui/sinssnt/contatto_infermieristico/contatto_inf_conclusione.zul"?>
+<?component name="ambulatorio" 			inline="true" macroURI="/web/ui/sinssnt/contatto_infermieristico/toscana/contatto_inf_ambulatorio.zul"?>
+<?component name="segnalazione"		 	inline="true" macroURI="/web/ui/sinssnt/common/toscana/panel_segnalazione.zul"?>
+<?component name="presacarico" 			inline="true" macroURI="/web/ui/sinssnt/common/toscana/panel_presacarico.zul"?>
+
+
+
+<window id="contattoInfForm" title="${c:l('SchedaInfForm.formTitle')}"
+	apply="it.caribel.app.sinssnt.controllers.contattoInfermieristico.ContattoInfFormCtrl"
+	border="normal" vflex="true" width="100%">
+
+	<vlayout vflex="true" hflex="true">
+
+		<caribelFormMenu visible_btn_print="true" />
+		<vlayout vflex="true" sclass="asterLayout asterOverflow">
+			<hlayout width="100%" visible="false">
+				<label value="${c:l('SchedaInfForm.cartella')}:"
+					hflex="10%" />
+				<caribelintbox id="n_cartella" db_name="n_cartella"
+					hflex="15%" maxlength="13" required="true" readonly="true" isDbKey="true"/>
+				<label value="${c:l('SchedaInfForm.contatto')}:"
+					hflex="10%" />
+				<caribelintbox id="n_contatto" db_name="n_contatto"
+					hflex="15%" maxlength="13" readonly="true"  isDbKey="true"/>
+				<caribelintbox id="id_skso" db_name="id_skso"
+					hflex="15%" maxlength="13" />
+				<caribeldatebox id="pr_data" db_name="pr_data"
+					hflex="15%" maxlength="13" readonly="true"  isDbKey="false"/>	
+			</hlayout>
+			
+			<hlayout width="100%">
+				<label value="${c:l('SchedaInfForm.principale.operatore')}:"
+					hflex="10%" />
+				<caribeltextbox hflex="10%" id="ski_operatore"
+					db_name="ski_operatore" maxlength="10" readonly="true" />
+				<caribeltextbox hflex="40%" id="desc_operat"
+					db_name="desc_operat" maxlength="80" readonly="true" />
+				<label id="label_segnalazione" hflex="10%"></label>
+				<button id="btn_segnalazione"
+					label="${c:l('SchedaInfForm.buttonSegnalazione')}" hflex="10%"
+					forward="onSegnalazione">
+				</button>
+				<button id="btn_rug_svama" hflex="10%"
+					forward="onRug_Svama">
+				</button>
+				<button id="btn_skUVT" hflex="10%" forward="onSkUVT"
+					label="${c:l('SchedaInfForm.buttonSkUVT')}">
+				</button>
+				<label id="insteadof_btn_skUVT" hflex="10%"></label>
+				<label hflex="10%"></label>
+			</hlayout>
+			<tabbox width="100%" sclass="nav_tabs" id="tabbox_inf">
+				<tabs id="tabs_contatto_inf">
+					<tab id="principale_tab" label="${c:l('SchedaInfForm.tabPrincipale')}" />
+					<tab id="ambulatorio_tab" label="${c:l('SchedaInfForm.panel_ambulatorio')}" />				
+					<tab id="anamnesi_tab" label="${c:l('SchedaInfForm.tabAnamnesi')}" />
+					<tab id="segnalazione_tab" label="${c:l('common.panel_segnalazione')}" />
+					<tab id="presacarico_tab" label="${c:l('common.panel_presacarico')}" />
+					<tab id="scaleval_tab" label="${c:l('common.panel_scaleval')}" />
+					<tab id="pa_tab" label="${c:l('generic.piani_assistenziali')}" disabled="true" />
+					<tab id="conclusione_tab" label="${c:l('SchedaInfForm.tabConclusione')}" />
+				</tabs>
+				<tabpanels id="tabpanels_contatto_inf">
+					<tabpanel>
+						<principale />
+					</tabpanel>
+					<tabpanel id="ambulatorio">
+						<ambulatorio />
+					</tabpanel>				
+					<tabpanel>
+						<patologie disabled="true"/>
+						<vlayout width="100%" spacing="3px"
+							sclass="asterLayout">
+							<hlayout width="100%">
+								<label hflex="20%"
+									value="${c:l('SchedaInfForm.patologie.Anamnesi.remota')}:" />
+								<caribeltextbox hflex="62%"
+									id="ski_anamnesi_1" db_name="ski_anamnesi_1" maxlength="2000"
+									multiline="true" rows="2" sclass="asterTextArea" />
+								<label hflex="18%"></label>
+							</hlayout>
+							<hlayout width="100%">
+								<label hflex="20%"
+									value="${c:l('SchedaInfForm.patologie.Anamnesi.prossima')}:" />
+								<caribeltextbox hflex="62%"
+									id="ski_anamnesi_2" db_name="ski_anamnesi_2" maxlength="2000"
+									multiline="true" rows="2" sclass="asterTextArea" />
+								<label hflex="18%"></label>
+							</hlayout>
+						</vlayout>
+					</tabpanel>
+					<tabpanel id="segnalazione">
+						<segnalazione />
+					</tabpanel>
+					<tabpanel id="presacarico">
+						<presacarico />
+					</tabpanel>
+					<tabpanel id="tabpanel_scale">
+						<!-- scaleval / -->
+					</tabpanel>
+					<tabpanel id="tabpanel_pa" style="padding:0px;text-align: left;" >
+					</tabpanel>
+					<tabpanel>
+						<conclusione />
+					</tabpanel>
+				</tabpanels>
+			</tabbox>
+		</vlayout>
+	</vlayout>
+
+</window>

@@ -1,0 +1,32 @@
+<vlayout sclass="asterLayout asterOverflow asterLayoutLastSpace" height="100%">
+
+	<hlayout>
+		<label value="${c:l('schedaPalliat.pazientePanel.gradoConsapevolezzaIniziale')}:" hflex="20%" />
+		<caribelcombobox id="grado_consapevolezza_iniziale" hflex="25%" db_name="skm_paziente_i" />
+		<label hflex="55%" />
+	</hlayout>
+	
+	<hlayout>
+		<label value="${c:l('schedaPalliat.pazientePanel.gradoConsapevolezzaUltimaSettimana')}:" hflex="20%" />
+		<caribelcombobox id="grado_consapevolezza_ultSett" hflex="25%" db_name="skm_paziente_f" />
+		<label hflex="55%" />
+	</hlayout>
+	
+	<hlayout>
+		<label value="${c:l('schedaPalliat.pazientePanel.diagnosi')}:" hflex="20%" />
+		<caribeltextbox id="skm_diag_paz" hflex="60%" db_name="skm_diag_paz" style="resize:none"
+						maxlength="100" rows="2"/>
+		<label hflex="20%" />
+	</hlayout>
+	
+	<hlayout>
+		<label value="${c:l('schedaPalliat.pazientePanel.preferenzaLuogoCura')}:" hflex="20%" />
+		<caribeltextbox id="pref_luogo_cura" hflex="60%" db_name="skm_pref_luogo_paz" style="resize:none"
+						maxlength="100" rows="2"/>
+		<label hflex="20%" />
+	</hlayout>	
+
+</vlayout>
+
+
+

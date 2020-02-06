@@ -1,0 +1,78 @@
+<vlayout id="condizioneForm" vflex="true">
+	<vlayout vflex="true" hflex="1" spacing="3px" sclass="asterLayout">
+ 		<hlayout>
+			<label hflex="20%" value="${c:l('SchedaFisioForm.condizione.generale')}:" />
+			<caribelcombobox hflex="30%" db_name="skf_condiz" id="cbx_generali" />
+			<label hflex="20%" value="${c:l('SchedaFisioForm.condizione.cognitive')}:" />	
+			<caribelcombobox hflex="30%" db_name="skf_cognitive" id="cbx_cognitive" />
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('SchedaFisioForm.condizione.deambulazione')}:" />
+			<caribelcombobox hflex="30%" db_name="skf_condiz" id="cbx_deambula" />
+			<label hflex="20%" value="${c:l('SchedaFisioForm.condizione.autonomia')}:" />	
+			<caribelcombobox hflex="30%" db_name="skf_autonomia" id="cbx_autonomia" />
+		</hlayout> 			
+		<hlayout  width="100%" >
+			<label value="${c:l('SchedaFisioForm.condizione.ausili')}:" hflex="20%" />
+			<caribelradiogroup hflex="20%" db_name="skf_ausili" id="skf_ausili">
+				<div align="left">
+					<radio label="${c:l('common.yes')}" value="S" />
+					<radio label="${c:l('common.no')}" value="N" checked="true"/>
+				</div>
+			</caribelradiogroup>
+			<label hflex="20%" value="${c:l('SchedaFisioForm.condizione.proposti')}:"  />
+			<caribeltextbox hflex="40%" id="skf_ausili_prop" 
+				db_name="skf_ausili_prop" maxlength="2000"  multiline="true" rows="2" sclass="asterTextArea"/>
+			
+		</hlayout>	
+		
+		<hlayout width="100%" valign="middle" style="text-align:left;margin:1px">
+			<groupbox hflex="100" closable="false">
+				<caption>
+					<div align="left">
+						<label
+							value="${c:l('SchedaFisioForm.condizione.groupbox1')}:">
+						</label>
+					</div>
+				</caption>
+				<vlayout sclass="asterLayout">
+				<hlayout width="100%" style="text-align:right">
+					<label hflex="20%" value="${c:l('SchedaFisioForm.condizione.tipo')}:" />
+					<caribelcombobox hflex="30%" db_name="skf_disabilita" id="cbx_tipo" />						
+					<label hflex="50%"/>
+				</hlayout>
+				
+				<hlayout width="100%" style="text-align:right">
+					<label hflex="20%" value="${c:l('SchedaFisioForm.condizione.descrizione')}:" />
+					<caribeltextbox hflex="50%" id="skf_disabilita_altro" 
+						db_name="skf_disabilita_altro" maxlength="2000"  multiline="true" rows="2" sclass="asterTextArea"/>
+					<label hflex="30%"/>			
+				</hlayout>
+				
+				<hlayout width="100%" style="text-align:right" id="corporee">
+					<label value="${c:l('SchedaFisioForm.condizione.strutture')}:" hflex="20%" />
+					<caribelintbox hflex="10%" db_name="skf_disab_strutture" id="skf_disab_strutture"
+						maxlength="8" />
+					<label hflex="10%"/>	
+					<label value="${c:l('SchedaFisioForm.condizione.funzioni')}:" hflex="20%" />
+					<caribelintbox hflex="10%" db_name="skf_disab_funzioni" id="skf_disab_funzioni"
+						maxlength="8" />	
+					<label hflex="30%"/>											
+				</hlayout>
+
+				<hlayout  width="100%" style="text-align:right" id="ambientali">
+					<label value="${c:l('SchedaFisioForm.condizione.fattori')}:" hflex="20%" />
+					<caribelintbox hflex="10%" db_name="skf_disab_fattamb" id="skf_disab_fattamb"
+						maxlength="8" />
+					<label hflex="10%"/>	
+					<label value="${c:l('SchedaFisioForm.condizione.attpart')}:" hflex="20%" />
+					<caribelintbox hflex="10%" db_name="skf_disab_attpart" id="skf_disab_attpart"
+						maxlength="8" />	
+					<button id="btn_fim" label="Scheda FIM" hflex="20%" forward="onFIM"></button>
+					<label hflex="10%"/>
+				</hlayout>	
+				</vlayout>			
+			</groupbox>			
+			</hlayout>		
+	</vlayout>
+</vlayout>

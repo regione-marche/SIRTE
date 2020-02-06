@@ -1,0 +1,30 @@
+<window title="${c:l('common.scheda.storico')}"
+	apply="it.caribel.app.sinssnt.controllers.contattoInfermieristico.ContattoInfGridCtrl"
+	sclass="asterOverlappedWindow" 
+	border="normal"
+	width="100%" vflex="true" >
+	
+	<vlayout height="100%">
+	
+		<caribelGridMenu visible_btn_new="false"/>
+		<vlayout sclass="asterLayout" vflex="true" spacing="0px">
+			<hlayout valign="middle" width="100%" visible="false">
+				<label hflex="20%"  value="${c:l('schedaInfGrid.cartella')}:" />
+				<caribeltextbox hflex="60%" id="tb_filter1" db_name="n_cartella" required="false" />
+				<label hflex="20%"  value="" />
+			</hlayout>
+		
+<!-- 			<caribelPaging sortable="true"/> -->
+			<caribellistbox vflex="true" hflex="true">
+				<listhead sizable="true">
+	 				<caribellistheader db_name="n_contatto"	  	      order_by="n_contatto"           label="${c:l('schedaInfGrid.contatto')}"     width="10%" sort="auto"/> 
+					<caribellistheader db_name="ski_data_apertura"	  order_by="ski_data_apertura"    label="${c:l('schedaInfGrid.dataApertura')}" width="10%" sort="auto"/>
+	 				<caribellistheader db_name="operatore_apertura"	  order_by="operatore_apertura"   label="${c:l('schedaInfGrid.operatore')}"    width="35%" sort="auto"/> 
+	 				<caribellistheader db_name="ski_data_uscita"	  order_by="ski_data_uscita"      label="${c:l('schedaInfGrid.dataChiusura')}" width="10%" sort="auto"/> 
+	 				<caribellistheader db_name="operatore_infermiere" order_by="operatore_infermiere" label="${c:l('schedaInfGrid.infermiere')}"   width="35%" sort="auto"/> 
+	 				<!-- <caribellistheader db_name="ski_descr_contatto"   order_by="ski_descr_contatto"   label="${c:l('schedainfgrid.desccontatto')}" width="15%" sort="auto"/> --> 
+				</listhead>
+			</caribellistbox>
+		</vlayout>
+	</vlayout>
+</window>

@@ -1,0 +1,145 @@
+<?component name="lesioni" 	inline="true" macroURI="contPalliat_principale_lesioniPanel.zul"?> 
+<?component name="chemioRadio" 	inline="true" macroURI="contPalliat_principale_chemioPanel.zul"?> 
+<?component name="allergieIntolleranze" inline="true" macroURI="contPalliat_principale_allergiePanel.zul"?>
+<?component name="neoplasiaPrimitiva" 	inline="true" macroURI="contPalliat_principale_neoplasiaPanel.zul"?>
+
+<vlayout id="principaleForm" >
+	<vlayout hflex="1" spacing="3px"
+		sclass="asterLayout">
+		
+		<hlayout width="100%">
+			<label hflex="14%"
+				value="${c:l('schedaPalliat.principale.dataPresaInCarico')}:" />
+			<caribeldatebox hflex="10%" id="skm_presacarico_data"
+				constraint="no future" db_name="skm_presacarico_data" />
+			<label hflex="22%" />
+			<label hflex="14%"
+				value="${c:l('schedaPalliat.principale.PresaInCarico')}:" visible="false"/>
+			
+			<div hflex="20%" style="text-align:left" visible="false">
+				<caribelradiogroup id="skm_presacarico" db_name="skm_presacarico" >
+					<radio id="presaCaricoNo"
+						label="${c:l('schedaPalliat.no')}" value="N" checked="true"/>
+					<radio id="presaCaricoSi"
+						label="${c:l('schedaPalliat.si')}" value="S" />
+				</caribelradiogroup>
+			</div>			
+
+			<label hflex="54%" />
+		</hlayout>
+		
+		<hlayout width="100%">
+			<label hflex="14%"
+				value="${c:l('schedaPalliat.principale.dataPrimaVisita')}:" />
+			<caribeldatebox hflex="10%" id="skm_pvisita_data"
+				constraint="no future" db_name="skm_pvisita_data" />
+			<label hflex="22%" />
+			<label hflex="14%" value="${c:l('schedaPalliat.principale.LuogoVisita')}:" />			
+			<caribelcombobox id="skm_pvisita" db_name="skm_pvisita" hflex="20%" />
+			<label hflex="20%" />
+		</hlayout>
+		
+		<hlayout width="100%">
+			<label value="${c:l('schedaPalliat.principale.medicoCurante')}:" hflex="14%" />
+			<caribelSearch hflex="66%" id_cod="id_cod_medicoCurante" id_descr="id_desc_medicoCurante" 
+				db_name_cod="skm_mmg" db_name_descr="" 
+				ctrl="it.caribel.app.common.controllers.medici.MediciSearchCtrl" />
+			<label hflex="20%" />
+		</hlayout>
+		
+		<hlayout width="100%">
+			<label hflex="14%"
+				value="${c:l('schedaPalliat.principale.telefonoMedicoCurante')}:" />
+			<caribelintbox hflex="10%" id="telefono_medicoCurante" db_name="skm_mmg_tel" />
+			<label hflex="22%" />
+			<label hflex="14%"
+				value="${c:l('schedaPalliat.principale.intensitaAssistenziale')}:" />
+
+			<div hflex="20%" style="text-align:left">
+				<caribelradiogroup id="rg_intensitaAssistenziale"
+					db_name="skm_intensita" >
+					<radio id="intensitaAlta"
+						label="${c:l('schedaPalliat.bassa')}:" value="1" checked="true"/>
+					<radio id="intensitaBassa"
+						label="${c:l('schedaPalliat.alta')}:" value="2" />
+				</caribelradiogroup>
+			</div>
+			<label hflex="20%" />
+		</hlayout>
+		
+		<hlayout>
+			<label hflex="100%" value=""/>
+		</hlayout>
+
+		<tabbox id="tbbox_principale" >
+			<tabs id="tabs_principale" style="text-align:center">
+				<tab id="A"
+					label="${c:l('schedaPalliat_principale.lesioni')}" />
+				<tab id="B"
+					label="${c:l('schedaPalliat_principale.chemioRadio')}" />
+				<tab id="C"
+					label="${c:l('schedaPalliat_principale.allergieIntolleranze')}" />
+				<tab id="D"
+					label="${c:l('schedaPalliat_principale.neoplasiaPrimitiva')}" />				
+			</tabs>
+
+			<tabpanels>
+				<!-- lesioni -->
+				<tabpanel vflex="true">
+					<lesioni />
+				</tabpanel>
+
+				<!-- chemio/radio -->
+				<tabpanel>
+					<chemioRadio />
+				</tabpanel>
+
+				<!-- allergie/intolleranze -->
+				<tabpanel>
+					<allergieIntolleranze />
+				</tabpanel>
+
+				<!-- neoplasia primitiva -->
+				<tabpanel>
+					<neoplasiaPrimitiva />
+				</tabpanel>
+
+			</tabpanels>
+
+		</tabbox>
+		
+		<hlayout width="100%" visible="false">
+			<label hflex="20%"
+				value="${c:l('SchedaGenericaForm.principale.ref')}:" />
+			<caribelSearch hflex="56%" required="false"
+				id="cs_operatore_referente" db_name_cod="skfpg_referente"
+				db_name_descr="desc_skfpg_referente" id_cod="skfpg_referente"
+				id_descr="desc_skfpg_referente"
+				ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl" />
+			<label hflex="3%"
+				value="${c:l('SchedaGenericaForm.principale.ref.dal')}:" />
+			<caribeldatebox hflex="10%" required="false"
+				db_name="skfpg_referente_da" id="skfpg_referente_da"
+				constraint="no future" />
+			<button id="btn_storico"
+				label="${c:l('Contatti.buttonOperatoreRef')}" hflex="11%"
+				image="/web/img/nurse16x16.png"
+				tooltiptext="${c:l('Contatti.buttonOperatoreRef_descrizione')}"
+				forward="onStorico">
+			</button>
+
+		</hlayout>
+
+		<hlayout width="100%" visible="false">
+			<label hflex="20%"
+				value="${c:l('SchedaInfForm.principale.presidio')}:" />
+			<caribelSearch hflex="56%" id="cs_presidio" readonly="true"
+				db_name_cod="skfpg_cod_presidio" db_name_descr="desc_presidio"
+				id_cod="skfpg_cod_presidio" id_descr="desc_presidio"
+				ctrl="it.caribel.app.common.controllers.presidi.PresidiSearchCtrl" />
+			<!--button id="btn_scheda_so" label="${c:l('SchedaInfForm.principale.SchedaSO')}" hflex="10%" /			 -->
+			<label hflex="24%"></label>
+		</hlayout>
+
+	</vlayout>
+</vlayout>

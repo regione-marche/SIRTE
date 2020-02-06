@@ -1,0 +1,112 @@
+<window id="Beneficiari"
+title="${c:l('beneficiarioForm.formTitle')}" 
+apply="it.caribel.app.common.controllers.beneficiario.BeneficiarioFormCtrl" 
+closable="true" sizable="true"
+border="normal"
+position="center"
+width="780px"
+height="550px"
+>
+
+	<vlayout vflex="true">
+
+		<caribelFormMenu />
+ 		<vlayout vflex="true" sclass="asterLayout asterOverflow asterLayoutLastSpace">
+			<hlayout>
+				<label hflex="20%" value="${c:l('generic.codice')}:" />
+				<caribelintbox focus="true" hflex="20%" id="codice" db_name="b_codice" isDbKey="true" maxlength="8" required="true" />
+				<label hflex="60%" />
+			</hlayout>
+	
+			<hlayout valign="middle" width="100%">
+				<label hflex="20%"  value="${c:l('beneficiarioForm.tipo_del')}:" />				
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="tipo_del" db_name="b_flag">
+						<radio id="per" value="P" label="${c:l('beneficiarioForm.tipo_del_per')}"  checked="true" />
+						<radio id="ditta" value="D" label="${c:l('beneficiarioForm.tipo_del_ditta')}"/>	
+					</caribelradiogroup>
+				</div>						
+			</hlayout>
+				
+			<hlayout>
+				<label hflex="20%" value="${c:l('beneficiarioForm.cognome')}:" />
+				<caribeltextbox hflex="80%" db_name="b_cognome" maxlength="40" required="true" id="cognome" />			
+			</hlayout>
+			
+			<hlayout>
+				<label hflex="20%" value="${c:l('beneficiarioForm.nome')}:" />
+				<caribeltextbox hflex="80%" db_name="b_nome" maxlength="40" required="false" />			
+			</hlayout>		
+			
+			<hlayout>
+				<label hflex="20%" value="${c:l('beneficiarioForm.com_nasc')}:" />
+				<caribelSearch hflex="80%" db_name_cod="b_comune_nasc" db_name_descr="desc_com_nasc"
+				 	required="false" maxlength="6"
+				 	ctrl="it.caribel.app.sinssnt.controllers.tabelle.comuni.ComuniSearchCtrl"/>
+			</hlayout>		
+			
+			<hlayout valign="middle" width="100%">
+				<label hflex="20%"  value="${c:l('beneficiarioForm.data_nasc')}:" />
+				<caribeldatebox id="data_nasc" hflex="20%"	db_name="b_data_nascita" required="false"/>	
+				<label hflex="20%"  value="${c:l('beneficiarioForm.sesso')}:" />				
+				<div hflex="40%" align="left">
+					<caribelradiogroup id="sesso" db_name="b_sesso">
+						<radio id="maschio" value="M" label="${c:l('beneficiarioForm.sesso_M')}"  checked="true" />
+						<radio id="fem" value="F" label="${c:l('beneficiarioForm.sesso_F')}"/>	
+					</caribelradiogroup>
+				</div>						
+			</hlayout>
+		
+			<hlayout>
+				<label hflex="20%" value="${c:l('beneficiarioForm.cod_fisc')}:" />
+				<caribeltextbox hflex="50%" db_name="b_cod_fiscale" maxlength="16" required="true" />	
+				<label hflex="30%" value="" />		
+			</hlayout>
+			
+			<hlayout>
+				<label hflex="20%" value="${c:l('beneficiarioForm.indirizzo')}:" />
+				<caribeltextbox hflex="80%" db_name="b_indiri" maxlength="30" required="false" />			
+			</hlayout>
+			
+			<hlayout>
+				<label hflex="20%" value="${c:l('beneficiarioForm.com_dom')}:" />
+				<caribelSearch hflex="80%" db_name_cod="b_comune_dom" db_name_descr="desc_com_dom"
+				 	required="false" maxlength="6"
+				 	ctrl="it.caribel.app.sinssnt.controllers.tabelle.comuni.ComuniSearchCtrl"/>
+			</hlayout>	
+			
+			<hlayout>
+				<label hflex="20%" value="${c:l('beneficiarioForm.cap')}:" />
+				<caribelintbox hflex="30%" db_name="b_cap" maxlength="5" required="false" />			
+				<label hflex="20%" value="${c:l('beneficiarioForm.prov')}:" />
+				<caribeltextbox hflex="30%" db_name="b_provincia" maxlength="2" required="false" />			
+			</hlayout>
+			
+			<hlayout>
+				<label hflex="20%" value="${c:l('beneficiarioForm.telefono')}:" />
+				<caribeltextbox hflex="50%" db_name="b_telefono" maxlength="20" required="false" />	
+				<label hflex="30%" value="" />		
+			</hlayout>
+			
+			<hlayout>
+				<label hflex="20%" value="${c:l('beneficiarioForm.tipo_pag')}:" />
+				<caribelcombobox hflex="30%" id="tipo_pag" db_name="b_paga" required="false" />			
+				<label hflex="20%" value="${c:l('beneficiarioForm.cc')}:" />
+				<caribeltextbox hflex="30%" db_name="b_cont" maxlength="12" required="false" />			
+			</hlayout>
+			
+			<hlayout>
+				<label hflex="20%" value="${c:l('beneficiarioForm.cod_iban')}:" />
+				<caribeltextbox hflex="80%" db_name="b_iban" maxlength="27" required="false" />			
+			</hlayout>	
+			
+			<hlayout>
+				<label hflex="20%" value="${c:l('beneficiarioForm.note')}:" />
+				<caribeltextbox rows="5" sclass="asterTextArea" hflex="80%" db_name="b_note" maxlength="255" required="false"  multiline="true"/>
+			</hlayout>
+			
+			
+		</vlayout>
+	</vlayout>
+
+</window>

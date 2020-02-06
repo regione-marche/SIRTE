@@ -1,0 +1,17 @@
+<?component name="diario_panel" inline="true" macroURI="/web/ui/sinssnt/diario/diarioCommonPanel.zul"?>
+
+<window
+title="${c:l('diario.formTitle')}"
+apply="it.caribel.app.sinssnt.controllers.diario.DiarioGridCtrl"
+height="600px"
+width="950px"
+minheight="600"
+minwidth="950"
+closable="true"
+maximizable="true"
+sizable="true"
+border="normal">
+
+<diario_panel/>
+
+</window>

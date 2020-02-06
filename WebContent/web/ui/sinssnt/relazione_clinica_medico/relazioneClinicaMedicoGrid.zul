@@ -1,0 +1,76 @@
+<window id="medicoRelCliForm" 
+	title="${c:l('relazione.clinica.medico.formTitle')}"
+	apply="it.caribel.app.sinssnt.controllers.relazione_clinica_medico.RelazioneClinicaMedicaGridCtrl"
+	height="${c:l('style.windowGrid.overlapped.height')}"
+	vflex="true" 
+	border="normal">
+	<vlayout id="relazioneClinica">
+		<vlayout sclass="asterLayout" spacing="3px"
+			width="100%">
+			<hlayout valign="middle" width="100%">
+				<label hflex="20%" visible="false"
+					value="${c:l('relazione.clinica.medico.cartella')}:" />
+				<caribeltextbox hflex="20%" readonly="true" 
+					id="key_cartella" db_name="n_cartella"  visible="false"/>
+				<label hflex="5%" value="" visible="false"></label>
+				<label hflex="15%" value="${c:l('relazione.clinica.medico.assistito')}:" visible="false"/>
+				<caribeltextbox hflex="35%" readonly="true"
+					id="JLabelAssistito" db_name="JLabelAssistito" visible="false"/>
+				<label hflex="5%" value="" visible="false"></label>
+			</hlayout>
+			<hlayout valign="middle" width="100%">    
+				<label hflex="20%"   
+					value="${c:l('relazione.clinica.medico.contatto')}:" visible="false" />
+				<caribeltextbox hflex="20%" readonly="true"
+					id="key_contatto" db_name="n_contatto" visible="false"/>    
+				<label hflex="5%" value="" visible="false"></label>
+				<label hflex="15%" value="${c:l('relazione.clinica.medico.operatore')}:" visible="false"/>				
+				<caribeltextbox hflex="35%" readonly="true"  
+					id="JLabelCognomeOp" db_name="JLabelCognomeOp" visible="false"/>
+				<label hflex="5%" value="" visible="false"></label>
+			</hlayout>
+ 
+			<vlayout spacing="0px">
+			<hlayout width="100%">
+				<caribellistbox  showBtnDeleteInRow="true" showBtnEditInRow="true" 
+					rows="4"  hflex="true">
+					<listhead sizable="true">
+						<caribellistheader db_name="skr_data"
+							width="15%" label="${c:l('relazione.clinica.medico.tb.data')}" />
+						<caribellistheader db_name="skr_nota"
+							width="85%" label="${c:l('relazione.clinica.medico.tb.descrizione')}" />
+					</listhead>
+				</caribellistbox>
+			</hlayout>
+
+
+			<hlayout style="margin-top: -1px;" hflex="true" width="100%">
+				<caribelGridFormMenuHoriz />
+			</hlayout>
+			<hlayout width="100%">
+				<groupbox style="margin-top: -1px;" hflex="100%" closable="false">
+					<vlayout hflex="true" id="myForm" spacing="3px">
+						<hlayout>
+							<label hflex="20%"
+								value="${c:l('relazione.clinica.medico.data')}:" />
+							<caribeldatebox id="skrData" hflex="15%"
+								db_name="skr_data" required="true" />
+							<caribeltextbox hflex="20%" readonly="true" id="keyCartella" db_name="n_cartella" visible="false"/>								
+							<caribeltextbox hflex="20%" readonly="true" id="keyContatto" db_name="n_contatto" visible="false"/>
+							<label hflex="61%" />    
+						</hlayout>
+						<hlayout>
+							<label hflex="20%"
+								value="${c:l('relazione.clinica.medico.descrizione')}:" />
+							<caribeltextbox hflex="66%" id="skrNota"
+								db_name="skr_nota" maxlength="500" multiline="true" rows="2"   
+								sclass="asterTextArea" />
+							<label hflex="10%" />
+						</hlayout>
+					</vlayout>
+				</groupbox>
+			</hlayout>
+			</vlayout>  
+		</vlayout>
+	</vlayout>
+</window>

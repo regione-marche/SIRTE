@@ -1,0 +1,67 @@
+<window title="${c:l('ele_segnalazioni_ospedale.formTitle')}"
+	apply="it.caribel.app.sinssnt.controllers.tabelle.ele_segnala_ospedale.EleSegnalaOspedaleGridCtrl"	
+	sclass="asterOverlappedWindow"  sizable="true"
+	closable="true" mode="overlapped" position="center" border="normal" width="750px"
+height="450px">
+
+<zscript><![CDATA[
+	void dadataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}
+	void adataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}	
+]]>
+</zscript>
+	<vlayout height="100%">
+	
+		<caribelGridMenu  visible_btn_clear="true" />
+		<vlayout sclass="asterLayout" vflex="true" spacing="5px">
+		
+		
+		<hlayout>
+			<label hflex="20%" value="${c:l('ele_segnalazioni_ospedale.dadata')}:" />
+			<div hflex="80%" width="100%">
+				<hlayout width="100%">
+					<caribeldatebox id="dadata" hflex="30%"
+						required="false" onChange="dadataChanged()" db_name="data1"/>
+					<label hflex="40%" value="${c:l('ele_segnalazioni_ospedale.adata')}:" />
+					<caribeldatebox id="adata" hflex="30%"
+						required="false"	onChange="adataChanged()" db_name="data2"/>
+						
+				</hlayout>
+			</div>
+		</hlayout>
+		
+		<hlayout>
+			<label hflex="20%" value="${c:l('ele_segnalazioni_ospedale.ospedale')}:" />
+			<caribelSearch hflex="80%" maxlength="8"  id_cod="tb_filter1" db_name_cod="cod_ospedale"				
+				ctrl="it.caribel.app.common.controllers.ospedali.OspedaliSearchCtrl"
+			 />
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('ele_segnalazioni_ospedale.reparti')}:" />
+			<caribelSearch hflex="80%" maxlength="2"  id_cod="tb_filter2" db_name_cod="cod_reparto"				
+				ctrl="it.caribel.app.common.controllers.reparti.RepartiSearchCtrl"
+			 />
+		</hlayout>
+		
+			<caribelPaging/>
+			<caribellistbox vflex="true" hflex="true" >
+			<frozen columns="3"/>
+				<listhead sizable="true">					
+					<caribellistheader db_name="data_dimissioni"  width="8em" label="${c:l('ele_segnalazioni_ospedaleGrid.data_dim')}" />	
+					<caribellistheader db_name="ospedale"  width="13em" label="${c:l('ele_segnalazioni_ospedaleGrid.ospedale')}" />	
+					<caribellistheader db_name="reparto"  width="13em" label="${c:l('ele_segnalazioni_ospedaleGrid.reparto')}" />	
+					<caribellistheader db_name="n_cartella"  width="8em" label="${c:l('ele_segnalazioni_ospedaleGrid.cartella')}" />	
+					<caribellistheader db_name="cognome"  width="13em" label="${c:l('ele_segnalazioni_ospedaleGrid.cognome')}" />	
+					<caribellistheader db_name="nome"  width="13em" label="${c:l('ele_segnalazioni_ospedaleGrid.nome')}" />	
+					<caribellistheader db_name="sesso"  width="7em" label="${c:l('ele_segnalazioni_ospedaleGrid.sesso')}" />	
+					<caribellistheader db_name="data_nasc"  width="8em" label="${c:l('ele_segnalazioni_ospedaleGrid.data_nasc')}" />
+					<caribellistheader db_name="diag1"  width="18em" label="${c:l('ele_segnalazioni_ospedaleGrid.diagnosi')}" />	
+					
+				</listhead>
+			</caribellistbox>
+		</vlayout>		
+	</vlayout>
+</window>

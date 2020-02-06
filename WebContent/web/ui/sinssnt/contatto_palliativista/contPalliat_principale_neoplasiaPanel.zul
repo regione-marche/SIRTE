@@ -1,0 +1,166 @@
+<vlayout sclass="asterLayout asterOverflow asterLayoutLastSpace" height="100%">
+	
+	<hlayout>
+		<label hflex="10%"
+				value="${c:l('schedaPalliat.neoplasiaPanel.esofago')}" />
+		<div style="text-align:left" hflex="4%" >
+			<caribelcheckbox id="skm_np_esofago" db_name="skm_np_esofago" value="S" unCheckedValue="N" />
+		</div>
+		
+		<label hflex="10%"
+				value="${c:l('schedaPalliat.neoplasiaPanel.stomaco')}" />
+		<div style="text-align:left" hflex="4%" >
+			<caribelcheckbox id="skm_np_stomaco" db_name="skm_np_stomaco" value="S" unCheckedValue="N" />
+		</div>
+		
+		<label hflex="10%"
+				value="${c:l('schedaPalliat.neoplasiaPanel.colon')}" />
+		<div style="text-align:left" hflex="4%" >
+			<caribelcheckbox id="skm_np_colon" db_name="skm_np_colon" value="S" unCheckedValue="N" />
+		</div>
+		
+		<label hflex="10%"
+				value="${c:l('schedaPalliat.neoplasiaPanel.pancreas')}" />
+		<div style="text-align:left" hflex="4%" >
+			<caribelcheckbox id="skm_np_pancreas" db_name="skm_np_pancreas" value="S" unCheckedValue="N" />
+		</div>
+		
+		<label hflex="10%"
+				value="${c:l('schedaPalliat.neoplasiaPanel.polmone')}" />
+		<div style="text-align:left" hflex="4%" >
+			<caribelcheckbox id="skm_np_polmone" db_name="skm_np_polmone" value="S" unCheckedValue="N" />
+		</div>
+		
+		<label hflex="10%"
+				value="${c:l('schedaPalliat.neoplasiaPanel.pleura')}" />
+		<div style="text-align:left" hflex="4%" >
+			<caribelcheckbox id="skm_np_pleura" db_name="skm_np_pleura" value="S" unCheckedValue="N" />
+		</div>
+		
+		<label hflex="10%"
+				value="${c:l('schedaPalliat.neoplasiaPanel.mammella')}" />
+		<div style="text-align:left" hflex="4%" >
+			<caribelcheckbox id="skm_np_mammella" db_name="skm_np_mammella" value="S" unCheckedValue="N" />
+		</div>
+		
+		<label hflex="2%" value=""/>
+	</hlayout>
+	
+	<hlayout>
+		<label hflex="10%"
+				value="${c:l('schedaPalliat.neoplasiaPanel.utero')}" />
+		<div style="text-align:left" hflex="4%" >
+			<caribelcheckbox id="skm_np_utero" db_name="skm_np_utero" value="S" unCheckedValue="N" />
+		</div>
+		
+		<label hflex="10%"
+				value="${c:l('schedaPalliat.neoplasiaPanel.ovaio')}" />
+		<div style="text-align:left" hflex="4%" >
+			<caribelcheckbox id="skm_np_ovaio" db_name="skm_np_ovaio" value="S" unCheckedValue="N" />
+		</div>
+		
+		<label hflex="10%"
+				value="${c:l('schedaPalliat.neoplasiaPanel.prostata')}" />
+		<div style="text-align:left" hflex="4%" >
+			<caribelcheckbox id="skm_np_prostata" db_name="skm_np_prostata" value="S" unCheckedValue="N" />
+		</div>
+		
+		<label hflex="10%"
+				value="${c:l('schedaPalliat.neoplasiaPanel.vescica')}" />
+		<div style="text-align:left" hflex="4%" >
+			<caribelcheckbox id="skm_np_vescica" db_name="skm_np_vescica" value="S" unCheckedValue="N" />
+		</div>
+		
+		<label hflex="10%"
+				value="${c:l('schedaPalliat.neoplasiaPanel.sarcoma')}" />
+		<div style="text-align:left" hflex="4%" >
+			<caribelcheckbox id="skm_np_sarcoma" db_name="skm_np_sarcoma" value="S" unCheckedValue="N" />
+		</div>
+		
+		<label hflex="10%"
+				value="${c:l('schedaPalliat.neoplasiaPanel.melanoma')}" />
+		<div style="text-align:left" hflex="4%" >
+			<caribelcheckbox id="skm_np_melanoma" db_name="skm_np_melanoma" value="S" unCheckedValue="N" />
+		</div>
+		
+		<label hflex="10%"
+				value="${c:l('schedaPalliat.neoplasiaPanel.linfoma')}" />
+		<div style="text-align:left" hflex="4%" >
+			<caribelcheckbox id="skm_np_linfoma" db_name="skm_np_linfoma" value="S" unCheckedValue="N" />
+		</div>
+		
+		<label value="" hflex="2%" />
+	</hlayout>
+	
+	<hlayout>
+		<label hflex="10%"
+				value="${c:l('schedaPalliat.neoplasiaPanel.leucemia')}" />
+		<div style="text-align:left" hflex="4%" >
+			<caribelcheckbox id="skm_np_leucemia" db_name="skm_np_leucemia" value="S" unCheckedValue="N" />
+		</div>
+		
+		<label hflex="10%"
+				value="${c:l('schedaPalliat.neoplasiaPanel.testaCollo')}" />
+		<div style="text-align:left" hflex="4%" >
+			<caribelcheckbox id="skm_np_testa_collo" db_name="skm_np_testa_collo" value="S" unCheckedValue="N" />
+		</div>
+		
+		<label hflex="10%"
+				value="${c:l('schedaPalliat.neoplasiaPanel.cerebrale')}" />
+		<div style="text-align:left" hflex="4%" >
+			<caribelcheckbox id="skm_np_cerebrale" db_name="skm_np_cerebrale" value="S" unCheckedValue="N" />
+		</div>
+		
+		<label hflex="10%"
+				value="${c:l('schedaPalliat.neoplasiaPanel.retto')}" />
+		<div style="text-align:left" hflex="4%" >
+			<caribelcheckbox id="skm_np_retto" db_name="skm_np_retto" value="S" unCheckedValue="N" />
+		</div>
+		
+		<label hflex="10%"
+				value="${c:l('schedaPalliat.neoplasiaPanel.nonDeterminata')}" />
+		<div style="text-align:left" hflex="4%" >
+			<caribelcheckbox id="skm_np_nondeter" db_name="skm_np_nondeter" value="S" unCheckedValue="N" />
+		</div>
+		
+		<label value="" hflex="30%" />
+	</hlayout>
+	
+	<hlayout>
+		<label hflex="10%"
+				value="${c:l('schedaPalliat.neoplasiaPanel.altro')}" />
+		<div style="text-align:left" hflex="4%" >
+			<caribelcheckbox id="skm_np_diag_altro" db_name="skm_np_diag_altro" value="S" unCheckedValue="N" />
+		</div>
+		
+		<caribeltextbox id="skm_np_diag_altro_descr" db_name="skm_np_diag_altro_descr" maxlength="50" hflex="82%" readonly="true"/>
+		<label hflex="4%" />
+	</hlayout>
+	
+	<hlayout>
+		<label hflex="14%"
+				value="${c:l('schedaPalliat.neoplasiaPanel.patologiaNonOncologica')}:" />		
+		<caribeltextbox id="skm_np_pat_nononco" db_name="skm_np_pat_nononco" maxlength="50" hflex="82%" />
+		<label hflex="4%" />
+	</hlayout>
+	
+	<hlayout>
+		<label hflex="14%"
+				value="${c:l('schedaPalliat.neoplasiaPanel.dataDiagnosi')}:" />		
+		<caribeldatebox id="skm_np_data_diag" db_name="skm_np_data_diag" hflex="10%" constraint="no future"/>
+		<label hflex="76%" />
+	</hlayout>
+	
+	<hlayout>
+		<label hflex="14%"
+				value="${c:l('schedaPalliat.neoplasiaPanel.noteDiagnosi')}:" />		
+		<caribeltextbox id="skm_np_nota_diag" db_name="skm_np_nota_diag" maxlength="500" hflex="82%" 
+						rows="8" style="resize:none"/>
+		<label hflex="4%" />
+	</hlayout>
+	
+	
+</vlayout>
+
+
+

@@ -1,0 +1,62 @@
+<window title="${c:l('progetti_aperti.formTitle')}"
+	apply="it.caribel.app.sinssnt.controllers.tabelle.prog_aperti.AsProgettiApertiGridCtrl"
+	width="650px" height="510px" style="overflow:auto" sizable="true"
+	closable="true" mode="overlapped" position="center" border="normal">
+	
+<zscript><![CDATA[
+	void dadataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}
+	void adataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}	
+]]>
+</zscript>
+	<vlayout height="100%">
+				
+		<caribelGridMenu  visible_btn_clear="true"/>
+		<vlayout sclass="asterLayout" vflex="true" spacing="5px">			
+			
+			<hlayout>
+			<label hflex="20%" value="${c:l('generic.dadata')}:" />
+			<div hflex="80%" width="100%">
+				<hlayout width="100%">
+					<caribeldatebox required="true" id="dadata" hflex="30%"
+						onChange="dadataChanged()" db_name="da_data" />
+					<label hflex="50%" value="" />
+				</hlayout>
+			</div>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.adata')}:" />
+			<div hflex="80%" width="100%">
+				<hlayout width="100%">
+					<caribeldatebox required="true" id="adata" hflex="30%"
+						onChange="adataChanged()" db_name="a_data" />
+					<label hflex="50%" value="" />
+				</hlayout>
+			</div>
+		</hlayout>
+		
+			<caribelPaging/>
+			<caribellistbox vflex="true" hflex="true" >
+			<frozen columns="3"/>
+				<listhead sizable="true">
+					<caribellistheader db_name="n_cartella"	  	width="8em" label="${c:l('progetti_aperti.cartella')}" />
+					<caribellistheader db_name="cognome" width="8em"	label="${c:l('progetti_aperti.cognome')}"  />	
+					<caribellistheader db_name="nome"	width="13em"  	label="${c:l('progetti_aperti.nome')}" />
+					<caribellistheader db_name="sesso_decod" 	width="13em" label="${c:l('progetti_aperti.sesso')}"  />					
+					<caribellistheader db_name="data_nascita"	  width="10em"	label="${c:l('progetti_aperti.data_nasc')}" />
+					<caribellistheader db_name="comune_nascita_decod" 	width="10em" label="${c:l('progetti_aperti.comune_nasc')}"  />					
+					<caribellistheader db_name="n_progetto"	width="10em"  	label="${c:l('progetti_aperti.num_progetto')}" />
+					<caribellistheader db_name="ap_data_apertura" width="10em"	label="${c:l('progetti_aperti.data_ap')}"  />					
+					<caribellistheader db_name="ap_data_chiusura"	width="10em"  	label="${c:l('progetti_aperti.data_ch')}" />
+					<caribellistheader db_name="motivo_decod"	width="10em"  	label="${c:l('progetti_aperti.motivo')}" />
+					<caribellistheader db_name="problema_decod" width="10em"	label="${c:l('progetti_aperti.problema')}"  />					
+					<caribellistheader db_name="tipo_utente_decod"	width="10em"  	label="${c:l('progetti_aperti.tipo_utente')}" />
+				</listhead>
+			</caribellistbox>
+		</vlayout>	
+	</vlayout>	
+
+</window>

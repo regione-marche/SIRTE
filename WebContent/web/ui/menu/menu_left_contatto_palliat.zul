@@ -1,0 +1,212 @@
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+
+<vlayout id="menu_left_inf">
+		
+	<zscript>
+		import it.caribel.app.sinssnt.controllers.contattoGenerico.ContattoGenFormCtrl;
+		import it.caribel.app.sinssnt.controllers.diario.DiarioGridCtrl;
+		import it.caribel.app.sinssnt.controllers.intolleranzeAllergie.IntolleranzeAllergieGridCRUDCtrl;
+		import it.caribel.app.sinssnt.controllers.segnalazione.SegnalazioneGridCRUDCtrl;
+		import it.caribel.app.webhs.controllers.allegati.AllegatiGridCtrl;
+		import it.caribel.app.sinssnt.controllers.palliat_sintomi.SintomiGridCRUDCtrl;
+		import it.caribel.app.sinssnt.controllers.palliat_metastasi.MetastasiGridCRUDCtrl;
+		import it.caribel.app.sinssnt.controllers.palliat_ricoveri.RicoveriGridCRUDCtrl;
+		import it.caribel.app.sinssnt.controllers.relazione_clinica_palliat.RelazioneClinicaGridCtrl;
+		import it.caribel.app.sinssnt.controllers.familiari.NucleoFamiliareGridFormCtrl;
+		import it.caribel.app.sinssnt.controllers.scaleValutazione.ScalaPresidiSanFormCtrl;
+		import it.caribel.app.sinssnt.controllers.palliat_protesica.ProtesicaGridCtrl;
+		//import it.caribel.app.sinssnt.controllers.ProtesicaGridCtrl;
+		import it.caribel.app.sinssnt.controllers.palliat_terapia.TerapiaGridCRUDCtrl;	
+		import it.caribel.app.sinssnt.controllers.accessi_effettuati.AccessiEffettuatiGridCtrl;	
+		
+		
+		String uriContatto = ContattoGenFormCtrl.CTS_FILE_ZUL;
+		String uriDiario   = DiarioGridCtrl.myPathFormZul;
+		String uriIntolleranzeAllergie = IntolleranzeAllergieGridCRUDCtrl.myPathFormZul;
+		String uriSegnalazione = SegnalazioneGridCRUDCtrl.myPathFormZul;
+		String uriDocumenti = AllegatiGridCtrl.myPathFormZul;
+		String uriProtesica = ProtesicaGridCtrl.myPathFormZul;
+		String uriSintomi = SintomiGridCRUDCtrl.myPathFormZul;
+		String uriMetastasi = MetastasiGridCRUDCtrl.myPathFormZul;
+		String uriRicoveri = RicoveriGridCRUDCtrl.myPathFormZul;
+		String uriRelazioneClinica = RelazioneClinicaGridCtrl.myPathFormZul;
+		String uriFamiliari = NucleoFamiliareGridFormCtrl.myPathFormZul;
+		//String uriPortatore = PortatoreGridCRUDCtrl.myPathFormZul;
+		String uriPortatore = ScalaPresidiSanFormCtrl.myPathFormZul;
+		//String uriScale = ScaleGridCRUDCtrl.myPathFormZul;
+		String uriTerapia = TerapiaGridCRUDCtrl.myPathFormZul;
+		String uriRiepilogoAccessi = AccessiEffettuatiGridCtrl.myPathFormZul;
+		
+	</zscript>		
+
+	<vlayout>
+		<buttonmenucontainer
+		id="btn_contattoPalliatForm"
+		idForm="contattoPalliatForm"
+		label="${c:l('common.scheda.corrente')}"
+		pathZulForm="/web/ui/sinssnt/contatto_palliativista/contatto_palliat.zul"
+		/>
+		
+		<buttonmenucontainer 
+		id="btn_contattoGenGridSto"
+		idForm="contattoGenGridSto"
+		label="${c:l('common.scheda.storico')}"
+		pathZulForm="/web/ui/sinssnt/contatto_generico/contatto_genGrid.zul"
+		/>
+		
+		<!-- cv. -->
+		<buttonmenucontainer
+		id="btn_metastasi"
+		idForm="metastasiForm"
+		label="${c:l('menu.contattoPalliat.metastasi')}"
+		pathZulForm="${uriMetastasi}"
+		/>
+		
+		<!-- cv. -->
+		<buttonmenucontainer
+		id="btn_portatore"
+		idForm="sinssnt_scalaPresidiSanForm"
+		label="${c:l('menu.contattoPalliat.portatore')}"
+		pathZulForm="${uriPortatore}"
+		/>
+		
+		<!-- cv. -->
+		<buttonmenucontainer
+		id="btn_ricoveri"
+		idForm="ricoveriForm"
+		label="${c:l('menu.contattoPalliat.ricoveri')}"
+		pathZulForm="${uriRicoveri}"
+		/>
+		
+		<!-- cv. -->
+		<buttonmenucontainer
+		id="btn_familiari"
+		idForm="familiariForm"
+		label="${c:l('menu.contattoPalliat.familiari')}"
+		pathZulForm="${uriFamiliari}"
+		/>
+		
+		<!-- cv. Nota: idForm va indicato nel container nel metodo gestisciMenuLeft per abilitare il pulsante -->
+		<buttonmenucontainer
+		id="btn_sintomi"
+		idForm="sintomiForm"
+		label="${c:l('menu.contattoPalliat.sintomi')}"
+		pathZulForm="${uriSintomi}"
+		/>
+		
+		<buttonmenucontainer
+		id="btn_diarioForm"
+		idForm="diarioForm"
+		label="${c:l('diario.formTitle')}"
+		pathZulForm="${uriDiario}"
+		/>
+		
+		<!-- cv -->
+		<buttonmenucontainer
+		id="btn_relazioneClinica"
+		idForm="relazioneClinicaForm"
+		label="${c:l('menu.contattoPalliat.relazioneClinica')}"
+		pathZulForm="${uriRelazioneClinica}"
+		/>
+		
+		<!-- cv -->
+		<buttonmenucontainer
+		id="btn_scale"
+		idForm="scaleForm"
+		label="${c:l('menu.contattoPalliat.scale')}" >
+<!-- 		pathZulForm="${uriScale}" -->
+		</buttonmenucontainer>
+		
+		
+		<buttonmenucontainer 
+		id="btn_contattoInfGridAltri"
+		idForm="contattoInfGridAltri"
+		label="${c:l('menu.contatto.inf.altri')}"
+		pathZulForm="/web/ui/sinssnt/contatto_generico/contatto_genGrid.zul"
+		visible="false"
+		/>	
+		<buttonmenucontainer
+		id="btn_infAccertamentoForm"
+		idForm="infAccertamentoForm"
+		label="${c:l('menu.contatto.inf.accertamento')}"
+		pathZulForm=""
+		/>
+		<buttonmenucontainer
+		id="btn_infStatoSaluteForm"
+		idForm="infStatoSaluteForm"
+		label="${c:l('menu.contatto.inf.stato_salute')}"
+		pathZulForm=""
+		/>
+		<buttonmenucontainer
+		id="btn_infCuteMucoseForm"
+		idForm="infCuteMucoseForm"
+		label="${c:l('menu.contatto.inf.cute_mucose')}"
+		pathZulForm=""
+		/>
+		<buttonmenucontainer
+		id="btn_infScaleTestForm"
+		idForm="infScaleTestForm"
+		label="${c:l('menu.contatto.inf.scale_test')}"
+		pathZulForm=""
+		/>
+		<buttonmenucontainer
+		id="btn_infAccessiForm"
+		idForm="infAccessiForm"
+		label="${c:l('menu.contatto.inf.accessi')}"
+		pathZulForm="/web/ui/sinssnt/interventi/accessiPrestazioniForm.zul"
+		/>
+		<buttonmenucontainer
+		id="btn_infEventiForm"
+		idForm="infEventiForm"
+		label="${c:l('menu.contatto.inf.eventi')}"
+		pathZulForm=""
+		/>
+		<buttonmenucontainer
+		id="btn_infPianoAssistForm"
+		idForm="pianoAssistForm"
+		label="${c:l('menu.contatto.inf.piano_assist')}"
+		pathZulForm="/web/ui/sinssnt/piano_assistenziale/pianoAssistenzialeGrid.zul"
+		/>
+
+		<buttonmenucontainer
+		id="btn_infFlussiSiadForm"
+		idForm="flussiSiadForm"
+		label="${c:l('menu.contatto.inf.flussi.siad')}"
+		pathZulForm="/web/ui/sinssnt/flussi/flussiSiadForm.zul"
+		/>
+		<buttonmenucontainer 
+		id="btn_infFlussiStoForm"
+		idForm="flussiStoForm"
+		label="${c:l('menu.contatto.inf.flussi.storico')}"
+		pathZulForm=""
+		/>
+		
+		<!-- cv -->
+		<buttonmenucontainer
+		id="btn_protesica"
+		idForm="protesicaForm"
+		label="${c:l('menu.contattoPalliat.protesica')}"
+		pathZulForm="${uriProtesica}"
+		
+		/>		
+		<!-- forward="onProtesica" -->	
+		
+		<!-- cv -->
+		<buttonmenucontainer
+		id="btn_terapia"
+		idForm="terapiaForm"
+		label="${c:l('menu.contattoPalliat.terapia')}"
+		pathZulForm="${uriTerapia}"
+		/>	
+		
+		<buttonmenucontainer
+		id="btn_riepilogoAccessi"
+		idForm="riepilogoAccessi"
+		label="${c:l('menu.puac.riepilogo.accessi')}"
+		pathZulForm="${uriRiepilogoAccessi}"
+		/>		
+
+	</vlayout>	
+	
+
+</vlayout>

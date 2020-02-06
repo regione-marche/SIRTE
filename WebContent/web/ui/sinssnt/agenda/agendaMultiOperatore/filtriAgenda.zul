@@ -1,0 +1,65 @@
+<hlayout>
+	<vlayout hflex="50%" sclass="asterLayout">
+		<hlayout>
+			<label value="${c:l('operatori.tipoOperatore')}:"
+				hflex="20%" />
+			<caribelcombobox id="cbx_tipo_operatore" db_name="tipo_operatore" required="true"
+				hflex="80%" />
+		</hlayout>
+		<hlayout id="riga_sede">
+			<label hflex="20%" id="sede" value="${c:l('operatori.presidio_des')}:" />
+<!-- 			Cambiato dbName da pres a presidio_op pres non sembrava usato -->
+			<caribelcombobox hflex="80%" db_name="presidio_op" id="cbx_sede" readonly="false" required="true"/>
+		</hlayout>
+		<hlayout id="riga_pianificato" >
+			<label hflex="20%" value="${c:l('agenda.operatore')}:" />
+			<caribelcombobox hflex="80%" db_name="referente" id="cbx_operatore" readonly="true" />
+		</hlayout>
+		<hlayout id="riga_esecutore" >
+			<label hflex="20%" value="${c:l('agenda.operatoreEsecutore')}*:" />
+			<caribelcombobox hflex="80%" db_name="esecutivo" id="cbx_operatore_esec" readonly="true" />
+		</hlayout>
+	</vlayout>
+	<vlayout hflex="50%" sclass="asterLayout">
+<!-- 		<hlayout > -->
+			<div align="left" hflex="100%">
+				<caribelradiogroup id="tipoCure" db_name="sk_motivo" required="false" >
+					<hlayout>
+						<radio value="1" label="${c:l('agenda.CDI')}" 						hflex="25%"/>
+						<radio value="2" label="${c:l('agenda.CP')}"  					    hflex="25%"/>
+						<radio value="T" label="${c:l('agenda.common.statoPrestazione.T')}" hflex="25%" selected="true" />
+						<label value=" " hflex="25%"></label>
+					</hlayout>
+				</caribelradiogroup>
+			</div>
+<!-- 		</hlayout> -->
+<!-- 		<hlayout> -->
+			<div align="left" hflex="100%">
+				<caribelradiogroup id="tipoPrestazioni" db_name="tipoPrestazioni" required="false" >
+					<hlayout >
+						<radio value="P"  label="${c:l('agenda.common.tipoPrestazione.P')}" hflex="25%"/>
+						<radio value="A" label="${c:l('agenda.common.tipoPrestazione.A')}" hflex="25%"/>
+						<radio value="T"  label="${c:l('agenda.common.tipoPrestazione.T')}" hflex="25%" selected="true" />
+						<label value=" "  hflex="25%"></label>
+					</hlayout>
+				</caribelradiogroup>
+			</div>
+<!-- 		</hlayout> -->
+<!-- 		<hlayout> -->
+			<div align="left" hflex="100%">
+				<caribelradiogroup id="statoPrestazioni" db_name="ag_stato" required="false" >
+					<hlayout >
+						<radio value="2" label="${c:l('agenda.common.statoPrestazione.E')}" hflex="25%" />
+						<radio value="4" label="${c:l('agenda.common.statoPrestazione.N')}" hflex="25%" />
+						<radio value="0" label="${c:l('agenda.common.statoPrestazione.D')}" hflex="25%" />
+						<radio value="T" label="${c:l('agenda.common.statoPrestazione.T')}" hflex="25%" selected="true" />
+					</hlayout>
+				</caribelradiogroup>
+			</div>
+<!-- 		</hlayout> -->
+		<hlayout  style="text-align:left" hflex="100%">
+			<label hflex="50%" value="*${c:l('agenda.operatoreEsecutoreLabelEseguiti')}" />
+			<checkbox id="cb_mostraKmTempi" hflex="50%" value="" label="${c:l('agenda.mostraKmTempo')}" checked="false"/>
+		</hlayout>
+	</vlayout>
+</hlayout>

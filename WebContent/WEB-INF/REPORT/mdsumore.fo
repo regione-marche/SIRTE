@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+
+<!-- mfo:section.start="layout" rem="IMPOSTAZIONI DI PAGINA" -->
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="simple"
+        page-height="29.7cm"	page-width="21cm"
+        margin-top="1cm"	margin-bottom="1cm"
+        margin-left="1cm"	margin-right="1cm" >
+      <fo:region-body margin-top="2.5cm" margin-bottom="1cm"/>
+      <fo:region-before extent="2.5cm"/>
+      <fo:region-after extent="1cm"/>
+    </fo:simple-page-master>
+  </fo:layout-master-set>
+
+  <fo:page-sequence master-name="simple">
+    <fo:static-content flow-name="xsl-region-before">
+  <fo:table font-size="10pt">
+  <fo:table-column column-width="17.5cm"/>
+  <fo:table-body>
+  <fo:table-row height="9pt">
+   <fo:table-cell text-align="start" >
+
+	<fo:table font-size="10pt">
+	<fo:table-column column-width="11.5cm"/>
+	<fo:table-column column-width="6cm"/>
+	 <fo:table-body>
+	  <fo:table-row height="9pt">
+	    <fo:table-cell text-align="start" >
+		<fo:block start-indent="1mm" end-indent="1mm"
+		padding-top="0.5mm" font-weight="bold">
+			Cognome e Nome: #assistito#
+		</fo:block>
+	    </fo:table-cell>
+	    <fo:table-cell text-align="start" >
+		<fo:block start-indent="1mm" end-indent="1mm"
+		padding-top="0.5mm" font-weight="bold">
+			Data scheda: #data#
+		</fo:block>
+	    </fo:table-cell>
+	  </fo:table-row>
+	 </fo:table-body>
+	</fo:table>
+	    </fo:table-cell>
+	  </fo:table-row>
+          <fo:table-row height="1pt">
+             <fo:table-cell text-align="start" number-columns-spanned='2'>
+                  <fo:block>
+                          <fo:leader leader-pattern="rule"
+                             rule-thickness="0.5pt"
+                             leader-length="17cm"/>
+                  </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+
+	 </fo:table-body>
+	</fo:table>
+
+	  <fo:block font-size="12pt"  end-indent="1mm"
+		  font-weight="bold" text-align="start" space-before.optimum="12pt">
+		  DISTURBI DELL&#180;UMORE
+	  </fo:block>
+
+	  <fo:block font-size="12pt" start-indent="1.1mm"
+		  end-indent="1mm" font-style="italic"
+		  text-align="start" padding-top="1mm">
+		  (MDS-HC Umore, in JN Morris, BE Fries, K Steel, JAGS, 1997)
+	  </fo:block>
+    </fo:static-content>
+
+
+    <!-- TITOLO DI PIEDE -->
+    <fo:static-content flow-name="xsl-region-after">
+      <fo:table font-size="8pt" width="auto" space-before.optimum="0.5cm">
+        <fo:table-column column-width="12cm"/>
+        <fo:table-column column-width="7cm"/>
+        <fo:table-body>
+          <fo:table-row height="10pt">
+            <fo:table-cell text-align="start">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >#txt#</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="end">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >elaborato del #data_stampa# (mdsumore.fo)</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body">
+     <fo:block start-indent="1mm" end-indent="1mm" font-size="10pt"
+		text-align="start" font-weight="bold">
+		  Codificare gli indicatori osservati indipendendentemente dalla causa presunta 
+	  </fo:block>
+	  
+	   <fo:table font-size="8pt" width="auto" space-before.optimum="0.5cm">
+        <fo:table-column column-width="17cm"/>
+        <fo:table-column column-width="2cm"/>
+        <fo:table-body>
+          <fo:table-row height="10pt">
+            <fo:table-cell text-align="start">
+              <fo:block start-indent="1mm" end-indent="1mm" font-size="10pt" text-align="start"  space-before="0.1cm"
+                ><fo:inline font-weight="bold"> Indicatore non presente negli ultimi 3 giorni </fo:inline></fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="end">
+              <fo:block start-indent="1mm" end-indent="1mm" font-size="10pt" text-align="start" 
+               ><fo:inline font-weight="bold"> 0 </fo:inline></fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row height="10pt">
+            <fo:table-cell text-align="start">
+              <fo:block start-indent="1mm" end-indent="1mm" font-size="10pt" text-align="start" space-before="0.1cm"
+                ><fo:inline font-weight="bold">Presente in 1-2 degli ultimi 3 giorni</fo:inline></fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="end">
+              <fo:block start-indent="1mm" end-indent="1mm" font-size="10pt" text-align="start" 
+               ><fo:inline font-weight="bold"> 1 </fo:inline></fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          
+          <fo:table-row height="10pt">
+            <fo:table-cell text-align="start">
+              <fo:block start-indent="1mm" end-indent="1mm" font-size="10pt" text-align="start" space-before="0.1cm"
+                ><fo:inline font-weight="bold">Presente in ognuno degli ultimi 3 giorni</fo:inline>
+		          </fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="end">
+              <fo:block start-indent="1mm" end-indent="1mm" font-size="10pt" text-align="start" 
+               ><fo:inline font-weight="bold"> 2 </fo:inline></fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          
+        </fo:table-body>
+      </fo:table>
+<!-- mfo:section.end -->
+<!--mfo:section.start="tabMdsu" -->
+
+	<fo:table space-before.optimum="1cm" >
+        	<fo:table-column column-width="14cm"/>
+        	<fo:table-column column-width="4cm"/>
+          <fo:table-body>
+
+	    <fo:table-row height="8pt" >
+             <fo:table-cell font-size="12pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" font-weight="bold" space-before="0.1cm"
+                >INDICATORI DI DEPRESSIONE, ANSIA, TRISTEZZA
+                </fo:block>
+             </fo:table-cell>
+
+             <fo:table-cell number-columns-spanned='2' font-size="12pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" 
+                 font-weight="bold" space-before="0.1cm">PUNTEGGIO </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+	    <fo:table-row height="8pt">
+             <fo:table-cell font-size="10pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold" space-before="0.1cm"
+                >a. SENSAZIONE DI TRISTEZZA O DI UMORE DEPRESSO,
+                </fo:block>
+              <fo:block start-indent="1mm" end-indent="1mm" font-size="10pt" text-align="start" space-before="0.1cm"
+                >che la vita non valga la pena di essere vissuta, che nulla conti, che non si &#232; utili ad alcuno o che sarebbe meglio morire
+               </fo:block>
+             </fo:table-cell>
+
+             <fo:table-cell number-columns-spanned='2' font-size="10pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold" space-before="0.1cm"
+                >#punt1#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+ <fo:table-row height="8pt">
+             <fo:table-cell font-size="10pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold" space-before="0.1cm"
+                >b. RABBIA PERSISTENTE CONTRO S&#201; O ALTRI 
+                </fo:block>
+              <fo:block start-indent="1mm" end-indent="1mm" font-size="10pt" text-align="start" space-before="0.1cm"
+                >p.es. facilmente annoiato, si arrabbia quando riceve assistenza
+               </fo:block>
+             </fo:table-cell>
+
+             <fo:table-cell number-columns-spanned='2' font-size="10pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold" space-before="0.1cm"
+                >#punt2#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+            <fo:table-row height="8pt">
+             <fo:table-cell font-size="10pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold" space-before="0.1cm"
+                >c. ESPRESSIONE DI UNA PAURA IRREALISTICA  
+                </fo:block>
+              <fo:block start-indent="1mm" end-indent="1mm" font-size="10pt" text-align="start" space-before="0.1cm"
+                >p.es. paura di essere abbandonato, di stare solo o stare con altri
+               </fo:block>
+             </fo:table-cell>
+
+             <fo:table-cell number-columns-spanned='2' font-size="10pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold" space-before="0.1cm"
+                >#punt3#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+            <fo:table-row height="8pt">
+             <fo:table-cell font-size="10pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold" space-before="0.1cm"
+                >d. PREOCCUPAZIONE PER LO STATO DI SALUTE 
+                </fo:block>
+              <fo:block start-indent="1mm" end-indent="1mm" font-size="10pt" text-align="start" space-before="0.1cm"
+                >p.es. richiede persistenti visite mediche, ossessionato dalle funzioni corporali
+               </fo:block>
+             </fo:table-cell>
+
+             <fo:table-cell number-columns-spanned='2' font-size="10pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold" space-before="0.1cm"
+                >#punt4#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+           
+           <fo:table-row height="8pt">
+             <fo:table-cell font-size="10pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold" space-before="0.1cm"
+                >e. MANIFESTAZIONI RIPETUTE DI ANSIA, PREOCCUPAZIONE 
+                </fo:block>
+              <fo:block start-indent="1mm" end-indent="1mm" font-size="10pt" text-align="start" space-before="0.1cm"
+                >p.es. chiede insistente attenzione/assicurazione circa gli orari, i pasti, la lavanderia, i vestiti, aspetti relazionali
+               </fo:block>
+             </fo:table-cell>
+
+             <fo:table-cell number-columns-spanned='2' font-size="10pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold" space-before="0.1cm"
+                >#punt5#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+             <fo:table-row height="8pt">
+             <fo:table-cell font-size="10pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold" space-before="0.1cm"
+                >f. TRISTE, DOLENTE, ESPRESSIONE CORRUCCIATA 
+                </fo:block>
+              <fo:block start-indent="1mm" end-indent="1mm" font-size="10pt" text-align="start" space-before="0.1cm"
+                >p.es. fronte aggrottata
+               </fo:block>
+             </fo:table-cell>
+
+             <fo:table-cell number-columns-spanned='2' font-size="10pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold" space-before="0.1cm"
+                >#punt6#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+              <fo:table-row height="8pt">
+             <fo:table-cell font-size="10pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold" space-before="0.1cm"
+                >g. PIANTO FREQUENTE
+                </fo:block>
+              <fo:block start-indent="1mm" end-indent="1mm" font-size="10pt" text-align="start" space-before="0.1cm"
+                >&#160; </fo:block>
+             </fo:table-cell>
+
+             <fo:table-cell number-columns-spanned='2' font-size="10pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold" space-before="0.1cm"
+                >#punt7#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+           <fo:table-row height="8pt">
+             <fo:table-cell font-size="10pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold" space-before="0.1cm"
+                >h. ABBANDONO DI ATTIVIT&#192; 
+                </fo:block>
+              <fo:block start-indent="1mm" end-indent="1mm" font-size="10pt" text-align="start" space-before="0.1cm"
+                >p.es. nessun interesse in attivit&#224; consuete o nello stare con parenti/amici </fo:block>
+             </fo:table-cell>
+
+             <fo:table-cell number-columns-spanned='2' font-size="10pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold" space-before="0.1cm"
+                >#punt8#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+              <fo:table-row height="8pt">
+             <fo:table-cell font-size="10pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold" space-before="0.1cm"
+                >i. RIDOTTE INTERAZIONI SOCIALI
+                </fo:block>
+              <fo:block start-indent="1mm" end-indent="1mm" font-size="10pt" text-align="start" space-before="0.1cm"
+                >&#160;</fo:block>
+             </fo:table-cell>
+
+             <fo:table-cell number-columns-spanned='2' font-size="10pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold" space-before="0.1cm"
+                >#punt9#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+             <fo:table-row height="8pt">
+             <fo:table-cell font-size="10pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="center" font-weight="bold" space-before="0.1cm"
+                >PUNTEGGIO TOTALE (RANGE 0 - 18) 
+                </fo:block>              
+             </fo:table-cell>
+
+             <fo:table-cell number-columns-spanned='2' font-size="10pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold" space-before="0.1cm"
+                >#mdsu_punt#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+	<fo:table-row height="0.1mm">
+               	<fo:table-cell number-columns-spanned='3'
+		padding-top="1mm" padding-bottom="1mm">
+                       	<fo:block start-indent="1mm">
+			</fo:block>
+		</fo:table-cell>
+        </fo:table-row>
+    </fo:table-body>
+   </fo:table>
+
+
+	<fo:table padding-top="1cm">
+        	<fo:table-column column-width="10cm"/>
+        	<fo:table-column column-width="9cm"/>
+        <fo:table-body>
+        
+
+          <fo:table-row>
+ 	      <fo:table-cell font-size="10pt"
+			padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm"
+                 font-weight="normal" text-align="start"
+                 >Nome e qualifica di chi ha eseguito il rilievo:
+		 </fo:block>
+              </fo:table-cell>
+ 	      <fo:table-cell font-size="10pt"
+			padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm"
+                 font-weight="bold" text-align="start"
+                 >#nome_test#
+		 </fo:block>
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row>
+ 	      <fo:table-cell font-size="10pt" padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm"
+                 font-weight="normal"
+                 >Data Test:
+		 </fo:block>
+              </fo:table-cell>
+ 	      <fo:table-cell font-size="10pt" padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm"
+                 font-weight="bold"
+                 >#data_test#
+		 </fo:block>
+              </fo:table-cell>
+          </fo:table-row>
+    </fo:table-body>
+   </fo:table>
+
+    </fo:flow> <!-- closes the flow element-->
+  </fo:page-sequence> <!-- closes the page-sequence -->
+<!-- mfo:section.end -->
+</fo:root>
+
+

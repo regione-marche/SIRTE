@@ -1,0 +1,197 @@
+<?component name="panel_ubicazione" inline="true" macroURI="~./ui/common/ubicazione/PanelUbicazione.zul"?>
+
+<window 
+apply="it.caribel.app.sinssnt.controllers.report.ReportElencoAssistitiCtrl"
+title="${c:l('menu.stampe.riepilogo_assistiti')}" 
+closable="true" sizable="true"
+mode="overlapped"
+border="normal"
+position="center"
+width="800px"
+height="550px">
+
+<zscript><![CDATA[
+	void dadataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}
+	void adataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}	
+]]>
+</zscript>
+	
+	<vlayout vflex="true">
+	<caribelFormMenu visible_btn_print="true" visible_btn_delete="false" visible_btn_save="false"/>
+	<vlayout sclass="asterLayout asterOverflow" vflex="true">		
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.dadata')}:" />
+			<caribeldatebox id="dadata" hflex="20%" required="false" onChange="dadataChanged()" />
+			<label hflex="10%"/>
+			<label hflex="20%" value="${c:l('generic.adata')}:" />
+			<caribeldatebox id="adata" hflex="20%" required="false" onChange="adataChanged()" />
+			<label hflex="10%"/>
+		</hlayout>
+
+		<panel_ubicazione />
+		
+		<hlayout>
+			<label hflex="20%" value="${c:l('menu.segreteria.organizzativa.scheda.uvm.codice.medicommg')}:" />
+			<caribelSearch hflex="75%" id_cod="cod_med" id_descr="medico_desc"
+				db_name_cod="cod_med" db_name_descr="medico_desc" id="medicoReferenteSearch"
+				ctrl="it.caribel.app.common.controllers.medici.MediciSearchCtrl" />
+			<label hflex="5%" />
+		</hlayout>
+		
+		<hlayout width="99%" style="text-align:left;margin:1px">
+			<groupbox hflex="100" closable="false">
+				<caption>
+					<div >
+						<label value="${c:l('report.elenco.assistiti.filtri')}">	</label>
+					</div>
+				</caption>
+				<hlayout>
+					<label hflex="20%" value="" />
+					<caribelcheckbox hflex="20%" id="apertePeriodo" 
+						tooltiptext="${c:l('report.elenco.assistiti.aperte.help')}"
+						label="${c:l('report.elenco.assistiti.aperte')}" value="N"/>
+						<label hflex="20%" value="" />
+					<caribelcheckbox hflex="20%" id="chiusePeriodo" 
+						label="${c:l('report.elenco.assistiti.chiuse')}" value="N" />
+					<label hflex="20%" value="" />
+				</hlayout>
+				<hlayout>
+					<label hflex="20%" value="" />
+					<caribelcheckbox hflex="30%" id="intensita" 
+						label="${c:l('RichiestaMMG.principale.intensita_ass')}" value="N" 
+						forward="onChangeIntensita()"/>
+					<caribelcombobox hflex="40%" id="tipocura" disabled="true" />
+					<label hflex="10%" value="" />
+				</hlayout>
+				
+				
+				<hlayout>
+					<label hflex="50%" value="" />
+					<caribelcheckbox hflex="4%" db_name="adp" value="S" id="adp" disabled="true"/>
+					<label hflex="4%" id="lbx_adp" value="${c:l('RichiestaMMG.principale.adp')}" />
+					<caribelcheckbox hflex="4%" db_name="ard" value="S" id="ard" disabled="true"/>			
+					<label hflex="4%" id="lbx_ard" value="${c:l('RichiestaMMG.principale.ard')}" />
+					<caribelcheckbox hflex="4%" db_name="aid" value="S" id="aid" disabled="true"/>			
+					<label hflex="4%" id="lbx_aid" value="${c:l('RichiestaMMG.principale.aid')}" />
+					<caribelcheckbox hflex="4%" db_name="vsd" value="S" id="vsd" disabled="true"/>
+					<label hflex="4%" id="lbx_vsd" value="${c:l('RichiestaMMG.principale.vsd')}" />
+					<label hflex="18%" value="" />	
+				</hlayout>
+				
+				
+				<hlayout>
+					<label hflex="20%" value="" />
+					<caribelcheckbox hflex="30%" id="tipo_ute" 
+						label="${c:l('SchedaInfForm.principale.tipoUtenza')}" value="N" 
+						forward="onChangeTipoUtenza()" />
+					<caribelcombobox hflex="40%" id="cbx_utenza" disabled="true"/>
+					<label hflex="10%" value="" />
+				</hlayout>
+				
+				<hlayout>
+					<label hflex="20%" value="" />
+					<caribelcheckbox hflex="30%" id="livello" 
+						label="${c:l('menu.segreteria.organizzativa.scheda.dati.uvi.presa.carico.livello')}" value="N" 
+						forward="onChangeLivello()" />
+					<caribelcombobox hflex="40%" id="cbx_presa_carico_livello" disabled="true"/>
+					<label hflex="10%" value="" />
+				</hlayout>
+				<hlayout>
+					<label hflex="20%" value="" />
+					<caribelcheckbox hflex="20%" id="fine_piano" 
+						label="${c:l('report.elenco.assistiti.fine_piano')}" value="N" />
+					<caribelcheckbox hflex="30%" id="rivalutazione" 
+						label="${c:l('report.elenco.assistiti.rivalutazione')}" value="N" />
+					<label hflex="30%" value="" />
+				</hlayout>
+				<hlayout>
+					<label hflex="20%" value="" />
+					<caribelcheckbox hflex="20%" id="attive" tooltiptext="${c:l('report.elenco.assistiti.attive.help')}"
+						label="${c:l('report.elenco.assistiti.attive')}" value="N" />
+					<caribelcheckbox hflex="20%" id="concluse" 
+						label="${c:l('report.elenco.assistiti.concluse')}" value="N" />
+					<label hflex="40%" value="" />	
+				</hlayout>
+				<hlayout>
+					<label hflex="20%" value="" />
+					<caribelcheckbox hflex="20%" id="flussiSIADInviato"  forward="onChangeFlussoInviato()"
+						label="${c:l('report.elenco.assistiti.flussi.siad.inviati')}" value="N" />
+					<caribelcheckbox hflex="20%" id="flussiSIADNonInviato" forward="onChangeFlussoNonInviato()"
+						label="${c:l('report.elenco.assistiti.flussi.siad.non.inviati')}" value="N" />
+					<label hflex="40%" value="" />	
+				</hlayout>
+			</groupbox>
+		</hlayout>
+		<hlayout width="99%" style="text-align:left;margin:1px">
+			<groupbox hflex="100" closable="false">
+				<caption>
+					<div >
+						<label value="${c:l('report.elenco.assistiti.visualizzazione')}">	</label>
+					</div>
+				</caption>
+				<hlayout>
+					<label hflex="20%" value="" />
+					<caribelcheckbox hflex="20%" id="pai" 
+						label="${c:l('report.elenco.assistiti.pai')}" value="N" />
+					<caribelcheckbox hflex="20%" id="diario" 
+						label="${c:l('report.elenco.assistiti.diario')}" value="N" />
+					<caribelcheckbox hflex="20%" id="segnalazione" 
+						label="${c:l('report.elenco.assistiti.segnalazione')}" value="N" />
+					<label hflex="20%" value="" />	
+				</hlayout>
+				<hlayout>
+					<label hflex="20%" value="" />
+					<caribelcheckbox hflex="20%" id="intolleranze" 
+						label="${c:l('report.elenco.assistiti.intolleranze')}" value="N" />
+					<caribelcheckbox hflex="20%" id="sospese" 
+						label="${c:l('report.elenco.assistiti.sospese')}" value="N" />
+					<caribelcheckbox hflex="20%" id="proroghe" 
+						label="${c:l('report.elenco.assistiti.proroghe')}" value="N" />
+					<label hflex="20%" value="" />
+				</hlayout>
+				<hlayout>
+					<label hflex="20%" value="" />
+					<caribelcheckbox hflex="20%" id="accessiEffettuati" 
+						label="${c:l('report.elenco.assistiti.accessi.effettuati')}" value="N" />
+					<label hflex="60%" value="" />
+				</hlayout>		
+					
+			</groupbox>
+		</hlayout>
+		
+		
+		<!--  
+		<hlayout>
+			<label hflex="20%"
+				value="${c:l('generic.modalita_stampa')}:" />
+			<div hflex="80%" align="left">
+				<caribelradiogroup id="modStampa">
+					<radio id="an" value="A"
+						label="${c:l('generic.modalita_stampa.an')}" checked="true"/>
+					<radio id="sin" value="S"
+						label="${c:l('generic.modalita_stampa.sin')}" />
+				</caribelradiogroup>
+			</div>
+		</hlayout>
+		-->
+
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.formato')}:" />
+			<div hflex="80%" align="left">
+				<caribelradiogroup id="formatoStampa">
+					<radio id="pdf" value="1"
+						label="${c:l('generic.formato.pdf')}" />
+					<radio id="html" value="2" checked="true"
+						label="${c:l('generic.formato.html')}" />
+				</caribelradiogroup>
+			</div>
+		</hlayout>
+		<hlayout><label hflex="100%" value="" /> </hlayout>
+		
+		</vlayout>
+	</vlayout>
+</window>

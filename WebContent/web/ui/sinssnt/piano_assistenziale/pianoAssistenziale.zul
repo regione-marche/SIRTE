@@ -1,0 +1,59 @@
+<vlayout id="principaleForm" vflex="true"  sclass="asterLayout asterOverflow">
+<!-- 	<vlayout vflex="true" hflex="1" spacing="3px"> -->
+		<hlayout>
+			<label value="${c:l('pianoAssistenziale.dataDefinizione')}:" hflex="25%" />
+<!-- 		rimosso dopo chiacchierata con David	constraint="no future" -->
+			<caribeldatebox id="JCariDateTextFieldPianoAss" required="true" hflex="15%" db_name="pa_data"  forward="onChange=onChangeDatePA" />
+			<label hflex="60%"/>
+		</hlayout>
+		<hlayout>
+			<label hflex="25%"
+				value="${c:l('pianoAssistenziale.responsabilePianificazione')}:" />
+			<caribelSearch id="operatore" hflex="60%" required="true"
+				db_name_cod="pa_operatore" db_name_descr="operCognome"
+				id_cod="cod_operatore" id_descr="desc_operatore"
+				ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl" />
+			<label hflex="15%"/>
+		</hlayout>
+
+		<hlayout>
+			<label 
+				value="${c:l('pianoAssistenziale.descrizione')}:"
+				hflex="25%" />
+			<caribeltextbox hflex="60%" id="pa_progetto"
+				db_name="pa_progetto" maxlength="2000" multiline="true" rows="6"
+				sclass="asterTextArea" />
+			<label hflex="15%"/>	
+		</hlayout>
+		<hlayout>
+			<label
+				value="${c:l('pianoAssistenziale.dataChiusura')}:"
+				hflex="25%" />
+			<caribeldatebox id="pa_data_chiusura"
+				hflex="15%" db_name="pa_data_chiusura"/>
+			<label hflex="20%" value="${c:l('pianoAssistenziale.motivo')}:"/>
+			<caribeltextbox hflex="40%" id="pa_motivo_chiusura"
+				db_name="pa_motivo_chiusura" maxlength="200" multiline="false" />
+		</hlayout>
+		<hlayout id="jPanelProgetto">
+			<label
+				value="${c:l('pianoAssistenziale.tipoProgetto')}:"
+				hflex="25%" /> 
+			<caribelradiogroup hflex="75%" db_name="skpa_tipo_progetto" id="skpa_tipo_progetto" sclass="normalText">
+<!-- 				<div align="left"> -->
+					<radio label="${c:l('pianoAssistenziale.tipoProgetto.soloProtocolloProcedura')}" value="N" checked="true" />
+					<radio label="${c:l('pianoAssistenziale.tipoProgetto.progetto')}" value="S" />
+<!-- 				</div> -->
+			</caribelradiogroup>
+		</hlayout>
+<!-- 			<label hflex="10%"/> -->
+		<hlayout id="jPanelCompl">
+			<label
+				value="${c:l('pianoAssistenziale.complessitaAssistenziale')}:" hflex="25%" />
+			<caribelcombobox db_name="skpa_complessita" hflex="50%" id="skpa_complessita" forward="onChange=onChangeComplessita"/>
+			<button id="btn_calcola" hflex="10%" forward="onCalcola"
+				label="${c:l('pianoAssistenziale.btn.calcola')}"/>
+			<label hflex="15%"/>
+		</hlayout>
+<!-- 	</vlayout> -->
+</vlayout>

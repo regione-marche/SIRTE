@@ -1,0 +1,74 @@
+<!-mfo:section.start="layout"->
+<html>
+<body>
+<p> #titolo#  Conteggio ore prestazioni #tipo_prestazione# dal #data_inizio# al #data_fine#  per operatore</p>
+<p>#criteri#</p>
+<!-mfo:section.end->
+
+<!-mfo:section.start="zona"->
+<table border=1 width=98%>
+  <tr align="left">
+	<th >Zona #descrizione_zona#</th>
+	<th >Distretto #des_distr#</th>
+	<th >#pca# #descrizione#</th>
+	<th >#tipologia# #tipo_ute#</th>
+  </tr>
+</table>
+<!-mfo:section.end->
+
+<!-mfo:section.start="iniziotab"->
+<table border=1 width=98%>
+  <tr >
+	<th bgcolor=lightgrey >Operatore</th>
+    <th bgcolor=lightgrey >Assistito</th>
+	<th bgcolor=lightgrey >Totale ore prestazioni</th>
+	<th bgcolor=lightgrey >Numero prestazioni</th>
+    <th bgcolor=lightgrey >Tempo medio</th>
+  </tr>
+<!-mfo:section.end->
+
+<!- mfo:section.start="tabella" ->
+  <tr >
+	<th  >#operatore#</th>
+	<th  >#assistito#</th>
+	<th  >#tempo#</th>
+	<th  >#num_prest#</th>
+	<th  >#media#</th>
+  </tr>
+<!-mfo:section.end ->
+
+<!-mfo:section.start="tabTot"->
+<table border=1 width=98%>
+  <tr >
+	<th bgcolor=lightgrey >Totale per #tit_tot#</th>
+    <th bgcolor=lightgrey >Numero assistiti</th>
+	<th bgcolor=lightgrey >Totale ore prestazioni</th>
+	<th bgcolor=lightgrey >Numero prestazioni</th>
+    <th bgcolor=lightgrey >Tempo medio</th>
+  </tr>
+  <tr >
+	<th  ></th>
+	<th  >#tot_ass#</th>
+	<th  >#tot_tempo#</th>
+	<th  >#tot_num_prest#</th>
+	<th  >#tot_media#</th>
+  </tr>
+</table>
+<!-mfo:section.end->
+
+<!-mfo:section.start="messaggio"->
+<p> NON SONO STATE REPERITE INFORMAZIONI DA STAMPARE</p>
+<!-mfo:section.end->
+
+<!-mfo:section.start="finetab"->
+</table>
+<!-mfo:section.end->
+
+<!-mfo:section.start="rigaSpazio" ->
+<br>
+<!-mfo:section.end->
+
+<!- mfo:section.start="finale" ->
+</body>
+</html>
+<!-mfo:section.end->

@@ -1,0 +1,41 @@
+<?component name="panel_ubicazione" inline="true" macroURI="~./ui/common/ubicazione/PanelUbicazione.zul"?>
+
+<window 
+apply="it.caribel.app.sinssnt.controllers.report.ReportEstrRugIIIHCCtrl"
+title="${c:l('menu.stampe.estr.rug_iii_hc')}" 
+closable="true" sizable="true"
+mode="overlapped"
+border="normal"
+position="center"
+width="800px"
+height="250px">
+
+<zscript><![CDATA[
+	void dadataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}
+	void adataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}	
+]]>
+</zscript>
+	
+	<vlayout vflex="true">
+	<caribelFormMenu visible_btn_print="true" visible_btn_delete="false" visible_btn_save="false"/>
+	<vlayout sclass="asterLayout asterOverflow" vflex="true">		
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.dadata')}:" />
+			<caribeldatebox id="dadata" hflex="20%" required="true" onChange="dadataChanged()" />
+			<label hflex="10%"/>
+			<label hflex="20%" value="${c:l('generic.adata')}:" />
+			<caribeldatebox id="adata" hflex="20%" required="true" onChange="adataChanged()" />
+			<label hflex="10%"/>
+		</hlayout>
+
+		<panel_ubicazione />
+		
+		<hlayout><label hflex="100%" value="" /> </hlayout>
+		
+		</vlayout>
+	</vlayout>
+</window>

@@ -1,0 +1,119 @@
+<vlayout id="contattoMedicoPatologia">
+	<vlayout hflex="true">
+		
+		<hlayout width="100%" style="text-align:left;margin:1px">
+			<groupbox hflex="true" closable="false">
+<!-- 				<caption> -->
+<!-- 					<div id="patmmg"> -->
+<!-- 						<label value="${c:l('so.ric.mmg.patologie')}">	</label> -->
+<!-- 					</div> -->
+<!-- 				</caption> -->
+				<vlayout >
+					<caribellistbox rows="5" id="tablePrestazioni" db_name="" hflex="true">
+						<listhead sizable="false" >
+							<caribellistheader db_name=""
+								label="${c:l('schedaPalliat.patologiePanel.data')}" width="13%" sort="auto" />
+							<caribellistheader db_name="" 
+								label="${c:l('schedaPalliat.patologiePanel.patologia')}" width="12%"
+								sort="auto" />
+							<caribellistheader db_name=""
+								label="${c:l('schedaPalliat.patologiePanel.codice')}" width="10%"
+								sort="auto" />
+							<caribellistheader db_name=""
+								label="${c:l('schedaPalliat.patologiePanel.descrizione')}" width="65%"
+								sort="auto" />		
+						</listhead>
+					</caribellistbox>
+				</vlayout>
+				
+				<hlayout width="100%" style="margin-top:3px;margin-bottom:3px">
+<!-- 					<label hflex="20%"></label> -->
+					<button id="btn_patologie"    
+						label="${c:l('schedaPalliat.patologiePanel.btnPatologie')}" 
+						hflex="10%" forward="onPatologie"/>
+					<label hflex="28%" />
+					<div style="text-align:right; line-height:30px">${c:l('schedaPalliat.patologiePanel.definitaPrecedentemente')}</div> 
+					<label hflex="2%" />
+					<div id="rettGiallo" hflex="8%" style="background-color:yellow" height="30px"/>
+					<label hflex="15%" />
+					<div style="text-align:right; line-height:30px">${c:l('schedaPalliat.patologiePanel.definitaNelPeriodo')}</div> 
+					<label hflex="2%" />
+					<div id="rettVerde" hflex="8%" style="background-color:#66FF33" height="30px"/>
+<!-- 					<label hflex="5%"></label>  -->
+<!-- 					<label hflex="20%" id="label_defInizioPer"  /> -->
+<!-- 					<label hflex="5%"></label> -->
+<!-- 					<label hflex="20%" id="label_defFinePer" /> -->
+					<label hflex="27%" />
+				</hlayout>				
+			</groupbox>			
+		</hlayout>
+		
+		<label hflex="100%" value=""/>
+		<label hflex="100%" value=""/>
+		<label hflex="100%" value=""/>
+		<label hflex="100%" value=""/>
+		<label hflex="100%" value=""/>
+		<label hflex="100%" value=""/>
+		
+		<vlayout width="100%" spacing="3px" sclass="asterLayout">
+			<hlayout>
+				<label hflex="14%"
+					value="${c:l('schedaPalliat.patologiePanel.annotazioni')}" />
+				<caribeltextbox hflex="64%" id="" db_name=""
+					maxlength="2000" multiline="true" rows="6" sclass="asterTextArea" />
+				<label hflex="22%" />
+			</hlayout>
+
+			<hlayout>
+				<label hflex="14%"
+					value="${c:l('schedaPalliat.patologiePanel.dataAnnotazione')}" />
+				<caribeldatebox hflex="10%" id="data_annotazione"
+					db_name="" constraint="no future" />
+				<label hflex="76%" />
+			</hlayout>
+		</vlayout>
+	</vlayout>
+</vlayout>
+
+
+
+<!-- <vlayout id="contattoMedicoPatologia"> -->
+<!-- 	<vlayout hflex="true"> -->
+<!-- 		<hlayout width="100%" style="text-align:left;margin:1px"> -->
+<!-- 			<groupbox hflex="true" closable="false"> -->
+<!-- 				<caption> -->
+<!-- 					<div id="patmmg"> -->
+<!-- 						<label value="${c:l('so.ric.mmg.patologie')}">	</label> -->
+<!-- 					</div> -->
+<!-- 				</caption> -->
+<!-- 				<vlayout > -->
+<!-- 					<caribellistbox rows="5" id="tablePrestazioni" db_name="diagn_associate" hflex="true"> -->
+<!-- 						<listhead sizable="false" > -->
+<!-- 							<caribellistheader db_name="dt_diag" -->
+<!-- 								label="${c:l('contatto.medico.patologie.tabella.data')}" width="13%" sort="auto" /> -->
+<!-- 							<caribellistheader db_name="progr"  -->
+<!-- 								label="${c:l('contatto.medico.patologie.tabella.patologia')}" width="12%" -->
+<!-- 								sort="auto" /> -->
+<!-- 							<caribellistheader db_name="cod_alldiag" -->
+<!-- 								label="${c:l('contatto.medico.patologie.tabella.codice')}" width="10%" -->
+<!-- 								sort="auto" /> -->
+<!-- 							<caribellistheader db_name="desc_alldiag" -->
+<!-- 								label="${c:l('contatto.medico.patologie.tabella.descrizione')}" width="65%" -->
+<!-- 								sort="auto" />		 -->
+<!-- 						</listhead> -->
+<!-- 					</caribellistbox> -->
+<!-- 				</vlayout> -->
+<!-- 				<hlayout width="100%" style="margin-top:3px;margin-bottom:3px"> -->
+<!-- 					<label hflex="20%"></label> -->
+<!-- 					<button id="btn_patologie"     -->
+<!-- 					label="${c:l('contatto.medico.patologie.bottone.patologie')}"  -->
+<!-- 						hflex="30%" forward="onPatologie"></button> -->
+<!-- 					<label hflex="5%"></label>  -->
+<!-- 					<label hflex="20%" id="label_defInizioPer"  /> -->
+<!-- 					<label hflex="5%"></label> -->
+<!-- 					<label hflex="20%" id="label_defFinePer" /> -->
+<!-- 				</hlayout>	 -->
+<!-- 			</groupbox> -->
+<!-- 		</hlayout> -->
+<!-- 	</vlayout> -->
+<!-- </vlayout> -->

@@ -1,0 +1,70 @@
+<?component name="panel_pianificazione" inline="true" macroURI="/web/ui/sinssnt/segreteriaOrganizzativa/PanelPianificazione.zul"?>
+
+<window id="datiPiano" width="70%" mode="modal" border="normal" height="70%" closable="true"
+		title="${c:l('segreteria.organizzativa.aggiungiPrestazioni')}" sizable="true"
+	apply="it.caribel.app.sinssnt.controllers.segreteriaOrganizzativa.AggiungiPrestazioniFormCtrl">
+<!-- 	<vlayout width="100%"> -->
+		<hlayout width="100%" spacing="0px" height="100%">
+			<vlayout hflex="50%" sclass="asterLayout" id="myForm" vflex="true"> 
+				<hlayout>
+					<label
+						value="${c:l('pianoAssistenziale.pianoAccessi.operatoreEsecutore')}:"
+						hflex="20%" />
+					<caribelcombobox db_name="figura_profesionale" hflex="30%"
+						required="true" id="pai_figProf" />
+				</hlayout>
+				<hlayout>
+					<label
+						value="${c:l('pianoAssistenziale.pianoAccessi.dataInizio')}:"
+						hflex="20%" />
+					<caribeldatebox hflex="30%"
+						db_name="pai_data_inizio" id="pai_data_inizio" required="true"
+						onChange="it.caribel.zk.util.UtilForComponents.linkDatebox(self, pai_data_fine)" />
+				</hlayout>
+				<hlayout>
+					<label
+						value="${c:l('pianoAssistenziale.pianoAccessi.dataFine')}:"
+						hflex="20%" />
+					<caribeldatebox hflex="30%"
+						db_name="pai_data_fine" id="pai_data_fine" required="true"
+						onChange="it.caribel.zk.util.UtilForComponents.linkDatebox(pai_data_inizio, self);" />
+				</hlayout>
+				<hlayout>
+					<label
+						value="${c:l('pianoAssistenziale.pianoAccessi.frequenza')}:"
+						hflex="20%" />
+					<caribelcombobox db_name="pai_freq" hflex="30%" id="pai_freq"  required="true"  value="5"/>
+				</hlayout>
+				<hlayout>
+					<label
+						value="${c:l('pianoAssistenziale.pianoAccessi.quantita')}:"
+						hflex="20%" />
+					<caribelintbox db_name="prest_qta" value="1" required="true" constraint="no empty, no negative, no zero"
+						hflex="30%" maxlength="4" id="pai_prest_qta" />
+				</hlayout>
+				<panel_pianificazione />
+			</vlayout>
+			<vlayout hflex="50%" sclass="asterLayout" style="margin-right:3px;" height="90%" vflex="true">
+				<hlayout style="margin: 0px;">
+					<button hflex="20%" disabled="false" tooltiptext="${c:l('segreteria.organizzativa.aggiungiPrestazioni.tooltipConfermaSelezione')}"
+						label="${c:l('generic.btn.confermaSelezione')}" image="~./zul/img/transfer24x24.png"
+						id="btn_confermaSelezione" forward="onConfermaSelezione">
+					</button>
+				</hlayout>
+				<caribellistbox id="tablePrestazioni" span="2" vflex="true"
+					disabled="true" checkmark="true">
+					<listhead sizable="false">
+						<caribellistheader label=" " align="center" hflex="min" />
+						<caribellistheader db_name="prest_cod" hflex="min"
+							label="${c:l('common.codice')}" sort="auto" />
+						<caribellistheader db_name="prest_des" hflex="min"
+							label="${c:l('common.descrizione')}" sort="auto">
+							<caribeltextbox id="filtroDescrizione" hflex="100%"
+								style="margin: 1px;" placeholder="${c:l('common.placeholder')}" />
+						</caribellistheader>
+					</listhead>
+				</caribellistbox>
+			</vlayout>
+		</hlayout>
+<!-- 	</vlayout> -->
+</window>

@@ -1,0 +1,1481 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+
+<!--
+	01/07/2002 - R. Bonsignori
+	- Template di stampa adatto per documenti tabellari su carta A4
+	  con orientamento verticale.
+
+         1         2         3         4         5         6         7         8
+12345678901234567890123456789012345678901234567890123456789012345678901234567890
+-->
+
+<!-- mfo:section.start="layout" rem="IMPOSTAZIONI DI PAGINA" -->
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="simple"
+        page-height="29.7cm"	page-width="21cm"
+        margin-top="1cm"	margin-bottom="1cm"
+        margin-left="1cm"	margin-right="1cm" >
+      <fo:region-body margin-top="1cm" margin-bottom="1cm"/>
+      <fo:region-before extent="1cm"/>
+      <fo:region-after extent="1cm"/>
+    </fo:simple-page-master>
+  </fo:layout-master-set>
+
+  <fo:page-sequence master-name="simple">
+    <fo:static-content flow-name="xsl-region-before">
+      <fo:table font-size="10pt" width="auto">
+        <fo:table-column column-width="12cm"/>
+        <fo:table-column column-width="7cm"/>
+        <fo:table-body>
+          <fo:table-row height="10pt">
+            <fo:table-cell text-align="start">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >SCHEDA MEDICI</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="end">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                > </fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+    </fo:static-content>
+
+    <!-- TITOLO DI PIEDE -->
+    <fo:static-content flow-name="xsl-region-after">
+      <fo:table font-size="8pt" width="auto" space-before.optimum="0.5cm">
+        <fo:table-column column-width="12cm"/>
+        <fo:table-column column-width="7cm"/>
+        <fo:table-body>
+          <fo:table-row height="10pt">
+            <fo:table-cell text-align="start">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >#txt#</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="end">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >elaborato del #data_stampa# (medici.fo)</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body">
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="datianagrafici" rem="PAGINAINIZIALE:DATI ANAGRAFICI" -->
+  <fo:table font-size="10pt" width="auto" >
+    <fo:table-column column-width="19cm"/>
+    <fo:table-body>
+      <fo:table-row>
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="19cm"/>
+                  <fo:table-body>
+                    <fo:table-row>
+                        <fo:table-cell font-size="16pt" font-weight="bold">
+                           <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="center"
+                               >SCHEDA ASSISTITO
+                           </fo:block>
+                        </fo:table-cell>
+                    </fo:table-row >
+                  </fo:table-body>
+                </fo:table>
+              </fo:table-cell>
+      </fo:table-row >
+      <fo:table-row height="0.3cm">
+      </fo:table-row >
+      <fo:table-row >
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="2.5cm"/>
+                  <fo:table-column column-width="6.5cm"/>
+                  <fo:table-column column-width="3.5cm"/>
+                  <fo:table-column column-width="6.5cm"/>
+                  <fo:table-body>
+                    <fo:table-row height="0.5cm">
+                    </fo:table-row >
+                    <fo:table-row >
+                            <fo:table-cell font-size="14pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >Numero
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt" font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#n_cartella#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >Data di nascita
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt" font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#data_nasc#
+                               </fo:block>
+                           </fo:table-cell>
+                    </fo:table-row>
+                    <fo:table-row height="0.5cm">
+                    </fo:table-row >
+                    <fo:table-row >
+                            <fo:table-cell font-size="14pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >Cognome
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt" font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#cognome#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >Nome
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt" font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#nome#
+                               </fo:block>
+                           </fo:table-cell>
+                    </fo:table-row>
+                    <fo:table-row height="0.5cm">
+                    </fo:table-row >
+                  </fo:table-body>
+                </fo:table>
+              </fo:table-cell>
+      </fo:table-row>
+      <fo:table-row height="0.5cm">
+      </fo:table-row >
+
+      <fo:table-row>
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="19cm"/>
+                  <fo:table-body>
+                    <fo:table-row>
+                        <fo:table-cell font-size="14pt" font-weight="bold">
+                           <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="center"
+                               >DATI ANAGRAFICI
+                           </fo:block>
+                        </fo:table-cell>
+                    </fo:table-row >
+                  </fo:table-body>
+                </fo:table>
+              </fo:table-cell>
+      </fo:table-row >
+
+      <fo:table-row border-width="0.5pt" border-style="solid">
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="3.5cm"/>
+                  <fo:table-column column-width="8cm"/>
+                  <fo:table-column column-width="3.5cm"/>
+                  <fo:table-column column-width="4cm"/>
+                  <fo:table-body>
+                    <fo:table-row height="0.3cm">
+                    </fo:table-row >
+                    <fo:table-row >
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Codice sanitario
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#cod_sanitario#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Codice fiscale
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#cod_fiscale#
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row >
+                    <fo:table-row >
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                                <fo:table >
+                                  <fo:table-column column-width="3.1cm"/>
+                                  <fo:table-column column-width="0.4cm"/>
+                                  <fo:table-column column-width="0.6cm"/>
+                                  <fo:table-column column-width="3cm"/>
+                                  <fo:table-column column-width="0.4cm"/>
+                                  <fo:table-column column-width="0.6cm"/>
+                                  <fo:table-column column-width="3cm"/>
+                                  <fo:table-body>
+                                    <fo:table-row >
+                                            <fo:table-cell font-size="10pt">
+                                                 <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                                      >Sesso
+                                                 </fo:block>
+                                            </fo:table-cell>
+                                            <fo:table-cell font-size="10pt">
+                                                 <fo:block start-indent="1mm" end-indent="1mm" text-align="end"
+                                                      >1
+                                                 </fo:block>
+                                            </fo:table-cell>
+                                            <fo:table-cell font-size="10pt">
+                                                 <fo:block start-indent="1mm" end-indent="1mm"
+                                                           text-align="start" border-width="0.1pt" border-style="solid"
+                                                           font-weight="bold"
+                                                      >&#160;#sessom#
+                                                 </fo:block>
+                                            </fo:table-cell>
+                                            <fo:table-cell font-size="10pt">
+                                                 <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                                      >M
+                                                 </fo:block>
+                                            </fo:table-cell>
+                                            <fo:table-cell font-size="10pt">
+                                                 <fo:block start-indent="1mm" end-indent="1mm" text-align="end"
+                                                      >2
+                                                 </fo:block>
+                                            </fo:table-cell>
+                                            <fo:table-cell font-size="10pt">
+                                                 <fo:block start-indent="1mm" end-indent="1mm"
+                                                           text-align="start" border-width="0.1pt" border-style="solid"
+                                                           font-weight="bold"
+                                                      >&#160;#sessof#
+                                                 </fo:block>
+                                            </fo:table-cell>
+                                            <fo:table-cell font-size="10pt">
+                                                 <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                                      >F
+                                                 </fo:block>
+                                            </fo:table-cell>
+                                    </fo:table-row>
+                                  </fo:table-body>
+                                </fo:table>
+                           </fo:table-cell>
+                    </fo:table-row>
+                    <fo:table-row >
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Comune di nascita
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" number-columns-spanned='3' padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#comune_nascita#
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row>
+                    <fo:table-row>
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Cittadinanza
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" number-columns-spanned='3' padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#cittadinanza#
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row >
+                    <fo:table-row >
+                            <fo:table-cell font-size="12pt" font-weight="bold" number-columns-spanned='4' padding-top="1mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="3mm" text-align="start"
+                                    >RESIDENZA
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row >
+                    <fo:table-row >
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Residenza
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#residenza#
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row >
+                    <fo:table-row padding-top="3mm">
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Comune
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#comune_res#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Prov.
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#prov_res#
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row >
+                    <fo:table-row >
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Localit&#224;
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" number-columns-spanned='3' font-weight="bold" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#local_res#
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row >
+                    <fo:table-row >
+                            <fo:table-cell font-size="12pt" font-weight="bold" number-columns-spanned='4' padding-top="1mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="3mm" text-align="start"
+                                    >DOMICILIO
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row >
+                    <fo:table-row >
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Domicilio
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell number-columns-spanned='3' font-size="10pt" font-weight="bold" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#domicilio#
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row >
+                    <fo:table-row padding-top="3mm">
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Comune
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#comune_dom#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Prov.
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#prov_dom#
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row >
+                    <fo:table-row >
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Localit&#224;
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#local_dom#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Nome campanello
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#nome_camp#
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row>
+                    <fo:table-row >
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Tel.
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#tel_dom#
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row >
+                    <fo:table-row height="0.3cm">
+                    </fo:table-row >
+                  </fo:table-body>
+                </fo:table>
+              </fo:table-cell>
+      </fo:table-row>
+      <fo:table-row height="0.3cm">
+      </fo:table-row >
+
+      <fo:table-row>
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="19cm"/>
+                  <fo:table-body>
+                    <fo:table-row>
+                        <fo:table-cell font-size="14pt" font-weight="bold">
+                           <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="center"
+                               >ESENZIONI
+                           </fo:block>
+                        </fo:table-cell>
+                    </fo:table-row >
+                  </fo:table-body>
+                </fo:table>
+              </fo:table-cell>
+      </fo:table-row >
+      <fo:table-row height="0.3cm">
+      </fo:table-row >
+
+      <fo:table-row border-width="0.5pt" border-style="solid">
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="3cm"/>
+                  <fo:table-column column-width="3cm"/>
+                  <fo:table-column column-width="13cm"/>
+                  <fo:table-body>
+                    <fo:table-row >
+                            <fo:table-cell font-size="10pt" font-weight="bold" border-after-width="0.5pt" border-after-style="solid">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="center"
+                                    >Data inizio
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" border-after-width="0.5pt" border-after-style="solid">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="center"
+                                    >Data Fine
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" border-after-width="0.5pt" border-after-style="solid">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="start"
+                                    >Descrizione
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row >
+		     <fo:table-row height="0.3cm">
+		     </fo:table-row>
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="esenzioni" rem="RIGA RIPETITIVA ESENZIONI" -->
+                    <fo:table-row >
+                            <fo:table-cell font-size="10pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="center"
+                                    >#data_inizio_ese#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="center"
+                                    >#data_fine_ese#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="start"
+                                    >#esenzione_des#
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row >
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="fineTabPaginaIniziale" rem="FINE PAGINA INIZIALE" -->
+		     <fo:table-row height="0.3cm">
+		     </fo:table-row>
+                  </fo:table-body>
+                </fo:table>
+              </fo:table-cell>
+      </fo:table-row>
+<!-- rem="FINE PAGINA INIZIALE"-->
+    </fo:table-body>
+  </fo:table>
+<!-- mfo:section.end -->
+<!-- mfo:section.start="taglia" -->
+        <fo:block break-after="page">
+        </fo:block>
+<!-- mfo:section.end -->
+<!-- mfo:section.start="paginaSchedaMed" rem="PAGINASCHEDAMED:medici" -->
+  <fo:table font-size="10pt" width="auto" >
+    <fo:table-column column-width="19cm"/>
+    <fo:table-body>
+      <fo:table-row>
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="19cm"/>
+                  <fo:table-body>
+                    <fo:table-row>
+                        <fo:table-cell font-size="16pt" font-weight="bold">
+                           <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="center"
+                               >DATI CONTATTO
+                           </fo:block>
+                        </fo:table-cell>
+                    </fo:table-row >
+                  </fo:table-body>
+                </fo:table>
+              </fo:table-cell>
+      </fo:table-row >
+      <fo:table-row height="0.3cm">
+      </fo:table-row>
+
+      <fo:table-row border-width="0.5pt" border-style="solid">
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="4cm"/>
+                  <fo:table-column column-width="3cm"/>
+                  <fo:table-column column-width="4cm"/>
+                  <fo:table-column column-width="8cm"/>
+                  <fo:table-body>
+                    <fo:table-row>
+                            <fo:table-cell font-size="14pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >Numero cartella
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt" font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#n_cartella#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >Nome
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt" font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#nome_assistito#
+                               </fo:block>
+                           </fo:table-cell>
+                    </fo:table-row>
+                    <fo:table-row>
+                            <fo:table-cell font-size="14pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >Numero contatto
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt" font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#n_contatto#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >Data Apertura
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt" font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#data_apertura_contatto#
+                               </fo:block>
+                           </fo:table-cell>
+                    </fo:table-row>
+                  </fo:table-body>
+                </fo:table>
+              </fo:table-cell>
+      </fo:table-row>
+      <fo:table-row height="0.3cm">
+      </fo:table-row>
+
+      <fo:table-row border-width="0.5pt" border-style="solid">
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="3.5cm"/>
+                  <fo:table-column column-width="10cm"/>
+                  <fo:table-column column-width="2cm"/>
+                  <fo:table-column column-width="3.5cm"/>
+                  <fo:table-body>
+                    <fo:table-row>
+                            <fo:table-cell font-size="12pt" font-weight="bold" number-columns-spanned='4' padding-top="1mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="3mm" text-align="start"
+                                    >DATI SCHEDA
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row>
+                    <fo:table-row >
+                            <fo:table-cell font-size="10pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="start"
+                                    >Data apertura
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" number-columns-spanned='3' font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="start"
+                                    >#data_aper#
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row >
+                    <fo:table-row >
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Operatore
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" padding-top="2mm" font-weight="bold" number-columns-spanned='3'>
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#operatore#
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row >
+                    <fo:table-row>
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Descr. contatto
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" padding-top="2mm" font-weight="bold" number-columns-spanned='3'>
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#descr_conta#
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row>
+                    <fo:table-row>
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Medico ref.
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" padding-top="2mm" font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#med_referente#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Data
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" padding-top="2mm" font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#data_ref#
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row>
+					<fo:table-row>
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Presidio
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" padding-top="2mm" font-weight="bold" number-columns-spanned='3'>
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#presidio_cont#
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row>
+					 
+                    <fo:table-row>
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Anamnesi1
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" padding-top="2mm" font-weight="bold" number-columns-spanned='3'>
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#anamnesi1#
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row>
+                    <fo:table-row>
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Anamnesi2
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" padding-top="2mm" font-weight="bold" number-columns-spanned='3'>
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#anamnesi2#
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row>
+                    <fo:table-row >
+                            <fo:table-cell font-size="10pt" padding-top="1mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="start"
+                                    >Anamnesi3
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" number-columns-spanned='3' font-weight="bold" padding-top="1mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="start"
+                                    >#anamnesi3#
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row >
+                    <fo:table-row height="0.3cm">
+                    </fo:table-row >
+                  </fo:table-body>
+                </fo:table>
+              </fo:table-cell>
+      </fo:table-row>
+      <fo:table-row height="0.5cm">
+      </fo:table-row>
+      <!-- rem="FINE PAGINA SCHEDAMED"-->
+    </fo:table-body>
+  </fo:table>
+<!-- mfo:section.end -->
+<!--da togliere-->
+        <fo:block break-after="page">
+        </fo:block>
+
+<!-- mfo:section.start="paginaPatologia" rem="PAGINAPatologia:medici " -->
+  <fo:table font-size="10pt" width="auto" >
+    <fo:table-column column-width="19cm"/>
+    <fo:table-body>
+      <fo:table-row>
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="19cm"/>
+                  <fo:table-body>
+                    <fo:table-row>
+                        <fo:table-cell font-size="16pt" font-weight="bold">
+                           <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="center"
+                               >DIAGNOSI
+                           </fo:block>
+                        </fo:table-cell>
+                    </fo:table-row>
+                  </fo:table-body>
+                </fo:table>
+              </fo:table-cell>
+      </fo:table-row >
+      <fo:table-row height="0.3cm">
+      </fo:table-row >
+
+      <fo:table-row border-width="0.5pt" border-style="solid">
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="4cm"/>
+                  <fo:table-column column-width="3cm"/>
+                  <fo:table-column column-width="4cm"/>
+                  <fo:table-column column-width="8cm"/>
+                  <fo:table-body>
+                    <fo:table-row>
+                            <fo:table-cell font-size="14pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >Numero cartella
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt" font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#n_cartella#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >Nome
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt" font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#nome_assistito#
+                               </fo:block>
+                           </fo:table-cell>
+                    </fo:table-row>
+                    <fo:table-row>
+                            <fo:table-cell font-size="14pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >Numero contatto
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt" font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#n_contatto#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >Data Apertura
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt" font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#data_apertura_contatto#
+                               </fo:block>
+                           </fo:table-cell>
+                    </fo:table-row>
+                  </fo:table-body>
+                </fo:table>
+              </fo:table-cell>
+      </fo:table-row>
+      <fo:table-row height="0.3cm">
+      </fo:table-row>
+
+      <fo:table-row border-width="0.5pt" border-style="solid">
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="3cm"/>
+                  <fo:table-column column-width="16cm"/>
+                  <fo:table-body>
+                    <fo:table-row>
+                           <fo:table-cell font-size="10pt" padding-top="2mm">
+                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                              >Annotazioni
+                              </fo:block>
+                           </fo:table-cell>
+                           <fo:table-cell font-size="10pt" padding-top="2mm">
+                              <fo:block start-indent="1mm" end-indent="1mm"
+                                  text-align="start" font-weight="bold"
+                              >#note#
+                              </fo:block>
+                           </fo:table-cell>
+                        </fo:table-row>
+                        <fo:table-row>
+ 		           <fo:table-cell font-size="10pt" padding-top="2mm">
+                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                              >Data annotazioni
+                              </fo:block>
+                           </fo:table-cell>
+                           <fo:table-cell font-size="10pt" padding-top="2mm">
+                              <fo:block start-indent="1mm" end-indent="1mm"
+                                  text-align="start" font-weight="bold"
+                              >#data_note#
+                              </fo:block>
+                           </fo:table-cell>
+ 		        </fo:table-row>
+		  </fo:table-body>
+                </fo:table>
+               </fo:table-cell>
+              </fo:table-row>
+            <fo:table-row height="0.3cm">
+           </fo:table-row>
+<!-- mfo:section.end -->
+
+
+
+<!-- mfo:section.start="rigaPatologia" rem="riga ripetitiva Patologia" -->
+      <fo:table-row border-width="0.5pt" border-style="solid">
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="3cm"/>
+                  <fo:table-column column-width="12cm"/>
+                  <fo:table-column column-width="3cm"/>
+                  <fo:table-column column-width="1cm"/>
+                  <fo:table-body>
+                  <fo:table-row>
+                        <fo:table-cell font-size="12pt" font-weight="bold"
+                                                   number-columns-spanned='4'>
+                           <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="start"
+                               >Diagnosi del #data_diag#
+                           </fo:block>
+                        </fo:table-cell>
+                    </fo:table-row>
+
+                    <fo:table-row>
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Diagnosi 1
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#desc_diag1#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Indice di gravita'
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#diag1_ids#
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row>
+
+                    <fo:table-row>
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Diagnosi 2
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#desc_diag2#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Indice di gravita'
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#diag2_ids#
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row>
+
+                    <fo:table-row>
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Diagnosi 3
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#desc_diag3#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Indice di gravita'
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#diag3_ids#
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row>
+
+                    <fo:table-row>
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Diagnosi 4
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#desc_diag4#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Indice di gravita'
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#diag4_ids#
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row>
+
+					<fo:table-row>
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Diagnosi 5
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#desc_diag5#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Indice di gravita'
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#diag5_ids#
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row>
+
+              </fo:table-body>
+            </fo:table>
+              </fo:table-cell>
+      </fo:table-row>
+      <fo:table-row height="0.5cm">
+      </fo:table-row >
+<!-- mfo:section.end -->
+
+
+<!-- mfo:section.start="fineTabPatologia" rem="fine tabella Patologia" -->
+    </fo:table-body>
+  </fo:table>
+<!-- mfo:section.end -->
+
+
+<!--da togliere-->
+        <fo:block break-after="page">
+        </fo:block>
+
+<!-- mfo:section.start="paginaTerapia" rem="PAGINATERAPIA:medici " -->
+  <fo:table font-size="10pt" width="auto" >
+    <fo:table-column column-width="19cm"/>
+    <fo:table-body>
+      <fo:table-row>
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="19cm"/>
+                  <fo:table-body>
+                    <fo:table-row>
+                        <fo:table-cell font-size="16pt" font-weight="bold">
+                           <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="center"
+                               >TERAPIA
+                           </fo:block>
+                        </fo:table-cell>
+                    </fo:table-row>
+                  </fo:table-body>
+                </fo:table>
+              </fo:table-cell>
+      </fo:table-row >
+      <fo:table-row height="0.3cm">
+      </fo:table-row >
+
+      <fo:table-row border-width="0.5pt" border-style="solid">
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="4cm"/>
+                  <fo:table-column column-width="3cm"/>
+                  <fo:table-column column-width="4cm"/>
+                  <fo:table-column column-width="8cm"/>
+                  <fo:table-body>
+                    <fo:table-row>
+                            <fo:table-cell font-size="14pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >Numero cartella
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt" font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#n_cartella#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >Nome
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt" font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#nome_assistito#
+                               </fo:block>
+                           </fo:table-cell>
+                    </fo:table-row>
+                    <fo:table-row>
+                            <fo:table-cell font-size="14pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >Numero contatto
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt" font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#n_contatto#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >Data Apertura
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt" font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#data_apertura_contatto#
+                               </fo:block>
+                           </fo:table-cell>
+                    </fo:table-row>
+                  </fo:table-body>
+                </fo:table>
+              </fo:table-cell>
+      </fo:table-row>
+      <fo:table-row height="0.3cm">
+      </fo:table-row>
+
+      <fo:table-row border-width="0.5pt" border-style="solid">
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="4cm"/>
+                  <fo:table-column column-width="15cm"/>
+                  <fo:table-body>
+                    <fo:table-row>
+                            <fo:table-cell font-size="10pt" font-weight="bold" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Note terapia
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#note_terapia#
+                               </fo:block>
+                          </fo:table-cell>
+                          </fo:table-row>
+                        <fo:table-row>
+                            <fo:table-cell font-size="10pt" font-weight="bold" padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >Data terapia
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt"  padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#data_terapia#
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row>
+		     <fo:table-row height="0.3cm">
+		     </fo:table-row >
+                  </fo:table-body>
+                </fo:table>
+              </fo:table-cell>
+      </fo:table-row>
+      <fo:table-row height="0.5cm">
+      </fo:table-row >
+
+      <fo:table-row border-width="0.5pt" border-style="solid">
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="3cm"/>
+                  <fo:table-column column-width="3cm"/>
+                  <fo:table-column column-width="4cm"/>
+                  <fo:table-column column-width="3cm"/>
+                  <fo:table-column column-width="4cm"/>
+                  <fo:table-column column-width="2cm"/>
+                  <fo:table-body>
+                    <fo:table-row>
+                            <fo:table-cell font-size="10pt" font-weight="bold" border-after-width="0.5pt" border-after-style="solid">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="center"
+                                    >Data inizio
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" border-after-width="0.5pt" border-after-style="solid">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="start"
+                                    >Data fine
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" border-after-width="0.5pt" border-after-style="solid">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="start"
+                                    >Nome comm.
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" border-after-width="0.5pt" border-after-style="solid">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="center"
+                                    >Principio attivo
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" border-after-width="0.5pt" border-after-style="solid">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="center"
+                                    >Categoria ATC
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" border-after-width="0.5pt" border-after-style="solid">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="center"
+                                    >Dom.
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row >
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="tabella" rem="RIGA RIPETITIVA TERAPIA" -->
+                    <fo:table-row>
+                            <fo:table-cell font-size="10pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="center"
+                                    >#data_inizio#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="start"
+                                    >#data_fine#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="start"
+                                    >#nome_comm#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="center"
+                                    >#principio#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="center"
+                                    >#categoria#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="center"
+                                    >#dom#
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row >
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="fineTabPaginaTerapia" rem="FINE PAGINA TERAPIA" -->
+                  </fo:table-body>
+                </fo:table>
+              </fo:table-cell>
+      </fo:table-row >
+<!-- rem="FINE PAGINA TERAPIA"-->
+    </fo:table-body>
+  </fo:table>
+<!-- mfo:section.end -->
+<fo:block break-after="page">
+        </fo:block>
+<!-- mfo:section.start="paginaDiaria" rem="PAGINADIARIA:medici " -->
+  <fo:table font-size="10pt" width="auto" >
+    <fo:table-column column-width="19cm"/>
+    <fo:table-body>
+      <fo:table-row>
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="19cm"/>
+                  <fo:table-body>
+                    <fo:table-row>
+                        <fo:table-cell font-size="16pt" font-weight="bold">
+                           <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="center"
+                               >DIARIO
+                           </fo:block>
+                        </fo:table-cell>
+                    </fo:table-row>
+                  </fo:table-body>
+                </fo:table>
+              </fo:table-cell>
+      </fo:table-row >
+      <fo:table-row height="0.3cm">
+      </fo:table-row >
+
+      <fo:table-row border-width="0.5pt" border-style="solid">
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="4cm"/>
+                  <fo:table-column column-width="3cm"/>
+                  <fo:table-column column-width="4cm"/>
+                  <fo:table-column column-width="8cm"/>
+                  <fo:table-body>
+                    <fo:table-row>
+                            <fo:table-cell font-size="14pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >Numero cartella
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt" font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#n_cartella#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >Nome
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt" font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#nome_assistito#
+                               </fo:block>
+                           </fo:table-cell>
+                    </fo:table-row>
+                    <fo:table-row>
+                            <fo:table-cell font-size="14pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >Numero contatto
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt" font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#n_contatto#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >Data Apertura
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt" font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#data_apertura_contatto#
+                               </fo:block>
+                           </fo:table-cell>
+                    </fo:table-row>
+                  </fo:table-body>
+                </fo:table>
+              </fo:table-cell>
+      </fo:table-row>
+      <fo:table-row height="0.3cm">
+      </fo:table-row>
+
+      <fo:table-row border-width="0.5pt" border-style="solid">
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="3cm"/>
+                  <fo:table-column column-width="16cm"/>
+                  <fo:table-body>
+                    <fo:table-row>
+                            <fo:table-cell font-size="10pt" font-weight="bold" border-after-width="0.5pt" border-after-style="solid">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="center"
+                                    >Data
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" border-after-width="0.5pt" border-after-style="solid">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="start"
+                                    >Note
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row >
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="tabellaDiaria" rem="RIGA RIPETITIVA TERAPIA" -->
+                    <fo:table-row>
+                            <fo:table-cell font-size="10pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="center"
+                                    >#data_diaria#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="start"
+                                    >#note_diaria#
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row >
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="fineTabPaginaDiaria" rem="FINE PAGINA TERAPIA" -->
+                  </fo:table-body>
+                </fo:table>
+              </fo:table-cell>
+      </fo:table-row >
+<!-- rem="FINE PAGINA TERAPIA"-->
+    </fo:table-body>
+  </fo:table>
+<!-- mfo:section.end -->
+        <fo:block break-after="page">
+        </fo:block>
+
+<!-- mfo:section.start="paginaClinica" rem="PAGINACLINICA:medici " -->
+  <fo:table font-size="10pt" width="auto" >
+    <fo:table-column column-width="19cm"/>
+    <fo:table-body>
+      <fo:table-row>
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="19cm"/>
+                  <fo:table-body>
+                    <fo:table-row>
+                        <fo:table-cell font-size="16pt" font-weight="bold">
+                           <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="center"
+                               >RELAZIONE CLINICA
+                           </fo:block>
+                        </fo:table-cell>
+                    </fo:table-row>
+                  </fo:table-body>
+                </fo:table>
+              </fo:table-cell>
+      </fo:table-row >
+      <fo:table-row height="0.3cm">
+      </fo:table-row >
+
+      <fo:table-row border-width="0.5pt" border-style="solid">
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="4cm"/>
+                  <fo:table-column column-width="3cm"/>
+                  <fo:table-column column-width="4cm"/>
+                  <fo:table-column column-width="8cm"/>
+                  <fo:table-body>
+                    <fo:table-row>
+                            <fo:table-cell font-size="14pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >Numero cartella
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt" font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#n_cartella#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >Nome
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt" font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#nome_assistito#
+                               </fo:block>
+                           </fo:table-cell>
+                    </fo:table-row>
+                    <fo:table-row>
+                            <fo:table-cell font-size="14pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >Numero contatto
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt" font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#n_contatto#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >Data Apertura
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="14pt" font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#data_apertura_contatto#
+                               </fo:block>
+                           </fo:table-cell>
+                    </fo:table-row>
+                  </fo:table-body>
+                </fo:table>
+              </fo:table-cell>
+      </fo:table-row>
+      <fo:table-row height="0.3cm">
+      </fo:table-row>
+
+      <fo:table-row border-width="0.5pt" border-style="solid">
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="3cm"/>
+                  <fo:table-column column-width="16cm"/>
+                  <fo:table-body>
+                    <fo:table-row>
+                            <fo:table-cell font-size="10pt" font-weight="bold" border-after-width="0.5pt" border-after-style="solid">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="center"
+                                    >Data
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt" font-weight="bold" border-after-width="0.5pt" border-after-style="solid">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="start"
+                                    >Note
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row >
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="tabellaClinica" rem="RIGA RIPETITIVA TERAPIA" -->
+                    <fo:table-row>
+                            <fo:table-cell font-size="10pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="center"
+                                    >#data_clinica#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell font-size="10pt">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="start"
+                                    >#note_clinica#
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row >
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="fineTabPaginaClinica" rem="FINE PAGINA TERAPIA" -->
+                  </fo:table-body>
+                </fo:table>
+              </fo:table-cell>
+      </fo:table-row >
+<!-- rem="FINE PAGINA CLINICA"-->
+    </fo:table-body>
+  </fo:table>
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="messaggio" rem="MESSAGGIO DI ERRORE" -->
+      <fo:block font-size="12pt"
+        font-family="sans-serif"	font-weight="bold"
+        line-height="10pt"		background-color="white"
+        color="black"			text-align="center"
+        padding-top="3pt"
+      >NESSUNA INFORMAZIONE REPERITA</fo:block>
+<!-- mfo:section.end -->
+
+
+<!-- mfo:section.start="finale" rem="TERMINAZIONE DOCUMENTO" -->
+    </fo:flow> <!-- closes the flow element-->
+  </fo:page-sequence> <!-- closes the page-sequence -->
+<!-- mfo:section.end -->
+</fo:root>
+

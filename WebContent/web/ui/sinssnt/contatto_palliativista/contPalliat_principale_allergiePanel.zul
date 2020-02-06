@@ -1,0 +1,27 @@
+<vlayout sclass="asterLayout asterOverflow asterLayoutLastSpace" height="100%">
+
+	<hlayout>
+		<label value="${c:l('schedaPalliat.allergiePanel.problemi')}:" hflex="14%" />
+		<caribeltextbox id="skm_problemi" maxlength="2000"
+			db_name="skm_problemi" hflex="66%" rows="10" style="resize:none"/>
+		<label value="" hflex="20%" />
+	</hlayout>
+	
+	<hlayout>
+		<label value="${c:l('schedaPalliat.allergiePanel.allergie')}:" hflex="14%" />
+		<caribeltextbox id="skm_allergie" maxlength="100"
+			db_name="skm_allergie" hflex="66%" style="resize:none" rows="4"/>
+		<label value="" hflex="20%"/>
+	</hlayout>
+	
+	<hlayout>
+		<label value="${c:l('schedaPalliat.allergiePanel.intolleranze')}:" hflex="14%" />
+		<caribeltextbox id="skm_intolleranze" maxlength="100"
+			db_name="skm_intolleranze" hflex="66%" style="resize:none" rows="4"/>
+		<label value="" hflex="20%" />
+	</hlayout>
+
+</vlayout>
+
+
+

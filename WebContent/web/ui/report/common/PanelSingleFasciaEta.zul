@@ -1,0 +1,17 @@
+<hlayout id="${arg.single_panel_id}" apply="it.caribel.app.sinssnt.controllers.report.common.PanelSingleFasciaEtaCtrl">
+		<label id="${arg.lbl1_id}" value="${arg.lbl1_value}" hflex="20%"/>
+		<label value="${c:l('PanelSingleFasciaEta.da')}" hflex="5%"/>
+		<caribelintbox id="${arg.txt1_id}" value="${arg.txt1_value}" hflex="10%" maxlength="3"/>
+		<label hflex="2%"/>
+		<label value="${c:l('PanelSingleFasciaEta.a')}" hflex="5%"/>
+		<caribelintbox id="${arg.txt2_id}" value="${arg.txt2_value}" hflex="10%" maxlength="3"/>
+		<div align="left" hflex="5%">
+			<label value="${c:l('PanelSingleFasciaEta.anni')}"/>
+		</div>
+		<label hflex="15%"/>
+		<div align="left" hflex="15%">
+			<caribelcheckbox id="${arg.checkbox_id}"/>
+			<label value="${c:l('generic.checkbox.stampa')}"/>
+		</div>
+		<label hflex="13%"/>
+</hlayout>

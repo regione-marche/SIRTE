@@ -1,0 +1,106 @@
+<?component name="principale" 	inline="true" macroURI="/web/ui/sinssnt/contatto_fisioterapico/contatto_fisio_principale.zul"?>
+<?component name="situazione" 	inline="true" macroURI="/web/ui/sinssnt/contatto_fisioterapico/contatto_fisio_situazione.zul"?>
+<?component name="condizione" 	inline="true" macroURI="/web/ui/sinssnt/contatto_fisioterapico/contatto_fisio_condizione.zul"?>
+<?component name="patologie" 	inline="true" macroURI="~./ui/sinssnt/segreteriaOrganizzativa/contatto_medico_patologie.zul"?>
+<?component name="progetto1" 	inline="true" macroURI="/web/ui/sinssnt/contatto_fisioterapico/contatto_fisio_progetto1.zul"?>
+<?component name="progetto2" 	inline="true" macroURI="/web/ui/sinssnt/contatto_fisioterapico/contatto_fisio_progetto2.zul"?>
+<?component name="dimissioni" 	inline="true" macroURI="/web/ui/sinssnt/contatto_fisioterapico/contatto_fisio_dimissioni.zul"?>
+
+<window id="contattoFisioForm" title="${c:l('SchedaFisioForm.formTitle')}"
+	apply="it.caribel.app.sinssnt.controllers.contattoFisioterapico.ContattoFisioFormCtrl"
+	border="normal" vflex="true" width="100%">
+
+
+	<vlayout vflex="true">
+
+		<caribelFormMenu  visible_btn_print="true" />
+ 		<vlayout vflex="true" sclass="asterLayout asterOverflow" > 
+			
+			<hlayout width="100%" >
+			<label value="${c:l('SchedaFisioForm.principale.operatore')}:" hflex="20%" />
+			<caribeltextbox hflex="10%" id="cod_operatore"
+				db_name="skf_operatore" maxlength="10" readonly="true" />
+			<caribeltextbox hflex="40%" id="desc_operat"
+				db_name="des_operatore" maxlength="40" readonly="true"/>
+			<label hflex="30%"></label>
+		</hlayout>
+		
+			<hlayout width="100%" visible="false" >
+				<label value="${c:l('SchedaFisioForm.cartella')}:" hflex="20%" />
+				<caribelintbox id="n_cartella" db_name="n_cartella" hflex="10%"
+					maxlength="13" required="true" readonly="true"/>
+				<label value="${c:l('SchedaFisioForm.contatto')}:" hflex="20%" />
+				<caribelintbox id="n_contatto" db_name="n_contatto" hflex="10%"
+					maxlength="13" readonly="true"/>
+				<caribelintbox id="id_skso" db_name="id_skso"
+					hflex="15%" maxlength="13" />
+				<label hflex="40%"></label>
+			</hlayout>
+			
+			<tabbox width="100%" sclass="nav_tabs" id="tabbox">
+				<tabs id="tabs">
+					<tab label="${c:l('SchedaFisioForm.tabs.principale')}" />		
+					<tab label="${c:l('SchedaFisioForm.tabs.situazione')}" />				
+					<tab id="tab_condizione" label="${c:l('SchedaFisioForm.tabs.condizione')}" />
+					<tab label="${c:l('SchedaFisioForm.tabs.patologie')}" />
+					<tab label="${c:l('SchedaFisioForm.tabs.progetto1')}" />
+					<tab id="tab_progetto2" label="${c:l('SchedaFisioForm.tabs.progetto2')}" />
+					<tab id="scaleval_tab_fis" label="${c:l('common.panel_scaleval')}" />
+					<tab id="pa_tab" label="${c:l('generic.piani_assistenziali')}" disabled="true" />
+					<tab label="${c:l('SchedaFisioForm.tabs.dimissioni')}" />
+				</tabs>
+				<tabpanels id="tabpanels">
+					<tabpanel>
+						<principale/>
+					</tabpanel>
+					<tabpanel>
+						<situazione/>
+					</tabpanel>	
+					<tabpanel id="tabpanel_condizione">
+						<!-- condizione-->
+					</tabpanel>
+					<tabpanel>
+						<patologie/>
+						<hlayout width="100%" valign="middle"
+							style="text-align:left;margin:1px">
+							<groupbox hflex="100" closable="false">
+								<caption>
+									<div align="left">
+										<label
+											value="${c:l('SchedaFisioForm.patologie.groupbox1')}:">
+										</label>
+									</div>
+								</caption>
+
+								<hlayout width="100%"
+									style="text-align:right">
+									<label hflex="20%"
+										value="${c:l('SchedaFisioForm.patologie.decorso')}:" />
+									<caribelcombobox hflex="30%"
+										db_name="skf_decorso_pat" id="cbx_decorso" />
+									<label hflex="50%" />
+								</hlayout>
+							</groupbox>
+						</hlayout>
+					</tabpanel>
+					<tabpanel>
+						<progetto1/>
+					</tabpanel>		
+					<tabpanel id="tabpanel_progetto2">
+						<!-- progetto2 -->
+					</tabpanel>				
+					<tabpanel id="tabpanel_scale">
+					<!-- scaleval  -->
+					</tabpanel>	
+					<tabpanel id="tabpanel_pa" style="padding:0px;text-align: left;" >
+					</tabpanel>
+					<tabpanel>
+						<dimissioni/>
+					</tabpanel>			
+				</tabpanels>
+			</tabbox>
+
+		</vlayout>
+	</vlayout>
+
+</window>

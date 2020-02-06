@@ -1,0 +1,98 @@
+<window title="${c:l('contatto_palliat_grid.titolo')}"
+	apply="it.caribel.app.sinssnt.controllers.storico_referente.StoricoPalliativistaReferenteGridCtrl"
+	sclass="asterOverlappedWindow" id="pallitivistaReferente"
+	height="${c:l('style.windowGrid.overlapped.height')}" sizable="true"
+	closable="true" mode="overlapped" position="center" border="normal">
+
+	<vlayout>
+		<vlayout spacing="0px" width="100%">
+
+			<hlayout valign="middle" width="100%">
+				<label hflex="20%"
+					value="${c:l('riepilogo.storico.medico.referente.cartella')}:"
+					visible="false" />
+				<caribeltextbox hflex="20%" readonly="true"
+					id="n_cartella" db_name="n_cartella" visible="false" />
+				<label hflex="5%" value="" visible="false"></label>
+				<label hflex="15%"
+					value="${c:l('riepilogo.storico.medico.referente.operatore')}:"
+					visible="false" />
+				<caribeltextbox hflex="35%" readonly="true"
+					id="JLabelCognomeOp" db_name="JLabelCognomeOp" visible="false" />
+				<label hflex="5%" value=""></label>
+			</hlayout>
+
+			<hlayout valign="middle" width="100%">
+				<label hflex="20%"
+					value="${c:l('riepilogo.storico.medico.referente.contatto')}:"
+					visible="false" />
+				<caribeltextbox hflex="20%" readonly="true"
+					id="n_contatto" db_name="n_contatto" visible="false" />
+				<label hflex="5%" value="" visible="false"></label>
+				<label hflex="15%"
+					value="${c:l('riepilogo.storico.medico.referente.assistito')}:"
+					visible="false" />
+				<caribeltextbox hflex="35%" readonly="true"
+					id="JLabelAssistito" db_name="JLabelAssistito" visible="false" />
+				<label hflex="5%" value="" visible="false"></label>
+			</hlayout>
+
+			<!-- <caribelPaging /> -->
+			<hlayout width="100%">
+				<caribellistbox rows="15" hflex="true">
+					<listhead sizable="true">
+						<caribellistheader db_name="skm_medico_da"
+							width="15%"
+							label="${c:l('schedaPalliat.grigliaStorico.dataInizio')}" />
+						<caribellistheader db_name="skm_medico"
+							width="55%"
+							label="${c:l('schedaPalliat.grigliaStorico.medicoReferente')}" />
+						<caribellistheader db_name="zona_operatore"
+							width="30%" label="${c:l('schedaPalliat.grigliaStorico.zona')}" />
+					</listhead>
+				</caribellistbox>
+			</hlayout>
+
+			<hlayout style="margin-top: -1px;" hflex="true"
+				width="100%">
+				<caribelGridFormMenuHoriz />
+			</hlayout>
+
+			<hlayout width="100%">
+				<groupbox style="margin-top: -1px;" hflex="true"
+					closable="false">
+					<vlayout hflex="true" vflex="true" id="myForm"
+						sclass="asterLayout">
+
+						<hlayout>
+							<label hflex="20%"
+								value="${c:l('schedaPalliat.grigliaStorico.dataInizioIncarico')}" />
+							<caribeldatebox id="skm_medico_da"
+								hflex="20%" db_name="skm_medico_da" required="true"
+								constraint="no future" />
+							<caribeltextbox hflex="20%" readonly="true"
+								id="keyCartella" db_name="n_cartella" visible="false" />
+							<caribeltextbox hflex="20%" readonly="true"
+								id="keyContatto" db_name="n_contatto" visible="false" />
+							<label hflex="60%" />
+						</hlayout>
+						<hlayout>
+							<label hflex="20%"
+								value="${c:l('schedaPalliat.grigliaStorico.medicoReferente')}" />
+							<caribelSearch hflex="67%" required="true"
+								hflex_cod="25%" hflex_descr="75%" id_cod="codMedicoReferente"
+								id_descr="desc_medico" db_name_cod="skm_medico" db_name_descr=""
+								id="cs_medicoReferente"
+								ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl" />
+							<label hflex="13%" />
+						</hlayout>
+					</vlayout>
+
+				</groupbox>
+
+			</hlayout>
+
+		</vlayout>
+
+	</vlayout>
+</window>

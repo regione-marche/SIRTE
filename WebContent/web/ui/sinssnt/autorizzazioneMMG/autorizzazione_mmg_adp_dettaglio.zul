@@ -1,0 +1,105 @@
+<vlayout id="autorizzazioneMMGAdiDettaglio" vflex="true">
+	<vlayout hflex="1" spacing="3px"
+		sclass="asterLayout">
+		<hlayout width="100%" style="text-align:left;margin:1px">
+			<groupbox hflex="100" closable="false">
+				<caption>
+					<div> 
+						<label
+							value="${c:l('autorizzazionemmg.adi.dettaglio.proposta.attivazione')}">
+						</label>
+					</div>
+				</caption>
+				
+				
+			<hlayout width="100%" style="text-align:left;margin:1px"> 
+				<groupbox hflex="100" closable="false">
+					<caption>
+						<div> 
+							<label
+								value="${c:l('autorizzazionemmg.adp.dettaglio.titolo.deambulante')}">
+							</label>
+						</div>
+					</caption>
+					<hlayout width="100%" style="text-align:left">
+						<caribelcheckbox hflex="4%" db_name="skadp_attiv1" value="N" />
+						<label	value="${c:l('autorizzazionemmg.adp.dettaglio.anziani.deficit')}"	hflex="21%" />
+						<caribelcheckbox hflex="4%" db_name="skadp_attiv2"			value="N" />
+						<label	value="${c:l('autorizzazionemmg.adp.dettaglio.portatori.protesi')}" hflex="21%" />
+						<caribelcheckbox hflex="4%" db_name="skadp_attiv3" id="skadp_attiv3" value="N" />
+						<label	value="${c:l('autorizzazionemmg.adp.dettaglio.altro1')}" hflex="4%" />
+						<caribeltextbox hflex="41%" db_name="skadp_attiv3_spec"  id="skadp_attiv3_spec" readonly="true" />
+					</hlayout>
+				</groupbox>
+			</hlayout>
+				
+		<hlayout width="100%" style="text-align:left;margin:1px"> 
+				<groupbox hflex="100" closable="false">
+					<caption>
+						<div> 
+							<label
+								value="${c:l('autorizzazionemmg.adp.dettaglio.titolo.trasporto')}">
+							</label>
+						</div>
+					</caption>
+					<hlayout width="100%" style="text-align:left">
+						<caribelcheckbox hflex="4%" db_name="skadp_attiv4" value="N" />
+						<label	value="${c:l('autorizzazionemmg.adp.dettaglio.paziente.autosufficiente')}"	hflex="21%" />
+						<caribelcheckbox hflex="4%" db_name="skadp_attiv5"			value="N" />
+						<label	value="${c:l('autorizzazionemmg.adp.dettaglio.pazinete.piano')}" hflex="31%" />
+						<label	value="" hflex="40%" />
+					</hlayout>
+				</groupbox>
+			</hlayout>
+			
+			<hlayout width="100%" style="text-align:left;margin:1px"> 
+				<groupbox hflex="100" closable="false">
+					<caption>
+						<div> 
+							<label
+								value="${c:l('autorizzazionemmg.adp.dettaglio.titolo.gravi.pat')}">
+							</label>
+						</div>
+					</caption>
+					<hlayout width="100%" style="text-align:left">
+						<caribelcheckbox hflex="4%" db_name="skadp_attiv6" value="N" />
+						<label	value="${c:l('autorizzazionemmg.adp.dettaglio.insufficienza.cardiaca')}"	hflex="21%" />
+						<caribelcheckbox hflex="4%" db_name="skadp_attiv7"			value="N" />
+						<label	value="${c:l('autorizzazionemmg.adp.dettaglio.insufficienza.respiratoria')}" hflex="21%" />
+						<caribelcheckbox hflex="4%" db_name="skadp_attiv8" value="N" />
+						<label	value="${c:l('autorizzazionemmg.adp.dettaglio.arteriopatia')}"	hflex="21%" />
+						<caribelcheckbox hflex="4%" db_name="skadp_attiv9" value="N" />
+						<label	value="${c:l('autorizzazionemmg.adp.dettaglio.gravi.artropie')}"	hflex="21%" />
+					</hlayout>
+					
+					<hlayout width="100%" style="text-align:left">
+						<caribelcheckbox hflex="4%" db_name="skadp_attiv10"			value="N" />
+						<label	value="${c:l('autorizzazionemmg.adp.dettaglio.cerebropatici')}" hflex="21%" />
+						<caribelcheckbox hflex="4%" db_name="skadp_attiv11" value="N" />
+						<label	value="${c:l('autorizzazionemmg.adp.dettaglio.paraplegici')}"	hflex="21%" />
+						<label	value="" hflex="50%" />
+					</hlayout>
+				</groupbox>
+			</hlayout>	 
+				 
+				 <hlayout width="100%" style="text-align:left;margin:1px"> 
+				<groupbox hflex="100" closable="false" vflex="true">
+					<caption>
+						<div> 
+							<label
+								value="${c:l('autorizzazionemmg.adp.dettaglio.titolo.altro')}">
+							</label>
+						</div>
+					</caption>
+					<hlayout width="100%" style="text-align:left">
+						<caribelcheckbox hflex="4%" db_name="skadp_attiv12" id="skadp_attiv12" value="N" />
+						<label	value="${c:l('autorizzazionemmg.adp.dettaglio.altro2')}" hflex="6%" />
+						<caribeltextbox hflex="90%" db_name="skadp_attiv12_spec"  id="skadp_attiv12_spec" readonly="true" />
+					</hlayout>
+				</groupbox>
+			</hlayout>	 
+			</groupbox>
+		</hlayout>
+		
+	</vlayout>
+</vlayout>

@@ -1,0 +1,127 @@
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+
+<vlayout id="menu_left_inf">
+		
+	<zscript>
+		import it.caribel.app.sinssnt.controllers.contattoGenerico.ContattoGenFormCtrl;
+		import it.caribel.app.sinssnt.controllers.diario.DiarioGridCtrl;
+		import it.caribel.app.sinssnt.controllers.intolleranzeAllergie.IntolleranzeAllergieGridCRUDCtrl;
+		import it.caribel.app.sinssnt.controllers.segnalazione.SegnalazioneGridCRUDCtrl;
+		import it.caribel.app.webhs.controllers.allegati.AllegatiGridCtrl;
+		
+		String uriContatto = ContattoGenFormCtrl.CTS_FILE_ZUL;
+		String uriDiario   = DiarioGridCtrl.myPathFormZul;
+		String uriIntolleranzeAllergie = IntolleranzeAllergieGridCRUDCtrl.myPathFormZul;;
+		String uriSegnalazione	       = SegnalazioneGridCRUDCtrl.myPathFormZul;;
+		String uriDocumenti		       					 = AllegatiGridCtrl.myPathFormZul;;
+		
+	</zscript>		
+
+	<vlayout>
+		<buttonmenucontainer
+		id="btn_contattoGenForm"
+		idForm="contattoGenForm"
+		label="${c:l('common.scheda.corrente')}"
+		pathZulForm="${uriContatto}"
+		/>
+		<buttonmenucontainer 
+		id="btn_contattoGenGridSto"
+		idForm="contattoGenGridSto"
+		label="${c:l('common.scheda.storico')}"
+		pathZulForm="/web/ui/sinssnt/contatto_generico/contatto_genGrid.zul"
+		/>
+		<buttonmenucontainer
+		id="btn_diarioForm"
+		idForm="diarioForm"
+		label="${c:l('diario.formTitle')}"
+		pathZulForm="${uriDiario}"
+		/>
+		<buttonmenucontainer 
+		id="btn_contattoInfGridAltri"
+		idForm="contattoInfGridAltri"
+		label="${c:l('menu.contatto.inf.altri')}"
+		pathZulForm="/web/ui/sinssnt/contatto_generico/contatto_genGrid.zul"
+		visible="false"
+		/>	
+		<buttonmenucontainer
+		id="btn_infAccertamentoForm"
+		idForm="infAccertamentoForm"
+		label="${c:l('menu.contatto.inf.accertamento')}"
+		pathZulForm=""
+		/>
+		<buttonmenucontainer
+		id="btn_infStatoSaluteForm"
+		idForm="infStatoSaluteForm"
+		label="${c:l('menu.contatto.inf.stato_salute')}"
+		pathZulForm=""
+		/>
+		<buttonmenucontainer
+		id="btn_infCuteMucoseForm"
+		idForm="infCuteMucoseForm"
+		label="${c:l('menu.contatto.inf.cute_mucose')}"
+		pathZulForm=""
+		/>
+		<buttonmenucontainer
+		id="btn_infScaleTestForm"
+		idForm="infScaleTestForm"
+		label="${c:l('menu.contatto.inf.scale_test')}"
+		pathZulForm=""
+		/>
+		<buttonmenucontainer
+		id="btn_infAccessiForm"
+		idForm="infAccessiForm"
+		label="${c:l('menu.contatto.inf.accessi')}"
+		pathZulForm="/web/ui/sinssnt/interventi/accessiPrestazioniForm.zul"
+		/>
+		<buttonmenucontainer
+		id="btn_infEventiForm"
+		idForm="infEventiForm"
+		label="${c:l('menu.contatto.inf.eventi')}"
+		pathZulForm=""
+		/>
+		<buttonmenucontainer
+		id="btn_infPianoAssistForm"
+		idForm="pianoAssistForm"
+		label="${c:l('menu.contatto.inf.piano_assist')}"
+		pathZulForm="/web/ui/sinssnt/piano_assistenziale/pianoAssistenzialeGrid.zul"
+		/>
+		<buttonmenucontainer
+		id="btn_intolleranzeAllergieForm"
+		idForm="intolleranzeAllergieForm"
+		label="${c:l('menu.contatto.medico.intolleranze.allergie')}"
+		pathZulForm="${uriIntolleranzeAllergie}"
+		/>
+		<buttonmenucontainer
+		id="btn_segnalazioniForm"
+		idForm="segnalazioniForm"
+		label="${c:l('menu.contatto.medico.segnalazione')}"
+		pathZulForm="${uriSegnalazione}"
+		/>
+		<buttonmenucontainer
+		id="btn_infascicolo"
+		idForm="infascicolo"
+		label="${c:l('menu.contatto.inf.fascicolo')}"
+		pathZulForm=""
+		/>
+		<buttonmenucontainer
+		id="btn_infFlussiSiadForm"
+		idForm="flussiSiadForm"
+		label="${c:l('menu.contatto.inf.flussi.siad')}"
+		pathZulForm="/web/ui/sinssnt/flussi/flussiSiadForm.zul"
+		/>
+		<buttonmenucontainer 
+		id="btn_infFlussiStoForm"
+		idForm="flussiStoForm"
+		label="${c:l('menu.contatto.inf.flussi.storico')}"
+		pathZulForm=""
+		/>
+		<buttonmenucontainer
+		id="btn_documenti"
+		idForm="documenti"
+		label="${c:l('menu.contatto.documenti')}"
+		pathZulForm="${uriDocumenti}"
+		/>
+	</vlayout>	
+	
+
+</vlayout>

@@ -1,0 +1,164 @@
+<window 
+	id="listaAttivitaGrid"
+	title="${c:l('listaAttivitaGrid.formTitle')}"
+	apply="it.caribel.app.sinssnt.controllers.lista_attivita.ListaAttivitaGridCtrl"
+	width="100%" vflex="true" style="overflow:auto"
+	border="normal">
+<zscript><![CDATA[
+	void dadataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}
+	void adataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}
+	
+	void deselectCheckAllAttiv(){
+		checkAllAttiv.setChecked(false);
+	}   
+	
+	void selectDeselectAllDest(){	
+		checkDestMeStesso.setChecked(checkAllDest.isChecked());
+		checkDestAltrui.setChecked(checkAllDest.isChecked());
+	}
+	
+	void deselectCheckAllDest(){
+		checkAllDest.setChecked(false);
+	}
+]]>
+</zscript>
+
+	<vlayout vflex="true" spacing="0px">
+		<caribelGridMenu visible_btn_print="true"
+			visible_btn_transfer="false" visible_btn_new="false"
+			visible_btn_open="true" visible_btn_find="true" />
+		<vlayout width="100%" vflex="true" spacing="0px">
+			<hlayout>
+			<groupbox id="gb3" mold="3d" hflex="1" open="true">
+				<attribute name="onOpen"><![CDATA[
+						arrow.setSclass("open-" + self.isOpen());
+						caribellb.invalidate();
+				]]>
+				</attribute>
+				<caption width="100%">
+					<div id="arrow" class="open-${self.parent.parent.open}" style="">
+					<label style="position: relative; top: -5px;"
+									value="${c:l('common.filtriDiRicerca')}">
+					</label>
+					 </div>
+				</caption>
+				
+				<hlayout width="100%" 
+					valign="middle"
+					style="text-align:left;margin:1px">
+					<groupbox hflex="5" closable="false">
+						<caption>
+							<div>
+								<label
+									value="${c:l('listaAttivitaGrid.eventi')}">
+								</label>
+							</div>
+						</caption>
+						<hbox>
+							<label
+								value="${c:l('listaAttivitaGrid.data.da')}:" />
+							<caribeldatebox id="dadata" required="false"
+								onChange="dadataChanged()" />
+							<label value="${c:l('listaAttivitaGrid.data.a')}:" />
+							<caribeldatebox id="adata" required="false"
+								onChange="adataChanged()" />
+						<!-- 
+						<caribelcheckbox id="checkOrdinaPerData"
+								label="${c:l('listaAttivitaGrid.attivita.ordinamento.cognome.nome')}"
+								checked="false"/>
+						 -->
+						</hbox>
+					</groupbox>
+
+					<groupbox hflex="5" closable="false">
+						<caption>
+							<div>
+								<label id="attivitaDestinatari"
+									value="${c:l('listaAttivitaGrid.attivita.dest')}">
+								</label>
+								<!-- 
+								<caribelcheckbox id="checkAllDest" checked="true" onCheck="selectDeselectAllDest()" />
+								 -->
+							</div>
+						</caption>
+						<hbox>
+						
+						
+						<div hflex="55%" align="left">
+							<caribelradiogroup id="metodoRicerca" db_name="metodo"  forward="onChangeScheltaSede">
+									<radio label="${c:l('lista.assistiti.filtro.ricerca.distretto')}" value="dist" selected="true"/>
+									<radio label="${c:l('lista.assistiti.filtro.ricerca.sede')}" value="sede" />
+									<radio id="rich_operatore" label="${c:l('lista.assistiti.filtro.ricerca.operatore')}" value="oper" />
+							</caribelradiogroup>
+						</div>	
+						
+						<!-- 
+							<caribelcheckbox id="checkDestMeStesso"
+								label="${c:l('listaAttivitaGrid.attivita.dest.me_stesso')}"
+								checked="true" onCheck="deselectCheckAllDest()" />
+							<caribelcheckbox id="checkDestAltrui"
+								label="${c:l('listaAttivitaGrid.attivita.dest.altri')}"
+								checked="true" onCheck="deselectCheckAllDest()" />
+						 -->
+
+						</hbox>
+					</groupbox>
+				</hlayout>
+				
+				<hlayout width="100%" 
+					valign="middle"
+					style="text-align:left;margin:1px">
+					<groupbox hflex="true" closable="false">
+						<caption>
+							<div>
+								<label
+									value="${c:l('listaAttivitaGrid.attivita.tutte')}">
+								</label>
+								<caribelcheckbox id="checkAllAttiv"
+									checked="true" />
+							</div>
+						</caption>
+						<groupbox hflex="true" closable="false" id="box_attivita" contentStyle="border:0">
+						</groupbox>
+					</groupbox>
+				</hlayout>     
+				
+				 <hlayout width="100%" 
+					valign="middle" style="text-align:left;margin:1px">
+					<groupbox hflex="5" closable="false">
+						<caption>
+							<div>
+								<label
+									value="${c:l('listaAttivitaGrid.ordinamento.tipo')}">
+								</label>
+							</div>
+						</caption>
+						<hbox>
+							<label value="${c:l('listaAttivitaGrid.fonte')}:" />
+							<caribelradiogroup id="ordinamentoFonte">
+								<radio id="si" value="S" label="${c:l('listaAttivitaGrid.fonte.s')}" />
+								<radio id="no" value="N" label="${c:l('listaAttivitaGrid.fonte.n')}"  checked="true" />	
+							</caribelradiogroup>
+						
+							<caribelcheckbox id="checkOrdAssistito"
+								label="${c:l('listaAttivitaGrid.ordinamento.assistito')}"
+								checked="false" />
+							<caribelcheckbox id="checkOrdData"
+								label="${c:l('listaAttivitaGrid.ordinamento.data')}"
+								checked="false" />
+						
+						</hbox>
+					</groupbox>   
+				</hlayout>
+				    
+			</groupbox>
+			</hlayout>
+			<caribelPaging pageSize="18"/>
+			<caribellistbox vflex="true" hflex="true" />
+		</vlayout>
+	</vlayout>
+</window>

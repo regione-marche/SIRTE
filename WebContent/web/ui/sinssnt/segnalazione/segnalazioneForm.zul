@@ -1,0 +1,111 @@
+<window title="${c:l('segnalazione.formTitle')}" id="segnalazioniForm"
+	apply="it.caribel.app.sinssnt.controllers.segnalazione.SegnalazioneGridCRUDCtrl"
+	height="${c:l('style.windowGrid.overlapped.height')}"
+	vflex="true" 
+	border="normal">
+
+	<vlayout id="segnalazioni">
+		<vlayout spacing="0px">
+			
+			<hlayout hflex="true">
+				<caribelintbox hflex="15%" readonly="true" 
+					id="key_cartella" db_name="n_cartella" visible="false"/>
+					<label hflex="85%" value=""/>
+			</hlayout>
+			
+			<hlayout hflex="true">
+				<caribellistbox  showBtnDeleteInRow="true" showBtnEditInRow="true" 
+					rows="6" db_name="griglia" id="griglia" hflex="true" sizedByContent="true">
+					<listhead sizable="true">
+						<caribellistheader db_name="data_segnalazione"
+							label="${c:l('segnalazione.tb.data_segnalazione')}" hflex="15%" />
+						<caribellistheader db_name="tipo_operatore_descr"
+							label="${c:l('segnalazione.tb.tipo.operatore')}" hflex="15%"  />
+						<caribellistheader db_name="cod_operatore_descr"
+							label="${c:l('segnalazione.tb.operatore')}" hflex="20%"  />
+						<caribellistheader db_name="vista_so_descr"
+							label="${c:l('segnalazione.stato.segnalazione.tb')}" hflex="10%"  />
+						<caribellistheader db_name="oggetto"
+							label="${c:l('segnalazione.tb.oggetto')}" hflex="15%" maxlength="15"/>
+						<caribellistheader db_name="segnalazione"
+							label="${c:l('segnalazione.tb.segnalazione')}" hflex="25%" maxlength="25" />
+					</listhead>
+				</caribellistbox>
+			</hlayout>
+			
+			<hlayout vflex="min" >
+				<caribelGridFormMenuHoriz />
+			</hlayout>
+			
+			<hlayout width="100%">
+				<groupbox style="margin-top: -1px;" hflex="100%" closable="false">
+					<vlayout hflex="true" vflex="true" id="myForm" sclass="asterLayout" >
+						<hlayout hflex="true">
+							<label hflex="20%" value="${c:l('segnalazione.data_segnalazione')}:" />
+							<caribeldatebox hflex="15%" id="key_data"
+								db_name="data_segnalazione"  required="true" constraint="no future" />
+							
+							<caribelintbox hflex="15%" readonly="true" id="idskso" db_name="id_skso" visible="false"/>
+							<caribeltextbox hflex="15%" readonly="true" id="tipoOperatore" db_name="tipo_operatore" visible="false"/>
+							<caribeltextbox hflex="15%" readonly="true" id="codOperatore" db_name="cod_operatore" visible="false"/>
+							<!-- 
+							<caribeltextbox hflex="15%" readonly="true" id="vista_so" db_name="vista_so" visible="false"/>
+							 -->
+							<label hflex="65%" value=""></label>		
+						</hlayout>
+						<!-- 
+						<hlayout width="100%">
+				 			<label hflex="20%" value="${c:l('segnalazione.tipo.operatore')}:"/>
+				 			<caribelcombobox hflex="40%" db_name="tipo_operatore"  id="cbx_tipo_operatore" 
+				 				required="true" forward="onChange=onChangeTipoOperatore" />
+							<label hflex="40%" value=""></label>	
+						</hlayout>
+						<hlayout>
+							<label hflex="20%" value="${c:l('segnalazione.operatore')}:" />
+							<caribelSearch id="cs_cod_operatore" hflex="60%" 
+								db_name_cod="cod_operatore" db_name_descr="cod_operatore_descr"
+								id_cod="cod_operatore" id_descr="cod_operatore_descr"
+								ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl" />
+							<label hflex="20%" />
+						</hlayout>
+						 -->
+						 
+						 <hlayout id="segnalazioni_contatti" >
+						 	<label hflex="20%"  value="${c:l('segnalazione.stato.segnalazione')}:" />				
+								<div hflex="20%" align="left">
+									<caribelradiogroup id="vista_so" db_name="vista_so">
+										<radio value="1" label="${c:l('elenco.segnalazione.stato.num_1')}"  checked="true" />
+										<radio value="2" label="${c:l('elenco.segnalazione.stato.num_2')}"/>	
+									</caribelradiogroup>
+								</div>
+							<label hflex="60%" value=""/>							 
+						 </hlayout>
+						 
+						 <hlayout id="container_so">
+						 	<label hflex="20%" value="" />
+						 	<button id="btn_container_so" label="${c:l('segnalazione.bnt.cambia.stato.senza.stato')}" hflex="60%" />
+							<label hflex="20%" value=""/>							 
+						 </hlayout>
+						 
+ 						<hlayout>
+ 								<label hflex="20%" value="${c:l('segnalazione.oggetto')}:" />
+ 								<caribeltextbox hflex="78%" db_name="oggetto" />
+							<label hflex="2%" value=""/>
+						</hlayout>
+						 <hlayout>
+ 							 <label hflex="20%" value="${c:l('segnalazione.segnalazione')}:" />
+							 <caribeltextbox hflex="78%" db_name="segnalazione" 
+							 	maxlength="2000"  multiline="true" rows="6" sclass="asterTextArea"/>
+							<label hflex="2%" value=""></label>	
+						</hlayout>	
+						
+						<hlayout>
+							<label hflex="100%" value=""/>
+						</hlayout> 
+					</vlayout>
+					
+				</groupbox>	
+			</hlayout>
+		</vlayout>
+	</vlayout>
+</window>

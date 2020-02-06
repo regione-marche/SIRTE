@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+<!--
+	01/07/2002 - R. Bonsignori
+	- Template di stampa adatto per documenti tabellari su carta A4
+	  con orientamento verticale.
+
+         1         2         3         4         5         6         7         8
+12345678901234567890123456789012345678901234567890123456789012345678901234567890
+-->
+
+<!-- mfo:section.start="layout" rem="IMPOSTAZIONI DI PAGINA" -->
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="simple"
+        page-height="29.7cm"	page-width="21cm"
+        margin-top="1cm"	margin-bottom="1cm"
+        margin-left="1cm"	margin-right="1cm" >
+      <fo:region-body margin-top="1cm" margin-bottom="1cm"/>
+      <fo:region-before extent="1cm"/>
+      <fo:region-after extent="1cm"/>
+    </fo:simple-page-master>
+  </fo:layout-master-set>
+
+  <fo:page-sequence master-name="simple">
+
+    <!-- TITOLO DI TESTA -->
+    <fo:static-content flow-name="xsl-region-before">
+      <fo:table font-size="10pt" width="auto">
+        <fo:table-column column-width="16cm"/>
+        <fo:table-column column-width="3cm"/>
+        <fo:table-body>
+          <fo:table-row height="10pt">
+            <fo:table-cell text-align="start">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >ELENCO SINTETICO ASSISTITI PER MEDICO dal #data_inizio# al #data_fine# (contatti)</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="end">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >Pag. <fo:page-number/></fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+    </fo:static-content>
+
+    <!-- TITOLO DI PIEDE -->
+    <fo:static-content flow-name="xsl-region-after">
+      <fo:table font-size="8pt" width="auto" space-before.optimum="5mm">
+        <fo:table-column column-width="14cm"/>
+        <fo:table-column column-width="5cm"/>
+        <fo:table-body>
+          <fo:table-row height="10pt">
+            <fo:table-cell text-align="start">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >#txt#</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="end">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >elaborato del #data_stampa# (ele_assmedsint.fo)</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body">
+<!-- mfo:section.end -->
+
+<!-- OPERATORE  -->
+
+<!--mfo:section.start="operatore" -->
+	<fo:block font-size="10pt"
+                    font-weight="bold"
+		    font-family="sans-serif"
+		    line-height="12pt"
+                    background-color="white"
+                    color="black"
+                    text-align="start"
+	            padding-top="0.2cm"
+                    padding-bottom="0.1mm">
+	Medico : #descrizione_operatore#
+	</fo:block>
+<!--mfo:section.end -->
+
+<!-- FINE OPERATORE ETC... -->
+
+<!-- OPERATORE ZONA DISTRETTO COMUNE -->
+
+<!--mfo:section.start="zona" -->
+	<fo:block font-size="10pt"
+                    font-weight="bold"
+		    font-family="sans-serif"
+		    line-height="12pt"
+                    background-color="white"
+                    color="black"
+                    text-align="start"
+	            padding-top="0.2cm"
+                    padding-bottom="0.1mm">
+	Zona : #descrizione_zona# - Distretto : #des_distr# - #tipologia# : #descrizione#
+	</fo:block>
+<!--mfo:section.end -->
+
+<!-- FINE OPERATORE ETC... -->
+
+<!-- mfo:section.start="iniziotab" rem="TITOLI DELLA TABELLA" -->
+    <!-- TITOLO RIPETITIVO DI TABELLA -->
+      <fo:table width="auto" table-omit-header-at-break="false">
+         <fo:table-column column-width="2cm"/>
+         <fo:table-column column-width="15cm"/>
+         <fo:table-column column-width="2cm"/>
+        <fo:table-header font-weight="bold" font-size="10pt">
+          <fo:table-row height="10pt" background-color="rgb(200,200,200)">
+            <fo:table-cell text-align="center"
+              border-width="1pt" border-style="solid" border-color="rgb(200,200,200)">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >Cartella</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="start"
+              border-width="1pt" border-style="solid" border-color="rgb(200,200,200)">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >Cognome e Nome</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="center"
+              border-width="1pt" border-style="solid" border-color="rgb(200,200,200)">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >Nascita</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-header>
+
+        <!-- INIZIO DI TABELLA -->
+        <fo:table-body>
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="tabella" rem="RIGA RIPETITIVA" -->
+          <fo:table-row height="8pt" font-size="8pt" >
+            <fo:table-cell text-align="end"
+              border-width="1pt" border-style="solid" border-color="rgb(200,200,200)">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >#cartella#</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="start"
+              border-width="1pt" border-style="solid" border-color="rgb(200,200,200)">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >#assistito#</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="center"
+              border-width="1pt" border-style="solid" border-color="rgb(200,200,200)">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >#data_nasc#</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="finetab" rem="TERMINAZIONE TABELLA" -->
+        </fo:table-body>
+      </fo:table>
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="totale" -->
+	<fo:block font-size="10pt"
+		    space-before.optimum="5pt"
+		    space-after.optimum="10pt"
+		    font-family="sans-serif"
+		    line-height="10pt"
+                    background-color="white"
+                    color="black"
+                    text-align="start"
+		    start-indent="1mm" end-indent="1mm">
+	#descrizione# #totale#
+	</fo:block>
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="totaleMed" -->
+	<fo:block font-size="10pt"
+		    space-before.optimum="5pt"
+		    space-after.optimum="10pt"
+		    font-family="sans-serif"
+		    line-height="10pt"
+                    background-color="white"
+                    color="black"
+                    text-align="start"
+		    start-indent="1mm" end-indent="1mm">
+	#descrizioneTotMed# #totaleMed#
+	</fo:block>
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="messaggio" rem="MESSAGGIO DI ERRORE" -->
+      <fo:block font-size="12pt"
+        font-family="sans-serif"	font-weight="bold"
+        line-height="10pt"		background-color="white"
+        color="black"			text-align="center"
+        padding-top="3pt"
+      >NESSUNA INFORMAZIONE REPERITA</fo:block>
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="taglia" -->
+    <fo:block break-after="page"></fo:block>
+<!-- mfo:section.end  -->
+
+<!-- mfo:section.start="finale" rem="TERMINAZIONE DOCUMENTO" -->
+    </fo:flow> <!-- closes the flow element-->
+  </fo:page-sequence> <!-- closes the page-sequence -->
+<!-- mfo:section.end -->
+
+</fo:root>

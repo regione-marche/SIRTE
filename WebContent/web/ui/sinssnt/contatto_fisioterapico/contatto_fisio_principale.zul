@@ -1,0 +1,105 @@
+<vlayout id="principaleForm" >
+	<vlayout hflex="1" spacing="3px" sclass="asterLayout">
+ 		<hlayout  width="100%" >
+ 			<label value="${c:l('SchedaFisioForm.principale.data.apertura')}:" hflex="20%" id="lb_skf_data" />
+			<caribeldatebox id="skf_data" hflex="15%" db_name="skf_data" required="true" forward="onBlur=onBlurDataApertura()"/>
+			<label hflex="41%" id="label_prima_btn_accessi"></label>
+			<button id="btn_scheda_so" label="${c:l('SchedaInfForm.principale.SchedaSO')}" hflex="24%" />			
+			<!-- 
+			<label hflex="0.5%" id="label_between_btn_accessi"></label>
+			<button id="btn_accessi" 
+				label="${c:l('contatto.medico.anamnesi.accessi')}" hflex="24.5%"
+				forward="onAccessi">
+			</button>
+			 -->
+		</hlayout>
+ 		
+ 		<hlayout width="100%" visible="false">
+ 			<label value="${c:l('SchedaFisioForm.principale.descontatto')}:" hflex="20%" />
+			<caribeltextbox hflex="56%" id="skf_descr_contatto" required="false"
+				db_name="skf_descr_contatto" maxlength="80" />
+			<caribeldatebox  hflex="15%" id="pr_data" db_name="pr_data" visible="false"/>
+			<label hflex="24%"></label>
+		</hlayout>
+ 		
+ 		<hlayout width="100%" >
+			<label hflex="20%"
+				value="${c:l('SchedaFisioForm.principale.operatoreReferente')}:" />
+			<caribelSearch hflex="56%" required="true" db_name_cod="skf_fisiot" id="cs_operatore_referente"
+				db_name_descr="des_operat_refe" id_cod="skf_fisio" id_descr="skf_fisio_desc"
+				ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl" />
+			<label hflex="3%" value="${c:l('SchedaFisioForm.principale.operatoreReferente.dal')}:" />
+				
+			<caribeldatebox hflex="10%" required="true" db_name="skf_fisiot_da" id="skf_fisiot_da" constraint="no future"/>
+			<button id="btn_storico" label="${c:l('Contatti.buttonOperatoreRef')}" hflex="11%" forward="onStorico"
+			image="/web/img/nurse16x16.png" tooltiptext="${c:l('Contatti.buttonOperatoreRef_descrizione')}">
+			</button>
+		</hlayout>
+		
+		<hlayout width="100%" >
+			<label hflex="20%"
+				value="${c:l('SchedaFisioForm.principale.presidio')}:" />
+			<caribelSearch hflex="56%" db_name_cod="skf_cod_presidio"  
+				id="cs_presidio" readonly="true"
+				db_name_descr="desc_presidio" id_cod="cod_presidio" id_descr="presidio_descr"
+				ctrl="it.caribel.app.common.controllers.presidi.PresidiSearchCtrl"/>
+			<label hflex="24%"></label>
+		</hlayout>		
+		<hlayout>
+			<label hflex="20%" value="${c:l('SchedaFisioForm.principale.riabilitazione')}:" />
+			<caribelcombobox hflex="56%" db_name="skf_domic_cous" id="cbx_riabilitazione" />
+			<label hflex="24%"></label>			
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('SchedaFisioForm.principale.provenienza')}:" />
+			<caribelcombobox hflex="56%" db_name="skf_provenienza" id="cbx_provenienza" />
+			<label hflex="24%"></label>			
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('SchedaFisioForm.principale.medico')}:" />
+			<caribelcombobox hflex="56%" db_name="skf_medico" id="cbx_medico" />
+			<label hflex="24%"></label>			
+		</hlayout>
+		<hlayout width="100%" >
+ 			<label hflex="20%" value="${c:l('SchedaFisioForm.principale.desmedico')}:" />
+			<caribeltextbox hflex="56%" id="skf_medico_altro"
+				db_name="skf_medico_altro" maxlength="80" />
+			<label hflex="24%"></label>
+		</hlayout>
+		
+		<hlayout width="100%" >
+ 			<label hflex="20%" value="${c:l('SchedaFisioForm.principale.note')}:"  />
+			<caribeltextbox hflex="56%" id="skf_note" 
+				db_name="skf_note" maxlength="2000"  multiline="true" rows="2" sclass="asterTextArea"/>
+			<label hflex="24%"></label>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('RichiestaMMG.principale.intensita_ass')}:" />
+			<caribelcombobox hflex="56%" db_name="skf_motivo" id="cbx_motivo" readonly="true" required="true"/>
+			<label hflex="24%"></label>			
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('SchedaFisioForm.principale.utenza')}:" />
+			<caribelcombobox hflex="56%" db_name="skf_tipout" id="cbx_utenza" readonly="true"/>
+			<label hflex="24%"></label>			
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('SchedaFisioForm.principale.tipologia')}:" id="label_tipologia"/>
+			<caribelcombobox hflex="56%" db_name="skf_tipologia" id="cbx_tipologia" />
+			<label hflex="24%"></label>			
+		</hlayout>
+		
+		<hlayout>
+			<label value=" "></label>
+		</hlayout>
+		
+		<hlayout>	
+			<label hflex="25%"></label>	
+			<!--button id="btn_accessi" label="Accessi" hflex="10%" forward="onAccessi"></button-->
+			<label hflex="20%"></label>	
+			<button id="btn_protesica" label="Protesica" hflex="10%" forward="onProtesica"></button>
+			<label hflex="35%"></label>
+		</hlayout>
+		
+	</vlayout>
+</vlayout>

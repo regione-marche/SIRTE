@@ -1,0 +1,66 @@
+<window id="Banche"
+title="${c:l('bancheForm.formTitle')}" 
+apply="it.caribel.app.common.controllers.banche.BancheFormCtrl" 
+closable="true" sizable="true"
+border="normal"
+position="center"
+width="780px"
+height="300px"
+>
+
+	<vlayout vflex="true">
+
+		<caribelFormMenu />
+ 		<vlayout vflex="true" sclass="asterLayout asterOverflow asterLayoutLastSpace">
+			<hlayout>
+				<label hflex="20%" value="${c:l('banche.codice_abi')}:" />
+				<caribeltextbox focus="true" hflex="30%" id="codice_abi" db_name="ban_codice_abi" isDbKey="true" maxlength="6" required="true" />
+				<label hflex="20%" value="${c:l('banche.codice_cab')}:" />
+				<caribeltextbox focus="true" hflex="30%" id="codice_cab" db_name="ban_cab_sport" isDbKey="true" maxlength="5" required="true" />
+			</hlayout>
+	
+				
+			<hlayout>
+				<label hflex="20%" value="${c:l('bancheForm.indirizzo')}:" />
+				<caribeltextbox hflex="80%" db_name="ban_indirizzo" maxlength="80" required="true" id="indirizzo_ban"/>				
+			</hlayout>
+			
+			<hlayout>
+				<label hflex="20%" value="${c:l('bancheForm.localita')}:" />
+				<caribeltextbox hflex="80%" db_name="ban_localita_sport" maxlength="40" required="false" />				
+			</hlayout>			
+			
+			<hlayout>
+				<label hflex="20%" value="${c:l('bancheForm.frazione')}:" />
+				<caribeltextbox hflex="80%" db_name="ban_frazione_sport" maxlength="40" required="false" />				
+			</hlayout>	
+			
+			<hlayout>
+				<label hflex="20%" value="${c:l('bancheForm.sportello_cap')}:" />
+				<caribeltextbox focus="true" hflex="30%" db_name="ban_cap_sport" maxlength="5" required="false" />
+				<label hflex="20%" value="${c:l('bancheForm.citta')}:" />
+				<caribeltextbox focus="true" hflex="30%" db_name="ban_citta_sport" maxlength="12" required="false" />
+			</hlayout>
+			
+			<hlayout>
+				<label hflex="20%" value="${c:l('bancheForm.cod_cab_banca')}:" />
+				<caribeltextbox focus="true" hflex="30%" db_name="ban_codice_cab" maxlength="5" required="false" />
+				<label hflex="50%" value="" />				
+			</hlayout>
+			
+			<hlayout>
+				<label hflex="20%" value="${c:l('bancheForm.desc_sport')}:" />
+				<caribeltextbox hflex="80%" db_name="ban_descr_sport" maxlength="40" required="false" />				
+			</hlayout>
+		
+			
+			<hlayout>
+				<label hflex="20%" value="${c:l('bancheForm.desc_banca')}:" />
+				<caribeltextbox hflex="80%" db_name="ban_descrizione" maxlength="40" required="false" />				
+			</hlayout>		
+			
+			
+		</vlayout>
+	</vlayout>
+
+</window>

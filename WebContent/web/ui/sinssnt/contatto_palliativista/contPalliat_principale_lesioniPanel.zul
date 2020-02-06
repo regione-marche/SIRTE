@@ -1,0 +1,129 @@
+<vlayout sclass="asterLayout asterOverflow asterLayoutLastSpace" height="100%">
+	
+	<hlayout>
+		<label value="${c:l('schedaPalliat.lesioniPanel.lesioni')}:" hflex="14%"/>
+		
+		<div hflex="30%" style="text-align:left">
+			<caribelradiogroup id="rg_lesioni" db_name="skm_lesioni" >				
+				<radio id="lesioniSi"
+					label="${c:l('schedaPalliat.lesioniPanel.lesioniSi')}" value="S" />				
+				<radio id="lesioniNo"
+					label="${c:l('schedaPalliat.lesioniPanel.lesioniNo')}" value="N" />				
+				<radio id="lesioniNonValutabile"
+					label="${c:l('schedaPalliat.lesioniPanel.lesioniNonValutabile')}"
+					value="0" checked="true" />				
+			</caribelradiogroup>
+		</div>
+		<label hflex="56%"/>
+	</hlayout>
+	
+	<hlayout>
+		<label value="${c:l('schedaPalliat.lesioniPanel.encefalo')}:" hflex="14%"/>
+		<div hflex="30%" style="text-align:left">
+			<caribelradiogroup id="skm_encefalo" db_name="skm_encefalo">
+				<radio id="lesioniEncefaloSi"
+					label="${c:l('schedaPalliat.lesioniPanel.lesioniSi')}" value="S" />
+				<radio id="lesioniEncefaloNo"
+					label="${c:l('schedaPalliat.lesioniPanel.lesioniNo')}" value="N"
+					checked="true" />
+			</caribelradiogroup>
+		</div>
+		<label hflex="56%"/>
+	</hlayout>
+	
+	<hlayout>	
+		<label value="${c:l('schedaPalliat.lesioniPanel.polmone')}:" hflex="14%"/>
+		<div hflex="30%" style="text-align:left">
+			<caribelradiogroup id="skm_polmone" db_name="skm_polmone">
+				<radio id="lesioniPolmoneSi"
+					label="${c:l('schedaPalliat.lesioniPanel.lesioniSi')}" value="S" />
+				<radio id="lesioniPolmoneNo"
+					label="${c:l('schedaPalliat.lesioniPanel.lesioniNo')}" value="N"
+					checked="true" />
+			</caribelradiogroup>
+		</div>
+		<label value="" hflex="56%"/>
+	</hlayout>
+	
+	<hlayout>
+		<label value="${c:l('schedaPalliat.lesioniPanel.fegato')}:" hflex="14%"/>
+		<div hflex="30%" style="text-align:left">
+			<caribelradiogroup id="skm_fegato" db_name="skm_fegato">
+				<radio id="lesioniFegatoSi"
+					label="${c:l('schedaPalliat.lesioniPanel.lesioniSi')}" value="S" />
+				<radio id="lesioniFegatoNo"
+					label="${c:l('schedaPalliat.lesioniPanel.lesioniNo')}" value="N"
+					checked="true" />
+			</caribelradiogroup>
+		</div>
+		<label hflex="56%"/>
+	</hlayout>
+	
+	<hlayout>		
+		<label value="${c:l('schedaPalliat.lesioniPanel.tessutiMolli')}:" hflex="14%"/>
+		<div hflex="30%" style="text-align:left">
+			<caribelradiogroup id="skm_tessutimolli"
+				db_name="skm_tessutimolli" >
+				<radio id="lesioniTessutiMolliSi"
+					label="${c:l('schedaPalliat.lesioniPanel.lesioniSi')}" value="S" />
+				<radio id="lesioniTessutiMolliNo"
+					label="${c:l('schedaPalliat.lesioniPanel.lesioniNo')}" value="N"
+					checked="true" />
+			</caribelradiogroup>
+		</div>
+		<label hflex="56%"/>
+	</hlayout>
+	
+	<hlayout>
+		<label value="${c:l('schedaPalliat.lesioniPanel.ossa')}:" hflex="14%"/>
+		<div hflex="30%" style="text-align:left">
+			<caribelradiogroup id="skm_ossa" db_name="skm_ossa">
+				<radio id="lesioniOssaSi"
+					label="${c:l('schedaPalliat.lesioniPanel.lesioniSi')}" value="S" />
+				<radio id="lesioniOssaNo"
+					label="${c:l('schedaPalliat.lesioniPanel.lesioniNo')}" value="N"
+					checked="true" />
+			</caribelradiogroup>
+		</div>
+		<label hflex="56%"/>
+	</hlayout>
+	
+	<hlayout>
+		<label value="${c:l('schedaPalliat.lesioniPanel.linfonodi')}:" hflex="14%"/>
+		<div hflex="30%" style="text-align:left">
+			<caribelradiogroup id="skm_linfonodi"
+				db_name="skm_linfonodi" >
+				<radio id="lesioniLinfonodiSi"
+					label="${c:l('schedaPalliat.lesioniPanel.lesioniSi')}" value="S" />
+				<radio id="lesioniLinfonodiNo"
+					label="${c:l('schedaPalliat.lesioniPanel.lesioniNo')}" value="N"
+					checked="true" />
+			</caribelradiogroup>
+		</div>
+		<label hflex="56%"/>
+	</hlayout>
+	
+	<hlayout>
+		<label value="${c:l('schedaPalliat.lesioniPanel.lesioniAltro')}:" hflex="14%"/>
+		<div hflex="12%" style="text-align:left">
+			<caribelradiogroup id="skm_lesioni_altro"
+				db_name="skm_lesioni_altro" >
+				<radio id="lesioniAltroSi"
+					label="${c:l('schedaPalliat.lesioniPanel.lesioniSi')}" value="S" />
+				<radio id="lesioniAltroNo"
+					label="${c:l('schedaPalliat.lesioniPanel.lesioniNo')}" value="N"
+					checked="true" />
+			</caribelradiogroup>
+		</div>
+		<label value="${c:l('schedaPalliat.lesioniPanel.lesioniAltroDescrizione')}:" hflex="10%"/>
+		<caribeltextbox id="skm_lesioni_altro_descr" maxlength="100" rows="2" 
+						db_name="skm_lesioni_altro_descr" hflex="44%" style="resize:none" readonly="true"/>
+		<label hflex="20%"/>
+	</hlayout>
+	
+	
+
+</vlayout>
+
+
+

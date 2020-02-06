@@ -1,0 +1,21 @@
+<?component name="panel_nord" inline="true" macroURI="~./ui/sinssnt/accessi_mmg/panel_nord.zul"?>
+<?component name="panel_sud" inline="true" macroURI="~./ui/sinssnt/accessi_mmg/panel_sud.zul"?>
+
+<window title="${c:l('menu.operazioni.accessi_mmg')}" 
+	border="normal" 
+	apply="it.caribel.app.sinssnt.controllers.accessi_mmg.AccessiMmgViewWACtrl"
+	width="96%" height="93%" vflex="false" 
+	closable="true" sizable="true" position="center" maximizable="true"
+	minwidth="800"  minheight="550">
+
+	<vlayout vflex="true">
+		 <borderlayout vflex="true">
+            <north sclass="mybackground" border="0">
+                <panel_nord/>
+            </north>
+            <center vflex="75%" sclass="mybackground" style="padding-top: 3px;" border="0">
+            	<panel_sud/>
+            </center>
+        </borderlayout>
+	</vlayout>
+</window>

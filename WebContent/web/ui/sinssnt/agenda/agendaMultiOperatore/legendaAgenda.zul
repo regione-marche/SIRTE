@@ -1,0 +1,17 @@
+<vlayout hflex="${arg.hflex}" style="text-align:center" >
+	<div sclass="z-toolbar">
+		<hlayout sclass="" style="padding:0px">
+			<label value="${c:l('legendaAgenda')}:"></label>
+			<div sclass="legendaAgenda agenda0"></div>
+			<label value="${c:l('legendaAgenda.0')}"></label>
+			<div sclass="legendaAgenda agenda1"></div>
+			<label value="${c:l('legendaAgenda.1')}"></label>
+			<div sclass="legendaAgenda agenda2"></div>
+			<label value="${c:l('legendaAgenda.2')}"></label>
+			<div sclass="legendaAgenda agenda4"></div>
+			<label value="${c:l('legendaAgenda.4')}"></label>
+		</hlayout>
+		<label value="${c:l('legendaAgenda.assistitoNoADI')}" zclass="assistitoInAgenda" style="font-size: 12px;"/> - 
+		<label value="${c:l('legendaAgenda.assistitoADI')}" zclass="assistitoInAgenda assistitoADI"  style="font-size: 12px;"/>
+	</div> 
+</vlayout>

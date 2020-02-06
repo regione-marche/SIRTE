@@ -1,0 +1,12 @@
+<!-- TODO: pannello di presa in carico per la Toscana  -->
+
+<window id="panelPresacarico" 
+	border="normal" vflex="true" width="100%">
+
+	<vlayout vflex="true" hflex="1" spacing="3px" sclass="asterLayout">
+
+		
+	
+	</vlayout>
+
+</window>

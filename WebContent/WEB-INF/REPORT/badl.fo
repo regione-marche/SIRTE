@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+
+<!-- mfo:section.start="layout" rem="IMPOSTAZIONI DI PAGINA" -->
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="simple"
+        page-height="29.7cm"	page-width="21cm"
+        margin-top="1cm"	margin-bottom="1cm"
+        margin-left="1cm"	margin-right="1cm" >
+      <fo:region-body margin-top="2.5cm" margin-bottom="1cm"/>
+      <fo:region-before extent="3.5cm"/>
+      <fo:region-after extent="1cm"/>
+    </fo:simple-page-master>
+  </fo:layout-master-set>
+
+  <fo:page-sequence master-name="simple">
+    <fo:static-content flow-name="xsl-region-before">
+  <fo:table font-size="10pt">
+  <fo:table-column column-width="19cm"/>
+  <fo:table-body>
+  <fo:table-row height="9pt">
+   <fo:table-cell text-align="start" >
+
+	<fo:table font-size="10pt">
+	<fo:table-column column-width="11.5cm"/>
+	<fo:table-column column-width="7.5cm"/>
+	 <fo:table-body>
+	  <fo:table-row height="9pt">
+	    <fo:table-cell text-align="start" >
+		<fo:block start-indent="1mm" end-indent="1mm"
+		padding-top="0.5mm" font-weight="bold">
+			Cognome e Nome: #assistito#
+		</fo:block>
+	    </fo:table-cell>
+	    <fo:table-cell text-align="end" >
+		<fo:block start-indent="1mm" end-indent="1mm"
+		padding-top="0.5mm" font-weight="bold">
+			Data scheda: #data#
+		</fo:block>
+	    </fo:table-cell>
+	  </fo:table-row>
+	 </fo:table-body>
+	</fo:table>
+	    </fo:table-cell>
+	  </fo:table-row>
+          <fo:table-row height="1pt">
+             <fo:table-cell text-align="start" number-columns-spanned='2'>
+                  <fo:block>
+                          <fo:leader leader-pattern="rule"
+                             rule-thickness="0.5pt"
+                             leader-length="19cm"/>
+                  </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+
+	 </fo:table-body>
+	</fo:table>
+
+	  <fo:block font-size="12pt"  end-indent="1mm"
+		  font-weight="bold" text-align="center" space-before.optimum="12pt">
+		 ADL
+	  </fo:block>
+
+	  <fo:block font-size="12pt" start-indent="1.1mm"
+		  end-indent="1mm" space-before="0.3cm"
+		  text-align="center" padding-top="1mm">
+		  (ACTIVITIES OF DAILY LIVING)
+	  </fo:block>
+    </fo:static-content>
+
+
+    <!-- TITOLO DI PIEDE -->
+    <fo:static-content flow-name="xsl-region-after">
+      <fo:table font-size="8pt" width="auto" space-before.optimum="0.5cm">
+        <fo:table-column column-width="12cm"/>
+        <fo:table-column column-width="7cm"/>
+        <fo:table-body>
+          <fo:table-row height="10pt">
+            <fo:table-cell text-align="start">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >#txt#</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="end">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >elaborato del #data_stampa#</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body">
+     
+	   
+<!-- mfo:section.end -->
+<!--mfo:section.start="tabBadl" -->
+
+	<fo:table space-before.optimum="0.5cm" font-size="10pt" font-family="sans-serif" border-width="0.1mm" border-style="solid">
+<fo:table-column column-width="15cm"/>
+<fo:table-column column-width="4cm"/>
+	<fo:table-body>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="start" font-weight="bold" border-right-width="0.1mm" border-right-style="solid">
+					A) <fo:inline text-decoration="underline">FARE IL BAGNO</fo:inline> (vasca, doccia, spugnature)
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell>
+				<fo:block text-align="center" font-weight="bold" border-bottom-width="0.1mm" border-bottom-style="solid">
+					Punteggio
+				</fo:block>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="start" border-right-width="0.1mm" border-right-style="solid">
+					1) Fa il bagno da solo (entra ed esce dalla vasca da solo).
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell>
+				<fo:block text-align="center">
+					#domanda1_1#
+				</fo:block>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="start" border-right-width="0.1mm" border-right-style="solid">
+					2) Ha bisogno di assistenza soltanto nella pulizia di una parte del corpo (es. dorso).
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell>
+				<fo:block text-align="center">
+					#domanda1_2#
+				</fo:block>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="start" border-right-width="0.1mm" border-right-style="solid">
+					3) Ha bisogno di assistenza per pi&#249; di una parte del corpo.
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell>
+				<fo:block text-align="center">
+					#domanda1_3#
+				</fo:block>
+			</fo:table-cell>
+		</fo:table-row>		
+	</fo:table-body>
+</fo:table>
+
+<fo:table font-size="10pt" font-family="sans-serif" border-width="0.1mm" border-style="solid" border-top-style="none">
+<fo:table-column column-width="19cm"/>
+	<fo:table-body>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="start" font-weight="bold" >
+					&#160;
+				</fo:block>
+			</fo:table-cell>			
+		</fo:table-row>		
+	</fo:table-body>
+</fo:table>
+
+<fo:table font-size="10pt" font-family="sans-serif" border-width="0.1mm" border-style="solid" border-top-style="none">
+<fo:table-column column-width="15cm"/>
+<fo:table-column column-width="4cm"/>
+	<fo:table-body>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="start" font-weight="bold" border-right-width="0.1mm" border-right-style="solid">
+					B) <fo:inline text-decoration="underline">VESTIRSI</fo:inline> (prendere i vestiti dall'armadio e/o cassetti, inclusa biancheria
+intima, vestiti, uso delle allacciature e delle bretelle se utilizzate)
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell>
+				<fo:block text-align="center" font-weight="bold" >
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="start" border-right-width="0.1mm" border-right-style="solid">
+					1) Prende i vestiti e si veste completamente senza bisogno di assistenza.
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell>
+				<fo:block text-align="center">
+					#domanda2_1#
+				</fo:block>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="start" border-right-width="0.1mm" border-right-style="solid">
+					2) Prende i vestiti e si veste senza bisogno di assistenza eccetto che per allacciare le scarpe.
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell>
+				<fo:block text-align="center">
+					#domanda2_2#
+				</fo:block>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="start" border-right-width="0.1mm" border-right-style="solid">
+					3) Ha bisogno di assistenza nel prendere i vestiti o nel vestirsi oppure rimane
+parzialmente o completamente svestito.
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell>
+				<fo:block text-align="center">
+					#domanda2_3#
+				</fo:block>
+			</fo:table-cell>
+		</fo:table-row>		
+	</fo:table-body>
+</fo:table>
+
+<fo:table font-size="10pt" font-family="sans-serif" border-width="0.1mm" border-style="solid" border-top-style="none">
+<fo:table-column column-width="19cm"/>
+	<fo:table-body>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="start" font-weight="bold" >
+					&#160;
+				</fo:block>
+			</fo:table-cell>			
+		</fo:table-row>		
+	</fo:table-body>
+</fo:table>
+
+<fo:table font-size="10pt" font-family="sans-serif" border-width="0.1mm" border-style="solid" border-top-style="none">
+<fo:table-column column-width="15cm"/>
+<fo:table-column column-width="4cm"/>
+	<fo:table-body>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="start" font-weight="bold" border-right-width="0.1mm" border-right-style="solid">
+					C) <fo:inline text-decoration="underline">TOILETTE</fo:inline> (andare nella stanza da bagno per la minzione e l'evacuazione,
+pulirsi, rivestirsi)
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell>
+				<fo:block text-align="center" font-weight="bold" >
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="start" border-right-width="0.1mm" border-right-style="solid">
+					1) Va in bagno, si pulisce e si riveste senza bisogno di assistenza (pu&#242; utilizzare
+mezzi di supporto come bastone, deambulatore o seggiola a rotelle, pu&#242; usare vaso
+da notte o comoda svuotandoli al mattino).
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell>
+				<fo:block text-align="center">
+					#domanda3_1#
+				</fo:block>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="start" border-right-width="0.1mm" border-right-style="solid">
+					2) Ha bisogno di assistenza nell'andare in bagno o nel pulirsi o nel rivestirsi o nell'uso
+del vaso da notte o della comoda.
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell>
+				<fo:block text-align="center">
+					#domanda3_2#
+				</fo:block>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="start" border-right-width="0.1mm" border-right-style="solid">
+					3) Non si reca in bagno per l'evacuazione
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell>
+				<fo:block text-align="center">
+					#domanda3_3#
+				</fo:block>
+			</fo:table-cell>
+		</fo:table-row>		
+	</fo:table-body>
+</fo:table>
+
+<fo:table font-size="10pt" font-family="sans-serif" border-width="0.1mm" border-style="solid" border-top-style="none">
+<fo:table-column column-width="19cm"/>
+	<fo:table-body>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="start" font-weight="bold" >
+					&#160;
+				</fo:block>
+			</fo:table-cell>			
+		</fo:table-row>		
+	</fo:table-body>
+</fo:table>
+
+<fo:table font-size="10pt" font-family="sans-serif" border-width="0.1mm" border-style="solid" border-top-style="none">
+<fo:table-column column-width="15cm"/>
+<fo:table-column column-width="4cm"/>
+	<fo:table-body>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="start" font-weight="bold" border-right-width="0.1mm" border-right-style="solid">
+					D) <fo:inline text-decoration="underline">SPOSTARSI</fo:inline>
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell>
+				<fo:block text-align="center" font-weight="bold" >
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="start" border-right-width="0.1mm" border-right-style="solid">
+					1) Si sposta dentro e fuori dal letto e in poltrona senza assistenza (eventualmente con
+canadesi o deambulatore).
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell>
+				<fo:block text-align="center">
+					#domanda4_1#
+				</fo:block>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="start" border-right-width="0.1mm" border-right-style="solid">
+					2) Compie questi trasferimenti se aiutato.
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell>
+				<fo:block text-align="center">
+					#domanda4_2#
+				</fo:block>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="start" border-right-width="0.1mm" border-right-style="solid">
+					3) Allettato, non esce dal letto.
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell>
+				<fo:block text-align="center">
+					#domanda4_3#
+				</fo:block>
+			</fo:table-cell>
+		</fo:table-row>		
+	</fo:table-body>
+</fo:table>
+
+<fo:table font-size="10pt" font-family="sans-serif" border-width="0.1mm" border-style="solid" border-top-style="none">
+<fo:table-column column-width="19cm"/>
+	<fo:table-body>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="start" font-weight="bold" >
+					&#160;
+				</fo:block>
+			</fo:table-cell>			
+		</fo:table-row>		
+	</fo:table-body>
+</fo:table>
+
+<fo:table font-size="10pt" font-family="sans-serif" border-width="0.1mm" border-style="solid" border-top-style="none">
+<fo:table-column column-width="15cm"/>
+<fo:table-column column-width="4cm"/>
+	<fo:table-body>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="start" font-weight="bold" border-right-width="0.1mm" border-right-style="solid">
+					E) <fo:inline text-decoration="underline">CONTINENZA DI FECI ED URINE</fo:inline>
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell>
+				<fo:block text-align="center" font-weight="bold" >
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="start" border-right-width="0.1mm" border-right-style="solid">
+					1) Controlla completamente feci e urine.
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell>
+				<fo:block text-align="center">
+					#domanda5_1#
+				</fo:block>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="start" border-right-width="0.1mm" border-right-style="solid">
+					2) "Incidenti" occasionali.
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell>
+				<fo:block text-align="center">
+					#domanda5_2#
+				</fo:block>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="start" border-right-width="0.1mm" border-right-style="solid">
+					3) Necessit&#224; di supervisione per il controllo di feci e urine, usa il catetere, &#232;
+incontinente
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell>
+				<fo:block text-align="center">
+					#domanda5_3#
+				</fo:block>
+			</fo:table-cell>
+		</fo:table-row>		
+	</fo:table-body>
+</fo:table>
+
+<fo:table font-size="10pt" font-family="sans-serif" border-width="0.1mm" border-style="solid" border-top-style="none">
+<fo:table-column column-width="19cm"/>
+	<fo:table-body>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="start" font-weight="bold" >
+					&#160;
+				</fo:block>
+			</fo:table-cell>			
+		</fo:table-row>		
+	</fo:table-body>
+</fo:table>
+
+<fo:table font-size="10pt" font-family="sans-serif" border-width="0.1mm" border-style="solid" border-top-style="none">
+<fo:table-column column-width="15cm"/>
+<fo:table-column column-width="4cm"/>
+	<fo:table-body>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="start" font-weight="bold" border-right-width="0.1mm" border-right-style="solid">
+					F) <fo:inline text-decoration="underline">ALIMENTAZIONE</fo:inline>
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell>
+				<fo:block text-align="center" font-weight="bold" >
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="start" border-right-width="0.1mm" border-right-style="solid">
+					1) Senza assistenza.
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell>
+				<fo:block text-align="center">
+					#domanda6_1#
+				</fo:block>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="start" border-right-width="0.1mm" border-right-style="solid">
+					2) Assistenza solo per tagliare la carne o imburrare il pane.
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell>
+				<fo:block text-align="center">
+					#domanda6_2#
+				</fo:block>
+			</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="start" border-right-width="0.1mm" border-right-style="solid">
+					3) Richiede assistenza per portare il cibo alla bocca o viene nutrito parzialmente o
+completamente per via parenterale.
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell>
+				<fo:block text-align="center">
+					#domanda6_3#
+				</fo:block>
+			</fo:table-cell>
+		</fo:table-row>		
+	</fo:table-body>
+</fo:table>
+
+<fo:table font-size="10pt" font-family="sans-serif" border-width="0.1mm" border-style="solid" border-top-style="none">
+<fo:table-column column-width="19cm"/>
+	<fo:table-body>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="start" font-weight="bold" >
+					&#160;
+				</fo:block>
+			</fo:table-cell>			
+		</fo:table-row>		
+	</fo:table-body>
+</fo:table>
+
+<fo:table font-size="10pt" font-family="sans-serif" border-width="0.1mm" border-style="solid" border-top-style="none">
+<fo:table-column column-width="15cm"/>
+<fo:table-column column-width="4cm"/>
+	<fo:table-body>
+		<fo:table-row>
+			<fo:table-cell>
+				<fo:block text-align="end" font-weight="bold" border-right-width="0.1mm" border-right-style="solid">
+					PUNTEGGIO TOTALE (A+B+C+D+E+F)
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell>
+				<fo:block text-align="center" font-weight="bold" >
+					#punteggio_tot#/6
+				</fo:block>
+			</fo:table-cell>
+		</fo:table-row>
+		
+	</fo:table-body>
+</fo:table>
+
+
+
+
+
+
+    </fo:flow> <!-- closes the flow element-->
+  </fo:page-sequence> <!-- closes the page-sequence -->
+<!-- mfo:section.end -->
+</fo:root>
+
+

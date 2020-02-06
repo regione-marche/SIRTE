@@ -1,0 +1,128 @@
+<!-- mfo:section.start="layout" rem="IMPOSTAZIONI DI PAGINA" -->
+<html>
+<body>
+    <table>
+      <tr>
+        <td>ELENCO ACCESSI #tipo_accert# PER #operatore# - #tipo_ope#  #qualifica# dal #data_inizio# al #data_fine#</td>
+      </tr>
+      <tr>
+        <td>ZONA: #zona#</td>
+      </tr>
+      <tr>
+        <td>DISTRETTO: #distretto#</td>
+      </tr>
+      <tr>
+        <td>#titolo_pca#: #pca#</td>
+      </tr>
+    </table>
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="operatore" -->
+    <table>
+      <tr>
+        <td>#tipo_figprof# : #nome_figprof#</td>
+      </tr>
+    </table>
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="iniziotab" rem="TITOLI DELLA TABELLA" -->
+    <table>
+      <tr>
+		<td colspan='3'> Cartella</td>
+		<td colspan='6'>Assistito</td>
+		<td>N.</td>
+		<td>Tempo</td>
+		<td>Tempo-GO</td>
+      </tr>
+	  <tr>
+		<td></td>
+		<td colspan='3'>Data accesso</td>
+		<td></td>
+		<td></td>
+		<td>Contatore</td>
+		<td colspan='3'>Anno</td>
+		<td>impiegato</td>
+		<td></td>
+      </tr>
+      <tr>
+		<td colspan='5'></td>
+		<td colspan='4'></td>
+		<td></td>
+		<td>(ore)</td>
+		<td></td>
+      </tr>
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="rigaAssistito" rem="RIGA RIPETITIVA" -->
+      <tr>
+		<td colspan='3' align="right">#n_cartella#</td>
+		<td colspan='6' align="left">#nome_ass# #data_nasc#</td>
+		<td></td>
+		<td></td>
+	  </tr>
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="rigaIntervento" rem="RIGA RIPETITIVA" -->
+	  <tr>
+		<td colspan='3'></td>
+		<td colspan='3' align="left">#data_int#</td>
+		<td colspan='2' align="left">#contatore_int#</td>
+		<td align="left">#anno_int#</td>
+		<td align="right">#n_interv#</td>
+		<td align="right">#ore#</td>
+		<td align="right">#ore-go#</td>
+      </tr>
+<!-- mfo:section.end -->
+
+
+<!-- mfo:section.start="rigaTotaliAssxFigProf" rem="RIGA RIPETITIVA" -->
+	  <tr>
+		<td colspan='9' align="right">Totali:</td>
+		<td align="right">#totali_interv#</td>
+		<td align="right">#totali_ore#</td>
+		<td align="right">#totali_orego#</td>
+      </tr>
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="rigaTotAss" rem="RIGA RIPETITIVA" -->
+	  <tr>
+		<td colspan='9' align="right">Totale:</td>
+		<td align="right">#tot_interv#</td>
+		<td align="right">#tot_ore#</td>
+		<td align="right">#tot_orego#</td>
+      </tr>
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="finetab" rem="TERMINAZIONE TABELLA" -->
+    </table>
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="riepilogo" rem="RIGA RIEPILOGO" -->
+	<table>
+	  <tr>
+		<td colspan='2'>Totali di riepilogo</td>
+      </tr>
+<!-- INIZIO DI TABELLA -->
+	  <tr>
+		<td align="right">Totale numero accessi:</td>
+		<td>#tot_num_int#</td>
+      </tr>
+	  <tr>
+		<td align="right">Tempo impiegato(ore):</td>
+		<td>#tot_ore_imp#</td>
+      </tr>
+    </table>
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="messaggio" rem="MESSAGGIO DI ERRORE" -->
+  <p align="left">NESSUNA INFORMAZIONE REPERITA</p>
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="taglia" -->
+<br>
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="finale" rem="TERMINAZIONE DOCUMENTO" -->
+</body>
+</html>
+<!-- mfo:section.end -->

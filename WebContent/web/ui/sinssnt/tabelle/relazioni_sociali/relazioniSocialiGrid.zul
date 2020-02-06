@@ -1,0 +1,65 @@
+<window title="${c:l('relazioniSociali.formTitle')}"
+	apply="it.caribel.app.sinssnt.controllers.tabelle.relazioni_sociali.RelazioniSocialiGridCtrl"	
+	sclass="asterOverlappedWindow"  sizable="true"
+	closable="true" mode="overlapped" position="center" border="normal" width="750px"
+height="450px">
+
+<zscript><![CDATA[
+	void dadataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}
+	void adataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}	
+]]>
+</zscript>
+	<vlayout height="100%">
+	
+		<caribelGridMenu  visible_btn_clear="true" />
+		<vlayout sclass="asterLayout" vflex="true" spacing="5px">
+		
+		<hlayout>
+			<label hflex="20%" value="${c:l('relazioniSociali.cartella')}:" />
+			<caribelSearch hflex="80%" maxlength="8"  id_cod="tb_filter1" db_name_cod="n_cartella"				
+				ctrl="it.caribel.app.common.controllers.cartella.CartellaSearchCtrl"
+			 />
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('relazioniSociali.data')}:" />
+			<div hflex="80%" width="100%">
+				<hlayout width="100%">
+					<caribeldatebox id="dadata" hflex="30%"
+						required="false" onChange="dadataChanged()" db_name="dataini"/>
+					
+					<caribeldatebox id="adata" hflex="30%"
+						required="false"	onChange="adataChanged()" db_name="datafin"/>
+						<label hflex="40%" value="" />
+				</hlayout>
+			</div>
+		</hlayout>
+		
+			<caribelPaging/>
+			<caribellistbox vflex="true" hflex="true" >
+			<frozen columns="3"/>
+				<listhead sizable="true">					
+					<caribellistheader db_name="progr"  width="7em" label="${c:l('relazioniSocialiGrid.progr')}" />	
+					<caribellistheader db_name="data_ins"  width="7em" label="${c:l('relazioniSocialiGrid.data_ins')}" />	
+					<caribellistheader db_name="n_cartella"  width="7em" label="${c:l('relazioniSocialiGrid.cartella')}" />	
+					<caribellistheader db_name="cognome"  width="13em" label="${c:l('relazioniSocialiGrid.cognome')}" />	
+					<caribellistheader db_name="nome"  width="13em" label="${c:l('relazioniSocialiGrid.nome')}" />	
+					<caribellistheader db_name="oggetto"  width="13em" label="${c:l('relazioniSocialiGrid.oggetto')}" />	
+					<caribellistheader db_name="minore"  width="13em" label="${c:l('relazioniSocialiGrid.minore')}" />	
+					<caribellistheader db_name="nucleo_fam"  width="13em" label="${c:l('relazioniSocialiGrid.nucleo_fam')}" />
+					<caribellistheader db_name="sit_abitativa"  width="13em" label="${c:l('relazioniSocialiGrid.sit_abitat')}" />	
+					<caribellistheader db_name="sit_economica"  width="13em" label="${c:l('relazioniSocialiGrid.sit_econ')}" />	
+					<caribellistheader db_name="sit_formaz_lavoro"  width="13em" label="${c:l('relazioniSocialiGrid.sit_lav')}" />	
+					<caribellistheader db_name="disabilita"  width="13em" label="${c:l('relazioniSocialiGrid.disabilita')}" />	
+					<caribellistheader db_name="maltrattamenti"  width="13em" label="${c:l('relazioniSocialiGrid.maltrattamenti')}" />	
+					<caribellistheader db_name="coppia"  width="13em" label="${c:l('relazioniSocialiGrid.coppia')}" />	
+					<caribellistheader db_name="tut_giudiziaria"  width="13em" label="${c:l('relazioniSocialiGrid.tut_giudiz')}" />	
+					
+				</listhead>
+			</caribellistbox>
+		</vlayout>		
+	</vlayout>
+</window>

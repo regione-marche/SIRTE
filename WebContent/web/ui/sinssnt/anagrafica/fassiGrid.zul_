@@ -1,0 +1,100 @@
+<window id="fassiGrid" 
+	title="${c:l('fassiGrid.formTitle')}"
+	apply="it.caribel.app.sinssnt.controllers.anagrafica.FassiGridCtrl"
+	width="100%" vflex="true" style="overflow:auto" sizable="true"
+	closable="true" mode="embedded" position="center" border="normal">
+
+	<vlayout height="100%" width="100%">
+			
+			<caribelGridMenu visible_btn_new="false" visible_btn_print="true" visible_btn_clear="true" />
+			
+			<vlayout sclass="asterLayout" vflex="true" spacing="0px">
+			<div>	 
+				<hlayout valign="middle" style="text-align:right;">
+					<label hflex="10%" value="${c:l('cartellaForm.cartella')}:" />					
+					<caribelintbox hflex="9%" id="n_cartella" db_name="n_cartella" maxlength="13"  focus="true" forward="onOK=onEnter"/>
+					<label hflex="13%"  value="${c:l('fassiGrid.cod.fiscale')}:" />
+					<caribeltextbox hflex="18%" id="filter_cf" db_name="afisc"/>
+					<label hflex="13%"  value="${c:l('fassiGrid.nascita.comune')}:" />
+					<caribelSearch hflex="37%" hflex_cod="30%" id_descr="desc_com_nasc"  required="false" id_cod="filter_com_nasc"
+					db_name_cod="comunenas" db_name_descr="desc_comunenas" id="comuneNascitaSearch"
+					ctrl="it.caribel.app.sinssnt.controllers.tabelle.comuni.ComuniSearchCtrl" />
+				</hlayout>
+				
+				<hlayout valign="middle" style="text-align:right;">
+					<label hflex="10%"  value="${c:l('fassiGrid.cognome')}:" />
+					<caribeltextbox hflex="20%" id="filter_cogn" db_name="cognome" forward="onOK=onEnter"/>
+					<label hflex="10%"  value="${c:l('fassiGrid.nome')}:" />
+					<caribeltextbox hflex="20%" id="filter_nome" db_name="nome" forward="onOK=onEnter"/>
+					<label hflex="15%" value="${c:l('fassiGrid.nascita.data')}:" />
+					<caribeldatebox hflex="10%" id="filter_datans" db_name="datans"/>
+					<label hflex="7%" value="${c:l('fassiGrid.sesso')}:" />
+					<caribelcombobox hflex="8%" db_name="sesso" id="filter_sesso" />		
+					
+<!-- <label hflex="1%"  value="" /><label hflex="1%"  value="" /> -->
+					
+				</hlayout>
+
+				<hlayout valign="middle" style="text-align:right;margin:2px">
+					<!-- label hflex="15%" value="${c:l('fassiGrid.ricerca.su')}:" />
+					<div  hflex="15%">
+						<caribelradiogroup id="tb_filter6" db_name="tipo"  orient="horizontal">
+							<div align="left">
+								<radio label="${c:l('fassiGrid.ricerca.su.cartella')}" value="1" selected="true" />
+								<radio label="${c:l('fassiGrid.ricerca.su.anagrafica')}" value="2"/>
+							</div>
+						</caribelradiogroup>
+					</div-->
+					<div  hflex="25%">
+						<label hflex="15%" value="${c:l('fassiGrid.ricerca.anagrafiche')}:" />
+						<caribelcheckbox id="anaAttive" db_name="anaAttive" 
+							label="${c:l('fassiGrid.ricerca.anagrafiche.attive')}"
+							checked="false"/>
+						<caribelcheckbox id="anaChiuse" db_name="anaChiuse" 
+							label="${c:l('fassiGrid.ricerca.anagrafiche.chiuse')}"
+							checked="false"/>
+					</div>
+		
+					<label hflex="15%" value="${c:l('fassiGrid.ricerca.metodo')}:" />
+					<div hflex="55%" align="left">
+						<caribelradiogroup id="metodoRicerca" db_name="metodo"  >
+								<radio label="${c:l('fassiGrid.ricerca.metodo.u')}" value="u" />
+								<radio label="${c:l('fassiGrid.ricerca.metodo.i')}" value="i" />
+								<radio label="${c:l('fassiGrid.ricerca.metodo.c')}" value="c" />
+						</caribelradiogroup>
+					</div>					
+					
+					<label hflex="5%"  value="" />
+				</hlayout>			
+			</div>
+			
+			<caribelPaging sortable="true" pageSize="15"/>
+				<caribellistbox vflex="true">
+					<frozen columns="3"/>
+					<listhead  sizable="true" >
+							<caribellistheader db_name="n_cartella"	  	  order_by="4"  width="6em"   label="${c:l('fassiGrid.grid.cartella')}" />
+							<caribellistheader db_name="cognome"		  order_by=""  width="13em"  label="${c:l('fassiGrid.grid.cognome')}" />
+							<caribellistheader db_name="nome"  			  order_by=""  width="13em"  label="${c:l('fassiGrid.grid.nome')}" />
+							<caribellistheader db_name="datans"	  		  order_by="3"  width="8em"   label="${c:l('fassiGrid.grid.nascita.data')}" />
+							<caribellistheader db_name="descrizione"  	  order_by="" 	width="13em"  label="${c:l('fassiGrid.grid.nascita.comune')}" />
+							<caribellistheader db_name="afisc"  		  order_by=""   width="13em"  label="${c:l('fassiGrid.grid.cod.fiscale')}" />
+							<caribellistheader db_name="sesso"  		  order_by=""   width="5em"   label="${c:l('fassiGrid.grid.sesso')}" />
+							<caribellistheader db_name="desc_domicilio"	  order_by=""   width="13em"  label="${c:l('fassiGrid.grid.dom.comune')}" />
+							<caribellistheader db_name="desc_residenza"	  order_by=""   width="13em"  label="${c:l('fassiGrid.grid.res.comune')}" />
+							<!-- <caribellistheader db_name="codicereg"  	  order_by=""   width="13em"  label="${c:l('fassiGrid.grid.cod.sanitario')}" />-->
+							<!-- <caribellistheader db_name="comune_dom"  	  order_by=""   width="10em"  label="${c:l('fassiGrid.grid.dom.comune')}" />-->
+							<caribellistheader db_name="indirizzo_dom"    order_by=""   width="10em"  label="${c:l('fassiGrid.grid.dom.indirizzo')}" />
+							<!-- <caribellistheader db_name="comune_res"  	  order_by=""   width="10em"  label="${c:l('fassiGrid.grid.res.comune')}" />-->
+							<caribellistheader db_name="indirizzo_res"    order_by=""   width="10em"  label="${c:l('fassiGrid.grid.res.indirizzo')}" />
+							<!-- <caribellistheader db_name="cod_medico"  	  order_by=""  	width="10em"  label="${c:l('fassiGrid.grid.cod.medico')}" />-->
+							<caribellistheader db_name="des_medico"  	  order_by=""   width="10em"  label="${c:l('fassiGrid.grid.medico')}" />
+							<!-- <caribellistheader db_name="cod_usl"  		  order_by=""   width="16em"  label="${c:l('fassiGrid.grid.cod.usl')}" /> -->
+							<caribellistheader db_name="motivo_var"  	  order_by=""   width="13em"  label="${c:l('fassiGrid.grid.motivo_var')}" />
+							<caribellistheader db_name="mot_chiusura"  	  order_by=""   width="13em" label="${c:l('fassiGrid.grid.mot_chiusura')}" />
+							<caribellistheader db_name="data_chiusura"    order_by=""   width="688px" label="${c:l('fassiGrid.grid.data_chiusura')}" />
+					</listhead>
+				</caribellistbox>
+		</vlayout>
+	</vlayout>
+
+</window>

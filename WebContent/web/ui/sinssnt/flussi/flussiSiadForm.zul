@@ -1,0 +1,141 @@
+<?component name="rivalutazione" 	inline="true" macroURI="/web/ui/sinssnt/flussi/rivalutazione.zul"?>
+<?component name="sospensione" 	inline="true" macroURI="/web/ui/sinssnt/flussi/sospensione.zul"?>
+<?component name="conclusione" 	inline="true" macroURI="/web/ui/sinssnt/flussi/conclusione.zul"?>
+
+
+
+<window id="flussiSiadForm" title="${c:l('Flussi.SIAD.formTitle')}"
+	apply="it.caribel.app.sinssnt.controllers.flussi.FlussiSiadFormCtrl"
+	border="normal" vflex="true" width="100%">
+
+	<vlayout vflex="true" hflex="1" spacing="3px"
+		sclass="asterLayout">
+
+
+		<tabbox width="100%" sclass="nav_tabs"
+			id="tabbox_flussi_siad">
+			<tabs id="tabs_flussi_siad">
+				<tab id="presa_carico_tab"
+					label="${c:l('Flussi.PresaCarico')}" />
+				<tab id="rivalutazione_tab"
+					label="${c:l('Flussi.Rivalutazione')}" />
+				<tab id="sospensione_tab"
+					label="${c:l('Flussi.Sospensione')}" />
+				<tab id="Conclusione_tab"
+					label="${c:l('Flussi.Conclusione')}" />
+			</tabs>
+			<tabpanels id="tabpanels_flussi_siad" sclass="tabNoPadding">
+				<tabpanel id="presa_carico">					
+					<vlayout width="100%" spacing="3px"
+						sclass="asterLayout">
+						<caribelFormMenu visible_btn_print="true" />
+						<hlayout width="100%" visible="true">
+							<label value="${c:l('generic.cartella')}:"
+								hflex="15%" />
+							<caribelintbox id="n_cartella"
+								db_name="n_cartella" hflex="15%" maxlength="13" required="true"
+								readonly="true" isDbKey="true" />
+							<label value="${c:l('generic.id_caso')}:"
+								hflex="15%" />
+							<caribelintbox id="id_caso"
+								db_name="id_caso" hflex="15%" maxlength="13" readonly="true"
+								isDbKey="true" />
+							<label value="${c:l('generic.pr_data')}:"
+								hflex="15%" />
+							<caribeldatebox id="pr_data"
+								db_name="pr_data" hflex="15%" maxlength="13" readonly="true"
+								isDbKey="true" />
+							<label hflex="10%" />
+						</hlayout>
+
+						<hlayout width="100%">
+							<label
+								value="${c:l('flussi.data_presa_carico')}:" hflex="15%" />
+							<caribeldatebox hflex="10%"
+								id="dt_presa_carico" db_name="dt_presa_carico" maxlength="10"
+								readonly="false" required="true"/>
+							<label hflex="75%" />
+						</hlayout>
+
+						<hlayout width="100%">
+							<label
+								value="${c:l('generic.stato_civile')}:" hflex="15%" />
+							<caribelcombobox hflex="40%"
+								id="cbx_stato_civile" db_name="stato_civile" readonly="false" />
+							<label hflex="45%" />
+						</hlayout>
+
+						<hlayout width="100%">
+							<label id="label_badante"
+								value="${c:l('generic.badante')}:"
+								hflex="15%" />
+							<caribelradiogroup hflex="10%"
+								db_name="badante" id="badante"
+								style="text-align:left">
+								<radio label="${c:l('common.no')}"
+									value="N" checked="true" />
+								<radio label="${c:l('common.yes')}"
+									value="S" />
+							</caribelradiogroup>
+							<label hflex="75%"></label>
+						</hlayout>
+
+						<hlayout width="100%">
+							<label
+								value="${c:l('generic.numero_familiari')}:" hflex="15%" />
+							<caribelintbox hflex="10%"
+								id="num_fam" db_name="num_fam" maxlength="10"
+								readonly="false" />
+							<label hflex="75%" />
+						</hlayout>
+
+						<hlayout width="100%">
+							<label
+								value="${c:l('generic.richiedente')}:" hflex="15%" />
+							<caribelcombobox hflex="40%"
+								id="richiedente" db_name="richiedente" readonly="false" />
+							<label hflex="45%" />
+						</hlayout>
+
+
+						<hlayout width="100%">
+							<label
+								value="${c:l('flussi.motivo_presa_carico')}:" hflex="15%" />
+							<caribelcombobox hflex="40%"
+								id="cbx_motivo" db_name="motivo_presa_carico" readonly="false" />
+							<label hflex="45%" />
+						</hlayout>
+
+						<hlayout width="100%">
+							<label
+								value="${c:l('generic.asl_residenza')}:" hflex="15%" />
+							<caribelcombobox hflex="40%"
+								id="asl_residenza" db_name="asl_residenza" readonly="false" />
+							<label hflex="45%" />
+						</hlayout>
+
+
+						<hlayout width="100%">
+							<label hflex="35%"></label>
+							<button id="btn_valutazione"
+								label="${c:l('generic.valutazione')}" hflex="20%"
+								forward="onValutazione">
+							</button>
+							<label hflex="45%"></label>
+						</hlayout>
+					</vlayout>
+				</tabpanel>
+				<tabpanel id="rivalutazione" fulfill="rivalutazione_tab.onSelect">
+					<rivalutazione />
+				</tabpanel>
+				<tabpanel id="sospensione" fulfill="sospensione_tab.onSelect">
+					<sospensione />
+				</tabpanel>
+				<tabpanel id="conclusione" fulfill="Conclusione_tab.onSelect">
+					<conclusione />
+				</tabpanel>
+			</tabpanels>
+		</tabbox>
+	</vlayout>
+
+</window>

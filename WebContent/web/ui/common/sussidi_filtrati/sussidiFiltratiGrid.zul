@@ -1,0 +1,77 @@
+<window title="${c:l('sussidiFiltratiGrid.formTitle')}"
+	apply="it.caribel.app.common.controllers.sussidi_filtrati.SussidiFiltratiGridCtrl"	
+	sclass="asterOverlappedWindow"  sizable="true"
+	closable="true" mode="overlapped" position="center" border="normal" width="750px"
+height="450px">
+
+	<vlayout height="100%">
+	
+		<caribelGridMenu  visible_btn_clear="true" />
+		<vlayout sclass="asterLayout" vflex="true" spacing="5px">
+		<hlayout valign="middle" width="100%">
+				<label hflex="20%"  value="${c:l('sussidiFiltrati.anno')}:" />
+				<caribelintbox maxlength="4" hflex="20%" id="tb_filter2" db_name="eco_anno"/>				
+				<div hflex="50%" align="left">
+					<caribelradiogroup id="tb_filter3" db_name="filtro_serv">
+						<radio id="filtro_interv" value="S" label="${c:l('sussidiFiltrati.filtro_interv')}" />
+						<radio id="filtro_senza" value="N" label="${c:l('sussidiFiltrati.filtro_senza')}" checked="true"/>	
+					</caribelradiogroup>
+				</div>		
+				<label hflex="5%"  value="${c:l('sussidiFiltrati.S')}:" />
+				<caribeltextbox  hflex="10%" id="tb_filter4" db_name="settore_interv"/>	
+				<label hflex="5%"  value="${c:l('sussidiFiltrati.T')}:" />
+				<caribeltextbox  hflex="10%" id="tb_filter5" db_name="tipo_interv"/>
+				<label hflex="5%"  value="${c:l('sussidiFiltrati.I')}:" />
+				<caribeltextbox  hflex="10%" id="tb_filter6" db_name="cod_interv"/>	
+				<label hflex="5%"  value="${c:l('sussidiFiltrati.S')}:" />
+				<caribeltextbox  hflex="10%" id="tb_filter7" db_name="cod_servizio"/>					
+		</hlayout>
+		<hlayout>
+			<label hflex="20%"  />
+			<caribelcombobox hflex="130%" id="tb_filter8" readonly="true" db_name="cod_ccosto"/>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('sussidiFiltrati.conto')}:" />
+			<caribelSearch hflex="130%" maxlength="6"  id_cod="tb_filter9" db_name_cod="eco_codice"
+				required="false" 
+				ctrl="it.caribel.app.common.controllers.cont_conti.ContContiSearchCtrl"
+			 />
+		</hlayout>
+		<hlayout>
+				<label hflex="20%" value="${c:l('sussidiFiltrati.tipologia')}:" />
+				<div hflex="130%" align="left">
+					<caribelradiogroup id="tb_filter10" db_name="con_socsan">
+						<radio id="san" value="1" label="${c:l('sussidiFiltrati.tipologia_sanitario')}"/>						
+						<radio id="soc" value="0" label="${c:l('sussidiFiltrati.tipologia_sociale')}" checked="true"/>	
+					</caribelradiogroup>
+				</div>
+		</hlayout>
+		<hlayout valign="middle" width="100%">
+				<label hflex="20%"  value="${c:l('sussidiFiltrati.descrizione')}:" />
+				<caribeltextbox hflex="128%" id="tb_filter1" db_name="descrizione_suss"/>
+				<label hflex="2%"  value="" />
+			</hlayout>
+		
+			<caribelPaging/>
+			<caribellistbox vflex="true" hflex="true" >
+			<frozen columns="3"/>
+				<listhead sizable="true">
+					<caribellistheader db_name="codice_suss"	width="8em"    label="${c:l('sussidiFiltratiGrid.codice')}" />
+					<caribellistheader db_name="descrizione_suss"  width="20em" label="${c:l('sussidiFiltratiGrid.des_suss')}" />	
+					<caribellistheader db_name="eco_anno"  width="10em" label="${c:l('sussidiFiltratiGrid.anno')}" />	
+					<caribellistheader db_name="capitolo_suss"	width="10em"    label="${c:l('sussidiFiltratiGrid.capitolo')}" />
+					<caribellistheader db_name="eco_descri"	width="20em"    label="${c:l('sussidiFiltratiGrid.capitolo_des')}" />	
+					<caribellistheader db_name="descr_flag"	width="10em"    label="${c:l('sussidiFiltratiGrid.flag')}" />
+					<caribellistheader db_name="eco_budget"	width="10em"    label="${c:l('sussidiFiltratiGrid.budget')}" />
+					<caribellistheader db_name="eco_impegn"	width="10em"    label="${c:l('sussidiFiltratiGrid.impegn')}" />
+					<caribellistheader db_name="eco_liquid"	width="10em"    label="${c:l('sussidiFiltratiGrid.liquid')}" />	
+					<caribellistheader db_name="descservizio"	width="10em"    label="${c:l('sussidiFiltratiGrid.des_servizio')}" />
+					<caribellistheader db_name="tipo_auto"	width="10em"    label="${c:l('sussidiFiltratiGrid.tipo_auto')}" />						
+					<caribellistheader db_name="costounitario"	width="10em"    label="${c:l('sussidiFiltratiGrid.costo_uni')}" />						
+					<caribellistheader db_name="unimis_desc"	width="10em"    label="${c:l('sussidiFiltratiGrid.unimis')}" />						
+											
+				</listhead>
+			</caribellistbox>
+		</vlayout>		
+	</vlayout>
+</window>

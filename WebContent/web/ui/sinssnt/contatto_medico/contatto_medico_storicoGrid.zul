@@ -1,0 +1,27 @@
+<window title="${c:l('common.scheda.storico')}"
+	apply="it.caribel.app.sinssnt.controllers.contattoMedico.ContattoMedicoGridCtrl"
+	sclass="asterOverlappedWindow" 
+	border="normal"
+	width="100%" vflex="true" >
+	<vlayout height="100%">
+		<caribelGridMenu visible_btn_new="false"/>
+		<vlayout sclass="asterLayout" vflex="true" spacing="0px">
+			<hlayout valign="middle" width="100%" visible="false">
+				<label hflex="20%"  value="${c:l('schedaFisioGrid.cartella')}:" />
+				<caribeltextbox hflex="60%" id="tb_filter1" db_name="n_cartella" required="false" />
+				<label hflex="20%"  value="" />
+			</hlayout>
+<!-- 			<caribelPaging sortable="true"/> -->
+			<caribellistbox vflex="true" hflex="true">
+				<listhead sizable="true">
+	 				<caribellistheader db_name="n_contatto"	  	      order_by="n_contatto"           label="${c:l('storico.medico.contatto')}"     width="10%" sort="auto"/> 
+					<caribellistheader db_name="skm_data_apertura"	  order_by="skm_data_apertura"    label="${c:l('storico.medico.dataApertura')}" width="10%" sort="auto"/>
+	 				<caribellistheader db_name="operatore_apertura"	  order_by="operatore_apertura"   label="${c:l('storico.medico.operatore')}"    width="35%" sort="auto"/> 
+	 				<caribellistheader db_name="skm_data_chiusura"	  order_by="skm_data_chiusura"    label="${c:l('storico.medico.dataChiusura')}" width="10%" sort="auto"/> 
+	 				<caribellistheader db_name="operatore_referente"  order_by="operatore_referente"  label="${c:l('storico.medico.ioperatore')}"     width="35%" sort="auto"/> 
+	 				<!-- <caribellistheader db_name="skm_descr_contatto"   order_by="skm_descr_contatto"   label="${c:l('storico.medico.descContatto')}" width="25%" sort="auto"/>--> 
+				</listhead>
+			</caribellistbox>
+		</vlayout>
+	</vlayout>
+</window>

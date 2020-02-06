@@ -1,0 +1,99 @@
+<vlayout id="progetto2Form" vflex="true">
+	<vlayout vflex="true" hflex="1" spacing="3px" sclass="asterLayout">
+		<hlayout width="100%" style="text-align:left;margin:1px">
+			<groupbox hflex="100" closable="false">
+				<caption>
+					<div>
+						<label
+							value="${c:l('SchedaFisioForm.progetto2.groupbox1')}:">
+						</label>
+					</div>
+				</caption>
+				<hlayout  width="100%" style="text-align:right">
+					<label value="${c:l('SchedaFisioForm.progetto2.domiciliare')}:" hflex="20%" />
+					<caribelcheckbox hflex="5%" db_name="skf_op_assdom" value="N" />
+		 			<label value="${c:l('SchedaFisioForm.progetto2.sociale')}:" hflex="20%" />
+					<caribelcheckbox hflex="5%" db_name="skf_op_asssoc" value="N" />
+		 			<label value="${c:l('SchedaFisioForm.progetto2.fisioterapista')}:" hflex="20%" />
+					<caribelcheckbox hflex="5%" db_name="skf_op_fis" value="N" />
+					<label hflex="25%" />
+				</hlayout>
+				<hlayout  width="100%" style="text-align:right">
+					<label value="${c:l('SchedaFisioForm.progetto2.infermiere')}:" hflex="20%" />
+					<caribelcheckbox hflex="5%" db_name="skf_op_inf" value="N" />
+		 			<label value="${c:l('SchedaFisioForm.progetto2.logo')}:" hflex="20%" />
+					<caribelcheckbox hflex="5%" db_name="skf_op_logop" value="N" />
+		 			<label value="${c:l('SchedaFisioForm.progetto2.med_riab')}:" hflex="20%" />
+					<caribelcheckbox hflex="5%" db_name="skf_op_med" value="N" />
+					<label hflex="25%" />
+				</hlayout>
+				<hlayout  width="100%" style="text-align:right">
+					<label value="${c:l('SchedaFisioForm.progetto2.terapista')}:" hflex="20%" />
+					<caribelcheckbox hflex="5%" db_name="skf_op_terap" value="N" />
+		 			<label value="${c:l('SchedaFisioForm.progetto2.med_spec')}:" hflex="20%" />
+					<caribelcheckbox hflex="5%" db_name="skf_op_medspec" value="N" />
+		 			<label value="${c:l('SchedaFisioForm.progetto2.altro')}:" hflex="20%" />
+					<caribelcheckbox hflex="5%" db_name="skf_op_altro" value="N" />
+					<label hflex="25%" />
+				</hlayout>
+				<hlayout  width="100%" style="text-align:right">
+					<label hflex="20%" value="${c:l('SchedaFisioForm.progetto2.spec_altro')}:"  />
+					<caribeltextbox hflex="60%" id="skf_op_altro_desc" 
+					db_name="skf_op_altro_desc" maxlength="2000"  multiline="true" rows="2" sclass="asterTextArea"/>
+					<label hflex="20%" />
+				</hlayout>
+			</groupbox>			
+		</hlayout>				
+		<hlayout width="100%" style="text-align:left;margin:1px">
+			<groupbox hflex="100" closable="false">
+				<caption>
+					<div>
+						<label
+							value="${c:l('SchedaFisioForm.progetto2.groupbox2')}:">
+						</label>
+					</div>
+				</caption>
+
+				<hlayout width="100%" style="text-align:right">
+					<label hflex="20%" value="${c:l('SchedaFisioForm.progetto2.caregiver')}:" />
+					<caribelcombobox hflex="30%" db_name="skf_persona" id="cbx_giver" />						
+					<label hflex="50%"/>
+				</hlayout>
+				
+				<hlayout  width="100%" style="text-align:right">
+					<label hflex="20%" value="${c:l('SchedaFisioForm.progetto2.spec_altro2')}:"  />
+					<caribeltextbox hflex="60%" id="skf_persona_desc" 
+					db_name="skf_persona_desc" maxlength="2000"  multiline="true" rows="2" sclass="asterTextArea"/>
+					<label hflex="20%" />
+				</hlayout>
+			</groupbox>			
+		</hlayout>	
+		<hlayout width="100%" style="text-align:left;margin:1px">
+			<groupbox hflex="100" closable="false">
+				<caption>
+					<div>
+						<label
+							value="${c:l('SchedaFisioForm.progetto2.groupbox3')}:">
+						</label>
+					</div>
+				</caption>
+				<hlayout  width="100%" style="text-align:right">
+					<label value="${c:l('SchedaFisioForm.progetto2.nessuno')}:" hflex="20%" />
+					<caribelcheckbox hflex="5%" db_name="skf_condobb_n" value="N" />
+		 			<label value="${c:l('SchedaFisioForm.progetto2.familiari')}:" hflex="20%" />
+					<caribelcheckbox hflex="5%" db_name="skf_condobb_f" value="N" />
+		 			<label value="${c:l('SchedaFisioForm.progetto2.paziente')}:" hflex="20%" />
+					<caribelcheckbox hflex="5%" db_name="skf_condobb_p" value="N" />
+					<label hflex="25%" />
+				</hlayout>
+				<hlayout  width="100%" style="text-align:right">
+					<label value="${c:l('SchedaFisioForm.progetto2.operatore')}:" hflex="20%" />
+					<caribelcheckbox hflex="5%" db_name="skf_condobb_o" value="N" />
+		 			<label value="${c:l('SchedaFisioForm.progetto2.altro_care')}:" hflex="20%" />
+					<caribelcheckbox hflex="5%" db_name="skf_condobb_a" value="N" />
+		 			<label hflex="50%" />
+				</hlayout>
+			</groupbox>			
+		</hlayout>			
+ 	</vlayout>
+</vlayout>

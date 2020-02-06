@@ -1,0 +1,158 @@
+/* questo file contiene eventuali
+* personalizzazione dei css che riguardano esclusivamente l'applicativo Sins_SM,
+* le impostazioni dei css generali dell'aster 2.0 sono in: aster_lib/src/web/zul/css/AsterCSS.css.dsp
+*/
+
+.tabNoPadding .z-tabpanel{
+	padding:0px;
+}
+
+.backgroundRed, .backgroundRed .z-datebox-inp{
+	background-color: red;
+}
+
+/*GESTIONE AGENDA*/
+.headerListbox{
+	text-align:center;
+}
+
+.cellNumber{
+	text-align:center;
+}
+
+.selectedDayClass >* {
+	font-weight: bold !important;
+}
+
+
+.agenda0{ /* giallo Dafare{*/
+	background-color: #ffff00 !important;
+}
+.selectedAssistitoClass {
+	background-color: #ceffff !important;
+}
+.agenda1{ /* arancio Incompleto{*/
+	background-color: #ff8000 !important;
+}
+.agenda2{ /* verde Completo{*/
+	background-color: #00ff80 !important;
+}
+.agenda3{ /* rosso scaduto o pua CasoPI{*/
+	background-color: #ca0000 !important;
+}
+.agenda4{ /* rosso non fatto {*/
+	background-color: #ca0000 !important;
+}
+
+
+.agenda9{ /* rosso scaduto o pua CasoPI{*/
+	background-color: #ca0000 !important;
+}
+
+.legendaAgenda {
+	width:  15px; 
+	height: 15px;
+	valign: center; 
+	opacity: 1;
+}
+
+.selectedToMoveClass {
+	background-color: #ceffff !important;
+}
+
+.buttonAlignment{
+		text-align:center;
+}
+
+.assistitoInAgenda *{
+	font-weight: bold !important; 
+}
+
+/*FINE GESTIONE AGENDA*/
+
+
+.labelGiorni{
+	width:20px;
+	height:20px;
+	/*background-color: #ffffff;*/
+	text-align: center;
+	font-weight: bold;
+}
+
+.bisogniBackground{
+	background-color: #99d9ea;
+}
+
+tr.bisogniGrid > td.z-row-inner:first-child{
+	background-color: #99d9ea;
+}
+
+tr.z-row-over > td.z-row-inner > .z-row-cnt .bisogniBackground{
+	color: black;
+}
+
+
+.bisogniGrid .z-grid-body > table{
+	border-spacing: 2px 0px;
+}
+
+.bisogniGrid .z-grid-body{
+	background:grey;
+}
+
+
+.agendaPianificazione {
+	text-align:center;
+	height: 21px;
+	padding: 0px;
+	margin:-4px;
+}
+
+.bottoneImmagine {
+	background-color: Transparent;
+	background-repeat:no-repeat; 
+	border: none; 
+	cursor:pointer; 
+	overflow: hidden; 
+	padding-left: 0px;
+}
+
+.agendaTable>.z-listbox-header div.z-auxheader-cnt {
+  padding: 3px;
+}
+
+.agendaTable .z-listcell{
+	border: 1px solid grey;
+}
+
+.assistitoADI div.z-listcell-cnt, .assistitoADI{
+	color:blue;
+	text-decoration: underline;
+}
+
+.z-north-colpsd {
+	background-image:url("/web/img/agenda/calendario.png");
+	background-position:center; 
+	background-repeat:no-repeat;
+}
+
+
+.senzaSpazio>.z-datebox-inp  {
+    font-family: arial, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    background: #FFFFFF;
+    border: 1px solid #E6E6E6;
+    border-top-color: #B2B2B2;
+    border-right: 0;
+    padding: 0px;
+    border-radius: 2px 0 0 2px;
+    -moz-border-radius: 2px 0 0 2px;
+    -webkit-border-radius: 2px 0 0 2px;
+    height: 15px;
+    outline: none;
+}
+
+.agenda>*{
+	padding-bottom: 0px !important;
+}

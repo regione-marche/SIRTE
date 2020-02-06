@@ -1,0 +1,40 @@
+<window title="${c:l('recupera.dati.stampa')}"
+	apply="it.caribel.app.sinssnt.util.DatiStampaCtrl" closable="true"
+	sizable="true" mode="modal" border="normal" position="center"
+	width="650px" height="150px">
+
+	<vlayout vflex="true">
+		<caribelFormMenu visible_btn_print="true"
+			visible_btn_undo="false" visible_btn_delete="false"
+			visible_btn_save="false" />
+		<vlayout sclass="asterLayout asterOverflow" vflex="true">
+			<hlayout width="100%">
+				<label value="" hflex="100%" />
+			</hlayout>
+			<hlayout width="100%" id="idRichiestaTipoStampaDatiVuoto" visible="false">
+				<label hflex="20%" value="${c:l('generic.modello.tipo.dati.vuoto')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="tipoStampaDatiVuoto">
+						<radio id="modelloDati" value="dt"
+							label="${c:l('generic.tipo.stampa.dati')}" checked="true" />
+						<radio id="modelloVuoto" value="vt"
+							label="${c:l('generic.tipo.stampa.vuoto')}" />
+					</caribelradiogroup>
+				</div>
+			</hlayout>
+			<hlayout width="100%">
+				<label hflex="20%" value="${c:l('generic.formato')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="formatoStampa">
+						<radio id="pdf" value="pdf"
+							label="${c:l('generic.formato.pdf')}" checked="true" />
+						<radio id="html" value="html"
+							label="${c:l('generic.formato.html')}" />
+						<radio id="rtf" value="rtf"
+							label="${c:l('generic.formato.rtf')}" />
+					</caribelradiogroup>
+				</div>
+			</hlayout>
+		</vlayout>
+	</vlayout>
+</window>

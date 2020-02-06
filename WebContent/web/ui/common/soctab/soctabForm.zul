@@ -1,0 +1,39 @@
+<window id="soctabForm" title="${c:l('soctabForm.formTitle')}"
+	apply="it.caribel.app.common.controllers.soctab.SoctabFormCtrl"
+	closable="true" sizable="true"
+border="normal" mode="modal"
+position="center"
+width="650px"
+>
+
+	<vlayout vflex="true">
+
+		<caribelFormMenu />
+ 		<vlayout vflex="true" sclass="asterLayout asterOverflow asterLayoutLastSpace">
+ 		
+			<hlayout>
+				<label hflex="20%" value="${c:l('soctab.codice')}:" />
+				<caribeltextbox isDbKey="true" focus="true" hflex="15%" id="codice" db_name="codice" maxlength="6" required="true" />
+				<label hflex="65%" />
+			</hlayout>
+ 		 		
+			<hlayout >
+				<label hflex="20%"  value="${c:l('soctab.descrizione')}:" />
+				<caribeltextbox hflex="80%" id="descrizione" db_name="descrizione" maxlength="40" required="true" />
+			</hlayout>
+			
+			<hlayout valign="middle" width="100%">
+				<label hflex="20%"  value="${c:l('soctab.obsoleto')}:" />				
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="obsoleto" db_name="obsoleto">
+						<radio id="no" value="N" label="${c:l('soctab.obsoleto_no')}"  checked="true" />
+						<radio id="si" value="S" label="${c:l('soctab.obsoleto_si')}"/>	
+					</caribelradiogroup>
+				</div>		
+				
+		</hlayout>
+			
+ 		</vlayout>
+	</vlayout>
+
+</window>

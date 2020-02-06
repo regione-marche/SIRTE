@@ -1,0 +1,66 @@
+<vlayout vflex="true">
+	<vlayout vflex="true" spacing="3px" style="text-align:right;">
+		<hlayout>
+			<label hflex="20%"
+				value="${c:l('cartella.residenza.indirizzo')}:" />
+			<caribeltextbox hflex="70%" id="indirizzo_res" maxlength="30"
+				db_name="indirizzo" />
+			<caribeltextbox hflex="10%" id="cap_res"
+				db_name="cap"  maxlength="5" />
+		</hlayout>
+		<hlayout>
+			<label hflex="20%"
+				value="${c:l('cartella.residenza.citta')}:" />
+			<caribelSearch hflex="70%" db_name_cod="citta" required="true"
+				db_name_descr="comresdescr" id="comuneResidenzaSearch" id_cod="cod_citta_res"
+				id_descr="comresdescr"
+				ctrl="it.caribel.app.sinssnt.controllers.tabelle.comuni.ComuniSearchCtrl" />
+			<label hflex="5%"
+				value="${c:l('cartella.residenza.provincia')}:">
+			</label>
+			<caribeltextbox hflex="5%" id="provincia_res" readonly="true"
+				db_name="prov" />
+		</hlayout>
+		<hlayout>
+			<label hflex="20%"
+				value="${c:l('cartella.residenza.localita')}:" />
+			<caribeltextbox hflex="50%" id="localita_res"  maxlength="30"
+				db_name="localita" />
+			<label hflex="10%"
+				value="${c:l('cartella.residenza.religione')}:"/>
+			<caribelcombobox hflex="20%" id="cbx_religione"
+				db_name="religione" />
+		</hlayout>
+
+		<hlayout>
+			<label hflex="20%"
+				value="${c:l('cartella.residenza.regioneUSL')}:" />
+			<caribelcombobox hflex="30%" id="cbx_regione"
+				db_name="regione" />
+			<label hflex="30%"
+				value="${c:l('cartella.residenza.usl')}:"/>
+			<caribelcombobox hflex="20%" id="cbx_usl"
+				db_name="usl" />
+		</hlayout>
+ 
+		<hlayout>
+			<label hflex="20%"
+				value="${c:l('cartella.residenza.medico')}:" />
+			<caribelSearch hflex="55%" hflex_cod="45%" id_descr="desc_med" required="true"
+				db_name_cod="cod_med" db_name_descr="meddescr"
+				ctrl="it.caribel.app.common.controllers.medici.MediciSearchCtrl"
+				 />
+			<label value="${c:l('cartella.residenza.medico.data')}:" hflex="10%" />
+			<caribeldatebox hflex="15%" required="true" db_name="data_medico" constraint="no future"/>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%"
+				value="${c:l('cartella.residenza.areaDistrettuale')}:" />
+			<caribelSearch hflex="60%" id_descr="desc_areadis_res" id_cod="cod_areadis_res" required="true"
+				db_name_cod="areadis" db_name_descr="desc_area_res"
+				ctrl="it.caribel.app.common.controllers.areadis.AreadisSearchCtrl" />
+			<label value="" hflex="20%" />
+		</hlayout>
+
+	</vlayout>
+</vlayout>

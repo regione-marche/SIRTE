@@ -1,0 +1,75 @@
+<window title="${c:l('ricercaRsa.formTitle')}"
+	apply="it.caribel.app.sinssnt.controllers.tabelle.ric_rp_rsa.RicRpRsaGridCtrl"	
+	sclass="asterOverlappedWindow"  sizable="true"
+	closable="true" mode="overlapped" position="center" border="normal" width="750px"
+height="450px">
+
+<zscript><![CDATA[
+	void dadataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}
+	void adataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}	
+]]>
+</zscript>
+	<vlayout height="100%">
+	
+		<caribelGridMenu  visible_btn_clear="true" />
+		<vlayout sclass="asterLayout" vflex="true" spacing="5px">
+		
+		<hlayout>
+			<label hflex="20%" value="${c:l('ricercaRsa.cartella')}:" />
+			<caribelSearch hflex="80%" maxlength="8"  id_cod="tb_filter1" db_name_cod="n_cartella"				
+				ctrl="it.caribel.app.common.controllers.cartella.CartellaSearchCtrl"
+			 />
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('ricercaRsa.data')}:" />
+			<div hflex="80%" width="100%">
+				<hlayout width="100%">
+					<caribeldatebox id="dadata" hflex="30%"
+						required="false" onChange="dadataChanged()" db_name="dataini"/>
+					
+					<caribeldatebox id="adata" hflex="30%"
+						required="false"	onChange="adataChanged()" db_name="datafin"/>
+						<label hflex="40%" value="" />
+				</hlayout>
+			</div>
+		</hlayout>
+		
+		<hlayout>
+			<label hflex="20%" value="${c:l('ricercaRsa.num_progetto')}:" />
+			<div hflex="80%" width="100%">
+				<hlayout width="100%">
+					<caribelintbox id="tb_filter2" hflex="30%"
+						required="false" maxlength="13" db_name="n_progetto"/>
+					<label hflex="20%" value="${c:l('ricercaRsa.obiettivo')}:" />
+					<caribeltextbox id="tb_filter3" hflex="30%"
+						required="false" maxlength="8" db_name="cod_obbiettivo"/>
+					<label hflex="20%" value="${c:l('ricercaRsa.intervento')}:" />
+					<caribelintbox id="tb_filter4" hflex="30%"
+						required="false" maxlength="13" db_name="n_intervento"/>
+				</hlayout>
+			</div>
+		</hlayout>
+		
+			<caribelPaging/>
+			<caribellistbox vflex="true" hflex="true" >
+			<frozen columns="3"/>
+				<listhead sizable="true">					
+					<caribellistheader db_name="n_cartella"  width="7em" label="${c:l('ricercaRsaGrid.cartella')}" />	
+					<caribellistheader db_name="data_variazione"  width="8em" label="${c:l('ricercaRsaGrid.data_var')}" />	
+					<caribellistheader db_name="cognome"  width="13em" label="${c:l('ricercaRsaGrid.cognome')}" />	
+					<caribellistheader db_name="nome"  width="13em" label="${c:l('ricercaRsaGrid.nome')}" />	
+					<caribellistheader db_name="flag_stato"  width="7em" label="${c:l('ricercaRsaGrid.flag_stato')}" />	
+					<caribellistheader db_name="data_ingresso"  width="8em" label="${c:l('ricercaRsaGrid.data_ingresso')}" />	
+					<caribellistheader db_name="data_uscita"  width="8em" label="${c:l('ricercaRsaGrid.data_uscita')}" />	
+					<caribellistheader db_name="istituto"  width="13em" label="${c:l('ricercaRsaGrid.istituto')}" />
+					<caribellistheader db_name="cod_org"  width="7em" label="${c:l('ricercaRsaGrid.cod_org')}" />	
+					
+				</listhead>
+			</caribellistbox>
+		</vlayout>		
+	</vlayout>
+</window>

@@ -1,0 +1,98 @@
+<?component name="panel_ubicazione" inline="true" macroURI="~./ui/common/ubicazione/PanelUbicazione.zul"?>
+
+<window 
+apply="it.caribel.app.sinssnt.controllers.report.ReportInfRiepAttUtDimCtrl"
+title="${c:l('menu.stampe.infermieristica.assistiti_riep_attivita_utente_dim')}" 
+closable="true" sizable="true"
+mode="overlapped"
+border="normal"
+position="center"
+width="750px"
+height="440px">
+
+<zscript><![CDATA[
+	void dadataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}
+	void adataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}	
+]]>
+</zscript>
+	
+	<vlayout vflex="true">
+	<caribelFormMenu visible_btn_print="true" visible_btn_delete="false" visible_btn_save="false"/>
+	<vlayout sclass="asterLayout asterOverflow" vflex="true">	
+	
+	
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.anno')}:"/>
+			<div hflex="80%" width="20%">
+				<hlayout width="20%">
+					<caribelintbox maxlength="4" hflex="80%" id="anno" required="true"/>				
+				</hlayout>
+			</div>			
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.damese')}:" />
+			<div hflex="80%" width="100%">
+				<hlayout width="100%">
+					<caribelcombobox id="damese" hflex="30%"
+						required="false"  />
+					<label hflex="40%"
+						value="${c:l('generic.amese')}:" />
+					<caribelcombobox id="amese" hflex="30%"
+						required="false"	 />
+				</hlayout>
+			</div>
+		</hlayout>
+		
+		
+		<panel_ubicazione/>
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.tipo_utente')}:" />
+			<caribelcombobox hflex="80%" id="tipo_utente" readonly="true"/>
+		</hlayout>
+		
+		<hlayout>
+				<label hflex="20%" value="${c:l('generic.assistiti')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="radio_assistiti">
+						<radio id="no_ass" value="NO" label="${c:l('generic.assistiti_no_ass')}" checked="true"/>
+						<radio id="elenco_ass" value="SI" label="${c:l('generic.assistiti_elenco_ass')}"/>						
+					</caribelradiogroup>
+				</div>
+		</hlayout>
+		
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.fascia_eta')}:" />
+			<caribelcombobox hflex="80%" id="fascia_eta" readonly="true"/>
+		</hlayout>
+		
+		
+		<hlayout>
+				<label hflex="20%" value="${c:l('generic.formato')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="formatoStampa">
+						<radio id="pdf" value="PDF" label="${c:l('generic.formato.pdf')}" checked="true"/>
+						<radio id="html" value="HTML" label="${c:l('generic.formato.html')}"/>						
+					</caribelradiogroup>
+				</div>
+		</hlayout>
+		<hlayout></hlayout>
+		<hlayout></hlayout>
+		<hlayout></hlayout>
+		<hlayout></hlayout>
+		<hlayout>
+				<label hflex="5%"/>
+				<div hflex="90%" align="left">
+					<label hflex="90%"  value="${c:l('ReportInfRiepAttUtDim.msg')}" sclass="normalText" style="border-style: solid;border-color: gray; border-width:0.5px"/>
+				</div>
+				<label hflex="5%"/>
+		</hlayout>
+		
+		
+		
+		</vlayout>
+	</vlayout>
+</window>

@@ -1,0 +1,61 @@
+<window title="${c:l('bancheGrid.formTitle')}"
+	apply="it.caribel.app.common.controllers.banche.BancheGridCtrl"	
+	sclass="asterOverlappedWindow" sizable="true"
+	closable="true" mode="overlapped" position="center" border="normal" height="600px">
+
+	<vlayout height="100%">
+	
+		<caribelGridMenu  visible_btn_clear="true" />
+		<vlayout sclass="asterLayout" vflex="true" spacing="5px">
+			<hlayout>
+			<label hflex="20%" value="${c:l('banche.codice_abi')}:" />
+			<div hflex="80%" width="100%">
+				<hlayout width="100%">
+					<caribeltextbox id="tb_filter1" hflex="30%" db_name="ban_codice_abi"/>
+					<label hflex="40%"
+						value="${c:l('banche.codice_cab')}:" />
+					<caribeltextbox id="tb_filter2" hflex="30%" db_name="ban_cab_sport" />
+				</hlayout>
+			</div>
+		</hlayout>
+		
+			<hlayout>
+			<label hflex="20%" value="${c:l('banche.citta_sport')}:" />
+			<div hflex="80%" width="100%">
+				<hlayout width="100%">
+					<caribeltextbox id="tb_filter3" hflex="30%" db_name="ban_citta_sport"/>
+					<label hflex="40%"
+						value="${c:l('banche.sportello_cap')}:" />
+					<caribeltextbox id="tb_filter4" hflex="30%" db_name="ban_cap_sport" />
+				</hlayout>
+			</div>
+		</hlayout>
+		
+		<hlayout valign="middle" width="100%">
+				<label hflex="20%"  value="${c:l('banche.localita_sport')}:" />
+				<caribeltextbox hflex="78%" id="tb_filter5" db_name="ban_localita_sport"/>
+				<label hflex="2%"  value="" />
+			</hlayout>
+		<hlayout valign="middle" width="100%">
+				<label hflex="20%"  value="${c:l('banche.descr_sport')}:" />
+				<caribeltextbox hflex="78%" id="tb_filter6" db_name="ban_descr_sport"/>
+				<label hflex="2%"  value="" />
+			</hlayout>
+		
+		
+			<caribelPaging/>
+			<caribellistbox vflex="true" hflex="true" >
+			<frozen columns="3"/>
+				<listhead sizable="true">
+					<caribellistheader db_name="ban_codice_abi"	width="5em"    label="${c:l('bancheGrid.abi')}" />
+					<caribellistheader db_name="ban_cab_sport"  width="8em" label="${c:l('bancheGrid.cab')}" />	
+					<caribellistheader db_name="ban_citta_sport"  width="10em" label="${c:l('bancheGrid.citta_sport')}" />	
+					<caribellistheader db_name="ban_localita_sport"	width="10em"    label="${c:l('bancheGrid.localita')}" />
+					<caribellistheader db_name="ban_descr_sport"  width="20em" label="${c:l('bancheGrid.desscr_sport')}" />	
+					<caribellistheader db_name="ban_descrizione"  width="20em" label="${c:l('bancheGrid.descrizione')}" />	
+															
+				</listhead>
+			</caribellistbox>
+		</vlayout>		
+	</vlayout>
+</window>

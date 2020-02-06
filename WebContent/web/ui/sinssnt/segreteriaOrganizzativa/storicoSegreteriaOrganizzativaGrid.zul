@@ -1,0 +1,27 @@
+<window 
+	id="puacSchedaStoGrid" 
+	title="${c:l('common.scheda.storico')}"
+	apply="it.caribel.app.sinssnt.controllers.segreteriaOrganizzativa.SegreteriaOrganizzativaGridCtrl"
+	sclass="asterOverlappedWindow" 
+	border="normal"
+	width="100%" vflex="true" >
+	<vlayout height="100%">
+		<caribelGridMenu />
+		<vlayout sclass="asterLayout" vflex="true" spacing="0px">
+			<hlayout valign="middle" width="100%" visible="false">
+				<label hflex="20%"  value="${c:l('storico.segreteria.organizzativa.ncartella')}:" />
+				<caribeltextbox hflex="60%" id="tb_filter1" db_name="n_cartella" required="false" />
+				<label hflex="20%"  value="" />
+			</hlayout>
+<!-- 			<caribelPaging sortable="true"/> -->
+			<caribellistbox vflex="true" hflex="true">
+				<listhead sizable="true">
+					<caribellistheader db_name="pr_data_puac"	       order_by="pr_data_puac"            label="${c:l('menu.segreteria.organizzativa.scheda.uvm.tb.data.accettazione')}"         width="25%" sort="auto"/>
+	 				<caribellistheader db_name="data_presa_carico_skso" 	   order_by="data_presa_carico" 	  label="${c:l('menu.segreteria.organizzativa.scheda.uvm.tb.data.presa.carico')}"	    width="20%" sort="auto"/> 
+	 				<caribellistheader db_name="pr_data_chiusura"           order_by="pr_data_chiusura"  	  label="${c:l('menu.segreteria.organizzativa.scheda.uvm.tb.data.chiusura')}"      width="25%" sort="auto"/>
+	 				<caribellistheader db_name="pr_motivo_chiusura_descr"  order_by="pr_motivo_chiusura"  label="${c:l('menu.segreteria.organizzativa.scheda.uvm.tb.motivo.chiusura')}"		 width="25%" sort="auto"/>
+				</listhead>
+			</caribellistbox>
+		</vlayout>
+	</vlayout>
+</window>

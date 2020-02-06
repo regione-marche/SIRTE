@@ -1,0 +1,76 @@
+<window title="${c:l('farTracciato1.formTitle')}"
+	apply="it.caribel.app.sinssnt.controllers.tabelle.far_tracciato1.FarTracciato1GridCtrl"
+	width="650px" height="510px" style="overflow:auto" sizable="true"
+	closable="true" mode="overlapped" position="center" border="normal">
+	
+<zscript><![CDATA[
+	void dadataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}
+	void adataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}	
+]]>
+</zscript>
+	<vlayout height="100%">
+				
+		<caribelGridMenu  visible_btn_clear="true"/>
+		<vlayout sclass="asterLayout" vflex="true" spacing="5px">
+			<hlayout>
+				<label hflex="20%"  value="${c:l('farTracciato1.cartella')}:" />
+				<caribelintbox maxlength="13" hflex="60%" id="tb_filter1" db_name="n_cartella"/>
+				<label hflex="20%"  value="" />
+			</hlayout>
+			<hlayout>
+				<label hflex="20%"  value="${c:l('farTracciato1.cognome')}:" />
+				<caribeltextbox hflex="60%" id="tb_filter2" db_name="cognome"/>
+				<label hflex="20%"  value="" />
+			</hlayout>
+			<hlayout>
+				<label hflex="20%"  value="${c:l('farTracciato1.nome')}:" />
+				<caribeltextbox hflex="60%" id="tb_filter3" db_name="nome"/>
+				<label hflex="20%"  value="" />
+			</hlayout>
+			<hlayout>
+			<label hflex="20%" value="${c:l('generic.dadata')}:" />
+			<div hflex="80%" width="100%">
+				<hlayout width="100%">
+					<caribeldatebox id="dadata" hflex="30%"
+						onChange="dadataChanged()" />
+					<label hflex="20%"
+						value="${c:l('generic.adata')}:" />
+					<caribeldatebox id="adata" hflex="30%"
+						onChange="adataChanged()" />
+						<label hflex="27%"  value="" />
+				</hlayout>
+			</div>
+		</hlayout>
+		<hlayout>
+				<label hflex="20%" value="${c:l('farTracciato1.tipo')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="tb_filter6" db_name="tipo">
+						<radio id="am_dim" value="E" label="${c:l('farTracciato1.tipo_am_dim')}" checked="true"/>
+						<radio id="am" value="A" label="${c:l('farTracciato1.tipo_am')}"/>	
+						<radio id="dim" value="D" label="${c:l('farTracciato1.tipo_dim')}"/>						
+					</caribelradiogroup>
+				</div>
+		</hlayout>
+			<caribelPaging/>
+			<caribellistbox vflex="true" hflex="true" >
+			<frozen columns="3"/>
+				<listhead sizable="true">
+					<caribellistheader db_name="tracc1_cod"	  	width="8em" label="${c:l('farTracciato1Grid.tracc1_cod')}" />
+					<caribellistheader db_name="n_cartella" width="8em"	label="${c:l('farTracciato1Grid.cartella')}"  />	
+					<caribellistheader db_name="cognome"	width="13em"  	label="${c:l('farTracciato1Grid.cognome')}" />
+					<caribellistheader db_name="nome" 	width="13em" label="${c:l('farTracciato1Grid.nome')}"  />					
+					<caribellistheader db_name="data_nasc"	  width="10em"	label="${c:l('farTracciato1Grid.data_nasc')}" />
+					<caribellistheader db_name="tipo" 	width="10em" label="${c:l('farTracciato1Grid.tipo')}"  />					
+					<caribellistheader db_name="fl_trasmissione"	width="10em"  	label="${c:l('farTracciato1Grid.fl_trasmissione')}" />
+					<caribellistheader db_name="ammis_data" width="10em"	label="${c:l('farTracciato1Grid.ammis_data')}"  />					
+					<caribellistheader db_name="dimiss_data"	width="10em"  	label="${c:l('farTracciato1Grid.dimiss_data')}" />
+				</listhead>
+			</caribellistbox>
+		</vlayout>	
+	</vlayout>	
+
+</window>

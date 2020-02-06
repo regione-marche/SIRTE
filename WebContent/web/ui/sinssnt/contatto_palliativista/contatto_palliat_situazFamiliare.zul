@@ -1,0 +1,41 @@
+<?component name="paziente" 	inline="true" macroURI="contPalliat_sitFamiliare_pazientePanel.zul"?> 
+<?component name="familiari" 	inline="true" macroURI="contPalliat_sitFamiliare_familiariPanel.zul"?> 
+<?component name="badante" 		inline="true" macroURI="contPalliat_sitFamiliare_badantePanel.zul"?>
+
+
+<vlayout id="situazFamiliareForm" >
+	<vlayout hflex="1" spacing="3px"
+		sclass="asterLayout">
+		
+		<tabbox id="tbbox_sitFamiliare" >
+			<tabs id="tabs_sitFamiliare" style="text-align:center">
+				<tab id="pazienteTab"
+					label="${c:l('schedaPalliat_situazFamiliare.paziente')}" />
+				<tab id="familiariTab"
+					label="${c:l('schedaPalliat_situazFamiliare.familiari')}" />
+				<tab id="badanteTab"
+					label="${c:l('schedaPalliat_situazFamiliare.badante')}" />				
+			</tabs>
+
+			<tabpanels>
+				
+				<tabpanel vflex="true">
+					<paziente />
+				</tabpanel>
+
+				
+				<tabpanel>
+					<familiari />
+				</tabpanel>
+
+				
+				<tabpanel>
+					<badante />
+				</tabpanel>
+
+			</tabpanels>
+
+		</tabbox>
+		
+	</vlayout>
+</vlayout>

@@ -1,0 +1,116 @@
+<window id="sntAutorizzazioneMMG"
+	title="${c:l('autorizzazionemmg.formTitle')}" closable="true"
+	apply="it.caribel.app.sinssnt.controllers.autorizzazioni.AutorizzazioniMMGFormCtrl"
+	border="normal" vflex="true" width="100%">
+
+	<vlayout vflex="true">
+		<caribelFormMenu />
+		<vlayout vflex="true" sclass="asterLayout asterOverflow">
+		<hlayout width="100%">
+				<caribeltextbox hflex="20%" id="n_cartella"
+					db_name="n_cartella" maxlength="40" readonly="true" visible="false" />
+				<label value=""	hflex="100%"></label>
+		</hlayout>
+			<hlayout width="100%">
+				<label value="${c:l('autorizzazionemmg.operatore')}:"
+					hflex="20%" />
+				<caribeltextbox hflex="10%" id="skmmg_operatore"
+					db_name="skmmg_operatore" maxlength="40" readonly="true" />
+				<caribeltextbox hflex="45%" id="desc_oper"
+					db_name="desc_oper" maxlength="40" readonly="true" />
+				<label hflex="25%"></label>
+			</hlayout>
+
+			<hlayout>
+				<label hflex="20%"
+					value="${c:l('autorizzazionemmg.data_apertura')}:" />
+				<caribeldatebox id="pr_data" hflex="15%"
+					db_name="pr_data" constraint="no future" required="true" />
+				<label hflex="65%" />
+			</hlayout>
+			<hlayout>
+				<label id="lb" hflex="20%"
+					value="${c:l('autorizzazionemmg.segnalante')}:" />
+				<caribelcombobox hflex="35%" db_name="skmmg_segnalatore"
+					id="cbx_skmmg_segnalatore" />
+				<label hflex="45%" />
+			</hlayout>
+   
+		<!-- 
+		 	<hlayout>
+				<label hflex="100%"></label>
+			</hlayout>
+			<hlayout style="text-align:center;" >
+				<label hflex="12%"></label>
+				<label hflex="15%"
+					value="${c:l('autorizzazionemmg.patologia')}"/>
+				<label hflex="53%"
+					value="${c:l('autorizzazionemmg.descrizione')}"/>
+				<label hflex="15%"
+					value="${c:l('autorizzazionemmg.indice.gravita')}"/>
+				<label hflex="5%"></label>
+			</hlayout>
+			<hlayout width="100%">
+				<label hflex="15%"
+					value="${c:l('autorizzazionemmg.diagnosi.principale')}:" />
+				<caribelSearch hflex="70%" db_name_cod="skmmg_patol1"
+					db_name_descr="desc_patol1" id_cod="skmmg_patol1"
+					id_descr="desc_patol1"
+					ctrl="it.caribel.app.sinssnt.controllers.tabelle.diagnosi.DiagnosiSearchCtrl" />
+				<caribeltextbox hflex="5%" id="ids1" db_name="skmmg_ids1"
+					maxlength="1" />
+				<label hflex="10%"></label>
+			</hlayout>
+			
+			<hlayout width="100%">
+				<label hflex="15%"
+					value="${c:l('autorizzazionemmg.diagnosi.secondarie')}:" />
+				<caribelSearch hflex="70%" db_name_cod="skmmg_patol2"
+					db_name_descr="desc_patol2" id_cod="skmmg_patol2"
+					id_descr="desc_patol2"
+					ctrl="it.caribel.app.sinssnt.controllers.tabelle.diagnosi.DiagnosiSearchCtrl" />
+				<caribeltextbox hflex="5%" id="ids2" db_name="skmmg_ids2"
+					maxlength="1" />
+				<label hflex="10%"></label>
+			</hlayout>
+			
+			
+			<hlayout width="100%">
+				<label hflex="15%"></label>
+				<caribelSearch hflex="70%" db_name_cod="skmmg_patol3"
+					db_name_descr="desc_patol3" id_cod="skmmg_patol3"
+					id_descr="desc_patol3"
+					ctrl="it.caribel.app.sinssnt.controllers.tabelle.diagnosi.DiagnosiSearchCtrl" />
+				<caribeltextbox hflex="5%" id="ids3" db_name="skmmg_ids3"
+					maxlength="1" />
+				<label hflex="10%"></label>
+			</hlayout>
+			
+			
+			<hlayout width="100%">
+				<label hflex="15%"></label>
+				<caribelSearch hflex="70%" db_name_cod="skmmg_patol4"
+					db_name_descr="desc_patol4" id_cod="skmmg_patol4"
+					id_descr="desc_patol4"
+					ctrl="it.caribel.app.sinssnt.controllers.tabelle.diagnosi.DiagnosiSearchCtrl" />
+				<caribeltextbox hflex="5%" id="ids4" db_name="skmmg_ids4"
+					maxlength="1" />
+				<label hflex="10%"></label>
+			</hlayout>
+			
+			
+			<hlayout width="100%">
+				<label hflex="15%"></label>
+				<caribelSearch hflex="70%" db_name_cod="skmmg_patol5"
+					db_name_descr="desc_patol5" id_cod="skmmg_patol5"
+					id_descr="desc_patol5"
+					ctrl="it.caribel.app.sinssnt.controllers.tabelle.diagnosi.DiagnosiSearchCtrl" />
+				<caribeltextbox hflex="5%" id="ids5" db_name="skmmg_ids5"
+					maxlength="1" />
+				<label hflex="10%"></label>
+			</hlayout>
+			
+			-->
+		</vlayout>
+	</vlayout>
+</window>

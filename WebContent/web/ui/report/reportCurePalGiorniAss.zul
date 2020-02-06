@@ -1,0 +1,67 @@
+<?component name="panel_ubicazione" inline="true" macroURI="~./ui/common/ubicazione/PanelUbicazione.zul"?>
+
+<window 
+apply="it.caribel.app.sinssnt.controllers.report.ReportCurePalGiorniAssCtrl"
+title="${c:l('menu.stampe_cure_palliative.title_giorniAss_cure_palliative')}" 
+closable="true" sizable="true"
+mode="overlapped"
+border="normal"
+position="center"
+width="750px"
+height="300px">
+
+<zscript><![CDATA[
+	void dadataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}
+	void adataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}	
+]]>
+</zscript>
+	
+	<vlayout vflex="true">
+	<caribelFormMenu visible_btn_print="true" visible_btn_delete="false" visible_btn_save="false"/>
+	<vlayout sclass="asterLayout asterOverflow" vflex="true">	
+	
+	
+	
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.dadata')}:" />
+			<div hflex="80%" width="20%">
+				<hlayout width="20%">
+					<caribeldatebox id="dadata" hflex="30%"
+						required="true" onChange="dadataChanged()" />
+					
+				</hlayout>
+			</div>
+		</hlayout>
+		
+		<hlayout>
+			<label hflex="20%"	value="${c:l('generic.adata')}:" />
+			<div hflex="80%" width="20%">
+				<hlayout width="20%">					
+					<caribeldatebox id="adata" hflex="30%"
+						required="true"	onChange="adataChanged()" />
+				</hlayout>
+			</div>
+		</hlayout>
+		
+		<panel_ubicazione />		
+		
+		<hlayout>
+				<label hflex="20%" value="${c:l('generic.formato')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="formatoStampa">
+						<radio id="pdf" value="PDF" label="${c:l('generic.formato.pdf')}" checked="true"/>
+						<radio id="html" value="EXCEL" label="${c:l('generic.formato.html')}"/>						
+					</caribelradiogroup>
+				</div>
+		</hlayout>
+		
+		
+		
+		
+		</vlayout>
+	</vlayout>
+</window>

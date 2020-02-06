@@ -1,0 +1,1341 @@
+<?xml version ="1.0" encoding="ISO-8859-1"?>
+
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+
+<!-- mfo:section.start="inizio"  -->
+<fo:layout-master-set>
+  <fo:simple-page-master master-name="simple"
+    page-height="29.7cm"                 page-width="21cm"
+    margin-top="1cm"                  	 margin-bottom="0.5cm"
+    margin-left="1.0cm"                  margin-right="1.0cm">
+    <fo:region-before margin-top="0.5cm" extent="2cm"/>
+    <fo:region-after extent="1cm"/>
+    <fo:region-body margin-top="1cm" margin-bottom="1cm"/>
+  </fo:simple-page-master>
+</fo:layout-master-set>
+
+<fo:page-sequence master-name="simple">
+<fo:static-content flow-name="xsl-region-before">
+     <fo:block font-size="8pt" font-weight="bold">
+              #lbl_id_assistito# #n_cartella# #lbl_nominativo#: #cognome# #nome# #lbl_data_nascita# #data_nasc#
+     </fo:block>
+    <fo:block font-size="8pt">
+          <fo:leader leader-pattern="rule"
+                     rule-thickness="0.5pt"
+                     leader-length="19.0cm"/>
+    </fo:block>
+</fo:static-content>
+
+    <!-- TITOLO DI PIEDE -->
+    <fo:static-content flow-name="xsl-region-after">
+      <fo:table font-size="8pt" width="auto" >
+        <fo:table-column column-width="11cm"/>
+        <fo:table-column column-width="7cm"/>
+        <fo:table-body>
+          <fo:table-row height="10pt">
+            <fo:table-cell text-align="start">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >#ragione_sociale#</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="end">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >elaborato del #data_stampa#</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+    </fo:static-content>
+
+<fo:flow flow-name="xsl-region-body">
+<!--mfo:section.end -->
+
+
+
+
+<!-- mfo:section.start="richiesta_mmg"  -->
+    
+    
+ <!-- RICHIESTA -->
+<fo:table font-size="10pt" width="auto" >
+    <fo:table-column column-width="19cm"/>
+    <fo:table-body>
+      <fo:table-row>
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="19cm"/>
+                  <fo:table-body>
+                    <fo:table-row>
+                        <fo:table-cell font-size="16pt" font-weight="bold">
+                           <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="center"
+                               >#lbl_richiesta#
+                           </fo:block>
+                        </fo:table-cell>
+                    </fo:table-row >
+                  </fo:table-body>
+                </fo:table>
+              </fo:table-cell>
+      </fo:table-row >
+      <fo:table-row height="0.3cm">
+      </fo:table-row >
+      <fo:table-row >
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="4.0cm"/>
+                  <fo:table-column column-width="5.5cm"/>
+                   <fo:table-column column-width="4.0cm"/>
+                  <fo:table-column column-width="5.5cm"/>
+                  <fo:table-body>
+                    <fo:table-row height="0.5cm">
+                    </fo:table-row >
+                    <fo:table-row >
+                            <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_data_richiesta#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#pr_mmg_data_richiesta#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_stato_richiesta#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#stato_descr#
+                               </fo:block>
+                           </fo:table-cell>
+                    </fo:table-row>
+                      <fo:table-row >
+                            <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_data_presa_carico#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#data_presa_carico#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_num_protocollo#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#num_protocollo# #data_protocollo#
+                               </fo:block>
+                           </fo:table-cell>
+                    </fo:table-row>
+                    <fo:table-row >
+                            <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_richiedente#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#richiedente_descr#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_medicoMMG#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#medico_descr#
+                               </fo:block>
+                           </fo:table-cell>
+                    </fo:table-row>
+                     <fo:table-row >
+                            <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_medicoMMGAltro#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#medico_altro_desc#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_distretto#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#distretto_descr#
+                               </fo:block>
+                           </fo:table-cell>
+                     </fo:table-row>
+                      <fo:table-row >
+                            <fo:table-cell font-weight="bold" number-columns-spanned='4' padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#lbl_caregiver_titolo#
+                               </fo:block>
+                           </fo:table-cell>
+                      </fo:table-row >
+                      <fo:table-row >
+                            <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_caregiver_cognome#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#caregiver_cognome#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_caregiver_nome#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#caregiver_nome#
+                               </fo:block>
+                           </fo:table-cell>
+                      </fo:table-row>
+                      <fo:table-row >
+                            <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_caregiver_telefono#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#caregiver_telefono#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_caregiver_grado_pa#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#caregiver_grado_parentela_descr#
+                               </fo:block>
+                           </fo:table-cell>
+                      </fo:table-row>
+                       <fo:table-row >
+                            <fo:table-cell font-weight="bold" number-columns-spanned='4' padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#lbl_assistenza#
+                               </fo:block>
+                           </fo:table-cell>
+                      </fo:table-row >
+                      <fo:table-row >
+                            <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_intensita_ass#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#tipocura_descr#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell number-columns-spanned='2' >
+                                <fo:table>
+                                  <fo:table-column column-width="0.6cm"/>
+                                  <fo:table-column column-width="1.4cm"/>
+                                   <fo:table-column column-width="0.6cm"/>
+                                  <fo:table-column column-width="1.4cm"/>
+                                    <fo:table-column column-width="0.6cm"/>
+                                  <fo:table-column column-width="1.4cm"/>
+                                    <fo:table-column column-width="0.6cm"/>
+                                  <fo:table-column column-width="1.4cm"/>
+                                  <fo:table-body>
+                                      <fo:table-row >
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#adp#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell font-size="10pt">
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_adp#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#ard#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell font-size="10pt">
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_ard#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#aid#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell font-size="10pt">
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_aid#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#vsd#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell font-size="10pt">
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_vsd#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                      </fo:table-row >
+                                  </fo:table-body>
+                               </fo:table>
+                           </fo:table-cell>
+                      </fo:table-row>
+                       <fo:table-row >
+                           <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_frequenza_accessi#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#frequenza_descr# 
+                               </fo:block>
+                           </fo:table-cell> 
+                           <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_accessi_mmg_sett#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#accessi_mmg#
+                               </fo:block>
+                           </fo:table-cell>
+                      </fo:table-row>
+                       <fo:table-row >
+                           <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_data_inizio#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#data_inizio#
+                               </fo:block>
+                           </fo:table-cell> 
+                           <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_data_fine#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#data_fine#
+                               </fo:block>
+                           </fo:table-cell>
+                      </fo:table-row>
+                      <fo:table-row >
+                           <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_note#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold"  number-columns-spanned='3' >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="justify"
+                                    >#note_archivia#
+                               </fo:block>
+                           </fo:table-cell> 
+                      </fo:table-row>
+                  </fo:table-body>
+                </fo:table>
+              </fo:table-cell>
+      </fo:table-row>
+  </fo:table-body>
+</fo:table>
+    
+    
+    
+    
+    
+    <!--ANAMNESI PATOLOGIE -->
+<fo:table font-size="10pt" width="auto" space-before.optimum="0.3cm" >
+    <fo:table-column column-width="19cm"/>
+    <fo:table-body>
+      <fo:table-row>
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="19cm"/>
+                  <fo:table-body>
+                    <fo:table-row>
+                        <fo:table-cell font-size="16pt" font-weight="bold">
+                           <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="center"
+                               >#lbl_anamnesi#
+                           </fo:block>
+                        </fo:table-cell>
+                    </fo:table-row >
+                  </fo:table-body>
+                </fo:table>
+              </fo:table-cell>
+      </fo:table-row >
+      <fo:table-row height="0.3cm">
+      </fo:table-row >
+      <fo:table-row >
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="4.0cm"/>
+                  <fo:table-column column-width="5.5cm"/>
+                   <fo:table-column column-width="4.0cm"/>
+                  <fo:table-column column-width="5.5cm"/>
+                  <fo:table-body>
+                    <fo:table-row height="0.5cm">
+                    </fo:table-row >
+                      <fo:table-row >
+                            <fo:table-cell font-weight="bold" number-columns-spanned='4' padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#lbl_patologie#  - #lbl_diagnosi_data# #data_diag#
+                               </fo:block>
+                           </fo:table-cell>
+                      </fo:table-row >
+                      <fo:table-row >
+                            <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_patologia1#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold" number-columns-spanned='3'>
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#desc_diag1#
+                               </fo:block>
+                            </fo:table-cell>
+                      </fo:table-row>
+                      <fo:table-row >
+                            <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_patologia2#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold" number-columns-spanned='3'>
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#desc_diag2#
+                               </fo:block>
+                            </fo:table-cell>
+                      </fo:table-row>
+                      <fo:table-row >
+                            <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_patologia3#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold" number-columns-spanned='3'>
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#desc_diag3#
+                               </fo:block>
+                            </fo:table-cell>
+                      </fo:table-row>
+                      <fo:table-row >
+                            <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_patologia4#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold" number-columns-spanned='3'>
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#desc_diag4#
+                               </fo:block>
+                            </fo:table-cell>
+                        </fo:table-row>
+                      <fo:table-row >
+                            <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_patologia5#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold" number-columns-spanned='3'>
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#desc_diag5#
+                               </fo:block>
+                            </fo:table-cell>
+                      </fo:table-row>
+                       <fo:table-row >
+                            <fo:table-cell font-weight="bold" number-columns-spanned='4' padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#lbl_anamnesi_remota#
+                               </fo:block>
+                           </fo:table-cell>
+                       </fo:table-row >
+                      <fo:table-row >
+                            <fo:table-cell number-columns-spanned='4' padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="justify"
+                                    >#ski_anamnesi_1#
+                               </fo:block>
+                           </fo:table-cell>
+                      </fo:table-row >
+                      
+                      <fo:table-row >
+                            <fo:table-cell font-weight="bold" number-columns-spanned='4' padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#lbl_anamnesi_prossima#
+                               </fo:block>
+                           </fo:table-cell>
+                       </fo:table-row >
+                      <fo:table-row >
+                            <fo:table-cell number-columns-spanned='4' padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="justify"
+                                    >#ski_anamnesi_2#
+                               </fo:block>
+                           </fo:table-cell>
+                      </fo:table-row >
+
+                          <fo:table-row >
+                            <fo:table-cell font-weight="bold" number-columns-spanned='4' padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#lbl_elevato_livello#
+                               </fo:block>
+                           </fo:table-cell>
+                       </fo:table-row >
+                      <fo:table-row >
+                            <fo:table-cell number-columns-spanned='4' padding-top="2mm">
+                                 <fo:table>
+                                  <fo:table-column column-width="0.6cm"/>
+                                  <fo:table-column column-width="18cm"/>
+                                  <fo:table-body>
+                                      <fo:table-row >
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#fase_terminale#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell font-size="10pt">
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_fase_terminale#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                      </fo:table-row >
+                                      <fo:table-row >
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#neuro_degen#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell font-size="10pt">
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_neuro_degen#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                      </fo:table-row >
+                                      <fo:table-row >
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#croniche_avanzate#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell font-size="10pt">
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_croniche_avanzate#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                      </fo:table-row >
+                                  </fo:table-body>
+                               </fo:table>
+                                
+                           </fo:table-cell>
+                      </fo:table-row >
+                      
+                  </fo:table-body>
+                </fo:table>
+              </fo:table-cell>
+      </fo:table-row>
+  </fo:table-body>
+</fo:table>
+    
+    
+       <!-- SANITARIO-->
+<fo:table font-size="10pt" width="auto" space-before.optimum="0.3cm" >
+    <fo:table-column column-width="19cm"/>
+    <fo:table-body>
+      <fo:table-row>
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="19cm"/>
+                  <fo:table-body>
+                    <fo:table-row>
+                        <fo:table-cell font-size="16pt" font-weight="bold">
+                           <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="center"
+                               >#lbl_quadro_san#
+                           </fo:block>
+                        </fo:table-cell>
+                    </fo:table-row >
+                  </fo:table-body>
+                </fo:table>
+              </fo:table-cell>
+      </fo:table-row >
+      <fo:table-row height="0.3cm">
+      </fo:table-row >
+        
+        <fo:table-row >
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="4.0cm"/>
+                  <fo:table-column column-width="5.5cm"/>
+                   <fo:table-column column-width="4.0cm"/>
+                  <fo:table-column column-width="5.5cm"/>
+                  <fo:table-body>
+                    <fo:table-row height="0.5cm">
+                    </fo:table-row >
+                      <fo:table-row >
+                            <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start" font-weight="bold"
+                                    >#lbl_autosufficienza#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  number-columns-spanned='3'>
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#autosufficienza_descr#  -  (#flag_autosuff_descr#)
+                               </fo:block>
+                            </fo:table-cell>
+                      </fo:table-row>
+                      
+                       <fo:table-row >
+                            <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  number-columns-spanned='3'>
+                             <fo:table>
+                                  <fo:table-column column-width="0.6cm"/>
+                                  <fo:table-column column-width="14.4cm"/>
+                                  <fo:table-body>
+                                      <fo:table-row >
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#flag_deamb#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell font-size="10pt">
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_imposs_deamb# - (#deamb_tipo_descr#)
+                                              </fo:block>
+                                          </fo:table-cell>
+                                      </fo:table-row >
+                                      <fo:table-row >
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#flag_trasporto#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell font-size="10pt">
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_imposs_trasp#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                      </fo:table-row >
+                                      
+                                      <fo:table-row  >
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#flag_non_auto#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell font-size="10pt">
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_non_autosufficienza#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                      </fo:table-row >
+                                      
+                                       <fo:table-row >
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#flag_piano_alto#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell font-size="10pt">
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_abitaz_pianoalto#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                       </fo:table-row >
+                                      
+                                      <fo:table-row >
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#flag_traporto_altro#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell font-size="10pt">
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_altro# #trasporto_altro#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                      </fo:table-row >
+                                      <fo:table-row >
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#flag_gravi_pat#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell font-size="10pt">
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_gravi_pat#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                      </fo:table-row >
+
+                                  </fo:table-body>
+                               </fo:table>
+                            </fo:table-cell>
+                       </fo:table-row>
+                      
+                       <fo:table-row  padding-top="2mm">
+                          <fo:table-cell>
+
+                          </fo:table-cell>
+                          <fo:table-cell font-size="10pt" number-columns-spanned='3'>
+                              <fo:block start-indent="1mm" end-indent="1mm" text-align="justify" padding-top="2mm">
+                                  #gravi_patologie#
+                              </fo:block>
+                          </fo:table-cell>
+                       </fo:table-row >
+                      <fo:table-row >
+                          <fo:table-cell>
+                              <fo:block start-indent="1mm" end-indent="1mm" font-weight="bold" padding-top="2mm">
+                                 #lbl_prob_sanitari#
+                              </fo:block>
+                          </fo:table-cell>
+                          <fo:table-cell number-columns-spanned='3' padding-top="2mm">
+                              <fo:block start-indent="1mm" end-indent="1mm" text-align="justify">
+                                  #bisogni_sanitari#
+                              </fo:block>
+                          </fo:table-cell>
+                      </fo:table-row >
+                  </fo:table-body>
+                </fo:table>
+              </fo:table-cell>
+      </fo:table-row >
+  </fo:table-body>
+</fo:table>
+
+
+<!-- SOCIALE-->
+<fo:table font-size="10pt" width="auto" space-before.optimum="0.3cm" >
+    <fo:table-column column-width="19cm"/>
+    <fo:table-body>
+      <fo:table-row>
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="19cm"/>
+                  <fo:table-body>
+                    <fo:table-row>
+                        <fo:table-cell font-size="16pt" font-weight="bold">
+                           <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="center"
+                               >#lbl_quadro_socio_ass#
+                           </fo:block>
+                        </fo:table-cell>
+                    </fo:table-row >
+                  </fo:table-body>
+                </fo:table>
+              </fo:table-cell>
+      </fo:table-row >
+      <fo:table-row height="0.3cm">
+      </fo:table-row >
+        
+        <fo:table-row >
+              <fo:table-cell>
+                <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                  <fo:table-column column-width="4.0cm"/>
+                  <fo:table-column column-width="5.5cm"/>
+                   <fo:table-column column-width="4.0cm"/>
+                  <fo:table-column column-width="5.5cm"/>
+                  <fo:table-body>
+                    <fo:table-row height="0.5cm">
+                    </fo:table-row >
+
+                        <fo:table-row >
+                           <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_stato_civile#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#stato_civile_descr#
+                               </fo:block>
+                           </fo:table-cell> 
+                           <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_numero_familiari#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#num_fam#
+                               </fo:block>
+                           </fo:table-cell>
+                      </fo:table-row>
+                      
+                       <fo:table-row >
+                           <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_ass_non_fam#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#badante_descr#
+                               </fo:block>
+                           </fo:table-cell> 
+                           <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_vive_con#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#conviventi_descr#
+                               </fo:block>
+                           </fo:table-cell>
+                       </fo:table-row>
+                      
+                       <fo:table-row >
+                            <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  number-columns-spanned='3'>
+                             <fo:table>
+                                  <fo:table-column column-width="0.6cm"/>
+                                  <fo:table-column column-width="14.4cm"/>
+                                  <fo:table-body>
+                                      <fo:table-row >
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#b4a#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell font-size="10pt">
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_scalaRUG_HC_b4a#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                      </fo:table-row >
+                                      <fo:table-row >
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#b4b#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell font-size="10pt">
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_scalaRUG_HC_b4b#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                      </fo:table-row >
+                                      <fo:table-row  >
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#b4c#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell font-size="10pt">
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_scalaRUG_HC_b4c#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                      </fo:table-row >
+                                       <fo:table-row >
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#b4d#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell font-size="10pt">
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_scalaRUG_HC_b4d#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                       </fo:table-row >
+                                      <fo:table-row >
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#b4e#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell font-size="10pt">
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                 #lbl_scalaRUG_HC_b4e#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                      </fo:table-row >
+                                  </fo:table-body>
+                               </fo:table>
+                            </fo:table-cell>
+                       </fo:table-row>
+                      
+                      
+                      <fo:table-row >
+                           <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_razza#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#b2_descr#
+                               </fo:block>
+                           </fo:table-cell> 
+                           <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_Lingua#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#b3_descr#
+                               </fo:block>
+                           </fo:table-cell>
+                      </fo:table-row>
+                      
+                      <fo:table-row >
+                           <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_tit_studio#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#tit_studio_descr#
+                               </fo:block>
+                           </fo:table-cell> 
+                           <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_richiedente#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#ric_richiedente_descr#
+                               </fo:block>
+                           </fo:table-cell>
+                      </fo:table-row>
+                      
+                       <fo:table-row >
+                           <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_provenienza#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#strut_provenienza_descr#
+                               </fo:block>
+                           </fo:table-cell> 
+                           <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#lbl_motivo_richiesta#
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  font-weight="bold">
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >#mot_richiesta_descr#
+                               </fo:block>
+                           </fo:table-cell>
+                       </fo:table-row>
+                      
+                       <fo:table-row >
+                            <fo:table-cell font-weight="bold" number-columns-spanned='4' padding-top="2mm">
+                               <fo:block start-indent="1mm" end-indent="1mm" text-align="start"
+                                    >#lbl_situaz_fam_rilev#
+                               </fo:block>
+                           </fo:table-cell>
+                       </fo:table-row >
+                      
+                        <fo:table-row >
+                            <fo:table-cell number-columns-spanned='4' padding-top="2mm">
+                                <fo:table>
+                                  <fo:table-column column-width="0.6cm"/>
+                                  <fo:table-column column-width="4.4cm"/>
+                                   <fo:table-column column-width="0.6cm"/>
+                                  <fo:table-column column-width="4.4cm"/>
+                                    <fo:table-column column-width="0.6cm"/>
+                                   <fo:table-column column-width="4.4cm"/>
+                                    <fo:table-column column-width="0.6cm"/>
+                                  <fo:table-column column-width="4.4cm"/>
+                                  <fo:table-body>
+                                      <fo:table-row >
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#sitfam1#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell font-size="10pt">
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_soc_san_idonea#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#sitfam_idonea_tipo0#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell >
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_soc_ass_convive_con_fam#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#sitfam_idonea_tipo1#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_soc_ass_seguito_da_fam#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell>
+                                              
+                                          </fo:table-cell>
+                                          <fo:table-cell >
+                                              
+                                          </fo:table-cell>
+                                      </fo:table-row >
+                                  </fo:table-body>
+                               </fo:table>
+                           </fo:table-cell>
+                        </fo:table-row >
+
+                      
+                      <fo:table-row >
+                            <fo:table-cell number-columns-spanned='4' padding-top="2mm">
+                                <fo:table>
+                                  <fo:table-column column-width="0.6cm"/>
+                                  <fo:table-column column-width="4.4cm"/>
+                                   <fo:table-column column-width="0.6cm"/>
+                                  <fo:table-column column-width="4.4cm"/>
+                                    <fo:table-column column-width="0.6cm"/>
+                                   <fo:table-column column-width="4.4cm"/>
+                                    <fo:table-column column-width="0.6cm"/>
+                                  <fo:table-column column-width="4.4cm"/>
+                                  <fo:table-body>
+                                      <fo:table-row >
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#sitfam2#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell >
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_soc_san_par_idonea#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#sitfam_parz_tipo0#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell >
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_soc_ass_familiari#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#sitfam_parz_tipo1#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell >
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_soc_ass_vicini#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#sitfam_parz_tipo2#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell >
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_soc_ass_volontariato#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                      </fo:table-row >
+                                  </fo:table-body>
+                               </fo:table>
+                           </fo:table-cell>
+                      </fo:table-row >
+                      
+                      
+                      <fo:table-row >
+                            <fo:table-cell number-columns-spanned='4' padding-top="2mm">
+                                <fo:table>
+                                  <fo:table-column column-width="0.6cm"/>
+                                  <fo:table-column column-width="4.4cm"/>
+                                   <fo:table-column column-width="0.6cm"/>
+                                  <fo:table-column column-width="4.4cm"/>
+                                    <fo:table-column column-width="0.6cm"/>
+                                   <fo:table-column column-width="4.4cm"/>
+                                    <fo:table-column column-width="0.6cm"/>
+                                  <fo:table-column column-width="4.4cm"/>
+                                  <fo:table-body>
+                                      <fo:table-row >
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#sitfam3#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell >
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_soc_ass_non_idonea#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#sitfam_non_ido_tipo0#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell >
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_soc_ass_familiari#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#sitfam_non_ido_tipo1#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell >
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_soc_ass_vicini#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#sitfam_non_ido_tipo2#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell >
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_soc_ass_volontariato#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                      </fo:table-row >
+                                  </fo:table-body>
+                               </fo:table>
+                           </fo:table-cell>
+                      </fo:table-row >
+                      
+                      <fo:table-row >
+                          <fo:table-cell>
+                              <fo:block start-indent="1mm" end-indent="1mm" font-weight="bold" padding-top="2mm">
+                                 #lbl_soc_ass_note#
+                              </fo:block>
+                          </fo:table-cell>
+                          <fo:table-cell number-columns-spanned='3' padding-top="2mm">
+                              <fo:block start-indent="1mm" end-indent="1mm" text-align="justify">
+                                  #note#
+                              </fo:block>
+                          </fo:table-cell>
+                      </fo:table-row >
+                      
+                       <fo:table-row >
+                            <fo:table-cell >
+                               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" text-align="start"
+                                    >
+                               </fo:block>
+                           </fo:table-cell>
+                            <fo:table-cell  number-columns-spanned='3'>
+                             <fo:table>
+                                  <fo:table-column column-width="0.6cm"/>
+                                  <fo:table-column column-width="14.4cm"/>
+                                  <fo:table-body>
+                                      <fo:table-row >
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#flag_ind_conoscitiva#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell font-size="10pt">
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_ind_conoscitiva#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                      </fo:table-row >
+                                      <fo:table-row >
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#flag_ass_dom#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell font-size="10pt">
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_soc_ass_ass_dom#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                      </fo:table-row >
+                                      <fo:table-row  >
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#flag_ass_ab#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell font-size="10pt">
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_soc_ass_ass_ab#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                      </fo:table-row >
+                                       <fo:table-row >
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#flag_ass_soc#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell font-size="10pt">
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_soc_ass_ass_soc#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                       </fo:table-row >
+                                      <fo:table-row >
+                                          <fo:table-cell>
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="center" border-width="0.1pt" border-style="solid" font-weight="bold">
+                                                  &#160;#flag_ass_eco#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                          <fo:table-cell font-size="10pt">
+                                              <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                                                  #lbl_soc_ass_ass_soc#
+                                              </fo:block>
+                                          </fo:table-cell>
+                                      </fo:table-row >
+                                  </fo:table-body>
+                               </fo:table>
+                            </fo:table-cell>
+                       </fo:table-row>
+                      
+                      
+                  </fo:table-body>
+                </fo:table>
+              </fo:table-cell>
+      </fo:table-row >
+  </fo:table-body>
+</fo:table>
+<!-- mfo:section.end -->
+    
+    
+    
+    
+    <!-- mfo:section.start="header_tabella" -->
+    
+<!-- Intolleranze allergie-->
+    <fo:table font-size="10pt" width="auto" space-before.optimum="0.3cm" >
+        <fo:table-column column-width="19cm"/>
+        <fo:table-body>
+            <fo:table-row>
+                <fo:table-cell>
+                    <fo:table font-size="10pt" width="auto" border-width="0.5pt" border-style="solid">
+                        <fo:table-column column-width="19cm"/>
+                        <fo:table-body>
+                            <fo:table-row>
+                                <fo:table-cell font-size="16pt" font-weight="bold">
+                                    <fo:block start-indent="1mm" end-indent="1mm" padding-top="1mm" text-align="center"
+                                        >#lbl_titolo#
+                                    </fo:block>
+                                </fo:table-cell>
+                            </fo:table-row >
+                        </fo:table-body>
+                    </fo:table>
+                </fo:table-cell>
+            </fo:table-row >
+            <fo:table-row height="0.3cm">
+            </fo:table-row >
+            
+        </fo:table-body>
+    </fo:table>
+
+    
+      <fo:table font-size="10pt" width="auto" 
+        table-omit-header-at-break="false" border-width="0.5pt" border-style="solid">
+        <fo:table-column column-width="2cm" />
+        <fo:table-column column-width="10cm" />
+        <fo:table-column column-width="7cm" />
+        <fo:table-header
+          font-weight="bold">
+          <fo:table-row height="12pt" font-size="8pt">
+            <fo:table-cell text-align="start" border-width="0.5pt"
+              border-style="solid" >
+              <fo:block start-indent="1mm" end-indent="1mm"
+                padding-top="0.5mm">
+                #lbl_data_rilevazione#</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="start" border-width="0.5pt"
+              border-style="solid" >
+              <fo:block start-indent="1mm" end-indent="1mm"
+                padding-top="0.5mm">
+                #lbl_allergie#</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="start" border-width="0.5pt"
+              border-style="solid" >
+              <fo:block start-indent="1mm" end-indent="1mm"
+                padding-top="0.5mm">
+                #p_attivo_descr#</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-header>
+        <fo:table-body>
+ <!-- mfo:section.end -->   
+          
+  <!-- mfo:section.start="riga_tabella" -->
+          <fo:table-row height="15pt" font-size = "8pt">
+            <fo:table-cell text-align="start" border-width="0.5pt"
+              border-style="solid" >
+              <fo:block start-indent="1mm" end-indent="1mm"
+                padding-top="0.5mm">
+                #data_rilevazione#</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="start" border-width="0.5pt"
+              border-style="solid" >
+              <fo:block start-indent="1mm" end-indent="1mm"
+                padding-top="0.5mm">
+                #allergie#</fo:block>							
+            </fo:table-cell>
+            <fo:table-cell text-align="start" border-width="0.5pt"
+              border-style="solid" >
+              <fo:block start-indent="1mm" end-indent="1mm"
+                padding-top="0.5mm">
+                #p_attivo_descr#</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+   <!-- mfo:section.end -->
+
+ <!-- mfo:section.start="fine_tabella" -->
+        </fo:table-body>
+      </fo:table>
+ <!-- mfo:section.end -->
+    
+    
+    
+    
+    
+    
+
+
+
+<!-- mfo:section.start="fine" -->
+    </fo:flow>
+  </fo:page-sequence>
+<!-- mfo:section.end -->
+</fo:root>

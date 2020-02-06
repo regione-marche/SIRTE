@@ -1,0 +1,72 @@
+<!-- mfo:section.start="layout" rem="IMPOSTAZIONI DI PAGINA" -->
+<html>
+<body>
+<table width=98% border=1>
+	<tr>
+		<td width="600"></td>
+		<td width="200"></td>
+		<td width="400"></td>
+		<td width="200"></td>
+		<td width="200"></td>
+	</tr>
+	<tr>
+		<td align="left" colspan="5"><font size="5"> <b>ELENCO ASSISTITI PER PATOLOGIA DAL #data_ini# AL #data_fine#</b> 
+		<br/>#tipo#</font></td>
+	</tr>
+</table>
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="iniziotabEx" rem="TITOLI DELLA TABELLA" -->
+<table width=98% border=1>
+	<tr>
+		<td width="600"></td>
+		<td width="200"></td>
+		<td width="400"></td>
+		<td width="200"></td>
+		<td width="200"></td>
+	</tr>
+	<tr>
+		<th bgcolor=lightgrey>Patologia</th>
+		<th bgcolor=lightgrey>Cartella</th>
+		<th bgcolor=lightgrey>Cognome e Nome</th>
+		<th bgcolor=lightgrey>Sesso</th>
+		<th bgcolor=lightgrey>Data nascita</th>
+	</tr>
+	<!-- mfo:section.end -->
+	
+	
+	<!-- mfo:section.start="tabella" rem="RIGA RIPETITIVA PRESTAZIONI" -->
+	<tr>
+		<td align="left" width="600">#patologia#</td>
+		<td align="left" width="200">#cartella#</td>
+		<td align="left" width="400">#nome#</td>
+		<td align="left" width="200">#sesso#</td>
+		<td align="left" width="400">#data_nascita#</td>
+	</tr>
+	<!-- mfo:section.end -->
+	<!-- mfo:section.start="finetabEx" rem="TERMINAZIONE TABELLA" -->
+	</table>
+	<!-- mfo:section.end -->
+	
+	<!-- mfo:section.start="messaggio" rem="MESSAGGIO DI ERRORE" -->
+	<table width=98% border=1>
+		<tr>
+	<tr>
+		<td width="600"></td>
+		<td width="200"></td>
+		<td width="400"></td>
+		<td width="200"></td>
+		<td width="200"></td>
+	</tr>
+		</tr>
+		<tr>
+			<td align="center" colspan="5"><font size="4">
+			<b>NESSUNA INFORMAZIONE REPERITA</b>
+			</font></td>
+		</tr>
+	</table>
+	<!-- mfo:section.end -->
+	<!--mfo:section.start="finale"-->
+</body>
+</html>
+<!--mfo:section.end-->

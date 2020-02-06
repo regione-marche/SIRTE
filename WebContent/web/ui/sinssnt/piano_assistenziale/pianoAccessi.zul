@@ -1,0 +1,155 @@
+<window border="none" id="datiPiano" width="100%" vflex="true"
+	apply="it.caribel.app.sinssnt.controllers.pianoAssistenziale.PianoAccessiGridCRUDCtrl">
+	<vlayout width="100%" vflex="true" spacing="0px">
+		<vlayout>
+			<hlayout width="100%" visible="false">
+				<caribeldatebox hflex="15%" db_name="data_input"
+					id="JCariDateTextFieldDataInputXDel" />
+				<caribeltextbox id="jCariTextFieldCodPrestazOldHide" />
+			</hlayout>
+			<hlayout width="100%">
+				<caribellistbox  showBtnDeleteInRow="true" showBtnEditInRow="true" 
+					id="caribellb2" rows="8" span="1 6" multiple="true"
+					sizedByContent="true" db_name="gridPianoAcc" hflex="true">
+					<listhead sizable="true" menupopup="auto" columnsgroup="false" >
+						<caribellistheader db_name="pi_prest_cod"
+							hflex="min"
+							label="${c:l('pianoAssistenziale.pianoAccessi.codicePrestazione')}"
+							sort="auto" />
+						<caribellistheader db_name="pi_prest_desc"
+							hflex="min"
+							label="${c:l('pianoAssistenziale.pianoAccessi.prestazione')}"
+							sort="auto" />
+						<caribellistheader db_name="pi_data_inizio"
+							hflex="min"
+							label="${c:l('pianoAssistenziale.pianoAccessi.dataInizio')}"
+							sort="auto" />
+						<caribellistheader db_name="pi_data_fine"
+							hflex="min"
+							label="${c:l('pianoAssistenziale.pianoAccessi.dataFine')}"
+							sort="auto" />
+						<caribellistheader db_name="frequenza"
+							hflex="min"
+							label="${c:l('pianoAssistenziale.pianoAccessi.frequenza')}"
+							sort="auto" />
+						<caribellistheader db_name="pi_op_esec_desc"
+							hflex="min"
+							label="${c:l('pianoAssistenziale.pianoAccessi.operatoreEsecutoreShort')}"
+							sort="auto" />
+						<caribellistheader db_name="pi_modalita"
+							hflex="min" maxlength="100"
+							label="${c:l('pianoAssistenziale.pianoAccessi.modalita')}"
+							/>
+					</listhead>
+				</caribellistbox>
+			</hlayout>
+			<hlayout style="margin-top: -6px;" hflex="true" width="100%">
+				<caribelGridFormMenuHoriz />
+			</hlayout>
+		</vlayout>
+		<!-- 		<hlayout> -->
+		<!-- 			<vlayout hflex="65%" style="margin-right: 3px;"> -->
+		<hlayout width="100%">
+<!-- 			<caribelGridFormMenu /> -->
+			<vlayout hflex="60%" id="myForm" sclass="asterLayout">
+				<!-- 					<tabbox width="100%" sclass="nav_tabs" id="tabbox"> -->
+				<!-- 						<tabs id="tabs"> -->
+				<!-- 							<tab label="${c:l('pianoAssistenziale.pianoAccessi.tabs.datiAccesso')}" /> -->
+				<!-- 							<tab label="${c:l('pianoAssistenziale.pianoAccessi.tabs.modalita')}" /> -->
+				<!-- 						</tabs> -->
+				<!-- 						<tabpanels id="tabpanels"> -->
+				<!-- 							<tabpanel id="areaInterv"> -->
+				<vlayout >
+					<hlayout>
+						<label
+							value="${c:l('pianoAssistenziale.pianoAccessi.operatoreEsecutore')}:"
+							hflex="20%" />
+						<caribelSearch id="operatore" hflex="80%"
+							required="true" db_name_cod="pi_op_esecutore"
+							id_cod="pi_op_esecutore" db_name_descr="pi_op_esec_desc"
+							id_descr="pi_op_esec_desc"
+							ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl" />
+					</hlayout>
+					<hlayout>
+						<label
+							value="${c:l('pianoAssistenziale.pianoAccessi.dataInizio')}:"
+							hflex="20%" />
+						<caribeldatebox hflex="25%"
+							db_name="pi_data_inizio" id="pi_data_inizio" required="true"
+							onChange="it.caribel.zk.util.UtilForComponents.linkDatebox(self, pi_data_fine)" />
+						<label
+							value="${c:l('pianoAssistenziale.pianoAccessi.dataFine')}:"
+							hflex="30%" />
+						<caribeldatebox hflex="25%"
+							db_name="pi_data_fine" id="pi_data_fine"
+							onChange="it.caribel.zk.util.UtilForComponents.linkDatebox(pi_data_inizio, self);" />
+					</hlayout>
+					<hlayout>
+						<label
+							value="${c:l('pianoAssistenziale.pianoAccessi.prestazione')}:"
+							hflex="20%" />
+						<caribelSearch id="prestazione" hflex="80%"
+							required="true" db_name_cod="pi_prest_cod" id_cod="pi_prest_cod"
+							db_name_descr="pi_prest_desc" id_descr="pi_prest_desc"
+							ctrl="it.caribel.app.common.controllers.prestazioni.PrestazioniSearchCtrl" />
+					</hlayout>
+					<hlayout>
+						<label
+							value="${c:l('pianoAssistenziale.pianoAccessi.frequenza')}:"
+							hflex="20%" />
+						<caribelcombobox db_name="pi_freq" hflex="30%"
+							required="true" id="pi_freq" />
+						<label
+							value="${c:l('pianoAssistenziale.pianoAccessi.quantita')}:"
+							hflex="25%" />
+						<caribelintbox db_name="pi_prest_qta"
+							hflex="15%" maxlength="4" id="pi_quantita" />
+						<toolbarbutton id="btn_agenda" hflex="10%"
+							sclass="agendaPianificazione" image="/web/img/AgCalend.png"
+							tooltiptext="${c:l('pianoAssistenziale.pianoAccessi.btn_agenda')}" />
+					</hlayout>
+					<hlayout vflex="true" style="backgrund:green">
+						<label
+							value="${c:l('pianoAssistenziale.pianoAccessi.tabs.modalita')}:"
+							hflex="20%" />
+						<caribeltextbox sclass="asterTextArea" rows="10"
+							id="pi_modalita" hflex="80%" db_name="pi_modalita"
+							maxlength="2000" multiline="true" />
+					</hlayout>
+					<hlayout visible="false">
+						<caribeltextbox id="JCariTextFieldProgHide" db_name="pi_prog" />
+						<caribeltextbox id="pi_pianificato" db_name="pi_pianificato" />
+					</hlayout>
+				</vlayout>
+				<!-- 							</tabpanel> -->
+				<!-- 						</tabpanels> -->
+				<!-- 					</tabbox> -->
+			</vlayout>
+			<vlayout hflex="35%" sclass="asterLayout" id="listPrest" vflex="true">
+				<!-- 
+				<hlayout style="margin: 0px;">
+					<button hflex="20%" disabled="true"
+						label="${c:l('generic.btn.confermaSelezione')}"
+						id="btn_confermaSelezione" forward="onConfermaSelezione">
+					</button>
+				</hlayout>
+				 -->
+				<caribellistbox id="tablePrestazioni" rows="9" disabled="true" checkmark="true" vflex="true">
+					<listhead sizable="false">
+						<caribellistheader label=" " align="center" hflex="min" />
+						<caribellistheader db_name="prest_cod" hflex="min"
+							label="${c:l('common.codice')}" sort="auto" />
+						<caribellistheader db_name="prest_des" hflex="min"
+							label="${c:l('common.descrizione')}" sort="auto">
+							<caribeltextbox id="descPrestazione" hflex="100%"
+								style="margin: 0px;" placeholder="${c:l('common.placeholder')}" />
+						</caribellistheader>
+					</listhead>
+				</caribellistbox>
+					<caribeltextbox id="codPrestazione" hflex="" visible="false" />
+			</vlayout>
+		</hlayout>
+	</vlayout>
+<!-- 	</hlayout> -->
+<!-- 	</vlayout> -->
+</window>

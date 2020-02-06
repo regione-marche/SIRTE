@@ -1,0 +1,2 @@
+Inserite in questa directory tutto il codice di uso comune per la toscana
+che trovate nel progetto zk_freeze_sinssnt_client.

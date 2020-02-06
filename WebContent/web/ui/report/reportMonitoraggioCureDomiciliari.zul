@@ -1,0 +1,84 @@
+<?component name="panel_ubicazione" inline="true" macroURI="~./ui/common/ubicazione/PanelUbicazione.zul"?>
+
+<window 
+apply="it.caribel.app.sinssnt.controllers.report.ReportMonitoraggioCureDomiciliariCtrl"
+title="${c:l('menu.stampe.monitoraggio.cure.cd')}" 
+closable="true" sizable="true"
+mode="overlapped"
+border="normal"
+position="center"
+width="700px"
+height="500px">
+
+<zscript><![CDATA[
+	void dadataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}
+	void adataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}	
+]]>
+</zscript>
+	
+	<vlayout vflex="true">
+	<caribelFormMenu visible_btn_print="true" visible_btn_delete="false" visible_btn_save="false"/>
+	<vlayout sclass="asterLayout asterOverflow" vflex="true">		
+		
+		<hlayout width="100%">
+			<label hflex="20%" value="${c:l('generic.dadata')}:" />
+			<caribeldatebox id="dadata" hflex="20%" required="true" onChange="dadataChanged()" />
+			<label hflex="20%" value="${c:l('generic.adata')}:" />
+			<caribeldatebox id="adata" hflex="20%" required="true" onChange="adataChanged()" />
+			<label hflex="20%" value="" />
+		</hlayout>
+
+		<hlayout>
+			<label hflex="20%" value="${c:l('operatori.tipoOperatore')}:" />
+			<caribelcombobox hflex="80%" id="tipo_op" readonly="true"/>
+		</hlayout>
+<!-- 
+		<hlayout>
+			<label hflex="20%" value="${c:l('operatori.qualifica')}:" />
+			<caribelcombobox hflex="80%" id="qual_op" readonly="true"/>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.da_codice')}:" />
+			<caribelSearch hflex="80%" maxlength="10" id_cod="codope" db_name_cod="codice_inizio" db_name_descr="desope"
+				required="false" 
+				ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl"
+			 />
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.a_codice')}:" />
+			<caribelSearch hflex="80%" id_cod="codope1" db_name_cod="codice_fine" db_name_descr="desope"
+				required="false" maxlength="10"
+				ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl"
+			 />
+		</hlayout>
+ -->
+	
+		<panel_ubicazione />
+		
+		<hlayout>
+				<label hflex="20%" value="${c:l('generic.tipo_prestazione')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="tp_prest">
+						<radio id="dom" value="D" label="${c:l('accessiPrestazioni.prestazioniForm.tipoPrestazione.domiciliare')}" checked="true"/>
+						<radio id="am" value="" label="${c:l('accessiPrestazioni.prestazioniForm.tipoPrestazione.nonDomiciliare')}"/>	
+					</caribelradiogroup>
+				</div>
+		</hlayout>
+		
+		<hlayout>
+				<label hflex="20%" value="${c:l('generic.formato')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="formatoStampa">
+						<radio id="pdf" value="1" label="${c:l('generic.formato.pdf')}" checked="true"/>
+						<radio id="html" value="0" label="${c:l('generic.formato.html')}"/>						
+					</caribelradiogroup>
+				</div>
+		</hlayout>
+		
+		</vlayout>
+	</vlayout>
+</window>

@@ -1,0 +1,33 @@
+<window title="${c:l('skSvamaGrid.formTitle')}"
+	apply="it.caribel.app.sinssnt.controllers.tabelle.skSvama.SkSvamaGridCtrl"	
+	sclass="asterOverlappedWindow"  sizable="true"
+	closable="true" mode="overlapped" position="center" border="normal" width="750px"
+height="450px">
+
+	<vlayout height="100%">
+	
+		<caribelGridMenu  visible_btn_clear="true" />
+		<vlayout sclass="asterLayout" vflex="true" spacing="5px">
+		
+		<hlayout>
+			<label hflex="20%" value="${c:l('skSvama.cartella')}:" />
+			<caribelSearch hflex="80%" maxlength="8"  id_cod="tb_filter1" db_name_cod="n_cartella"
+				required="false" 
+				ctrl="it.caribel.app.common.controllers.cartella.CartellaSearchCtrl"
+			 />
+		</hlayout>
+		
+		
+			<caribelPaging/>
+			<caribellistbox vflex="true" hflex="true" >
+			
+				<listhead sizable="true">
+					<caribellistheader db_name="n_cartella"	width="5em"    label="${c:l('skSvamaGrid.cartella')}" />
+					<caribellistheader db_name="des_cartella"  width="18em" label="${c:l('skSvamaGrid.des_cartella')}" />	
+					<caribellistheader db_name="data_variazione"  width="10em" label="${c:l('skSvamaGrid.data_var')}" />	
+						
+				</listhead>
+			</caribellistbox>
+		</vlayout>		
+	</vlayout>
+</window>

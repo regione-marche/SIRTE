@@ -1,0 +1,1520 @@
+<?xml version ="1.0" encoding="ISO-8859-1"?>
+
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+
+<!-- mfo:section.start="layout"  -->
+<fo:layout-master-set>
+  <fo:simple-page-master master-name="simple"
+    page-height="29.7cm"                  page-width="21cm"
+    margin-top="1cm"                  margin-bottom="2cm"
+    margin-left="1.5cm"                  margin-right="1.5cm">
+    <fo:region-before margin-top="0.5cm" extent="3cm"/>
+    <fo:region-after extent="1cm"/>
+    <fo:region-body margin-top="2.5cm" margin-bottom="1.5cm"/>
+  </fo:simple-page-master>
+</fo:layout-master-set>
+
+<fo:page-sequence master-name="simple">
+<fo:static-content flow-name="xsl-region-before">
+
+  <fo:table font-size="10pt">
+  <fo:table-column column-width="17.5cm"/>
+  <fo:table-body>
+  <fo:table-row height="9pt">
+     <fo:table-cell text-align="start" >
+
+          <fo:table font-size="10pt">
+          <fo:table-column column-width="11.5cm"/>
+          <fo:table-column column-width="6cm"/>
+           <fo:table-body>
+            <fo:table-row height="9pt">
+              <fo:table-cell text-align="start" >
+                  <fo:block start-indent="1mm" end-indent="1mm"
+                  padding-top="0.5mm" font-weight="bold">
+                          Cognome e Nome: #assistito#
+                  </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="start" >
+                  <fo:block start-indent="1mm" end-indent="1mm"
+                  padding-top="0.5mm" font-weight="bold">
+                          Data : #data#
+                  </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+           </fo:table-body>
+          </fo:table>
+
+     </fo:table-cell>
+  </fo:table-row>
+  <fo:table-row height="1pt">
+     <fo:table-cell text-align="start" >
+          <fo:block>
+          <fo:leader leader-pattern="rule"
+                     rule-thickness="0.5pt"
+                     leader-length="18cm"/>
+          </fo:block>
+     </fo:table-cell>
+  </fo:table-row>
+  <fo:table-row height="10pt">
+     <fo:table-cell text-align="justify"
+          font-weight="bold" >
+          <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.7mm">CAREGIVER BURDEN INVENTORY(CBI)</fo:block>
+          <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.7mm">
+            (Novak M. e Guest C., Gerontologist, 29, 798-803, 1989)</fo:block>
+     </fo:table-cell>
+  </fo:table-row>
+  </fo:table-body>
+  </fo:table>
+</fo:static-content>
+
+    <!-- TITOLO DI PIEDE -->
+    <fo:static-content flow-name="xsl-region-after">
+      <fo:table font-size="8pt" width="auto" >
+        <fo:table-column column-width="12cm"/>
+        <fo:table-column column-width="7cm"/>
+        <fo:table-body>
+          <fo:table-row height="10pt">
+            <fo:table-cell text-align="start">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >#txt#</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="end">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >elaborato del #data_stampa# (cbi.fo)</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+    </fo:static-content>
+
+<fo:flow flow-name="xsl-region-body">
+
+<fo:table space-before.optimum="2pt" font-size="10pt" font-family="sans-serif">
+<fo:table-column column-width="8cm"/>
+<fo:table-column column-width="7cm"/>
+
+<fo:table-body>
+<fo:table-row line-height="10pt" color="black">
+<fo:table-cell text-align="center">
+   <fo:block>Condizioni/Impressioni</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end">
+   <fo:block>Punteggio</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+
+<fo:table space-before.optimum="2pt" font-size="10pt" font-family="sans-serif">
+<fo:table-column column-width="1cm"/>
+<fo:table-column column-width="10cm"/>
+<fo:table-column column-width="0.7cm"/>
+<fo:table-column column-width="10pt"/>
+<fo:table-column column-width="0.7cm"/>
+<fo:table-column column-width="10pt"/>
+<fo:table-column column-width="0.7cm"/>
+<fo:table-column column-width="10pt"/>
+<fo:table-column column-width="0.7cm"/>
+<fo:table-column column-width="10pt"/>
+<fo:table-column column-width="0.7cm"/>
+<fo:table-column column-width="10pt"/>
+<fo:table-body>
+<!--mfo:section.end -->
+
+<!-- mfo:section.start="rigaTab"  -->
+<fo:table-row background-color="white">
+<fo:table-cell >
+	<fo:block line-height="11pt" color="black" padding-top="4pt">T&#160;1</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="start">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">Il mio familiare necessita del mio aiuto per svolgere
+                   molte delle abituali attivit&#0224; quotidiane</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;0</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check1.0#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;1</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check1.1#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;2</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check1.2#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;3</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check1.3#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;4</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check1.4#
+          </fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+<fo:table-row background-color="white">
+<fo:table-cell >
+	<fo:block line-height="11pt" color="black" padding-top="4pt">T&#160;2</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="start">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">Il mio familiare &#0233; dipendente da me</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;0</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check2.0#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;1</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check2.1#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;2</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check2.2#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;3</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check2.3#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;4</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check2.4#
+          </fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+<fo:table-row background-color="white">
+<fo:table-cell >
+	<fo:block line-height="11pt" color="black" padding-top="4pt">T&#160;3</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="start">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">Devo vigilarlo costantemente</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;0</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check3.0#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;1</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check3.1#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;2</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check3.2#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;3</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check3.3#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;4</fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+<fo:table-row background-color="white">
+<fo:table-cell >
+	<fo:block line-height="11pt" color="black" padding-top="4pt">T&#160;4</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="start">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">Devo assisterlo anche per molte delle pi&#0249; semplici attivit&#0224; quotidiane
+            (vestirlo, lavarlo, uso dei servizi igienici)</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;0</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check4.0#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;1</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check4.1#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;2</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check4.2#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;3</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check4.3#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;4</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check4.4#
+          </fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+<fo:table-row background-color="white">
+<fo:table-cell border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">T&#160;5</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="start" border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">Non riesco ad avere un minuto di libert&#0224;
+            dai miei compito di assistenza</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm" border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;0</fo:block>
+</fo:table-cell>
+<fo:table-cell border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check5.0#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm" border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;1</fo:block>
+</fo:table-cell>
+<fo:table-cell border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check5.1#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm" border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;2</fo:block>
+</fo:table-cell>
+<fo:table-cell border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check5.2#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm" border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;3</fo:block>
+</fo:table-cell>
+<fo:table-cell border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check5.3#
+          </fo:block>
+</fo:table-cell >
+<fo:table-cell text-align="end" end-indent="1mm" border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;4</fo:block>
+</fo:table-cell>
+<fo:table-cell border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check5.4#
+          </fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+
+<fo:table-row background-color="white">
+<fo:table-cell >
+	<fo:block line-height="11pt" color="black" padding-top="4pt">S&#160;6</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="start">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">Sento che mi sto perdendo vita
+                   </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;0</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check6.0#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;1</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check6.1#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;2</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check6.2#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;3</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check6.3#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;4</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check6.4#
+          </fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+<fo:table-row background-color="white">
+<fo:table-cell >
+	<fo:block line-height="11pt" color="black" padding-top="4pt">S&#160;7</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="start">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">Desidererei poter fuggire da questa situazione</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;0</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check7.0#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;1</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check7.1#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;2</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check7.2#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;3</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check7.3#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;4</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check7.4#
+          </fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+<fo:table-row background-color="white">
+<fo:table-cell >
+	<fo:block line-height="11pt" color="black" padding-top="4pt">S&#160;8</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="start">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">La mia vita sociale ne ha risentito</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;0</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check8.0#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;1</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check8.1#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;2</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check8.2#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;3</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check8.3#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;4</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check8.4#
+          </fo:block>
+</fo:table-cell>
+
+</fo:table-row>
+
+<fo:table-row background-color="white">
+<fo:table-cell >
+	<fo:block line-height="11pt" color="black" padding-top="4pt">S&#160;9</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="start">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">Mi sento emotivamente svuotato a causa
+            del mio ruolo di assistente</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;0</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check9.0#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;1</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check9.1#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;2</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check9.2#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;3</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check9.3#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;4</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check9.4#
+          </fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+<fo:table-row background-color="white">
+<fo:table-cell border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">S&#160;10</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="start" border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">Mi sarei aspettato qualcosa di diverso a questo
+            punto della mia vita</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm" border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;0</fo:block>
+</fo:table-cell>
+<fo:table-cell border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check10.0#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm" border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;1</fo:block>
+</fo:table-cell>
+<fo:table-cell border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check10.1#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm" border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;2</fo:block>
+</fo:table-cell>
+<fo:table-cell border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check10.2#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm" border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;3</fo:block>
+</fo:table-cell>
+<fo:table-cell border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check10.3#
+          </fo:block>
+</fo:table-cell >
+<fo:table-cell text-align="end" end-indent="1mm" border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;4</fo:block>
+</fo:table-cell>
+<fo:table-cell border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check10.4#
+          </fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+<fo:table-row background-color="white">
+<fo:table-cell >
+	<fo:block line-height="11pt" color="black" padding-top="4pt">F&#160;11</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="start">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">Non riesco a dormire a sufficienza
+                   </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;0</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check11.0#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;1</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check11.1#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;2</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check11.2#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;3</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check11.3#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;4</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check11.4#
+          </fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+<fo:table-row background-color="white">
+<fo:table-cell >
+	<fo:block line-height="11pt" color="black" padding-top="4pt">F&#160;12</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="start">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">La mia salute ne ha risentito</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;0</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check12.0#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;1</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check12.1#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;2</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check12.2#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;3</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check12.3#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;4</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check12.4#
+          </fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+<fo:table-row background-color="white">
+<fo:table-cell >
+	<fo:block line-height="11pt" color="black" padding-top="4pt">F&#160;13</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="start">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">Il compito di assisterlo mi ha resa pi&#0249; fragile</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;0</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check13.0#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;1</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check13.1#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;2</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check13.2#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;3</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check13.3#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;4</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check13.4#
+          </fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+
+<fo:table-row background-color="white">
+<fo:table-cell border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">F&#160;14</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="start" border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">Sono fisicamente stanca </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm" border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;0</fo:block>
+</fo:table-cell>
+<fo:table-cell border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check14.0#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm" border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;1</fo:block>
+</fo:table-cell>
+<fo:table-cell border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check14.1#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm" border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;2</fo:block>
+</fo:table-cell>
+<fo:table-cell border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check14.2#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm" border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;3</fo:block>
+</fo:table-cell>
+<fo:table-cell border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check14.3#
+          </fo:block>
+</fo:table-cell >
+<fo:table-cell text-align="end" end-indent="1mm" border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;4</fo:block>
+</fo:table-cell>
+<fo:table-cell border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check14.4#
+          </fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+
+<fo:table-row background-color="white">
+<fo:table-cell >
+	<fo:block line-height="11pt" color="black" padding-top="4pt">D&#160;15</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="start">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">Non vado d'accordo con gli altri membri della famiglia come di consueto </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;0</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check15.0#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;1</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check15.1#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;2</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check15.2#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;3</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check15.3#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;4</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check15.4#
+          </fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+<fo:table-row background-color="white">
+<fo:table-cell >
+	<fo:block line-height="11pt" color="black" padding-top="4pt">D&#160;16</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="start">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">I miei sforzi non sono considerati dagli altri familiari</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;0</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check16.0#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;1</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check16.1#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;2</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check16.2#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;3</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check16.3#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;4</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check16.4#
+          </fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+<fo:table-row background-color="white">
+<fo:table-cell >
+	<fo:block line-height="11pt" color="black" padding-top="4pt">D&#160;17</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="start">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">Ho avuto problemi con il coniuge</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;0</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check17.0#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;1</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check17.1#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;2</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check17.2#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;3</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check17.3#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;4</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check17.4#
+          </fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+<fo:table-row background-color="white">
+<fo:table-cell >
+	<fo:block line-height="11pt" color="black" padding-top="4pt">D&#160;18</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="start">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">Sul lavoro non rendo come di consueto</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;0</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check18.0#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;1</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check18.1#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;2</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check18.2#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;3</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check18.3#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;4</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check18.4#
+          </fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+<fo:table-row background-color="white">
+<fo:table-cell border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">D&#160;19</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="start" border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">Provo risentimento verso dei miei familiari che potrebbero darmi una mano ma non lo fanno</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm" border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;0</fo:block>
+</fo:table-cell>
+<fo:table-cell border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check19.0#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm" border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;1</fo:block>
+</fo:table-cell>
+<fo:table-cell border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check19.1#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm" border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;2</fo:block>
+</fo:table-cell>
+<fo:table-cell border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check19.2#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm" border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;3</fo:block>
+</fo:table-cell>
+<fo:table-cell border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check19.3#
+          </fo:block>
+</fo:table-cell >
+<fo:table-cell text-align="end" end-indent="1mm" border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;4</fo:block>
+</fo:table-cell>
+<fo:table-cell border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check19.4#
+          </fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+<fo:table-row background-color="white">
+<fo:table-cell >
+	<fo:block line-height="11pt" color="black" padding-top="4pt">E&#160;20</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="start">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">Mi sento in imbarazzo a causa del comportamento del mio familiare</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;0</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check20.0#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;1</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check20.1#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;2</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check20.2#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;3</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check20.3#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;4</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check20.4#
+          </fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+<fo:table-row background-color="white">
+<fo:table-cell >
+	<fo:block line-height="11pt" color="black" padding-top="4pt">E&#160;21</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="start">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">Mi vergogno di lui/lei</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;0</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check21.0#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;1</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check21.1#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;2</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check21.2#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;3</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check21.3#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;4</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check21.4#
+          </fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+<fo:table-row background-color="white">
+<fo:table-cell >
+	<fo:block line-height="11pt" color="black" padding-top="4pt">E&#160;22</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="start">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">Provo del risentimento nei suoi confronti</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;0</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check22.0#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;1</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check22.1#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;2</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check22.2#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;3</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check22.3#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;4</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check22.4#
+          </fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+<fo:table-row background-color="white">
+<fo:table-cell >
+	<fo:block line-height="11pt" color="black" padding-top="4pt">E&#160;23</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="start">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">Non mi sento a mio agio quando ho amici a casa</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;0</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check23.0#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;1</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check23.1#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;2</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check23.2#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;3</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check23.3#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;4</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check23.4#
+          </fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+<fo:table-row background-color="white">
+<fo:table-cell border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">E&#160;24</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="start" border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">Mi arrabbio per le mie reazioni nei suoi riguardi</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm" border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;0</fo:block>
+</fo:table-cell>
+<fo:table-cell border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check24.0#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm" border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;1</fo:block>
+</fo:table-cell>
+<fo:table-cell border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check24.1#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm" border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;2</fo:block>
+</fo:table-cell>
+<fo:table-cell border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check24.2#
+          </fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="end" end-indent="1mm" border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;3</fo:block>
+</fo:table-cell>
+<fo:table-cell border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check24.3#
+          </fo:block>
+</fo:table-cell >
+<fo:table-cell text-align="end" end-indent="1mm" border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+	<fo:block line-height="11pt" color="black" padding-top="4pt">&#160;4</fo:block>
+</fo:table-cell>
+<fo:table-cell border-bottom-color="black"
+               border-bottom-width="0.4pt" border-bottom-style="solid">
+         <fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-color="black" border-width="0.1pt"
+                    border-style="solid">&#160;#check24.4#
+          </fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+</fo:table-body>
+</fo:table>
+<!-- mfo:section.end -->
+
+
+<!-- mfo:section.start="totaliTab"  -->
+<!-- TABELLA TOTALI -->
+<fo:table space-before.optimum="1.5cm" font-size="10pt" font-family="sans-serif">
+<fo:table-column column-width="14cm"/>
+<fo:table-body>
+<fo:table-row line-height="10pt" color="black">
+<fo:table-cell font-weight="bold">
+   <fo:block text-align="start">PUNTEGGIO COMPLESSIVO #totale#</fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+</fo:table-body>
+</fo:table>
+
+<fo:block line-height="7pt" color="black" padding-top="4pt"
+          font-size="10pt" font-weight="bold" space-before.optimum="10pt"
+          >Data test: #data_test#
+</fo:block>
+
+<fo:block line-height="7pt" color="black" padding-top="4pt"
+          font-size="10pt" font-weight="bold" space-before.optimum="10pt"
+          >Nome di chi ha eseguito il test: #nome#
+</fo:block>
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="finale" -->
+    </fo:flow>
+  </fo:page-sequence>
+<!-- mfo:section.end -->
+</fo:root>

@@ -1,0 +1,36 @@
+<window id="Branca"
+title="${c:l('brancaForm.formTitle')}" 
+apply="it.caribel.app.common.controllers.branca.BrancaFormCtrl" 
+closable="true" sizable="true"
+border="normal"
+position="center"
+width="780px"
+height="200px"
+>
+
+	<vlayout vflex="true">
+
+		<caribelFormMenu />
+ 		<vlayout vflex="true" sclass="asterLayout asterOverflow asterLayoutLastSpace">
+ 			<hlayout>
+				<label hflex="20%" value="${c:l('brancaForm.tipo_pre')}:" />
+				<caribelSearch hflex="80%" db_name_cod="cod_tippre" db_name_descr="tip_descrizione"
+				 	required="true" maxlength="2" isDbKey="true"  id_cod="codice_pre" 
+				 	ctrl="it.caribel.app.common.controllers.tipo_prestazioni.TipoPrestazioniSearchCtrl"/>
+			</hlayout>	
+			<hlayout>
+				<label hflex="20%" value="${c:l('generic.codice')}:" />
+				<caribeltextbox focus="true" hflex="20%" id="codice" db_name="codice" isDbKey="true" maxlength="2" required="true" />
+				<label hflex="60%" />
+			</hlayout>	
+		
+			<hlayout>
+				<label hflex="20%" value="${c:l('brancaForm.descrizione')}:" />
+				<caribeltextbox hflex="80%" db_name="descrizione" maxlength="30" required="true" id="descrizione"/>						
+			</hlayout>
+			
+			
+		</vlayout>
+	</vlayout>
+
+</window>

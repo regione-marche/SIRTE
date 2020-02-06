@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+	<!-- mfo:section.start="layout" rem="IMPOSTAZIONI DI PAGINA" -->
+	<fo:layout-master-set>
+		<fo:simple-page-master master-name="simple"
+			page-height="21cm" page-width="29.7cm" margin-top="0.6cm"
+			margin-bottom="0.6cm" margin-left="1cm" margin-right="1cm">
+			<fo:region-body margin-top="2.0cm" margin-bottom="1.6cm" />
+			<fo:region-before extent="2cm" />
+			<fo:region-after extent="1cm" />
+		</fo:simple-page-master>
+	</fo:layout-master-set>
+
+	<fo:page-sequence master-name="simple">
+		<fo:static-content flow-name="xsl-region-before">
+			<fo:table font-size="10pt" width="auto">
+				<fo:table-column column-width="14cm" />
+				<fo:table-column column-width="14cm" />
+				<fo:table-body>
+					<fo:table-row height="10pt">
+						<fo:table-cell text-align="start">
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm">MONITORING ANZEIGER CARE HOME TREATMENTS #periodo#
+							</fo:block>
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="1mm">#filtro1#</fo:block>
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="1mm">#filtro2#</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="end">
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm">
+								Pag.
+								<fo:page-number />
+								/
+								<fo:page-number-citation ref-id="last-page" />
+							</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+				</fo:table-body>
+			</fo:table>
+		</fo:static-content>
+		<!-- TITOLO DI PIEDE -->
+		<fo:static-content flow-name="xsl-region-after">
+			<fo:table font-size="10pt" width="auto">
+				<fo:table-column column-width="14cm" />
+				<fo:table-column column-width="14cm" />
+				<fo:table-body>
+					<fo:table-row height="12pt">
+						<fo:table-cell text-align="start">
+							<!-- <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">#txt#</fo:block> -->
+						</fo:table-cell>
+						<fo:table-cell text-align="end">
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm">elaborato del #data_stampa#</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+				</fo:table-body>
+			</fo:table>
+		</fo:static-content>
+		<fo:flow flow-name="xsl-region-body">
+			<!-- mfo:section.end -->
+
+			<!--mfo:section.start="tabella_intestazione" -->
+			<fo:table font-size="12pt" width="auto" border-width="1pt"
+				border-style="solid" border-color="rgb(200,200,200)">
+				<fo:table-column column-width="8cm" />
+				<fo:table-column column-width="2cm" />
+				<fo:table-column column-width="2cm" />
+
+				<fo:table-column column-width="2cm" />
+				<fo:table-column column-width="2cm" />
+				<fo:table-column column-width="2cm" />
+				<fo:table-column column-width="2cm" />
+
+				<fo:table-column column-width="2cm" />
+				<fo:table-column column-width="2cm" />
+				<fo:table-column column-width="2cm" />
+				<fo:table-column column-width="2cm" />
+				<fo:table-header>
+					<fo:table-row height="12pt">
+						<fo:table-cell text-align="start" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm" font-weight="bold">
+								MANAGEMENT CARE HOME TREATMENTS
+							</fo:block>
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm" font-weight="bold">
+								IN CARE HOME TREATMENTS ASSISTIERTE
+							</fo:block>
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm" font-weight="bold">
+								#titolo_tabella#
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="center" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm">
+								CP
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="center" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm">
+								ADP
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="center" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm">
+								ARD
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="center" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm">
+								AID
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="center" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm">
+								VSD
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="center" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm">
+								C.D.I. 1&#0176; LIV
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="center" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm">
+								C.D.I. 2&#0176; LIV
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="center" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm">
+								C.D.I. 3&#0176; LIV
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="center" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm">
+								C.D.I. LIV NON DEFINITO
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="center" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm">
+								TOTAL
+							</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+				</fo:table-header>
+				<fo:table-body>
+					<!--mfo:section.end -->
+					<!--mfo:section.start="tabella_corpo_dati" -->
+					<fo:table-row height="12pt">
+						<fo:table-cell text-align="start" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm" font-weight="bold">
+								#desc_prestazione#
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="end" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm">
+								#cp#
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="end" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm">
+								#adp#
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="end" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm">
+								#ard#
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="end" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm">
+								#aid#
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="end" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm">
+								#vsd#
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="end" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm">
+								#cdi_1_l#
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="end" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm">
+								#cdi_2_l#
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="end" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm">
+								#cdi_3_l#
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="end" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm">
+								#cdi_non_l#
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="end" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm">
+								#totale#
+							</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					<!--mfo:section.end -->
+					<!--mfo:section.start="tabella_corpo_figura" -->
+					<fo:table-row height="12pt">
+						<fo:table-cell text-align="start" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)"
+							number-columns-spanned="10">
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm" font-weight="bold">
+								#tipo_figura_professionale#: #figura_professionale#
+							</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					<!--mfo:section.end -->
+
+					<!--mfo:section.start="tabella_fine" -->
+				</fo:table-body>
+			</fo:table>
+			<!--mfo:section.end -->
+
+
+			<!--mfo:section.start="tabella_accessi" -->
+			<fo:table font-size="12pt" width="auto" border-width="1pt"
+				border-style="solid" border-color="rgb(200,200,200)" space-before="1cm">
+				<fo:table-column column-width="9cm" />
+				<fo:table-column column-width="2cm" />
+				<fo:table-header>
+					<fo:table-row height="12pt">
+						<fo:table-cell text-align="start" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm" font-weight="bold">
+								ZUGANG F&#220;R BERUFS FIGUR
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="center" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm">
+								Total
+							</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+				</fo:table-header>
+				<fo:table-body>
+					<!--mfo:section.end -->
+					<!--mfo:section.start="tabella_accessi_corpo" -->
+					<fo:table-row height="12pt">
+						<fo:table-cell text-align="start" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm" font-weight="bold">
+								#figura_professionale#
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="end" border-width="1pt"
+							border-style="solid" border-color="rgb(200,200,200)">
+							<fo:block start-indent="1mm" end-indent="1mm"
+								padding-top="0.5mm">
+								#numero#
+							</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					<!--mfo:section.end -->
+					<!--mfo:section.start="tabella_accessi_fine" -->
+				</fo:table-body>
+			</fo:table>
+			<!--mfo:section.end -->
+
+
+			<!--mfo:section.start="saltopagina" -->
+			<fo:block break-after="page">
+			</fo:block>
+			<!--mfo:section.end -->
+
+
+			<!-- mfo:section.start="messaggio" rem="MESSAGGIO DI ERRORE" -->
+			<fo:block font-size="12pt" font-family="sans-serif"
+				font-weight="bold" line-height="10pt" background-color="white"
+				color="black" text-align="center" padding-top="3pt">
+				Keine Informationen abgerufen: #info#.
+			</fo:block>
+			<!-- mfo:section.end -->
+			<!-- mfo:section.start="finale" rem="TERMINAZIONE DOCUMENTO" -->
+			<fo:block id="last-page" />
+		</fo:flow> <!-- closes the flow element -->
+	</fo:page-sequence> <!-- closes the page-sequence -->
+	<!-- mfo:section.end -->
+</fo:root>
+
+      

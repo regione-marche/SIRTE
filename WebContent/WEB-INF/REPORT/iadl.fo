@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+
+<!-- mfo:section.start="layout" rem="IMPOSTAZIONI DI PAGINA" -->
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="simple"
+        page-height="29.7cm"	page-width="21cm"
+        margin-top="1cm"	margin-bottom="1cm"
+        margin-left="1cm"	margin-right="1cm" >
+      <fo:region-body margin-top="2.5cm" margin-bottom="1cm"/>
+      <fo:region-before extent="3cm"/>
+      <fo:region-after extent="1cm"/>
+    </fo:simple-page-master>
+  </fo:layout-master-set>
+
+  <fo:page-sequence master-name="simple">
+    <fo:static-content flow-name="xsl-region-before">
+  <fo:table font-size="10pt">
+  <fo:table-column column-width="19cm"/>
+  <fo:table-body>
+  <fo:table-row height="9pt">
+   <fo:table-cell text-align="start" >
+
+	<fo:table font-size="10pt">
+	<fo:table-column column-width="11.5cm"/>
+	<fo:table-column column-width="7.5cm"/>
+	 <fo:table-body>
+	  <fo:table-row height="9pt">
+	    <fo:table-cell text-align="start" >
+		<fo:block start-indent="1mm" end-indent="1mm"
+		padding-top="0.5mm" font-weight="bold">
+			Cognome e Nome: #assistito#
+		</fo:block>
+	    </fo:table-cell>
+	    <fo:table-cell text-align="end" >
+		<fo:block start-indent="1mm" end-indent="1mm"
+		padding-top="0.5mm" font-weight="bold">
+			Data scheda: #data#
+		</fo:block>
+	    </fo:table-cell>
+	  </fo:table-row>
+          <fo:table-row height="1pt">
+             <fo:table-cell text-align="start" number-columns-spanned='2'>
+                  <fo:block>
+                          <fo:leader leader-pattern="rule"
+                             rule-thickness="0.5pt"
+                             leader-length="19cm"/>
+                  </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+
+	 </fo:table-body>
+	</fo:table>
+	    </fo:table-cell>
+	  </fo:table-row>
+	 </fo:table-body>
+	</fo:table>
+
+	  <fo:block font-size="12pt"  end-indent="1mm"
+		  font-weight="bold" text-align="center" space-before.optimum="12pt">
+		  IADL
+	  </fo:block>
+
+	  <fo:block font-size="12pt" start-indent="1.1mm"
+		  end-indent="1mm" font-weight="bold" space-before="0.3cm"
+		  text-align="center" padding-top="1mm">
+		 (INSTRUMENTAL ACTIVITIES OF DAILY LIVING)
+	  </fo:block>
+
+    </fo:static-content>
+
+
+    <!-- TITOLO DI PIEDE -->
+    <fo:static-content flow-name="xsl-region-after">
+      <fo:table font-size="8pt" width="auto" space-before.optimum="0.5cm">
+        <fo:table-column column-width="12cm"/>
+        <fo:table-column column-width="7cm"/>
+        <fo:table-body>
+          <fo:table-row height="10pt">
+            <fo:table-cell text-align="start">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >#txt#</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="end">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >elaborato del #data_stampa#</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body">
+<!-- mfo:section.end -->
+<!--mfo:section.start="tabIAdl" -->
+<fo:table space-before="1cm" font-size="10pt" font-family="sans-serif"  border-width="0.1mm" border-style="solid" >
+	<fo:table-column column-width="5cm"/>
+    <fo:table-column column-width="12cm"/>
+    <fo:table-column column-width="2cm"/>
+    <fo:table-body>
+    	<fo:table-row>
+    		<fo:table-cell border-right-width="0.1mm" border-right-style="solid">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					A) USARE IL TELEFONO
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-right-width="0.1mm" border-right-style="solid" >
+				<fo:block line-height ="0.5cm" text-align="start" start-indent="0.1cm" space-before="0.1cm">
+					1)Usa il telefono di propria iniziativa: cerca il numero e lo compone
+				</fo:block>
+			</fo:table-cell>
+				<fo:table-cell>
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" >
+					#tel1#
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	<fo:table-row>
+    		<fo:table-cell border-right-width="0.1mm" border-right-style="solid">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-right-width="0.1mm" border-right-style="solid" >
+				<fo:block line-height ="0.5cm" text-align="start" start-indent="0.1cm" space-before="0.1cm">
+					2)Compone solo alcuni numeri ben conosciuti
+				</fo:block>
+			</fo:table-cell>
+				<fo:table-cell>
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" >
+					#tel2#
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	<fo:table-row>
+    		<fo:table-cell border-right-width="0.1mm" border-right-style="solid">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-right-width="0.1mm" border-right-style="solid" >
+				<fo:block line-height ="0.5cm" text-align="start" start-indent="0.1cm" space-before="0.1cm">
+					3)&#200; in grado di rispondere al telefono, ma non compone i numeri
+				</fo:block>
+			</fo:table-cell>
+				<fo:table-cell>
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" >
+					#tel3#
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	<fo:table-row>
+    		<fo:table-cell border-right-width="0.1mm" border-right-style="solid">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-right-width="0.1mm" border-right-style="solid" >
+				<fo:block line-height ="0.5cm" text-align="start" start-indent="0.1cm" space-before="0.1cm">
+					4)Non &#232; capace di usare il telefono
+				</fo:block>
+			</fo:table-cell>
+				<fo:table-cell>
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" >
+					#tel4#
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	<fo:table-row>
+    		<fo:table-cell border-right-width="0.1mm" border-right-style="solid" border-top-width="0.1mm" border-top-style="solid">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					B) FARE LA SPESA
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-right-width="0.1mm" border-right-style="solid" border-top-width="0.1mm" border-top-style="solid">
+				<fo:block line-height ="0.5cm" text-align="start" start-indent="0.1cm" space-before="0.1cm">
+					1)Si prende autonomamente cura di tutte le necessit&#224; di acquisti nei negozi
+				</fo:block>
+			</fo:table-cell>
+				<fo:table-cell border-top-width="0.1mm" border-top-style="solid">
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" >
+					#acq1#
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	<fo:table-row>
+    		<fo:table-cell border-right-width="0.1mm" border-right-style="solid">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-right-width="0.1mm" border-right-style="solid" >
+				<fo:block line-height ="0.5cm" text-align="start" start-indent="0.1cm" space-before="0.1cm">
+					2)&#200; in grado di effettuare piccoli acquisti nei negozi
+				</fo:block>
+			</fo:table-cell>
+				<fo:table-cell>
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" >
+					#acq2#
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	<fo:table-row>
+    		<fo:table-cell border-right-width="0.1mm" border-right-style="solid">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-right-width="0.1mm" border-right-style="solid" >
+				<fo:block line-height ="0.5cm" text-align="start" start-indent="0.1cm" space-before="0.1cm">
+					3)Necessita di essere accompagnato per qualsiasi acquisto nei negozi
+				</fo:block>
+			</fo:table-cell>
+				<fo:table-cell>
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" >
+					#acq3#
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	<fo:table-row>
+    		<fo:table-cell border-right-width="0.1mm" border-right-style="solid">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-right-width="0.1mm" border-right-style="solid" >
+				<fo:block line-height ="0.5cm" text-align="start" start-indent="0.1cm" space-before="0.1cm">
+					4)&#200; del tutto incapace di fare acquisti nei negozi
+				</fo:block>
+			</fo:table-cell>
+				<fo:table-cell>
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" >
+					#acq4#
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	
+    	<fo:table-row>
+    		<fo:table-cell border-right-width="0.1mm" border-right-style="solid"  border-top-width="0.1mm" border-top-style="solid">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					C) PREPARARE IL CIBO
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-right-width="0.1mm" border-right-style="solid"  border-top-width="0.1mm" border-top-style="solid">
+				<fo:block line-height ="0.5cm" text-align="start" start-indent="0.1cm" space-before="0.1cm">
+					1)Organizza, prepara e serve pasti adeguatamente preparati
+				</fo:block>
+			</fo:table-cell>
+				<fo:table-cell  border-top-width="0.1mm" border-top-style="solid">
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" >
+					#cib1#
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	<fo:table-row>
+    		<fo:table-cell border-right-width="0.1mm" border-right-style="solid">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-right-width="0.1mm" border-right-style="solid" >
+				<fo:block line-height ="0.5cm" text-align="start" start-indent="0.1cm" space-before="0.1cm">
+					2)Prepara pasti adeguati solo se sono procurati gli ingredienti
+				</fo:block>
+			</fo:table-cell>
+				<fo:table-cell>
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" >
+					#cib2#
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	<fo:table-row>
+    		<fo:table-cell border-right-width="0.1mm" border-right-style="solid">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-right-width="0.1mm" border-right-style="solid" >
+				<fo:block line-height ="0.5cm" text-align="start" start-indent="0.1cm" space-before="0.1cm">
+					3)Scalda pasti preparati o prepara cibi ma non mantiene dieta adeguata
+				</fo:block>
+			</fo:table-cell>
+				<fo:table-cell>
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" >
+					#cib3#
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	<fo:table-row>
+    		<fo:table-cell border-right-width="0.1mm" border-right-style="solid">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-right-width="0.1mm" border-right-style="solid" >
+				<fo:block line-height ="0.5cm" text-align="start" start-indent="0.1cm" space-before="0.1cm">
+					4)Ha bisogno di avere cibi preparati e serviti
+				</fo:block>
+			</fo:table-cell>
+				<fo:table-cell>
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" >
+					#cib4#
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	<fo:table-row>
+    		<fo:table-cell border-right-width="0.1mm" border-right-style="solid" border-top-width="0.1mm" border-top-style="solid">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					D) GOVERNO DELLA CASA
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-right-width="0.1mm" border-right-style="solid" border-top-width="0.1mm" border-top-style="solid">
+				<fo:block line-height ="0.5cm" text-align="start" start-indent="0.1cm" space-before="0.1cm">
+					1)Mantiene la casa da solo o con occasionale aiuto (ad es. lavori pesanti)
+				</fo:block>
+			</fo:table-cell>
+				<fo:table-cell border-top-width="0.1mm" border-top-style="solid">
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" >
+					#gov1#
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	<fo:table-row>
+    		<fo:table-cell border-right-width="0.1mm" border-right-style="solid">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-right-width="0.1mm" border-right-style="solid" >
+				<fo:block line-height ="0.5cm" text-align="start" start-indent="0.1cm" space-before="0.1cm">
+					2)Esegue solo compiti quotidiani leggeri ma livello di pulizia non suffic.
+				</fo:block>
+			</fo:table-cell>
+				<fo:table-cell>
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" >
+					#gov2#
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	<fo:table-row>
+    		<fo:table-cell border-right-width="0.1mm" border-right-style="solid">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-right-width="0.1mm" border-right-style="solid" >
+				<fo:block line-height ="0.5cm" text-align="start" start-indent="0.1cm" space-before="0.1cm">
+					3)Ha bisogno di aiuto in ogni operazione di governo della casa
+				</fo:block>
+			</fo:table-cell>
+				<fo:table-cell>
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" >
+					#gov3#
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	<fo:table-row>
+    		<fo:table-cell border-right-width="0.1mm" border-right-style="solid">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-right-width="0.1mm" border-right-style="solid" >
+				<fo:block line-height ="0.5cm" text-align="start" start-indent="0.1cm" space-before="0.1cm">
+					4)Non partecipa a nessuna operazione di governo della casa
+				</fo:block>
+			</fo:table-cell>
+				<fo:table-cell>
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" >
+					#gov4#
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	
+    		<fo:table-row>
+    		<fo:table-cell border-right-width="0.1mm" border-right-style="solid"  border-top-width="0.1mm" border-top-style="solid">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					E) FARE IL BUCATO
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-right-width="0.1mm" border-right-style="solid"  border-top-width="0.1mm" border-top-style="solid">
+				<fo:block line-height ="0.5cm" text-align="start" start-indent="0.1cm" space-before="0.1cm">
+					1)Fa il bucato personalmente e completamente
+				</fo:block>
+			</fo:table-cell>
+				<fo:table-cell  border-top-width="0.1mm" border-top-style="solid">
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" >
+					#bia1#
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	<fo:table-row>
+    		<fo:table-cell border-right-width="0.1mm" border-right-style="solid">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-right-width="0.1mm" border-right-style="solid" >
+				<fo:block line-height ="0.5cm" text-align="start" start-indent="0.1cm" space-before="0.1cm">
+					2)Lava le piccole cose (calze, fazzoletti)
+				</fo:block>
+			</fo:table-cell>
+				<fo:table-cell>
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" >
+					#bia2#
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	<fo:table-row>
+    		<fo:table-cell border-right-width="0.1mm" border-right-style="solid">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-right-width="0.1mm" border-right-style="solid" >
+				<fo:block line-height ="0.5cm" text-align="start" start-indent="0.1cm" space-before="0.1cm">
+					3)Tutta la biancheria deve essere lavata da altri
+				</fo:block>
+			</fo:table-cell>
+				<fo:table-cell>
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" >
+					#bia3#
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	
+    	<fo:table-row>
+    		<fo:table-cell border-right-width="0.1mm" border-right-style="solid" border-top-width="0.1mm" border-top-style="solid">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					F) MEZZI di TRASPORTO
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-right-width="0.1mm" border-right-style="solid" border-top-width="0.1mm" border-top-style="solid">
+				<fo:block line-height ="0.5cm" text-align="start" start-indent="0.1cm" space-before="0.1cm">
+					1)Si sposta da solo sui mezzi pubblici o guida la propria auto
+				</fo:block>
+			</fo:table-cell>
+				<fo:table-cell border-top-width="0.1mm" border-top-style="solid">
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" >
+					#spo1#
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	<fo:table-row>
+    		<fo:table-cell border-right-width="0.1mm" border-right-style="solid">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-right-width="0.1mm" border-right-style="solid" >
+				<fo:block line-height ="0.5cm" text-align="start" start-indent="0.1cm" space-before="0.1cm">
+					2)Si sposta in taxi ma non usa mezzi di trasporto pubblici
+				</fo:block>
+			</fo:table-cell>
+				<fo:table-cell>
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" >
+					#spo2#
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	<fo:table-row>
+    		<fo:table-cell border-right-width="0.1mm" border-right-style="solid">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-right-width="0.1mm" border-right-style="solid" >
+				<fo:block line-height ="0.5cm" text-align="start" start-indent="0.1cm" space-before="0.1cm">
+					3)Usa i mezzi di trasporto se assistito o accompagnato
+				</fo:block>
+			</fo:table-cell>
+				<fo:table-cell>
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" >
+					#spo3#
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	<fo:table-row>
+    		<fo:table-cell border-right-width="0.1mm" border-right-style="solid">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-right-width="0.1mm" border-right-style="solid" >
+				<fo:block line-height ="0.5cm" text-align="start" start-indent="0.1cm" space-before="0.1cm">
+					4)Pu&#242; spostarsi solo con taxi o auto e solo con assistenza
+				</fo:block>
+			</fo:table-cell>
+				<fo:table-cell>
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" >
+					#spo4#
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	<fo:table-row>
+    		<fo:table-cell border-right-width="0.1mm" border-right-style="solid">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-right-width="0.1mm" border-right-style="solid" >
+				<fo:block line-height ="0.5cm" text-align="start" start-indent="0.1cm" space-before="0.1cm">
+					5)Non si sposta per niente
+				</fo:block>
+			</fo:table-cell>
+				<fo:table-cell>
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" >
+					#spo5#
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	
+    	<fo:table-row>
+    		<fo:table-cell border-right-width="0.1mm" border-right-style="solid" border-top-width="0.1mm" border-top-style="solid">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					G) ASSUNZIONE FARMACI
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-right-width="0.1mm" border-right-style="solid" border-top-width="0.1mm" border-top-style="solid">
+				<fo:block line-height ="0.5cm" text-align="start" start-indent="0.1cm" space-before="0.1cm">
+					1)Prende le medicine che gli sono state prescritte
+				</fo:block>
+			</fo:table-cell>
+				<fo:table-cell border-top-width="0.1mm" border-top-style="solid">
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" >
+					#med1#
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	<fo:table-row>
+    		<fo:table-cell border-right-width="0.1mm" border-right-style="solid">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-right-width="0.1mm" border-right-style="solid" >
+				<fo:block line-height ="0.5cm" text-align="start" start-indent="0.1cm" space-before="0.1cm">
+					2)Prende le medicine se sono preparate in anticipo e in dosi separate
+				</fo:block>
+			</fo:table-cell>
+				<fo:table-cell>
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" >
+					#med2#
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	<fo:table-row>
+    		<fo:table-cell border-right-width="0.1mm" border-right-style="solid">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-right-width="0.1mm" border-right-style="solid" >
+				<fo:block line-height ="0.5cm" text-align="start" start-indent="0.1cm" space-before="0.1cm">
+					3)Non &#232; in grado di prendere le medicine da solo
+				</fo:block>
+			</fo:table-cell>
+				<fo:table-cell>
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" >
+					#med3#
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	
+    	<fo:table-row>
+    		<fo:table-cell border-right-width="0.1mm" border-right-style="solid" border-top-width="0.1mm" border-top-style="solid">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					H) USO DEL DENARO
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-right-width="0.1mm" border-right-style="solid" border-top-width="0.1mm" border-top-style="solid">
+				<fo:block line-height ="0.5cm" text-align="start" start-indent="0.1cm" space-before="0.1cm">
+					1)Maneggia le proprie finanze in modo indipendente
+				</fo:block>
+			</fo:table-cell>
+				<fo:table-cell border-top-width="0.1mm" border-top-style="solid">
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" >
+					#den1#
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	<fo:table-row>
+    		<fo:table-cell border-right-width="0.1mm" border-right-style="solid">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-right-width="0.1mm" border-right-style="solid" >
+				<fo:block line-height ="0.5cm" text-align="start" start-indent="0.1cm" space-before="0.1cm">
+					2)&#200; in grado di fare piccoli acquisti
+				</fo:block>
+			</fo:table-cell>
+				<fo:table-cell>
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" >
+					#den2#
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	<fo:table-row>
+    		<fo:table-cell border-right-width="0.1mm" border-right-style="solid" border-bottom-width="0.1mm" border-bottom-style="solid">
+				<fo:block text-align="start" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					&#160;
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-right-width="0.1mm" border-right-style="solid" border-bottom-width="0.1mm" border-bottom-style="solid">
+				<fo:block line-height ="0.5cm" text-align="start" start-indent="0.1cm" space-before="0.1cm">
+					3)&#200; incapace di maneggiare i soldi
+				</fo:block>
+			</fo:table-cell>
+				<fo:table-cell border-bottom-width="0.1mm" border-bottom-style="solid">
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" > 
+					#den3#
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	<fo:table-row>
+    		<fo:table-cell number-columns-spanned="2" border-bottom-style="none">
+				<fo:block text-align="end" font-weight="bold" start-indent="0.1cm" space-before="0.1cm">
+					PUNTEGGIO TOTALE (A+B+C+D+E+F+G+H)
+				</fo:block>
+			</fo:table-cell>
+			<fo:table-cell border-style="solid" border-width="1mm">
+				<fo:block text-align="center"  space-before="0.1cm" font-weight="bold" >
+					#iadl_punt#/8
+				</fo:block>
+			</fo:table-cell>    		
+    	</fo:table-row>
+    	
+    </fo:table-body>
+</fo:table>
+	
+	
+    </fo:flow> <!-- closes the flow element-->
+  </fo:page-sequence> <!-- closes the page-sequence -->
+<!-- mfo:section.end -->
+</fo:root>
+
+

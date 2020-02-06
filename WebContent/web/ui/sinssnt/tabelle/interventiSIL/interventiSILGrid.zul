@@ -1,0 +1,33 @@
+<window title="${c:l('interventiSIL.formTitle')}"
+	apply="it.caribel.app.sinssnt.controllers.tabelle.interventiSIL.InterventiSILGridCtrl"	
+	sclass="asterOverlappedWindow"  sizable="true"
+	closable="true" mode="overlapped" position="center" border="normal" width="750px"
+height="450px">
+
+	<vlayout height="100%">
+	
+		<caribelGridMenu  visible_btn_clear="true" />
+		<vlayout sclass="asterLayout" vflex="true" spacing="5px">
+		
+		<hlayout>
+			<label hflex="20%" value="${c:l('interventiSIL.cartella')}:" />
+			<caribelSearch hflex="80%" maxlength="8"  id_cod="tb_filter1" db_name_cod="n_cartella"
+				required="true" 
+				ctrl="it.caribel.app.common.controllers.cartella.CartellaSearchCtrl"
+			 />
+		</hlayout>
+		
+		
+			<caribelPaging/>
+			<caribellistbox vflex="true" hflex="true" >
+			
+				<listhead sizable="true">
+					
+					<caribellistheader db_name="int_progr"  width="7em" label="${c:l('interventiSILGrid.progr')}" />	
+					<caribellistheader db_name="int_data"  width="13em" label="${c:l('interventiSILGrid.data')}" />	
+						
+				</listhead>
+			</caribellistbox>
+		</vlayout>		
+	</vlayout>
+</window>

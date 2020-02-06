@@ -1,0 +1,18 @@
+<zk xmlns:n="native" xmlns:h="xhtml" xmlns:w="client" xmlns:ca="client/attribute">
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+
+	<?component name="menu_left_generale" 			inline="true" 	macroURI="/web/ui/menu/menu_left_generale.zul"?>
+	<?component name="comp_ambiente" 				inline="true" 	macroURI="~./ui/common/ambiente/label_ambiente.zul"?>
+
+	<vlayout id="menu_left" vflex="true" style="overflow-y:auto"  apply="it.caribel.app.sinssnt.controllers.menu.menu_left.ComposerMenuLeft">
+
+		<image  ca:alt="${c:l('generic.logo')}" hflex="true" src="~./zul/img/logo.jpg" id="logo"></image>
+
+		<comp_ambiente/>
+
+		<menu_left_generale />
+		
+	</vlayout>
+
+
+</zk>

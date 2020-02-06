@@ -1,0 +1,138 @@
+<zk>
+<?component name="diario_insert" inline="true" macroURI="/web/ui/sinssnt/diario/diarioCommonInsert.zul"?>
+
+<style>
+        /* impostazione del colore di sfondo per il borderlayout a seconda del tema */
+                
+		.silvertail .complex-layout .z-north,
+		.silvertail .complex-layout .z-center,
+		.silvertail .complex-layout .z-south{
+			background-color:#f9f9f9;
+		}
+		.breeze .complex-layout .z-north,
+		.breeze .complex-layout .z-center,
+		.breeze .complex-layout .z-south{
+			background-color:#f9f9f9;
+		}
+		.sapphire .complex-layout .z-north,
+		.sapphire .complex-layout .z-center,
+		.sapphire .complex-layout .z-south{
+			background-color:#e8f6fd;
+		}
+		.PastelTheme .complex-layout .z-north,
+		.PastelTheme .complex-layout .z-center,
+		.PastelTheme .complex-layout .z-south{
+			background-color:#f6fdfd;
+		}
+		.SeaTheme .complex-layout .z-north,
+		.SeaTheme .complex-layout .z-center,
+		.SeaTheme .complex-layout .z-south{
+			background-color:#fafcff;
+		}
+		.OrangeTheme .complex-layout .z-north,
+		.OrangeTheme .complex-layout .z-center,
+		.OrangeTheme .complex-layout .z-south{
+			background-color:#fdeed7;
+		}
+		.GreenTheme .complex-layout .z-north,
+		.GreenTheme .complex-layout .z-center,
+		.GreenTheme .complex-layout .z-south{
+			background-color:#f5fcf2;
+		}
+		.VioletTheme .complex-layout .z-north,
+		.VioletTheme .complex-layout .z-center,
+		.VioletTheme .complex-layout .z-south{
+			background-color:#f5f2fd;
+		}
+</style>
+
+<zscript><![CDATA[
+		void dadataChanged() {
+			it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+		}
+		void adataChanged() {
+			it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+		}
+	]]>
+</zscript>
+
+<borderlayout sclass="complex-layout" hflex="true" vflex="true">
+	<north height="52px" minsize="52" border="normal" collapsible="true" splittable="true" 
+		style="padding: 0px">
+		<vlayout sclass="asterLayout" vflex="true" width="100%" spacing="0px">
+				<hlayout>
+					<label value="${c:l('operatori.tipoOperatore')}:" hflex="12%" />
+					<caribelcombobox id="cbx_tipo_operatore" db_name="tipo_operatore" hflex="23%" />
+					<label hflex="10%" value="${c:l('diario.data.da')}:" />
+					<caribeldatebox hflex="15%" id="dadata"
+						db_name="dadata" required="false" onChange="dadataChanged()" />
+					<label hflex="5%" value="${c:l('diario.data.a')}:" />
+					<caribeldatebox hflex="15%" id="adata"
+						db_name="adata" required="false" onChange="adataChanged()" />
+					<button id="btn_refresh" hflex="10%"
+						label="${c:l('grid.search.refresh')}" height="23px"
+						tooltiptext="${c:l('grid.search.refresh.tooltiptext')}" />
+					<button id="btn_print_all" hflex="10%"
+						label="${c:l('diario.print.all.button')}" height="23px"
+						tooltiptext="${c:l('diario.print.all.button.tooltiptext')}" />	
+				</hlayout>
+				
+				<hlayout>
+					<label hflex="12%" value="${c:l('diario.op_inse')}:" />
+					<caribelSearch hflex="55%" id="operatoreCS"
+						required="false" id_cod="op_inse" id_descr="op_inse_descr"
+						db_name_cod="op_inse" db_name_descr="op_inse_descr"
+						ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl" />
+					<label hflex="33%" value="" />
+				</hlayout>
+				
+		</vlayout>
+	</north>
+	
+	<center border="none" autoscroll="true">
+		<vlayout vflex="true" spacing="0px">
+			<!-- <caribelPaging /> -->
+			<hlayout vflex="true" hflex="true" width="100%">
+				<caribellistbox vflex="true" hflex="true">
+					<frozen columns="1" />
+					<listhead sizable="true">
+						<caribellistheader db_name="data_diario"
+							label="${c:l('diario.data')}" width="6em" />
+						<caribellistheader db_name="oggetto"
+							label="${c:l('diario.oggetto')}" width="35em" />
+						<caribellistheader
+							db_name="tipo_operatore_descr" label="${c:l('diario.operatore.tipo')}"
+							width="15em" />
+						<caribellistheader
+							db_name="op_inse_descr" label="${c:l('diario.op_inse')}"
+							width="20em" />
+						<caribellistheader db_name="data_inse"
+							label="${c:l('diario.data_inse')}" width="9em" />
+						<caribellistheader db_name="ora_inse"
+							label="${c:l('diario.ora_inse')}" width="9em" />
+						<!--caribellistheader db_name="op_modi_descr"	label="${c:l('diario.op_modi')}"	width="20em"/-->
+						<caribellistheader db_name="data_modi"
+							label="${c:l('diario.data_modi')}" width="9em" />
+						<caribellistheader db_name="ora_modi"
+							label="${c:l('diario.ora_modi')}" width="900em" />
+					</listhead>
+				</caribellistbox>
+			</hlayout>
+			<hlayout style="margin-top: -1px;" hflex="true" width="100%" id="menu_horiz">
+				<caribelGridFormMenuHoriz visible_btn_formgrid_print="true" />
+			</hlayout>
+		</vlayout>
+	</center>
+
+	<south height="50%" border="normal" collapsible="true" splittable="true">
+		<diario_insert/>
+	</south>
+</borderlayout>
+</zk>
+
+
+
+
+
+
+

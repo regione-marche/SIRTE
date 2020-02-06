@@ -1,0 +1,39 @@
+<window title="${c:l('brancaGrid.formTitle')}"
+	apply="it.caribel.app.common.controllers.branca.BrancaGridCtrl"	
+	sclass="asterOverlappedWindow"  sizable="true"
+	closable="true" mode="overlapped" position="center" border="normal" height="600px" width="600px">
+
+	<vlayout height="100%">
+	
+		<caribelGridMenu  visible_btn_clear="true" />
+		<vlayout sclass="asterLayout" vflex="true" spacing="5px">
+			<hlayout valign="middle" width="100%">
+				<label hflex="20%"  value="${c:l('branca.descrizione')}:" />
+				<caribeltextbox hflex="60%" id="tb_filter1" db_name="descrizione"/>
+				<label hflex="20%"  value="" />
+			</hlayout>
+			
+			<hlayout>
+			<label hflex="20%" value="${c:l('branca.tipo_prest')}:" />
+			<caribelSearch hflex="60%" maxlength="2" id_cod="tb_filter2" db_name_cod="cod_tippre" 
+				required="false" 
+				 ctrl="it.caribel.app.common.controllers.tipo_prestazioni.TipoPrestazioniSearchCtrl"
+			 />
+			 <label hflex="20%"  value="" />
+		</hlayout>
+			
+		 	
+			<caribelPaging/>
+			<caribellistbox vflex="true" hflex="true" >
+			<frozen columns="2"/>
+				<listhead sizable="true">
+					<caribellistheader db_name="codice"	  width="5em" label="${c:l('brancaGrid.codice')}" />
+					<caribellistheader db_name="descrizione"  width="25em" label="${c:l('brancaGrid.descrizione')}" />				
+					<caribellistheader db_name="cod_tippre"	  width="10em" label="${c:l('brancaGrid.cod_tippre')}" />
+					<caribellistheader db_name="desc_tipo"	  width="45em" label="${c:l('brancaGrid.desc_tipo')}" />
+								
+				</listhead>
+			</caribellistbox>
+		</vlayout>		
+	</vlayout>
+</window>

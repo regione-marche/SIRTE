@@ -1,0 +1,772 @@
+<?xml version ="1.0" encoding="ISO-8859-1"?>
+
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+
+<!-- mfo:section.start="layout"  -->
+<fo:layout-master-set>
+  <fo:simple-page-master master-name="simple"
+    page-height="29.7cm"                 page-width="21cm"
+    margin-top="1cm"                  	 margin-bottom="0.5cm"
+    margin-left="1cm"                  margin-right="1cm">
+    <fo:region-before margin-top="0.5cm" extent="2cm"/>
+    <fo:region-after extent="1cm"/>
+    <fo:region-body margin-top="1cm" margin-bottom="1cm"/>
+  </fo:simple-page-master>
+</fo:layout-master-set>
+
+<fo:page-sequence master-name="simple">
+<fo:static-content flow-name="xsl-region-before">
+
+  <fo:table font-size="10pt">
+  <fo:table-column column-width="19cm"/>
+  <fo:table-body>
+  <fo:table-row height="9pt">
+     <fo:table-cell text-align="start" >
+
+          <fo:table font-size="10pt">
+          <fo:table-column column-width="12.0cm"/>
+          <fo:table-column column-width="7cm"/>
+           <fo:table-body>
+            <fo:table-row height="9pt">
+              <fo:table-cell text-align="start" >
+                  <fo:block start-indent="1mm" end-indent="1mm"
+                  padding-top="0.5mm" font-weight="bold">
+                          Cognome e Nome: #assistito#
+                  </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="end" >
+                  <fo:block start-indent="1mm" end-indent="1mm"
+                  padding-top="0.5mm" font-weight="bold">
+                          Data : #data#
+                  </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+           </fo:table-body>
+          </fo:table>
+
+     </fo:table-cell>
+  </fo:table-row>
+  <fo:table-row height="1pt">
+     <fo:table-cell text-align="start" >
+          <fo:block>
+          <fo:leader leader-pattern="rule"
+                     rule-thickness="0.5pt"
+                     leader-length="19cm"/>
+          </fo:block>
+     </fo:table-cell>
+  </fo:table-row>
+  <fo:table-row height="10pt">
+     <fo:table-cell text-align="center"
+          font-weight="bold" >
+          <fo:block start-indent="1mm" end-indent="1mm" space-before="0.3cm" font-size="14pt">Scala (o Indice) di Karnofsky</fo:block>
+     </fo:table-cell>
+  </fo:table-row>
+  </fo:table-body>
+  </fo:table>
+</fo:static-content>
+
+    <!-- TITOLO DI PIEDE -->
+    <fo:static-content flow-name="xsl-region-after">
+      <fo:table font-size="8pt" width="auto" >
+        <fo:table-column column-width="11cm"/>
+        <fo:table-column column-width="8cm"/>
+        <fo:table-body>
+          <fo:table-row height="10pt">
+            <fo:table-cell text-align="start">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >#txt#</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="end">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >elaborato del #data_stampa#</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+    </fo:static-content>
+
+<fo:flow flow-name="xsl-region-body">
+<!--mfo:section.end -->
+
+
+
+<!-- mfo:section.start="inizioTab"  -->
+  <fo:table space-before.optimum="2.0cm" font-size="10pt" font-family="sans-serif"  >
+    <fo:table-column column-width="4cm"/>
+    <fo:table-column column-width="4cm"/>
+    <fo:table-column column-width="4cm"/>
+    <fo:table-column column-width="4.7cm"/>
+    <fo:table-column column-width="2.3cm"/>
+
+	<fo:table-body>
+	<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid"  >
+			<fo:block color="black" >
+        		ATTIVIT&#192;
+        	</fo:block>
+        	<fo:block color="black" >
+        		LAVORATIVA
+        	</fo:block>
+		  </fo:table-cell>
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		ATTIVIT&#192;
+        	</fo:block>
+        	<fo:block color="black">
+        		LAVORATIVA
+        	</fo:block>
+		  </fo:table-cell>	  
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		CURA
+        	</fo:block>
+        	<fo:block color="black">
+        		PERSONALE
+        	</fo:block>
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		SINTOMI/
+        	</fo:block>
+        	<fo:block color="black" >
+        		SUPPORTO SANITARIO
+        	</fo:block>
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black">
+        		&#160;
+        	</fo:block>
+        	<fo:block color="black" >
+        		PUNTEGGIO
+        	</fo:block>
+		  </fo:table-cell>	
+		</fo:table-row>
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		COMPLETA
+        	</fo:block>        	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		COMPLETA
+        	</fo:block> 
+		  </fo:table-cell>	  
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		COMPLETA
+        	</fo:block> 
+		  </fo:table-cell>	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		COMPLETA
+        	</fo:block> 
+		  </fo:table-cell>	
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		#val100#
+        	</fo:block> 
+		  </fo:table-cell>	
+		</fo:table-row>
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center"  border-width="0.1mm" border-style="solid" >
+		  	<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+			<fo:block color="black" >
+        		DIFFICOLT&#192; LIEVE
+        	</fo:block>   
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>     	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="center"  border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		LIEVE DIFFICOLT&#192;
+        	</fo:block>
+        	<fo:block color="black" >
+        		A CAMMINARE
+        	</fo:block> 
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+		  </fo:table-cell>	  
+		  <fo:table-cell text-align="center"  border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+        	<fo:block color="black" >
+        		COMPLETA
+        	</fo:block> 
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+		  </fo:table-cell>	 	
+		  <fo:table-cell text-align="center"  border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		SEGNI/SINTOMI MINORI
+        	</fo:block>
+        	<fo:block color="black" >
+        		Calo ponderale  &#60; 5%
+        	</fo:block> 
+        	<fo:block color="black" >
+        		Calo energie &#8727;
+        	</fo:block>
+		  </fo:table-cell>	 
+		   <fo:table-cell text-align="center"  border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+        	<fo:block color="black" >
+        		#val90#
+        	</fo:block> 
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+		  </fo:table-cell>	 		  	
+		</fo:table-row>
+		
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+		  	<fo:block color="black" >
+        		DIFFICOLT&#192; LIEVE -
+        	</fo:block>
+			<fo:block color="black" >
+        		GRAVE
+        	</fo:block>   
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>     	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		DIFFICOLT&#192; LIEVE -
+        	</fo:block>
+        	<fo:block color="black" >
+        		MODERATA
+        	</fo:block> 
+        	<fo:block color="black" >
+        		(camminare/guidare)
+        	</fo:block>
+		  </fo:table-cell>	  
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+        	<fo:block color="black" >
+        		LIEVE DIFFICOLT&#192;
+        	</fo:block> 
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+		  </fo:table-cell>	 	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		ALCUNI SINTOMI
+        	</fo:block>
+        	<fo:block color="black" >
+        		Calo ponderale &#60; 10%
+        	</fo:block> 
+        	<fo:block color="black" >
+        		Calo moderato di energie &#8727;&#8727;
+        	</fo:block>
+		  </fo:table-cell>	 
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+        	<fo:block color="black" >
+        		#val80#
+        	</fo:block> 
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+		  </fo:table-cell>	 		  	
+		</fo:table-row>
+		
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+		  	<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+			<fo:block color="black" >
+        		INABILE
+        	</fo:block>   
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>   
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>     	
+		  </fo:table-cell>
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		DIFFICOLT&#192;
+        	</fo:block>
+        	<fo:block color="black" >
+        		MODERATA
+        	</fo:block> 
+        	<fo:block color="black" >
+        		(si muove prevalentemente
+        	</fo:block>
+        	<fo:block color="black" >
+        		in casa)
+        	</fo:block>
+		  </fo:table-cell>	  
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		SEGNI/SINTOMI
+        	</fo:block>
+        	<fo:block color="black" >
+        		MAGGIORI
+        	</fo:block> 
+        	<fo:block color="black" >
+        		Grave calo ponderale
+        	</fo:block>
+        	<fo:block color="black" >
+        		&#62; 10%&#8727;&#8727;&#8727;
+        	</fo:block>
+		  </fo:table-cell>	 	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+        	<fo:block color="black" >
+        		ALCUNI SEGNI E SINTOMI
+        	</fo:block> 
+        	<fo:block color="black" >
+        		(calo grave di energie)
+        	</fo:block>
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+		  </fo:table-cell>	 
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+        	<fo:block color="black" >
+        		#val70#
+        	</fo:block> 
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+		  </fo:table-cell>	 		  	
+		</fo:table-row>
+		
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+		  	<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block>   
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block> 
+		  </fo:table-cell>
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		GRAVE DIFFICOLT&#192;
+        	</fo:block>
+        	<fo:block color="black" >
+        		A CAMMINARE/
+        	</fo:block> 
+        	<fo:block color="black" >
+        		GUIDARE
+        	</fo:block>        	
+		  </fo:table-cell>	  
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		DIFFICOLT&#192;
+        	</fo:block>
+        	<fo:block color="black" >
+        		MODERATA - GRAVE
+        	</fo:block>         	
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+		  </fo:table-cell>	 	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		SEGNI/SINTOMI MAGGIORI
+        	</fo:block>
+        	<fo:block color="black" >
+        		Grave calo ponderale &#62;10%&#8727;&#8727;&#8727;
+        	</fo:block> 
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>        	
+		  </fo:table-cell>	 
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+        	<fo:block color="black" >
+        		#val60#
+        	</fo:block> 
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>        	
+		  </fo:table-cell>	 		  	
+		</fo:table-row>
+		
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+		  	<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block>   
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block> 
+		  </fo:table-cell>
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		ALZATO PER OLTRE
+        	</fo:block>
+        	<fo:block color="black" >
+        		IL 50% DELLA
+        	</fo:block> 
+        	<fo:block color="black" >
+        		GIORNATA
+        	</fo:block>        	
+		  </fo:table-cell>	  
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		GRAVE DIFFICOLT&#192;
+        	</fo:block>
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>         	
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+		  </fo:table-cell>	 	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		SUPPORTO SANITARIO
+        	</fo:block>
+        	<fo:block color="black" >
+        		FREQUENTE
+        	</fo:block> 
+        	<fo:block color="black" >
+        		Paziente ambulatoriale
+        	</fo:block>        	
+		  </fo:table-cell>	 
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+        	<fo:block color="black" >
+        		#val50#
+        	</fo:block> 
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>        	
+		  </fo:table-cell>	 		  	
+		</fo:table-row>
+		
+		
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+		  	<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block>   
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block> 
+		  </fo:table-cell>
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		A LETTO PER OLTRE
+        	</fo:block>
+        	<fo:block color="black" >
+        		IL 50% DELLA
+        	</fo:block> 
+        	<fo:block color="black" >
+        		GIORNATA
+        	</fo:block>        	
+		  </fo:table-cell>	  
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		LIMITATA CURA DI
+        	</fo:block>
+        	<fo:block color="black" >
+        		S&#200;
+        	</fo:block>         	
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+		  </fo:table-cell>	 	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		ASSISTENZA SANITARIA
+        	</fo:block>
+        	<fo:block color="black" >
+        		STRAORDINARIA
+        	</fo:block> 
+        	<fo:block color="black" >
+        		(per frequenza e tipo di interventi)
+        	</fo:block>        	
+		  </fo:table-cell>	 
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+        	<fo:block color="black" >
+        		#val40#
+        	</fo:block> 
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>        	
+		  </fo:table-cell>	 		  	
+		</fo:table-row>
+		
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+		  	<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block>   
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block> 
+		  </fo:table-cell>
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		INABILE
+        	</fo:block>
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block> 
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>    
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>        	
+		  </fo:table-cell>	  
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		INABILE
+        	</fo:block>
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>          	
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>  
+		  </fo:table-cell>	 	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		INDICATO RICOVERO
+        	</fo:block>
+        	<fo:block color="black" >
+        		OSPEDALIERO/ DOMICILIO
+        	</fo:block> 
+        	<fo:block color="black" >
+        		SUPPORTO SANITARIO
+        	</fo:block>  
+        	<fo:block color="black" >
+        		INTENSIVO
+        	</fo:block>        	
+		  </fo:table-cell>	 
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+        	<fo:block color="black" >
+        		#val30#
+        	</fo:block> 
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>        	
+		  </fo:table-cell>	 		  	
+		</fo:table-row>
+		
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="start" border-width="0.1mm" border-style="solid" number-columns-spanned="2" border-bottom-style="none">
+		  	<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+			<fo:block color="black" >
+        		&#8727;SALTUARI
+        	</fo:block>   
+        	<fo:block color="black" >
+        		Non condizionanti il supporto terapeutico continuativo
+        	</fo:block> 
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+		  </fo:table-cell>
+		  
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>          	
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>  
+		  </fo:table-cell>	 	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		GRAVE COMPROMISSIONE
+        	</fo:block>
+        	<fo:block color="black" >
+        		DI UNA O PI&#217; FUNZIONI
+        	</fo:block> 
+        	<fo:block color="black" >
+        		VITALI
+        	</fo:block>  
+        	<fo:block color="black" >
+        		IRREVERSIBILE
+        	</fo:block>        	
+		  </fo:table-cell>	 
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+        	<fo:block color="black" >
+        		#val20#
+        	</fo:block> 
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>        	
+		  </fo:table-cell>	 		  	
+		</fo:table-row>
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="start" border-width="0.1mm" border-style="solid" number-columns-spanned="2" border-bottom-style="none" border-top-style="none">
+		  	
+			<fo:block color="black" >
+        		&#8727;&#8727;SALTUARI O COSTANTI
+        	</fo:block>   
+        	<fo:block color="black" >
+        		Condizionanti spesso il supporto terapeutico
+        	</fo:block> 
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+		  </fo:table-cell>
+		  
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>          	
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+        	
+		  </fo:table-cell>	 	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		RAPIDA PROGRESSIONE
+        	</fo:block>
+        	<fo:block color="black" >
+        		PROCESSI BIOLOGICI
+        	</fo:block> 
+        	<fo:block color="black" >
+        		MORTALI
+        	</fo:block>          	     	
+		  </fo:table-cell>	 
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+        	<fo:block color="black" >
+        		#val10#
+        	</fo:block> 
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>        	
+		  </fo:table-cell>	 		  	
+		</fo:table-row>
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="start" border-width="0.1mm" border-style="solid" number-columns-spanned="2" border-top-style="none">
+		  	
+			<fo:block color="black" >
+        		&#8727;&#8727;&#8727;COSTANTI O INVALIDANTI
+        	</fo:block>   
+        	<fo:block color="black" >
+        		Condizionanti il supporto terapeutico
+        	</fo:block> 
+        	
+		  </fo:table-cell>
+		  
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+        	<fo:block color="black" >
+        		&#160;
+        	</fo:block>          	
+        	
+        	
+		  </fo:table-cell>	 	
+		  <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+        	<fo:block color="black" >
+        		DECEDUTO
+        	</fo:block> 
+        	         	     	
+		  </fo:table-cell>	 
+		   <fo:table-cell text-align="center" border-width="0.1mm" border-style="solid" >
+			<fo:block color="black" >
+        		&#160;
+        	</fo:block>
+        	<fo:block color="black" >
+        		#val0#
+        	</fo:block> 
+        	    	
+		  </fo:table-cell>	 		  	
+		</fo:table-row>
+		
+		
+<!--mfo:section.end -->
+
+
+<!-- mfo:section.start="rigaTab"  -->
+		
+<!--mfo:section.end -->
+
+<!-- mfo:section.start="fineTab"  -->
+	</fo:table-body>
+  </fo:table>
+<!--mfo:section.end -->
+
+
+<!-- mfo:section.start="totale"  -->
+  
+<!-- mfo:section.end -->
+
+
+<!-- mfo:section.start="finale" -->
+    </fo:flow>
+  </fo:page-sequence>
+<!-- mfo:section.end -->
+</fo:root>

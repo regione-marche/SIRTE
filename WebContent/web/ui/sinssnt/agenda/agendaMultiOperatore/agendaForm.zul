@@ -1,0 +1,255 @@
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+
+<?component name="toolbarAgenda" inline="true" macroURI="/web/ui/sinssnt/agenda/agendaMultiOperatore/toolbarAgenda.zul"?>
+<?component name="legendaAgenda" inline="true" macroURI="/web/ui/sinssnt/agenda/agendaMultiOperatore/legendaAgenda.zul"?>
+
+<?component name="filtriAgenda" inline="true" macroURI="/web/ui/sinssnt/agenda/agendaMultiOperatore/filtriAgenda.zul"?>
+
+<?component name="panel_ubicazione" inline="true" macroURI="~./ui/common/ubicazione/PanelUbicazione.zul"?>
+<?component name="cambiaOperatore" inline="true" macroURI="/web/ui/sinssnt/agenda/agendaMultiOperatore/cambiaOperatore.zul"?>
+
+<window title="${c:l('agendaRegistra.formTitle')}" border="normal"  maximizable="true"
+	apply="it.caribel.app.sinssnt.controllers.agenda.agendaMultiOperatore.AgendaMultiOperatoreRegistraFormCtrl"
+	mode="modal" closable="true" sizable="true" width="100%" height="100%" >
+
+	<style>
+		.z-south-colpsd {
+			background-image:url(/sinssnt_web2/web/img/CambiaOperatoreT.png");
+			background-position:left; 
+			background-repeat:no-repeat;
+		}
+		tr.z-listitem-seld .z-listcell-cnt, tr.z-listitem-over-seld
+		.z-listcell-cnt, tr.z-listitem-over .z-listcell-cnt {
+		 color:black;
+		}
+		
+		.z-north-colpsd {
+			background-image:url("/web/img/agenda/calendario.png");
+			background-position:center; 
+			background-repeat:no-repeat;
+		}
+
+	</style>
+ <zscript>
+    import java.util.Comparator;
+    import it.caribel.app.sinssnt.controllers.agenda.agendaMultiOperatore.AgendaComparator;
+    Comparator cTitleAsc = new AgendaComparator(true, 3);
+    Comparator cTitleDsc = new AgendaComparator(false, 3);
+ </zscript>
+	<vlayout vflex="true" sclass="agenda">
+	<!-- esplosione del caribelFormMenu -->
+		<hlayout>
+			<toolbar align="start" hflex="42%" >
+				<toolbarbutton id="btn_new" forward="onNuovo"
+					image="~./zul/img/new24x24.png"  tooltiptext="${c:l('btn.new')}"
+					visible="true" />
+				<toolbarbutton id="btn_delete"
+					image="~./zul/img/delete24x24.png"
+					tooltiptext="${c:l('btn.delete')}"
+					visible="true" />
+				<toolbarbutton id="btn_save"
+					image="~./zul/img/save24x24.png" tooltiptext="${c:l('btn.save')}"
+					visible="true" />
+				<toolbarbutton id="btn_undo"
+					image="~./zul/img/undo24x24.png" tooltiptext="${c:l('btn.undo')}"
+					visible="true" />
+				<toolbarbutton id="btn_print"
+					image="~./zul/img/print24x24.png" tooltiptext="${c:l('btn.print')}"
+					visible="true" />
+				<toolbarbutton id="btn_print_qrc"
+					image="~./zul/img/print24x24QR.png"
+					tooltiptext="${c:l('btn.print.qrc')}"
+					visible="false" />
+				<toolbarbutton id="btn_search"
+					image="~./zul/img/find24x24.png" tooltiptext="${c:l('btn.search')}"
+					visible="false" />
+			</toolbar>
+			<toolbarAgenda hflex="16%" />
+			<legendaAgenda hflex="42%" />
+		</hlayout>
+		<hlayout id="filtriAgendaChiuso" visible="false" sclass="z-north-header">
+			<label value="Filtri Agenda" sclass="z-north-header" hflex="1" style="border-bottom-width: 0px;" id="filtriAgendaSintesi"/>
+			<div ><div class="z-borderlayout-icon z-north-exp"  id="btn_filtri"></div></div> 
+<!-- 			<label width="15px" height="15px" value=" s" style=" background: url(${'~./zul/img/layout/borderlayout-btn.png'}) -15px -15px;"/> -->
+<!-- 			<toolbar align="start" hflex="33%" > -->
+<!-- 				<toolbarbutton id="btn_filtri" width="15px" height="15px" -->
+<!-- 					image="~./zul/img/layout/borderlayout-btn.png"  tooltiptext="${c:l('btn.new')}" -->
+<!-- 					visible="true" /> -->
+<!-- 			</toolbar> -->
+		</hlayout>
+		<borderlayout sclass="complex-layout" hflex="true"
+			vflex="true">
+			<north border="normal" sclass="mybackground" collapsible="true" splittable="false" style="padding: 0px" open="true" id="filtriAgenda" title="Filtri Agenda" visible="true" vflex="min">
+				<filtriAgenda />
+			</north>
+			<center border="none" vflex="true" hflex="true" sclass="mybackground agendaCentro">
+				<borderlayout vflex="min">
+					<north>
+						<vlayout vflex="true" sclass="asterLayout mybackground"
+						style="">
+							<hlayout style="text-align:left">
+								<caribeltextbox id="riepilogoAltroAssistito"	hflex="50%" readonly="true" />
+								<label id="meseAnno" hflex="50%" ></label>
+							</hlayout>
+						</vlayout>
+					</north>
+					<center border="none"  vflex="true" hflex="true">
+						<hlayout style="text-align:center" vflex="true"
+							hflex="true">
+							<caribellistbox
+								id="caribellbAgendaAssistito" nonselectableTags="*"
+								checkmark="false" multiple="false" oddRowSclass="non-odd"
+								vflex="true" sclass="agendaTable">
+								<auxhead id="headers1">
+									<auxheader colspan="4">
+										${c:l('agendaRegistra.percorrenza')}
+									</auxheader>
+									<auxheader sclass="headerListbox">
+										<caribelintbox db_name="km0"
+											width="50%" id="kmIntBox0" maxlength="3"
+											constraint="no negative" forward="onBlur=onBlurMMKM" />
+									</auxheader>
+									<auxheader sclass="headerListbox">
+										<caribelintbox db_name="km1"
+											width="50%" id="kmIntBox1" maxlength="3"
+											constraint="no negative" />
+									</auxheader>
+									<auxheader sclass="headerListbox">
+										<caribelintbox db_name="km2"
+											width="50%" id="kmIntBox2" maxlength="3"
+											constraint="no negative" />
+									</auxheader>
+									<auxheader sclass="headerListbox">
+										<caribelintbox db_name="km3"
+											width="50%" id="kmIntBox3" maxlength="3"
+											constraint="no negative" />
+									</auxheader>
+									<auxheader sclass="headerListbox">
+										<caribelintbox db_name="km4"
+											width="50%" id="kmIntBox4" maxlength="3"
+											constraint="no negative" />
+									</auxheader>
+									<auxheader sclass="headerListbox">
+										<caribelintbox db_name="km5"
+											width="50%" id="kmIntBox5" maxlength="3"
+											constraint="no negative" />
+									</auxheader>
+									<auxheader sclass="headerListbox">
+										<caribelintbox db_name="km6"
+											width="50%" id="kmIntBox6" maxlength="3"
+											constraint="no negative" />
+									</auxheader>
+								</auxhead>
+								<auxhead id="headers2">
+									<auxheader colspan="4">
+										${c:l('agendaRegistra.oreLavorate')}
+									</auxheader>
+									<auxheader sclass="headerListbox">
+										<caribelintbox db_name="mm0"
+											width="50%" id="mmIntBox0" maxlength="3"
+											constraint="no negative" />
+									</auxheader>
+									<auxheader sclass="headerListbox">
+										<caribelintbox db_name="mm1"
+											width="50%" id="mmIntBox1" maxlength="3"
+											constraint="no negative" />
+									</auxheader>
+									<auxheader sclass="headerListbox">
+										<caribelintbox db_name="mm2"
+											width="50%" id="mmIntBox2" maxlength="3"
+											constraint="no negative" />
+									</auxheader>
+									<auxheader sclass="headerListbox">
+										<caribelintbox db_name="mm3"
+											width="50%" id="mmIntBox3" maxlength="3"
+											constraint="no negative" />
+									</auxheader>
+									<auxheader sclass="headerListbox">
+										<caribelintbox db_name="mm4"
+											width="50%" id="mmIntBox4" maxlength="3"
+											constraint="no negative" />
+									</auxheader>
+									<auxheader sclass="headerListbox">
+										<caribelintbox db_name="mm5"
+											width="50%" id="mmIntBox5" maxlength="3"
+											constraint="no negative" />
+									</auxheader>
+									<auxheader sclass="headerListbox">
+										<caribelintbox db_name="mm6"
+											width="50%" id="mmIntBox6" maxlength="3"
+											constraint="no negative" />
+									</auxheader>
+								</auxhead>
+								<listhead sizable="false">
+									<caribellistheader sort="auto(ag_oper_ref_desc)"
+										db_name="ag_oper_ref" width="22%"
+										label="${c:l('generic.operatore')}" />
+									<caribellistheader sort="auto"
+										db_name="assistito" width="22%"
+										label="${c:l('agendaPianSett.assistito')}" />
+									<caribellistheader
+										db_name="matt_pom" width="5%"
+										label="${c:l('agendaPianSett.matt_pom')}" />
+									<caribellistheader db_name=""
+										width="3%" label="" column_editable="true"
+										column_type="boolean">
+										<checkbox id="selTutti"></checkbox>
+									</caribellistheader>
+									<caribellistheader db_name="0" sort="auto"
+										width="10%" sclass="headerListbox"
+										label="${c:l('agendaPianSett.sett.0')}">
+										<checkbox id="jCheckBox1"></checkbox>
+									</caribellistheader>
+									<caribellistheader db_name="1" sort="auto('1')"
+										width="10%" sclass="headerListbox"
+										label="${c:l('agendaPianSett.sett.1')}">
+										<checkbox id="jCheckBox2"></checkbox>
+									</caribellistheader>
+									<caribellistheader db_name="2" sort="auto"
+										width="10%" sclass="headerListbox"
+										label="${c:l('agendaPianSett.sett.2')}">
+										<checkbox id="jCheckBox3"></checkbox>
+									</caribellistheader>
+									<caribellistheader db_name="3" sortAscending="${cTitleAsc}" sortDescending="${cTitleDsc}"
+										width="10%" sclass="headerListbox"
+										label="${c:l('agendaPianSett.sett.3')}">
+										<checkbox id="jCheckBox4"></checkbox>
+									</caribellistheader>
+									<caribellistheader db_name="4" sort="auto"
+										width="10%" sclass="headerListbox"
+										label="${c:l('agendaPianSett.sett.4')}">
+										<checkbox id="jCheckBox5"></checkbox>
+									</caribellistheader>
+									<caribellistheader db_name="5" sort="auto"
+										width="10%" sclass="headerListbox"
+										label="${c:l('agendaPianSett.sett.5')}">
+										<checkbox id="jCheckBox6"></checkbox>
+									</caribellistheader>
+									<caribellistheader db_name="6" sort="auto"
+										width="10%" sclass="headerListbox"
+										label="${c:l('agendaPianSett.sett.6')}">
+										<checkbox id="jCheckBox7"></checkbox>
+									</caribellistheader>
+								</listhead>
+							</caribellistbox>
+						</hlayout>
+					</center>
+					<!-- 					<east visible="false" border="normal" collapsible="true" open="false" splittable="true" sclass="mybackground" title="Calendario"> -->
+					<!-- 						<vlayout> -->
+					<!-- 						<calendar id="cal"  forward="onChange=onCalendar"/>  -->
+					<!-- 						use="it.caribel.app.sinssnt.controllers.agenda.WeekPicker"> -->
+					<!-- 						</calendar> -->
+					<!-- 						</vlayout>   -->
+					<!-- 					</east> -->
+				</borderlayout>
+			</center>
+			<south border="normal" collapsible="true" id="pannelloCambiaOperatore"
+				sclass="mybackground" splittable="true" open="false"
+				title="Cambia Operatore">
+				<cambiaOperatore/>
+			</south>
+		</borderlayout>
+	</vlayout>
+
+</window>
+

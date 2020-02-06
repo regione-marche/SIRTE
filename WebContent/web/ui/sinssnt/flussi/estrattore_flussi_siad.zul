@@ -1,0 +1,118 @@
+<?component name="panel_ubicazione" inline="true" macroURI="~./ui/common/ubicazione/PanelUbicazione.zul"?>
+
+<window 
+apply="it.caribel.app.sinssnt.controllers.flussi.EstrazioneFlussiSiadCtrl"
+title="${c:l('estrattore.flussi_siad.title')}"  id="estrazioni_flussi"
+closable="true" sizable="false"
+mode="overlapped"
+border="normal"
+position="center"
+width="80%"
+height="65%">
+
+
+
+
+<hlayout visible="false"><caribeltextbox value="" id="cod_operatore" db_name="cod_operatore"/></hlayout>
+	<vlayout vflex="true">
+		<toolbar height="26px" align="start" hflex="true">
+			<toolbarbutton id="btn_open"
+				image="~./zul/img/open24x24.png"
+				tooltiptext="${c:l('btn.open')}"
+				visible="true" />
+			<toolbarbutton id="btn_undo"
+				image="~./zul/img/undo24x24.png"
+				tooltiptext="${c:l('btn.undo')}"
+				visible="true" />
+			<toolbarbutton id="help" tooltiptext="${c:l('commons.toolbar.help')}" href="/manuali/RM_Manuale_SIAD.pdf" target="_blank" image="~./zul/img/help_16x16.png"	/>
+		</toolbar>
+		<vlayout sclass="asterLayout asterOverflow" vflex="true">	
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.mese')}:" />
+			<caribelcombobox hflex="15%" id="mese" required="true" db_name="mese"/>	
+			<label hflex="65%" value=""/>	
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.anno')}:" />
+			<caribelcombobox hflex="15%" id="anno" required="true" db_name="anno"/>	
+			<label hflex="65%" value=""/>		
+		</hlayout>	
+				
+		<panel_ubicazione hflex="90%" />
+		
+		<hlayout>
+		<label hflex="20%" value=""/>
+		<button hflex="20%" id="anteprima"
+			label="${c:l('estrazione.flussi_siad.anteprima')}"
+			disabled="false">
+			<attribute name="onClick">
+  <![CDATA[
+	Clients.showBusy("Creazione dell'anteprima in corso. Attendere prego..."); //show a busy message to user
+	Events.echoEvent("onAnteprima", estrazioni_flussi, null); //echo an event back
+]]>
+  </attribute>
+		</button>
+		<button hflex="20%" id="estrazione"
+			label="${c:l('estrazione.flussi_siad.estrai_flussi')}"
+			disabled="false">
+			<attribute name="onClick">
+  <![CDATA[
+	Events.echoEvent("onEffettiva", estrazioni_flussi, null); //echo an event back
+]]>
+  </attribute>
+		</button>
+		<label hflex="40%" value=""/>
+		</hlayout>
+		
+		<vlayout >
+			<caribellistbox sizedByContent="true" id="caribellb2"
+				rows="5">				
+				<listhead sizable="true">
+					<caribellistheader width="7%" db_name="progr" label="${c:l('generic.progressivo')}"/>
+					<caribellistheader width="9%" db_name="data_estrazione" label="${c:l('estrazione.flussi_siad.data_estrazione')}" />
+					<caribellistheader width="7%" db_name="anno" label="${c:l('estrazione.flussi_siad.Anno')}" />
+					<caribellistheader width="7%" db_name="mese_desc" label="${c:l('estrazione.flussi_siad.Mese')}" />
+					<caribellistheader width="18%" db_name="distretto_desc" label="${c:l('estrazione.flussi_siad.distretto')}"/>
+					<caribellistheader width="12%" db_name="cod_operatore" label="${c:l('estrazione.flussi_siad.operatore')}" />
+					<caribellistheader width="20%" db_name="filename" label="${c:l('generic.filename')}" />
+					<caribellistheader db_name="ticket_elab" label="${c:l('generic.filename')}" visible="false"/>
+					<caribellistheader width="10%" db_name="download" label="${c:l('flussi.siad.estratti.download')}" column_editable="true">
+					<custom-attributes download="true"/>
+					</caribellistheader>  
+					<caribellistheader width="10%" db_name="convalida" label="${c:l('flussi.siad.estratti.convalida')}"/>					
+				</listhead>
+			</caribellistbox>
+		</vlayout>		
+						<hlayout>
+		<label hflex="20%" value=""/>
+		<button hflex="30%" id="convalida" image="/web/img/valid-icon.png"
+			label="${c:l('estrazione.flussi_siad.convalida_estrazione')}"
+			disabled="false">
+			<attribute name="onClick">
+  <![CDATA[
+	Clients.showBusy("Convalida dell'estrazione in corso. Attendere prego..."); //show a busy message to user
+	Events.echoEvent("onConvalida", estrazioni_flussi, null); //echo an event back
+]]>
+  </attribute>
+		</button>
+		<button hflex="30%" id="invalida" image="/web/img/not_valid-icon.png"
+			label="${c:l('estrazione.flussi_siad.invalida_estrazione')}"
+			disabled="false">
+			<attribute name="onClick">
+  <![CDATA[
+	Clients.showBusy("Invalidazione estrazione in corso. Attendere prego..."); //show a busy message to user
+	Events.echoEvent("onInvalida", estrazioni_flussi, null); //echo an event back
+]]>
+  </attribute>
+		</button>
+		<label hflex="20%" value=""/>
+		</hlayout>
+		
+		
+		</vlayout>
+		
+
+	</vlayout>
+
+
+</window>

@@ -1,0 +1,26 @@
+<window title="${c:l('operatori.gridTitle')}"
+	apply="it.caribel.app.sinssnt.controllers.tabelle.intolleranza.IntolleranzaSearchCtrl"
+	width="800px" height="510px" style="overflow:auto" sizable="true"
+	closable="true" mode="overlapped" position="center" border="normal" >
+
+	<vlayout height="100%">
+		<caribelGridMenu  visible_btn_clear="true" />
+		<vlayout sclass="asterLayout" vflex="true" spacing="0px">
+			<hlayout>
+				<label hflex="20%"  value="${c:l('operatori.cognome')}:" />
+				<caribeltextbox hflex="60%" id="tb_filter1" db_name="descrizione"/>
+				<label hflex="20%"  value="" />
+			</hlayout>
+		
+			<caribelPaging/>
+			<frozen columns="3"/>
+			<caribellistbox vflex="true" hflex="true" span="1 2">
+				<listhead sizable="true">
+					<caribellistheader db_name="codice"	  hflex="min" label="${c:l('operatori.codice')}" />
+					<caribellistheader db_name="descrizione"  hflex="min" label="${c:l('operatori.cognome')}" />
+				</listhead>
+			</caribellistbox>
+		</vlayout>	
+	</vlayout>	
+
+</window>

@@ -1,0 +1,124 @@
+<?component name="diario_insert" inline="true" macroURI="/web/ui/sinssnt/diario/diarioCommonInsert.zul"?>
+<zk>
+<window title="${c:l('agendaRegistraPopup.formTitle')}" border="normal"
+	apply="it.caribel.app.sinssnt.controllers.agenda.AgendaRegistraPopUpFormCtrl"
+	mode="modal" width="90%" height="80%" closable="true" sizable="true">
+
+	<vlayout vflex="true">
+		<caribelFormMenu visible_btn_delete="false" />
+		<!-- 		<vlayout vflex="true" style="margin:3px"> -->
+		<borderlayout sclass="complex-layout" hflex="true"
+			vflex="true">
+			<north vflex="min" minsize="52" border="normal"
+				collapsible="false" splittable="false" style="padding: 0px">
+				<vlayout sclass="asterLayout" vflex="true">
+					<hlayout>
+						<label hflex="10%"
+							value="${c:l('common.assistito')}:" />
+						<caribeltextbox hflex="90%" id="assistito"
+							readonly="true" />
+					</hlayout>
+					<hlayout style="text-align:left;">
+						<vlayout hflex="65%">
+							<label hflex="1"
+								id="lbl_selezionaPrestazioniErogate"
+								value="${c:l('agendaRegistraPopup.selezionaPrestazioniErogate')}"
+								sclass="prestazioniErogate" />
+						</vlayout>
+						<vlayout hflex="35%">
+							<label hflex="1"
+								value="${c:l('agendaRegistraPopup.selezionaPrestazioniNonProgrammate')}"
+								sclass="prestazioniNonPrgrammate" />
+						</vlayout>
+					</hlayout>
+				</vlayout>
+			</north>
+			<center border="none" vflex="true">
+				<borderlayout>
+					<west title="Prestazioni da erogare" size="63%"
+						flex="true">
+						<caribellistbox id="tablePrestazioni"
+							checkmark="true" rows="12" db_name="griglia" hflex="true"
+							span="2" sizedByContent="true" multiple="true">
+							<listhead sizable="true">
+								<caribellistheader hflex="min" label=" "
+									align="center" />
+								<caribellistheader hflex="min"
+									sort="auto" db_name="ap_prest_cod"
+									label="${c:l('common.codice')}" />
+								<caribellistheader hflex="min"
+									sort="auto" db_name="ap_prest_desc"
+									label="${c:l('agendaRegistraPopup.prestazioniGrid.prestazione')}" />
+								<caribellistheader hflex="min"
+									sort="auto" db_name="frequenza"
+									label="${c:l('agendaRegistraPopup.prestazioniGrid.frequenza')}" />
+								<caribellistheader hflex="min"
+									sort="auto" db_name="ap_prest_qta"
+									label="${c:l('agendaRegistraPopup.prestazioniGrid.quantita')}" />
+								<caribellistheader hflex="min"
+									sort="auto" db_name="ap_stato"
+									label="${c:l('agendaRegistraPopup.prestazioniGrid.stato')}" />
+							</listhead>
+						</caribellistbox>
+					</west>
+					<center sclass="mybackground" border="0">
+						<vlayout vflex="true">
+							<div vflex="35%"></div>
+							<div vflex="10%">
+								<button
+									style="background-color: Transparent; background-repeat:no-repeat;
+            				border: none; cursor:pointer; padding: 3px;"
+									image="~./zul/img/leftarrow_g.png"
+									tooltiptext="${c:l('accessiPrestazioni.confermaSelezione_btn')}"
+									forward="onConfermaSelezione()"
+									id="btn_confermaSelezione">
+								</button>
+							</div>
+							<div vflex="55%"></div>
+							<hlayout visible="false">
+								<caribeltextbox id="codPrestazione" />
+							</hlayout>
+						</vlayout>
+					</center>
+					<east title="Elenco prestazioni" size="33%" flex="true">
+<!-- 						<button hflex="20%" -->
+<!-- 							label="${c:l('accessiPrestazioni.confermaSelezione_btn')}" -->
+<!-- 							forward="onConfermaSelezione()" id="btn_confermaSelezione"> -->
+<!-- 						</button> -->
+						<caribellistbox id="tableGrigliaPrestazioni"
+							checkmark="true" span="2" sizedByContent="true">
+							<listhead sizable="false">
+								<caribellistheader hflex="min" label=" "
+									align="center" />
+								<caribellistheader hflex="min"
+									sort="auto" db_name="prest_cod"
+									label="${c:l('common.codice')}" />
+								<caribellistheader hflex="min"
+									sort="auto" db_name="prest_des"
+									label="${c:l('common.descrizione')}">
+									<caribeltextbox
+										id="filtroDescrizione"
+										placeholder="${c:l('common.placeholder')}" />
+								</caribellistheader>
+							</listhead>
+						</caribellistbox>
+					</east>
+				</borderlayout>
+			</center>
+			<south height="50%" border="normal" collapsible="true"  splittable="true" open="true" title="Diario">
+				<diario_insert />
+			</south>
+		</borderlayout>
+	</vlayout>
+</window>
+	<script><![CDATA[
+jq("@west,@north,@east,@south").each(function(){
+  var zLayout = zk.Widget.$(this);
+  if(zLayout.$n("cap")!=null){
+      var word = jq(zLayout.$n("cap")).text();
+      zLayout.$n("colled").title = word ;
+ 
+  }
+});
+]]></script>
+</zk>

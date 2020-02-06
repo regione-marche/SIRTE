@@ -1,0 +1,92 @@
+<vlayout sclass="asterLayout asterOverflow asterLayoutLastSpace" height="100%">
+	
+	<hlayout>
+		<label value="${c:l('schedaPalliat.chemioPanel.chemioterapia')}:" hflex="14%"/>
+		<div hflex="50%" style="text-align:left">
+			<caribelradiogroup id="skm_chemio" db_name="skm_chemio">
+				<radio id="chemioInCorso"
+					label="${c:l('schedaPalliat.lesioniPanel.chemioInCorso')}"
+					value="2" />
+				<radio id="chemioEffettuata"
+					label="${c:l('schedaPalliat.lesioniPanel.chemioEffettuata')}"
+					value="1" />
+				<radio id="chemioNonEffettuata"
+					label="${c:l('schedaPalliat.lesioniPanel.chemioMaiEffettuata')}"
+					value="0" checked="true" />
+			</caribelradiogroup>
+		</div>
+
+		<label value="" hflex="36%"/>
+	</hlayout>	
+	
+	<hlayout>
+		<label value="" hflex="14%"/>
+		<caribeltextbox id="skm_chemio_des" maxlength="100" db_name="skm_chemio_des" hflex="66%"/>
+		<label value="" hflex="20%"/>
+	</hlayout>
+	
+	<hlayout>
+		<label value="" hflex="100%"/>
+	</hlayout>
+	
+	<hlayout>
+		<label value="${c:l('schedaPalliat.chemioPanel.radioterapia')}:" hflex="14%"/>
+		
+		<div hflex="50%" style="text-align:left">
+			<caribelradiogroup id="skm_radio" db_name="skm_radio">
+				<radio id="radioInCorso"
+					label="${c:l('schedaPalliat.lesioniPanel.radioInCorso')}"
+					value="2" />
+				<radio id="radioEffettuata"
+					label="${c:l('schedaPalliat.lesioniPanel.radioEffettuata')}"
+					value="1" />
+				<radio id="radioNonEffettuata"
+					label="${c:l('schedaPalliat.lesioniPanel.radioMaiEffettuata')}"
+					value="0" checked="true" />
+			</caribelradiogroup>
+		</div>
+		
+		<label value="" hflex="36%"/>
+	</hlayout>	
+	
+	<hlayout>
+		<label value="" hflex="14%"/>
+		<caribeltextbox id="skm_radio_des" maxlength="100" db_name="skm_radio_des" hflex="66%"/>
+		<label value="" hflex="20%"/>
+	</hlayout>
+	
+	<hlayout>
+		<label value="" hflex="100%"/>
+	</hlayout>
+	
+	<hlayout>
+		<label value="${c:l('schedaPalliat.chemioPanel.grupposanguigno')}:" hflex="14%"/>
+		<caribeltextbox id="skm_sangue" maxlength="10" hflex="10%" db_name="skm_sangue"/>		
+		<label value="" hflex="76%"/>
+	</hlayout>	
+	
+	<hlayout>
+		<label value="" hflex="14%"/>
+		<caribeltextbox id="skm_sangue_des" maxlength="100" db_name="skm_sangue_des" hflex="66%"/>
+		<label value="" hflex="20%"/>
+	</hlayout>
+	
+	<hlayout>
+		<label value="" hflex="100%"/>
+	</hlayout>
+	
+	<hlayout>
+		<label value="${c:l('schedaPalliat.chemioPanel.farmaco')}:" hflex="14%"/>
+		<!-- ATTENZIONE: verificare i db_name_cod e db_name_descr -->
+		<caribelSearch id="cs_farmaco" hflex="66%"
+			id_cod="id_cod_farmaco" db_name_cod="skm_farmaco_ter"
+			id_descr="id_descr_farmaco" db_name_descr=""
+			ctrl="it.caribel.app.sinssnt.controllers.tabelle.farmaci.FarmaciSearchCtrl" />
+		<label hflex="20%" />
+	</hlayout>
+	
+	
+</vlayout>
+
+
+

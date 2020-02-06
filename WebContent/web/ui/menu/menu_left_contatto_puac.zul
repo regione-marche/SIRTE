@@ -1,0 +1,100 @@
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+
+<vlayout id="menu_left_container_puac">
+	<zscript>
+		import it.caribel.app.sinssnt.controllers.segreteriaOrganizzativa.SegreteriaOrganizzativaFormCtrl;
+		import it.caribel.app.sinssnt.controllers.segreteriaOrganizzativa.SegreteriaOrganizzativaGridCtrl;
+		import it.caribel.app.sinssnt.controllers.diario.DiarioGridCtrl;
+		import it.caribel.app.sinssnt.controllers.intolleranzeAllergie.IntolleranzeAllergieGridCRUDCtrl;
+		import it.caribel.app.sinssnt.controllers.accessi_effettuati.AccessiEffettuatiGridCtrl;
+		import it.caribel.app.sinssnt.controllers.segnalazione.SegnalazioneGridCRUDCtrl;
+		import it.caribel.app.webhs.controllers.allegati.AllegatiGridCtrl;
+		
+		String uriSegreteriaOrganizzativa			     = SegreteriaOrganizzativaFormCtrl.CTS_FILE_ZUL;
+		String uriSegreteriaOrganizzativaStorico		 = SegreteriaOrganizzativaGridCtrl.myPathZul;
+		String uriDiario      		 					 = DiarioGridCtrl.myPathFormZul;
+		String uriIntolleranzeAllergie 					 = IntolleranzeAllergieGridCRUDCtrl.myPathFormZul;
+		String uriRiepilogoAccessi 					     = AccessiEffettuatiGridCtrl.myPathFormZul;
+		String uriSegnalazione	       					 = SegnalazioneGridCRUDCtrl.myPathFormZul;;
+		String uriDocumenti		       					 = AllegatiGridCtrl.myPathFormZul;;
+	</zscript> 
+		
+	<vlayout spacing="1px">
+		<buttonmenucontainer
+		id="btn_puacSchedaCorrForm"
+		idForm="puacSchedaCorrForm"
+		label="${c:l('common.scheda.corrente')}"
+		pathZulForm="${uriSegreteriaOrganizzativa}"
+		/>
+		<buttonmenucontainer 
+		id="btn_puacSchedaStoGrid"
+		idForm="puacSchedaStoGrid"
+		label="${c:l('common.scheda.storico')}"
+		pathZulForm="${uriSegreteriaOrganizzativaStorico}"
+		/>
+		<buttonmenucontainer
+		id="btn_diarioForm"
+		idForm="diarioForm"
+		label="${c:l('diario.formTitle')}"
+		pathZulForm="${uriDiario}"
+		/>
+		<!--
+		<buttonmenucontainer
+		id="btn_RichiestaMMGForm"
+		idForm="richiestaMMGForm"
+		label="${c:l('menu.puac.richiesta_mmg')}"
+		pathZulForm="/web/ui/sinssnt/contatto_puac/richiesta_mmg.zul"
+		/>
+		-->
+		<buttonmenucontainer
+		id="btn_ElencoRichiesteMMGForm"
+		idForm="ElencoRichiesteMMGForm"
+		label="${c:l('menu.puac.storico.richiesta_mmg')}"
+		pathZulForm="/web/ui/sinssnt/segreteriaOrganizzativa/elencoRichiesteMMGGrid.zul"
+		/>
+		<buttonmenucontainer
+		id="btn_intolleranzeAllergieForm"
+		idForm="intolleranzeAllergieForm"
+		label="${c:l('menu.contatto.medico.intolleranze.allergie')}"
+		pathZulForm="${uriIntolleranzeAllergie}"
+		/>
+		<buttonmenucontainer
+		id="btn_segnalazioniForm"
+		idForm="segnalazioniForm"
+		label="${c:l('menu.contatto.medico.segnalazione')}"
+		pathZulForm="${uriSegnalazione}"
+		/>
+		<buttonmenucontainer
+		id="btn_riepilogoAccessi"
+		idForm="riepilogoAccessi"
+		label="${c:l('menu.puac.riepilogo.accessi')}"
+		pathZulForm="${uriRiepilogoAccessi}"
+		/>
+		<buttonmenucontainer
+		id="btn_sofascicolo"
+		idForm="sofascicolo"
+		label="${c:l('menu.puac.scheda.fascicolo')}"
+		pathZulForm=""
+		/>
+		<buttonmenucontainer
+		id="btn_asterview"
+		idForm="asterview"
+		label="${c:l('menu.contatto.inf.asterview')}"
+		pathZulForm=""
+		evidenziaAttivaInMenuLeft="false"
+		/>
+		<buttonmenucontainer 
+		id="btn_flussiStoForm"
+		idForm="flussiStoForm"
+		label="${c:l('menu.puac.scheda.flussi.storico')}"
+		pathZulForm="xxxxxxxxxxxxxxxxxx"
+		/>
+		<buttonmenucontainer
+		id="btn_documenti"
+		idForm="documenti"
+		label="${c:l('menu.contatto.documenti')}"
+		pathZulForm="${uriDocumenti}"
+		/>
+	</vlayout>		
+
+</vlayout>

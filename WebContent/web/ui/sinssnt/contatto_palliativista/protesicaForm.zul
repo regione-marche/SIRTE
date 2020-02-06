@@ -1,0 +1,58 @@
+<window title="${c:l('schedaPalliat.protesica.formTitle')}" id="protesicaForm"
+	apply="it.caribel.app.sinssnt.controllers.palliat_protesica.ProtesicaGridCtrl"
+	height="${c:l('style.windowGrid.overlapped.height')}"
+	vflex="true" 
+	border="normal">
+
+	<vlayout id="protesica" vflex="true" spacing="0px">
+		<hlayout>
+			<div style="text-align:right" hflex="20%">
+				${c:l('schedaPalliat.protesica.tipoAusilio')}:
+			</div>		
+
+			<caribelradiogroup id="mte_tipocons" db_name="mte_tipocons"
+				isDbKey="false">
+			</caribelradiogroup>
+
+			<radio id="mte_tipocons_tutti" hflex="15%"
+				label="${c:l('schedaPalliat.protesica.tutti')}" value="T"
+				checked="true" radiogroup="mte_tipocons" />
+			<radio id="mte_tipocons_uso" hflex="15%"
+				label="${c:l('schedaPalliat.protesica.inUso')}" value="U"
+				radiogroup="mte_tipocons" />
+			<radio id="mte_tipocons_proprieta" hflex="20%"
+				label="${c:l('schedaPalliat.protesica.inProprieta')}" value="P"
+				radiogroup="mte_tipocons" />
+
+			<label hflex="30%" />
+		</hlayout>
+
+		<hlayout>
+			<caribelPaging />
+			<caribelintbox hflex="15%" readonly="true"
+				id="n_cartella" db_name="mte_cartella" visible="false" />
+			<caribelintbox hflex="15%" readonly="true"
+				id="n_contatto" db_name="mte_contatto" visible="false" />
+		</hlayout>
+
+
+		<caribellistbox db_name="griglia" 
+			hflex="true" vflex="true" disabled="true" nonselectableTags="true">
+			<listhead sizable="true">
+				<caribellistheader db_name="mde_numinv"
+					label="${c:l('schedaPalliat.protesica.numeroInventario')}"
+					width="20%" />
+				<caribellistheader db_name="tau_des"
+					label="${c:l('schedaPalliat.protesica.tipoAusilio')}"
+					width="40%" />
+				<caribellistheader db_name="mde_datcons"
+					label="${c:l('schedaPalliat.protesica.dataConsegna')}"
+					width="20%" />
+				<caribellistheader db_name="mde_datscad"
+					label="${c:l('schedaPalliat.protesica.dataRestituzione')}"
+					width="20%" />
+			</listhead>
+		</caribellistbox>
+
+	</vlayout>
+</window>

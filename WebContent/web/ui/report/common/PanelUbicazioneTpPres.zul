@@ -1,0 +1,21 @@
+<?component name="panel_ubicazione" inline="true" macroURI="~./ui/common/ubicazione/PanelUbicazione.zul"?>
+
+<vlayout id="panel_ubicazioneTpPres" apply="it.caribel.app.sinssnt.controllers.report.common.PanelUbicazioneTpPresCtrl">
+	
+	
+	<hlayout id="riga_presidio">
+			<label hflex="20%" value="${c:l('generic.tipo_presidio')}:"/>
+			<div hflex="80%" align="left">
+				<caribelradiogroup id="tp_presidio">
+					<radio value="C" id="contatto" label="${c:l('PanelUbicazioneTpPres.contatto')}" checked="true"/>
+					<radio value="A" id="accesso" label="${c:l('PanelUbicazioneTpPres.accesso')}" checked="false"/>				
+				</caribelradiogroup>
+			</div>
+	</hlayout>
+	
+   <panel_ubicazione />
+	
+</vlayout>
+
+		
+ 	

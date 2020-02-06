@@ -1,0 +1,9 @@
+
+<caribellistbox rows="3" id="storico_schede" hflex="${arg.hflex}">
+	<listhead sizable="true">		
+		<caribellistheader db_name="data"
+			label="${c:l('scalaValutazione.dataTest')}"  />
+		<caribellistheader db_name="data_test"
+			label="${c:l('scalaValutazione.dataScheda')}"  />
+	</listhead>
+</caribellistbox>

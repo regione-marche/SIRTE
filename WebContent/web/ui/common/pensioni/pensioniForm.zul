@@ -1,0 +1,35 @@
+<window id="pensioniForm" title="${c:l('pensioniForm.formTitle')}"
+	apply="it.caribel.app.common.controllers.pensioni.PensioniFormCtrl"
+	closable="true" sizable="true"
+border="normal" mode="modal"
+position="center"
+width="650px"
+height="180px"
+>
+
+	<vlayout vflex="true">
+
+		<caribelFormMenu />
+ 		<vlayout vflex="true" sclass="asterLayout asterOverflow asterLayoutLastSpace">
+ 		
+			<hlayout>
+				<label hflex="20%" value="${c:l('pensioniForm.codice')}:" />
+				<caribeltextbox isDbKey="true" focus="true" hflex="15%" id="cod" db_name="pe_codice" maxlength="2" required="true" />
+				<label hflex="65%" />
+			</hlayout>
+ 		 		
+			<hlayout >
+				<label hflex="20%"  value="${c:l('pensioniForm.descrizione')}:" />
+				<caribeltextbox hflex="80%" id="descrizione" db_name="pe_descri" maxlength="50" required="true" />
+			</hlayout>
+			<hlayout >
+				<label hflex="20%"  value="${c:l('pensioniForm.categoria')}:" />
+				<caribeltextbox hflex="40%" id="categoria" db_name="pe_catego" maxlength="7" required="false" />
+				<label hflex="40%"  />
+			</hlayout>
+			
+			
+ 		</vlayout>
+	</vlayout>
+
+</window>

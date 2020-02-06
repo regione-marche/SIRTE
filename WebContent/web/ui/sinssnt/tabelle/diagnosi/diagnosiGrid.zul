@@ -1,0 +1,32 @@
+<window title="${c:l('diagnosi.gridTitle')}"
+	apply="it.caribel.app.sinssnt.controllers.tabelle.diagnosi.DiagnosiGridCtrl"
+	width="650px" height="510px" style="overflow:auto" sizable="true"
+	closable="true" mode="overlapped" position="center" border="normal">
+
+	<vlayout height="100%">
+				
+		<caribelGridMenu  visible_btn_clear="true" />
+		<vlayout sclass="asterLayout" vflex="true" spacing="5px">
+			<hlayout>
+				<label hflex="20%"  value="${c:l('diagnosi.descrizione')}:" />
+				<caribeltextbox hflex="60%" id="tb_filter1" db_name="diagnosi"/>
+				<label hflex="20%"  value="" />
+			</hlayout>
+			
+			<hlayout>
+				<label hflex="20%"  value="${c:l('diagnosi.codice')}:" />
+				<caribeltextbox hflex="60%" id="tb_filter2" db_name="cod_diagnosi"/>
+				<label hflex="20%"  value="" />
+			</hlayout>
+		
+			<caribelPaging/>
+			<caribellistbox vflex="true" hflex="true" >
+				<listhead sizable="true">
+					<caribellistheader db_name="cod_diagnosi"	  	label="${c:l('diagnosi.codice')}" width="20%"/>
+					<caribellistheader db_name="diagnosi" 	label="${c:l('diagnosi.diagnosi')}" width="80%" />					
+				</listhead>
+			</caribellistbox>
+		</vlayout>	
+	</vlayout>	
+
+</window>

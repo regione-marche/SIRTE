@@ -1,0 +1,40 @@
+<window title="${c:l('prestazBisogniGrid.formTitle')}"
+	apply="it.caribel.app.common.controllers.prestaz_bisogni.PrestazBisogniGridCtrl"	
+	sclass="asterOverlappedWindow" sizable="true"
+	closable="true" mode="overlapped" position="center" border="normal" height="450px" width="800px">
+
+	<vlayout height="100%">
+	
+		<caribelGridMenu  visible_btn_clear="true" />
+		<vlayout sclass="asterLayout" vflex="true" spacing="0px">
+			<hlayout valign="middle" width="100%">
+				<label hflex="20%"  value="${c:l('prestazBisogniGrid.fig_prof')}:" />
+				<caribelcombobox db_name="figura_profesionale" hflex="60%" required="false" id="pai_figProf" />
+				<label hflex="20%"  value="" />
+			</hlayout>
+			
+			<hlayout valign="middle" width="100%" visible="false">
+				<label hflex="20%"  value="" />				
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="tb_filter2" db_name="tipo_bisogno">
+						<radio id="pai" value="P" label="${c:l('prestazBisogniGrid.tipo_pai')}"  checked="true" />
+						<radio id="cure" value="C" label="${c:l('prestazBisogniGrid.tipo_cure')}"/>	
+					</caribelradiogroup>
+				</div>						
+			</hlayout>
+			
+			<caribelPaging/>
+			<caribellistbox vflex="true" hflex="true" >
+			
+				<listhead sizable="true">
+					<caribellistheader db_name="id"	  width="5em" label="${c:l('prestazBisogniGrid.id')}" />
+					<caribellistheader db_name="prest_cod"	  width="10em" label="${c:l('prestazBisogniGrid.codice')}" />
+					<caribellistheader db_name="bisogno"  width="30em" label="${c:l('prestazBisogniGrid.bisogno')}" />				
+					<caribellistheader db_name="des_frequenza"	  width="12em" label="${c:l('prestazBisogniGrid.frequenza')}" />
+					<caribellistheader db_name="quantita"  width="8em" label="${c:l('prestazBisogniGrid.quantita')}" />		
+																	
+				</listhead>
+			</caribellistbox>
+		</vlayout>		
+	</vlayout>
+</window>

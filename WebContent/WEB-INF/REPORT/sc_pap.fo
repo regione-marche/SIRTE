@@ -1,0 +1,276 @@
+<?xml version ="1.0" encoding="ISO-8859-1"?>
+
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+
+<!-- mfo:section.start="layout"  -->
+<fo:layout-master-set>
+  <fo:simple-page-master master-name="simple"
+    page-height="29.7cm"                 page-width="21cm"
+    margin-top="1cm"                  	 margin-bottom="0.5cm"
+    margin-left="1.5cm"                  margin-right="1.5cm">
+    <fo:region-before margin-top="0.5cm" extent="2cm"/>
+    <fo:region-after extent="1cm"/>
+    <fo:region-body margin-top="1cm" margin-bottom="1cm"/>
+  </fo:simple-page-master>
+</fo:layout-master-set>
+
+<fo:page-sequence master-name="simple">
+<fo:static-content flow-name="xsl-region-before">
+
+  <fo:table font-size="10pt">
+  <fo:table-column column-width="18.0cm"/>
+  <fo:table-body>
+  <fo:table-row height="9pt">
+     <fo:table-cell text-align="start" >
+
+          <fo:table font-size="10pt">
+          <fo:table-column column-width="12.0cm"/>
+          <fo:table-column column-width="6cm"/>
+           <fo:table-body>
+            <fo:table-row height="9pt">
+              <fo:table-cell text-align="start" >
+                  <fo:block start-indent="1mm" end-indent="1mm"
+                  padding-top="0.5mm" font-weight="bold">
+                          Cognome e Nome: #assistito#
+                  </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="start" >
+                  <fo:block start-indent="1mm" end-indent="1mm"
+                  padding-top="0.5mm" font-weight="bold">
+                          Data : #data#
+                  </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+           </fo:table-body>
+          </fo:table>
+
+     </fo:table-cell>
+  </fo:table-row>
+  <fo:table-row height="1pt">
+     <fo:table-cell text-align="start" >
+          <fo:block>
+          <fo:leader leader-pattern="rule"
+                     rule-thickness="0.5pt"
+                     leader-length="18.0cm"/>
+          </fo:block>
+     </fo:table-cell>
+  </fo:table-row>
+  <fo:table-row height="10pt">
+     <fo:table-cell text-align="justify"
+          font-weight="bold" >
+          <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.7mm">PaP Score</fo:block>
+     </fo:table-cell>
+  </fo:table-row>
+  </fo:table-body>
+  </fo:table>
+</fo:static-content>
+
+    <!-- TITOLO DI PIEDE -->
+    <fo:static-content flow-name="xsl-region-after">
+      <fo:table font-size="8pt" width="auto" >
+        <fo:table-column column-width="11cm"/>
+        <fo:table-column column-width="7cm"/>
+        <fo:table-body>
+          <fo:table-row height="10pt">
+            <fo:table-cell text-align="start">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >#txt#</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="end">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >elaborato del #data_stampa# (sc_pap.fo)</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+    </fo:static-content>
+
+<fo:flow flow-name="xsl-region-body">
+<!--mfo:section.end -->
+
+
+
+<!-- mfo:section.start="inizioTab"  -->
+  <fo:table space-before.optimum="2.0cm" font-size="10pt" font-family="sans-serif">
+    <fo:table-column column-width="10.0cm"/>
+    <fo:table-column column-width="0.8cm"/>
+    <fo:table-column column-width="0.4cm"/>
+    <fo:table-column column-width="3.8cm"/>
+    <fo:table-column column-width="2.0cm"/>
+
+	<fo:table-body>
+<!--mfo:section.end -->
+
+
+<!-- mfo:section.start="rigaTab"  -->
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="start">
+			<fo:block line-height="12pt" color="black" padding-top="4pt">
+        	#voce#</fo:block>
+		  </fo:table-cell>	
+
+		  <fo:table-cell text-align="end" end-indent="1mm">
+			<fo:block line-height="12pt" color="black" padding-top="4pt">
+			&#160;</fo:block>
+		  </fo:table-cell>	  
+		  <fo:table-cell>
+         	<fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-before-color="black" border-start-color="black" border-end-color="black"
+			  border-bottom-color="black"
+			  border-width="0.1pt" border-style="solid">
+			&#160;#check#
+          	</fo:block>
+		  </fo:table-cell>
+		  <fo:table-cell text-align="start" end-indent="1mm">
+			<fo:block line-height="12pt" color="black" padding-top="4pt">
+			&#160;#valore#</fo:block>
+		  </fo:table-cell>
+
+		<fo:table-cell text-align="end" end-indent="1mm">
+			<fo:block line-height="12pt" color="black" padding-top="4pt">
+			&#160;#score#</fo:block>
+		  </fo:table-cell>
+		</fo:table-row>
+<!--mfo:section.end -->
+
+<!-- mfo:section.start="rigaSpazio"  -->
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="start" number-columns-spanned='5'>
+			<fo:block line-height="12pt" color="black" padding-top="4pt">
+        	&#160;</fo:block>
+		  </fo:table-cell>	
+		</fo:table-row>
+<!--mfo:section.end -->
+
+
+<!-- mfo:section.start="fineTab"  -->
+	</fo:table-body>
+  </fo:table>
+<!--mfo:section.end -->
+
+
+<!-- mfo:section.start="totale"  -->
+  <fo:table space-before.optimum="0.5cm" font-size="10pt" font-family="sans-serif">
+	<fo:table-column column-width="5cm"/>
+	<fo:table-column column-width="13cm"/>
+	<fo:table-body>
+		<fo:table-row line-height="10pt" color="black">
+		  <fo:table-cell font-weight="bold">
+   			<fo:block line-height="7pt" color="black" padding-top="4pt"
+          		font-size="10pt" font-weight="bold" space-before.optimum="10pt">
+			Data test: #data_test#
+			</fo:block>
+		  </fo:table-cell>
+		  <fo:table-cell font-weight="bold">
+   			<fo:block line-height="7pt" color="black" padding-top="4pt"
+          		font-size="10pt" font-weight="bold" space-before.optimum="10pt">
+			Esecutore test: #nome_test#
+			</fo:block>
+		  </fo:table-cell>
+		</fo:table-row>
+		<fo:table-row line-height="10pt" color="black">
+		  <fo:table-cell font-weight="bold">
+   			<fo:block line-height="7pt" color="black" padding-top="4pt"
+          		font-size="10pt" font-weight="bold" space-before.optimum="10pt">
+			Totale: #tot#
+			</fo:block>
+		  </fo:table-cell>
+		  <fo:table-cell font-weight="bold">
+   			<fo:block line-height="7pt" color="black" padding-top="4pt"
+          		font-size="10pt" font-weight="bold" space-before.optimum="10pt">
+			</fo:block>
+		  </fo:table-cell>
+		</fo:table-row>		
+	</fo:table-body>
+  </fo:table>
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="inizioTabGruppo"  -->
+  <fo:table space-before.optimum="0.5cm" font-size="10pt" font-family="sans-serif">
+	<fo:table-column column-width="18cm"/>
+	<fo:table-body>
+		<fo:table-row line-height="10pt" color="black">
+		  <fo:table-cell font-weight="bold" text-align="center">
+   			<fo:block line-height="7pt" color="black" padding-top="4pt"
+          		font-size="10pt" font-weight="bold" space-before.optimum="10pt">
+			Gruppi di rischio
+			</fo:block>
+		  </fo:table-cell>
+		</fo:table-row>
+		<fo:table-row line-height="10pt" color="black">
+		  <fo:table-cell font-weight="bold">
+   			<fo:block line-height="7pt" color="black" padding-top="4pt"
+          		font-size="10pt" font-weight="bold" space-before.optimum="10pt">
+	
+				  <fo:table font-size="10pt" font-family="sans-serif">
+				    <fo:table-column column-width="8.0cm"/>
+				    <fo:table-column column-width="1.0cm"/>
+				    <fo:table-column column-width="0.8cm"/>
+				    <fo:table-column column-width="0.4cm"/>
+				    <fo:table-column column-width="3.8cm"/>
+				    <fo:table-column column-width="4.0cm"/>
+
+						<fo:table-body>
+							<fo:table-row background-color="white">
+							  <fo:table-cell text-align="start" number-columns-spanned='5'>
+								<fo:block line-height="12pt" color="black" padding-top="4pt">
+					        	Probabilita' di sopravvivenza a 30 giorni</fo:block>
+							  </fo:table-cell>	
+							</fo:table-row>
+
+<!--mfo:section.end -->
+
+<!-- mfo:section.start="rigaTabGruppo"  -->
+		<fo:table-row background-color="white">
+		  <fo:table-cell text-align="end" end-indent="1mm">
+			<fo:block line-height="12pt" color="black" padding-top="4pt">
+			&#160;</fo:block>
+		  </fo:table-cell>
+
+		  <fo:table-cell text-align="end">
+			<fo:block line-height="12pt" color="black" padding-top="4pt">
+        	#voce#</fo:block>
+		  </fo:table-cell>	
+
+		  <fo:table-cell text-align="end" end-indent="1mm">
+			<fo:block line-height="12pt" color="black" padding-top="4pt">
+			&#160;</fo:block>
+		  </fo:table-cell>	  
+		  <fo:table-cell>
+         	<fo:block line-height="7pt" color="black" padding-top="4pt"
+                    border-before-color="black" border-start-color="black" border-end-color="black"
+			  border-bottom-color="black"
+			  border-width="0.1pt" border-style="solid">
+			&#160;#check#
+          	</fo:block>
+		  </fo:table-cell>
+		  <fo:table-cell text-align="start" end-indent="1mm">
+			<fo:block line-height="12pt" color="black" padding-top="4pt">
+			&#160;#valore#</fo:block>
+		  </fo:table-cell>
+
+		<fo:table-cell text-align="end" end-indent="1mm">
+			<fo:block line-height="12pt" color="black" padding-top="4pt">
+			&#160;#score#</fo:block>
+		  </fo:table-cell>
+		</fo:table-row>
+<!--mfo:section.end -->
+
+
+
+<!-- mfo:section.start="fineTabGruppo"  -->
+						</fo:table-body>
+			  	  </fo:table>
+
+			</fo:block>
+		  </fo:table-cell>
+		</fo:table-row>		
+	</fo:table-body>
+  </fo:table>
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="finale" -->
+    </fo:flow>
+  </fo:page-sequence>
+<!-- mfo:section.end -->
+</fo:root>

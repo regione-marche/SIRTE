@@ -1,0 +1,123 @@
+<?component name="panel_ubicazione" inline="true" macroURI="~./ui/common/ubicazione/PanelUbicazione.zul"?>
+<window id="operatoriForm" title="${c:l('commissioneUvm.formTitle1')}"
+	apply="it.caribel.app.sinssnt.controllers.tabelle.commissione_uvm.CommissioneUvmFormCtrl"
+	closable="true" sizable="true"
+border="normal" mode="modal"
+position="center"
+width="850px"
+height="580px">
+
+	<vlayout vflex="true">
+
+		<caribelFormMenu />
+ 		<vlayout width="100%" vflex="true" sclass="asterLayout" > 
+ 		<hlayout visible="true">
+			<label hflex="20%"  value="${c:l('commissioneUVMGrid.codice')}:" visible="true"/>
+			<caribeltextbox hflex="20%" id="codice" db_name="cm_cod_comm" isDbKey="true" maxlength="6" required="false" visible="true"/>
+			<label hflex="60%"  value="" />
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('commissioneUVMGrid.descrizione')}:" />
+			<caribeltextbox rows="2" sclass="asterTextArea" hflex="80%" db_name="cm_descr" maxlength="255" required="false"  multiline="true" id="descrizione"/>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('commissioneUvmForm.indirizzo')}:" />
+			<caribeltextbox rows="2" sclass="asterTextArea" hflex="80%" db_name="cm_indirizzo" maxlength="255" required="false"  multiline="true"/>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%"  value="${c:l('commissioneUvmForm.telefono')}:" />
+			<caribeltextbox hflex="40%"  db_name="cm_telefono" maxlength="20" />
+			<caribelcheckbox hflex="40%" db_name="disabile" label="${c:l('commissioneUvmForm.disabile')}" value="N" visible="false"/>	
+			<label hflex="40%"/>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('commissioneUvmForm.mail')}:" />
+			<caribeltextbox rows="1" sclass="asterTextArea" hflex="80%" db_name="cm_mail" maxlength="255" required="false"  multiline="true"/>
+		</hlayout>
+		
+
+		<panel_ubicazione />
+		<hlayout visible="false">				
+			<caribeltextbox hflex="30%" id="cb_zona" db_name="cod_zona" required="false" visible="false"/>
+			<caribeltextbox hflex="30%" id="cb_distr" db_name="cm_cod_distr" required="false" visible="false"/>
+			<caribeltextbox hflex="30%" id="cb_pres" db_name="cm_sede" required="false" visible="false"/>			
+		</hlayout>
+		<hlayout visible="false">
+			<label hflex="20%"  value="${c:l('commissioneUvmForm.giorno')}:" visible="false"/>
+			<caribelcombobox hflex="30%" id="giorno" db_name="cm_giorno" required="false" visible="false"/>
+			<label value="${c:l('commissioneUvmForm.oraInizio')}:" hflex="10%" visible="false"/>
+			<caribeltimebox hflex="15%" db_name="cm_ora_ini" format="HH:mm"  visible="false"/>
+			<label value="${c:l('commissioneUvmForm.oraFine')}:" hflex="10%" visible="false"/>
+			<caribeltimebox hflex="15%" db_name="cm_ora_fin" format="HH:mm"  visible="false"/>
+		</hlayout>
+		
+		<hlayout>
+			<window height="300px" apply="it.caribel.app.sinssnt.controllers.tabelle.commissione_uvm.GrigliaOperatoriCtrl"
+				border="none" id="datiDettagli" width="100%">
+				<vlayout vflex="true" hflex="true" spacing="0px" style="margin-right: 3px; margin-left: 3px;">
+
+						<div height="120px">
+						<caribellistbox  showBtnDeleteInRow="true" showBtnEditInRow="true"
+							db_name="griglia_componenti" hflex="true" vflex="true" >
+							<listhead sizable="true">
+							<caribellistheader db_name="cm_cod_comm" sort="auto" visible="false"/>
+								<caribellistheader db_name="pr_operatore"
+									label="${c:l('commissioneUvmForm.pr_op')}" sort="auto" visible="false"/>
+								<caribellistheader db_name="cognome_nome_op"
+									label="${c:l('commissioneUvmForm.cognome_op')}" sort="auto" />		
+								<caribellistheader db_name="pr_tipo"
+									label="${c:l('commissioneUvmForm.qualifica')}" sort="auto" visible="false" />					
+								<caribellistheader db_name="desc_qualifica"
+									label="${c:l('commissioneUvmForm.qualifica')}" sort="auto" />
+								<caribellistheader db_name="pr_responsabile"
+									label="${c:l('commissioneUvmForm.respons')}" sort="auto" />
+							</listhead>
+						</caribellistbox>
+						</div>
+
+
+						<caribelGridFormMenuHoriz style="margin-top: -1px;" />
+
+
+						<groupbox style="margin-top: -1px;" hflex="true" closable="false">
+						<vlayout hflex="true" id="myForm"  sclass="asterLayout">
+							<hlayout>
+								<label hflex="20%"  value="${c:l('commissioneUvmForm.qual')}:" />
+								<caribelcombobox hflex="40%" id="qualifica" db_name="pr_tipo" required="true" />
+								<caribeltextbox hflex="40%" id="descrizione_qualifica" db_name="desc_qualifica" visible="false"/>
+								<label value="" hflex="40%" />
+							</hlayout>
+							<hlayout>
+								<label hflex="20%" value="${c:l('commissioneUvmForm.operatore')}:" />
+								<caribelSearch hflex="80%" maxlength="10"  id="operatoreSearch" id_cod="cod_operatore" id_descr="desc_operatore" required="true" db_name_cod="pr_operatore" db_name_descr="cognome_nome_op"
+								ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl" />
+							</hlayout>
+							<hlayout width="100%">
+								<label hflex="20%" value="${c:l('commissioneUvmForm.respons')}:" />
+								<div align="left" hflex="80%">
+									<caribelradiogroup id="resp" db_name="pr_responsabile">
+										<radio label="${c:l('commissioneUvmForm.respons_si')}" id="resp_si" value="S" checked="true"/>
+										<radio label="${c:l('commissioneUvmForm.respons_no')}" id="resp_no" value="N"/>					
+									</caribelradiogroup>
+								</div>		
+							</hlayout>
+<!-- 								<label hflex="40%"	 /> -->
+							<hlayout>				
+								<caribeltextbox hflex="30%" id="codice_nascosto" db_name="cm_cod_comm" required="false" visible="false"/>			
+							</hlayout>
+							<hlayout>				
+								<caribeltextbox hflex="30%" id="zona_nascosta" db_name="zona" required="false" visible="false"/>			
+							</hlayout>
+							<hlayout>				
+								<caribeltextbox hflex="30%" id="distretto_nascosto" db_name="distr" required="false" visible="false"/>			
+							</hlayout>
+						</vlayout>
+						</groupbox>
+
+				</vlayout>
+			</window>
+			</hlayout>
+ 		</vlayout>
+	</vlayout>
+
+</window>

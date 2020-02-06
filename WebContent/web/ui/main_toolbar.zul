@@ -1,0 +1,9 @@
+<zk xmlns:n="native" xmlns:h="xhtml" xmlns:w="client">
+
+	<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+	<?component name="main_toolbar_base" inline="true" macroURI="~./ui/mainToolbarBase.zul"?>
+
+	<div apply="it.caribel.app.sinssnt.controllers.MainToolbarCtrl">
+		<main_toolbar_base/>
+	</div>
+</zk>

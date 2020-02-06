@@ -1,0 +1,151 @@
+
+<window id="schedaIcfForm" title="${c:l('scheda_fim.formTitle')}"
+	apply="it.caribel.app.sinssnt.controllers.scheda_fim.FimFormCtrl"
+	sclass="asterOverlappedWindow"
+	height="${c:l('style.windowGrid.overlapped.height')}" sizable="true"
+	position="center" border="normal" hflex="100%" closable="true">
+
+	<vlayout vflex="true">
+		<caribelFormMenu visible_btn_new="true"/>
+		<vlayout vflex="false" sclass="asterLayout asterOverflow" > 
+			<hlayout width="100%" >
+				<label hflex="20%"
+					value="${c:l('riepilogo.storico.fisio.referente.cartella')}:" />
+				<caribelintbox hflex="10%" readonly="true"
+					id="key_cartella" db_name="n_cartella" />
+				<label hflex="10%"
+					value="${c:l('riepilogo.storico.fisio.referente.assistito')}:" />
+				<caribeltextbox hflex="40%" readonly="true" db_name="JLabelAssistito" 
+					id="JLabelAssistito"/>
+				<label hflex="20%" value=""></label>
+			</hlayout>
+		</vlayout>
+		<vlayout vflex="false" sclass="asterLayout asterOverflow" id="JPanelArea"> 
+			<hlayout width="100%" >
+				<label hflex="20%" value="${c:l('scheda_fim.numero')}:" />
+				<caribelintbox hflex="10%" id="key_progr" db_name="fim_progr" required="true"/>					
+				<label hflex="10%" value=""></label>
+				<label hflex="25%"	value="${c:l('scheda_fim.data')}:" />
+				<caribeldatebox hflex="15%" id="key_data" db_name="fim_spr_data" readonly="true"/>
+				<label hflex="20%" value=""></label>
+			</hlayout>
+			<hlayout width="100%" >
+				<label hflex="20%" value="${c:l('scheda_fim.data_val')}:" />
+				<caribeldatebox hflex="15%" id="fim_data" db_name="fim_data" required="true"/>
+				<label hflex="65%" value=""></label>
+			</hlayout>
+			<hlayout width="100%" style="text-align:right">
+				<label hflex="20%" value="${c:l('scheda_fim.fase')}:" />
+				<caribelcombobox hflex="25%" db_name="fim_fase" id="combo_fase" />
+				<label hflex="10%" value="${c:l('scheda_fim.ictus')}:" />
+				<caribelcombobox hflex="25%" db_name="fim_ictus" id="combo_ictus" />	
+				<label hflex="20%" value=""></label>
+			</hlayout>
+			<hlayout width="100%" style="text-align:right">
+				<label hflex="20%" value="${c:l('scheda_fim.abita')}:" />
+				<caribelcombobox hflex="25%" db_name="fim_abita" id="combo_abita" />
+				<label hflex="10%" value="${c:l('scheda_fim.femore')}:" />
+				<caribelcombobox hflex="25%" db_name="fim_femore" id="combo_femore" />	
+				<label hflex="20%" value=""></label>
+			</hlayout>
+			<hlayout width="100%" style="text-align:right">
+				<label hflex="20%" value="${c:l('scheda_fim.lavoro')}:" />
+				<caribelcombobox hflex="25%" db_name="fim_lavoro" id="combo_lavoro" />
+				<label hflex="10%" value="${c:l('scheda_fim.comorbilita')}:" />
+				<caribelcombobox hflex="25%" db_name="fim_comorbilita" id="combo_comorbilita" />	
+				<label hflex="20%" value=""></label>
+			</hlayout>
+			<hlayout width="80%" style="text-align:left;margin:1px">
+				<groupbox hflex="50" closable="false" >
+					<hlayout  width="90%" style="text-align:right">
+						<label value="${c:l('scheda_fim.nutrirsi')}:" hflex="15%" />
+						<caribelintbox hflex="5%" db_name="fim_nutrirsi" id="fim_nutrirsi" />
+			 			<label value="${c:l('scheda_fim.rassettarsi')}:" hflex="15%" />
+						<caribelintbox hflex="5%" db_name="fim_rassettarsi" id="fim_rassettarsi" />
+					</hlayout>
+					<hlayout  width="90%" style="text-align:right">
+						<label value="${c:l('scheda_fim.lavarsi')}:" hflex="15%" />
+						<caribelintbox hflex="5%" db_name="fim_lavarsi" id="fim_lavarsi" />
+			 			<label value="${c:l('scheda_fim.vestirsi_su')}:" hflex="15%" />
+						<caribelintbox hflex="5%" db_name="fim_vestirsi_su" id="fim_vestirsi_su" />
+					</hlayout>
+					<hlayout  width="90%" style="text-align:right">
+						<label value="${c:l('scheda_fim.vestirsi_giu')}:" hflex="15%" />
+						<caribelintbox hflex="5%" db_name="fim_vestirsi_giu" id="fim_vestirsi_giu" />
+			 			<label value="${c:l('scheda_fim.igiene')}:" hflex="15%" />
+						<caribelintbox hflex="5%" db_name="fim_igiene" id="fim_igiene" />
+					</hlayout>
+					<hlayout  width="90%" style="text-align:right">
+						<label value="${c:l('scheda_fim.vescica')}:" hflex="15%" />
+						<caribelintbox hflex="5%" db_name="fim_vescica" id="fim_vescica" />
+			 			<label value="${c:l('scheda_fim.alvo')}:" hflex="15%" />
+						<caribelintbox hflex="5%" db_name="fim_alvo" id="fim_alvo" />
+					</hlayout>
+					<hlayout  width="90%" style="text-align:right">
+						<label hflex="100%" />
+					</hlayout>
+				</groupbox>			
+				<groupbox hflex="30" closable="false">
+					<hlayout width="90%" style="text-align:right">
+						<label value="${c:l('scheda_fim.letto')}:" hflex="15%" />
+						<caribelintbox hflex="5%" db_name="fim_letto_sedia" id="fim_letto_sedia" />
+					</hlayout>
+					<hlayout width="90%" style="text-align:right">
+						<label value="${c:l('scheda_fim.wc')}:" hflex="15%" />
+						<caribelintbox hflex="5%" db_name="fim_wc" id="fim_wc" />
+					</hlayout>
+					<hlayout width="90%" style="text-align:right">
+						<label value="${c:l('scheda_fim.vasca')}:" hflex="15%" />
+						<caribelintbox hflex="5%" db_name="fim_vasca_doccia" id="fim_vasca_doccia" />
+					</hlayout>
+					<hlayout width="90%" style="text-align:right">
+						<label value="${c:l('scheda_fim.cammino')}:" hflex="15%" />
+						<caribelintbox hflex="5%" db_name="fim_cammino" id="fim_cammino" />
+					</hlayout>
+					<hlayout width="90%" style="text-align:right">
+						<label value="${c:l('scheda_fim.scale')}:" hflex="15%" />
+						<caribelintbox hflex="5%" db_name="fim_scale" id="fim_scale" />
+					</hlayout>
+				</groupbox>							
+		</hlayout>				
+
+		<hlayout width="80%" style="text-align:left;margin:1px">
+			<groupbox hflex="50" closable="false" >
+				<hlayout  width="90%" style="text-align:right">
+					<label value="${c:l('scheda_fim.comprensione')}:" hflex="15%" />
+					<caribelintbox hflex="5%" db_name="fim_comprensione" id="fim_comprensione" />
+		 			<label value="${c:l('scheda_fim.espressione')}:" hflex="15%" />
+					<caribelintbox hflex="5%" db_name="fim_espressione" id="fim_espressione" />
+				</hlayout>
+				<hlayout  width="90%" style="text-align:right">
+					<label value="${c:l('scheda_fim.rapporto')}:" hflex="15%" />
+					<caribelintbox hflex="5%" db_name="fim_rapporto" id="fim_rapporto" />
+		 			<label value="${c:l('scheda_fim.problemi')}:" hflex="15%" />
+					<caribelintbox hflex="5%" db_name="fim_problemi" id="fim_problemi" />
+				</hlayout>
+				<hlayout  width="90%" style="text-align:right">
+					<label value="${c:l('scheda_fim.memoria')}:" hflex="15%" />
+					<caribelintbox hflex="5%" db_name="fim_memoria" id="fim_memoria" />
+					<label hflex="20%" />
+		 		</hlayout>					
+			</groupbox>			
+			<label hflex="30"/>				
+		</hlayout>				
+		
+		<hlayout width="100%" style="text-align:right">
+			<label value="${c:l('scheda_fim.punteggio')}:" hflex="15%" />
+			<caribelintbox hflex="5%" db_name="fim_punteggio" id="fim_punteggio" />
+			<button id="btn_punteggio" label="Calcola Punteggio" hflex="30%" />
+	 		<label hflex="50%" />
+		</hlayout>
+		<hlayout  width="100%" style="text-align:right">
+			<label value="${c:l('scheda_fim.operatore')}:" hflex="15%" />
+			<caribelSearch hflex="50%" db_name_cod="fim_operatore" 
+				db_name_descr="desc_op" id_cod="fim_operatore" id_descr="desc_op"
+				ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl" />
+			<label hflex="35%" />
+ 		</hlayout>					
+		</vlayout>
+	</vlayout>
+
+</window>

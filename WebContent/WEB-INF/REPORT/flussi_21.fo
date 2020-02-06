@@ -1,0 +1,1350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+
+  <!-- mfo:section.start="layout_adi" rem="IMPOSTAZIONI DI PAGINA" -->
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="simple"
+        page-height="21cm"	page-width="29.7cm"
+        margin-top="1cm"	margin-bottom="1cm"
+        margin-left="0.5cm"	margin-right="0.5cm" >
+      <fo:region-body margin-top="1cm" margin-bottom="1cm"/>
+      <fo:region-before extent="1cm"/>
+      <fo:region-after extent="1cm"/>
+    </fo:simple-page-master>
+  </fo:layout-master-set>
+
+  <fo:page-sequence master-name="simple">
+
+    <!-- TITOLO DI TESTA -->
+    <fo:static-content flow-name="xsl-region-before">
+      
+    </fo:static-content>
+
+    <!-- TITOLO DI PIEDE -->
+    <fo:static-content flow-name="xsl-region-after">
+      <fo:table font-size="8pt" width="auto" >
+        <fo:table-column column-width="22.5cm"/>
+        <fo:table-column column-width="5cm"/>
+        <fo:table-body>
+          <fo:table-row height="10pt">
+            <fo:table-cell text-align="start">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                ></fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="end">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >elaborato del #data_stampa#</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+    </fo:static-content>
+   
+      <fo:flow flow-name="xsl-region-body">
+      <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" font-weight="bold">
+        TOTALE CASI ADI (autorizzazioni ADI attive nel periodo dal #data_inizio# al #data_fine#)
+      </fo:block>
+<!-- mfo:section.end -->
+     
+      <!-- mfo:section.start="inizioTabAdi" rem="TITOLI DELLA TABELLA AUTORIZZAZIONI" -->
+    <!-- TITOLO RIPETITIVO DI TABELLA -->
+      <fo:table font-size="8pt" width="auto" table-omit-header-at-break="false">
+         <fo:table-column column-width="6cm"  />
+	       <fo:table-column column-width="3cm"  />		
+         <fo:table-column column-width="3cm" />   
+         <fo:table-header font-weight="bold">
+            <fo:table-row height="8pt" background-color="rgb(200,200,200)">
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                 Numero Casi ADI
+               </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Cod. zona
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Zona
+                </fo:block>
+              </fo:table-cell>            
+          </fo:table-row>
+        </fo:table-header>
+
+        <!-- INIZIO DI TABELLA -->
+        <fo:table-body>
+<!-- mfo:section.end -->
+
+          <!-- mfo:section.start="tabellaAdi" rem="RIGA RIPETITIVA AUTORIZZAZIONI" -->
+          <fo:table-row height="8pt">
+            <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                #num_casi_adi#
+              </fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                #cod_zona#
+              </fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="start" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                #zona#
+              </fo:block>
+            </fo:table-cell>
+            
+          </fo:table-row>
+<!-- mfo:section.end -->
+
+ <!-- mfo:section.start="fineTabAdi" rem="TERMINAZIONE TABELLA AUTORIZZAZIONI" -->
+        </fo:table-body>
+      </fo:table>
+<!-- mfo:section.end -->
+
+ <!-- mfo:section.start="totaliAdi"  -->
+      <fo:block font-size="10pt" font-family="sans-serif"	 line-height="10pt"	text-align="start" padding-top="3pt">
+        Totale: #totale_adi#
+      </fo:block>
+<!-- mfo:section.end -->
+        <!-- mfo:section.start="inizioTabAdiMal" rem="TITOLI DELLA TABELLA AUTORIZZAZIONI" -->
+        <!-- TITOLO RIPETITIVO DI TABELLA -->
+        <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" font-weight="bold" space-before="0.5cm">
+          Numero casi ADI malati terminali:
+        </fo:block>
+        <fo:table font-size="8pt" width="auto" table-omit-header-at-break="false">
+          <fo:table-column column-width="6cm"  />
+          <fo:table-column column-width="3cm"  />		
+          <fo:table-column column-width="3cm" />   
+          <fo:table-header font-weight="bold">
+            <fo:table-row height="8pt" background-color="rgb(200,200,200)">
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Num. casi ADI malati terminali
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Cod. zona
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Zona
+                </fo:block>
+              </fo:table-cell>            
+            </fo:table-row>
+          </fo:table-header>
+          
+          <!-- INIZIO DI TABELLA -->
+          <fo:table-body>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="tabellaAdiMal" rem="RIGA RIPETITIVA AUTORIZZAZIONI" -->
+            <fo:table-row height="8pt">
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #num_casi_adi_term#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #cod_zona_mal#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="start" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #zona_mal#
+                </fo:block>
+              </fo:table-cell>
+              
+            </fo:table-row>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="fineTabAdiMal" rem="TERMINAZIONE TABELLA AUTORIZZAZIONI" -->
+          </fo:table-body>
+        </fo:table>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="totaliAdiMal"  -->
+        <fo:block font-size="10pt" font-family="sans-serif"	 line-height="10pt"	text-align="start" padding-top="3pt">
+          Totale: #totale_adi_mal#
+        </fo:block>
+        <!-- mfo:section.end -->
+       
+        <!-- mfo:section.start="inizioTabAdiAnz" rem="TITOLI DELLA TABELLA AUTORIZZAZIONI" -->
+        <!-- TITOLO RIPETITIVO DI TABELLA -->
+        <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" font-weight="bold" space-before="0.5cm">
+          Numero casi ADI anziani non malati terminali:
+        </fo:block>
+        <fo:table font-size="8pt" width="auto" table-omit-header-at-break="false">
+          <fo:table-column column-width="6cm"  />
+          <fo:table-column column-width="3cm"  />		
+          <fo:table-column column-width="3cm" />   
+          <fo:table-header font-weight="bold">
+            <fo:table-row height="8pt" background-color="rgb(200,200,200)">
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Num. casi ADI anziani
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Cod. zona
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Zona
+                </fo:block>
+              </fo:table-cell>            
+            </fo:table-row>
+          </fo:table-header>
+          
+          <!-- INIZIO DI TABELLA -->
+          <fo:table-body>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="tabellaAdiAnz" rem="RIGA RIPETITIVA AUTORIZZAZIONI" -->
+            <fo:table-row height="8pt">
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #num_casi_adi_anz#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #cod_zona_anz#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="start" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #zona_anz#
+                </fo:block>
+              </fo:table-cell>
+              
+            </fo:table-row>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="fineTabAdiAnz" rem="TERMINAZIONE TABELLA AUTORIZZAZIONI" -->
+          </fo:table-body>
+        </fo:table>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="totaliAdiAnz"  -->
+        <fo:block font-size="10pt" font-family="sans-serif"	 line-height="10pt"	text-align="start" padding-top="3pt">
+          Totale: #totale_adi_anz#
+        </fo:block>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="inizioTabAccessiMed" rem="TITOLI DELLA TABELLA AUTORIZZAZIONI" -->
+        <!-- TITOLO RIPETITIVO DI TABELLA -->
+        <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" font-weight="bold" space-before="0.5cm">
+          Totale accessi MEDICI
+        </fo:block>
+        <fo:table font-size="8pt" width="auto" table-omit-header-at-break="false">
+          <fo:table-column column-width="6cm"  />
+          <fo:table-column column-width="3cm"  />		
+          <fo:table-column column-width="3cm" />   
+          <fo:table-header font-weight="bold">
+            <fo:table-row height="8pt" background-color="rgb(200,200,200)">
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Num. accessi medici
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Cod. zona
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Zona
+                </fo:block>
+              </fo:table-cell>            
+            </fo:table-row>
+          </fo:table-header>
+          
+          <!-- INIZIO DI TABELLA -->
+          <fo:table-body>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="tabellaAccessiMed" rem="RIGA RIPETITIVA AUTORIZZAZIONI" -->
+            <fo:table-row height="8pt">
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #num_acc_mmg#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #cod_zona_mmg#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="start" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #zona_mmg#
+                </fo:block>
+              </fo:table-cell>
+              
+            </fo:table-row>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="fineTabAccessiMed" rem="TERMINAZIONE TABELLA AUTORIZZAZIONI" -->
+          </fo:table-body>
+        </fo:table>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="totaliAccessiMed"  -->
+        <fo:block font-size="10pt" font-family="sans-serif"	 line-height="10pt"	text-align="start" padding-top="3pt">
+          Totale: #totale_acc_mmg#
+        </fo:block>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="inizioTabAccessiMedTerm" rem="TITOLI DELLA TABELLA AUTORIZZAZIONI" -->
+        <!-- TITOLO RIPETITIVO DI TABELLA -->
+        <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" font-weight="bold" space-before="0.5cm">
+          Numero accessi MEDICI a malati terminali
+        </fo:block>
+        <fo:table font-size="8pt" width="auto" table-omit-header-at-break="false">
+          <fo:table-column column-width="6cm"  />
+          <fo:table-column column-width="3cm"  />		
+          <fo:table-column column-width="3cm" />   
+          <fo:table-header font-weight="bold">
+            <fo:table-row height="8pt" background-color="rgb(200,200,200)">
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Num. accessi mmg a malati terminali
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Cod. zona
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Zona
+                </fo:block>
+              </fo:table-cell>            
+            </fo:table-row>
+          </fo:table-header>
+          
+          <!-- INIZIO DI TABELLA -->
+          <fo:table-body>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="tabellaAccessiMedTerm" rem="RIGA RIPETITIVA AUTORIZZAZIONI" -->
+            <fo:table-row height="8pt">
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #num_acc_mmg_term#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #cod_zona_mmg_term#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="start" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #zona_mmg_term#
+                </fo:block>
+              </fo:table-cell>
+              
+            </fo:table-row>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="fineTabAccessiMedTerm" rem="TERMINAZIONE TABELLA AUTORIZZAZIONI" -->
+          </fo:table-body>
+        </fo:table>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="totaliAccessiMedTerm"  -->
+        <fo:block font-size="10pt" font-family="sans-serif"	 line-height="10pt"	text-align="start" padding-top="3pt">
+          Totale: #totale_acc_mmg_term#
+        </fo:block>
+        <!-- mfo:section.end -->
+       
+        <!-- mfo:section.start="inizioTabAccessiMedAnz" rem="TITOLI DELLA TABELLA AUTORIZZAZIONI" -->
+        <!-- TITOLO RIPETITIVO DI TABELLA -->
+        <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" font-weight="bold" space-before="0.5cm">
+          Numero accessi MEDICI per anziani NON malati terminali
+        </fo:block>
+        <fo:table font-size="8pt" width="auto" table-omit-header-at-break="false">
+          <fo:table-column column-width="6cm"  />
+          <fo:table-column column-width="3cm"  />		
+          <fo:table-column column-width="3cm" />   
+          <fo:table-header font-weight="bold">
+            <fo:table-row height="8pt" background-color="rgb(200,200,200)">
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Num. accessi mmg per anziani
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Cod. zona
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Zona
+                </fo:block>
+              </fo:table-cell>            
+            </fo:table-row>
+          </fo:table-header>
+          
+          <!-- INIZIO DI TABELLA -->
+          <fo:table-body>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="tabellaAccessiMedAnz" rem="RIGA RIPETITIVA AUTORIZZAZIONI" -->
+            <fo:table-row height="8pt">
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #num_acc_mmg_anz#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #cod_zona_mmg_anz#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="start" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #zona_mmg_anz#
+                </fo:block>
+              </fo:table-cell>
+              
+            </fo:table-row>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="fineTabAccessiMedAnz" rem="TERMINAZIONE TABELLA AUTORIZZAZIONI" -->
+          </fo:table-body>
+        </fo:table>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="totaliAccessiMedAnz"  -->
+        <fo:block font-size="10pt" font-family="sans-serif"	 line-height="10pt"	text-align="start" padding-top="3pt">
+          Totale: #totale_acc_mmg_anz#
+        </fo:block>
+        <!-- mfo:section.end -->
+      
+        <!-- mfo:section.start="inizioTabAccessiOper" rem="TITOLI DELLA TABELLA AUTORIZZAZIONI" -->
+        <!-- TITOLO RIPETITIVO DI TABELLA -->
+        <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" font-weight="bold" space-before="0.5cm">
+          Totale accessi operatori
+        </fo:block>
+        <fo:table font-size="8pt" width="auto" table-omit-header-at-break="false">
+          <fo:table-column column-width="6cm"  />
+          <fo:table-column column-width="3cm"  />		
+          <fo:table-column column-width="3cm" />   
+          <fo:table-header font-weight="bold">
+            <fo:table-row height="8pt" background-color="rgb(200,200,200)">
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Num. accessi operatori
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Cod. zona
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Zona
+                </fo:block>
+              </fo:table-cell>            
+            </fo:table-row>
+          </fo:table-header>
+          
+          <!-- INIZIO DI TABELLA -->
+          <fo:table-body>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="tabellaAccessiOp" rem="RIGA RIPETITIVA AUTORIZZAZIONI" -->
+            <fo:table-row height="8pt">
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #num_acc_op#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #cod_zona_op#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="start" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #zona_op#
+                </fo:block>
+              </fo:table-cell>
+              
+            </fo:table-row>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="fineTabAccessiOp" rem="TERMINAZIONE TABELLA AUTORIZZAZIONI" -->
+          </fo:table-body>
+        </fo:table>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="totaliAccessiOp"  -->
+        <fo:block font-size="10pt" font-family="sans-serif"	 line-height="10pt"	text-align="start" padding-top="3pt">
+          Totale: #totale_acc_op#
+        </fo:block>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="inizioTabAccessiOperTerm" rem="TITOLI DELLA TABELLA AUTORIZZAZIONI" -->
+        <!-- TITOLO RIPETITIVO DI TABELLA -->
+        <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" font-weight="bold" space-before="0.5cm">
+          Numero accessi operatori a malati terminali
+        </fo:block>
+        <fo:table font-size="8pt" width="auto" table-omit-header-at-break="false">
+          <fo:table-column column-width="6cm"  />
+          <fo:table-column column-width="3cm"  />		
+          <fo:table-column column-width="3cm" />   
+          <fo:table-header font-weight="bold">
+            <fo:table-row height="8pt" background-color="rgb(200,200,200)">
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Num. accessi operatori a malati
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Cod. zona
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Zona
+                </fo:block>
+              </fo:table-cell>            
+            </fo:table-row>
+          </fo:table-header>
+          
+          <!-- INIZIO DI TABELLA -->
+          <fo:table-body>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="tabellaAccessiOpTerm" rem="RIGA RIPETITIVA AUTORIZZAZIONI" -->
+            <fo:table-row height="8pt">
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #num_acc_op_term#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #cod_zona_op_term#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="start" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #zona_op_term#
+                </fo:block>
+              </fo:table-cell>
+              
+            </fo:table-row>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="fineTabAccessiOpTerm" rem="TERMINAZIONE TABELLA AUTORIZZAZIONI" -->
+          </fo:table-body>
+        </fo:table>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="totaliAccessiOpTerm"  -->
+        <fo:block font-size="10pt" font-family="sans-serif"	 line-height="10pt"	text-align="start" padding-top="3pt">
+          Totale: #totale_acc_op_term#
+        </fo:block>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="inizioTabAccessiOperAnz" rem="TITOLI DELLA TABELLA AUTORIZZAZIONI" -->
+        <!-- TITOLO RIPETITIVO DI TABELLA -->
+        <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" font-weight="bold" space-before="0.5cm">
+          Numero accessi operatori per anziani NON malati terminali
+        </fo:block>
+        <fo:table font-size="8pt" width="auto" table-omit-header-at-break="false">
+          <fo:table-column column-width="6cm"  />
+          <fo:table-column column-width="3cm"  />		
+          <fo:table-column column-width="3cm" />   
+          <fo:table-header font-weight="bold">
+            <fo:table-row height="8pt" background-color="rgb(200,200,200)">
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Num. accessi operatori anziani
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Cod. zona
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Zona
+                </fo:block>
+              </fo:table-cell>            
+            </fo:table-row>
+          </fo:table-header>
+          
+          <!-- INIZIO DI TABELLA -->
+          <fo:table-body>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="tabellaAccessiOpAnz" rem="RIGA RIPETITIVA AUTORIZZAZIONI" -->
+            <fo:table-row height="8pt">
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #num_acc_op_anz#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #cod_zona_op_anz#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="start" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #zona_op_anz#
+                </fo:block>
+              </fo:table-cell>
+              
+            </fo:table-row>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="fineTabAccessiOpAnz" rem="TERMINAZIONE TABELLA AUTORIZZAZIONI" -->
+          </fo:table-body>
+        </fo:table>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="totaliAccessiOpAnz"  -->
+        <fo:block font-size="10pt" font-family="sans-serif"	 line-height="10pt"	text-align="start" padding-top="3pt">
+          Totale: #totale_acc_op_anz#
+        </fo:block>
+        <!-- mfo:section.end -->
+       
+        <!-- mfo:section.start="inizioTabAccessiOperFis" rem="TITOLI DELLA TABELLA AUTORIZZAZIONI" -->
+        <!-- TITOLO RIPETITIVO DI TABELLA -->
+        <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" font-weight="bold" space-before="0.5cm">
+          Totale accessi operatori FIS
+        </fo:block>
+        <fo:table font-size="8pt" width="auto" table-omit-header-at-break="false">
+          <fo:table-column column-width="6cm"  />
+          <fo:table-column column-width="3cm"  />		
+          <fo:table-column column-width="3cm" />   
+          <fo:table-header font-weight="bold">
+            <fo:table-row height="8pt" background-color="rgb(200,200,200)">
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Num. accessi FIS
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Cod. zona
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Zona
+                </fo:block>
+              </fo:table-cell>            
+            </fo:table-row>
+          </fo:table-header>
+          
+          <!-- INIZIO DI TABELLA -->
+          <fo:table-body>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="tabellaAccessiOpFis" rem="RIGA RIPETITIVA AUTORIZZAZIONI" -->
+            <fo:table-row height="8pt">
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #num_acc_op_fis#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #cod_zona_op_fis#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="start" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #zona_op_fis#
+                </fo:block>
+              </fo:table-cell>
+              
+            </fo:table-row>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="fineTabAccessiOpFis" rem="TERMINAZIONE TABELLA AUTORIZZAZIONI" -->
+          </fo:table-body>
+        </fo:table>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="totaliAccessiOpFis"  -->
+        <fo:block font-size="10pt" font-family="sans-serif"	 line-height="10pt"	text-align="start" padding-top="3pt">
+          Totale: #totale_acc_op_fis#
+        </fo:block>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="inizioTabAccessiOperFisTerm" rem="TITOLI DELLA TABELLA AUTORIZZAZIONI" -->
+        <!-- TITOLO RIPETITIVO DI TABELLA -->
+        <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" font-weight="bold" space-before="0.5cm">
+          Numero accessi operatori FIS a malati terminali
+        </fo:block>
+        <fo:table font-size="8pt" width="auto" table-omit-header-at-break="false">
+          <fo:table-column column-width="6cm"  />
+          <fo:table-column column-width="3cm"  />		
+          <fo:table-column column-width="3cm" />   
+          <fo:table-header font-weight="bold">
+            <fo:table-row height="8pt" background-color="rgb(200,200,200)">
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Num. accessi FIS a malati
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Cod. zona
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Zona
+                </fo:block>
+              </fo:table-cell>            
+            </fo:table-row>
+          </fo:table-header>
+          
+          <!-- INIZIO DI TABELLA -->
+          <fo:table-body>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="tabellaAccessiOpFisTerm" rem="RIGA RIPETITIVA AUTORIZZAZIONI" -->
+            <fo:table-row height="8pt">
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #num_acc_op_fis_term#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #cod_zona_op_fis_term#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="start" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #zona_op_fis_term#
+                </fo:block>
+              </fo:table-cell>
+              
+            </fo:table-row>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="fineTabAccessiOpFisTerm" rem="TERMINAZIONE TABELLA AUTORIZZAZIONI" -->
+          </fo:table-body>
+        </fo:table>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="totaliAccessiOpFisTerm"  -->
+        <fo:block font-size="10pt" font-family="sans-serif"	 line-height="10pt"	text-align="start" padding-top="3pt">
+          Totale: #totale_acc_op_fis_term#
+        </fo:block>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="inizioTabAccessiOperFisAnz" rem="TITOLI DELLA TABELLA AUTORIZZAZIONI" -->
+        <!-- TITOLO RIPETITIVO DI TABELLA -->
+        <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" font-weight="bold" space-before="0.5cm">
+          Numero accessi operatori FIS per anziani NON malati terminali
+        </fo:block>
+        <fo:table font-size="8pt" width="auto" table-omit-header-at-break="false">
+          <fo:table-column column-width="6cm"  />
+          <fo:table-column column-width="3cm"  />		
+          <fo:table-column column-width="3cm" />   
+          <fo:table-header font-weight="bold">
+            <fo:table-row height="8pt" background-color="rgb(200,200,200)">
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Num. accessi FIS ad anziani
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Cod. zona
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Zona
+                </fo:block>
+              </fo:table-cell>            
+            </fo:table-row>
+          </fo:table-header>
+          
+          <!-- INIZIO DI TABELLA -->
+          <fo:table-body>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="tabellaAccessiOpFisAnz" rem="RIGA RIPETITIVA AUTORIZZAZIONI" -->
+            <fo:table-row height="8pt">
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #num_acc_op_fis_anz#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #cod_zona_op_fis_anz#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="start" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #zona_op_fis_anz#
+                </fo:block>
+              </fo:table-cell>
+              
+            </fo:table-row>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="fineTabAccessiOpFisAnz" rem="TERMINAZIONE TABELLA AUTORIZZAZIONI" -->
+          </fo:table-body>
+        </fo:table>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="totaliAccessiOpFisAnz"  -->
+        <fo:block font-size="10pt" font-family="sans-serif"	 line-height="10pt"	text-align="start" padding-top="3pt">
+          Totale: #totale_acc_op_fis_anz#
+        </fo:block>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="inizioTabAccessiOperInf" rem="TITOLI DELLA TABELLA AUTORIZZAZIONI" -->
+        <!-- TITOLO RIPETITIVO DI TABELLA -->
+        <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" font-weight="bold" space-before="0.5cm">
+          Totale accessi operatori INF
+        </fo:block>
+        <fo:table font-size="8pt" width="auto" table-omit-header-at-break="false">
+          <fo:table-column column-width="6cm"  />
+          <fo:table-column column-width="3cm"  />		
+          <fo:table-column column-width="3cm" />   
+          <fo:table-header font-weight="bold">
+            <fo:table-row height="8pt" background-color="rgb(200,200,200)">
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Num. accessi INF
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Cod. zona
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Zona
+                </fo:block>
+              </fo:table-cell>            
+            </fo:table-row>
+          </fo:table-header>
+          
+          <!-- INIZIO DI TABELLA -->
+          <fo:table-body>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="tabellaAccessiOpInf" rem="RIGA RIPETITIVA AUTORIZZAZIONI" -->
+            <fo:table-row height="8pt">
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #num_acc_op_inf#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #cod_zona_op_inf#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="start" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #zona_op_inf#
+                </fo:block>
+              </fo:table-cell>
+              
+            </fo:table-row>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="fineTabAccessiOpInf" rem="TERMINAZIONE TABELLA AUTORIZZAZIONI" -->
+          </fo:table-body>
+        </fo:table>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="totaliAccessiOpInf"  -->
+        <fo:block font-size="10pt" font-family="sans-serif"	 line-height="10pt"	text-align="start" padding-top="3pt">
+          Totale: #totale_acc_op_inf#
+        </fo:block>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="inizioTabAccessiOperInfTerm" rem="TITOLI DELLA TABELLA AUTORIZZAZIONI" -->
+        <!-- TITOLO RIPETITIVO DI TABELLA -->
+        <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" font-weight="bold" space-before="0.5cm">
+          Numero accessi operatori INF a malati terminali
+        </fo:block>
+        <fo:table font-size="8pt" width="auto" table-omit-header-at-break="false">
+          <fo:table-column column-width="6cm"  />
+          <fo:table-column column-width="3cm"  />		
+          <fo:table-column column-width="3cm" />   
+          <fo:table-header font-weight="bold">
+            <fo:table-row height="8pt" background-color="rgb(200,200,200)">
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Num. accessi INF a malati
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Cod. zona
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Zona
+                </fo:block>
+              </fo:table-cell>            
+            </fo:table-row>
+          </fo:table-header>
+          
+          <!-- INIZIO DI TABELLA -->
+          <fo:table-body>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="tabellaAccessiOpInfTerm" rem="RIGA RIPETITIVA AUTORIZZAZIONI" -->
+            <fo:table-row height="8pt">
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #num_acc_op_inf_term#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #cod_zona_op_inf_term#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="start" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #zona_op_inf_term#
+                </fo:block>
+              </fo:table-cell>
+              
+            </fo:table-row>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="fineTabAccessiOpInfTerm" rem="TERMINAZIONE TABELLA AUTORIZZAZIONI" -->
+          </fo:table-body>
+        </fo:table>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="totaliAccessiOpInfTerm"  -->
+        <fo:block font-size="10pt" font-family="sans-serif"	 line-height="10pt"	text-align="start" padding-top="3pt">
+          Totale: #totale_acc_op_inf_term#
+        </fo:block>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="inizioTabAccessiOperInfAnz" rem="TITOLI DELLA TABELLA AUTORIZZAZIONI" -->
+        <!-- TITOLO RIPETITIVO DI TABELLA -->
+        <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" font-weight="bold" space-before="0.5cm">
+          Numero accessi operatori INF per anziani NON malati terminali
+        </fo:block>
+        <fo:table font-size="8pt" width="auto" table-omit-header-at-break="false">
+          <fo:table-column column-width="6cm"  />
+          <fo:table-column column-width="3cm"  />		
+          <fo:table-column column-width="3cm" />   
+          <fo:table-header font-weight="bold">
+            <fo:table-row height="8pt" background-color="rgb(200,200,200)">
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Num. accessi INF ad anziani
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Cod. zona
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Zona
+                </fo:block>
+              </fo:table-cell>            
+            </fo:table-row>
+          </fo:table-header>
+          
+          <!-- INIZIO DI TABELLA -->
+          <fo:table-body>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="tabellaAccessiOpInfAnz" rem="RIGA RIPETITIVA AUTORIZZAZIONI" -->
+            <fo:table-row height="8pt">
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #num_acc_op_inf_anz#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #cod_zona_op_inf_anz#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="start" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #zona_op_inf_anz#
+                </fo:block>
+              </fo:table-cell>
+              
+            </fo:table-row>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="fineTabAccessiOpInfAnz" rem="TERMINAZIONE TABELLA AUTORIZZAZIONI" -->
+          </fo:table-body>
+        </fo:table>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="totaliAccessiOpInfAnz"  -->
+        <fo:block font-size="10pt" font-family="sans-serif"	 line-height="10pt"	text-align="start" padding-top="3pt">
+          Totale: #totale_acc_op_inf_anz#
+        </fo:block>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="inizioTabAccessiOperAltri" rem="TITOLI DELLA TABELLA AUTORIZZAZIONI" -->
+        <!-- TITOLO RIPETITIVO DI TABELLA -->
+        <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" font-weight="bold" space-before="0.5cm">
+          Totale accessi operatori ALTRI
+        </fo:block>
+        <fo:table font-size="8pt" width="auto" table-omit-header-at-break="false">
+          <fo:table-column column-width="6cm"  />
+          <fo:table-column column-width="3cm"  />		
+          <fo:table-column column-width="3cm" />   
+          <fo:table-header font-weight="bold">
+            <fo:table-row height="8pt" background-color="rgb(200,200,200)">
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Num. accessi ALTRI oper.
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Cod. zona
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Zona
+                </fo:block>
+              </fo:table-cell>            
+            </fo:table-row>
+          </fo:table-header>
+          
+          <!-- INIZIO DI TABELLA -->
+          <fo:table-body>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="tabellaAccessiOpAltri" rem="RIGA RIPETITIVA AUTORIZZAZIONI" -->
+            <fo:table-row height="8pt">
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #num_acc_op_altri#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #cod_zona_op_altri#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="start" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #zona_op_altri#
+                </fo:block>
+              </fo:table-cell>
+              
+            </fo:table-row>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="fineTabAccessiOpAltri" rem="TERMINAZIONE TABELLA AUTORIZZAZIONI" -->
+          </fo:table-body>
+        </fo:table>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="totaliAccessiOpAltri"  -->
+        <fo:block font-size="10pt" font-family="sans-serif"	 line-height="10pt"	text-align="start" padding-top="3pt">
+          Totale: #totale_acc_op_altri#
+        </fo:block>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="inizioTabAccessiOperAltriTerm" rem="TITOLI DELLA TABELLA AUTORIZZAZIONI" -->
+        <!-- TITOLO RIPETITIVO DI TABELLA -->
+        <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" font-weight="bold" space-before="0.5cm">
+          Numero accessi operatori ALTRI a malati terminali
+        </fo:block>
+        <fo:table font-size="8pt" width="auto" table-omit-header-at-break="false">
+          <fo:table-column column-width="6cm"  />
+          <fo:table-column column-width="3cm"  />		
+          <fo:table-column column-width="3cm" />   
+          <fo:table-header font-weight="bold">
+            <fo:table-row height="8pt" background-color="rgb(200,200,200)">
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Num. accessi ALTRI oper. a malati
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Cod. zona
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Zona
+                </fo:block>
+              </fo:table-cell>            
+            </fo:table-row>
+          </fo:table-header>
+          
+          <!-- INIZIO DI TABELLA -->
+          <fo:table-body>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="tabellaAccessiOpAltriTerm" rem="RIGA RIPETITIVA AUTORIZZAZIONI" -->
+            <fo:table-row height="8pt">
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #num_acc_op_altri_term#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #cod_zona_op_altri_term#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="start" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #zona_op_altri_term#
+                </fo:block>
+              </fo:table-cell>
+              
+            </fo:table-row>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="fineTabAccessiOpAltriTerm" rem="TERMINAZIONE TABELLA AUTORIZZAZIONI" -->
+          </fo:table-body>
+        </fo:table>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="totaliAccessiOpAltriTerm"  -->
+        <fo:block font-size="10pt" font-family="sans-serif"	 line-height="10pt"	text-align="start" padding-top="3pt">
+          Totale: #totale_acc_op_altri_term#
+        </fo:block>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="inizioTabAccessiOperAltriAnz" rem="TITOLI DELLA TABELLA AUTORIZZAZIONI" -->
+        <!-- TITOLO RIPETITIVO DI TABELLA -->
+        <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" font-weight="bold" space-before="0.5cm">
+          Numero accessi operatori ALTRI per anziani NON malati terminali
+        </fo:block>
+        <fo:table font-size="8pt" width="auto" table-omit-header-at-break="false">
+          <fo:table-column column-width="6cm"  />
+          <fo:table-column column-width="3cm"  />		
+          <fo:table-column column-width="3cm" />   
+          <fo:table-header font-weight="bold">
+            <fo:table-row height="8pt" background-color="rgb(200,200,200)">
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Num. accessi ALTRI oper. ad anziani
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Cod. zona
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Zona
+                </fo:block>
+              </fo:table-cell>            
+            </fo:table-row>
+          </fo:table-header>
+          
+          <!-- INIZIO DI TABELLA -->
+          <fo:table-body>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="tabellaAccessiOpAltriAnz" rem="RIGA RIPETITIVA AUTORIZZAZIONI" -->
+            <fo:table-row height="8pt">
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #num_acc_op_altri_anz#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #cod_zona_op_altri_anz#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="start" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #zona_op_altri_anz#
+                </fo:block>
+              </fo:table-cell>
+              
+            </fo:table-row>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="fineTabAccessiOpAltriAnz" rem="TERMINAZIONE TABELLA AUTORIZZAZIONI" -->
+          </fo:table-body>
+        </fo:table>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="totaliAccessiOpAltriAnz"  -->
+        <fo:block font-size="10pt" font-family="sans-serif"	 line-height="10pt"	text-align="start" padding-top="3pt">
+          Totale: #totale_acc_op_altri_anz#
+        </fo:block>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="inizioTabADP" rem="TITOLI DELLA TABELLA AUTORIZZAZIONI" -->
+        <!-- TITOLO RIPETITIVO DI TABELLA -->
+        <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" font-weight="bold" space-before="0.5cm">
+          Numero MEDICI: num MEDICI (distinti) con autorizzazioni ADP
+        </fo:block>
+        <fo:table font-size="8pt" width="auto" table-omit-header-at-break="false">
+          <fo:table-column column-width="6cm"  />
+          <fo:table-column column-width="3cm"  />		
+          <fo:table-column column-width="3cm" />   
+          <fo:table-header font-weight="bold">
+            <fo:table-row height="8pt" background-color="rgb(200,200,200)">
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Num. medici
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Cod. zona
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Zona
+                </fo:block>
+              </fo:table-cell>            
+            </fo:table-row>
+          </fo:table-header>
+          
+          <!-- INIZIO DI TABELLA -->
+          <fo:table-body>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="tabellaADP" rem="RIGA RIPETITIVA AUTORIZZAZIONI" -->
+            <fo:table-row height="8pt">
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #num_adp#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #cod_zona_adp#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="start" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #zona_adp#
+                </fo:block>
+              </fo:table-cell>
+              
+            </fo:table-row>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="fineTabADP" rem="TERMINAZIONE TABELLA AUTORIZZAZIONI" -->
+          </fo:table-body>
+        </fo:table>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="totaliADP"  -->
+        <fo:block font-size="10pt" font-family="sans-serif"	 line-height="10pt"	text-align="start" padding-top="3pt">
+          Totale: #totale_acc_adp#
+        </fo:block>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="inizioTabAutoADP" rem="TITOLI DELLA TABELLA AUTORIZZAZIONI" -->
+        <!-- TITOLO RIPETITIVO DI TABELLA -->
+        <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" font-weight="bold" space-before="0.5cm">
+          Numero ASSISTITI: num ASSISTITI (distinti) con autorizzazioni ADP
+        </fo:block>
+        <fo:table font-size="8pt" width="auto" table-omit-header-at-break="false">
+          <fo:table-column column-width="6cm"  />
+          <fo:table-column column-width="3cm"  />		
+          <fo:table-column column-width="3cm" />   
+          <fo:table-header font-weight="bold">
+            <fo:table-row height="8pt" background-color="rgb(200,200,200)">
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Num. assistiti
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Cod. zona
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="center" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  Zona
+                </fo:block>
+              </fo:table-cell>            
+            </fo:table-row>
+          </fo:table-header>
+          
+          <!-- INIZIO DI TABELLA -->
+          <fo:table-body>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="tabellaAutoADP" rem="RIGA RIPETITIVA AUTORIZZAZIONI" -->
+            <fo:table-row height="8pt">
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #num_auto_adp#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="end" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #cod_zona_auto_adp#
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="start" border-width="0.5pt" border-style="solid" border-color="rgb(200,200,200)">
+                <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm">
+                  #zona_auto_adp#
+                </fo:block>
+              </fo:table-cell>
+              
+            </fo:table-row>
+            <!-- mfo:section.end -->
+            
+            <!-- mfo:section.start="fineTabAutoADP" rem="TERMINAZIONE TABELLA AUTORIZZAZIONI" -->
+          </fo:table-body>
+        </fo:table>
+        <!-- mfo:section.end -->
+        
+        <!-- mfo:section.start="totaliAutoADP"  -->
+        <fo:block font-size="10pt" font-family="sans-serif"	 line-height="10pt"	text-align="start" padding-top="3pt">
+          Totale: #totale_acc_auto_adp#
+        </fo:block>
+        <!-- mfo:section.end -->
+<!-- mfo:section.start="finale" rem="TERMINAZIONE DOCUMENTO" -->
+    </fo:flow> <!-- closes the flow element-->
+  </fo:page-sequence> <!-- closes the page-sequence -->
+<!-- mfo:section.end -->
+
+</fo:root>
+

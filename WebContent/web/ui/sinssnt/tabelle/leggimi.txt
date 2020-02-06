@@ -1,0 +1,6 @@
+Inserire in questa directory tutti gli zul relativi alla gestione di tabelle di contorno tipo:
+comuni
+operQual
+ecc ecc.
+
+ATTENZIONE: le tabelle di provenienza Aster, invece, per il momento le mettiamo in ui/common/

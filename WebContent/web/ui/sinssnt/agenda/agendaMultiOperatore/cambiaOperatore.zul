@@ -1,0 +1,45 @@
+<hlayout>
+	<vlayout hflex="40%" sclass="asterLayout">
+		<hlayout>
+			<checkbox id="jCheckBoxInteraSettimana"
+				label="${c:l('agenda.interaSettimana')}">
+			</checkbox>
+		</hlayout>
+		<panel_ubicazione />
+		<hlayout id="riga_sedeCO">
+			<label hflex="20%" id="sedeCO" value="${c:l('operatori.presidio_des')}:" />
+<!-- 			Cambiato dbName da pres a presidio_op pres non sembrava usato -->
+			<caribelcombobox hflex="80%" db_name="" id="cbx_sedeCO" readonly="false" required="false"/>
+		</hlayout>
+		<hlayout>
+<!-- 			<button -->
+<!-- 				label="${c:l('agendaModOperatore.btn_caricaOperatori')}" -->
+<!-- 				id="btn_caricaOperatori" forward="onCaricaOperatori()" /> -->
+			<button
+				label="${c:l('agendaModOperatore.btn_confermaSpostamento')}"
+				id="btn_confermaSpostamento" forward="onConfermaSelezione()" />
+		</hlayout>
+		<label value="${c:l('agendaModOperatore.lblConferma')}" />
+	</vlayout>
+	<caribellistbox id="caribellbOperatori" vflex="true" hflex="60%"
+		height="100%">
+		<listhead sizable="false">
+			<caribellistheader db_name="desc_oper"
+				label="${c:l('common.operatore')}" />
+			<caribellistheader db_name="C0" hflex="min"
+				label="${c:l('agendaPianSett.sett.0')}" />
+			<caribellistheader db_name="C1" hflex="min"
+				label="${c:l('agendaPianSett.sett.1')}" />
+			<caribellistheader db_name="C2" hflex="min"
+				label="${c:l('agendaPianSett.sett.2')}" />
+			<caribellistheader db_name="C3" hflex="min"
+				label="${c:l('agendaPianSett.sett.3')}" />
+			<caribellistheader db_name="C4" hflex="min"
+				label="${c:l('agendaPianSett.sett.4')}" />
+			<caribellistheader db_name="C5" hflex="min"
+				label="${c:l('agendaPianSett.sett.5')}" />
+			<caribellistheader db_name="C6" hflex="min"
+				label="${c:l('agendaPianSett.sett.6')}" />
+		</listhead>
+	</caribellistbox>
+</hlayout>

@@ -1,0 +1,79 @@
+<?component name="autorizzazione_mmg_adi_principale" inline="true"  macroURI="/web/ui/sinssnt/autorizzazioneMMG/autorizzazione_mmg_adi_principale.zul"?>
+<?component name="autorizzazione_mmg_adi_dettaglio" inline="true"  macroURI="/web/ui/sinssnt/autorizzazioneMMG/autorizzazione_mmg_adi_dettaglio.zul"?>
+
+<window id="sntAutorizzazioneMMGADI"
+	title="${c:l('autorizzazionemmg.adi.gridTitleStorico')}"
+	closable="true"
+	apply="it.caribel.app.sinssnt.controllers.autorizzazioni.AutorizzazioniMMGAdiFormCtrl"
+	border="normal" vflex="true" width="100%">
+   
+	<vlayout vflex="true">
+		<caribelGridFormMenuHoriz />
+		<hlayout>
+			<label hflex="20%" value="Cartella:" visible="false" />
+			<caribelintbox id="n_cartella" hflex="30%" db_name="n_cartella" visible="false" />
+			<label hflex="20%" value="pr_data" visible="false" />
+			<caribelintbox id="n_contatto" hflex="30%" db_name="n_contatto" visible="false" />
+		</hlayout>
+
+		<vlayout hflex="100%" >
+			<caribellistbox  showBtnDeleteInRow="true" showBtnEditInRow="true" 
+				rows="4" id="tableAutorizzazioneAdi"
+				hflex="true" db_name="griglia_adi">
+				<listhead sizable="true">
+					<caribellistheader db_name="desc_MMG"
+						label="${c:l('autorizzazionemmg.adi.tb.mmg.pls')}" width="30%" />
+					<caribellistheader db_name="skadi_data"
+						label="${c:l('autorizzazionemmg.adi.tb.data.proposta')}"
+						width="15%"/>
+					<caribellistheader db_name="skadi_approva"
+						label="${c:l('autorizzazionemmg.adi.tb.approvata')}" width="10%"/>
+					<caribellistheader db_name="skadi_data_inzio"
+						label="${c:l('autorizzazionemmg.adi.tb.data.inizio')}" width="15%" />
+					<caribellistheader db_name="skadi_data_fine"
+						label="${c:l('autorizzazionemmg.adi.tb.data.fine')}" width="15%"						/>
+					<caribellistheader db_name="skadi_data_riesame"
+						label="${c:l('autorizzazionemmg.adi.tb.data.riesame')}"
+						width="15%" />
+				</listhead>
+			</caribellistbox>
+		</vlayout>
+		<hlayout width="100%">
+			<label hflex="10%"></label>
+			<button id="btn_moduloAutorizzazione"
+				label="${c:l('autorizzazionemmg.adi.btn.modulo.autorizzazione')}"
+				hflex="20%" forward="onModuloAutorizzazione">
+			</button>
+			<label hflex="10%"></label>
+			<button id="btn_moduloInserimentoPaziente"
+				label="${c:l('autorizzazionemmg.adi.btn.inserimento.paziente')}"
+				hflex="20%" forward="onInserimentoPaziente">
+			</button>
+			<label hflex="10%"></label>
+			<button id="btn_pazienteGiaAssistito"
+				label="${c:l('autorizzazionemmg.adi.btn.paziente.gia.assistito')}"
+				hflex="20%" forward="onPazienteGiaAssitito">
+			</button>
+			<label hflex="10%"></label>
+		</hlayout>
+
+		<vlayout vflex="true" sclass="asterLayout asterOverflow">
+			<tabbox width="100%" sclass="nav_tabs" id="tabbox">
+				<tabs id="tab_autorizzazioneAdi">
+					<tab
+						label="${c:l('autorizzazionemmg.adi.tab.principale')}" />
+					<tab
+						label="${c:l('autorizzazionemmg.adi.tab.dettagli')}" />
+				</tabs>
+				<tabpanels id="tabpanelsADI">
+					<tabpanel id="mmg_adi_principale">
+						<autorizzazione_mmg_adi_principale />
+					</tabpanel>
+					<tabpanel id="mmg_adi_dettaglio">
+						<autorizzazione_mmg_adi_dettaglio />
+					</tabpanel>
+				</tabpanels>
+			</tabbox>
+		</vlayout>
+	</vlayout>
+</window>

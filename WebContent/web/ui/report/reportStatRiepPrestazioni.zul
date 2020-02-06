@@ -1,0 +1,106 @@
+<?component name="panel_ubicazione_nesdiv" inline="true" macroURI="/web/ui/report/common/PanelUbicazione_NesDiv.zul"?>
+
+<window 
+apply="it.caribel.app.sinssnt.controllers.report.ReportStatRiepPrestazioniCtrl"
+title="${c:l('menu.stampe_statistiche.statistiche_riepilogo_prestazioni')}" 
+closable="true" sizable="true"
+mode="overlapped"
+border="normal"
+position="center"
+width="700px"
+height="550px">
+
+<zscript><![CDATA[
+	void dadataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}
+	void adataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}	
+]]>
+</zscript>
+	
+	<vlayout vflex="true">
+	<caribelFormMenu visible_btn_print="true" visible_btn_delete="false" visible_btn_save="false"/>
+	<vlayout sclass="asterLayout asterOverflow" vflex="true">		
+	
+		
+	
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.dadata')}:" />
+			<div hflex="80%" width="100%">
+				<hlayout width="100%">
+					<caribeldatebox id="dadata" hflex="20%"
+						required="true" onChange="dadataChanged()" />
+					<label hflex="60%"
+						value="${c:l('generic.adata')}:" />
+					<caribeldatebox id="adata" hflex="20%"
+						required="true"	onChange="adataChanged()" />
+				</hlayout>
+			</div>
+		</hlayout>
+		
+		<hlayout>
+			<label hflex="20%" value="${c:l('operatori.tipoOperatore')}:" />
+			<caribelcombobox hflex="80%" id="tipo_op" readonly="true"/>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('operatori.qualifica')}:" />
+			<caribelcombobox hflex="80%" id="qual_op" readonly="true"/>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('RichiestaMMG.principale.intensita_ass')}:" />
+			<caribelcombobox hflex="80%" id="motivo" readonly="true"/>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.tipo_accesso')}:" />
+			<caribelcombobox hflex="80%" id="tp_accesso" readonly="true"/>
+		</hlayout>
+		<hlayout>
+				<label hflex="20%" value="${c:l('generic.tipo_prestazione')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="tp_prest">
+						<radio id="dom" value="D" label="${c:l('generic.tipo_prestazione_dom')}" checked="true"/>
+						<radio id="am" value="A" label="${c:l('generic.tipo_prestazione_amb')}"/>	
+						<radio id="en" value="E" label="${c:l('generic.tipo_prestazione_en')}"/>						
+					</caribelradiogroup>
+				</div>
+		</hlayout>
+	
+		
+		<panel_ubicazione_nesdiv />
+		
+		<hlayout>
+				<label hflex="20%" value="${c:l('generic.formato')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="formatoStampa">
+						<radio id="pdf" value="PDF" label="${c:l('generic.formato.pdf')}" checked="true"/>
+						<radio id="html" value="application/vnd.ms-excel" label="${c:l('generic.formato.html')}"/>						
+					</caribelradiogroup>
+				</div>
+		</hlayout>
+	
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.assistito')}:" />
+			<caribelSearch hflex="80%" id_cod="cod_ass" db_name_cod="cognome" db_name_descr="cognome"
+				required="false" 
+				ctrl="it.caribel.app.common.controllers.cartella.CartellaSearchCtrl"
+			 />
+		</hlayout>
+		<hlayout></hlayout>
+		<hlayout></hlayout>
+		<hlayout></hlayout>
+		<hlayout></hlayout>
+		<hlayout>
+				<label hflex="5%"/>
+				<div hflex="90%" align="left">
+					<label hflex="90%"  value="${c:l('ReportStatRiepPrestazioni.msg')}" sclass="normalText" style="border-style: solid;border-color: gray; border-width:0.5px"/>
+				</div>
+				<label hflex="5%"/>
+		</hlayout>
+		
+		
+		</vlayout>
+		
+	</vlayout>
+</window>

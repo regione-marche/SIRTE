@@ -1,0 +1,95 @@
+<vlayout id="contattoMedicoAnamnesi" vflex="true">
+	<vlayout width="100%" spacing="3px" sclass="asterLayout">
+		<hlayout>
+			<label hflex="20%" value="Cartella:"  visible="false"/>
+			<caribelintbox id="n_cartella" hflex="30%"  db_name="n_cartella" visible="false"></caribelintbox>
+			<label hflex="20%" value="Contatto:" visible="false"/>
+			<caribelintbox id="n_contatto" hflex="30%"  db_name="n_contatto" visible="false"></caribelintbox>
+			<caribeldatebox visible="false" hflex="15%" id="pr_data" db_name="pr_data"/>
+			<caribelintbox id="id_skso" db_name="id_skso" visible="false"
+					hflex="15%" maxlength="13" />
+			<button id="btn_protesica" label="${c:l('contatto.medico.anamnesi.protesica')}" 
+				hflex="10%" forward="onProtesica"></button>
+		</hlayout>   
+		<hlayout>
+			<label hflex="20%" id="lb_skm_data_apertura" value="${c:l('contatto.medico.anamnesi.data.apertura')}:" />
+			<caribeldatebox  required="true" hflex="15%" id="skm_data_apertura" db_name="skm_data_apertura" constraint="no future" forward="onBlur=onBlurDataApertura()"/>
+			<label hflex="41%"></label>
+			<button id="btn_scheda_so" label="${c:l('SchedaInfForm.principale.SchedaSO')}" hflex="24%" />			
+			<!-- 
+			<label hflex="0.5%" id="label_between_btn_accessi"></label>
+			<button id="btn_accessi" 
+				label="${c:l('contatto.medico.anamnesi.accessi')}" hflex="24.5%"
+				forward="onAccessi">
+			</button>
+			 -->
+			</hlayout>     
+		<hlayout>
+			<label hflex="20%" id="lb_skm_data_chiusura" value="${c:l('contatto.medico.anamnesi.data.chiusura')}:" />
+			<caribeldatebox hflex="15%" id="skm_data_chiusura" db_name="skm_data_chiusura" />
+			<label hflex="14%" value="${c:l('contatto.medico.anamnesi.motivo.chiusura')}:" />
+			<caribelcombobox hflex="27%" db_name="skm_motivo_chius" id="cbxMotivoChius" />
+			<button id="btn_riapri" label="${c:l('contatto.medico.anamnesi.riapri')}" hflex="13%" ></button>
+			<label hflex="11%" />
+		</hlayout>
+		<hlayout visible="false">
+			<label hflex="20%" value="${c:l('contatto.medico.anamnesi.descrizione.contatto')}:" />
+			<caribeltextbox hflex="56%" id="skm_descr_contatto" db_name="skm_descr_contatto" required="false"/>
+			<label hflex="24%" />
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('contatto.medico.anamnesi.medico.referente')}:" />
+			<caribelSearch hflex="56%"  required="true" id_cod="skm_medico" id_descr="skm_medico_descr"
+				db_name_cod="skm_medico" db_name_descr="desc_inf" id="cs_operatore_referente"
+				hflex_cod="18%" hflex_descr="38%" 
+				ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl" />
+			<label hflex="3%" value="${c:l('contatto.medico.anamnesi.medico.referente.dal')}:" />
+			
+			<caribeldatebox hflex="10%" id="skm_medico_da" db_name="skm_medico_da" constraint="no future" required="true"/>
+			<button id="btn_storico" label="${c:l('Contatti.buttonOperatoreRef')}"
+			image="/web/img/nurse16x16.png" tooltiptext="${c:l('Contatti.buttonOperatoreRef_descrizione')}"
+				hflex="11%" forward="onStorico"></button>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('contatto.medico.anamnesi.presidio')}:" />
+			<caribelSearch hflex="56%" id="cs_presidio"  readonly="true"
+			id_cod="skm_cod_presidio" id_descr="presidio_descr"  
+				db_name_cod="skm_cod_presidio" db_name_descr="desc_presidio"
+				ctrl="it.caribel.app.common.controllers.presidi.PresidiSearchCtrl" />
+            <label hflex="24%"></label>
+		</hlayout>
+		<hlayout width="100%" >
+             <label hflex="20%" value="${c:l('contatto.medico.anamnesi.anamnesi1')}:"  />
+            <caribeltextbox hflex="56%" id="skm_anamnesi1"
+                db_name="skm_anamnesi1" maxlength="2000" multiline="true" rows="2" sclass="asterTextArea"/>
+            <label hflex="24%"></label>
+        </hlayout>
+        <hlayout width="100%" >
+             <label hflex="20%" value="${c:l('contatto.medico.anamnesi.anamnesi2')}:"  />
+            <caribeltextbox hflex="56%" id="skm_anamnesi2"
+                db_name="skm_anamnesi2" maxlength="2000" multiline="true" rows="2" sclass="asterTextArea"/>
+            <label hflex="24%"></label>
+        </hlayout>
+        <hlayout width="100%" >
+             <label hflex="20%" value="${c:l('contatto.medico.anamnesi.anamnesi3')}:"  />
+            <caribeltextbox hflex="56%" id="skm_anamnesi3"
+                db_name="skm_anamnesi3" maxlength="2000" multiline="true" rows="2" sclass="asterTextArea"/>
+            <label hflex="24%"></label>
+        </hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('contatto.medico.anamnesi.segnalante')}:" />
+			<caribelcombobox hflex="56%" db_name="skm_inviato" id="cbxBoxSegn" autodrop="true"/>
+			<label hflex="24%" />
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('RichiestaMMG.principale.intensita_ass')}:" />
+			<caribelcombobox hflex="56%" db_name="skm_motivo" id="cbxMotivo" required="true"/>
+			<label hflex="24%" />
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('contatto.medico.anamnesi.tipo.utenza')}:" />
+			<caribelcombobox hflex="56%" db_name="skm_tipout" id="cbxTipute" disabled="true"/>
+			<label hflex="24%" />
+		</hlayout>   
+	</vlayout>
+</vlayout>

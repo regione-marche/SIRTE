@@ -1,0 +1,43 @@
+<vlayout id="panel_ubicazione_nesdiv" apply="it.caribel.app.sinssnt.controllers.report.common.PanelUbicazioneNesDivCtrl">
+	<hlayout>
+			<label hflex="20%" value="${c:l('generic.zona')}:" />
+			<caribelcombobox hflex="80%" id="zona" readonly="true"/>
+		</hlayout>	
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.distretto')}:" />
+			<caribelcombobox hflex="80%" id="distretto" readonly="true"/>
+		</hlayout>	
+	<hlayout id="riga_raggruppamento">
+			<label hflex="20%" value="${c:l('generic.raggruppamento')}:"/>
+			<div hflex="80%" align="left">
+				<caribelradiogroup id="raggruppamento">
+					<radio value="P" id="presidio" label="${c:l('PanelUbicazione.presidioCombo')}" checked="false"/>
+					<radio value="C" id="comune" label="${c:l('PanelUbicazione.comune')}" checked="false"/>
+					<radio value="A" id="area_dis" label="${c:l('PanelUbicazione.area_dis')}" checked="true"/>
+				</caribelradiogroup>
+			</div>
+	</hlayout>
+	<hlayout>
+			<label hflex="20%" id="presidio_comune_areadis"/>
+			<caribelcombobox hflex="80%" id="presidio_comune_area" readonly="true"/>
+		</hlayout>	
+     <hlayout id="riga_ubicazione">
+			<label id="lbl_ubicazione" hflex="20%" value="${c:l('PanelUbicazione.tipologia')}:"/>
+			<div hflex="40%" align="left">
+				<caribelradiogroup id="res_dom">
+					<radio value="R" id="residenza" label="${c:l('PanelUbicazione.tipologia.res')}" checked="false"/>
+					<radio value="D" id="domicilio" label="${c:l('PanelUbicazione.tipologia.dom')}" checked="true"/>					
+				</caribelradiogroup>
+			</div>
+			<div hflex="40%" align="left">
+				<caribelradiogroup id="soc_san">
+					<radio value="01" id="sociale" label="${c:l('PanelUbicazione.tipologia.soc')}" checked="false"/>
+					<radio value="02" id="sanitaria" label="${c:l('PanelUbicazione.tipologia.san')}" checked="true"/>					
+				</caribelradiogroup>
+			</div>
+	</hlayout>
+	
+</vlayout>
+
+		
+ 	

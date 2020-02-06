@@ -1,0 +1,78 @@
+<zk xmlns:n="native" xmlns:h="xhtml" xmlns:w="client">
+	<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+
+	<?component name="menu_left_operazioni" inline="true" macroURI="/web/ui/menu/menu_left_operazioni.zul"?>
+	<?component name="menu_left_puac" 		inline="true" macroURI="/web/ui/menu/menu_left_puac.zul"?>
+	<?component name="menu_left_agenda" 	inline="true" macroURI="/web/ui/menu/menu_left_agenda.zul"?>	
+	 <!-- <?component name="menu_left_servizi" 	inline="true" macroURI="/web/ui/menu/menu_left_servizi.zul"?> -->	
+	<?component name="menu_left_stampe" 	inline="true" macroURI="/web/ui/menu/menu_left_stampe.zul"?>	
+	<!--<?component name="menu_left_stampe2" 	inline="true" macroURI="/web/ui/menu/menu_left_stampe2.zul"?>	-->
+	<!--<?component name="menu_left_flussi" 	inline="true" macroURI="/web/ui/menu/menu_left_flussi.zul"?> -->
+	<?component name="menu_left_tabelle_aster" 		inline="true" macroURI="/web/ui/menu/menu_left_tabelle_aster.zul"?>
+	<!--<?component name="menu_left_tabelle_sinssnt" 	inline="true" macroURI="/web/ui/menu/menu_left_tabelle_sinssnt.zul"?>-->
+
+
+	<panel id="panel_generale" title="${c:l('menu.titolo2')}" framable="false" apply="it.caribel.app.sinssnt.controllers.menu.MenuGeneraleCtrl">
+		<panelchildren>
+			<tabbox id="tabbox_menu" mold="accordion">
+				<tabs>
+					<tab id="tab_menu_operazioni" label="${c:l('menu.operazioni')}" selected="false" />
+			   <!-- <tab id="tab_menu_puac" label="${c:l('menu.puac')}" selected="false" /> -->
+					<tab id="tab_menu_agenda" label="${c:l('menu.agenda')}" selected="false" />
+			   <!-- <tab id="tab_menu_servizi" label="${c:l('menu.servizi')}" selected="false" /> -->					
+					<tab id="tab_menu_stampe" label="${c:l('menu.stampe')}" selected="false" />					
+	    		<!-- <tab label="${c:l('menu.stampe2')}" selected="false" />	-->				
+				<!-- <tab id="tab_menu_flussi" label="${c:l('menu.flussi')}" selected="false" />  -->
+				    <tab id="tab_menu_tabelle1" label="${c:l('menu.tabelle.1')}" selected="false" />
+				<!--<tab id="tab_menu_tabelle2" label="${c:l('menu.tabelle.2')}" selected="false" />-->
+					<tab id="tab_menu_fittizio" label="" selected="false" visible="false" />
+				</tabs>
+				<tabpanels>
+					<tabpanel height="100%">
+						<menu_left_operazioni />
+					</tabpanel>
+
+					<!-- <tabpanel height="100%">
+						<menu_left_puac />
+					</tabpanel> -->
+
+					<tabpanel height="100%">
+						<menu_left_agenda />
+					</tabpanel>
+					
+					<!-- <tabpanel height="100%">
+						<menu_left_servizi />
+					</tabpanel> -->
+
+					<tabpanel height="100%">
+						<menu_left_stampe />
+					</tabpanel>
+					
+					<!--<tabpanel height="100%">
+						<menu_left_stampe2 />
+					</tabpanel>-->
+
+					
+					<!--<tabpanel height="100%">
+						<menu_left_flussi />
+					</tabpanel>-->
+
+					<tabpanel height="100%">
+						<menu_left_tabelle_aster />
+					</tabpanel>
+					
+					<!--<tabpanel height="100%">
+						<menu_left_tabelle_sinssnt />
+					</tabpanel>-->
+					
+					<tabpanel height="100%" visible="false">
+						<!-- tab_menu_fittizio serve per deselezionare al secondo click -->
+					</tabpanel>
+				</tabpanels>
+			</tabbox>
+		</panelchildren>
+	</panel>
+
+
+
+</zk>

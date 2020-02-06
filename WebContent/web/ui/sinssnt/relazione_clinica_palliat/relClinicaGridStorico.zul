@@ -1,0 +1,17 @@
+<?component name="relClinica_panel" inline="true" macroURI="/web/ui/sinssnt/relazione_clinica_palliat/relClinicaCommonPanel.zul"?>
+
+<window
+title="${c:l('relClinica.formTitle')}"
+apply="it.caribel.app.sinssnt.controllers.relazione_clinica_palliat.RelazioneClinicaGridCtrl"
+height="600px"
+width="950px"
+minheight="600"
+minwidth="950"
+closable="true"
+maximizable="true"
+sizable="true"
+border="normal">
+
+<relClinica_panel/>
+
+</window>

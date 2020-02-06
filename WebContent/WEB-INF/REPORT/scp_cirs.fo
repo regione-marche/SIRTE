@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+
+<!-- mfo:section.start="layout" rem="IMPOSTAZIONI DI PAGINA" -->
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="simple"
+        page-height="29.7cm"	page-width="21cm"
+        margin-top="1cm"	margin-bottom="1cm"
+        margin-left="1cm"	margin-right="1cm" >
+      <fo:region-body margin-top="2.5cm" margin-bottom="1cm"/>
+      <fo:region-before extent="3cm"/>
+      <fo:region-after extent="1cm"/>
+    </fo:simple-page-master>
+  </fo:layout-master-set>
+
+  <fo:page-sequence master-name="simple">
+    <fo:static-content flow-name="xsl-region-before">
+  <fo:table font-size="10pt">
+  <fo:table-column column-width="17.5cm"/>
+  <fo:table-body>
+  <fo:table-row height="9pt">
+   <fo:table-cell text-align="start" >
+
+	<fo:table font-size="10pt">
+	<fo:table-column column-width="11.5cm"/>
+	<fo:table-column column-width="6cm"/>
+	 <fo:table-body>
+	  <fo:table-row height="9pt">
+	    <fo:table-cell text-align="start" >
+		<fo:block start-indent="1mm" end-indent="1mm"
+		padding-top="0.5mm" font-weight="bold">
+			Cognome e Nome: #assistito#
+		</fo:block>
+	    </fo:table-cell>
+	    <fo:table-cell text-align="start" >
+		<fo:block start-indent="1mm" end-indent="1mm"
+		padding-top="0.5mm" font-weight="bold">
+			Data scheda: #data#
+		</fo:block>
+	    </fo:table-cell>
+	  </fo:table-row>
+          <fo:table-row height="1pt">
+             <fo:table-cell text-align="start" number-columns-spanned='2'>
+                  <fo:block>
+                          <fo:leader leader-pattern="rule"
+                             rule-thickness="0.5pt"
+                             leader-length="17cm"/>
+                  </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+
+	 </fo:table-body>
+	</fo:table>
+	    </fo:table-cell>
+	  </fo:table-row>
+	 </fo:table-body>
+	</fo:table>
+
+	  <fo:block font-size="12pt"  end-indent="1mm"
+		  font-weight="bold" text-align="start" space-before.optimum="12pt">
+		  CIRS (Cumulative Illness Rating Scale)
+	  </fo:block>
+
+	  <fo:block font-size="12pt" start-indent="1.1mm"
+		  end-indent="1mm" font-style="italic"
+		  text-align="start" padding-top="1mm">
+		  (LINN B.S. et al., Cumulative Illness Rating scale, J. Am. Getriatr. Soc. 1968)
+	  </fo:block>
+
+    </fo:static-content>
+
+
+    <!-- TITOLO DI PIEDE -->
+    <fo:static-content flow-name="xsl-region-after">
+      <fo:table font-size="8pt" width="auto" space-before.optimum="0.5cm">
+        <fo:table-column column-width="12cm"/>
+        <fo:table-column column-width="7cm"/>
+        <fo:table-body>
+          <fo:table-row height="10pt">
+            <fo:table-cell text-align="start">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >#txt#</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="end">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >elaborato del #data_stampa# (scp_cirs.fo)</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body">
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="istruzioni" rem="Istruzioni" -->
+<fo:table font-size="8pt">
+	<fo:table-column column-width="19.5cm"/>
+	 <fo:table-body>
+	  <fo:table-row height="9pt">
+           <fo:table-cell text-align="start">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm" font-weight="bold"
+                >ISTRUZIONI</fo:block>
+               <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"> 
+					Indicare per ogni apparato il punteggio che meglio esprime il grado di lesione. 
+					Per malattie che producono lesioni a pi&#249; di un apparato vanno segnalate tutte le lesioni 
+					presenti. Per esempio, un incidente cerebrovascolare acuto (acuto) pu&#0242; danneggiare 
+					contemporaneamente gli apparati neurologico, vascolare, muscolo scheletrico e cutaneo.
+					Un tumore metastatizzato va segnalato sia in corrispondenza dell'apparato sede del tumore 
+					primitivo, sia nel sistema vascolare, indicando l'entit&#0224; dell'interessamento linfonodale. 
+					Se un apparato &#0232; interessato da pi&#249; patologie va indicato il danno totale dalle diverse patologie.
+				</fo:block>
+				
+            	<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"> 
+					Per ogni apparato il punteggio &#0232; cos&#0237; attribuito:
+				</fo:block>
+            	<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"> 	
+					0 = nessuna patologia: "nessuna lesione a carico dell'organo/apparato".
+				</fo:block>
+            	<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"> 	
+					1 = patologia lieve: "il danno non interferisce con lo svolgimento delle 
+					normali attivit&#0224;; non &#0232; necessariamente richiesta terapia; 
+					la prognosi &#0232; favorevole (es. lesioni cutanee; ernie, emorroidi)".
+				</fo:block>
+            	<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"> 	
+					2 = patologie di media gravit&#0224;: "la lesione interferisce con le normali attivit&#0224; della vita; 
+					la terapia &#0232; necessaria; la prognosi &#0232; buona (es. calcolosi, diabete, 
+					fratture)".
+				</fo:block>
+            	<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"> 	
+					3 = patologia grave: la lesione &#0232; invalidante; &#0232; richiesto un trattamento urgente; 
+					la prognosi &#0232; dubbia (es carcinoma operabile,; enfisema polmonare; scompenso cardiaco)".
+				</fo:block>
+            	<fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"> 	
+					4 = patologia molto grave: "la lesione pu&#0242; essere fatale; &#0232; richiesto un trattamento di emergenza, 
+					oppure non &#0232; pi&#249; indicato alcun trattamento; la prognosi &#0232; grave 
+					(es. infarto miocardio; ictus; emorragia intestinale; embolia)".
+				</fo:block>
+				
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+<!-- mfo:section.end -->
+
+<!--mfo:section.start="tabScpCirs" -->
+
+	<fo:table padding-top="1cm">
+        	<fo:table-column column-width="1.4cm"/>
+        	<fo:table-column column-width="0.6cm"/>
+        	<fo:table-column column-width="17cm"/>
+          <fo:table-body>
+          
+         <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold"
+                >0-4
+                </fo:block>
+             </fo:table-cell>
+           <fo:table-cell font-size="10pt">
+             </fo:table-cell>  
+          </fo:table-row> 
+
+	    <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold"
+                >Apparato cardiovascolare - respiratorio:
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+
+        <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                    <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold"
+		    > ACIR1 </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" font-weight="bold"
+		padding-top="3mm">
+             	<fo:block start-indent="1mm" end-indent="1mm"
+                	text-align="end" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#acir1#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start"
+                >Cuore
+                </fo:block>
+             </fo:table-cell>
+        </fo:table-row>
+        
+         <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                    <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold"
+		    > ACIR2 </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" font-weight="bold"
+		padding-top="3mm">
+             	<fo:block start-indent="1mm" end-indent="1mm"
+                	text-align="end" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#acir2#
+                </fo:block>
+             </fo:table-cell>
+             
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start"
+                >Distretto vascolare (sangue, cellule e vasi sanguigni, midollo osseo, milza, tessuto linfatico)
+                </fo:block>
+             </fo:table-cell>
+        </fo:table-row>
+        
+         <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                    <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold"
+		    > ACIR3 </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" font-weight="bold"
+		padding-top="3mm">
+             	<fo:block start-indent="1mm" end-indent="1mm"
+                	text-align="end" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#acir3#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start"
+                >Apparato respiratorio (polmoni, bronchi, trachea)
+                </fo:block>
+             </fo:table-cell>
+        </fo:table-row>
+        
+         <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                    <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold"
+		    > ACIR4 </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" font-weight="bold"
+		padding-top="3mm">
+             	<fo:block start-indent="1mm" end-indent="1mm"
+                	text-align="end" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#acir4#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start"
+                >Apparato oculare/ORL (occhio, orecchio, naso, laringe)
+                </fo:block>
+             </fo:table-cell>
+        </fo:table-row>
+        
+      <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt">
+             </fo:table-cell>
+             <fo:table-cell number-columns-spanned='2' font-size="10pt">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold"
+                >  
+                </fo:block>
+             </fo:table-cell>
+             
+          </fo:table-row>  
+     
+      <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold"
+                >Apparato gastrointestinale:
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+     
+         <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                    <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold"
+		    > ACIR5 </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" font-weight="bold"
+		padding-top="3mm">
+             	<fo:block start-indent="1mm" end-indent="1mm"
+                	text-align="end" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#acir5#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start"
+                >Primo tratto intestinale (esofago, stomaco, duodeno, pancreas, vie biliari)
+                </fo:block>
+             </fo:table-cell>
+        </fo:table-row>
+        
+         <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                    <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold"
+		    > ACIR6 </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" font-weight="bold"
+		padding-top="3mm">
+             	<fo:block start-indent="1mm" end-indent="1mm"
+                	text-align="end" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#acir6#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start"
+                >Secondo tratto intestinale (intestino tenue, crasso, ernie)
+                </fo:block>
+             </fo:table-cell>
+        </fo:table-row>
+        
+         <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                    <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold"
+		    > ACIR7 </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" font-weight="bold"
+		padding-top="3mm">
+             	<fo:block start-indent="1mm" end-indent="1mm"
+                	text-align="end" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#acir7#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start"
+                >Fegato
+                </fo:block>
+             </fo:table-cell>
+        </fo:table-row>
+        
+ 		<fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt">
+             </fo:table-cell>
+             <fo:table-cell number-columns-spanned='2' font-size="10pt">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold"
+                >  
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>          
+   
+ 		 <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold"
+                >Apparato genito-urinario:
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+            
+         <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                    <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold"
+		    > ACIR8 </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" font-weight="bold"
+		padding-top="3mm">
+             	<fo:block start-indent="1mm" end-indent="1mm"
+                	text-align="end" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#acir8#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start"
+                >Rene
+                </fo:block>
+             </fo:table-cell>
+        </fo:table-row>
+        
+         <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                    <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold"
+		    > ACIR9 </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" font-weight="bold"
+		padding-top="3mm">
+             	<fo:block start-indent="1mm" end-indent="1mm"
+                	text-align="end" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#acir9#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start"
+                >Altri organi dell'apparato genito-urinario
+                </fo:block>
+             </fo:table-cell>
+        </fo:table-row>
+        
+         <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt">
+             </fo:table-cell>
+             <fo:table-cell number-columns-spanned='2' font-size="10pt">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold"
+                >  
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>  
+         
+ 		 <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold"
+                >Apparato muscolo-scheletrico e tegumenti:
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+        
+         <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                    <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold"
+		    > ACIR10 </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" font-weight="bold"
+		padding-top="3mm">
+             	<fo:block start-indent="1mm" end-indent="1mm"
+                	text-align="end" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#acir10#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start"
+                >Muscoli, ossa, cute
+                </fo:block>
+             </fo:table-cell>
+        </fo:table-row>
+        
+         <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt">
+             </fo:table-cell>
+             <fo:table-cell number-columns-spanned='2' font-size="10pt">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold"
+                >  
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>  
+         
+ 		 <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold"
+                >Sistema nervoso-psiche:
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+        
+         <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                    <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold"
+		    > ACIR11 </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" font-weight="bold"
+		padding-top="3mm">
+             	<fo:block start-indent="1mm" end-indent="1mm"
+                	text-align="end" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#acir11#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start"
+                >Patologia neurologica (cervello, midollo spinale, nervi periferici)
+                </fo:block>
+             </fo:table-cell>
+        </fo:table-row>
+        
+         <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                    <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold"
+		    > ACIR12 </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" font-weight="bold"
+		padding-top="3mm">
+             	<fo:block start-indent="1mm" end-indent="1mm"
+                	text-align="end" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#acir12#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start"
+                >Patologia psichiatrica (turbe mentali)
+                </fo:block>
+             </fo:table-cell>
+        </fo:table-row>
+        
+         <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt">
+             </fo:table-cell>
+             <fo:table-cell number-columns-spanned='2' font-size="10pt">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold"
+                >  
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>  
+         
+ 		 <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt">
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt">
+             </fo:table-cell>
+             <fo:table-cell  font-size="10pt">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold"
+                >Malattie sistemiche:
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+        
+         <fo:table-row height="10pt">
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                    <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start" font-weight="bold"
+		    > ACIR13 </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" font-weight="bold"
+		padding-top="3mm">
+             	<fo:block start-indent="1mm" end-indent="1mm"
+                	text-align="end" border-width="0.1pt"
+		border-style="solid"
+                >&#160;#acir13#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" padding-top="3mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+		text-align="start"
+                >Patologia endocrino-metabolica (incluse infezioni diffuse, intossicazioni)
+                </fo:block>
+             </fo:table-cell>
+        </fo:table-row>
+
+		<fo:table-row height="0.1mm">
+               	<fo:table-cell number-columns-spanned='3'
+			padding-top="1mm" padding-bottom="1mm">
+                       	<fo:block start-indent="1mm">
+			</fo:block>
+		</fo:table-cell>
+        </fo:table-row>
+    </fo:table-body>
+   </fo:table>
+
+	<fo:table padding-top="1cm">
+        	<fo:table-column column-width="7cm"/>
+        	<fo:table-column column-width="10cm"/>
+        <fo:table-body>
+
+          <fo:table-row>
+ 	      <fo:table-cell font-size="10pt" padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm" font-weight="normal"
+                 >Punteggio:
+		 </fo:block>
+              </fo:table-cell>
+ 	      <fo:table-cell font-size="10pt" padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm"
+		 font-weight="bold" text-align="start"
+                 > #scp_cirs_punt#
+		 </fo:block>
+              </fo:table-cell>
+          </fo:table-row >
+
+
+          <fo:table-row>
+ 	      <fo:table-cell font-size="10pt"
+			padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm"
+                 font-weight="normal" text-align="start"
+                 >Nome e qualifica di chi ha eseguito il rilievo:
+		 </fo:block>
+              </fo:table-cell>
+ 	      <fo:table-cell font-size="10pt"
+			padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm"
+                 font-weight="bold" text-align="start"
+                 >#nome_test#
+		 </fo:block>
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row>
+ 	      <fo:table-cell font-size="10pt" padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm"
+                 font-weight="normal"
+                 >Data Test:
+		 </fo:block>
+              </fo:table-cell>
+ 	      <fo:table-cell font-size="10pt" padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm"
+                 font-weight="bold"
+                 >#data_test#
+		 </fo:block>
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row>
+ 	      <fo:table-cell font-size="10pt" padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm"
+                 font-weight="normal"
+                 >Tempo T:
+		 </fo:block>
+              </fo:table-cell>
+ 	      <fo:table-cell font-size="10pt" padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm"
+                 font-weight="bold"
+                 >#tempo_t#
+		 </fo:block>
+              </fo:table-cell>
+          </fo:table-row>
+
+    </fo:table-body>
+   </fo:table>
+    </fo:flow> <!-- closes the flow element-->
+  </fo:page-sequence> <!-- closes the page-sequence -->
+<!-- mfo:section.end -->
+
+
+</fo:root>
+
+

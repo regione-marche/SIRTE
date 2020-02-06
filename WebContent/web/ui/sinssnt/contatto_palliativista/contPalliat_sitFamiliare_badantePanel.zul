@@ -1,0 +1,42 @@
+<vlayout sclass="asterLayout asterOverflow asterLayoutLastSpace" height="100%">
+
+	<hlayout>
+		<label hflex="20%" value="${c:l('schedaPalliat.badantePanel.cognomeNome')}:" />
+		<caribeltextbox id="skm_badante" db_name="skm_badante" maxlength="100" hflex="20%"/>
+		<label hflex="60%" />
+	</hlayout>
+	
+	<hlayout>
+		<label hflex="20%" value="${c:l('schedaPalliat.badantePanel.conoscenzaItaliano')}:" />
+		<caribelcombobox id="skm_badante_it" db_name="skm_badante_it" hflex="20%"/>
+		<label hflex="60%" />
+	</hlayout>
+	
+	<hlayout>
+		<label hflex="20%" value="${c:l('schedaPalliat.badantePanel.orePresenza')}:" />
+		<caribelintbox id="skm_badante_ore" db_name="skm_badante_ore" hflex="5%"/>
+		<label hflex="75%" />
+	</hlayout>
+	
+	<hlayout>
+		<label hflex="20%" value="${c:l('schedaPalliat.badantePanel.gestisceterapia')}:" />
+		<div hflex="20%" style="text-align:left">
+			<caribelradiogroup id="skm_badante_terap"
+				db_name="skm_badante_terap">
+				<radio
+					label="${c:l('schedaPalliat.segnalazionePanel.badanteSi')}"
+					value="S" />
+
+				<radio
+					label="${c:l('schedaPalliat.segnalazionePanel.badanteNo')}"
+					value="N" checked="true" />
+			</caribelradiogroup>
+		</div>
+		<label hflex="60%" />
+	</hlayout>
+
+
+</vlayout>
+
+
+

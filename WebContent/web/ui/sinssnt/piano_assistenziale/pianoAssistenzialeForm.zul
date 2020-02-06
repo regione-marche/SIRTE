@@ -1,0 +1,72 @@
+<?component name="pianoAssstenziale" 	inline="true" macroURI="/web/ui/sinssnt/piano_assistenziale/pianoAssistenziale.zul"?>
+<?component name="pianoAccessi" 		inline="true" macroURI="/web/ui/sinssnt/piano_assistenziale/pianoAccessi.zul"?>
+<?component name="verifiche" 			inline="true" macroURI="/web/ui/sinssnt/piano_assistenziale/verifiche.zul"?>
+<?component name="protocolliProcedure" 	inline="true" macroURI="/web/ui/sinssnt/piano_assistenziale/protocolliProcedure.zul"?>
+
+<window id="pianoAssistenzialeForm" title="${c:l('pianoAssistenziale.formTitle')}"
+	border="normal"
+	apply="it.caribel.app.sinssnt.controllers.pianoAssistenziale.PianoAssistenzialeFormCtrl"
+	vflex="true">
+
+	<vlayout vflex="true">
+
+		<caribelFormMenu />
+		
+ 		<vlayout vflex="true" sclass="asterOverflow" > 				
+			<vlayout hflex="100%" style="text-align: right; ">
+			<!-- elisa b 21/06/16: congelamento piano -->	
+				<hlayout >
+					<button id="btn_aggiornaPianoAss" label="${c:l('pianoAssistenziale.btn.aggiornaPianoAss')}" forward="onAggiornaPianoAss" visible="true"/>
+					<button id="btn_congelaPianoAss" label="${c:l('pianoAssistenziale.btn.congelaPianoAss')}" forward="onCongelaPianoAss" visible="true"/>
+				</hlayout>
+			</vlayout>
+ 			
+ 			<hlayout visible="false">
+				<caribeldatebox id="dateCartIni" db_name="cont_ini"/>
+				<caribeldatebox id="dateCartFin" db_name="cont_fin"/>
+ 				<caribeltextbox id="JCariTextFieldIndHide" db_name="indirizzo"/>
+ 		
+				<caribeldatebox id="jCariDateTextFieldHiddenProg" db_name=""/>
+				<caribeltextbox id="JCariTextFieldNProgetto" db_name="n_progetto"/>
+ 				<caribeltextbox id="cartella" db_name="n_cartella"/>
+				<caribeltextbox id="contatto" db_name="int_contatto"/>
+				
+				<caribeltextbox id="JCariTextFieldCodObiettivo" db_name="cod_obbiettivo"/>
+				<caribeltextbox id="JCariTextFieldNIntervento" db_name="n_intervento"/>
+				<caribeltextbox id="JCariTextFieldTipoOper" db_name="pa_tipo_oper"/>
+				
+				<caribeltextbox id="JCariTextFieldTipoAccesso" db_name="tipo_accesso"/>
+				<caribeltextbox id="JCariTextFieldTipo_oper" db_name="int_tipo_oper"/>
+				<caribeltextbox id="JCariTextFieldUsl" db_name="codazsan"/>
+				<caribeltextbox id="JCariTextFieldRegione" db_name="codreg"/>
+				
+				<!-- elisa b -->
+				<caribeltextbox id="flagStato" db_name="flag_stato"/>
+							
+			</hlayout>			
+			<tabbox width="100%" sclass="nav_tabs" id="tabbox">
+				<tabs id="tabs">
+					<tab label="${c:l('pianoAssistenziale.tabs.pianoAssistenziale')}" />
+					<tab label="${c:l('pianoAssistenziale.tabs.pianoAccessi')}" id="tabAccessi" />
+					<tab label="${c:l('pianoAssistenziale.tabs.verifiche')}" />
+					<tab label="${c:l('pianoAssistenziale.tabs.protocolliProcedure')}" id="tabProtocolliProcedure" />
+				</tabs>
+				<tabpanels id="tabpanels">
+					<tabpanel id="areaInterv">
+						<pianoAssstenziale />
+					</tabpanel>
+					<tabpanel id="areaPianoAccessi">
+						<pianoAccessi />
+					</tabpanel>
+					<tabpanel>
+						<verifiche />
+					</tabpanel>
+					<tabpanel id="panelProtocolliProcedure">
+						<protocolliProcedure />
+					</tabpanel>
+				</tabpanels>
+			</tabbox>
+ 		</vlayout>
+	</vlayout>
+
+</window>

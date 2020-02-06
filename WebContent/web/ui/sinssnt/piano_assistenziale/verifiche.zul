@@ -1,0 +1,42 @@
+<window border="none" id="datiVerifiche" width="100%"
+	apply="it.caribel.app.sinssnt.controllers.pianoAssistenziale.VerificheGridCRUDCtrl">
+	<hlayout width="100%" renderdefer="10" spacing="0px">
+		<vlayout width="100%" spacing="0px">
+			<hlayout width="100%">
+				<caribellistbox  showBtnDeleteInRow="true" showBtnEditInRow="true" 
+					id="caribellb2" rows="3" span="1"
+					db_name="gridPianoVer" hflex="true">
+					<listhead sizable="false">
+						<caribellistheader db_name="ve_data" hflex="min"
+							label="${c:l('pianoAssistenziale.verifiche.dataVerifica')}" width="10%" />
+						<caribellistheader db_name="ve_testo" hflex="true"
+							label="${c:l('pianoAssistenziale.verifiche.descrizione')}"
+							width="90%" />
+					</listhead>
+				</caribellistbox>
+			</hlayout>
+			<hlayout style="margin-top: -1px;" hflex="true" width="100%">
+				<caribelGridFormMenuHoriz />
+			</hlayout>
+			<hlayout width="100%">
+				<groupbox style="margin-top: -1px;" hflex="100%" closable="false">
+				<vlayout hflex="94%" vflex="true" id="myForm" sclass="asterLayout" >
+					<hlayout>
+						<label value="${c:l('pianoAssistenziale.verifiche.dataVerifica')}:"	hflex="20%" />
+						<caribeldatebox hflex="15%" db_name="ve_data" id="int_data" required="true" forward="onChange=onAggiornaData()" constraint="no future"/>
+						<label value=""	hflex="65%" />
+					</hlayout>
+					<hlayout vflex="true">
+						<label
+							value="${c:l('pianoAssistenziale.verifiche.descrizione')}:"
+							hflex="20%" />
+						<caribeltextbox vflex="true" sclass="asterTextArea"
+							id="ve_des" hflex="80%" db_name="ve_testo"
+							maxlength="2000" multiline="true" />					
+					</hlayout>
+				</vlayout>
+				</groupbox>
+			</hlayout>
+		</vlayout>
+	</hlayout>
+</window>

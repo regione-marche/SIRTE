@@ -1,0 +1,167 @@
+<?component name="dati_domicilio"    inline="true" macroURI="/web/ui/sinssnt/anagrafica/domicilio.zul"?>
+<?component name="dati_residenza"    inline="true" macroURI="/web/ui/sinssnt/anagrafica/residenza.zul"?>
+<?component name="dati_reperibilita" inline="true" macroURI="/web/ui/sinssnt/anagrafica/reperibilita.zul"?>
+<?component name="dati_stranieri"    inline="true" macroURI="/web/ui/sinssnt/anagrafica/stranieri.zul"?>
+<?component name="dati_esenzioni"    inline="true" macroURI="/web/ui/sinssnt/anagrafica/esenzioni.zul"?>
+<?component name="dati_team"		 inline="true" macroURI="/web/ui/sinssnt/anagrafica/TEAM.zul"?>
+
+<window id="cartellaForm" title="${c:l('cartellaForm.formTitle')}"
+	apply="it.caribel.app.sinssnt.controllers.anagrafica.CartellaFormCtrl"
+	border="normal" vflex="true">
+
+	<vlayout vflex="true">
+
+		<caribelFormMenu visible_btn_delete="false"/>
+ 		<vlayout id="panel_area" vflex="true" sclass="asterLayout asterOverflow" >
+			<hlayout width="100%" visible="false">
+				<label hflex="15%"
+					value="${c:l('cartellaForm.cartella')}:" />
+				<caribelintbox hflex="12%" id="n_cartella"
+					db_name="n_cartella" maxlength="13" />
+				<label hflex="73%" />
+			</hlayout>
+			<hlayout width="100%">
+				<label hflex="15%"
+					value="${c:l('cartellaForm.inizio')}:" />
+				<caribeldatebox id="data_apertura" hflex="12%" required="true"
+					db_name="data_apertura" onChange="" />
+				<button id="btn_anagra_sto" hflex="13%" label="${c:l('btn.datiStorici')}"
+					height="23px"
+					image="/web/img/history16x16.png"
+					tooltiptext="${c:l('btn.datiStorici')}" />
+				<label hflex="13%" value="${c:l('cartellaForm.fine')}:" />
+				<caribeldatebox id="data_chiusura" hflex="12%"
+					db_name="data_chiusura" onChange="" />
+				<label hflex="15%"
+					value="${c:l('cartellaForm.motivoChiusura')}:" />
+				<caribelcombobox hflex="20%" id="cbx_motivoChiusura"
+					db_name="motivo_chiusura" />
+			</hlayout>
+
+			
+
+			<hlayout width="100%">
+				<label hflex="15%"
+					value="${c:l('cartellaForm.codiceUsl')}:" />
+				<caribeltextbox hflex="15%" id="cod_usl"
+					db_name="cod_usl" maxlength="32" readonly="true"/>
+				<label hflex="12%"
+					value="${c:l('cartellaForm.codiceFiscale')}:" />
+				<caribeltextbox hflex="23%" id="cod_fiscale" required="true"
+					db_name="cod_fisc" maxlength="16" />
+				
+				<label value="${c:l('cartellaForm.sesso')}:" hflex="15%" />
+				<div align="left" hflex="20%">
+					<caribelradiogroup id="sesso" db_name="sesso">
+							<radio label="${c:l('cartellaForm.sesso.m')}"
+								value="M" selected="true"/>
+							<radio label="${c:l('cartellaForm.sesso.f')}"
+								value="F" />
+					</caribelradiogroup>
+				</div>
+
+				<label visible="false"
+					value="${c:l('cartellaForm.codiceSanitario')}:" />
+				<caribeltextbox id="cod_regionale" visible="false"
+					db_name="cod_reg" maxlength="20" />
+				
+			</hlayout>
+			<hlayout width="100%">
+				
+			</hlayout>
+			<hlayout width="100%">
+				<label hflex="15%"
+					value="${c:l('cartellaForm.cognome')}:" />
+				<caribeltextbox hflex="35%" id="cognome"
+					db_name="cognome" maxlength="40" required="true" />
+				<label hflex="15%" value="${c:l('cartellaForm.nome')}:" />
+				<caribeltextbox hflex="35%" id="nome" db_name="nome"
+					maxlength="40" required="true" />
+			</hlayout>
+
+			<hlayout width="100%">
+				<label hflex="15%"
+					value="${c:l('cartellaForm.nascita.comune')}:" />
+				<caribelSearch hflex_cod="13%" hflex_descr="37%" hflex="50%" id_descr="desc_com_nasc"  required="true" id_cod="cod_com_nasc"
+					db_name_cod="cod_com_nasc" db_name_descr="desc_com_nasc" id="comuneNascitaSearch"
+					ctrl="it.caribel.app.sinssnt.controllers.tabelle.comuni.ComuniSearchCtrl" />
+				<label value="${c:l('cartellaForm.nascita.data')}:"
+					hflex="23%" />
+				<caribeldatebox id="data_nasc" hflex="12%" required="true"
+					db_name="data_nasc" />
+			</hlayout>
+
+			<hlayout width="100%">
+				<label hflex="15%"
+					value="${c:l('cartellaForm.cittadinanza')}:" />
+				<caribelSearch hflex_cod="13%" hflex_descr="37%" hflex="50%" db_name_cod="cittadinanza"
+					db_name_descr="des_cittadin"
+					ctrl="it.caribel.app.common.controllers.cittadin.CittadinanzaSearchCtrl" />
+				<label hflex="35%" />
+			</hlayout>
+			<hlayout width="100%">
+				<label hflex="15%"
+					value="${c:l('cartellaForm.nazionalita')}:" />
+				<caribelSearch hflex_cod="13%" hflex_descr="37%" hflex="50%" db_name_cod="nazionalita"
+					db_name_descr="des_nazionalita"
+					ctrl="it.caribel.app.common.controllers.cittadin.CittadinanzaSearchCtrl" />
+				<label hflex="20%" value="" visible="true"/>
+				<label id="prova_placeholder" hflex="15%" value="" visible="true"/>				
+				<button id="prova" hflex="15%" label="provaChiusura" visible="false"
+					height="23px"
+					image="/web/img/history16x16.png"
+					tooltiptext="${c:l('btn.datiStorici')}" />				
+			</hlayout>
+			
+			<hlayout width="100%">
+				<label hflex="15%"
+					value="${c:l('cartellaForm.operatore')}:" />
+				<caribeltextbox hflex="13%" id="cod_operatore"
+					db_name="cod_operatore" maxlength="10" readonly="true"/>
+				<caribeltextbox hflex="72%" id="desc_operat"
+					db_name="desc_operat" readonly="true"/>
+			</hlayout>
+			
+			<hlayout width="100%">
+				<label hflex="65%" value="" />
+				<label hflex="23%"
+					value="${c:l('cartellaForm.dataVariazione')}:" />
+				<caribeldatebox hflex="12%" style="" id="data_variazione" required="true"
+					db_name="data_variazione" />
+			</hlayout>
+		<vlayout id="anagra_c" width="100%">
+			<tabbox id="panneli_anagrac" width="100%" sclass="nav_tabs" height="187px">
+				<tabs id="tabs">
+					<tab id="tab_domicilio" 	label="${c:l('cartellaForm.tabs.1')}" />
+					<tab id="tab_residenza" 	label="${c:l('cartellaForm.tabs.2')}" />
+					<tab id="tab_reperibilita" 	label="${c:l('cartellaForm.tabs.3')}" />
+					<tab id="tab_stranieri" 	label="${c:l('cartellaForm.tabs.6')}" />
+					<tab id="tab_esenzioni" 	label="${c:l('cartellaForm.tabs.4')}" />
+					<tab id="tab_team" 			label="${c:l('cartellaForm.tabs.5')}" />
+				</tabs>
+				<tabpanels>
+					<tabpanel id="panel_domicilio">
+						<dati_domicilio/>
+					</tabpanel>
+					<tabpanel id="panel_residenza">
+						<dati_residenza/>
+					</tabpanel>
+					<tabpanel id="panel_reperibilita">
+						<dati_reperibilita/>
+					</tabpanel>
+					<tabpanel id="panel_stranieri">
+						<dati_stranieri/>
+					</tabpanel>
+					<tabpanel id="panel_esenzioni">
+						<dati_esenzioni/>
+					</tabpanel>
+					<tabpanel id="panel_team">
+						<dati_team/>
+					</tabpanel>
+				</tabpanels>
+			</tabbox>
+			</vlayout>
+		</vlayout>
+<!-- 		<separator height="30px"></separator> -->
+	</vlayout>
+</window>

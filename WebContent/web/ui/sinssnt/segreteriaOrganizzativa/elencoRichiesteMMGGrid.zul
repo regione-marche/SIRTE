@@ -1,0 +1,30 @@
+<window title="${c:l('schedaInfGrid.gridTitleStorico')}"
+	apply="it.caribel.app.sinssnt.controllers.segreteriaOrganizzativa.ElencoRichiesteMMGGridCtrl"
+	sclass="asterOverlappedWindow" 
+	border="normal"
+	width="100%" vflex="true" >
+	
+	<vlayout height="100%">
+	
+		<caribelGridMenu visible_btn_new="false"/>
+		<vlayout sclass="asterLayout" vflex="true" spacing="0px">
+			<hlayout valign="middle" width="100%" visible="false">
+				<label hflex="20%"  value="${c:l('schedaInfGrid.cartella')}:" />
+				<caribeltextbox hflex="60%" id="tb_filter1" db_name="n_cartella" required="false" />
+				<label hflex="20%"  value="" />
+			</hlayout>
+		
+<!-- 			<caribelPaging sortable="true"/> -->
+			<caribellistbox vflex="true" hflex="true">
+				<listhead sizable="true">
+	 				<caribellistheader db_name="n_cartella"	  	  order_by="n_cartella"     visible="false" 							   width="10%" 			  sort="auto"/> 
+					<caribellistheader db_name="id_rich"	  	  order_by="id_rich"        label="${c:l('RichiestaMMG.progressivo')}"     width="10%" 			  sort="auto"/> 
+					<caribellistheader db_name="id_scheda_so"	  order_by="id_scheda_so"   label="${c:l('RichiestaMMG.schedaSO')}"        width="15%" 			  sort="auto"/>
+	 				<caribellistheader db_name="stato_desc"	      order_by="stato_desc"     label="${c:l('RichiestaMMG.stato')}"           width="20%" 			  sort="auto"/> 
+	 				<caribellistheader db_name="pr_mmg_data_richiesta"	  order_by="data_richiesta"      label="${c:l('RichiestaMMG.dataRichiesta')}" width="15%" sort="auto"/> 
+	 				<caribellistheader db_name="medico_desc" order_by="medico_desc" label="${c:l('RichiestaMMG.Medico')}"   width="40%" sort="auto"/>  
+				</listhead>
+			</caribellistbox>
+		</vlayout>
+	</vlayout>
+</window>

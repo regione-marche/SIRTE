@@ -1,0 +1,170 @@
+<window id="sntAutorizzazioneMMGADR"
+	title="${c:l('autorizzazionemmg.adr.gridTitleStorico')}"
+	closable="true"
+	apply="it.caribel.app.sinssnt.controllers.autorizzazioni.AutorizzazioniMMGAdrFormCtrl"
+	border="normal" vflex="true" width="100%">
+   
+	<vlayout vflex="true">   
+		<caribelGridFormMenuHoriz />
+		<hlayout>
+			<label hflex="20%" value="Cartella:" visible="false" />
+			<caribelintbox id="n_cartella" hflex="30%" db_name="n_cartella" visible="false" />
+			<label hflex="20%" value="pr_data" visible="false" />
+			<caribelintbox id="n_contatto" hflex="30%" db_name="n_contatto" visible="false" />
+		</hlayout>
+		<vlayout hflex="100%">
+			<caribellistbox  showBtnDeleteInRow="true" showBtnEditInRow="true" 
+				rows="4" id="tableAutorizzazioneAdr"
+				hflex="true" db_name="griglia_adr">
+				<listhead sizable="true">
+					<caribellistheader db_name="desc_MMGADR"
+						label="${c:l('autorizzazionemmg.adr.tb.mmg.pls')}" width="30%"/>
+					<caribellistheader db_name="skadr_data"
+						label="${c:l('autorizzazionemmg.adr.tb.data.proposta')}"
+						width="15%" />
+					<caribellistheader db_name="skadr_approva"
+						label="${c:l('autorizzazionemmg.adr.tb.approvata')}" width="10%"/>
+					<caribellistheader db_name="skadr_data_inizio"
+						label="${c:l('autorizzazionemmg.adr.tb.data.inizio')}" width="15%"/>
+					<caribellistheader db_name="skadr_data_fine"
+						label="${c:l('autorizzazionemmg.adr.tb.data.fine')}" width="15%"/>
+				</listhead>
+			</caribellistbox>
+		</vlayout>
+		<hlayout width="100%">
+			<label hflex="10%"></label>
+			<button id="btn_moduloAutorizzazione"
+				label="${c:l('autorizzazionemmg.adr.btn.modulo.autorizzazione')}"
+				hflex="20%" forward="onModuloAutorizzazione">
+			</button>
+			<label hflex="10%"></label>
+			<button id="btn_moduloInserimentoPaziente"
+				label="${c:l('autorizzazionemmg.adr.btn.inserimento.paziente')}"
+				hflex="20%" forward="onInserimentoPaziente">
+			</button>
+			<label hflex="10%"></label>
+			<button id="btn_pazienteGiaAssistito"
+				label="${c:l('autorizzazionemmg.adr.btn.paziente.gia.assistito')}"
+				hflex="20%" forward="onPazienteGiaAssitito">
+			</button>
+			<label hflex="10%"></label>
+		</hlayout>
+		<vlayout vflex="true" sclass="asterLayout asterOverflow">
+			<hlayout width="100%">
+							<groupbox hflex="100%" closable="false"
+								sclass="padTre">
+								<vlayout hflex="96%" vflex="true"
+									id="myForm" spacing="3px">
+									<hlayout>
+										<label hflex="20%"
+											id="lb_skadr_data"
+											value="${c:l('autorizzazionemmg.adr.principale.data.proposta')}:" />
+										<caribeldatebox required="true"
+											hflex="15%" id="skadr_data" db_name="skadr_data"
+											forward="onBlur=onBlurDataApertura()" />
+											<caribelintbox id="Keycartella" hflex="30%" db_name="n_cartella" visible="false" />
+											<caribelintbox id="Key_n_contatto" hflex="30%" db_name="n_contatto" visible="false" />
+										<label hflex="65%"></label>
+									</hlayout>
+									<hlayout>
+										<label hflex="20%"
+											value="${c:l('autorizzazionemmg.adr.principale.medico.distretto')}:" />
+										<caribelSearch hflex="70%"
+											id_cod="skadr_operatore" id_descr="desc_operADR"
+											db_name_cod="skadr_operatore" db_name_descr="desc_operADR"
+											id="medicoDistrettoSearch"
+											ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl" />
+										<label hflex="10%" />
+									</hlayout>
+									<hlayout>  
+										<label hflex="20%"
+											value="${c:l('autorizzazionemmg.adr.principale.medico.mmg')}:" />
+										<caribelSearch hflex="70%"
+											id_cod="skadr_mmgpls" id_descr="desc_MMGADR"
+											db_name_cod="skadr_mmgpls" db_name_descr="desc_MMGADR"
+											id="medicoMMGSearch"
+											hflex_cod="18%" hflex_descr="52%" 
+											ctrl="it.caribel.app.common.controllers.medici.MediciSearchCtrl" />
+										<label hflex="10%" />
+									</hlayout>
+									<hlayout>
+										<label hflex="20%"
+											value="${c:l('autorizzazionemmg.adr.principale.proposta.approvata')}:" />
+										<caribelradiogroup hflex="20%"
+											db_name="skadr_approva" id="skadr_approva">
+											<div align="left">
+												<radio label="${c:l('common.yes')}" value="S" id="aprovataS"/>
+												<radio label="${c:l('common.no')}" value="N" id="aprovataN"	checked="true" />
+											</div>
+										</caribelradiogroup>
+										<label hflex="15%"
+											value="${c:l('autorizzazionemmg.adr.principale.motivo.mancato.approvazione')}:" />
+										<caribeltextbox hflex="35%"
+											id="skadr_motivo" db_name="skadr_motivo" maxlength="200"
+											multiline="true" rows="2" sclass="asterTextArea" />
+										<label hflex="10%" />
+									</hlayout>
+									<hlayout>
+										<label hflex="20%" id="lb_skadr_data_inizio"
+											value="${c:l('autorizzazionemmg.adr.principale.data.inizio')}:" />
+										<caribeldatebox hflex="15%"
+											id="skadr_data_inizio" db_name="skadr_data_inizio" />
+										<label hflex="20%" id="lb_skadr_data_fine"
+											value="${c:l('autorizzazionemmg.adr.principale.data.fine')}:" />
+										<caribeldatebox hflex="15%"
+											id="skadr_data_fine" db_name="skadr_data_fine" />
+										<label hflex="30%" />
+									</hlayout>
+									<hlayout>
+										<label hflex="20%"
+											value="${c:l('autorizzazionemmg.adr.principale.frequenza.accessi')}:" />
+										<caribelcombobox hflex="30%" db_name="skadr_freq" id="cbxskadr_freq" 
+										forward="onChange=onChangeFrequenza"/>    
+										<label hflex="20%"
+											value="${c:l('autorizzazionemmg.adr.principale.numero.accessi.mesili')}:" />
+										<caribelintbox hflex="10%"
+											id="skadr_freq_mens" db_name="skadr_freq_mens" />
+										<label hflex="20%" />
+									</hlayout>
+									<hlayout>
+										<label hflex="20%"
+											value="${c:l('autorizzazionemmg.adr.principale.altro')}:" />
+										<caribeltextbox hflex="70%"
+											db_name="skadr_freq_altro" id="skadr_freq_altro" readonly="true" />
+										<label hflex="10%" />
+									</hlayout>
+									<hlayout>
+										<label hflex="20%"
+											value="${c:l('autorizzazionemmg.adr.principale.data.ricovero')}:" />
+										<caribeldatebox hflex="15%"
+											id="skadr_data_ricovero" db_name="skadr_data_ricovero" />
+										<label hflex="30%"
+											value="${c:l('autorizzazionemmg.adr.principale.data.inserimento.rsa')}:" />
+										<caribeldatebox hflex="15%"
+											id="skadr_data_rsa" db_name="skadr_data_rsa" />
+										<label hflex="20%" />
+									</hlayout>
+									<hlayout>
+										<label hflex="20%"
+											value="${c:l('autorizzazionemmg.adr.principale.istituto')}:" />
+										<caribelSearch hflex="60%"
+											id_cod="skadr_istituto" id_descr="des_istituto"
+											db_name_cod="skadr_istituto" db_name_descr="des_istituto"
+											id="istitutoSearch"
+											ctrl="it.caribel.app.rsa.controllers.istituti.IstitutiSearchCtrl" />
+										<label hflex="20%" />
+									</hlayout>
+									<hlayout>
+										<label hflex="20%"
+											value="${c:l('autorizzazionemmg.adr.principale.tipo.specifica')}:" />
+										<caribelcombobox hflex="40%"
+											db_name="skadr_specifica" id="cbxskadr_specifica" />
+										<label hflex="40%" />
+									</hlayout>
+								</vlayout>
+								
+							</groupbox>
+						</hlayout>
+		</vlayout>
+	</vlayout>
+</window>

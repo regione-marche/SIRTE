@@ -1,0 +1,39 @@
+<zk>
+<hlayout>
+	<label value="${c:l('smDiagnosiForm.diagnosi')} 1:" hflex="20%" />
+	<caribelSearch id_descr="desc_diagnosi1" hflex="80%"
+		db_name_cod="sd_diag_1" db_name_descr="desc_diag_1"
+		ctrl="${arg.ctrl_icd}" />
+</hlayout>
+<hlayout>
+	<label value="${c:l('smDiagnosiForm.diagnosi')} 2:" hflex="20%" />
+	<caribelSearch id_descr="desc_diagnosi2"  hflex="80%"
+		db_name_cod="sd_diag_2" db_name_descr="desc_diag_2"
+		ctrl="${arg.ctrl_icd}" />
+</hlayout>
+<hlayout>
+	<label value="${c:l('smDiagnosiForm.diagnosi')} 3:" hflex="20%" />
+	<caribelSearch id_descr="desc_diagnosi3" hflex="80%"
+		db_name_cod="sd_diag_3" db_name_descr="desc_diag_3"
+		ctrl="${arg.ctrl_icd}" />
+</hlayout>
+<hlayout>
+	<label value="${c:l('smDiagnosiForm.diagnosi')} 4:" hflex="20%" />
+	<caribelSearch id_descr="desc_diagnosi4" hflex="80%"
+		db_name_cod="sd_diag_4" db_name_descr="desc_diag_4"
+		ctrl="${arg.ctrl_icd}" />
+</hlayout>
+<hlayout>
+	<label value="${c:l('smDiagnosiForm.diagnosi')} 5:" hflex="20%" />
+	<caribelSearch id_descr="desc_diagnosi5" hflex="80%"
+		db_name_cod="sd_diag_5" db_name_descr="desc_diag_5"
+		ctrl="${arg.ctrl_icd}" />
+</hlayout>
+<hlayout>
+	<label value="${c:l('smDiagnosiForm.diagnosi')} 6:" hflex="20%" />
+	<caribelSearch id_descr="desc_diagnosi6" hflex="80%"
+		db_name_cod="sd_diag_6" db_name_descr="desc_diag_6"
+		ctrl="${arg.ctrl_icd}" />
+</hlayout>
+	
+</zk>

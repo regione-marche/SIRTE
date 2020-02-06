@@ -1,0 +1,58 @@
+<zk xmlns:n="native" xmlns:h="xhtml" xmlns:w="client" xmlns:ca="client/attribute">
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+
+	<?component name="menu_left_contatto_gen" 	inline="true" 	macroURI="/web/ui/menu/menu_left_contatto_gen.zul"?>
+	<?component name="menu_left_generale" 		inline="true" 	macroURI="/web/ui/menu/menu_left_generale.zul"?>
+	<?component name="comp_ambiente" 			inline="true" 	macroURI="~./ui/common/ambiente/label_ambiente.zul"?>
+
+	<zscript>
+		import it.caribel.app.sinssnt.controllers.contattoGenerico.ContattoGenFormCtrl;
+		import it.caribel.app.sinssnt.controllers.login.ManagerProfile;
+		import it.caribel.util.CaribelSessionManager;
+		
+		String tipo_oper = CaribelSessionManager.getInstance().getStringFromProfile(ManagerProfile.TIPO_OPERATORE);
+		String labelScheda = ContattoGenFormCtrl.getLabelScheda(tipo_oper);
+	</zscript>	
+
+	<vlayout id="menu_left" vflex="true" style="overflow-y:auto"  apply="it.caribel.app.sinssnt.controllers.menu.menu_left.ComposerMenuLeft">
+
+		<image ca:alt="${c:l('generic.logo')}" hflex="true" src="~./zul/img/logo.jpg" id="logo"></image>
+
+		<comp_ambiente/>
+
+		<vlayout id="menu_left_assistito">
+			<panel title="${c:l('menu.titolo1')}" framable="false">
+			<panelchildren>
+			<tabbox mold="accordion">
+				<tabs>
+					<tab label="${c:l('menu.lista_attivita')}" 		selected="false" id="listaAttivita" />
+					<tab label="${c:l('menu.lista_assistiti')}" 		selected="false" id="listaAssistiti" />
+					<tab label="${c:l('menu.ricerca.assistito')}" 	selected="false" id="ricercaAssistito" />
+					<tab label="${c:l('common.scheda.assistito')}" 	selected="false" id="menuLeftTabContatto"/>
+				</tabs>
+				<tabpanels>
+					<tabpanel visible="false"/>
+					
+					<tabpanel visible="false"/>
+
+					<tabpanel visible="false"/>
+
+					<tabpanel height="100%">
+						<menu_left_contatto_gen />
+					</tabpanel>
+
+					
+				</tabpanels>
+			</tabbox>
+			</panelchildren>
+			</panel>
+		</vlayout>
+		
+		<hlayout height="20px"></hlayout>
+		
+		<menu_left_generale />
+
+	</vlayout>
+
+
+</zk>

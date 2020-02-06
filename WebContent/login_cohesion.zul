@@ -1,0 +1,16 @@
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<?page title="${c:l('application.name')} - Login"?>
+
+<window onClientInfo="onClientInfo(event)" id="loginWin" border="normal" width="300px"
+	title="${c:l('application.name')}"
+	apply="it.caribel.app.sinssnt.controllers.login.LoginCohesionCtrl" mode="overlapped"
+	position="center">
+		
+     <zscript>
+     void onClientInfo(ClientInfoEvent evt) {
+         session.setAttribute("myClientinfo", evt);
+         //Clients.resizeTo(1024>evt.getDesktopWidth()?1024:evt.getDesktopWidth(),768>evt.getDesktopHeight()?768:evt.getDesktopHeight());
+     }
+    </zscript>
+    
+</window>

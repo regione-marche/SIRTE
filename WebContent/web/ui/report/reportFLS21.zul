@@ -1,0 +1,48 @@
+<?component name="panel_ubicazione" inline="true" macroURI="~./ui/common/ubicazione/PanelUbicazione.zul"?>
+
+<window 
+apply="it.caribel.app.sinssnt.controllers.report.ReportFLS21Ctrl"
+title="${c:l('menu.stampe.FLS21')}" 
+closable="true" sizable="true"
+mode="overlapped"
+border="normal"
+position="center"
+width="700px"
+height="400px">
+	
+	<vlayout vflex="true">
+	<caribelFormMenu visible_btn_print="true" visible_btn_delete="false" visible_btn_save="false"/>
+	<vlayout sclass="asterLayout asterOverflow" vflex="true">		
+	
+				
+			<panel_ubicazione hflex="70%" />
+	
+	
+		
+				
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.anno')}:" />
+			<div hflex="80%" width="100%">
+				<hlayout width="100%">
+					<caribeltextbox id="anno" hflex="20%"
+						required="true" />
+					<label hflex="60%"/>
+				</hlayout>
+			</div>
+		</hlayout>
+		
+	
+	<!-- 	<hlayout>
+				<label hflex="20%" value="${c:l('generic.formato_stampa')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="formatoStampa">					
+						<radio id="pdf" value="P" label="${c:l('generic.pdf')}" checked="true"/>
+						<radio id="html" value="E" label="${c:l('generic.excel')}"/>
+						<radio id="fls21" value="F" label="${c:l('generic.modulo.fls21')}"/>					
+					</caribelradiogroup>
+				</div>
+		</hlayout>
+	-->
+		</vlayout>
+	</vlayout>
+</window>

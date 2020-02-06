@@ -1,0 +1,54 @@
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+
+<vlayout id="menu_left_autorizzazioni" spacing="10px">
+	
+	<zscript>
+		import it.caribel.app.sinssnt.controllers.autorizzazioni.AutorizzazioniMMGFormCtrl;
+		import it.caribel.app.sinssnt.controllers.autorizzazioni.AutorizzazioniMMGGridCtrl; 
+		import it.caribel.app.sinssnt.controllers.autorizzazioni.AutorizzazioniMMGAdiFormCtrl;
+		import it.caribel.app.sinssnt.controllers.autorizzazioni.AutorizzazioniMMGAdpFormCtrl;
+		import it.caribel.app.sinssnt.controllers.autorizzazioni.AutorizzazioniMMGAdrFormCtrl;   
+		String uriSchedaMmgCorrente    		 = AutorizzazioniMMGFormCtrl.CTS_FILE_ZUL;
+		String uriGridMMGStorico			 = AutorizzazioniMMGGridCtrl.myPathZul;
+		String uriGridMMGADI			 	 = AutorizzazioniMMGAdiFormCtrl.CTS_FILE_ZUL;
+		String uriGridMMGADP   			     = AutorizzazioniMMGAdpFormCtrl.CTS_FILE_ZUL;
+		String uriGridMMGADR			     = "/web/ui/sinssnt/autorizzazioneMMG/autorizzazioneMMGAdr.zul";
+	</zscript>
+
+	<vlayout spacing="1px">
+		<!-- 
+		 <buttonmenucontainer
+		id="btn_sntAutorizzazioneMMG"
+		idForm="sntAutorizzazioneMMG"
+		label="${c:l('menu.autorizzazioni.mmg.scheda.corrente')}"
+		pathZulForm="${uriSchedaMmgCorrente}"
+		/>
+		   
+		<buttonmenucontainer
+		id="btn_sntAutorizzazioneMMGStorico"
+		idForm="sntAutorizzazioneMMGStorico"
+		label="${c:l('menu.autorizzazioni.mmg.storico')}"
+		pathZulForm="${uriGridMMGStorico}"
+		/>
+		 -->
+	
+		<buttonmenucontainer
+		id="btn_sntAutorizzazioneMMGADI"
+		idForm="sntAutorizzazioneMMGADI"
+		label="${c:l('menu.autorizzazioni.adi')}"
+		pathZulForm="${uriGridMMGADI}"/> 
+		
+		<buttonmenucontainer
+		id="btn_sntAutorizzazioneMMGADP"
+		idForm="sntAutorizzazioneMMGADP"
+		label="${c:l('menu.autorizzazioni.adp')}"
+		pathZulForm="${uriGridMMGADP}"/>
+		
+		<buttonmenucontainer
+		id="btn_sntAutorizzazioneMMGADR"
+		idForm="sntAutorizzazioneMMGADR"
+		label="${c:l('menu.autorizzazioni.adr')}"
+		pathZulForm="${uriGridMMGADR}"/>
+	</vlayout>
+
+</vlayout>

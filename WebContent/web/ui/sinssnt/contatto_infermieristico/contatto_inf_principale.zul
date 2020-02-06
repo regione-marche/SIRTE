@@ -1,0 +1,170 @@
+<vlayout id="principaleForm" >
+	<vlayout  hflex="1" 
+		sclass="asterLayout">
+		<hlayout width="100%">
+			<label id="lb_ski_data_apertura"
+				value="${c:l('SchedaInfForm.principale.dataApertura')}:"
+				hflex="20%" /> 
+			<caribeldatebox id="ski_data_apertura" required="true"
+				hflex="12%" db_name="ski_data_apertura" constraint="no future" forward="onBlur=onBlurDataApertura()" />
+			
+			<label id="label_modalita_tipologia" hflex="10%" />
+			<caribelcombobox hflex="19%" db_name="ski_modalita" id="cbx_modalita" />
+			<caribelcombobox hflex="19%" db_name="ski_tipologia" id="cbx_tipologia" />
+			
+			<label hflex="34%" id="label_prima_btn_accessi"></label>
+			
+			<button id="btn_scheda_so" label="${c:l('SchedaInfForm.principale.SchedaSO')}" hflex="24%" />			
+<!-- 			<label hflex="0.5%" id="label_between_btn_accessi"></label> -->
+<!-- 			<button id="btn_accessi"  -->
+<!-- 				label="${c:l('contatto.medico.anamnesi.accessi')}" hflex="24.5%" -->
+<!-- 				forward="onAccessi"> -->
+<!-- 			</button> -->
+		</hlayout>
+
+		<hlayout width="100%" visible="false">
+			<label
+				value="${c:l('SchedaInfForm.principale.descrContatto')}:"
+				hflex="20%" />
+			<caribeltextbox hflex="56%" id="ski_descr_contatto"
+				required="true" db_name="ski_descr_contatto" maxlength="80" readonly="true" />
+
+			<button id="btn_protesica"
+				label="${c:l('SchedaInfForm.buttonProtesica')}" hflex="10%"
+				forward="onProtesica">
+			</button>
+			
+			<label hflex="10%" id="btn_protesica_placeholder" visible="false"/>
+			
+			<label hflex="10%"></label>
+		</hlayout>
+
+		<hlayout width="100%">
+			<label hflex="20%"
+				value="${c:l('SchedaInfForm.principale.infermiereRef')}:" />
+			<caribelSearch id="cs_operatore_referente" hflex="56%" required="true"
+				db_name_cod="ski_infermiere" db_name_descr="desc_inf"
+				id_cod="ski_infermiere" id_descr="desc_inf"
+				ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl"  />
+			<label hflex="3%" value="${c:l('SchedaInfForm.principale.infermiereRef.dal')}:" />	
+			<caribeldatebox hflex="10%" required="true"
+				db_name="ski_infermiere_da" id="ski_infermiere_da"
+				constraint="no future" />
+			<button id="btn_storico" label="${c:l('Contatti.buttonOperatoreRef')}" hflex="11%"
+			image="/web/img/nurse16x16.png" tooltiptext="${c:l('Contatti.buttonOperatoreRef_descrizione')}"
+				forward="onStorico">
+			</button>
+			
+		</hlayout>
+
+		<hlayout width="100%">
+			<label hflex="20%"
+				value="${c:l('SchedaInfForm.principale.presidio')}:" />
+			<caribelSearch hflex="56%" id="cs_presidio"  readonly="true"
+				db_name_cod="ski_cod_presidio" db_name_descr="desc_presidio"
+				id_cod="ski_cod_presidio" id_descr="desc_presidio"
+				ctrl="it.caribel.app.common.controllers.presidi.PresidiSearchCtrl" />
+			<label hflex="24%"></label>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%"
+				value="${c:l('SchedaInfForm.principale.provenienza')}:" />
+			<caribelcombobox hflex="56%" db_name="ski_inviato"
+				id="cbx_provenienza" required="true"/>
+			<label hflex="24%"></label>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%"
+				value="${c:l('SchedaInfForm.principale.tipoUtenza')}:" />
+			<caribelcombobox hflex="56%" db_name="ski_tipout"
+				id="cbx_utenza" disabled="true"/>
+			<label hflex="24%"></label>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" id="label_motivo1"
+				value="${c:l('RichiestaMMG.principale.intensita_ass')}:" />
+			<caribelcombobox hflex="56%" db_name="ski_motivo"
+				id="cbx_motivo" required="true"/>
+			<caribeltextbox hflex="56%" id="ski_motivo_txt"
+				required="true" db_name="ski_motivo_txt" maxlength="80"/>
+			<label hflex="24%"></label>
+		</hlayout>
+
+	<vlayout id="sezione_ospedale">	
+		<hlayout>
+			<label hflex="20%"
+				value="${c:l('SchedaInfForm.principale.ospDimissione')}:" />
+			<caribelSearch hflex="56%" id_cod="ski_osp_dim"
+				id_descr="desc_ospdim" db_name_cod="ski_osp_dim"
+				db_name_descr="desc_ospdim" id="ospedaliSearch"
+				ctrl="it.caribel.app.common.controllers.ospedali.OspedaliSearchCtrl" />
+			<caribeldatebox hflex="10%" db_name="ski_data_dimiss"
+				id="ski_data_dimiss" constraint="no future" />
+
+			<label hflex="10%"></label>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%"
+				value="${c:l('SchedaInfForm.principale.repDimissione')}:" />
+			<caribelSearch hflex="56%" id_cod="ski_uo_dim"
+				id_descr="desc_rep" db_name_cod="ski_uo_dim"
+				db_name_descr="desc_rep" id="repartiSearch"
+				ctrl="it.caribel.app.common.controllers.reparti.RepartiSearchCtrl" />
+			<label hflex="24%"></label>
+		</hlayout>
+		<hlayout width="100%">
+			<label 
+				value="${c:l('SchedaInfForm.principale.trasmSchedaDim')}:"
+				hflex="20%" />
+			<caribelradiogroup hflex="10%" db_name="ski_trasm_sk" 
+				id="ski_trasm_sk" style="text-align:left" >
+				<radio label="${c:l('common.no')}  " value="N"
+					checked="true" />
+				<radio label="${c:l('common.yes')}  " value="S" />
+			</caribelradiogroup>
+			
+			<label id="label_dimis_progr_instead" hflex="25%"/>
+			<label id="label_dimis_progr"
+				value="${c:l('SchedaInfForm.principale.attivDimisProg')}:"
+				hflex="15%" />
+			<caribelradiogroup hflex="10%" db_name="ski_dimis_progr"
+				id="ski_dimis_progr" style="text-align:left">
+				<radio label="${c:l('common.no')}" value="N"
+					checked="true" />
+				<radio label="${c:l('common.yes')}" value="S" />
+			</caribelradiogroup>
+
+			<label
+				value="${c:l('SchedaInfForm.principale.lesioniDecubito')}:"
+				hflex="15%" />
+			<caribelradiogroup hflex="10%" db_name="ski_les_dec"
+				id="ski_les_dec" style="text-align:left">
+				<radio label="${c:l('common.no')}" value="N"
+					checked="true" />
+				<radio label="${c:l('common.yes')}" value="S" />
+			</caribelradiogroup>
+			<label hflex="20%" />
+
+		</hlayout>
+			
+		<hlayout width="100%">
+		<label hflex="6%"></label>	
+		<label hflex="13%"
+				value="${c:l('SchedaInfForm.principale.sintesiSchedaDimOsp')}" />
+				<label hflex="1%"></label>
+			<caribeltextbox hflex="56%" id="ski_sintesi_do"
+				db_name="ski_sintesi_do" maxlength="2000" multiline="true" rows="2"
+				sclass="asterTextArea" />
+			<label hflex="24%"></label>	
+		</hlayout>
+		<hlayout width="100%">
+			<label hflex="56%"></label>
+			<button id="btn_rfc115_valutazione"
+					hflex="20%"
+					forward="onRfc115Valutazione">
+			</button>
+			<label hflex="24%"></label>	
+		</hlayout>
+</vlayout>
+	</vlayout>
+</vlayout>

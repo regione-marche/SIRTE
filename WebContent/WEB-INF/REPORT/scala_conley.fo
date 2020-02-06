@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+
+<!-- mfo:section.start="layout" rem="IMPOSTAZIONI DI PAGINA" -->
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="simple"
+        page-height="29.7cm"	page-width="21cm"
+        margin-top="1cm"	margin-bottom="1cm"
+        margin-left="1cm"	margin-right="1cm" >
+      <fo:region-body margin-top="1.1cm" margin-bottom="1cm"/>
+      <fo:region-before extent="1.1cm"/>
+      <fo:region-after extent="1cm"/>
+    </fo:simple-page-master>
+  </fo:layout-master-set>
+
+  <fo:page-sequence master-name="simple">
+    <fo:static-content flow-name="xsl-region-before">
+  <fo:table font-size="10pt">
+  <fo:table-column column-width="19cm"/>
+  <fo:table-body>
+  <fo:table-row height="9pt">
+   <fo:table-cell text-align="start" >
+
+	<fo:table font-size="10pt">
+	<fo:table-column column-width="9cm"/>
+	<fo:table-column column-width="10cm"/>
+	 <fo:table-body>
+	  <fo:table-row height="9pt">
+	    <fo:table-cell text-align="start" >
+		<fo:block start-indent="1mm" end-indent="1mm"
+		padding-top="0.5mm" font-weight="bold">
+			Cognome e Nome: #assistito#
+		</fo:block>
+	    </fo:table-cell>
+	    <fo:table-cell text-align="end" >
+		<fo:block 
+		padding-top="0.5mm" font-weight="bold">
+			Data scheda: #data#
+		</fo:block>
+	    </fo:table-cell>
+	  </fo:table-row>
+	 </fo:table-body>
+	</fo:table>
+	    </fo:table-cell>
+	  </fo:table-row>
+          <fo:table-row height="1pt">
+             <fo:table-cell text-align="center" number-columns-spanned="2">
+                  <fo:block text-align="center" > 
+                          <fo:leader leader-pattern="rule" rule-thickness="0.5pt"
+                             leader-length="19cm"/>
+                  </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+
+	 </fo:table-body>
+	</fo:table>
+    </fo:static-content>
+
+
+    <!-- TITOLO DI PIEDE -->
+    <fo:static-content flow-name="xsl-region-after">
+      <fo:table font-size="8pt" width="auto" space-before.optimum="0.5cm">
+        <fo:table-column column-width="12cm"/>
+        <fo:table-column column-width="7cm"/>
+        <fo:table-body>
+          <fo:table-row height="10pt">
+            <fo:table-cell text-align="start">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >#txt#</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="end">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >elaborato del #data_stampa#</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body">
+     <fo:block font-size="12pt"  end-indent="1mm" font-weight="bold" text-align="center">
+		  SCALA CONLEY di valutazione del rischio di caduta del paziente
+	  </fo:block>
+	 <fo:block font-size="10pt"  end-indent="1mm" font-weight="bold" text-align="center" space-before="0.2cm">
+		  - Solo per pazienti &#62;= 65 anni -
+	  </fo:block>
+	<fo:block font-size="11pt"  line-height="14pt" end-indent="1mm" text-align="justify" space-before="0.5cm">
+		  Istruzioni: <fo:inline font-weight="bold">le prime tre domande devono essere rivolte solo al paziente</fo:inline>: possono essere rivolte ad un familiare o a un caregiver o all'infermiere, solo se il paziente ha severi deficit cognitivi o fisici che gli impediscono di rispondere.
+	  </fo:block>
+	<fo:block font-size="11pt" space-before="0.2cm" line-height="14pt" end-indent="1mm" text-align="justify">
+		Barrare il valore corrispondente alla risposta fornita.
+	  </fo:block>
+	<fo:block font-size="11pt"  space-before="0.2cm" line-height="14pt" end-indent="1mm" text-align="justify" >
+		  <fo:inline font-weight="bold">Come di calcola il punteggio: </fo:inline>ad ogni domanda &#232; attribuito un punteggio pari a zero se negativa, o variabile tra 1 e 3 se positiva. Per individuare il risultato occorre sommare i punteggi positivi. Il paziente &#232; considerato a rischio se totalizza un punteggio uguale o superiore a 2.
+	  </fo:block>
+	  
+	   
+<!-- mfo:section.end -->
+<!--mfo:section.start="tabConley" -->
+
+	<fo:table space-before.optimum="1cm" >
+        	<fo:table-column column-width="15cm"/>
+        	<fo:table-column column-width="4cm"/>
+          <fo:table-body>
+
+	    
+	    <fo:table-row height="8pt">
+             <fo:table-cell font-size="11pt" border-style="solid" border-width="0.1mm" border-bottom-style="none" >
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start" space-before="0.1cm">
+				<fo:inline font-weight="bold">Precedenti cadute</fo:inline> (domande rivolte al <fo:inline font-weight="bold">#domanda_pci#</fo:inline>)
+                </fo:block>              
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" border-style="solid" border-width="0.1mm" border-bottom-style="none">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold" space-before="0.1cm">
+ 				
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+ 		<fo:table-row height="8pt">
+            	<fo:table-cell font-size="11pt" border-style="solid" border-width="0.1mm" border-top-style="none" border-bottom-style="none">
+                		<fo:block start-indent="1mm" end-indent="1mm" text-align="start" space-before="0.3cm">
+					C1 - <fo:inline font-weight="bold"> &#200; caduto nel corso degli ultimi tre mesi?</fo:inline> 
+                		</fo:block>             
+             	</fo:table-cell>
+             	<fo:table-cell font-size="11pt" border-style="solid" border-width="0.1mm" border-top-style="none" border-bottom-style="none">
+                		<fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold" space-before="0.3cm">
+					#domanda_c1#
+                		</fo:block>
+             	</fo:table-cell>
+          	</fo:table-row>
+            <fo:table-row height="8pt">
+            	<fo:table-cell font-size="11pt" border-style="solid" border-width="0.1mm" border-top-style="none" border-bottom-style="none">
+                		<fo:block start-indent="1mm" end-indent="1mm" text-align="start" space-before="0.2cm">
+					C2 - <fo:inline font-weight="bold"> Ha mai avuto vertigini o capogiri?</fo:inline> (negli ultimi tre mesi) 
+                		</fo:block>             
+             	</fo:table-cell>
+             	<fo:table-cell font-size="11pt" border-style="solid" border-width="0.1mm" border-top-style="none" border-bottom-style="none">
+                		<fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold" space-before="0.2cm">
+					#domanda_c2#
+                		</fo:block>
+             	</fo:table-cell>
+          	</fo:table-row>
+            <fo:table-row height="8pt">
+            	<fo:table-cell font-size="11pt" border-style="solid" border-width="0.1mm" border-top-style="none">
+                		<fo:block start-indent="1mm" end-indent="1mm" text-align="start" space-before="0.2cm">
+					C3 - <fo:inline font-weight="bold"> Le &#232; mai capitato di perdere urine o feci mentre si recava in bagno?</fo:inline> (negli ultimi tre mesi)
+                		</fo:block>  				                     
+             	</fo:table-cell>
+             	<fo:table-cell font-size="11pt" border-style="solid" border-width="0.1mm" border-top-style="none">
+                		<fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold" space-before="0.2cm">
+					#domanda_c3#
+                		</fo:block>
+             	</fo:table-cell>
+          	</fo:table-row>
+          	
+          	<fo:table-row height="8pt">
+             <fo:table-cell font-size="11pt" border-style="solid" border-width="0.1mm" border-bottom-style="none" >
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start" space-before="0.1cm">
+				<fo:inline font-weight="bold">Deterioramento cognitivo</fo:inline> (Osservazione Infermieristica)
+                </fo:block>              
+             </fo:table-cell>
+             <fo:table-cell font-size="10pt" border-style="solid" border-width="0.1mm" border-bottom-style="none">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold" space-before="0.1cm">
+ 				
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+ 		<fo:table-row height="8pt">
+            	<fo:table-cell font-size="11pt" border-style="solid" border-width="0.1mm" border-top-style="none" border-bottom-style="none">
+                		<fo:block start-indent="1mm" end-indent="1mm" text-align="start" space-before="0.3cm">
+					C4 - <fo:inline font-weight="bold"> Compromissione della marcia, passo strisciante, ampia base di appoggio, marcia instabile</fo:inline> 
+                		</fo:block>             
+             	</fo:table-cell>
+             	<fo:table-cell font-size="11pt" border-style="solid" border-width="0.1mm" border-top-style="none" border-bottom-style="none">
+                		<fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold" space-before="0.3cm">
+					#domanda_det#
+                		</fo:block>
+             	</fo:table-cell>
+          	</fo:table-row>
+            <fo:table-row height="8pt">
+            	<fo:table-cell font-size="11pt" border-style="solid" border-width="0.1mm" border-top-style="none" border-bottom-style="none">
+                		<fo:block start-indent="1mm" end-indent="1mm" text-align="start" space-before="0.2cm">
+					C5 - <fo:inline font-weight="bold"> Agitato</fo:inline> (Definizione: eccessiva attivit&#224; motoria, solitamente non finalizzata ed associata ad agitazione interiore. Es.: incapacit&#224; di stare seduto fermo, si muove con irrequietezza, si tira i vestiti etc...)
+                		</fo:block>             
+             	</fo:table-cell>
+             	<fo:table-cell font-size="11pt" border-style="solid" border-width="0.1mm" border-top-style="none" border-bottom-style="none">
+                		<fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold" space-before="0.2cm">
+					#domanda_ag#
+                		</fo:block>
+             	</fo:table-cell>
+          	</fo:table-row>
+            <fo:table-row height="8pt">
+            	<fo:table-cell font-size="11pt" border-style="solid" border-width="0.1mm" border-top-style="none">
+                		<fo:block start-indent="1mm" end-indent="1mm" text-align="start" space-before="0.2cm">
+					C6 - <fo:inline font-weight="bold"> Deterioramento della capacit&#224; di giudizio/mancanza del senso del pericolo</fo:inline> 
+                		</fo:block>  
+				                  
+             	</fo:table-cell>
+             	<fo:table-cell font-size="11pt" border-style="solid" border-width="0.1mm" border-top-style="none">
+                		<fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold" space-before="0.2cm">
+					#domanda_giu#
+                		</fo:block>
+             	</fo:table-cell>
+          	</fo:table-row>
+          	
+ 		
+		<fo:table-row height="8pt">
+            	<fo:table-cell font-size="11pt" border-style="solid" border-width="0.1mm" >
+                		<fo:block start-indent="1mm" end-indent="1mm" text-align="start" space-before="0.2cm" font-weight="bold"  space-after="0.2cm"> 
+					TOTALE
+                		</fo:block>				
+             	</fo:table-cell>
+             	<fo:table-cell font-size="11pt" border-style="solid" border-width="0.1mm" >
+                		<fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold" space-before="0.2cm">
+					#punteggio#
+                		</fo:block>
+             	</fo:table-cell>
+          	</fo:table-row>
+
+    </fo:table-body>
+   </fo:table>
+
+
+	<fo:table padding-top="1cm">
+        	<fo:table-column column-width="9cm"/>
+        	<fo:table-column column-width="9cm"/>
+        <fo:table-body>
+
+          <fo:table-row>
+          <fo:table-cell></fo:table-cell>
+ 	      <fo:table-cell font-size="11pt" padding-top="3mm">
+              	<fo:block space-after="0.3cm" padding-top="0.5mm" start-indent="1mm" font-weight="normal" text-align="center" >
+				L'operatore
+		 	</fo:block>
+		 	
+		 	<fo:block padding-top="0.5mm" start-indent="1mm" font-weight="normal" text-align="center" >
+				________________________
+		 	</fo:block>
+              </fo:table-cell>
+ 	     
+          </fo:table-row>
+    </fo:table-body>
+   </fo:table>
+
+    </fo:flow> <!-- closes the flow element-->
+  </fo:page-sequence> <!-- closes the page-sequence -->
+<!-- mfo:section.end -->
+</fo:root>
+
+

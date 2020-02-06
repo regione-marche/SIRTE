@@ -1,0 +1,26 @@
+<window id="OperQual"
+title="${c:l('operqualForm.formTitle')}" 
+apply="it.caribel.app.sinssnt.controllers.sinssnt_operQual.OperQualFormCtrl" 
+closable="true" sizable="true"
+border="normal"
+width="400px">
+		
+	<vlayout vflex="true">
+
+		<caribelFormMenu />
+ 		<vlayout vflex="true" sclass="asterLayout asterOverflow asterLayoutLastSpace">
+			<hlayout>
+				<label hflex="30%" value="${c:l('generic.codice')}:" />
+				<caribeltextbox isDbKey="true" focus="true" hflex="15%" id="codice" db_name="cod_qualif" maxlength="6" required="true" />
+				<label hflex="55%" />
+			</hlayout>
+	
+			<hlayout>
+				<label hflex="30%" value="${c:l('generic.descrizione')}:" />
+				<caribeltextbox hflex="70%" db_name="desc_qualif" maxlength="20" required="true" />
+			</hlayout>
+			
+		</vlayout>
+	</vlayout>
+
+</window>

@@ -1,0 +1,103 @@
+<!-- mfo:section.start="layout" rem="IMPOSTAZIONI DI PAGINA" -->
+<html>
+<body>
+<table width=98% border=1>
+	<tr>
+	<tr>
+		<td width="150"></td>
+		<td width="250"></td>
+		<td width="250"></td>
+		<td width="150"></td>
+		<td width="650"></td>
+		<td width="200"></td>
+		<td width="370"></td>
+		<td width="250"></td>
+		<td width="200"></td>
+		<td width="250"></td>
+		<td width="200"></td>
+	</tr>
+	<tr>
+		<td align="left" colspan="11"><font size="4"> <b>ELENCO ANALITICO ASSISTITI PER MEDICO dal #data_inizio# al #data_fine# CON ALMENO UN CONTATTO </b> </font></td>
+	</tr>
+</table>
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="iniziotab" rem="TITOLI DELLA TABELLA" -->
+<table width=98% border=1>
+	<tr>
+		<td width="150"></td>
+		<td width="250"></td>
+		<td width="250"></td>
+		<td width="150"></td>
+		<td width="650"></td>
+		<td width="200"></td>
+		<td width="370"></td>
+		<td width="200"></td>
+		<td width="250"></td>
+		<td width="200"></td>
+		
+	</tr>
+	<tr>
+		<th bgcolor=lightgrey>Medico</th>
+		<th bgcolor=lightgrey>Zona</th>
+		<th bgcolor=lightgrey>Distretto</th>
+		<th bgcolor=lightgrey>#tipologia#</th>
+		<th bgcolor=lightgrey>Cartella</th>
+		<th bgcolor=lightgrey>Assistito</th>
+		<th bgcolor=lightgrey>Nascita</th>
+		<th bgcolor=lightgrey>Ingresso-Uscita</th>
+		<th bgcolor=lightgrey>Indirizzo (#dom_res#) - Citta'<br/>(Nome campanello) Telefono</th>
+		<th bgcolor=lightgrey>Nome MMG</th>
+	</tr>
+	<!-- mfo:section.end -->
+	
+	
+	<!-- mfo:section.start="rigatabella" rem="INIZIO PRIMA PARTE RIGA RIPETITIVA" -->
+	<tr>
+		<td align="left" >#descrizione_operatore#</td>
+		<td align="left" >#descrizione_zona#</td>
+		<td align="left" >#des_distr#</td>
+		<td align="left" >#descrizione#</td>
+		<td align="right" >#cartella# </td>
+		<td align="left" >#assistito#</td>
+		<td align="center" >#data_nasc#</td>
+		<td align="left" >#data_in#-#data_out# </td>
+		<td align="left" >#indirizzo# - #citta#<br/>
+						#nome_camp# #telefono1# 
+		</td>
+		<td align="left" >#medico#</td>
+	</tr>
+	<!-- mfo:section.end -->	
+	
+	<!-- mfo:section.start="finetab" -->
+	</table>
+	<!-- mfo:section.end -->
+	
+	
+	<!-- mfo:section.start="messaggio" rem="MESSAGGIO DI ERRORE" -->
+		<table width=98% border=1>
+	<tr>
+		<td width="150"></td>
+		<td width="250"></td>
+		<td width="250"></td>
+		<td width="150"></td>
+		<td width="650"></td>
+		<td width="200"></td>
+		<td width="370"></td>
+		<td width="250"></td>
+		<td width="200"></td>
+		<td width="250"></td>
+		<td width="200"></td>
+		
+	</tr>
+			<tr>
+				<td align="left" colspan="11"><font size="4"> <b>NON
+				SONO STATE REPERITE INFORMAZIONI DA STAMPARE</b></font></td>
+			</tr>
+		</table>
+<!-- mfo:section.end -->
+
+<!--mfo:section.start="finale"-->
+</body>
+</html>
+<!--mfo:section.end-->

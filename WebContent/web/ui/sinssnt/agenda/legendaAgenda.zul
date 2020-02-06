@@ -1,0 +1,25 @@
+<hlayout hflex="${arg.hflex}" sclass="normalText">
+	<label value="${c:l('legendaAgenda')}:"></label>
+<!-- 	<vlayout hflex="50%"> -->
+<!-- 		<hlayout> -->
+			<div sclass="legendaAgenda agenda0" ></div>
+			<label value="${c:l('legendaAgenda.0')}"></label>
+<!-- 		</hlayout> -->
+<!-- 		<hlayout> -->
+			<div sclass="legendaAgenda agenda1" ></div>
+			<label value="${c:l('legendaAgenda.1')}"></label>
+<!-- 		</hlayout> -->
+<!-- 	</vlayout> -->
+<!-- 	<vlayout hflex="50%"> -->
+<!-- 		<hlayout> -->
+			<div sclass="legendaAgenda agenda2" ></div>
+			<label value="${c:l('legendaAgenda.2')}"></label>
+<!-- 			<label value="${c:l('legendaAgenda.assistitoNoADI')}" zclass="assistitoInAgenda" style="font-size: 12px;"></label> -->
+			<label value="${c:l('legendaAgenda.assistitoADI')}" zclass="assistitoInAgenda assistitoADI" style="font-size: 12px;"></label>
+<!-- 		</hlayout> -->
+<!-- 		<hlayout> -->
+<!-- 			<div sclass="legendaAgenda agenda3" ></div> -->
+<!-- 			<label value="${c:l('legendaAgenda.3')}" hflex="40%"></label> -->
+<!-- 		</hlayout> -->
+<!-- 	</vlayout> -->
+</hlayout>

@@ -1,0 +1,14 @@
+<hlayout hflex="${arg.hflex}" sclass="normalText" style="padding:0px" >
+	<toolbar align="start" hflex="100%">
+		<datebox sclass="senzaSpazio" open="false" width="0px" forward="onChange=onCalendar" buttonVisible="false" visible="true" id="fakeDate"></datebox>
+		<toolbarbutton id="btn_update" 	image="/web/img/agenda/aggiorna.png" 	tooltiptext="${c:l('agenda.btn.aggiorna.tooltiptext')}" 	visible="true" />
+		<toolbarbutton id="btn_prec"	image="/web/img/agenda/prec.png"		tooltiptext="${c:l('agenda.btn.prec.tooltiptext')}" 	visible="true" forward="onPrec" />
+		<toolbarbutton id="btn_week" 	image="/web/img/agenda/date.png"	tooltiptext="${c:l('agenda.btn.calendario.tooltiptext')}" 	visible="true" />
+<!-- 		<calendar id="calendario" visible="false" /> -->
+<!-- 		<toolbarbutton id="btn_day" 	image="/web/img/agenda/orologio.png"	tooltiptext="${c:l('agenda.btn.orologio')}"		visible="true" /> -->
+<!-- 		<toolbarbutton id="btn_gotoDay" image="/web/img/agenda/giorno.png"		tooltiptext="${c:l('agenda.btn.giorno')}" 	visible="true" /> -->
+		<toolbarbutton id="btn_succ" 	image="/web/img/agenda/succ.png"		tooltiptext="${c:l('agenda.btn.suc.tooltiptext')}" 		visible="true" forward="onSucc" />
+<!-- 		<toolbarbutton id="btn_carica" forward="onCarica" image="/web/img/agenda/carica.png" tooltiptext="${c:l('agenda.btn.carica')}" -->
+<!-- 								label="" sclass="buttonAlignment" /> -->
+	</toolbar>
+</hlayout>

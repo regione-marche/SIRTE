@@ -1,0 +1,12 @@
+<hlayout vflex="true" hflex="true">
+		<caribellistbox vflex="true"  id="clbEsenzioni">
+			<listhead sizable="true">
+				<caribellistheader db_name="es_data_inizio" 
+					label="${c:l('common.dataInizio')}" width="15%" />
+				<caribellistheader 	db_name="es_data_fine"
+					label="${c:l('common.dataFine')}" width="15%" />
+				<caribellistheader 	db_name="descrizione"
+					label="${c:l('common.descrizione')}" width="70%" />
+			</listhead>
+		</caribellistbox>
+</hlayout>

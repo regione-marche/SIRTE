@@ -1,0 +1,152 @@
+	<div vflex="true">
+	<hlayout visible="false">
+		<caribeldatebox id="dateCartIni" db_name="cont_ini" />
+		<caribeldatebox id="dateCartFin" db_name="cont_fin" />
+
+		<caribeltextbox id="qualificaOperatore" db_name="int_qual_oper" />
+		<caribeltextbox id="tipo_prestazione" db_name="int_tipo_prest" />
+		<caribeltextbox id="contatto" db_name="int_contatto" />
+
+
+		<caribeltextbox id="tipooperatoreContstraint" />
+		<caribeltextbox id="JCariTextFieldArea"
+			db_name="int_cod_areadis" />
+		<caribeltextbox id="JCariTextFieldCod_comune"
+			db_name="int_cod_comune" />
+
+
+		<caribeltextbox id="JCariTextFieldChiaveCombo"
+			db_name="chiave_combo" />
+		<caribeltextbox id="JCariTextFieldTipoServizio"
+			db_name="tipo_servizio" />
+		<caribeltextbox id="JCariTextFieldTipoAccesso"
+			db_name="tipo_accesso" />
+		<caribeltextbox id="JCariTextFieldTipo_oper"
+			db_name="int_tipo_oper" />
+		<caribeltextbox id="JCariTextFieldUsl" db_name="codazsan" />
+		<caribeltextbox id="JCariTextFieldRegione" db_name="codreg" />
+		<caribeltextbox id="jCariTextFieldTipoOperConstraint"
+			db_name="tipo_oper_constraint" />
+
+		<caribeltextbox id="jCariTextFieldCombo"
+			db_name="jCariTextFieldCombo" />
+
+		<label hflex="20%"
+			value="${c:l('accessiPrestazioni.si_progr')}:" />
+		<caribelintbox hflex="10%" id="int_contatore" value="00000000"
+			db_name="int_contatore" maxlength="10" readonly="true"
+			isDbKey="true" />
+		<label hflex="20%"
+			value="${c:l('accessiPrestazioni.si_anno')}:" />
+		<caribeltextbox hflex="10%" id="int_anno" isDbKey="true"
+			db_name="int_anno" maxlength="4" />
+		<label hflex="40%" value="" />
+	</hlayout>
+	<hlayout visible="false">
+		<label value="${c:l('accessiPrestazioni.contatto')}:"
+			hflex="20%" id="lbl_contatto" />
+		<caribelcombobox db_name="" hflex="80%" required="true"
+			id="cbx_contatto" forward="onChange=onChangeContatto" />
+	</hlayout>
+
+	<vlayout id="hopVLayout" vflex="true"
+		sclass="asterLayout">
+		<hlayout visible="false">
+			<label value="${c:l('accessiPrestazioni.tipoOperatore')}:"
+				hflex="20%" />
+			<caribeltextbox id="qualOperatore" db_name="desc_qualif"
+				hflex="40%" readonly="true" />
+			<!-- 								<caribelcombobox id="qualOperatore" db_name="desc_qualif" hflex="40%" buttonVisible="false" required="true" disabled="true" /> -->
+			<button hflex="40%"
+				label="${c:l('accessiPrestazioni.apriCartella_btn')}"
+				id="btn_apriCartella" forward="onApriCartella">
+			</button>
+			<label value="" hflex="40%" id="lbl_noBtnApriCartella"
+				visible="false" />
+		</hlayout>
+		
+		<hlayout>
+			<label value="${c:l('accessiPrestazioni.assistito')}:"
+				hflex="15%" />
+			<caribelSearch id="assistito" hflex="35%" required="true"
+				db_name_cod="int_cartella" id_cod="n_cartella"
+				db_name_descr="cognome" id_descr="cognomeAss"
+				hflex_cod="30%" hflex_descr="70%"
+				ctrl="it.caribel.app.common.controllers.cartella.CartellaSearchCtrl" />
+			
+			<label hflex="15%" id="lbx_accessi_operatore" value="${c:l('accessiPrestazioni.operatore')}:" />
+			<caribelSearch id="operatore" hflex="35%" required="true"
+				db_name_cod="int_cod_oper" id_cod="cod_operatore" maxlength="10" 
+				db_name_descr="opcogn" id_descr="desc_operatore" 
+				hflex_cod="30%" hflex_descr="70%"
+				ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl" />
+		</hlayout>
+		
+		<hlayout>
+			<label value="${c:l('accessiPrestazioni.presidio')}:"
+				hflex="15%" />
+			<caribelSearch hflex="35%" db_name_cod="int_codpres"
+				required="true" id="presidio" id_cod="cod_presidio"
+				id_descr="desc_presidio" db_name_descr="despres"
+				hflex_cod="30%" hflex_descr="70%"
+				ctrl="it.caribel.app.common.controllers.presidi.PresidiSearchCtrl" />
+			
+			<label id="labelTipoAccesso"
+				value="${c:l('accessiPrestazioni.prestazioniForm.tipoPrestazione')}:"
+				hflex="15%" />
+			<!-- barbatrucco per IE8 margin-right:0px; padding-right:-3px" -->
+			<caribelradiogroup id="tipoPrestazione"
+				style="margin-right:0px; padding-right:-3px" hflex="35%"
+				db_name="int_ambdom" required="true">
+				<div align="left" width="99%">
+					<radio
+						label="${c:l('accessiPrestazioni.prestazioniForm.tipoPrestazione.domiciliare')}"
+						value="D" />
+					<radio
+						label="${c:l('accessiPrestazioni.prestazioniForm.tipoPrestazione.domiciliare')}"
+						value="N" visible="false" id="radioNessuno" />
+					<radio
+						label="${c:l('accessiPrestazioni.prestazioniForm.tipoPrestazione.nonDomiciliare')}"
+						value="A" />
+				</div>
+			</caribelradiogroup>	
+		</hlayout>
+		
+		<hlayout>
+			<label value="${c:l('accessiPrestazioni.dataPrestazione')}:"
+				hflex="15%" />
+			<caribeldatebox hflex="10%" db_name="int_data_prest"
+				id="int_data" required="true" forward="onChange=onAggiornaData()"
+				constraint="no future" />
+			<label value="${c:l('accessiPrestazioni.oraInizio')}:"
+				hflex="15%" />
+			<caribeltimebox hflex="10%" db_name="int_ora_in"
+				id="int_ora_in" format="HH:mm"
+				forward="onChange=onCalcolaDurata(1)" />
+			<label value="${c:l('accessiPrestazioni.oraFine')}:"
+				hflex="10%" />
+			<caribeltimebox hflex="10%" db_name="int_ora_out"
+				id="int_ora_out" format="HH:mm"
+				forward="onChange=onCalcolaDurata(2)" />
+			<label value="${c:l('accessiPrestazioni.durataVisita')}:"
+				hflex="20%" />
+			<caribelintbox id="int_tempo" db_name="int_tempo"
+				hflex="10%" />
+		</hlayout>
+		
+		<hlayout id="unitaFunzionale">
+			<label value="${c:l('accessiPrestazioni.unitaFunzionale')}:"
+				hflex="15%" id="labelUnitaF" />
+			<caribelcombobox db_name="int_coduf" hflex="85%"
+				required="true" id="cbx_unitaFunzionale"
+				forward="onChange=onChangeContatto" />
+		</hlayout>
+		
+		<hlayout vflex="true">
+			<label value="${c:l('accessiPrestazioni.note')}:" id="lbx_accessi_note" hflex="15%" />
+			<caribeltextbox rows="2" sclass="asterTextArea" hflex="85%"
+				db_name="int_note" maxlength="240" required="false"
+				multiline="true" />
+		</hlayout>		
+	</vlayout>
+	</div>

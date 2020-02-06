@@ -1,0 +1,20 @@
+<zk xmlns:n="native" xmlns:h="xhtml" xmlns:w="client">
+
+
+<style>
+	body { padding: 0 0;  /* 0 padding	on top and bottom and 0 padding on right and left */ }
+</style>
+
+
+<window apply="it.caribel.app.sinssnt.controllers.MainCtrl"
+ border="none"
+ height="100%"
+ width="100%"
+ mode="embedded"
+ position="center"
+ sizable="false"
+ maximizable="false">
+
+</window>
+
+</zk>

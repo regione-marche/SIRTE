@@ -1,0 +1,29 @@
+<vlayout id="conclusioneForm" vflex="true">
+	<vlayout vflex="true" hflex="1" spacing="3px" sclass="asterLayout">
+ 		<hlayout  width="100%" >
+ 			<label id="lb_skfpg_data_uscita" value="${c:l('SchedaInfForm.conclusione.data')}:" hflex="20%" />
+			<caribeldatebox id="skfpg_data_uscita" hflex="10%" db_name="skfpg_data_uscita" />
+			<label hflex="15%" />
+			<button id="btn_riapri" label ="${c:l('SchedaInfForm.conclusione.riapri')}" hflex="20%" forward="onRiapri"></button>
+			<label hflex="35%"></label>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('SchedaInfForm.conclusione.motivo')}:" />
+			<caribeltextbox hflex="50%" db_name="skfpg_motivo_txt" id="txt_motchiusura" />
+			<caribelcombobox hflex="50%" db_name="skfpg_motivo_uscita" id="cbx_motchiusura" />
+			<label hflex="30%"></label>			
+		</hlayout>
+		
+		<hlayout>
+			<label hflex="20%" value="${c:l('SchedaInfForm.conclusione.descrTrasferito')}:" />
+			<caribeltextbox hflex="50%" db_name="skfpg_trasfer" id="tbx_trasferito" />
+			<label hflex="30%"></label>			
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('SchedaInfForm.conclusione.annotazioni')}:" />
+			<caribeltextbox hflex="50%"	id="skfpg_note" db_name="skfpg_note" maxlength="2000"
+			multiline="true" rows="2" sclass="asterTextArea" />
+			<label hflex="30%"></label>
+		</hlayout>
+	</vlayout>
+</vlayout>

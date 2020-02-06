@@ -1,0 +1,81 @@
+<window title="${c:l('riepilogo.storico.infermiere.referente.formTitle')}"
+	apply="it.caribel.app.sinssnt.controllers.storico_referente.StoricoInfermiereReferenteGridCtrl"
+	sclass="asterOverlappedWindow"
+	id="medicoRefereteW"
+	height="${c:l('style.windowGrid.overlapped.height')}" sizable="true"
+	closable="true" mode="overlapped" position="center" border="normal">
+
+	<vlayout>
+		<vlayout spacing="0px" width="100%">
+			<hlayout valign="middle" width="100%">
+				<label hflex="20%"
+					value="${c:l('riepilogo.storico.medico.referente.cartella')}:" visible="false"/>
+				<caribeltextbox hflex="20%" readonly="true"
+					id="key_cartella" db_name="n_cartella" visible="false"/>
+				<label hflex="5%" value="" visible="false"></label>
+				<label hflex="15%"
+					value="${c:l('riepilogo.storico.medico.referente.operatore')}:" visible="false"/>
+				<caribeltextbox hflex="35%" readonly="true"
+					id="JLabelCognomeOp" db_name="JLabelCognomeOp" visible="false"/>
+				<label hflex="5%" value="" ></label>
+			</hlayout>
+			<hlayout valign="middle" width="100%">
+				<label hflex="20%"
+					value="${c:l('riepilogo.storico.medico.referente.contatto')}:"  visible="false"/>
+				<caribeltextbox hflex="20%" readonly="true"
+					id="key_contatto" db_name="n_contatto"  visible="false"/>
+				<label hflex="5%" value="" visible="false"></label>
+				<label hflex="15%"
+					value="${c:l('riepilogo.storico.medico.referente.assistito')}:" visible="false"/>
+				<caribeltextbox hflex="35%" readonly="true"
+					id="JLabelAssistito" db_name="JLabelAssistito" visible="false"/>
+				<label hflex="5%" value="" visible="false"></label>
+			</hlayout>
+			<!-- <caribelPaging /> -->
+			<hlayout width="100%">
+				<caribellistbox rows="15" hflex="true">
+					<listhead sizable="true">
+						<caribellistheader db_name="skir_infermiere_da"
+							width="15%" id="lbTbDtInizio"
+							label="${c:l('riepilogo.storico.medico.referente.tb.data.inizio')}" />
+						<caribellistheader db_name="descop" width="55%" id="lbTbOperatore"
+							label="${c:l('riepilogo.storico.infermiere.referente.tb.infermiere')}" />
+						<caribellistheader db_name="des_zona"
+							width="30%" id="lbTbZona"
+							label="${c:l('riepilogo.storico.medico.referente.tb.zona')}" />
+					</listhead>
+				</caribellistbox>
+			</hlayout>
+			<hlayout style="margin-top: -1px;" hflex="true" width="100%">
+				<caribelGridFormMenuHoriz />
+			</hlayout>
+			<hlayout width="100%">
+				<groupbox style="margin-top: -1px;" hflex="true" closable="false">
+					<vlayout hflex="true" vflex="true" id="myForm" sclass="asterLayout">
+						<hlayout>
+							<label hflex="20%" id="lbSkDataInizio"
+								value="${c:l('riepilogo.storico.medico.referente.data.inizio.incarico')}:" />
+							<caribeldatebox id="skir_infermiere_da"
+								hflex="15%" db_name="skir_infermiere_da" required="true"
+								constraint="no future" />
+							<caribeltextbox hflex="20%" readonly="true" id="keyCartella" db_name="n_cartella" visible="false"/>								
+							<caribeltextbox hflex="20%" readonly="true" id="keyContatto" db_name="n_contatto" visible="false"/>
+							<label hflex="61%" />
+						</hlayout>
+						<hlayout>
+							<label id="lbSkOperatore" hflex="20%" value="${c:l('riepilogo.storico.infermiere.referente.tb.infermiere')}:" />
+							<caribelSearch hflex="67%"  required="true" id_cod="skir_infermiere" id_descr="descop"
+								db_name_cod="skir_infermiere" db_name_descr="descop" id="infermiereReferenteSearch"
+								ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl" />
+							<label hflex="9%" />
+						</hlayout>
+					</vlayout>
+					
+				</groupbox>
+
+			</hlayout>
+
+		</vlayout>
+
+	</vlayout>
+	</window>

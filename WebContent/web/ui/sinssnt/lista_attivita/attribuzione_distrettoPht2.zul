@@ -1,0 +1,57 @@
+<?component name="panel_ubicazione" inline="true" macroURI="~./ui/common/ubicazione/PanelUbicazione.zul"?>
+<?component name="panel_ubicazioneDp" inline="true" macroURI="~./ui/common/ubicazione/PanelUbicazioneDuplicato.zul"?>
+
+<window  
+title="${c:l('attribuzione.distretto.referente.pht2')}"
+id="attribuzioneDistrettoA"
+apply="it.caribel.app.sinssnt.controllers.lista_attivita.AttribuzioneDistrettoPht2Ctrl"
+border="normal" mode="overlapped" closable="true" width="600px" height="300px" 
+position="center" 
+>
+<!-- 
+	<vlayout hflex="true" vflex="true">
+-->	
+		<vlayout sclass="asterLayout asterOverflow">
+			<hlayout style="margin:1px"> 
+				<label hflex="10%" />
+					<groupbox hflex="80%" closable="false">
+						<caption style="text-align:left;">
+							<div>
+								<label value="${c:l('attribuzione.distretto.referente.pht2.appartenenza')}">	</label>
+							</div>
+						</caption>
+						<panel_ubicazione id="ubicazioneAppartente" />
+					</groupbox>
+					<label hflex="10%" />
+			</hlayout>
+			<hlayout>
+				<label hflex="100%" value=""/>
+			</hlayout>
+			<hlayout  style="margin:1px"> 
+				<label hflex="10%" />
+					<groupbox hflex="80%" closable="false">
+						<caption style="text-align:left;">
+							<div>
+								<label value="${c:l('attribuzione.distretto.referente.pht2.destinazione')}">	</label>
+							</div>
+						</caption>
+						<panel_ubicazioneDp id="ubicazioneDestinazione"  />
+					</groupbox>
+					<label hflex="10%" />
+			</hlayout>
+			<hlayout>
+				<label hflex="100%" value=""/>
+			</hlayout>
+			<hlayout>
+				<label hflex="10%" value="" />
+				<button id="btnCarica"    label="${c:l('attribuzione.distretto.referente.pht2.carica.richiesta')}" hflex="20%" forward="onCarica"></button>
+				<button id="btnSposta"    label="${c:l('attribuzione.distretto.referente.pht2.sposta.richiesta')}" hflex="40%" forward="onSposta" disabled="true"></button>
+				<button id="btnClose"     label="${c:l('messagebox.btn.cancel')}" hflex="20%" forward="onChiudi"></button>
+				<label hflex="10%" value="" />
+			</hlayout>
+		</vlayout>
+	
+	<!-- 
+	</vlayout>
+	 -->
+</window>

@@ -1,0 +1,67 @@
+<vlayout>
+	<hlayout vflex="true" hflex="true" width="100%">
+		<caribellistbox showBtnDeleteInRow="true"
+			showBtnEditInRow="true" id="caribellb2" span="1 3"
+			db_name="griglia" hflex="true" vflex="true">
+			<listhead sizable="true" menupopup="auto">
+				<caribellistheader hflex="min" db_name="pre_cod_prest"
+					label="${c:l('common.codice')}" width="10%" />
+				<caribellistheader hflex="min" db_name="pre_des_prest"
+					label="${c:l('accessiPrestazioni.prestazioniForm.prestazione')}"
+					width="60%" sort="auto" />
+				<caribellistheader hflex="min" db_name="pre_numero"
+					label="${c:l('accessiPrestazioni.prestazioniGrid.quantita')}"
+					width="15%" sort="auto" />
+				<caribellistheader hflex="min" db_name="pre_importo"
+					label="${c:l('accessiPrestazioni.prestazioniForm.importo')}"
+					width="15%" sort="auto" />
+			</listhead>
+		</caribellistbox>
+	</hlayout>
+	<hlayout style="margin-top: -6px;" hflex="true" width="100%">
+		<caribelGridFormMenuHoriz />
+	</hlayout>
+	<hlayout width="100%">
+		<vlayout hflex="100%" vflex="true" id="myForm" sclass="asterLayout">
+			<hlayout>
+				<label
+					value="${c:l('accessiPrestazioni.prestazioniForm.prestazione')}:"
+					hflex="20%" id="labelPrestaziosinfneFarmaco" />
+				<caribelSearch id="prestazione" hflex="80%"
+					required="true" db_name_cod="pre_cod_prest"
+					id_cod="cod_prestazione" db_name_descr="pre_des_prest"
+					id_descr="desc_prestazione"
+					ctrl="it.caribel.app.common.controllers.prestazioni.PrestazioniSearchCtrl" />
+			</hlayout>
+			<hlayout>
+				<label
+					value="${c:l('accessiPrestazioni.prestazioniForm.quantita')}:"
+					hflex="20%" />
+				<caribelintbox db_name="pre_numero" hflex="12%"
+					maxlength="13" id="sp_quantita" />
+				<label
+					value="${c:l('accessiPrestazioni.prestazioniForm.importo')}:"
+					hflex="48%" />
+				<caribeldecimalbox db_name="pre_importo" hflex="20%"
+					id="pre_importo" format="##0.00" maxlength="7" />
+			</hlayout>
+			<hlayout>
+				<label
+					value="${c:l('accessiPrestazioni.prestazioniForm.descrizione')}:"
+					hflex="20%" />
+				<caribeltextbox rows="2" sclass="asterTextArea"
+					id="pre_des_dett" hflex="80%" db_name="prest_des_dett"
+					maxlength="255" multiline="true" />
+			</hlayout>
+			<hlayout>
+				<label value="${c:l('common.note')}:" hflex="20%" />
+				<caribeltextbox rows="2" sclass="asterTextArea"
+					id="pre_note" hflex="80%" db_name="pre_note" maxlength="240"
+					multiline="true" />
+			</hlayout>
+			<caribeltextbox db_name="pre_contatore" visible="false" />
+			<caribeltextbox id="pre_tempo" db_name="pre_tempo"
+				visible="false" />
+		</vlayout>
+	</hlayout>
+</vlayout>

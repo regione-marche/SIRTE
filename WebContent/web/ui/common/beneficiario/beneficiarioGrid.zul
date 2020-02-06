@@ -1,0 +1,42 @@
+<window title="${c:l('beneficiarioGrid.formTitle')}"
+	apply="it.caribel.app.common.controllers.beneficiario.BeneficiarioGridCtrl"	
+	sclass="asterOverlappedWindow"  sizable="true"
+	closable="true" mode="overlapped" position="center" border="normal" height="550px">
+
+	<vlayout height="100%">
+	
+		<caribelGridMenu  visible_btn_clear="true" />
+		<vlayout sclass="asterLayout" vflex="true" spacing="5px">
+			<hlayout valign="middle" width="100%">
+				<label hflex="20%"  value="${c:l('beneficiario.cognome')}:" />
+				<caribeltextbox hflex="60%" id="tb_filter1" db_name="b_cognome"/>
+				<label hflex="20%"  value="" />
+			</hlayout>
+			
+			<hlayout valign="middle" width="100%">
+				<label hflex="20%"  value="${c:l('beneficiario.nome')}:" />
+				<caribeltextbox hflex="60%" id="tb_filter2" db_name="b_nome"/>
+				<label hflex="20%"  value="" />
+			</hlayout>
+		 	
+			<caribelPaging/>
+			<caribellistbox vflex="true" hflex="true" >
+			<frozen columns="3"/>
+				<listhead sizable="true">
+					<caribellistheader db_name="b_codice"	  width="5em" label="${c:l('beneficiarioGrid.codice')}" />
+					<caribellistheader db_name="b_cognome"  width="13em" label="${c:l('beneficiarioGrid.cognome')}" />				
+					<caribellistheader db_name="b_nome"	  width="13em" label="${c:l('beneficiarioGrid.nome')}" />
+					<caribellistheader db_name="desc_comune"  width="13em" label="${c:l('beneficiarioGrid.desc_comune')}" />		
+					<caribellistheader db_name="b_data_nascita"	  width="8em" label="${c:l('beneficiarioGrid.data_nascita')}" />
+					<caribellistheader db_name="b_cod_fiscale"  width="13em" label="${c:l('beneficiarioGrid.cod_fisc')}" />			
+					<caribellistheader db_name="tipo_pagam_descr"	  width="13em" label="${c:l('beneficiarioGrid.tipo_pagam')}" />
+					<caribellistheader db_name="b_iban"  width="13em" label="${c:l('beneficiarioGrid.iban')}" />	
+					<caribellistheader db_name="b_abi"	  width="13em" label="${c:l('beneficiarioGrid.abi')}" />
+					<caribellistheader db_name="b_cab"  width="13em" label="${c:l('beneficiarioGrid.cab')}" />	
+					<caribellistheader db_name="banca_descr"	  width="20em" label="${c:l('beneficiarioGrid.banca')}" />
+																		
+				</listhead>
+			</caribellistbox>
+		</vlayout>		
+	</vlayout>
+</window>

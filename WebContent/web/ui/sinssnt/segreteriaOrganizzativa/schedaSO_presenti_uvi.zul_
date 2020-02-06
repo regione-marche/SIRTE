@@ -1,0 +1,87 @@
+<window id="SOPresentiUvi" closable="true"
+ apply="it.caribel.app.sinssnt.controllers.segreteriaOrganizzativa.SOPresentiUviCtrl"
+ border="none" width="100%">
+<vlayout id="SOPresentiUviDet" > 
+	<vlayout width="100%" spacing="0px" >
+		<hlayout width="100%">
+			<caribellistbox  showBtnDeleteInRow="true" showBtnEditInRow="true" 
+				rows="6" db_name="griglia" hflex="true" id="griglia_uvi">
+				<listhead sizable="true">
+<!-- 				"pr_data##n_cartella##pr_progr##pr_operatore##      cognome_op##nome_op## pr_tipo##desc_qualifica##pr_partecipa##pr_responsabile" -->
+<!-- 				Data Progetto##Cartella##Progr##Codice Operatore## Cognome##Nome##   Codice Qualifica##Qualifica##Partecipa##Responsabile" -->
+					<caribellistheader db_name="cognome_op"      label="${c:l('segreteria.organizzativa.scheda.presenti.uvi.tb.cognome')}"      width="27%" />
+					<caribellistheader db_name="nome_op"         label="${c:l('segreteria.organizzativa.scheda.presenti.uvi.tb.nome')}"         width="27%" />
+					<caribellistheader db_name="pr_tipo_descr"  label="${c:l('segreteria.organizzativa.scheda.presenti.uvi.tb.qualifica')}"    width="23%" />
+					<caribellistheader db_name="pr_partecipa_descr" 	 label="${c:l('segreteria.organizzativa.scheda.presenti.uvi.tb.partecipa')}"    width="10%" />
+					<caribellistheader db_name="pr_responsabile_descr" label="${c:l('segreteria.organizzativa.scheda.presenti.uvi.tb.responsabile')}" width="13%" />
+				</listhead>
+			</caribellistbox>
+		</hlayout>
+		<hlayout style="margin-top: -1px;" hflex="true" width="100%" id="menuDett">
+			<caribelGridFormMenuHoriz />
+		</hlayout>
+		<hlayout width="100%">
+				<groupbox style="margin-top: -1px;" hflex="100%" closable="false">
+			<vlayout hflex="true" id="myForm" sclass="asterLayout" >
+					<hlayout visible="false">
+						<caribelintbox hflex="15%" readonly="true" id="keyCartella" db_name="n_cartella" visible="false"/>								
+						<caribelintbox hflex="15%" readonly="true" id="keyIdSkSo" db_name="id_skso" visible="false"/>
+						<caribelintbox hflex="15%" readonly="true" id="keyIdPrPresenza" db_name="pr_presenza" visible="false"/>
+						<label hflex="66%" visible="false"/>
+					</hlayout>   
+					<hlayout>
+						<label hflex="20%"
+							value="${c:l('segreteria.organizzativa.scheda.presenti.uvi.tipo')}:" />
+						<caribelcombobox hflex="60%" db_name="pr_tipo" id="cbx_pr_tipo" required="true" 
+						forward="onChange=onChangeTipoPresentiUvi"/>
+						<label hflex="16%"></label>
+					</hlayout>
+ 
+ 					<hlayout id="riga_operatore_searc">
+						<label hflex="20%" value="${c:l('segreteria.organizzativa.scheda.presenti.uvi.operatore')}:" />
+						<caribelSearch id="cs_pr_operatore" hflex="60%" 
+								db_name_cod="pr_operatore" db_name_descr="pr_operatore_descr"
+								id_cod="pr_operatore" id_descr="pr_operatore_descr"
+								ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl" />
+						<label hflex="16%" />
+					</hlayout>
+					<hlayout width="100%" style="text-align:left;margin:1px">
+						<groupbox hflex="100" closable="false">
+							<caption>
+								<div >
+									<label value="${c:l('segreteria.organizzativa.scheda.presenti.operatore.non.codificati')}">	</label>
+								</div>
+							</caption>
+							<hlayout width="100%" style="text-align:right;margin:1px">
+								<label hflex="20%" value="${c:l('segreteria.organizzativa.scheda.presenti.operatore.cognome')}:" />
+								<caribeltextbox hflex="25%" id="pr_operatore_cognome" db_name="pr_operatore_cognome" maxlength="30"/>
+								<label hflex="20%" value="${c:l('segreteria.organizzativa.scheda.presenti.operatore.nome')}:" />
+								<caribeltextbox hflex="25%" id="pr_operatore_nome" db_name="pr_operatore_nome" maxlength="30"/>
+								<label hflex="6%"></label>
+							</hlayout> 	
+						</groupbox>
+					</hlayout>
+					
+					<hlayout >
+						<label hflex="20%" value="${c:l('segreteria.organizzativa.scheda.presenti.uvi.partecipa')}:"  />
+						<div align="left" hflex="25%" >
+							<caribelradiogroup db_name="pr_partecipa" id="pr_partecipa">
+								<radio label="${c:l('common.yes')}" value="S" />
+								<radio label="${c:l('common.no')}" value="N" checked="true"/>
+							</caribelradiogroup>
+						</div>
+						<label hflex="20%" value="${c:l('segreteria.organizzativa.scheda.presenti.uvi.responsabile')}:" />
+							<div align="left" hflex="25%">
+								<caribelradiogroup db_name="pr_responsabile" id="pr_responsabile">
+									<radio label="${c:l('common.yes')}" value="S" />
+									<radio label="${c:l('common.no')}" value="N" checked="true"/>
+								</caribelradiogroup>
+							</div>
+						<label hflex="6%"></label>
+					</hlayout>
+			</vlayout>
+				</groupbox>
+		</hlayout>
+	</vlayout>
+</vlayout>
+</window>

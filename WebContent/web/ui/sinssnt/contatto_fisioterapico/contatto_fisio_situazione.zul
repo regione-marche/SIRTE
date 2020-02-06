@@ -1,0 +1,109 @@
+<vlayout id="situazioneForm" vflex="true">
+	<vlayout hflex="1" spacing="3px" sclass="asterLayout">
+ 		<hlayout width="100%" valign="middle" style="text-align:left;margin:1px">
+			<groupbox hflex="100" closable="false">
+				<caption>
+					<div>
+						<label
+							value="${c:l('SchedaFisioForm.situazione_fam.groupbox1')}:">
+						</label>
+					</div>
+				</caption>
+				<hlayout  width="100%" >
+					<div>
+			 			<label value="${c:l('SchedaFisioForm.situazione_fam.numero')}:" hflex="20%" />
+						<caribelintbox hflex="30%" db_name="skf_nucfam_num" id="skf_nucfam_num"
+							maxlength="3" readonly="false"/>
+						<label hflex="50%"></label>
+					</div>	
+				</hlayout>
+				
+				<hlayout  width="100%" >
+				<label hflex="50%"></label>
+				</hlayout>
+				
+				<hlayout  width="100%" >
+					<div align="right">
+						<label value="${c:l('SchedaFisioForm.situazione_fam.presente')}:" hflex="20%" />
+					</div>		
+					<caribelradiogroup hflex="30%" db_name="skf_nucfam_pres" id="skf_nucfam_pres" forward="onChangeNucfamPresente">
+						<div align="left">
+							<radio label="${c:l('common.yes')}" value="S" />
+							<radio label="${c:l('common.no')}" value="N" checked="true"/>
+						</div>
+					</caribelradiogroup>
+					<label value="${c:l('SchedaFisioForm.situazione_fam.collaborante')}:" hflex="20%" />
+					<caribelradiogroup hflex="30%" db_name="skf_nucfam_coll" id="skf_nucfam_coll" forward="onChangeNucfamColl">
+					<div align="left">
+						<radio label="${c:l('common.yes')}" value="S" />
+						<radio label="${c:l('common.no')}" value="N" checked="true"/>
+					</div>
+					</caribelradiogroup>
+					</hlayout>
+			</groupbox>			
+			</hlayout>	
+			<hlayout width="100%" style="text-align:left;margin:1px">
+			<groupbox hflex="100" closable="false">
+				<caption>
+					<div>
+						<label
+							value="${c:l('SchedaFisioForm.situazione_fam.groupbox2')}:">
+						</label>
+					</div>
+				</caption>
+				<hlayout  width="100%" >
+					<div align="right">
+		 				<label value="${c:l('SchedaFisioForm.situazione_fam.scale')}:" hflex="20%" />
+		 			</div>
+					<caribelradiogroup hflex="30%" db_name="skf_sitabit_scale" id="skf_sitabit_scale" >
+						<div align="left">
+							<radio label="${c:l('common.yes')}" value="S" />
+							<radio label="${c:l('common.no')}" value="N" checked="true"/>
+						</div>
+					</caribelradiogroup>
+					<div align="right">
+						<label value="${c:l('SchedaFisioForm.situazione_fam.bagno')}:" hflex="20%" />
+					</div>	
+					<caribelradiogroup hflex="30%" db_name="skf_sitabit_bagno" id="skf_sitabit_bagno" >
+						<div align="left">
+							<radio label="${c:l('common.yes')}" value="S" />
+							<radio label="${c:l('common.no')}" value="N" checked="true"/>
+						</div>
+					</caribelradiogroup>
+				</hlayout>
+				<hlayout  width="100%" >
+					<div align="right">
+						<label value="${c:l('SchedaFisioForm.situazione_fam.camera')}:" hflex="20%" />
+					</div>	
+					<caribelradiogroup hflex="30%" db_name="skf_sitabit_camera" id="skf_sitabit_camera"> 
+						<div align="left">
+							<radio label="${c:l('common.yes')}" value="S" />
+							<radio label="${c:l('common.no')}" value="N" checked="true"/>
+						</div>
+					</caribelradiogroup>
+					<div align="right">
+						<label value="${c:l('SchedaFisioForm.situazione_fam.altro')}:" hflex="20%" />
+					</div>
+					<caribelradiogroup hflex="30%" db_name="skf_sitabit_altro" id="skf_sitabit_altro">
+						<div align="left">
+							<radio label="${c:l('common.yes')}" value="S" />
+							<radio label="${c:l('common.no')}" value="N" checked="true"/>
+						</div>
+					</caribelradiogroup>
+				</hlayout>
+				<hlayout  width="100%" >
+					<label hflex="27%" />
+					<div align="right">
+						<label value="${c:l('SchedaFisioForm.situazione_fam.ausili')}:" hflex="30%" />
+					</div>	
+					<caribelradiogroup hflex="30%" db_name="skf_sitabit_ausili" id="skf_sitabit_ausili">
+						<div align="left">
+							<radio label="${c:l('common.yes')}" value="S" />
+							<radio label="${c:l('common.no')}" value="N" checked="true"/>
+						</div>
+					</caribelradiogroup>
+				</hlayout>
+			</groupbox>			
+		</hlayout>				
+	</vlayout>
+</vlayout>

@@ -1,0 +1,43 @@
+<?root-attributes lang="it" xml:lang="it"?>
+
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<?page title="${c:l('application.name')} - Login"?>
+
+<zk xmlns:ca="client/attribute" xmlns:c="client">
+	<window onClientInfo="onClientInfo(event)" id="loginWin" border="normal" width="300px"
+		title="${c:l('application.name')}"
+		apply="it.caribel.app.sinssnt.controllers.login.LoginViewCtrl" mode="overlapped"
+		position="center">
+		<!-- title="You are using: ${desktop.webApp.version}" -->
+		
+		<zscript>
+			String idVersione = org.zkoss.util.resource.Labels.getLabel("application.version");
+		</zscript>
+		
+		
+		<vlayout vflex="true" sclass="asterLayout asterOverflow asterLayoutLastSpace">
+				<hlayout>
+					<label hflex="45%" value="${c:l('login.username')}" />
+					<textbox ca:aria-label="${c:l('login.username')}" ca:aria-required="true" hflex="55%" id="nameTxb"  ctrlKeys="^#home" onCtrlKey='alert("Versione:"+idVersione);'/>
+				</hlayout>
+				
+				<hlayout>
+					<label hflex="45%" value="${c:l('login.password')}" />
+					<textbox  ca:aria-label="${c:l('login.password')}" ca:aria-required="true"  hflex="55%" id="passwordTxb" type="password" />
+				</hlayout>
+				
+				<hlayout>
+					<button id="confirmBtn" label="${c:l('login')}" />
+				</hlayout>
+		
+		</vlayout>
+		
+	     <zscript>
+	     void onClientInfo(ClientInfoEvent evt) {
+	         session.setAttribute("myClientinfo", evt);
+	         //Clients.resizeTo(1024>evt.getDesktopWidth()?1024:evt.getDesktopWidth(),768>evt.getDesktopHeight()?768:evt.getDesktopHeight());
+	     }
+	    </zscript>
+	    
+	</window>
+</zk>

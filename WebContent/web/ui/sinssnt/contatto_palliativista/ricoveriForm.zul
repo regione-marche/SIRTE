@@ -1,0 +1,107 @@
+<window title="${c:l('schedaPalliat.ricoveri.formTitle')}" id="ricoveriForm"
+	apply="it.caribel.app.sinssnt.controllers.palliat_ricoveri.RicoveriGridCRUDCtrl"
+	height="${c:l('style.windowGrid.overlapped.height')}"
+	vflex="true" 
+	border="normal">
+
+	<vlayout id="ricoveri">
+		<vlayout spacing="0px">
+			<toolbar align="start" hflex="true">				
+				<toolbarbutton id="btn_print"
+					image="~./zul/img/print24x24.png" tooltiptext="${c:l('btn.print')}"
+					visible="true" />
+				<toolbarbutton id="btn_undo"
+					image="~./zul/img/undo24x24.png" tooltiptext="${c:l('btn.undo')}"
+					visible="true" />			
+			</toolbar>
+
+			<hlayout hflex="true">
+				<caribelintbox hflex="15%" readonly="true" 
+					id="n_cartella" db_name="n_cartella" visible="false"/>
+				<caribelintbox hflex="15%" readonly="true" 
+					id="n_contatto" db_name="n_contatto" visible="false"/>
+
+			</hlayout>
+			<hlayout hflex="true">
+					<caribellistbox  showBtnDeleteInRow="true" showBtnEditInRow="true" 
+						rows="6" db_name="griglia" id="griglia" hflex="true">
+						<listhead sizable="true">
+							<caribellistheader db_name="skr_progr"
+								label="${c:l('schedaPalliat.ricoveri.numero')}" width="10%" />
+							<caribellistheader db_name="skr_data"
+								label="${c:l('schedaPalliat.ricoveri.dataScheda')}" width="18%"  />
+							<caribellistheader db_name="skr_data_1"
+								label="${c:l('schedaPalliat.ricoveri.inizioRicovero')}" width="18%" />
+							<caribellistheader db_name="skr_data_2"
+								label="${c:l('schedaPalliat.ricoveri.fineRicovero')}" width="18%" />
+							<caribellistheader db_name="skr_tipo"
+								label="${c:l('schedaPalliat.ricoveri.tipoRicovero')}" width="18%" />
+							<caribellistheader db_name="skr_agente_ric"
+								label="${c:l('schedaPalliat.ricoveri.agenteRicovero')}" width="18%" />
+						</listhead>
+					</caribellistbox>
+			</hlayout>
+			<hlayout style="margin-top: -1px;" hflex="true" width="100%">
+				<caribelGridFormMenuHoriz />
+			</hlayout>
+			
+			<hlayout width="100%">
+				<groupbox style="margin-top: -1px;" hflex="100%" closable="false">
+					<vlayout hflex="true" vflex="true" id="myForm" sclass="asterLayout" >
+					
+						<hlayout>
+							<label hflex="20%" value="${c:l('schedaPalliat.ricoveri.dataRilevazione')}" />
+							<caribeldatebox id="skr_data" db_name="skr_data" hflex="10%" required="true"/>
+							
+							<label hflex="20%" value="${c:l('schedaPalliat.ricoveri.dataInizio')}:" />
+							<caribeldatebox id="skr_data_1" db_name="skr_data_1" hflex="10%" required="true"/>
+							
+							<label hflex="20%" value="${c:l('schedaPalliat.ricoveri.dataFine')}:" />
+							<caribeldatebox id="skr_data_2" db_name="skr_data_2" hflex="10%" />			
+							
+							<label hflex="10%" />
+						</hlayout>
+						
+						<hlayout>
+							<label hflex="20%"
+								value="${c:l('schedaPalliat.ricoveri.tipoRicovero')}" />
+
+							<caribelcombobox id="combo_tipo_ricovero" db_name="skr_tipo" hflex="20%" />			
+							
+							<label hflex="60%" />
+						</hlayout>
+						
+						<hlayout>
+							<label hflex="20%"
+								value="${c:l('schedaPalliat.ricoveri.agenteRicovero')}" />
+
+							<caribelcombobox id="combo_agente_ricovero" db_name="skr_agente_ric" hflex="20%" />			
+							
+							<label hflex="60%" />
+						</hlayout>				
+						
+						<hlayout>
+							<label hflex="20%"
+								value="${c:l('schedaPalliat.ricoveri.luogo')}" />
+							<caribeltextbox id="luogo" db_name="skr_luogo" hflex="70%" maxlength="100"
+								rows="2" style="resize:none"/>
+							<label hflex="10%" />
+						</hlayout>
+						
+						<hlayout>
+							<label hflex="20%"
+								value="${c:l('schedaPalliat.ricoveri.motivo')}" />
+							<caribeltextbox id="motivo" db_name="skr_motivo" hflex="70%" maxlength="100"
+								rows="2" style="resize:none"/>
+							<label hflex="10%" />
+						</hlayout>
+
+					</vlayout>
+				</groupbox>	
+			</hlayout>
+			
+			
+			
+		</vlayout>
+	</vlayout>
+</window>

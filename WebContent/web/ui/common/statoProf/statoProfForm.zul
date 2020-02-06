@@ -1,0 +1,29 @@
+<window id="statoProfForm" title="${c:l('statoProfForm.formTitle')}"
+	apply="it.caribel.app.common.controllers.statoProf.StatoProfFormCtrl"
+	closable="true" sizable="true"
+border="normal" mode="modal"
+position="center"
+width="650px"
+>
+
+	<vlayout vflex="true">
+
+		<caribelFormMenu />
+ 		<vlayout vflex="true" sclass="asterLayout asterOverflow asterLayoutLastSpace">
+ 		
+			<hlayout>
+				<label hflex="20%" value="${c:l('statoProfForm.codice')}:" />
+				<caribeltextbox isDbKey="true" focus="true" hflex="15%" id="cod" db_name="codice" maxlength="2" required="true" />
+				<label hflex="65%" />
+			</hlayout>
+ 		 		
+			<hlayout >
+				<label hflex="20%"  value="${c:l('statoProfForm.descrizione')}:" />
+				<caribeltextbox hflex="80%" id="descrizione" db_name="descrizione" maxlength="30" required="true" />
+			</hlayout>
+			
+			
+ 		</vlayout>
+	</vlayout>
+
+</window>

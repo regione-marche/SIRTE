@@ -1,0 +1,38 @@
+<window title="${c:l('pianoAssistenziale.formTitle')}" 
+id="pannelloData"
+apply="it.caribel.app.sinssnt.controllers.pianoAssistenziale.PannelloDataFormCtrl"
+sizable="true"
+border="normal"
+mode="modal"
+closable="true"
+width="40%">
+
+	<vlayout vflex="true">
+		<vlayout vflex="true" sclass="asterOverflow">
+			<hlayout visible="false">
+<!-- 				<caribelintbox hflex="15%" db_name="n_cartella" -->
+<!-- 					maxlength="13" id="n_cartella" /> -->
+<!-- 				<caribeldatebox hflex="15%" db_name="smsk_data" -->
+<!-- 					id="smsk_data" constraint="no future" /> -->
+<!-- 				<caribeldatebox hflex="15%" db_name="smsk_dataconco" -->
+<!-- 					id="smsk_dataconco" constraint="no future" /> -->
+<!-- 				<caribeldatebox hflex="15%" db_name="data" id="data" constraint="no future"/> -->
+			</hlayout>
+			<hlayout>
+				<label hflex="100%" value="" id="message"/>
+			</hlayout>
+			<hlayout>
+				<label hflex="25%" value=""/>
+				<caribeldatebox hflex="50%" db_name="data" id="data" />
+				<label hflex="25%" value="" />
+			</hlayout>
+			<hlayout>
+				<label hflex="25%" value="" />
+				<button id="btn_Ok"    label="${c:l('messagebox.btn.ok')}" hflex="25%" forward="onOk"></button>
+				<button id="btn_Close" label="${c:l('messagebox.btn.cancel')}" hflex="25%" forward="onClose"></button>
+				<label hflex="25%" value="" />
+			</hlayout>
+		</vlayout>
+	</vlayout>
+
+</window>

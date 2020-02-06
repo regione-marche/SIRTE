@@ -1,0 +1,82 @@
+<?component name="panel_ubicazione" inline="true" macroURI="~./ui/common/ubicazione/PanelUbicazione.zul"?>
+
+<window 
+apply="it.caribel.app.sinssnt.controllers.report.ReportStatRiepPazAssCtrl"
+title="${c:l('menu.stampe_statistiche.statistiche_riepilogo_paz_ass')}" 
+closable="true" sizable="true"
+mode="overlapped"
+border="normal"
+position="center"
+width="700px"
+height="400px">
+
+<zscript><![CDATA[
+	void dadataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}
+	void adataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}	
+]]>
+</zscript>
+	
+	<vlayout vflex="true">
+	<caribelFormMenu visible_btn_print="true" visible_btn_delete="false" visible_btn_save="false"/>
+	<vlayout sclass="asterLayout asterOverflow" vflex="true">		
+	
+		
+	
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.dadata')}:" />
+			<div hflex="80%" width="100%">
+				<hlayout width="100%">
+					<caribeldatebox id="dadata" hflex="20%"
+						required="true" onChange="dadataChanged()" />
+					<label hflex="60%"
+						value="${c:l('generic.adata')}:" />
+					<caribeldatebox id="adata" hflex="20%"
+						required="true"	onChange="adataChanged()" />
+				</hlayout>
+			</div>
+		</hlayout>
+		
+		<hlayout>
+				<label hflex="20%" value="${c:l('generic.tipo_conteggio')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="tp_conteggio">
+						<radio id="prog_ap" value="C" label="${c:l('generic.tipo_conteggio_prog_ap')}" checked="true"/>
+						<radio id="acc" value="I" label="${c:l('generic.tipo_conteggio_acc')}"/>	
+					</caribelradiogroup>
+				</div>
+		</hlayout>
+	
+		
+		<panel_ubicazione />
+		
+		<hlayout>
+				<label hflex="20%" value="${c:l('generic.formato')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="formatoStampa">
+						<radio id="pdf" value="P" label="${c:l('generic.formato.pdf')}" checked="true"/>
+						<radio id="html" value="E" label="${c:l('generic.formato.html')}"/>						
+					</caribelradiogroup>
+				</div>
+		</hlayout>
+	
+		
+		<hlayout></hlayout>
+		<hlayout></hlayout>
+		<hlayout></hlayout>
+		<hlayout></hlayout>
+		<hlayout>
+				<label hflex="5%"/>
+				<div hflex="90%" align="left">
+					<label hflex="90%"  value="${c:l('ReportStatRiepPazAss.msg')}" sclass="normalText" style="border-style: solid;border-color: gray; border-width:0.5px"/>
+				</div>
+				<label hflex="5%"/>
+		</hlayout>
+		
+		</vlayout>
+		
+	</vlayout>
+</window>

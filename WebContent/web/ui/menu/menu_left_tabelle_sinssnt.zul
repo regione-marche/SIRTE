@@ -1,0 +1,7 @@
+<vlayout 
+id="menu_left_tabelle_sinssnt" 
+apply="it.caribel.app.sinssnt.controllers.menu.menu_left_tabelle_sinssnt.ComposerMenuLeft" >
+
+	<tree id="menu_tree_tabelle_sinssnt" zclass="z-dottree" style="white-space:nowrap;"/>
+
+</vlayout>

@@ -1,0 +1,46 @@
+<window title="${c:l('tipoTariffaGrid.formTitle')}"
+	apply="it.caribel.app.common.controllers.tipoTariffa.TipoTariffaGridCtrl"	
+	sclass="asterOverlappedWindow" height="${c:l('style.windowGrid.overlapped.height')}" sizable="true"
+	closable="true" mode="overlapped" position="center" border="normal">
+
+	<vlayout height="100%">
+	
+		<caribelGridMenu  visible_btn_clear="true" />
+		<vlayout sclass="asterLayout" vflex="true" spacing="5px">
+		<hlayout>
+			<label hflex="20%" value="${c:l('tipoTariffa.tipo_istituto')}:" />
+			<caribelcombobox hflex="80%" id="tb_filter1" readonly="true" db_name="tar_tipoist"/>
+		</hlayout>
+		<hlayout>
+			<label hflex="20%" value="${c:l('tipoTariffa.org_modulare')}:" />
+			<caribelcombobox hflex="80%" id="tb_filter2" readonly="true" db_name="tar_org_mod"/>
+		</hlayout>
+		
+		<hlayout>
+			<label hflex="20%" value="${c:l('tipoTariffa.tipo_assistito')}:" />
+			<caribelSearch hflex="80%" maxlength="3"  id_cod="tb_filter3" db_name_cod="cod_tipo_assistito"
+				required="false" 
+				ctrl="it.caribel.app.common.controllers.tipoAssistito.TipoAssistitoSearchCtrl"
+			 />
+		</hlayout>
+		
+		<hlayout valign="middle" width="100%">
+				<label hflex="20%"  value="${c:l('tipoTariffa.descrizione')}:" />
+				<caribeltextbox hflex="78%" id="tb_filter4" db_name="tar_descri"/>
+				<label hflex="2%"  value="" />
+			</hlayout>
+		
+			<caribelPaging/>
+			<caribellistbox vflex="true" hflex="true" >
+			<frozen columns="3"/>
+				<listhead sizable="true">
+					<caribellistheader db_name="ban_codice_abi"	width="5em"    label="${c:l('tipoTariffaGrid.codice')}" />
+					<caribellistheader db_name="ban_cab_sport"  width="8em" label="${c:l('tipoTariffaGrid.descrizione')}" />	
+					<caribellistheader db_name="ban_citta_sport"  width="10em" label="${c:l('tipoTariffaGrid.tipo_istituto')}" />	
+					<caribellistheader db_name="ban_localita_sport"	width="10em"    label="${c:l('tipoTariffaGrid.tipo_organizzazione')}" />
+												
+				</listhead>
+			</caribellistbox>
+		</vlayout>		
+	</vlayout>
+</window>

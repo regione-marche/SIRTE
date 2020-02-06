@@ -1,0 +1,28 @@
+<window title="${c:l('aslDistr.formTitle')}"
+	apply="it.caribel.app.sinssnt.controllers.tabelle.asl_distr.AslDistrGridCtrl"
+	width="650px" height="510px" style="overflow:auto" sizable="true"
+	closable="true" mode="overlapped" position="center" border="normal">
+
+	<vlayout height="100%">
+				
+		<caribelGridMenu  visible_btn_clear="true"/>
+		<vlayout sclass="asterLayout" vflex="true" spacing="0px">
+			<hlayout>
+				<label hflex="20%"  value="${c:l('generic.descrizione')}:" />
+				<caribeltextbox hflex="60%" id="tb_filter1" db_name="descrizione"/>
+				<label hflex="20%"  value="" />
+			</hlayout>
+			
+			<caribelPaging/>
+			<caribellistbox vflex="true" hflex="true" >
+				<listhead sizable="true">
+					<caribellistheader db_name="codice_asl_distr"	  width="8em" 	label="${c:l('aslDistr.codice')}"/>
+					<caribellistheader db_name="descrizione" 	label="${c:l('aslDistr.descrizione')}"  />					
+					<caribellistheader db_name="cd_usl" 	label="${c:l('aslDistr.asl')}"  />									
+					<caribellistheader db_name="distr" 	label="${c:l('aslDistr.distr')}" />									
+				</listhead>
+			</caribellistbox>
+		</vlayout>	
+	</vlayout>	
+
+</window>

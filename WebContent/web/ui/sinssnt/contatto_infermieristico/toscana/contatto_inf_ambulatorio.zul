@@ -1,0 +1,9 @@
+<!-- TODO: pannello di ambulatorio per la Toscana  -->
+
+<window id="panelAmbulatorio" 
+	border="normal" vflex="true" width="100%">
+	<vlayout vflex="true" hflex="1" spacing="3px" sclass="asterLayout">
+
+	</vlayout>
+
+</window>

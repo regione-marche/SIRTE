@@ -1,0 +1,13 @@
+<vlayout>
+	<hlayout width="100%">
+		<label hflex="15%" value="${c:l('panel.modulo.modulo')}:" />
+		<caribelcombobox hflex="35%" id="cbxModulo" db_name="org_mod"/>
+		<label hflex="50%" value="" />
+	</hlayout>
+	<hlayout width="100%">
+		<label hflex="15%"
+			value="${c:l('scheda.So.residenziale.urgenza')}:" />
+		<caribelcombobox hflex="35%" id="cbxUrgenza" db_name="urgenza"/>
+		<label hflex="50%" value="" />
+	</hlayout>
+</vlayout>

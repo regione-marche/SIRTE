@@ -1,0 +1,129 @@
+<?component name="panel_ubicazione" inline="true" macroURI="~./ui/common/ubicazione/PanelUbicazione.zul"?>
+
+<window
+	apply="it.caribel.app.sinssnt.controllers.report.ReportAgendaCtrl"
+	title="${c:l('agenda.stampa.formTitle')}" closable="true"
+	sizable="true" mode="overlapped" border="normal" position="center"
+	width="950px" height="470px">
+
+	<vlayout vflex="true">
+		<caribelFormMenu visible_btn_print="true"
+			visible_btn_delete="false" visible_btn_save="false" />
+		<vlayout sclass="asterLayout asterOverflow" vflex="true">
+			<hlayout visible="false">
+				<caribeltextbox db_name="figprof" id="JCariTextFieldTipo" />
+			</hlayout>
+
+			<hlayout>
+				<label hflex="20%"
+					value="${c:l('agenda.stampa.periodo')}:" />
+				<caribeldatebox id="dadata" hflex="15%" required="true"
+					onChange="it.caribel.zk.util.UtilForComponents.linkDatebox(self, adata);" />
+				<label hflex="5%" value="/" />
+				<caribeldatebox id="adata" hflex="15%" required="true"
+					onChange="it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, self);" />
+				<label hflex="45%" value="" />
+			</hlayout>
+
+			<hlayout>
+				<label hflex="20%" value="" />
+				<div hflex="80%" align="left">
+				<caribelcheckbox id="planningSettimanale" forward="onChangeModalitaStampa"
+					label="${c:l('agenda.stampa.stampaPlanningSettimanale')}" />
+				</div>
+<!-- 				<label hflex="13%" /> -->
+			</hlayout>
+
+			<hlayout>
+				<label hflex="20%"
+					value="${c:l('agenda.stampa.modalita_stampa')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="modalitaStampa" forward="onChangeModalitaStampa">
+						<radio id="modalitaPR" value="PR"
+							label="${c:l('generic.territorio')}" checked="true" />
+						<radio id="modalitaOP" value="OP"
+							label="${c:l('agenda.operatore')}" />
+					</caribelradiogroup>
+				</div>
+			</hlayout>
+
+			<hlayout>
+				<label hflex="20%" value="${c:l('generic.assistito')}:" />
+				<caribelSearch hflex="80%" id_cod="cod_ass" db_name_cod="cognome" db_name_descr="cognome"
+					required="false" 
+					ctrl="it.caribel.app.common.controllers.cartella.CartellaSearchCtrl" />
+			</hlayout>
+			<hlayout>
+				<label hflex="20%" value="${c:l('agenda.operatore')}:" />
+				<caribelSearch hflex="80%" maxlength="10"
+					id_cod="codope" id="operatoreCS" required="false"
+					ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl" />
+			</hlayout>
+			<hlayout>
+				<label hflex="20%" value="${c:l('agenda.operatoreEsecutore')}:" />
+				<caribelSearch hflex="80%" maxlength="10"
+					id_cod="codope_es" required="false"
+					ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl" />
+			</hlayout>
+			
+			<hlayout>
+				<label hflex="20%"
+					value="${c:l('operatori.tipoOperatore')}:" />
+				<caribelcombobox hflex="80%" id="tipoOperatore"
+					readonly="true" />
+			</hlayout>
+
+			<hlayout>
+				<label hflex="20%" value="${c:l('agenda.stampa.prestazioni')}:" />
+				<caribelSearch hflex="80%" db_name_cod="prest_cod" db_name_descr="prest_des"
+				 	required="false" maxlength="8" id_cod="cod_pre"
+				 	ctrl="it.caribel.app.common.controllers.prestazioni.PrestazioniSearchCtrl"/>
+			</hlayout>	
+			<hlayout>
+				<label hflex="20%"
+					value="${c:l('agenda.stampa.tipo')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="tipo" >
+						<radio id="tipoP" value="P"
+							label="${c:l('agenda.stampa.tipo.prelievi')}" checked="true" />
+						<radio id="tipoAP" value="A"
+							label="${c:l('agenda.stampa.tipo.altre_pre')}" />
+						<radio id="tipoT" value="T"
+							label="${c:l('agenda.stampa.tipo.tutto')}" />
+					</caribelradiogroup>
+				</div>
+			</hlayout>
+			<hlayout>
+				<label hflex="20%" value="" />
+				<div hflex="80%" align="left">
+				<caribelcheckbox id="mmg" value="M"
+					label="${c:l('agenda.stampa.mmg')}" />
+				</div>
+			</hlayout>
+			
+			<panel_ubicazione />
+			
+			<hlayout>
+				<label hflex="20%"
+					value="${c:l('agenda.stampa.ordinamento')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="ordin" >
+						<radio id="ass" value="A"
+							label="${c:l('agenda.stampa.ordinamento.ass')}" checked="true" />
+						<radio id="op" value="O"
+							label="${c:l('agenda.stampa.ordinamento.op')}" />						
+					</caribelradiogroup>
+				</div>
+			</hlayout>
+			
+			<hlayout>
+				<label hflex="20%" value="" />
+				<div hflex="80%" align="left">
+				<caribelcheckbox id="sintetica" value="S"
+					label="${c:l('agenda.stampa.sintetica')}" />
+				</div>
+			</hlayout>
+
+		</vlayout>
+	</vlayout>
+</window>

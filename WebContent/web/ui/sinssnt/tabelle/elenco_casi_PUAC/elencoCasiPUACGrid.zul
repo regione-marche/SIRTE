@@ -1,0 +1,64 @@
+<window title="${c:l('elenco_casiPUAC.formTitle')}"
+	apply="it.caribel.app.sinssnt.controllers.tabelle.elenco_casi_PUAC.ElencoCasiPUACGridCtrl"
+	width="650px" height="510px" style="overflow:auto" sizable="true"
+	closable="true" mode="overlapped" position="center" border="normal">
+	
+<zscript><![CDATA[
+	void dadataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}
+	void adataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}	
+]]>
+</zscript>
+	<vlayout height="100%">
+				
+		<caribelGridMenu  visible_btn_clear="true"/>
+		<vlayout sclass="asterLayout" vflex="true" spacing="5px">			
+			<hlayout>
+			<label hflex="20%" value="${c:l('elenco_casiPUAC.tipo')}:" />
+			<caribelcombobox required="true" hflex="80%" id="tb_filter1" readonly="true" db_name="tipo"/>
+		</hlayout>
+			<hlayout>
+			<label hflex="20%" value="${c:l('generic.dadata')}:" />
+			<div hflex="80%" width="100%">
+				<hlayout width="100%">
+					<caribeldatebox id="dadata" hflex="30%"
+						required="true" onChange="dadataChanged()" db_name="dt1"/>
+					<label hflex="40%"
+						value="${c:l('generic.adata')}:" />
+					<caribeldatebox id="adata" hflex="30%"
+						required="true"	onChange="adataChanged()" db_name="dt2"/>
+				</hlayout>
+			</div>
+		</hlayout>
+		
+		
+			<caribelPaging/>
+			<caribellistbox vflex="true" hflex="true" >
+			<frozen columns="3"/>
+				<listhead sizable="true">
+					<caribellistheader db_name="uvmd"	  	width="8em" label="${c:l('elenco_casiPUAC.uvmd')}" />
+					<caribellistheader db_name="progressivo" width="8em"	label="${c:l('elenco_casiPUAC.progressivo')}"  />	
+					<caribellistheader db_name="invio_puac_data"	width="13em"  	label="${c:l('elenco_casiPUAC.puac_data')}" />
+					<caribellistheader db_name="cognome" 	width="13em" label="${c:l('elenco_casiPUAC.cognome')}"  />					
+					<caribellistheader db_name="nome"	  width="10em"	label="${c:l('elenco_casiPUAC.nome')}" />
+					<caribellistheader db_name="sesso" 	width="10em" label="${c:l('elenco_casiPUAC.sesso')}"  />					
+					<caribellistheader db_name="comune_res_descr"	width="10em"  	label="${c:l('elenco_casiPUAC.comune_res')}" />
+					<caribellistheader db_name="data_nascita" width="10em"	label="${c:l('elenco_casiPUAC.data_nasc')}"  />					
+					<caribellistheader db_name="indirizzo_res"	width="10em"  	label="${c:l('elenco_casiPUAC.indirizzo_res')}" />
+					<caribellistheader db_name="comune_nascita_descr"	width="10em"  	label="${c:l('elenco_casiPUAC.comune_nasc')}" />
+					<caribellistheader db_name="indirizzo_dom" width="10em"	label="${c:l('elenco_casiPUAC.indirizzo_dom')}"  />					
+					<caribellistheader db_name="comune_dom_descr"	width="10em"  	label="${c:l('elenco_casiPUAC.comune_dom')}" />
+					<caribellistheader db_name="segn_descr"	  	width="8em" label="${c:l('elenco_casiPUAC.segn')}" />
+					<caribellistheader db_name="settore_descr" width="8em"	label="${c:l('elenco_casiPUAC.settore')}"  />	
+					<caribellistheader db_name="motivo_descr"	width="13em"  	label="${c:l('elenco_casiPUAC.motivo')}" />
+					<caribellistheader db_name="area_interv_descr" 	width="13em" label="${c:l('elenco_casiPUAC.area_interv')}"  />					
+					<caribellistheader db_name="urgente"	  width="10em"	label="${c:l('elenco_casiPUAC.urgente')}" />
+				</listhead>
+			</caribellistbox>
+		</vlayout>	
+	</vlayout>	
+
+</window>

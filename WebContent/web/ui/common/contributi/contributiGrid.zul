@@ -1,0 +1,31 @@
+<window title="${c:l('contributiGrid.formTitle')}"
+	apply="it.caribel.app.common.controllers.contributi.ContributiGridCtrl"	
+	sclass="asterOverlappedWindow"  sizable="true"
+	closable="true" mode="overlapped" position="center" border="normal" width="950px"
+height="650px">
+
+	<vlayout height="100%">
+	
+		<caribelGridMenu  visible_btn_clear="true" />
+		<vlayout sclass="asterLayout" vflex="true" spacing="5px">
+		<hlayout valign="middle" width="100%">
+				<label hflex="20%"  value="${c:l('generic.descrizione')}:" />
+				<caribeltextbox hflex="78%" id="tb_filter1" db_name="descrizione_suss"/>
+				<label hflex="2%"  value="" />
+			</hlayout>
+		
+			<caribelPaging/>
+			<caribellistbox vflex="true" hflex="true" >
+			<frozen columns="3"/>
+				<listhead sizable="true">
+					<caribellistheader db_name="codice_suss"	width="8em"    label="${c:l('contributiGrid.codice')}" />
+					<caribellistheader db_name="descrizione_suss"   width="30em"  label="${c:l('contributiGrid.descrizione')}" />	
+					<caribellistheader db_name="capitolo_suss"	width="8em"    label="${c:l('contributiGrid.capitolo')}" />
+					<caribellistheader db_name="descr_flag"   width="10em" label="${c:l('contributiGrid.socsan')}" />	
+					<caribellistheader db_name="des_sottospec"	width="30em"    label="${c:l('contributiGrid.sottospe')}" />
+					<caribellistheader db_name="des_area"   width="30em" label="${c:l('contributiGrid.area')}" />					
+				</listhead>
+			</caribellistbox>
+		</vlayout>		
+	</vlayout>
+</window>

@@ -1,0 +1,18 @@
+<?component name="panel_nord" inline="true" macroURI="/web/ui/sinssnt/interventi/panel_nord.zul"?>
+<?component name="panel_sud" inline="true" macroURI="/web/ui/sinssnt/interventi/panel_sud.zul"?>
+
+<window title="${c:l('accessiPrestazioni.formOccasionaliTitle')}" border="normal" 
+	apply="it.caribel.app.sinssnt.controllers.interventi.AccessiFormCtrl" vflex="true" 
+	minwidth="800"  minheight="550">
+	<vlayout vflex="true">
+		<caribelFormMenu />
+		 <borderlayout vflex="true">
+            <north sclass="mybackground" border="0">
+                <panel_nord/>
+            </north>
+            <center vflex="75%" sclass="mybackground" border="0">
+            	<panel_sud/>
+            </center>
+        </borderlayout>
+	</vlayout>
+</window>

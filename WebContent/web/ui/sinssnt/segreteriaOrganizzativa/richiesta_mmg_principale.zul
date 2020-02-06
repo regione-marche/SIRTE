@@ -1,0 +1,158 @@
+<vlayout id="richiesta_mmg_principale" >
+	<vlayout  spacing="3px" sclass="asterLayout">
+		<hlayout width="100%">
+			<caribeltextbox id="stato_rich"
+				db_name="stato" readonly="true" visible="false"/>
+			<caribeltextbox id="cod_med"
+				db_name="cod_med" readonly="true" visible="false"/>
+			<label id="lb_data_richiesta" value="${c:l('RichiestaMMG.principale.data_richiesta')}:"
+				hflex="20%" />
+			<caribeldatebox hflex="20%" id="data_richiesta"
+				db_name="pr_mmg_data_richiesta" required="true"/>
+			
+			<button hflex="9.5%" id="btn_conferma" label="${c:l('RichiestaMMG.principale.btn_conferma')}" />
+			<label 	hflex="0.5%" />
+			<button hflex="9.5%" id="btn_archivia" label="${c:l('RichiestaMMG.principale.btn_archivia')}" />
+			<label 	hflex="0.5%" />
+			<button hflex="20%" id="btn_presacarico" label="${c:l('RichiestaMMG.principale.btn_presacarico')}" />
+			<label 	hflex="20.5%" />
+		</hlayout>
+		<hlayout width="100%">
+			<label
+				value="${c:l('RichiestaMMG.principale.stato_richiesta')}:"
+				hflex="20%" />
+			<caribeltextbox hflex="60%" id="stato_desc"
+				db_name="stato_desc" readonly="true" />
+			<label hflex="20%" />
+		</hlayout>
+		<hlayout width="100%">
+			<label value="${c:l('RichiestaMMG.principale.richiedente')}:" hflex="20%" />
+			<caribelcombobox hflex="60%" id="richiedente" db_name="richiedente" required="true"/>
+			<label 	hflex="20%" />
+		</hlayout>
+	
+		<hlayout width="100%">
+			<label value="${c:l('RichiestaMMG.principale.medicoMMG')}:"
+				hflex="20%" />
+			<caribeltextbox hflex="60%" id="medico_desc"
+				db_name="medico_desc" maxlength="100" readonly="true"/>
+			<label 	hflex="20%" />
+		</hlayout>
+		<hlayout width="100%">	
+			<label value="${c:l('RichiestaMMG.principale.medicoMMGAltro')}:"
+				hflex="20%" />
+			<caribeltextbox hflex="60%" id="medico_altro_desc"
+				db_name="medico_altro_desc" maxlength="200"/>
+			<label 	hflex="20%" />
+		</hlayout>
+		<hlayout width="100%">
+			<label value="${c:l('RichiestaMMG.principale.distretto')}:"
+				hflex="20%" />
+			<caribelcombobox hflex="60%" id="cod_distretto"
+				db_name="cod_distretto" disabled="true"/>
+			<label 	hflex="20%" />			
+		</hlayout>
+
+		<hlayout width="100%" style="text-align:left;">
+			<groupbox hflex="100" closable="false" vflex="true">
+				<caption>
+					<div id="caregiverTitolo">
+						<label value="${c:l('menu.segreteria.organizzativa.scheda.uvm.caregiver.titolo')}">	</label>
+					</div>
+				</caption>
+				<vlayout sclass="asterLayout">
+					<hlayout width="100%" style="text-align:right;">
+						<label hflex="20%" value="${c:l('menu.segreteria.organizzativa.scheda.uvm.caregiver.cognome')}:" />
+						<caribeltextbox hflex="20%" id="cognome_caregiver" db_name="caregiver_cognome" maxlength="20" 
+						required="true" />
+						<label hflex="20%" value="${c:l('menu.segreteria.organizzativa.scheda.uvm.caregiver.nome')}:" />
+						<caribeltextbox hflex="20%" id="nome_caregiver" db_name="caregiver_nome" maxlength="20" 
+						required="true"/>		
+						<label hflex="20%" value=""></label>
+					</hlayout>
+					<hlayout width="100%" style="text-align:right;margin:1px">
+						<label hflex="20%" value="${c:l('menu.segreteria.organizzativa.scheda.uvm.caregiver.telefono')}:" />
+						<caribeltextbox hflex="20%" id="telefono_caregiver" db_name="caregiver_telefono" maxlength="20" 
+						required="true" />		
+						<label hflex="20%" value="${c:l('menu.segreteria.organizzativa.scheda.uvm.caregiver.grado.parentela')}:" />
+						<caribelcombobox hflex="35%" id="cbx_grado_parentela" db_name="caregiver_grado_parentela" />
+						<label hflex="5%" value=""></label>
+					</hlayout>
+				</vlayout>
+			</groupbox>
+		</hlayout>
+		<hlayout style="text-align:left;margin:1px">
+			<groupbox hflex="100%" closable="false" vflex="100%">
+				<caption>
+					<div id="lbassiMmgPrincipale">
+						<label value="${c:l('RichiestaMMG.principale.lbassistenza')}">	</label>
+					</div>
+				</caption>
+				<vlayout sclass="asterLayout">
+					<hlayout width="100%">
+						<label value="${c:l('RichiestaMMG.principale.intensita_ass')}:"
+							hflex="20%" />
+						<caribelcombobox hflex="40%" id="tipocura" db_name="tipocura"
+						forward="onChange=onChangeIntensitaAssistenziale" required="true"/>
+						
+						<caribelcheckbox hflex="4%" db_name="adp" value="S" id="adp" disabled="true"/>
+						<label hflex="2%" id="lbx_adp" value="${c:l('RichiestaMMG.principale.adp')}" />
+						<caribelcheckbox hflex="4%" db_name="ard" value="S" id="ard" />			
+						<label hflex="2%" id="lbx_ard" value="${c:l('RichiestaMMG.principale.ard')}" />
+						<caribelcheckbox hflex="4%" db_name="aid" value="S" id="aid" />			
+						<label hflex="2%" id="lbx_aid" value="${c:l('RichiestaMMG.principale.aid')}" />
+						<caribelcheckbox hflex="4%" db_name="vsd" value="S" id="vsd" />
+						<label hflex="2%" id="lbx_vsd" value="${c:l('RichiestaMMG.principale.vsd')}" />
+
+						<label 	hflex="16%" value="" />			
+					</hlayout>
+					
+				<hlayout width="100%" style="text-align:right;margin:1px">
+					<label hflex="20%" value="${c:l('autorizzazionemmg.adi.principale.frequenza.accessi')}:" />
+					<caribelcombobox hflex="40%" db_name="frequenza" id="tipoFrequenza" 
+					 				 forward="onChange=onChangetipoFrequenza" required="true"/>	
+   					<label value="${c:l('RichiestaMMG.principale.accessi_mmg_sett')}:" hflex="20%" />
+					<caribelintbox hflex="15%" id="accessi_mmg" db_name="accessi_mmg" 
+									maxlength="2" required="true"/>
+				     <label hflex="5%"></label>
+				</hlayout>
+				<hlayout width="100%">		
+						<label id="lb_dataInizio" value="${c:l('RichiestaMMG.principale.data_inizio')}:" hflex="20%" />
+						<caribeldatebox hflex="15%" id="data_inizio" db_name="data_inizio" required="true"/>
+						
+						<label id="lb_dataFine" value="${c:l('RichiestaMMG.principale.data_fine')}:" hflex="20%" />
+						<caribeldatebox hflex="15%" id="data_fine" 	db_name="data_fine" required="true"/>
+						
+					<!-- 
+						<label value="${c:l('RichiestaMMG.principale.accessi_mmg_sett')}:"	hflex="20%" />
+						<caribelintbox hflex="10%" id="accessi_mmg"	db_name="accessi_mmg" maxlength="2" required="true"/>
+					 -->
+						<label hflex="30%"></label>
+				</hlayout>
+					<hlayout width="100%">
+						<label hflex="20%"
+							value="${c:l('RichiestaMMG.quadro_soc_ass.note')}:" />
+						<caribeltextbox hflex="75%"
+							id="note_archivia" db_name="note_archivia" maxlength="2000"
+							multiline="true" rows="2" sclass="asterTextArea" />
+						<label hflex="5%"></label>
+					</hlayout>
+				</vlayout>
+			</groupbox>
+		</hlayout>
+		<hlayout width="100%">		
+		<label value="${c:l('RichiestaMMG.principale.data_presa_carico')}:"
+				hflex="20%" />
+			<caribeldatebox hflex="15%" id="data_presa_carico" db_name="data_presa_carico" disabled="true"/>	
+			<label value="${c:l('RichiestaMMG.principale.num_protocollo')}:"
+				hflex="15%" />
+			<caribeltextbox hflex="10%" id="num_protocollo"
+				db_name="num_protocollo" disabled="true"/>		
+			<label value="${c:l('RichiestaMMG.principale.data_protocollo')}:"
+				hflex="20%" />
+			<caribeldatebox hflex="15%" id="data_protocollo"
+				db_name="data_protocollo" disabled="true"/>
+			<label 	hflex="5%" />			
+		</hlayout>
+	</vlayout>
+</vlayout>

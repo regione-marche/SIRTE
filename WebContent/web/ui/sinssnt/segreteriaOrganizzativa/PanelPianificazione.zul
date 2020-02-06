@@ -1,0 +1,51 @@
+<?component name="panel_ubicazione" inline="true" macroURI="~./ui/common/ubicazione/PanelUbicazione.zul"?>
+<zk>
+	<vlayout vflex="true" sclass="asterLayout"
+		style="margin-left:3px;text-align:center;">
+		<caribellistbox id="clbPrecaricamento" sizedByContent="true"
+			oddRowSclass="non-odd" span="true"
+			rows="${CostntiAgenda.NUMFASCEORARIE}" hflex="true" db_name="tmp">
+			<listhead sizable="false">
+				<caribellistheader db_name="matt_pom" align="center" label="${c:l('agendaPianSett.matt_pom')}" />
+				<caribellistheader db_name="0" align="center" label="${c:l('agendaPianSett.sett.0')}" column_editable="true" column_type="boolean" />
+				<caribellistheader db_name="1" align="center" label="${c:l('agendaPianSett.sett.1')}" column_editable="true" column_type="boolean" />
+				<caribellistheader db_name="2" align="center" label="${c:l('agendaPianSett.sett.2')}" column_editable="true" column_type="boolean" />
+				<caribellistheader db_name="3" align="center" label="${c:l('agendaPianSett.sett.3')}" column_editable="true" column_type="boolean" /> 
+				<caribellistheader db_name="4" align="center" label="${c:l('agendaPianSett.sett.4')}" column_editable="true" column_type="boolean" />
+				<caribellistheader db_name="5" align="center" label="${c:l('agendaPianSett.sett.5')}" column_editable="true" column_type="boolean" />
+				<caribellistheader db_name="6" align="center" label="${c:l('agendaPianSett.sett.6')}" column_editable="true" column_type="boolean" />
+			</listhead>
+		</caribellistbox>
+	</vlayout>
+	<vlayout vflex="true" sclass="asterLayout">
+		<hlayout width="100%" style="margin:1px">
+			<groupbox hflex="100%" closable="false">
+				<caption style="text-align:left;">
+					<div>
+						<label value="${c:l('menu.segreteria.organizzativa.scheda.uvm.ubicazione')}">
+						</label>
+					</div>
+				</caption>
+				<panel_ubicazione />
+			</groupbox>
+		</hlayout>
+		<hlayout id="riga_operatore">
+			<label hflex="20%" value="${c:l('generic.operatore')}:" />
+			<caribelSearch id="cs_operatore" hflex="80%" hflex_cod="30%"
+				hflex_descr="70%" db_name_cod="pai_cod_operatore"
+				db_name_descr="cod_operatore_descr" id_cod="operatore_cod"
+				id_descr="operatore_descr"
+				ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl" />
+		</hlayout>
+		<hlayout style="text-align:left;">
+			<hlayout hflex="20%" style="text-align:right;">
+				<button id="bottoneOperatore" image="~./img/agApriG.png" tooltiptext="Cerca operatori con carico di lavoro" sclass="bottoneImmagine" forward="onRicercaOperatori" ></button>
+			</hlayout>
+			<checkbox hflex="80%" id="checkBoxNotificaPresaCarico" label="${c:l('agendaPianForm.notificaPresaCarico')}"></checkbox>
+<!-- 			<label hflex="80%" value="${c:l('agendaPianForm.notificaPresaCarico')}" /> -->
+		</hlayout>
+		<hlayout style="text-align:left;">
+					<label hflex="20%" value="" />
+		</hlayout>
+	</vlayout>
+</zk>

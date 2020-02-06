@@ -1,0 +1,14 @@
+<vlayout vflex="true">
+	<caribellistbox id="tablePrestazioni" checkmark="true" span="2" vflex="true">
+		<listhead sizable="false">
+			<caribellistheader width="31px" label=" " align="center" />
+			<caribellistheader db_name="pre_cod_prest" hflex="min"
+				label="${c:l('common.codice')}" width="20%" sort="auto" />
+			<caribellistheader db_name="prest_des" hflex="min"
+				label="${c:l('common.descrizione')}" width="69%" sort="auto">
+				<caribeltextbox id="descPrestazione" hflex="1"
+					placeholder="${c:l('common.placeholder')}" />
+			</caribellistheader>
+		</listhead>
+	</caribellistbox>
+</vlayout>

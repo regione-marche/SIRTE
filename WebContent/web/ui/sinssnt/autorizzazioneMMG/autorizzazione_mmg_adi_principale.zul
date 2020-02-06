@@ -1,0 +1,115 @@
+<hlayout width="100%">
+	<groupbox hflex="100%" closable="false"
+		sclass="padTre">
+		<vlayout hflex="96%" vflex="true"
+			id="myForm" spacing="3px">
+			<hlayout>
+				<label hflex="20%"
+					id="lb_skadi_data"
+					value="${c:l('autorizzazionemmg.adi.principale.data.proposta')}:" />
+				<caribeldatebox required="true"
+					hflex="15%" id="skadi_data" db_name="skadi_data"
+					forward="onBlur=onBlurDataApertura()" />
+					<caribelintbox id="Keycartella" hflex="30%" db_name="n_cartella" visible="false" />
+					<caribelintbox id="Key_n_contatto" hflex="30%" db_name="n_contatto" visible="false" />
+				<label hflex="65%"></label>
+			</hlayout>
+			<hlayout>
+				<label hflex="20%"
+					value="${c:l('autorizzazionemmg.adi.principale.medico.distretto')}:" />
+				<caribelSearch hflex="70%"
+					id_cod="skadi_operatore" id_descr="desc_operADI"
+					db_name_cod="skadi_operatore" db_name_descr="desc_operADI"
+					id="medicoDistrettoSearch"
+					ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl" />
+				<label hflex="10%" />
+			</hlayout>
+			<hlayout>
+				<label hflex="20%"
+					value="${c:l('autorizzazionemmg.adi.principale.medico.mmg')}:" />
+				<caribelSearch hflex="70%"
+					id_cod="skadi_mmgpls" id_descr="desc_MMG"
+					db_name_cod="skadi_mmgpls" db_name_descr="desc_MMG"
+					id="medicoMMGSearch"
+					hflex_cod="18%" hflex_descr="52%" 
+					ctrl="it.caribel.app.common.controllers.medici.MediciSearchCtrl" />
+				<label hflex="10%" />
+			</hlayout>
+			<hlayout>
+				<label hflex="20%"
+					value="${c:l('autorizzazionemmg.adi.principale.proposta.approvata')}:" />
+				<caribelradiogroup hflex="20%"
+					db_name="skadi_approva" id="skadi_approva">
+					<div align="left">
+						<radio label="${c:l('common.yes')}" value="S" id="aprovataS"/>
+						<radio label="${c:l('common.no')}" value="N" id="aprovataN"	checked="true" />
+					</div>
+				</caribelradiogroup>
+				<label hflex="15%"
+					value="${c:l('autorizzazionemmg.adi.principale.motivo.mancato.approvazione')}:" />
+				<caribeltextbox hflex="35%"
+					id="skadi_motivo" db_name="skadi_motivo" maxlength="200"
+					multiline="true" rows="2" sclass="asterTextArea" />
+				<label hflex="10%" />
+			</hlayout>
+			<hlayout>
+				<label hflex="20%" id="lbx_skadi_data_inzio"
+					value="${c:l('autorizzazionemmg.adi.principale.data.inizio')}:" />
+				<caribeldatebox hflex="15%" 
+					id="skadi_data_inzio" db_name="skadi_data_inzio" />
+				<label hflex="20%" id="lbx_skadi_data_fine"
+					value="${c:l('autorizzazionemmg.adi.principale.data.fine')}:" />
+				<caribeldatebox hflex="15%" 
+					id="skadi_data_fine" db_name="skadi_data_fine" />
+				<label hflex="30%" />
+			</hlayout>
+			<hlayout>
+				<label hflex="20%"
+					value="${c:l('autorizzazionemmg.adi.principale.verifica.domicilio')}:" />
+				<caribeldatebox hflex="15%"
+					id="skadi_verifica" db_name="skadi_verifica" />
+				<label hflex="20%"
+					value="${c:l('autorizzazionemmg.adi.principale.riesame.entro')}:" />
+				<caribeldatebox hflex="15%"
+					id="skadi_data_riesame" db_name="skadi_data_riesame" />
+				<label hflex="30%" />
+			</hlayout>
+			<hlayout>
+				<label hflex="20%"
+					value="${c:l('autorizzazionemmg.adi.principale.frequenza.accessi')}:" />
+				<caribelcombobox hflex="30%" db_name="skadi_freq" id="cbxskadi_freq" 
+				forward="onChange=onChangeFrequenza"/>      
+				<label hflex="20%"
+					value="${c:l('autorizzazionemmg.adi.principale.numero.accessi.mesili')}:" />
+				<caribelintbox hflex="10%"
+					id="skadi_freq_mens" db_name="skadi_freq_mens" />
+				<label hflex="20%" />
+			</hlayout>
+			<hlayout>
+				<label hflex="20%"
+					value="${c:l('autorizzazionemmg.adi.principale.altro')}:" />
+				<caribeltextbox hflex="70%"
+					db_name="skadi_freq_altro" id="skadi_freq_altro" readonly="true" />
+				<label hflex="10%" />
+			</hlayout>
+			<hlayout>
+				<label hflex="20%"
+					value="${c:l('autorizzazionemmg.adi.principale.data.ricovero')}:" />
+				<caribeldatebox hflex="15%"
+					id="skadi_data_ricovero" db_name="skadi_data_ricovero" />
+				<label hflex="30%"
+					value="${c:l('autorizzazionemmg.adi.principale.data.inserimento.rsa')}:" />
+				<caribeldatebox hflex="15%"
+					id="skadi_data_rsa" db_name="skadi_data_rsa" />
+				<label hflex="20%" />
+			</hlayout>
+			<hlayout>
+				<label hflex="20%"
+					value="${c:l('autorizzazionemmg.adi.principale.tipo.specifica')}:" />
+				<caribelcombobox hflex="62%"
+					db_name="skadi_specifica" id="cbxskadi_specifica" />
+				<label hflex="18%" />
+			</hlayout>
+		</vlayout>
+	</groupbox>
+</hlayout>

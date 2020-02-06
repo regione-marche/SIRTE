@@ -1,0 +1,37 @@
+<vlayout id="progetto1Form" vflex="true">
+	<vlayout vflex="true" hflex="1" spacing="3px" sclass="asterLayout">
+ 		<hlayout  width="100%" >
+ 			<label value="${c:l('SchedaFisioForm.progetto1.dataevento')}:" hflex="20%" />
+			<caribeldatebox hflex="15%" db_name="skf_data_evento" />
+			<label value="${c:l('SchedaFisioForm.progetto1.datariacut')}:" hflex="20%" />
+			<caribeldatebox hflex="15%" db_name="skf_data_riacutiz" />
+			<label hflex="30%"></label>
+		</hlayout>
+		<hlayout  width="100%" >
+			<label hflex="20%" value="${c:l('SchedaFisioForm.progetto1.progetto')}:"  />
+			<caribeltextbox hflex="60%" id="skf_progetto" 
+				db_name="skf_progetto" maxlength="2000"  multiline="true" rows="3" sclass="asterTextArea"/>
+			 <label hflex="20%"></label>				
+		</hlayout>	
+		<hlayout  width="100%" >
+			<label hflex="20%" value="${c:l('SchedaFisioForm.progetto1.medico')}:"  />
+			<caribeltextbox hflex="60%" id="skf_medico_resp" 
+				db_name="skf_medico_resp" maxlength="2000"  multiline="true" rows="3" sclass="asterTextArea"/>
+			 <label hflex="20%"></label>				
+		</hlayout>	
+		<hlayout  width="100%" >
+			<label hflex="20%" value="${c:l('SchedaFisioForm.progetto1.obiettivo')}:"  />
+			<caribeltextbox hflex="60%" id="skf_obiettivi" 
+				db_name="skf_obiettivi" maxlength="2000"  multiline="true" rows="3" sclass="asterTextArea"/>
+			 <label hflex="20%"></label>				
+		</hlayout>	
+		<hlayout>
+			<label hflex="20%" value="${c:l('SchedaFisioForm.progetto1.tempo')}:" />
+			<caribelcombobox hflex="50%" db_name="skf_tempi" id="cbx_tempo" />
+			<label hflex="30%"></label>			
+		</hlayout>
+					<label value=" " visible="true"></label>			
+					<label value=" " visible="true"></label>			
+					<label value=" " visible="true"></label>			
+	</vlayout>
+</vlayout>

@@ -1,0 +1,30 @@
+<window id="valutatoriForm" title="${c:l('valutatoriForm.formTitle')}"
+	apply="it.caribel.app.common.controllers.valutatori.ValutatoriFormCtrl"
+	closable="true" sizable="true"
+border="normal" mode="modal"
+position="center"
+width="650px"
+>
+
+	<vlayout vflex="true">
+
+		<caribelFormMenu />
+ 		<vlayout vflex="true" sclass="asterLayout asterOverflow asterLayoutLastSpace">
+ 		
+			<hlayout>
+				<label hflex="20%" value="${c:l('valutatoriForm.codice')}:" />
+				<caribelintbox isDbKey="true" focus="true" hflex="15%" id="codice" db_name="tv_codice" maxlength="5" required="true" />
+				<label hflex="65%" />
+			</hlayout>
+ 		 		
+			<hlayout >
+				<label hflex="20%"  value="${c:l('valutatoriForm.descrizione')}:" />
+				<caribeltextbox hflex="80%" id="descrizione" db_name="tv_descrizione" maxlength="40" required="false" />
+			</hlayout>
+			
+			
+			
+ 		</vlayout>
+	</vlayout>
+
+</window>

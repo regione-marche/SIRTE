@@ -1,0 +1,85 @@
+<vlayout id="segnalazioneForm" >
+	<vlayout hflex="1" spacing="3px"
+		sclass="asterLayout">
+		
+		<hlayout>
+			<label value="${c:l('schedaPalliat.segnalazionePanel.dataSegnalazione')}:" hflex="20%" />
+			<caribeldatebox id="" db_name="" hflex="10%" />
+			<label hflex="70%" />
+		</hlayout>
+		
+		<!-- su quale campo di quale tabella scrive? -->
+		<hlayout>
+			<label value="${c:l('schedaPalliat.segnalazionePanel.statoCivile')}:" hflex="20%" />
+			<caribelcombobox id="stato_civile" db_name="" hflex="20%" />
+			<label hflex="60%" />
+		</hlayout>
+		
+		<!-- su quale campo di quale tabella scrive? -->
+		<hlayout>
+			<label value="${c:l('schedaPalliat.segnalazionePanel.titoloStudio')}:" hflex="20%" />
+			<caribelcombobox id="titolo_studio" db_name="" hflex="20%" />
+			<label hflex="60%" />
+		</hlayout>
+		
+		<!-- su quale campo di quale tabella scrive? -->
+		<hlayout>
+			<label value="${c:l('schedaPalliat.segnalazionePanel.badante')}:" hflex="20%" />
+			<div hflex="20%" style="text-align:left">
+				<caribelradiogroup id="badante" db_name=""  >
+					<radio id="badanteSi"
+						label="${c:l('schedaPalliat.segnalazionePanel.badanteSi')}" value="S" />
+					
+					<radio id="badanteNo"
+						label="${c:l('schedaPalliat.segnalazionePanel.badanteNo')}"
+						value="N" checked="true" />
+				</caribelradiogroup>
+			</div>			
+			<label hflex="60%" />
+		</hlayout>
+		
+		<!-- su quale campo di quale tabella scrive? -->
+		<hlayout>
+			<label value="${c:l('schedaPalliat.segnalazionePanel.numeroFamiliari')}:" hflex="20%" />
+			<caribelintbox id="numero_familiari" db_name="" hflex="5%"/>
+			<label hflex="75%" />
+		</hlayout>	
+		
+		<!-- su quale campo di quale tabella scrive? -->
+		<hlayout>
+			<label value="${c:l('schedaPalliat.segnalazionePanel.tipoSegnalazione')}:" hflex="20%" />
+			<div hflex="20%" style="text-align:left">
+				<caribelradiogroup id="tipo_segnalazione" db_name=""  >
+					<radio id="nuovoContatto"
+						label="${c:l('schedaPalliat.segnalazionePanel.nuovoContatto')}" value="S" />
+					
+					<radio id="giaInCarico"
+						label="${c:l('schedaPalliat.segnalazionePanel.giaInCarico')}"
+						value="N" checked="true" />
+				</caribelradiogroup>
+			</div>			
+			<label hflex="60%" />
+		</hlayout>	
+		
+		<!-- su quale campo di quale tabella scrive? -->
+		<hlayout>
+			<label value="${c:l('schedaPalliat.segnalazionePanel.richiedente')}:" hflex="20%" />
+			<caribelcombobox id="richiedente" db_name="" hflex="20%" />
+			<label hflex="60%" />
+		</hlayout>
+		
+		<!-- su quale campo di quale tabella scrive? -->
+		<hlayout>
+			<label value="${c:l('schedaPalliat.segnalazionePanel.zonaSegnalazione')}:" hflex="20%" />
+			<caribelcombobox id="zona_segnalazione" db_name="" hflex="20%" />
+			<label hflex="60%" />
+		</hlayout>
+		
+		<!-- su quale campo di quale tabella scrive? -->
+		<hlayout>
+			<label value="${c:l('schedaPalliat.segnalazionePanel.continuitaOspedaleTerritorio')}:" hflex="20%" />
+			<caribelcombobox id="continuita_osp_territ" db_name="" hflex="20%" />
+			<label hflex="60%" />
+		</hlayout>
+	</vlayout>
+</vlayout>

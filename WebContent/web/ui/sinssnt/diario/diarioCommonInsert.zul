@@ -1,0 +1,48 @@
+<vlayout sclass="asterLayout" vflex="true" width="100%">
+	<vlayout hflex="true" vflex="true" id="myForm">
+		<hlayout visible="false">
+			<caribeltextbox readonly="true" db_name="n_cartella"
+				visible="false" />
+			<caribeltextbox readonly="true" db_name="n_contatto"
+				visible="false" />
+		</hlayout>
+
+		<hlayout>
+			<label hflex="5%" value="${c:l('diario.data')}:" />
+			<caribeldatebox id="data_diario" hflex="10%"
+				db_name="data_diario" required="true" readonly="true" />
+			<button id="btn_storico" hflex="5%"
+				style="background: transparent; border:none;"
+				image="/web/img/history16x16.png"
+				tooltiptext="${c:l('diario.dati_storici.tooltiptext')}" />
+			<label hflex="10%" value="${c:l('diario.oggetto')}:" />
+			<caribeltextbox hflex="40%" db_name="oggetto"
+				required="true" />
+
+
+			<div hflex="25%" align="right">
+				<label value="${c:l('diario.info_privata')}:" />
+				<caribelradiogroup id="info_privata"
+					db_name="info_privata">
+					<radio label="${c:l('common.yes')}" value="S" />
+					<radio label="${c:l('common.no')}" value="N"
+						selected="true" />
+				</caribelradiogroup>
+			</div>
+
+		</hlayout>
+
+		<hlayout width="100%" vflex="true">
+			<ckeditor vflex="true" hflex="true"
+				customConfigurationsPath="~./js/ckconfigOpen.js" id="testo" />
+		</hlayout>
+	</vlayout>
+</vlayout>
+
+
+
+
+
+
+
+

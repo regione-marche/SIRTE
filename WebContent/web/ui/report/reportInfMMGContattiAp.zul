@@ -1,0 +1,119 @@
+<?component name="panel_ubicazione" inline="true" macroURI="~./ui/common/ubicazione/PanelUbicazione.zul"?>
+
+<window 
+apply="it.caribel.app.sinssnt.controllers.report.ReportInfMMGContattiApCtrl"
+title="${c:l('menu.stampe.infermieristica.title_assistiti_MMG_contatto_aperto')}" 
+closable="true" sizable="true"
+mode="overlapped"
+border="normal"
+position="center"
+width="750px"
+height="470px">
+
+<zscript><![CDATA[
+	void dadataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}
+	void adataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}	
+]]>
+</zscript>
+	
+	<vlayout vflex="true">
+	<caribelFormMenu visible_btn_print="true" visible_btn_delete="false" visible_btn_save="false"/>
+	<vlayout sclass="asterLayout asterOverflow" vflex="true">	
+	
+	
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.codice_medico')}:" />
+			<caribelSearch hflex="80%" maxlength="16" id_cod="cod_med" db_name_cod="mecodi" db_name_descr="cognome"
+				required="false"
+				hflex_cod="18%" hflex_descr="62%" 
+				ctrl="it.caribel.app.common.controllers.medici.MediciSearchCtrl"
+			 />
+		</hlayout>	
+		
+	
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.dadata')}:" />
+			<div hflex="80%" width="20%">
+				<hlayout width="20%">
+					<caribeldatebox id="dadata" hflex="30%"
+						required="true" onChange="dadataChanged()" />
+					
+				</hlayout>
+			</div>
+		</hlayout>
+		
+		<hlayout>
+			<label hflex="20%"	value="${c:l('generic.adata')}:" />
+			<div hflex="80%" width="20%">
+				<hlayout width="20%">					
+					<caribeldatebox id="adata" hflex="30%"
+						required="true"	onChange="adataChanged()" />
+				</hlayout>
+			</div>
+		</hlayout>
+		<hlayout>
+		<label hflex="20%" value="${c:l('generic.intensita')}:" />
+			<caribelcombobox hflex="80%" id="motivo" readonly="true"/>
+		</hlayout>
+		<panel_ubicazione/>
+		
+		<hlayout>
+				<label hflex="20%" value="${c:l('generic.modalita_stampa')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="modalitaStampa">
+						<radio id="sin" value="S" label="${c:l('generic.modalita_stampa.sin')}" checked="true"/>
+						<radio id="an" value="A" label="${c:l('generic.modalita_stampa.an')}"/>						
+					</caribelradiogroup>
+				</div>
+		</hlayout>
+		
+		<hlayout>
+				<label hflex="20%" value="${c:l('generic.div_medico')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="divMed">
+						<radio id="si" value="S" label="${c:l('generic.div_medico.si')}" checked="true"/>
+						<radio id="no" value="N" label="${c:l('generic.div_medico.no')}"/>						
+					</caribelradiogroup>
+				</div>
+		</hlayout>
+		
+		<!-- <hlayout>
+				<label hflex="20%" value="${c:l('generic.tipo_assistenza')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="tipoAss">
+						<radio id="entrambe" value="E" label="${c:l('generic.tipo_assistenza.entrambe')}" checked="true"/>
+						<radio id="domiciliare" value="1" label="${c:l('generic.tipo_assistenza.domicilio')}"/>	
+						<radio id="ambulatoriale" value="2" label="${c:l('generic.tipo_assistenza.ambulatorio')}"/>					
+					</caribelradiogroup>
+				</div>
+		</hlayout> -->
+		
+		<hlayout>
+				<label hflex="20%" value="${c:l('generic.formato')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="formatoStampa">
+						<radio id="pdf" value="PDF" label="${c:l('generic.formato.pdf')}" checked="true"/>
+						<radio id="html" value="HTML" label="${c:l('generic.formato.html')}"/>						
+					</caribelradiogroup>
+				</div>
+		</hlayout>
+		<hlayout></hlayout>
+		<hlayout></hlayout>
+		<hlayout></hlayout>
+		<hlayout></hlayout>
+		<hlayout>
+				<label hflex="5%"/>
+				<div hflex="90%" align="left">
+					<label hflex="90%"  value="${c:l('ReportInfMMGContattiAp.msg')}" sclass="normalText" style="border-style: solid;border-color: gray; border-width:0.5px"/>
+				</div>
+				<label hflex="5%"/>
+		</hlayout>
+		
+		
+		</vlayout>
+	</vlayout>
+</window>

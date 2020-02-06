@@ -1,0 +1,47 @@
+<window id="PrestazBisogni"
+title="${c:l('prestazBisogniForm.formTitle')}" 
+apply="it.caribel.app.common.controllers.prestaz_bisogni.PrestazBisogniFormCtrl" 
+closable="true" sizable="true"
+border="normal"
+position="center"
+width="780px"
+height="200px"
+>
+
+	<vlayout vflex="true">
+
+		<caribelFormMenu />
+ 		<vlayout vflex="true" sclass="asterLayout asterOverflow asterLayoutLastSpace">
+			<hlayout visible="false">				
+				<caribelintbox focus="true" hflex="20%" id="id" db_name="id" isDbKey="true" maxlength="13" required="false" visible="false" />
+				<label hflex="60%" />
+			</hlayout>	
+			<hlayout>				
+								<caribelintbox hflex="30%" id="codice_nascosto" db_name="id" required="false" visible="false"/>			
+							</hlayout>
+			
+			<hlayout>
+				<label hflex="20%" value="${c:l('prestazBisogniForm.prestazioni')}:" />
+				<caribelSearch hflex="80%" db_name_cod="prest_cod" db_name_descr="prest_des"
+				 	required="false" maxlength="8"
+				 	ctrl="it.caribel.app.common.controllers.prestazioni.PrestazioniSearchCtrl"/>
+			</hlayout>	
+			<hlayout>
+				<label hflex="20%" value="${c:l('prestazBisogniForm.bisogno')}:" />
+				<caribelcombobox hflex="80%" id="bisogno" db_name="bisogno" required="false" />	
+			</hlayout>
+			<hlayout>
+				<label hflex="20%" value="${c:l('prestazBisogniForm.frequenza')}:" />
+				<caribelcombobox hflex="80%" id="frequenza" db_name="frequenza" required="false" />	
+			</hlayout>
+			<hlayout>
+				<label hflex="20%" value="${c:l('prestazBisogniForm.quantita')}:" />
+				<caribelintbox  hflex="20%" id="quantita" db_name="quantita" maxlength="4" required="false"  />
+				<label hflex="60%" value="" />
+			</hlayout>
+			
+			
+		</vlayout>
+	</vlayout>
+
+</window>

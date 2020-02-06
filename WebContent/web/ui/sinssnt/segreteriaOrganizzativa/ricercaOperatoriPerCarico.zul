@@ -1,0 +1,49 @@
+<?component name="panel_ubicazione" inline="true" macroURI="~./ui/common/ubicazione/PanelUbicazione.zul"?>
+
+<window id="ricercaOperatori" width="70%" mode="modal" border="normal" height="70%" closable="true"
+		title="${c:l('segreteria.organizzativa.ricercaOperatore')}" sizable="true"
+	apply="it.caribel.app.sinssnt.controllers.segreteriaOrganizzativa.RicercaOperatoriGridCtrl">
+	<vlayout width="100%" vflex="true">
+<!-- 		<hlayout width="100%" spacing="0px" height="100%"> -->
+			<vlayout hflex="100%" sclass="asterLayout" id="myForm"> 
+				<panel_ubicazione />
+				<hlayout>
+					<label
+						value="${c:l('pianoAssistenziale.pianoAccessi.dataInizio')}:"
+						hflex="20%" />
+					<caribeldatebox hflex="20%"
+						db_name="data_inizio" id="data_inizio" required="true"/>
+					<button id="settPrec" label="${c:l('agenda.btn.prec')}" forward="onPrec" hflex="5%"></button>
+					<button id="settSucc" label="${c:l('agenda.btn.suc')}" forward="onSucc" hflex="5%"></button>
+					<label id="meseAnno" hflex="50%"></label>
+				</hlayout>
+			</vlayout>
+<!-- 			<vlayout hflex="100%" sclass="asterLayout" style="margin-right:3px;" height="90%"> -->
+						<caribellistbox id="caribellbOperatori" vflex="true" sizedByContent="true" span="1">
+							<listhead sizable="false">
+								<caribellistheader db_name="codice"
+									hflex="min" label="${c:l('common.codice')}" />
+								<caribellistheader db_name="desc_oper"
+									label="${c:l('common.operatore')}" />
+								<caribellistheader db_name="num_accessi" align="right"
+									hflex="min" label="${c:l('ricercaOperatori.numeroAccessi')}" />
+								<caribellistheader db_name="num_prelievi" align="right" id="num_prelievi"
+									hflex="min" label="${c:l('ricercaOperatori.numeroPrelievi')}" />
+<!-- 								<caribellistheader db_name="C1" -->
+<!-- 									hflex="min" label="${c:l('agendaPianSett.sett.1')}" /> -->
+<!-- 								<caribellistheader db_name="C2" -->
+<!-- 									hflex="min" label="${c:l('agendaPianSett.sett.2')}" /> -->
+<!-- 								<caribellistheader db_name="C3" -->
+<!-- 									hflex="min" label="${c:l('agendaPianSett.sett.3')}" /> -->
+<!-- 								<caribellistheader db_name="C4" -->
+<!-- 									hflex="min" label="${c:l('agendaPianSett.sett.4')}" /> -->
+<!-- 								<caribellistheader db_name="C5" -->
+<!-- 									hflex="min" label="${c:l('agendaPianSett.sett.5')}" /> -->
+<!-- 								<caribellistheader db_name="C6" -->
+<!-- 									hflex="min" label="${c:l('agendaPianSett.sett.6')}" /> -->
+							</listhead>
+						</caribellistbox>
+<!-- 			</vlayout> -->
+<!-- 		</hlayout> -->
+	</vlayout>
+</window>

@@ -1,0 +1,84 @@
+<?component name="panel_ubicazione" inline="true" macroURI="~./ui/common/ubicazione/PanelUbicazione.zul"?>
+
+<window 
+apply="it.caribel.app.sinssnt.controllers.report.ReportInfSegMotivoCtrl"
+title="${c:l('menu.stampe.infermieristica.title_assistiti_segnalazione_motivo')}" 
+closable="true" sizable="true"
+mode="overlapped"
+border="normal"
+position="center"
+width="750px"
+height="350px">
+
+<zscript><![CDATA[
+	void dadataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}
+	void adataChanged(){
+		it.caribel.zk.util.UtilForComponents.linkDatebox(dadata, adata);
+	}	
+]]>
+</zscript>
+	
+	<vlayout vflex="true">
+	<caribelFormMenu visible_btn_print="true" visible_btn_delete="false" visible_btn_save="false"/>
+	<vlayout sclass="asterLayout asterOverflow" vflex="true">	
+	
+	
+		
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.dadata')}:" />
+			<div hflex="80%" width="20%">
+				<hlayout width="20%">
+					<caribeldatebox id="dadata" hflex="30%"
+						required="true" onChange="dadataChanged()" />					
+				</hlayout>
+			</div>
+		</hlayout>
+		
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.adata')}:" />
+			<div hflex="80%" width="20%">
+				<hlayout width="20%">					
+					<caribeldatebox id="adata" hflex="30%"
+						required="true"	onChange="adataChanged()" />
+				</hlayout>
+			</div>
+		</hlayout>
+		
+		
+		<panel_ubicazione/>
+		<hlayout>
+			<label hflex="20%" value="${c:l('generic.motivo')}:" />
+			<caribelcombobox hflex="80%" id="motivo" readonly="true"/>
+		</hlayout>
+		
+		
+		<hlayout>
+				<label hflex="20%" value="${c:l('generic.modalita_stampa')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="modalitaStampa">
+						<radio id="an" value="1" label="${c:l('generic.modalita_stampa.an')}" checked="true"/>						
+						<radio id="sin" value="0" label="${c:l('generic.modalita_stampa.sin')}" />
+					</caribelradiogroup>
+				</div>
+		</hlayout>
+		
+		<hlayout>
+				<label hflex="20%" value="${c:l('generic.formato')}:" />
+				<div hflex="80%" align="left">
+					<caribelradiogroup id="formatoStampa">
+						<radio id="pdf" value="1" label="${c:l('generic.formato.pdf')}" checked="true"/>
+						<radio id="html" value="2" label="${c:l('generic.formato.html')}"/>						
+					</caribelradiogroup>
+				</div>
+		</hlayout>
+		<hlayout></hlayout>
+		<hlayout></hlayout>
+		<hlayout></hlayout>
+		<hlayout></hlayout>
+		
+		
+		</vlayout>
+	</vlayout>
+</window>

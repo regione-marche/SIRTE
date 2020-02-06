@@ -1,0 +1,10 @@
+<hlayout hflex="55%">
+	<button id="btn_duplicaScheda"
+		label="${c:l('scalaValutazione.duplica_btn')}" hflex="20%"
+		forward="onDuplicaScheda">
+	</button>
+	<label hflex="15%" id="scalaValutazioneNew"
+		value="${c:l('scalaValutazione.dataSchedaDuplicazione')}:" />
+	<caribeldatebox id="data_scheda_new" hflex="20%"
+		constraint="no future"/>
+</hlayout>

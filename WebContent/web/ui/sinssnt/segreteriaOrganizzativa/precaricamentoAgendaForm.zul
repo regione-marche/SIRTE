@@ -1,0 +1,14 @@
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<?component name="panel_pianificazione" inline="true" macroURI="/web/ui/sinssnt/segreteriaOrganizzativa/PanelPianificazione.zul"?>
+
+<window id="agendaPianForm"
+	title="${c:l('agendaPianSett.formTitle')}" border="normal"
+	apply="it.caribel.app.sinssnt.controllers.segreteriaOrganizzativa.PAIPianSettFormCtrl"
+	mode="modal" closable="true" sizable="true" width="500px">
+
+	<vlayout vflex="true">
+		<caribelGridMenu visible_btn_delete="false" visible_btn_undo="false" visible_btn_print="false" visible_btn_search="false" visible_btn_clear="false" visible_btn_find="false" visible_btn_new="false" visible_btn_open="false"/>
+		<panel_pianificazione />
+		<caribeldatebox db_name="tmp_dataInizio" id="tmp_dataInizio" visible="false" />
+	</vlayout>
+</window>

@@ -1,0 +1,1055 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+
+<!-- mfo:section.start="layout" rem="IMPOSTAZIONI DI PAGINA" -->
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="simple"
+        page-height="29.7cm"	page-width="21cm"
+        margin-top="1cm"	margin-bottom="1cm"
+        margin-left="1cm"	margin-right="1cm" >
+      <fo:region-body margin-top="2cm" margin-bottom="1cm"/>
+      <fo:region-before extent="2cm"/>
+      <fo:region-after extent="1cm"/>
+    </fo:simple-page-master>
+  </fo:layout-master-set>
+
+  <fo:page-sequence master-name="simple">
+    <fo:static-content flow-name="xsl-region-before">
+  <fo:table font-size="10pt">
+  <fo:table-column column-width="17cm"/>
+  <fo:table-body>
+  <fo:table-row height="9pt">
+   <fo:table-cell text-align="start" >
+
+	<fo:table font-size="10pt">
+	<fo:table-column column-width="10cm"/>
+	<fo:table-column column-width="9cm"/>
+	 <fo:table-body>
+	  <fo:table-row height="9pt">
+	    <fo:table-cell text-align="start" >
+		<fo:block start-indent="1mm" end-indent="1mm"
+		padding-top="0.5mm" font-weight="bold">
+			#lbl_cognome_nome#: #assistito#
+		</fo:block>
+	    </fo:table-cell>
+	    <fo:table-cell text-align="end" >
+		<fo:block start-indent="1mm" end-indent="1mm"
+		padding-top="0.5mm" font-weight="bold">
+			#lbl_data_scheda#: #data#
+		</fo:block>
+	    </fo:table-cell>
+	  </fo:table-row>
+          <fo:table-row height="1pt">
+             <fo:table-cell text-align="start" number-columns-spanned='2'>
+                  <fo:block>
+                          <fo:leader leader-pattern="rule"
+                             rule-thickness="0.5pt"
+                             leader-length="19cm"/>
+                  </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+
+	 </fo:table-body>
+	</fo:table>
+	    </fo:table-cell>
+	  </fo:table-row>
+	 </fo:table-body>
+	</fo:table>
+
+	  <fo:block font-size="12pt"  end-indent="1mm"
+		  font-weight="bold" text-align="center" space-before.optimum="12pt">
+		  #lbl_titolo#
+	  </fo:block>
+			
+
+    </fo:static-content>
+
+
+    <!-- TITOLO DI PIEDE -->
+    <fo:static-content flow-name="xsl-region-after">
+      <fo:table font-size="8pt" width="auto" space-before.optimum="0.5cm">
+        <fo:table-column column-width="12cm"/>
+        <fo:table-column column-width="7cm"/>
+        <fo:table-body>
+          <fo:table-row height="10pt">
+            <fo:table-cell text-align="start">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >#txt#</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="end">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >#data_stampa#</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body">
+<!-- mfo:section.end -->
+
+
+
+<!--mfo:section.start="tabBim" -->
+
+	<fo:table padding-top="0.2cm" >    	
+        <fo:table-column column-width="17cm"/>
+        <fo:table-column column-width="2cm"/>
+        <fo:table-body>
+        
+         <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start" font-weight="bold">
+                #lbl_alimentazione#
+                </fo:block>
+             </fo:table-cell>
+           	<fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                #lbl_punteggio#
+                </fo:block>
+             </fo:table-cell>
+            
+          </fo:table-row>
+        <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_alimentazione1#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_alimentazione1#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_alimentazione2#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_alimentazione2#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_alimentazione3#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_alimentazione3#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_alimentazione4#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_alimentazione4#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_alimentazione5#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_alimentazione5#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start" font-weight="bold">
+                #lbl_igiene#
+                </fo:block>
+             </fo:table-cell>
+           	<fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                #lbl_punteggio#
+                </fo:block>
+             </fo:table-cell>
+            
+          </fo:table-row>
+        <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_igiene1#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_igiene1#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_igiene2#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_igiene2#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_igiene3#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_igiene3#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_igiene4#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_igiene4#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_igiene5#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_igiene5#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start" font-weight="bold">
+                #lbl_bagno#
+                </fo:block>
+             </fo:table-cell>
+           	<fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                #lbl_punteggio#
+                </fo:block>
+             </fo:table-cell>
+            
+          </fo:table-row>
+        <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_bagno1#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_bagno1#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_bagno2#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_bagno2#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_bagno3#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_bagno3#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_bagno4#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_bagno4#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_bagno5#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_bagno5#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start" font-weight="bold">
+                #lbl_abbigliamento#
+                </fo:block>
+             </fo:table-cell>
+           	<fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                #lbl_punteggio#
+                </fo:block>
+             </fo:table-cell>
+            
+          </fo:table-row>
+        <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_abbigliamento1#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_abbigliamento1#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_abbigliamento2#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_abbigliamento2#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_abbigliamento3#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_abbigliamento3#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_abbigliamento4#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_abbigliamento4#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_abbigliamento5#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_abbigliamento5#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start" font-weight="bold">
+                #lbl_trasferimenti#
+                </fo:block>
+             </fo:table-cell>
+           	<fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                #lbl_punteggio#
+                </fo:block>
+             </fo:table-cell>
+            
+          </fo:table-row>
+        <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_trasferimenti1#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_trasferimenti1#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_trasferimenti2#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_trasferimenti2#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_trasferimenti3#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_trasferimenti3#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_trasferimenti4#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_trasferimenti4#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_trasferimenti5#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_trasferimenti5#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start" font-weight="bold">
+                #lbl_uso_wc#
+                </fo:block>
+             </fo:table-cell>
+           	<fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                #lbl_punteggio#
+                </fo:block>
+             </fo:table-cell>
+            
+          </fo:table-row>
+        <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_uso_wc1#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_uso_wc1#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_uso_wc2#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_uso_wc2#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_uso_wc3#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_uso_wc3#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_uso_wc4#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_uso_wc4#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_uso_wc5#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_uso_wc5#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start" font-weight="bold">
+                #lbl_urinaria#
+                </fo:block>
+             </fo:table-cell>
+           	<fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                #lbl_punteggio#
+                </fo:block>
+             </fo:table-cell>
+            
+          </fo:table-row>
+        <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_urinaria1#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_urinaria1#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_urinaria2#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_urinaria2#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_urinaria3#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_urinaria3#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_urinaria4#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_urinaria4#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_urinaria5#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_urinaria5#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start" font-weight="bold">
+                #lbl_intestinale#
+                </fo:block>
+             </fo:table-cell>
+           	<fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                #lbl_punteggio#
+                </fo:block>
+             </fo:table-cell>
+            
+          </fo:table-row>
+        <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_intestinale1#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_intestinale1#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_intestinale2#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_intestinale2#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_intestinale3#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_intestinale3#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_intestinale4#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_intestinale4#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_intestinale5#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_intestinale5#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" number-columns-spanned="2" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start" font-weight="bold">
+                #lbl_deambula#
+                </fo:block>
+             </fo:table-cell>
+           	<fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                #lbl_punteggio#
+                </fo:block>
+             </fo:table-cell>
+            
+          </fo:table-row>
+        <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_deambula1#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_deambula1#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_deambula2#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_deambula2#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_deambula3#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_deambula3#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_deambula4#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_deambula4#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_deambula5#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_deambula5#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start" font-weight="bold">
+                #lbl_carrozzina#
+                </fo:block>
+             </fo:table-cell>
+           	<fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                #lbl_punteggio#
+                </fo:block>
+             </fo:table-cell>
+            
+          </fo:table-row>
+        <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_carrozzina1#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_carrozzina1#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_carrozzina6#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	&#160;
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_carrozzina2#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_carrozzina2#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_carrozzina3#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_carrozzina3#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_carrozzina4#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_carrozzina4#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_carrozzina5#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_carrozzina5#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start" font-weight="bold">
+                #lbl_scale#
+                </fo:block>
+             </fo:table-cell>
+           	<fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                #lbl_punteggio#
+                </fo:block>
+             </fo:table-cell>
+            
+          </fo:table-row>
+        <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_scale1#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_scale1#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_scale2#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_scale2#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_scale3#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_scale3#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_scale4#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_scale4#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+          
+          <fo:table-row height="10pt">            
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start">
+                	#lbl_scale5#
+                </fo:block>
+             </fo:table-cell>           	
+             <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_scale5#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+              
+           <fo:table-row height="10pt">  
+           	<fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="end" font-weight="bold">
+                	#lbl_punteggio_tot#
+                </fo:block>
+             </fo:table-cell> 
+              <fo:table-cell font-size="10pt" padding-top="3mm" border-width="0.1mm" border-style="solid">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" font-weight="bold">
+                	#punteggio_totale# 
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row>   
+          
+                 
+        
+          </fo:table-body>
+      </fo:table>
+
+		<fo:block start-indent="1mm" end-indent="1mm" text-align="start" font-size="10pt" space-before="0.3cm">
+             #lbl_dipendenza#: <fo:inline font-weight="bold">#dipendenza#</fo:inline>
+         </fo:block>
+         <fo:block start-indent="1mm" end-indent="1mm" text-align="start" font-size="10pt" space-before="0.1cm">
+             #lbl_ore#: <fo:inline font-weight="bold">#ore#</fo:inline>
+         </fo:block>
+	<fo:table padding-top="1cm">
+        	<fo:table-column column-width="7cm"/>
+        	<fo:table-column column-width="10cm"/>
+        <fo:table-body>
+          <fo:table-row>
+ 	      <fo:table-cell font-size="10pt"
+			padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm"
+                 font-weight="normal" text-align="start"
+                 >#lbl_nome_qualifica#:
+		 </fo:block>
+              </fo:table-cell>
+ 	      <fo:table-cell font-size="10pt"
+			padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm"
+                 font-weight="bold" text-align="start"
+                 >#nome_test#
+		 </fo:block>
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row>
+ 	      <fo:table-cell font-size="10pt" padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm"
+                 font-weight="normal"
+                 >#lbl_data_test#:
+		 </fo:block>
+              </fo:table-cell>
+ 	      <fo:table-cell font-size="10pt" padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm"
+                 font-weight="bold"
+                 >#data_test#
+		 </fo:block>
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row>
+ 	      <fo:table-cell font-size="10pt" padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm"
+                 font-weight="normal"
+                 >#lbl_tempo#:
+		 </fo:block>
+              </fo:table-cell>
+ 	      <fo:table-cell font-size="10pt" padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm"
+                 font-weight="bold"
+                 >#tempo_t#
+		 </fo:block>
+              </fo:table-cell>
+          </fo:table-row>
+
+    </fo:table-body>
+   </fo:table>
+    </fo:flow> <!-- closes the flow element-->
+  </fo:page-sequence> <!-- closes the page-sequence -->
+<!-- mfo:section.end -->
+
+
+</fo:root>
+
+

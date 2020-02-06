@@ -1,0 +1,45 @@
+<zk xmlns:n="native" xmlns:h="xhtml" xmlns:w="client">
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+
+<?component name="menu_left" inline="true" macroURI="/web/ui/menu/menu_left_container_inf.zul"?>
+<?component name="main_toolbar" inline="true" macroURI="/web/ui/main_toolbar.zul"?>
+
+<?page title="${c:l('application.name')}"?>
+<script src="~./scripts/screenfull.js"  defer="true"/>
+
+<style>
+	body { padding: 0 0;  /* 0 padding	on top and bottom and 0 padding on right and left */ }
+</style>
+
+
+<window apply="it.caribel.app.sinssnt.controllers.ContainerInfermieristicoCtrl"
+ id="main"
+ border="none"
+ hflex="true"
+ vflex="true"
+ mode="embedded"
+ position="center"
+ sizable="false"
+ maximizable="false"
+ >
+
+	<borderlayout  hflex="true"  vflex="true">
+		<north height="29px">
+			<main_toolbar/>    
+		</north>
+		<west width="20%" vflex="true" border="none" collapsible="true" splittable="true" style="padding: 0px">			
+			<menu_left/>
+		</west>
+		<center border="normal">
+			<vlayout vflex="true" spacing="0px"> 
+				<vlayout id="menu_top" spacing="1px" >
+
+				</vlayout>
+				<vlayout id="working_area"  vflex="true">
+				
+				</vlayout>
+			</vlayout>
+		</center>
+	</borderlayout>
+</window>
+</zk>

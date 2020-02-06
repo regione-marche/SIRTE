@@ -1,0 +1,73 @@
+<!-- <?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?> -->
+
+<?component name="legendaAgenda" inline="true" macroURI="/web/ui/sinssnt/agenda/legendaAgenda.zul"?>
+<zk xmlns:w="client">
+<window title="${c:l('agendaSposta.formTitle')}" border="normal"
+	apply="it.caribel.app.sinssnt.controllers.agenda.AgendaSpostaFormCtrl"
+	mode="modal"
+	closable="true" sizable="true" width="90%" height="80%">
+
+	<vlayout vflex="true">
+
+		<caribelFormMenu visible_btn_delete="false" visible_btn_save="false"/>
+		<vlayout vflex="true" sclass="asterOverflow asterLayout" style="margin-left:3px;">
+			<hlayout visible="false">
+				<caribeldatebox id="dateCartIni" db_name="cont_ini" />
+				<caribeldatebox id="dateCartFin" db_name="cont_fin" />
+
+				<caribeldatebox id="jCariDateTextFieldHiddenProg" db_name="" />
+				<caribeltextbox id="JCariTextFieldNProgetto" db_name="n_progetto" />
+				<caribeltextbox id="cartella" db_name="n_cartella" />
+				<caribeltextbox id="contatto" db_name="int_contatto" />
+
+				<caribeltextbox id="JCariTextFieldCodObiettivo" db_name="cod_obbiettivo" />
+				<caribeltextbox id="JCariTextFieldNIntervento" db_name="n_intervento" />
+				<caribeltextbox id="JCariTextFieldTipoOper" db_name="pa_tipo_oper" />
+
+				<caribeltextbox id="JCariTextFieldTipoAccesso" db_name="tipo_accesso" />
+				<caribeltextbox id="JCariTextFieldTipo_oper" db_name="int_tipo_oper" />
+				<caribeltextbox id="JCariTextFieldUsl" db_name="codazsan" />
+				<caribeltextbox id="JCariTextFieldRegione" db_name="codreg" />
+
+				<caribeltextbox id="JCariTextFieldIndHide" db_name="indirizzo" />
+				<caribeltextbox id="JCariTextFieldProgHide" db_name="pi_prog" />
+			</hlayout>
+			<hlayout>
+				<vlayout hflex="60%" sclass="normalText">
+					<label id="meseAnno"></label>
+					<hlayout>
+						<button id="settPrec" label="${c:l('agenda.btn.prec')}" forward="onPrec"></button>
+						<button id="settSucc" label="${c:l('agenda.btn.suc')}" forward="onSucc"></button>
+					</hlayout>
+				</vlayout>
+				<legendaAgenda hflex="40%" />
+			</hlayout>
+			<hlayout>
+<!-- 				<label value="${c:l('agendaPianSett.riepilogoAltroAssistito')}" /> -->
+				<caribeltextbox id="riepilogoAltroAssistito" hflex="100%" readonly="true"/>
+			</hlayout>
+			<hlayout style="text-align:center" vflex="true">
+				<caribellistbox id="caribellbAgendaAssistito" sizedByContent="true" checkmark="${arg.checkable}" multiple="${arg.checkable}"  oddRowSclass="non-odd"
+					 vflex="true">
+					<listhead sizable="true">
+						<caribellistheader db_name="" 		   width="3%" label="" />
+						<caribellistheader db_name="assistito" width="22%" label="${c:l('agendaPianSett.assistito')}" />
+						<caribellistheader db_name="matt_pom"  width="5%"  label="${c:l('agendaPianSett.matt_pom')}" />
+						<caribellistheader db_name="0"         width="10%" sclass="headerListbox" label="${c:l('agendaPianSett.sett.0')}" ><checkbox id="jCheckBox1" visible="${arg.checkable}"></checkbox></caribellistheader>  
+						<caribellistheader db_name="1"         width="10%" sclass="headerListbox" label="${c:l('agendaPianSett.sett.1')}" ><checkbox id="jCheckBox2" visible="${arg.checkable}"></checkbox></caribellistheader>  
+						<caribellistheader db_name="2"         width="10%" sclass="headerListbox" label="${c:l('agendaPianSett.sett.2')}" ><checkbox id="jCheckBox3" visible="${arg.checkable}"></checkbox></caribellistheader>  
+						<caribellistheader db_name="3"         width="10%" sclass="headerListbox" label="${c:l('agendaPianSett.sett.3')}" ><checkbox id="jCheckBox4" visible="${arg.checkable}"></checkbox></caribellistheader>  
+						<caribellistheader db_name="4"         width="10%" sclass="headerListbox" label="${c:l('agendaPianSett.sett.4')}" ><checkbox id="jCheckBox5" visible="${arg.checkable}"></checkbox></caribellistheader>  
+						<caribellistheader db_name="5"         width="10%" sclass="headerListbox" label="${c:l('agendaPianSett.sett.5')}" ><checkbox id="jCheckBox6" visible="${arg.checkable}"></checkbox></caribellistheader>  
+						<caribellistheader db_name="6"         width="10%" sclass="headerListbox" label="${c:l('agendaPianSett.sett.6')}" ><checkbox id="jCheckBox7" visible="${arg.checkable}"></checkbox></caribellistheader>  
+					</listhead>
+				</caribellistbox>
+			</hlayout>
+			<hlayout>
+				<label value=" " />
+			</hlayout>
+		</vlayout>
+	</vlayout>
+
+</window>
+</zk>

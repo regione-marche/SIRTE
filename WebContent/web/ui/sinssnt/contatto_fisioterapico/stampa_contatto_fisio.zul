@@ -1,0 +1,105 @@
+<window title="${c:l('contatto.fisio.stampa')}"
+apply="it.caribel.app.sinssnt.controllers.contattoFisioterapico.StampaContattoFisioCtrl"
+closable="true"
+sizable="true" mode="overlapped" border="normal" position="center"
+width="650px">
+
+	<vlayout vflex="true">
+		<caribelFormMenu visible_btn_print="true" visible_btn_undo="false" visible_btn_delete="false" visible_btn_save="false" />
+		<vlayout sclass="asterLayout asterOverflow" vflex="true">			
+				
+			<hlayout width="100%">
+				<label hflex="15%"
+					value="${c:l('common.cartella')}:" />
+				<caribeltextbox hflex="15%" readonly="true"
+					id="key_cartella"/>
+				<label hflex="10%"
+					value="${c:l('common.contatto')}:" />
+				<caribeltextbox hflex="15%" readonly="true"
+					id="key_contatto" />
+				<label hflex="10%"
+					value="${c:l('common.assistito')}:" />
+				<caribeltextbox hflex="35%" readonly="true"
+					id="key_assistito"/>	
+			</hlayout>
+			
+			<hlayout width="100%">
+				<label hflex="15%"
+					value="${c:l('contatto.medico.anamnesi.data.apertura')}:" />
+				<caribeldatebox hflex="15%" readonly="true"
+					id="key_data_apertura"  />
+				<label hflex="10%"
+					value="${c:l('common.operatore')}:" />
+				<caribeltextbox hflex="60%" readonly="true"
+					id="key_operatore"  />
+			</hlayout>
+		</vlayout>
+		<vlayout width="100%">
+			<tree id="tree_stampa_fisio" multiple="true" checkmark="true"
+				zclass="z-filetree" style="white-space:nowrap;" >
+				    <attribute name="onSelect"><![CDATA[
+					  	Treeitem treeitem = (Treeitem)((SelectEvent)event).getReference();
+					  	treeitem.setOpen(true);
+			            if (treeitem.getLastChild() != null && treeitem.getLastChild() instanceof Treechildren){
+			                Treechildren tchildren = (Treechildren)treeitem.getLastChild();
+			                for(Treeitem i:tchildren.getItems()){ 
+			                    i.setSelected(treeitem.isSelected());
+			               }
+			            }
+			        ]]></attribute>
+			         <treechildren>
+				        <treeitem>
+				            <treerow>
+				                <treecell id="val_0" label="${c:l('contatto.fisio.stampa.scheda_fisio')}"/>
+				            </treerow>
+				            <treechildren>
+				                <treeitem value="">
+				                    <treerow>
+				                        <treecell id="val_A" label="${c:l('contatto.fisio.stampa.anagrafica')}"/>
+				                    </treerow>
+				                </treeitem>
+				                <treeitem>
+				                    <treerow>
+				                        <treecell id="val_1" label="${c:l('contatto.fisio.stampa.dati_contatto')}"/>
+				                    </treerow>
+				                    <treechildren>
+				                    	<treeitem>
+				                            <treerow>
+				                                <treecell id="val_B" label="${c:l('contatto.fisio.stampa.principale')}"/>
+				                            </treerow>
+				                        </treeitem>
+				                        <treeitem>
+				                            <treerow>
+				                                <treecell id="val_C" label="${c:l('contatto.fisio.stampa.situazione_fam_ab')}"/>
+				                            </treerow>
+				                        </treeitem>
+				                        <treeitem>
+				                            <treerow>
+				                                <treecell id="val_D" label="${c:l('contatto.fisio.stampa.cond_paziente')}"/>
+				                            </treerow>
+				                        </treeitem>
+				                        <treeitem>
+				                            <treerow>
+				                                <treecell id="val_G" label="${c:l('contatto.fisio.stampa.patologie')}"/>
+				                            </treerow>
+				                        </treeitem>
+				                        <treeitem>
+				                            <treerow>
+				                                <treecell id="val_E" label="${c:l('contatto.fisio.stampa.progetto_riab1')}"/>
+				                            </treerow>
+				                        </treeitem>
+				                        <treeitem>
+				                            <treerow>
+				                                <treecell id="val_F" label="${c:l('contatto.fisio.stampa.progetto_riab2')}"/>
+				                            </treerow>
+				                        </treeitem>
+				                    </treechildren>
+				                </treeitem>
+				               
+				            </treechildren>
+				        </treeitem>
+				    </treechildren>
+			</tree>
+		</vlayout>
+	</vlayout>
+</window>

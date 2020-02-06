@@ -1,0 +1,58 @@
+<window title="${c:l('accessiPrestazioni.gridTitle')}"
+	apply="it.caribel.app.sinssnt.controllers.interventi.AccessiGridCtrl"
+	sclass="asterOverlappedWindow" width="800px"
+	height="${c:l('style.windowGrid.overlapped.height')}" sizable="true"
+	closable="true" mode="overlapped" position="center" border="normal">
+
+	<vlayout height="100%">
+
+		<caribelGridMenu visible_btn_print="true"/>
+		<vlayout sclass="asterLayout" vflex="true" >
+			<hlayout visible="false">
+				<caribeltextbox hflex="10%" id="JCariTextFieldProv" />
+				<caribeltextbox hflex="10%" id="tipo_op" />
+			</hlayout>
+
+			<hlayout>
+				<label hflex="20%" value="${c:l('accessiPrestazioni.si_anno')}:" />
+				<caribelintbox hflex="10%" id="int_anno" maxlength="4" required="true" />
+				<label hflex="20%" value="${c:l('accessiPrestazioni.si_progr')}:" />
+				<caribelintbox hflex="10%" id="int_progr" maxlength="10" required="true" />
+				<label hflex="40%" value="" />
+			</hlayout>
+			<hlayout>
+				<label hflex="20%" value="${c:l('accessiPrestazioni.assistito')}:" />
+				<caribelSearch id="cs_assistito" required="true"
+					hflex="80%" id_cod="n_cartella" db_name_cod="cartella"
+					id_descr="cognomeAss" db_name_descr="cognomeAss"
+					ctrl="it.caribel.app.common.controllers.cartella.CartellaSearchCtrl" />
+			</hlayout>
+			<hlayout>
+				<label hflex="20%" value="${c:l('accessiPrestazioni.dal')}:" />
+				<caribeldatebox hflex="15%" db_name="dal" id="dataDa" onChange="it.caribel.zk.util.UtilForComponents.linkDatebox(self, dataA);"/>
+				<label hflex="20%" value="${c:l('accessiPrestazioni.al')}:" />
+				<caribeldatebox hflex="15%" db_name="al" id="dataA"   onChange="it.caribel.zk.util.UtilForComponents.linkDatebox(dataDa, self);"/>
+				<label hflex="30%" value="" />
+			</hlayout>
+			<hlayout>
+				<label hflex="20%" value="${c:l('common.operatore')}:" />
+				<caribelSearch id="operatore" hflex="80%" 
+								db_name_cod="codice"  id_cod="cod_operatore" maxlength="10"
+								db_name_descr="cognome" id_descr="desc_operatore"
+								ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl" />
+			</hlayout>
+<!-- 			<caribelPaging /> -->
+			<caribellistbox id="caribellb" sizedByContent="true" span="true" vflex="true" width="100%">
+				<listhead sizable="true">
+					<caribellistheader db_name="int_anno"       label="${c:l('accessiPrestazioni.anno')}" />
+					<caribellistheader db_name="int_contatore"  label="${c:l('accessiPrestazioni.contatore')}" />
+					<caribellistheader db_name="int_data_prest" label="${c:l('accessiPrestazioni.dataAccesso')}" />
+					<caribellistheader db_name="int_cod_oper"   label="${c:l('accessiPrestazioni.codOperatore')}" />
+					<caribellistheader db_name="opcogn"         label="${c:l('common.operatore')}" />
+					<caribellistheader db_name="int_cartella"   label="${c:l('common.cartella')}" />
+					<caribellistheader db_name="cognome"		label="${c:l('common.assistito')}" />
+				</listhead>
+			</caribellistbox>
+		</vlayout>
+	</vlayout>
+</window>

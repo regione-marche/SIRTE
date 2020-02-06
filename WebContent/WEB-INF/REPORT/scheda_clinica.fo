@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+
+<!-- mfo:section.start="layout" rem="IMPOSTAZIONI DI PAGINA" -->
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="simple"
+        page-height="29.7cm"	page-width="21cm"
+        margin-top="1cm"	margin-bottom="1cm"
+        margin-left="1cm"	margin-right="1cm" >
+      <fo:region-body margin-top="1cm" margin-bottom="1cm"/>
+      <fo:region-before extent="2.5cm"/>
+      <fo:region-after extent="1cm"/>
+    </fo:simple-page-master>
+  </fo:layout-master-set>
+
+  <fo:page-sequence master-name="simple">
+    <fo:static-content flow-name="xsl-region-before">
+  <fo:table font-size="10pt">
+  <fo:table-column column-width="17.5cm"/>
+  <fo:table-body>
+  <fo:table-row height="9pt">
+   <fo:table-cell text-align="start" >
+
+	<fo:table font-size="10pt">
+	<fo:table-column column-width="11.5cm"/>
+	<fo:table-column column-width="6cm"/>
+	 <fo:table-body>
+	  <fo:table-row height="9pt">
+	    <fo:table-cell text-align="start" >
+		<fo:block start-indent="1mm" end-indent="1mm"
+		padding-top="0.5mm" font-weight="bold">
+			Cognome e Nome: #assistito#
+		</fo:block>
+	    </fo:table-cell>
+	    <fo:table-cell text-align="start" >
+		<fo:block start-indent="1mm" end-indent="1mm"
+		padding-top="0.5mm" font-weight="bold">
+			Data scheda: #data#
+		</fo:block>
+	    </fo:table-cell>
+	  </fo:table-row>
+	 </fo:table-body>
+	</fo:table>
+	    </fo:table-cell>
+	  </fo:table-row>
+          <fo:table-row height="1pt">
+             <fo:table-cell text-align="start" number-columns-spanned='2'>
+                  <fo:block>
+                          <fo:leader leader-pattern="rule"
+                             rule-thickness="0.5pt"
+                             leader-length="17cm"/>
+                  </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+
+	 </fo:table-body>
+	</fo:table>
+
+	  <fo:block font-size="14pt"  end-indent="1mm"
+		  font-weight="bold" text-align="start" space-before.optimum="12pt">
+		  SCHEDA CLINICA
+	  </fo:block>
+    </fo:static-content>
+
+
+    <!-- TITOLO DI PIEDE -->
+    <fo:static-content flow-name="xsl-region-after">
+      <fo:table font-size="8pt" width="auto" space-before.optimum="0.5cm">
+        <fo:table-column column-width="12cm"/>
+        <fo:table-column column-width="7cm"/>
+        <fo:table-body>
+          <fo:table-row height="10pt">
+            <fo:table-cell text-align="start">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >#txt#</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="end">
+              <fo:block start-indent="1mm" end-indent="1mm" padding-top="0.5mm"
+                >elaborato del #data_stampa# (scheda_clinica.fo)</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body">
+    
+<!-- mfo:section.end -->
+<!--mfo:section.start="iniziotab" -->
+
+	<fo:table space-before.optimum="1cm" >
+        <fo:table-column column-width="10cm"/>
+        <fo:table-column column-width="4.5cm"/>
+        <fo:table-column column-width="4.5cm"/>
+        <fo:table-body>
+           <fo:table-row height="8pt" >
+             <fo:table-cell font-size="11pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" font-weight="bold" space-before="0.1cm"
+                >Descrizione
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell  font-size="11pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" 
+                  font-weight="bold" space-before="0.1cm">Concausa di non autosufficienza</fo:block>
+             </fo:table-cell>
+             <fo:table-cell  font-size="11pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="center" 
+                  font-weight="bold" space-before="0.1cm">Causa di non autosufficienza</fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+<!-- mfo:section.end -->
+           
+<!--mfo:section.start="rigatab" rem="RIGA RIPETITIVA" -->
+	    <fo:table-row height="8pt" >
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="start" font-weight="bold" space-before="0.1cm"
+                >#desc#
+                </fo:block>
+             </fo:table-cell>             
+             <fo:table-cell  font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start" 
+                  space-before="0.1cm">#presente# </fo:block>
+             </fo:table-cell>
+             <fo:table-cell  font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm" text-align="start" 
+                  space-before="0.1cm">#noauto# </fo:block>
+             </fo:table-cell>
+          </fo:table-row>
+  <!-- mfo:section.end -->
+           
+<!--mfo:section.start="finetab" -->     
+	    <fo:table-row height="8pt" >
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="start" font-weight="bold" space-before="0.1cm"
+                >#desc#
+                </fo:block>
+             </fo:table-cell>
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm" number-columns-spanned='2'>
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="start"  space-before="0.1cm"
+                >#altro#
+                </fo:block>
+             </fo:table-cell>          </fo:table-row>
+
+    </fo:table-body>
+   </fo:table>
+     
+  <fo:block start-indent="1mm" end-indent="1mm" font-size="10pt"
+		text-align="start" font-weight="bold" space-before.optimum="1cm">
+		  Indicare quale tra le patologie presenti e' la principale causa di non autosufficienza:
+	  </fo:block>
+
+	<fo:table space-before.optimum="0.3cm" >
+        	<fo:table-column column-width="19cm"/>
+          <fo:table-body>
+           <fo:table-row height="16pt" >
+             <fo:table-cell font-size="11pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >#patnonauto#
+                </fo:block>
+             </fo:table-cell>
+          </fo:table-row> 
+    </fo:table-body>
+   </fo:table>
+
+<fo:table space-before.optimum="0.3cm" >
+    <fo:table-column column-width="15cm"/>
+ 	<fo:table-column column-width="1cm"/>
+ 	<fo:table-column column-width="1cm"/>
+ 	<fo:table-column column-width="1cm"/>
+ 	<fo:table-column column-width="1cm"/>
+	<fo:table-body>
+           <fo:table-row height="8pt" >
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="start" space-before="0.1cm" font-weight="bold"
+                >Indicare se anche in assenza di una vera causa di non autosufficienza, le varie patologie presenti possono concorrere a determinarla:
+                </fo:block>
+             </fo:table-cell>
+		   
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >No
+                </fo:block>
+             </fo:table-cell>
+			 
+			<fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >#scl_nonauto_concause_n#
+                </fo:block>
+             </fo:table-cell>
+			 
+            <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >Si
+                </fo:block>
+             </fo:table-cell>
+            <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >#scl_nonauto_concause_s#
+                </fo:block>
+             </fo:table-cell>			 
+          </fo:table-row> 
+    </fo:table-body>
+   </fo:table>
+
+   
+   
+
+<fo:table space-before.optimum="0.3cm" >
+    <fo:table-column column-width="4cm"/>
+ 	<fo:table-column column-width="4cm"/>
+ 	<fo:table-column column-width="1cm"/>
+    <fo:table-column column-width="4cm"/>
+ 	<fo:table-column column-width="1cm"/>
+ 	<fo:table-column column-width="4cm"/>
+ 	<fo:table-column column-width="1cm"/>
+	<fo:table-body>
+           <fo:table-row height="8pt" >
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="start" space-before="0.1cm" font-weight="bold"
+                >Indicare se la persona e':
+                </fo:block>
+             </fo:table-cell>
+		   
+             <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >in dialisi
+                </fo:block>
+             </fo:table-cell>
+			 
+			<fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >#scl_dialisi#
+                </fo:block>
+             </fo:table-cell>
+			 
+            <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >in fase di terminalita' oncologica
+                </fo:block>
+             </fo:table-cell>
+            <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >#scl_term_oncologica#
+                </fo:block>
+             </fo:table-cell>			 
+            
+            <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >in fase di terminalita' non oncologica
+                </fo:block>
+             </fo:table-cell>
+            <fo:table-cell font-size="9pt" border-style="solid" border-width="0.1mm">
+                <fo:block start-indent="1mm" end-indent="1mm"
+                          text-align="center" space-before="0.1cm"
+                >#scl_term_non_oncologica#
+                </fo:block>
+             </fo:table-cell>			 
+          </fo:table-row> 
+    </fo:table-body>
+   </fo:table>
+
+
+	<fo:table padding-top="1cm">
+        	<fo:table-column column-width="10cm"/>
+        	<fo:table-column column-width="9cm"/>
+        <fo:table-body>   
+
+          <fo:table-row>
+ 	      <fo:table-cell font-size="10pt" padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm"
+                font-weight="normal" text-align="start"
+                >Punteggio:
+				</fo:block>
+          </fo:table-cell>
+ 	      <fo:table-cell font-size="10pt" padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm"
+                font-weight="bold" text-align="start"
+                >#totale#
+		 		</fo:block>
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row>
+ 	      <fo:table-cell font-size="10pt"
+			padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm"
+                 font-weight="normal" text-align="start"
+                 >Nome e qualifica di chi ha eseguito il rilievo:
+		 </fo:block>
+              </fo:table-cell>
+ 	      <fo:table-cell font-size="10pt"
+			padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm"
+                 font-weight="bold" text-align="start"
+                 >#nome_test#
+		 </fo:block>
+              </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row>
+ 	      <fo:table-cell font-size="10pt" padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm"
+                 font-weight="normal"
+                 >Data Test:
+		 </fo:block>
+              </fo:table-cell>
+ 	      <fo:table-cell font-size="10pt" padding-top="3mm">
+              	<fo:block padding-top="0.5mm" start-indent="1mm"
+                 font-weight="bold"
+                 >#data_test#
+		 </fo:block>
+              </fo:table-cell>
+          </fo:table-row>
+    </fo:table-body>
+   </fo:table>
+
+<!-- mfo:section.end -->
+
+<!-- mfo:section.start="finale" -->
+    </fo:flow> <!-- closes the flow element-->
+  </fo:page-sequence> <!-- closes the page-sequence -->
+<!-- mfo:section.end -->
+</fo:root>
+
+

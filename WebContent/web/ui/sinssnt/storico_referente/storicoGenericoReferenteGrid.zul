@@ -1,0 +1,84 @@
+<window title="${c:l('riepilogo.storico.generico.referente.formTitle')}"
+	apply="it.caribel.app.sinssnt.controllers.storico_referente.StoricoGenericoReferenteGridCtrl"
+	sclass="asterOverlappedWindow"
+	id="medicoRefereteW"
+	height="${c:l('style.windowGrid.overlapped.height')}" sizable="true"
+	closable="true" mode="overlapped" position="center" border="normal">
+
+	<vlayout>
+		<vlayout spacing="0px" width="100%">
+			<hlayout valign="middle" width="100%">
+				<label hflex="20%"
+					value="${c:l('riepilogo.storico.medico.referente.cartella')}:" visible="false"/>
+				<caribeltextbox hflex="20%" readonly="true"
+					id="key_cartella" db_name="n_cartella" visible="false"/>
+				<label hflex="5%" value="" visible="false"></label>
+				<label hflex="15%"
+					value="${c:l('riepilogo.storico.medico.referente.operatore')}:" visible="false"/>
+				<caribeltextbox hflex="35%" readonly="true"
+					id="JLabelCognomeOp" db_name="JLabelCognomeOp" visible="false"/>
+				<label hflex="5%" value="" visible="false"></label>
+			</hlayout>
+			<hlayout valign="middle" width="100%">
+				<label hflex="20%"
+					value="${c:l('riepilogo.storico.medico.referente.contatto')}:" visible="false"/>
+				<caribeltextbox hflex="20%" readonly="true"
+					id="key_contatto" db_name="n_contatto" visible="false"/>
+				<caribeltextbox hflex="0%" readonly="true" visible="false"
+					id="key_tipo_operatore" db_name="skfpg_tipo_operatore" />
+				<label hflex="5%" value="" visible="false"></label>
+				<label hflex="15%"
+					value="${c:l('riepilogo.storico.medico.referente.assistito')}:" visible="false"/>
+				<caribeltextbox hflex="35%" readonly="true"
+					id="JLabelAssistito" db_name="JLabelAssistito" visible="false"/>
+				<label hflex="5%" value="" visible="false"></label>
+			</hlayout>
+			<!-- <caribelPaging /> -->
+			<hlayout width="100%">
+				<caribellistbox rows="15" hflex="true">
+					<listhead sizable="true">
+						<caribellistheader db_name="skfpg_referente_da"
+							width="15%" id="lbTbDtInizio"
+							label="${c:l('riepilogo.storico.medico.referente.tb.data.inizio')}" />
+						<caribellistheader db_name="descop" width="55%" id="lbTbOperatore"
+							label="${c:l('riepilogo.storico.generico.referente.tb.generico')}" />
+						<caribellistheader db_name="des_zona"
+							width="30%" id="lbTbZona"
+							label="${c:l('riepilogo.storico.medico.referente.tb.zona')}" />
+					</listhead>
+				</caribellistbox>
+			</hlayout>
+			<hlayout style="margin-top: -1px;" hflex="true" width="100%">
+				<caribelGridFormMenuHoriz />
+			</hlayout>
+			<hlayout width="100%">
+				<groupbox style="margin-top: -1px;" hflex="true" closable="false">
+					<vlayout hflex="true" vflex="true" id="myForm" sclass="asterLayout">
+						<hlayout>
+							<label hflex="20%" id="lbSkDataInizio"
+								value="${c:l('riepilogo.storico.medico.referente.data.inizio.incarico')}:" />
+							<caribeldatebox id="skfpg_referente_da"
+								hflex="15%" db_name="skfpg_referente_da" required="true"
+								constraint="no future" />
+							<caribeltextbox hflex="20%" readonly="true" id="keyCartella" db_name="n_cartella" visible="false"/>								
+							<caribeltextbox hflex="20%" readonly="true" id="keyContatto" db_name="n_contatto" visible="false"/>
+							<caribeltextbox hflex="20%" readonly="true" id="keyTipoOperatore" db_name="skfpg_tipo_operatore" visible="false"/>
+							<label hflex="65%" />
+						</hlayout>
+						<hlayout>
+							<label id="lbSkOperatore" hflex="20%" value="${c:l('SchedaGenericaForm.principale.ref')}:" />
+							<caribelSearch hflex="70%"  required="true" id_cod="skfpg_referente" id_descr="descop"
+								db_name_cod="skfpg_referente" db_name_descr="descop" id="skfpgReferente"
+								ctrl="it.caribel.app.sinssnt.controllers.tabelle.operatori.OperatoriSearchCtrl" />
+							<label hflex="10%" />
+						</hlayout>
+					</vlayout>
+					
+				</groupbox>
+
+			</hlayout>
+
+		</vlayout>
+
+	</vlayout>
+	</window>

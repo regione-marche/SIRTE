@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	Created by ZK Studio
+-->
+
+<zk>
+	<device-config>
+		<device-type>ajax</device-type>
+		<timeout-uri>~./zul/html/common_page/timeout.zul</timeout-uri><!-- An empty URL can cause the browser to reload the same URL -->
+	</device-config>
+
+
+	<desktop-config> 
+	  	<theme-uri>/web/style_sheets/Sinssnt_Style.css</theme-uri>  				  	
+	</desktop-config>
+
+	
+	<!-- ====================================================== -->
+	<!-- Displays the wait indicator on every user action -->
+	<!-- and sets the position -->
+	<!-- ====================================================== -->
+	<library-property>
+		<name>org.zkoss.zul.progressbox.position</name>
+		<value>center</value>
+	</library-property>
+	<!--
+	<client-config>
+		<processing-prompt-delay>1</processing-prompt-delay>
+	</client-config>
+	-->
+	
+	<!--spostato in caribel_lib_zk
+	<language-config>
+	    <addon-uri>/web/addon/lang-addon.xml</addon-uri>        
+	</language-config>
+	-->
+	<library-property>
+         <name>org.zkoss.theme.names</name>
+         <value>breeze sapphire silvertail PastelTheme SeaTheme OrangeTheme GreenTheme VioletTheme Petrolio</value>
+    </library-property>
+	<library-property>
+         <name>org.zkoss.theme.preferred</name>
+         <value>sapphire</value>
+    </library-property>
+
+	<system-config>
+		<!-- <label-location>/web/languages/eventuali_altri_file.properties</label-location> -->
+	    <label-location>/web/languages/label_sinssnt.properties</label-location>
+	    <label-location>/web/languages/obiettivi_bisogni.properties</label-location>
+	    <label-location>/web/languages/menu.properties</label-location>
+	    <label-location>/web/languages/report.properties</label-location>
+	    <label-location>/web/languages/tabelle.properties</label-location>
+	</system-config> 
+	
+	<session-config>
+	    <session-timeout>3600</session-timeout>
+	    <timer-keep-alive>false</timer-keep-alive>
+	    <!--max-desktops-per-session>15</max-desktops-per-session-->
+	    <!--max-requests-per-session>5</max-requests-per-session-->
+	    <!--max-pushes-per-session>3</max-pushes-per-session-->
+	</session-config>
+	
+</zk>
