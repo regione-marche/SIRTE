@@ -1,0 +1,1 @@
+Gli script di sinssnt per il momento stanno sulla 150 in scriptsql (repo ufficiale per gli script)

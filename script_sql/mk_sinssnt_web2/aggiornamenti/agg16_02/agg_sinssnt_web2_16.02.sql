@@ -1,0 +1,327 @@
+SET DEFINE OFF;
+UPDATE CONF SET CONF_TXT = 'Vers. 16.02' WHERE CONF_KPROC = 'SINS' AND CONF_KEY = 'VERSIONE';
+
+
+ALTER TABLE SC_BISOGNI ADD STATO_VEGETATIVO CHAR(1 BYTE);
+ALTER TABLE SC_BISOGNI ADD NUTR_DISFAGIA_DETT CHAR(2 BYTE);
+ALTER TABLE SC_BISOGNI ADD GASTR_INCONT_DETT CHAR(2 BYTE);
+ALTER TABLE SC_BISOGNI ADD GASTR_DIARREA CHAR(1 BYTE);
+ALTER TABLE SC_BISOGNI ADD GENURI_DIALISI_PERI CHAR(1 BYTE);
+ALTER TABLE SC_BISOGNI ADD RITMO_ALTERATO_DETT CHAR(2 BYTE);
+ALTER TABLE SC_BISOGNI ADD ONCO_DOLORE_DETT CHAR(2 BYTE);
+
+--TABELLA DI APPOGGIO PER I PUNTEGGI DELLA SCALA DI VALUTAZIONE DEI BISOGNI
+CREATE TABLE SC_BISOGNI_PUNT(
+  ID_BISOGNO		VARCHAR2(30 BYTE),
+  DESCR_BISOGNO		VARCHAR2(100 BYTE),
+  PUNTEGGIO			NUMBER(13),
+  PRIMARY KEY		(ID_BISOGNO)
+);
+
+--NUOVA SCALA DI VALUTAZIONE: PRESIDI SANITARI 
+CREATE TABLE SC_PRESIDI_SAN
+(
+  N_CARTELLA      	NUMBER(13)   NOT NULL,
+  DATA            	DATE         NOT NULL,
+  DATA_TEST       	DATE,
+  DATA_SCHEDA     	DATE,
+  COD_OPERATORE   	CHAR(10 BYTE),
+  NOME              VARCHAR2(200 BYTE),
+  TEMPO_T         	NUMBER(13),
+  CAT_VESC 			CHAR(1 BYTE),
+  CAT_VESC_TIPO 	CHAR(8 BYTE),
+  CAT_VESC_NUM_CAL 	VARCHAR2(50 BYTE),
+  CAT_VESC_DATA 	DATE,
+  CAT_CVC 			CHAR(1 BYTE),
+  CAT_CVC_TIPO 		CHAR(8 BYTE),
+  CAT_CVC_DATA 		DATE,
+  PEG_SNG_PEJ 		CHAR(1 BYTE),
+  PEG_SNG_PEJ_TIPO 	CHAR(8 BYTE),
+  PEG_SNG_PEJ_CH 	VARCHAR2(50 BYTE),
+  PEG_SNG_PEJ_DATA 	DATE,
+  CAN_TRAC 			CHAR(1 BYTE),
+  CAN_TRAC_TIPO 	CHAR(8 BYTE),
+  CAN_TRAC_CH 		VARCHAR2(50 BYTE),
+  CAN_TRAC_DATA 	DATE,
+  DRENAGGI 			CHAR(1 BYTE),
+  DRENAGGI_TIPO 	CHAR(8 BYTE),
+  DRENAGGI_SEDE 	VARCHAR2(200 BYTE),
+  DRENAGGI_DATA 	DATE,
+  UROSTOMIE 		CHAR(1 BYTE),
+  UROSTOMIE_TIPO 	CHAR(8 BYTE),
+  UROSTOMIE_MM 		VARCHAR2(50 BYTE),
+  UROSTOMIE_DATA 	DATE,
+  STOMIE_INT 		CHAR(1 BYTE),
+  STOMIE_INT_TIPO 	CHAR(8 BYTE),
+  STOMIE_INT_MM 	VARCHAR2(50 BYTE),
+  STOMIE_INT_DATA 	DATE,
+  ALTRO 			CHAR(1 BYTE),
+  ALTRO_DESCR 		VARCHAR2(200 BYTE),
+  JDBINTERF_VERSION	NUMBER(13),
+  JDBINTERF_LASTCNG	DATE,
+  PRIMARY KEY (N_CARTELLA, DATA)
+);
+
+/* contiene l'informazione precedente alla modifica dello spostamento dell'operatore e del distretto */
+alter table pht2_generale add old_distretto char(6 Byte);
+alter table pht2_generale add old_operatore char(10 Byte);
+
+--BUG FIX le seguenti colonne erano state aggiunte a RM_SKSO_MMG ma non a RM_RICH_MMG, dove effettivamente servono
+ALTER TABLE RM_RICH_MMG ADD TIT_STUDIO CHAR(8 BYTE);
+ALTER TABLE RM_RICH_MMG ADD RIC_RICHIEDENTE CHAR(8 BYTE);
+ALTER TABLE RM_RICH_MMG ADD STRUT_PROVENIENZA CHAR(8 BYTE);
+ALTER TABLE RM_RICH_MMG ADD MOT_RICHIESTA CHAR(8 BYTE);
+
+--Al pannello sanitario aggiungo informazioni provenienti da PHT2
+ALTER TABLE RM_RICH_MMG ADD DIAGNOSTICHE VARCHAR2(2000 BYTE);
+ALTER TABLE RM_RICH_MMG ADD TERAPIE VARCHAR2(2000 BYTE);
+ALTER TABLE RM_RICH_MMG ADD TAO CHAR(1 BYTE);
+ALTER TABLE RM_SKSO_MMG ADD DIAGNOSTICHE VARCHAR2(2000 BYTE);
+ALTER TABLE RM_SKSO_MMG ADD TERAPIE VARCHAR2(2000 BYTE);
+ALTER TABLE RM_SKSO_MMG ADD TAO CHAR(1 BYTE);
+
+--BUG FIX: nel riepilogo delle scale di valutazione non veniva riportata la data della valutazione di BRASS
+update tab_schede
+set campo_data = 'bra_data'
+where id_scheda=70
+and tabella = 'SC_BRASS';
+COMMIT;
+
+UPDATE CONF SET CONF_TXT = 'Vers. 16.02.a' WHERE CONF_KPROC = 'SINS' AND CONF_KEY = 'VERSIONE';
+/* riferimento dalla preferenza al ricovero */
+SET DEFINE OFF;
+ALTER TABLE ZK_RSA_PRENOTAZIONE_INGRESSO ADD RIC_N_RICOVERO NUMBER(13);
+ALTER TABLE ZK_RSA_PRENOTAZIONE_INGRESSO ADD RIC_DATDIM DATE;
+ALTER TABLE ZK_RSA_PRENOTAZIONE_INGRESSO ADD RIC_MOTDIM CHAR(2);
+ALTER TABLE ZK_RSA_PRENOTAZIONE_INGRESSO ADD RIC_GG_PRESENZA NUMBER(13);
+alter table zk_rsa_prenotazione_ingresso add ESITO_AMMISSIONE  CHAR(1 BYTE);
+alter table zk_rsa_prenotazione_ingresso add DATA_AMMISSIONE   DATE;
+
+/* tabella aggiunta nel caso non fosse stato passoto gli script di rsa */
+CREATE TABLE ZK_RSA_RICOVERI
+(
+  N_CARTELLA              NUMBER(13),
+  N_RICOVERO              NUMBER(13),
+  RIC_CODIST              CHAR(6 BYTE),
+  RIC_DATRIC              DATE,
+  RIC_DATAPRIMO_INGRESSO  DATE,
+  TIPO_ISTITUTO           CHAR(1 BYTE),
+  RIC_DATAUT              DATE,
+  RIC_NUMDEL              NUMBER(13),
+  RIC_DATDEL              DATE,
+  RIC_MOTDIM              CHAR(2 BYTE),
+  RIC_DATDIM              DATE,
+  RIC_COGNOME             CHAR(40 BYTE),
+  RIC_NOME                CHAR(40 BYTE),
+  RIC_CODFISC             CHAR(16 BYTE),
+  RIC_INDIRIZZO           CHAR(40 BYTE),
+  RIC_CAP                 CHAR(5 BYTE),
+  RIC_COMUNE              CHAR(6 BYTE),
+  RIC_PROVINCIA           CHAR(2 BYTE),
+  RIC_TIPO_RICOVERO       CHAR(1 BYTE),
+  RIC_OLIAMM              NUMBER(13),
+  COD_TIPO_ASSISTITO      CHAR(3 BYTE),
+  ORG_MOD                 CHAR(3 BYTE),
+  GG_PRESENZA             NUMBER(13),
+  COD_OPERATORE           CHAR(10 BYTE),
+  TITOLO_INGRESSO         CHAR(1 BYTE),
+  RIC_PROVENIENZA         CHAR(1 BYTE),
+  COD_COM_PROV            CHAR(6 BYTE),
+  RIC_RICHIEDENTE         CHAR(1 BYTE),
+  RIC_VALUTATO            CHAR(1 BYTE),
+  USL_PROV                CHAR(3 BYTE),
+  REG_PROV                CHAR(3 BYTE),
+  DATA_ISCRIZIONE_COMUNE  DATE,
+  JDBINTERF_VERSION       NUMBER(13),
+  JDBINTERF_LASTCNG       DATE,
+  JISAS_UID               NUMBER(13),
+  JISAS_GID               NUMBER(13),
+  JISAS_MASK              CHAR(9 BYTE),
+  FLG_FLU_SIDADI          CHAR(1 BYTE),
+  RIC_STATO_CIVILE        CHAR(1 BYTE),
+  RIC_TITOLO_STUDIO       CHAR(8 BYTE),
+  PRIMARY KEY(n_cartella, n_ricovero)
+);
+
+ALTER TABLE ZK_RSA_RICOVERI ADD ID_SKSO NUMBER(13);
+ALTER TABLE ZK_RSA_RICOVERI ADD P_ID_DOMANDA NUMBER(13);
+ALTER TABLE ZK_RSA_RICOVERI ADD P_ID_RICHIESTA NUMBER(13);
+ALTER TABLE ZK_RSA_RICOVERI ADD P_COD_ISTITUTO CHAR(6 Byte); 
+ALTER TABLE ZK_RSA_RICOVERI ADD P_COD_ORG CHAR(3 Byte);
+/* MANCAVANO IN AMBIENTE DI TEST */
+alter table istituti add zona_presidio CHAR(1 BYTE);
+ALTER TABLE istituti add distretto_presidio CHAR (6 BYTE);
+
+COMMIT;
+
+SET DEFINE OFF;
+UPDATE CONF SET CONF_TXT = 'Vers. 16.02.b' WHERE CONF_KPROC = 'SINS' AND CONF_KEY = 'VERSIONE';
+
+DROP TABLE zk_rsa_orgmod;
+CREATE TABLE zk_rsa_orgmod(
+  org_codice                 CHAR(3 BYTE),
+  org_descri                 VARCHAR2(100 BYTE),
+  org_tipo_istituto_default  CHAR(1 BYTE),
+  org_codreg                 CHAR(3 BYTE),
+  org_cod_liv_assist         CHAR(2 BYTE),
+  org_area                   CHAR(1 BYTE),
+  org_durata_impeg           NUMBER(13),
+  org_durata_grad            NUMBER(13),
+  org_flag_lista             CHAR(1 BYTE),
+  org_tipologia_udo          CHAR(2 BYTE),
+  jdbinterf_lastcng          DATE,
+  jdbinterf_version          NUMBER(13),
+  PRIMARY KEY (ORG_CODICE)
+);
+
+SET DEFINE OFF;
+UPDATE CONF SET CONF_TXT = 'Vers. 16.02.c' WHERE CONF_KPROC = 'SINS' AND CONF_KEY = 'VERSIONE';
+ALTER TABLE RUGIII_HC ADD (rug_punt_str VARCHAR2(10 BYTE));
+
+COMMIT ;
+
+SET DEFINE OFF;
+UPDATE CONF SET CONF_TXT = 'Vers. 16.02.d' WHERE CONF_KPROC = 'SINS' AND CONF_KEY = 'VERSIONE';
+
+/* ho riportato gli script della creazione della tabella nel caso non fosse presente */
+CREATE TABLE ASS_ANAGRAFICA
+(
+  JDBINTERF_VERSION        NUMBER(13),
+  JDBINTERF_LASTCNG        DATE,
+  JISAS_UID                NUMBER(13),
+  JISAS_GID                NUMBER(13),
+  JISAS_MASK               CHAR(9 BYTE),
+  PROGRESSIVO              NUMBER(13),
+  DATA_REG                 DATE,
+  COGNOME                  CHAR(40 BYTE),
+  NOME                     CHAR(40 BYTE),
+  COMUNE_NASCITA           CHAR(6 BYTE),
+  DATA_NASCITA             DATE,
+  SESSO                    CHAR(1 BYTE),
+  COD_FIS                  CHAR(16 BYTE),
+  NAZIONALITA              CHAR(3 BYTE),
+  CITTADINANZA             CHAR(3 BYTE),
+  COMUNE_RES               CHAR(6 BYTE),
+  INDIRIZZO_RES            CHAR(40 BYTE),
+  AREADIS_RES              CHAR(6 BYTE),
+  COMUNE_DOM               CHAR(6 BYTE),
+  INDIRIZZO_DOM            CHAR(40 BYTE),
+  AREADIS_DOM              CHAR(6 BYTE),
+  COMUNE_REP               CHAR(6 BYTE),
+  INDIRIZZO_REP            CHAR(40 BYTE),
+  AREADIS_REP              CHAR(6 BYTE),
+  NOME_CAMPANELLO          CHAR(40 BYTE),
+  STR_TIPO_DOC             VARCHAR2(8 BYTE),
+  STR_NUMERO_DOC           VARCHAR2(20 BYTE),
+  STR_SCADENZA_DOC         DATE,
+  STR_INTESTATARIO_DOC     VARCHAR2(100 BYTE),
+  COD_USL                  VARCHAR2(32 BYTE),
+  TELEFONO                 CHAR(20 BYTE),
+  SETTORE                  VARCHAR2(8 BYTE),
+  VIVE_SOLO                CHAR(1 BYTE),
+  SEGN_TIPO                CHAR(1 BYTE),
+  SEGN_DATA                DATE,
+  SEGN_COGNOME             CHAR(40 BYTE),
+  SEGN_NOME                CHAR(40 BYTE),
+  SEGN_COMUNE_NAS          CHAR(6 BYTE),
+  SEGN_DATA_NAS            DATE,
+  SEGN_COMUNE_RES          CHAR(6 BYTE),
+  SEGN_INDIRIZZO           CHAR(40 BYTE),
+  SEGN_TELEFONO            CHAR(20 BYTE),
+  SEGN_RAPPORTO            VARCHAR2(8 BYTE),
+  RIF_COGNOME              CHAR(40 BYTE),
+  RIF_NOME                 CHAR(40 BYTE),
+  RIF_COMUNE_RES           CHAR(6 BYTE),
+  RIF_INDIRIZZO            CHAR(40 BYTE),
+  RIF_TELEFONO             CHAR(20 BYTE),
+  RIF_RAPPORTO             VARCHAR2(8 BYTE),
+  ARRIVATO                 VARCHAR2(8 BYTE),
+  ARRIVATO_NOTE            VARCHAR2(1000 BYTE),
+  MOTIVO                   VARCHAR2(8 BYTE),
+  MOTIVO_NOTE              VARCHAR2(1000 BYTE),
+  BISOGNO_RICH_AD          CHAR(1 BYTE),
+  BISOGNO_RICH_CONTRIB     CHAR(1 BYTE),
+  BISOGNO_RICH_RSA         CHAR(1 BYTE),
+  BISOGNO_RICH_RIC         CHAR(1 BYTE),
+  BISOGNO_RICH_ALTRO       CHAR(1 BYTE),
+  BISOGNO_RICH_ALTRO_SPEC  VARCHAR2(100 BYTE),
+  CONTATTATO_SERV          CHAR(1 BYTE),
+  CARICO_SERV              CHAR(1 BYTE),
+  CARICO_SERV_NOTE         VARCHAR2(100 BYTE),
+  ESITO_CONTATTO           VARCHAR2(8 BYTE),
+  TIPO_INFORMAZIONE        VARCHAR2(8 BYTE),
+  TIPO_SERVIZIO            VARCHAR2(8 BYTE),
+  ESITO_NOTE               VARCHAR2(100 BYTE),
+  MECODI                   CHAR(16 BYTE),
+  NOTE                     VARCHAR2(2000 BYTE),
+  PRESA_CARICO             CHAR(1 BYTE),
+  URGENTE                  CHAR(1 BYTE),
+  AREA_INTERV              VARCHAR2(8 BYTE),
+  PRESA_CARICO_DATA        DATE,
+  PRESA_CARICO_MOTIVO      VARCHAR2(8 BYTE),
+  PRESA_CARICO_OPER        CHAR(10 BYTE),
+  INSERITA_AUTOM           CHAR(1 BYTE),
+  TELEFONO_CELL            CHAR(20 BYTE),
+  E_MAIL                   VARCHAR2(100 BYTE),
+  SOSPESA_DATA             DATE,
+  INVIO_PUAC_DATA          DATE,
+  CHIUSURA_DATA            DATE,
+  COD_OPERATORE            CHAR(10 BYTE),
+  COD_PRESIDIO             CHAR(6 BYTE),
+  SOSPESA_FLAG             CHAR(1 BYTE),
+  SOSTITUZIONE             CHAR(1 BYTE),
+  TELEFONICO               CHAR(1 BYTE),
+  SOC_COD                  VARCHAR2(10 BYTE),
+  SOC_DATA                 DATE,
+  SOC_MOTIVO               VARCHAR2(8 BYTE),
+  SOC_CARICO               CHAR(1 BYTE),
+  SAN_COD                  VARCHAR2(10 BYTE),
+  SAN_DATA                 DATE,
+  SAN_MOTIVO               VARCHAR2(8 BYTE),
+  SAN_CARICO               CHAR(1 BYTE),
+  PR_DATA                  DATE,
+  PR_PROGR                 NUMBER(13),
+  N_CARTELLA               NUMBER(13),
+  SOC_COD_PRESIDIO         CHAR(6 BYTE),
+  SAN_COD_PRESIDIO         CHAR(6 BYTE),
+  TITOLO_STUDIO            CHAR(1 BYTE),
+  STATO_CIVILE             CHAR(1 BYTE),
+  BADANTE                  CHAR(1 BYTE),
+  NUM_FAM                  NUMBER(13),
+  TIPO_SEGNALAZIONE        CHAR(18 BYTE),
+  RICHIEDENTE              CHAR(2 BYTE),
+  CAP_RES                  CHAR(5 BYTE),
+  BISOGNO_5                CHAR(1 BYTE),
+  BISOGNO_6                CHAR(1 BYTE),
+  BISOGNO_7                CHAR(1 BYTE),
+  BISOGNO_8                CHAR(1 BYTE),
+  BISOGNO_9                CHAR(1 BYTE),
+  ZONA_SEGNALAZIONE        CHAR(1 BYTE),
+  primary key (progressivo)
+); 
+
+/* HO RIPORTATO GLI SCRIPT DEL PUA. da verificare l'esistenza della tabella ASS_ANAGRAFICA */
+ALTER TABLE ASS_ANAGRAFICA ADD (INT_ASSISTENZIALE VARCHAR2(8 byte) );
+alter table ass_anagrafica add(id_skso number(13));
+alter table ass_anagrafica add(distretto_uvi  char(6));
+
+COMMIT ;
+
+SET DEFINE OFF;
+UPDATE CONF SET CONF_TXT = 'Vers. 16.02.e' WHERE CONF_KPROC = 'SINS' AND CONF_KEY = 'VERSIONE';
+
+/* rsa: per calcolare il numero presunto di giorni di ricovero */
+ALTER TABLE ZK_RSA_RICHIESTA ADD NUM_GG_PRESUNTI NUMBER(13);
+COMMIT ;
+
+SET DEFINE OFF;
+UPDATE conf
+   SET conf_txt = 'Vers. 16.02.f',
+       conf_date = SYSDATE
+WHERE conf_kproc = 'SINS' AND conf_key = 'VERSIONE';
+/* aggiunti anche dentro rsa_web */
+alter table zk_rsa_ricoveri add stanza CHAR(16 Byte);
+alter table zk_rsa_ricoveri add posto_letto NUMBER(3);
+COMMIT;
+
+

@@ -1,0 +1,397 @@
+SET DEFINE OFF;
+/* segreteria organizzativa, operatori coinvolti*/
+Insert into TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, 
+    TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+   ('SOOPCOIN', '99', 'tab_voci.mmg', NULL, NULL, NULL, NULL, NULL);
+Insert into TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, 
+    TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+   ('SOOPCOIN', '02', 'tab_voci.Infermiere', NULL, NULL, NULL, NULL, NULL);
+Insert into TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, 
+    TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+   ('SOOPCOIN', '04', '', NULL, NULL, NULL, NULL, NULL);
+Insert into TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, 
+    TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+   ('SOOPCOIN', '14', '', NULL, NULL, NULL, NULL, NULL);
+Insert into TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, 
+    TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+   ('SOOPCOIN', '11', '', NULL, NULL, NULL, NULL, NULL);
+
+Insert into TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, 
+    TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+   ('SOOPCOIN', '16', 'tab_voci.oss', NULL, NULL, NULL, NULL, NULL);
+
+Insert into TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, 
+    TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+   ('SOOPCOIN', '09', '', NULL, NULL, NULL, NULL, NULL);
+   
+Insert into TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, 
+    TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+   ('SOOPCOIN', '54', '', NULL, NULL, NULL, NULL, NULL);
+Insert into TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, 
+    TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+   ('SOOPCOIN', '52', 'tab_voci.palliativista', NULL, NULL, NULL, NULL, NULL);
+Insert into TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, 
+    TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+   ('SOOPCOIN', '53', '', NULL, NULL, NULL, NULL, NULL);
+Insert into TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, 
+    TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+   ('SOOPCOIN', '51', '', NULL, NULL, NULL, NULL, NULL);
+/* rimosso 
+ /Insert into TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, 
+    TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+   ('SOOPCOIN', '60', 'tab_voci.altre.figura.professionale', NULL, NULL, NULL, NULL, NULL);
+ */ 
+Insert into TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, 
+    TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+   ('SOOPCOIN', '20', '', NULL, NULL, NULL, NULL, NULL);
+Insert into TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, 
+    TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+   ('SOOPCOIN', '25', '', NULL, NULL, NULL, NULL, NULL);
+Insert into TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, 
+    TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+   ('SOOPCOIN', '30', '', NULL, NULL, NULL, NULL, NULL);
+Insert into TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, 
+    TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+   ('SOOPCOIN', '35', '', NULL, NULL, NULL, NULL, NULL);
+Insert into TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, 
+    TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+   ('SOOPCOIN', '40', '', NULL, NULL, NULL, NULL, NULL);
+Insert into TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, 
+    TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+   ('SOOPCOIN', '45', '', NULL, NULL, NULL, NULL, NULL);
+
+Insert into TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, 
+    TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+	 ('SOOPCOIN', '50', '', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, 
+    TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ VALUES
+   ('SOOPCOIN', '65', '', NULL, NULL, NULL, NULL, NULL);
+   INSERT INTO TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, 
+    TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ VALUES
+   ('SOOPCOIN', '01', 'tab_voci.terapista.occupazionale', NULL, NULL, NULL, NULL, NULL);
+   INSERT INTO TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, 
+    TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ VALUES
+   ('SOOPCOIN', '70', '', NULL, NULL, NULL, NULL, NULL);
+Insert into TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, 
+    TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+   ('SOOPCOIN', '03', '', NULL, NULL, NULL, NULL, NULL);
+COMMIT;
+
+
+
+/* tipo operatori prima visita */   
+SET define off;
+Insert into TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, 
+    TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+   ('SOOPPRVS', '02', 'tab_voci.prima.visita.Infermiere', NULL, NULL, NULL, NULL, NULL);
+Insert into TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, 
+    TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+   ('SOOPPRVS', '01', 'tab_voci.prima.visita.assistente.sociale', NULL, NULL, NULL, NULL, NULL);
+commit;
+
+
+ /* operatori presenti uvi  */
+   /* se la descrizione prese sulla tab_descrizione, viene usata questa per effettuare l'internazionalizzazione, 
+    * altrimenti se non presente oppure non è uguale a quella presente nel file di internazionalizzazione, viene 
+    * usata quella presente nella classe di gestione degli operatori. */
+SET DEFINE OFF;
+INSERT INTO tab_voci
+            (tab_cod, tab_val, tab_descrizione, tab_fiss, tab_numero,
+             tab_codreg, jdbinterf_lastcng, jdbinterf_version
+            )
+     VALUES ('OPPREUVI', '03', 'tab_voci.medico.distretto', NULL, NULL,
+             NULL, NULL, NULL
+            );
+
+/*INSERT INTO tab_voci (tab_cod, tab_val, tab_descrizione, tab_fiss, tab_numero,
+             tab_codreg, jdbinterf_lastcng, jdbinterf_version)
+     VALUES ('OPPREUVI', '99', 'tab_voci.mmg', NULL, NULL, NULL, NULL, NULL );
+            */
+INSERT INTO tab_voci
+            (tab_cod, tab_val, tab_descrizione, tab_fiss, tab_numero,
+             tab_codreg, jdbinterf_lastcng, jdbinterf_version
+            )
+     VALUES ('OPPREUVI', '02', 'tab_voci.Infermiere', NULL, NULL,
+             NULL, NULL, NULL
+            );
+
+INSERT INTO tab_voci
+            (tab_cod, tab_val, tab_descrizione, tab_fiss, tab_numero,
+             tab_codreg, jdbinterf_lastcng, jdbinterf_version
+            )
+     VALUES ('OPPREUVI', '01', '', NULL, NULL,
+             NULL, NULL, NULL
+            );
+
+INSERT INTO tab_voci
+            (tab_cod, tab_val, tab_descrizione, tab_fiss, tab_numero,
+             tab_codreg, jdbinterf_lastcng, jdbinterf_version
+            )
+     VALUES ('OPPREUVI', '98', '', NULL, NULL,
+             NULL, NULL, NULL
+            );
+INSERT INTO tab_voci
+            (tab_cod, tab_val, tab_descrizione, tab_fiss, tab_numero,
+             tab_codreg, jdbinterf_lastcng, jdbinterf_version
+            )
+     VALUES ('OPPREUVI', '99', '', NULL, NULL,
+             NULL, NULL, NULL
+            );
+            
+COMMIT ;  
+   
+   
+/* segreteria organizzativa: Livello presa carico */
+Insert into TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+   ('LVPRESCR', '01', 'CDI PRIMO LIVELLO', NULL, NULL,NULL, NULL, NULL);
+Insert into TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+   ('LVPRESCR', '02', 'CDI SECONDO LIVELLO', NULL, NULL,NULL, NULL, NULL);
+Insert into TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+   ('LVPRESCR', '03', 'CDI TERZO LIVELLO', NULL, NULL,NULL, NULL, NULL);
+
+   
+   
+/* aggiunte delle schede per la segreteria organizzativa della scheda 55 e 56*/
+Insert into TAB_SCHEDE_CONT
+   (ID_SCHEDA, SC_TIPO_OP, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+   (55, '00', NULL, NULL);
+Insert into TAB_SCHEDE_CONT
+   (ID_SCHEDA, SC_TIPO_OP, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+   (56, '00', NULL, NULL);
+
+
+/* scala RUG III */
+INSERT INTO TAB_SCHEDE VALUES (56,'RUG III - HC','RUGIII_HC','rug_punt','rug_data','rug_nome','ScalaRUGFormCtrl','N','S','','');
+INSERT INTO TAB_SCHEDE_CONT VALUES (56,'02','','');
+
+COMMIT;
+
+/* scala Barthel Index */
+INSERT INTO TAB_SCHEDE VALUES (58,'BARTHEL INDEX','SC_BARTHEL','skbt_punt','skbt_data','skbt_nome','ScalaBarthelFormCtrl','N','S','','');
+INSERT INTO TAB_SCHEDE_CONT VALUES (58,'02','','');	
+
+COMMIT;
+
+/* scala Braden */
+INSERT INTO TAB_SCHEDE VALUES (59,'BRADEN','SC_BRADEN','skb_valutazione','skb_data','skb_nome','ScalaBradenFormCtrl','N','S','','');
+INSERT INTO TAB_SCHEDE_CONT VALUES (59,'02','','');	
+
+/* scala Conley */
+INSERT INTO TAB_SCHEDE VALUES (60,'CONLEY','SC_CONLEY','conley_punt','conley_data','conley_nome','ScalaConleyFormCtrl','N','S','','');
+INSERT INTO TAB_SCHEDE_CONT VALUES (60,'02','','');
+
+/* scala SPMSQ */
+INSERT INTO TAB_SCHEDE VALUES (61,'SPMSQ','SCP_SPMSQ','scp_spmsq_punt','scp_spmsq_data','scp_spmsq_nome','ScalaSPMSQFormCtrl','N','S','','');
+INSERT INTO TAB_SCHEDE_CONT VALUES (61,'02','','');	
+
+/* scala ADL */
+INSERT INTO TAB_SCHEDE VALUES (62,'ADL','SC_BADL','badl_punt','badl_data','badl_nome','ScalaADLIndexFormCtrl','N','S','','');
+INSERT INTO TAB_SCHEDE_CONT VALUES (62,'02','','');	
+
+/* scala IADL */
+INSERT INTO TAB_SCHEDE VALUES (63,'IADL','SC_IADL','iadl_punt','iadl_data','iadl_nome','ScalaIADLFormCtrl','N','S','','');
+INSERT INTO TAB_SCHEDE_CONT VALUES (63,'02','','');	
+
+/* scala KARNOFSKY */
+INSERT INTO TAB_SCHEDE VALUES (64,'KARNOFSKY','SC_KPS','kps_valore','kps_data','kps_nome','ScalaKarnofskyFormCtrl','N','S','','');
+INSERT INTO TAB_SCHEDE_CONT VALUES (64,'02','','');	
+
+/* scala WOUND BED SCORE*/
+INSERT INTO TAB_SCHEDE VALUES (65,'WOUND BED SCORE','SC_WOUND','wound_punt','wound_data','wound_nome','ScalaWoundFormCtrl','N','S','','');
+INSERT INTO TAB_SCHEDE_CONT VALUES (65,'02','','');	
+
+COMMIT;
+
+/* modifiche al 04/11/2015 */
+SET DEFINE OFF;
+Insert into TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, 
+    TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+   ('RMTPCURA', '3', 'Residenzialita''', NULL, NULL, 
+    NULL, NULL, NULL);
+COMMIT;
+
+SET DEFINE OFF;
+Insert into TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+   ('RSLIURGZ', 'B', 'Bassa', NULL, NULL, NULL, NULL, NULL);
+Insert into TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+   ('RSLIURGZ', 'M', 'Media', NULL, NULL, NULL, NULL, NULL);
+   Insert into TAB_VOCI
+   (TAB_COD, TAB_VAL, TAB_DESCRIZIONE, TAB_FISS, TAB_NUMERO, TAB_CODREG, JDBINTERF_LASTCNG, JDBINTERF_VERSION)
+ Values
+   ('RSLIURGZ', 'A', 'Alta', NULL, NULL, NULL, NULL, NULL);
+COMMIT;
+
+/* flag stato richiesta */
+SET DEFINE OFF;
+INSERT INTO tab_voci
+            (tab_cod, tab_val, tab_descrizione, tab_fiss, tab_numero,
+             tab_codreg
+            )
+     VALUES ('RPRSASTA', 'GR', 'IN GRADUATORIA', '0', 0,
+             '1'
+            );
+INSERT INTO tab_voci
+            (tab_cod, tab_val, tab_descrizione, tab_fiss, tab_numero,
+             tab_codreg
+            )
+     VALUES ('RPRSASTA', 'RI', 'RINUNCIATO', '0', 0,
+             '1'
+            );
+INSERT INTO tab_voci
+            (tab_cod, tab_val, tab_descrizione, tab_fiss, tab_numero,
+             tab_codreg
+            )
+     VALUES ('RPRSASTA', 'ED', 'ENTRATI DEFINITIVI', '0', 0,
+             '1'
+            );
+INSERT INTO tab_voci
+            (tab_cod, tab_val, tab_descrizione, tab_fiss, tab_numero,
+             tab_codreg
+            )
+     VALUES ('RPRSASTA', 'RT', 'RINUNCIA TEMPORANEA', '0', 0,
+             '1'
+            );
+INSERT INTO tab_voci
+            (tab_cod, tab_val, tab_descrizione, tab_fiss, tab_numero,
+             tab_codreg
+            )
+     VALUES ('RPRSASTA', 'CH', 'CHIUSO PER MOTIVO ', '0', 0,
+             '1'
+            );
+INSERT INTO tab_voci
+            (tab_cod, tab_val, tab_descrizione, tab_fiss, tab_numero,
+             tab_codreg
+            )
+     VALUES ('RPRSASTA', 'AT', 'ATTESA VALUTAZIONE ', '0', 0,
+             '1'
+            );
+INSERT INTO tab_voci
+            (tab_cod, tab_val, tab_descrizione, tab_fiss, tab_numero,
+             tab_codreg
+            )
+     VALUES ('RPRSASTA', 'PR', 'PRENOTATO ', '0', 0,
+             '1'
+            );
+COMMIT;  
+/* Abilitazione per la stampa del qrc sull'anagrafica dell'assistito */
+SET DEFINE OFF;
+Insert into CONF
+   (CONF_KPROC, CONF_KEY, CONF_TXT, CONF_NUM, CONF_DATE, CONF_REM, JDBINTERF_VERSION, JDBINTERF_LASTCNG)
+ Values
+   ('SINS', 'ABIL_QRC', 'SI', 0, sysdate, 'Abilita la stampa del qrc', 0, sysdate);
+COMMIT;
+
+/* Abilitazione della check sul filtro del modulo, per filtra sugli istituti senza il modulo. */
+SET DEFINE OFF;
+Insert into CONF
+   (CONF_KPROC, CONF_KEY, CONF_TXT, CONF_NUM, CONF_DATE, CONF_REM, JDBINTERF_VERSION, JDBINTERF_LASTCNG)
+ Values
+   ('SINS', 'ABL_FTR_MOD_RIC', 'NO', 0, sysdate, 'Abilita filtro modulo su richieste', 0, sysdate);
+COMMIT;
+
+
+/* Obbligatorio i dati del pannello sociale per la scheda so */
+SET DEFINE OFF;
+Insert into CONF
+   (CONF_KPROC, CONF_KEY, CONF_TXT, CONF_NUM, CONF_DATE, CONF_REM, JDBINTERF_VERSION, JDBINTERF_LASTCNG) Values
+   ('SINS', 'OBB_SO_STCIV', '1;3', 0, sysdate, 'Obbligatorieta'' nella SO Stato Civile', 0, sysdate);
+Insert into CONF
+   (CONF_KPROC, CONF_KEY, CONF_TXT, CONF_NUM, CONF_DATE,     CONF_REM, JDBINTERF_VERSION, JDBINTERF_LASTCNG) Values
+   ('SINS', 'OBB_SO_NUMFAM', '1;3', 0, sysdate,  'Obbligatorieta'' nella SO Numero familiari ', 0, sysdate);
+Insert into CONF
+   (CONF_KPROC, CONF_KEY, CONF_TXT, CONF_NUM, CONF_DATE, CONF_REM, JDBINTERF_VERSION, JDBINTERF_LASTCNG) Values
+   ('SINS', 'OBB_SO_ASSNFAM', '1;3', 0, sysdate,  'Obbligatorieta'' nella SO Assistente non familiare', 0, sysdate);
+Insert into CONF
+   (CONF_KPROC, CONF_KEY, CONF_TXT, CONF_NUM, CONF_DATE, CONF_REM, JDBINTERF_VERSION, JDBINTERF_LASTCNG) Values
+   ('SINS', 'OBB_SO_CONVIV', '3', 0, sysdate, 'Obbligatorieta'' nella SO: Con chi vive ', 0, sysdate);
+Insert into CONF
+   (CONF_KPROC, CONF_KEY, CONF_TXT, CONF_NUM, CONF_DATE, CONF_REM, JDBINTERF_VERSION, JDBINTERF_LASTCNG) Values
+   ('SINS', 'OBB_SO_RAZETN', '3', 0, sysdate, 'Obbligatorieta'' nella SO: Razza/Etnia ', 0, sysdate);
+Insert into CONF
+   (CONF_KPROC, CONF_KEY, CONF_TXT, CONF_NUM, CONF_DATE, CONF_REM, JDBINTERF_VERSION, JDBINTERF_LASTCNG) Values
+   ('SINS', 'OBB_SO_LINGUA', '3', 0, sysdate, 'Obbligatorieta'' nella SO: Lingua ', 0, sysdate);
+Insert into CONF
+   (CONF_KPROC, CONF_KEY, CONF_TXT, CONF_NUM, CONF_DATE,  CONF_REM, JDBINTERF_VERSION, JDBINTERF_LASTCNG) Values
+   ('SINS', 'OBB_SO_TITSTU', '3', 0, sysdate, 'Obbligatorieta'' nella SO: Titolo studio ', 0, sysdate);
+Insert into CONF
+   (CONF_KPROC, CONF_KEY, CONF_TXT, CONF_NUM, CONF_DATE, CONF_REM, JDBINTERF_VERSION, JDBINTERF_LASTCNG) Values
+   ('SINS', 'OBB_SO_RICDEN', '3', 0, sysdate, 'Obbligatorieta'' nella SO: Richiedente ', 0, sysdate);    
+Insert into CONF
+   (CONF_KPROC, CONF_KEY, CONF_TXT, CONF_NUM, CONF_DATE,  CONF_REM, JDBINTERF_VERSION, JDBINTERF_LASTCNG) Values
+   ('SINS', 'OBB_SO_STRPROV', '3', 0, sysdate, 'Obbligatorieta'' nella SO: Struttura provenienza ', 0, sysdate);    
+Insert into CONF
+   (CONF_KPROC, CONF_KEY, CONF_TXT, CONF_NUM, CONF_DATE, CONF_REM, JDBINTERF_VERSION, JDBINTERF_LASTCNG) Values
+ ('SINS', 'OBB_SO_MOTRIC', '3', 0, sysdate,  'Obbligatorieta'' nella SO: Motivo di richiesta ', 0, sysdate);
+ 
+COMMIT;
+
+/* Abilitazione per la visualizzazione delle checkbox del portatore nella maschera dei presidi */
+SET DEFINE OFF;
+Insert into CONF
+   (CONF_KPROC, CONF_KEY, CONF_TXT, CONF_NUM, CONF_DATE, CONF_REM, JDBINTERF_VERSION, JDBINTERF_LASTCNG)
+ Values
+   ('SINS', 'ABIL_CHECKB_PORT', 'NO', 0, sysdate, 'Se SI abilita al palliativista la visualiz. delle checkbox portatore nella maschera dei presidi', 0, sysdate);
