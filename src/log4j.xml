@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" [
+  <!ENTITY log4j_customize SYSTEM "log4j_customize.xml">
+]>
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+  <appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+    <param name="Target" value="System.out" />
+    <param name="Follow" value="true" />
+    <param name="Threshold" value="TRACE" />
+
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%d{dd MMM yyyy HH:mm:ss} %-5p sinssnt_web2/[%c{2}]%X{_user} %m%n" />
+    </layout>
+  </appender>
+
+
+  <!-- org.apache.log4j.rolling.RollingFileAppender requires at least apache-log4j-extras-1.1 -->
+  <appender name="FILE" class="org.apache.log4j.rolling.RollingFileAppender">
+    <param name="file" value="${catalina.home}/logs/sinssnt_web2.log" />
+    <param name="append" value="true" />
+    <param name="encoding" value="UTF-8" />
+    <param name="Threshold" value="TRACE" />
+
+    <rollingPolicy class="org.apache.log4j.rolling.TimeBasedRollingPolicy">
+      <!--
+        The file to roll to, this is a fairly intelligent parameter, if the file
+        ends in .gz, it gzips it, based on the date stamp it rolls at that time, 
+        default is yyyy-MM-dd, (rolls at midnight)
+        See: http://logging.apache.org/log4j/companions/extras/apidocs/org/apache/log4j/rolling/TimeBasedRollingPolicy.html
+      -->
+      <param name="FileNamePattern" value="${catalina.home}/logs/old/sinssnt_web2.log.%d{yyyy-MM-dd}.gz" />
+    </rollingPolicy>
+
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%d{dd MMM yyyy HH:mm:ss} %-5p [%c]%X{_user} %m%n" />
+    </layout>
+  </appender>
+  &log4j_customize;
+  <root>
+    <level value="TRACE" />
+    <appender-ref ref="STDOUT" />
+    <appender-ref ref="FILE" />
+  </root>
+
+</log4j:configuration>

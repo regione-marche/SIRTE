@@ -1,0 +1,472 @@
+package it.caribel.app.sinssnt.controllers.report.common;
+
+import it.caribel.app.common.ejb.AreaDisEJB;
+import it.caribel.app.common.ejb.ComuniEJB;
+import it.caribel.app.common.ejb.DistrettiEJB;
+import it.caribel.app.common.ejb.ZoneEJB;
+import it.caribel.app.common.ejb.PresidiEJB;
+import it.caribel.app.sinssnt.util.Costanti;
+import it.caribel.util.CaribelComboRepository;
+import it.caribel.util.CaribelSessionManager;
+import it.caribel.zk.composite_components.CaribelCombobox;
+import it.caribel.zk.composite_components.CaribelRadiogroup;
+import it.caribel.zk.generic_controllers.CaribelForwardComposer;
+import it.pisa.caribel.isas2.ISASUser;
+import java.util.Hashtable;
+import org.zkoss.util.resource.Labels;
+import org.zkoss.zk.ui.event.Event;
+import org.zkoss.zk.ui.event.Events;
+import org.zkoss.zul.Hlayout;
+import org.zkoss.zul.Label;
+import org.zkoss.zul.Radio;
+
+public class PanelUbicazioneCtrl extends CaribelForwardComposer {
+	private static final long serialVersionUID = 1L;
+
+	protected CaribelCombobox zona;
+	protected CaribelCombobox distretto;
+	protected CaribelCombobox presidio_comune_area;
+	protected Radio presidio;
+	protected Radio comune;
+	protected Radio area_dis;
+	protected CaribelRadiogroup res_dom;
+	protected CaribelRadiogroup soc_san;
+	protected CaribelRadiogroup raggruppamento;
+	protected Radio sociale;
+	protected Radio sanitaria;
+	protected Radio residenza;
+	protected Radio domicilio;
+	protected Label presidio_comune_areadis;
+	protected Label lbl_ubicazione;
+	private String lblPresidio = Labels.getLabel("PanelUbicazione.presidio")+":";
+	private String lblComune = Labels.getLabel("PanelUbicazione.comune")+":";
+	private String lblArea = Labels.getLabel("PanelUbicazione.area_dis")+":";
+	private String lblPresidio1 = Labels.getLabel("PanelUbicazione.presidio1")+":";
+	protected Hlayout riga_zona;
+	protected Hlayout riga_distretto;
+	protected Hlayout riga_raggruppamento;
+	protected Hlayout riga_presidio_comune_areadis;
+	protected Hlayout riga_ubicazione;
+	private String cod_oper =  getProfile().getStringFromProfile("codice_operatore");
+	private String tipo_oper =  getProfile().getStringFromProfile("tipo_operatore");
+
+
+
+	CaribelSessionManager profile = CaribelSessionManager.getInstance();
+	ISASUser iu = CaribelSessionManager.getInstance().getIsasUser();
+
+	private boolean conVoceTutti = true;
+
+	private boolean distrettiVoceTutti = true;
+
+	public void setDistrettiVoceTutti(boolean distrettiVoceTutti) {
+		this.distrettiVoceTutti = distrettiVoceTutti;
+	}
+
+	public void doInitPanel(boolean conVoceTutti){
+		this.conVoceTutti = conVoceTutti;
+		this.distrettiVoceTutti = conVoceTutti;
+		doInitPanel();
+	}
+
+	public void doInitPanel(){
+		try {
+
+			// Workaround per evitare problemi di visualizzazione Disabled anzichè Enabled
+			zona.setDisabled(false);
+			res_dom.setDisabled(true);
+			soc_san.setDisabled(true);			
+			presidio_comune_area.setDisabled(true);
+			presidio_comune_areadis.setValue(this.lblPresidio);
+
+			initCombo();
+		}catch(Exception e){
+			doShowException(e);
+		}
+	}	
+
+	public void setDistrettoValue(Object codDistretto) {
+		if (codDistretto!=null){
+			this.distretto.setSelectedValue(codDistretto);
+			Events.sendEvent(Events.ON_SELECT, this.distretto, null);
+		}
+	}
+	
+	public String getDistrettoValue() {
+		return this.distretto.getSelectedValue();
+	}
+
+	public void onSelect$zona(Event event){
+		try{
+
+			if (!zona.getSelectedItem().getValue().equals("TUTTO")){
+				distretto.clear();
+				distretto.setDisabled(false);
+				Hashtable<String, Object> h = new Hashtable();	
+
+				String strZONA =zona.getSelectedValue();
+				h.put("rec_vuoto", "S");				
+				h.put("cod_zona",strZONA);
+				h.put(Costanti.CTS_DISTRETTI_VOCE_TUTTI, (distrettiVoceTutti? "": Costanti.CTS_NO));
+				CaribelComboRepository.comboPreLoad("combo_distr"+strZONA + (distrettiVoceTutti? "": Costanti.CTS_NO), new DistrettiEJB(), "queryCombo",h, distretto, null, "cod_distr", "des_distr", false);
+				if(distretto.getItemCount()>0){	
+					if(distrettiVoceTutti){
+						distretto.setSelectedValue("TUTTI");
+						distretto.getSelectedItem().setValue("");
+					}
+				}
+				/*if(!conVoceTutti){
+					
+					presidio_comune_area.setDisabled(false);
+					}*/
+			}
+			
+			if (zona.getSelectedItem().getValue().equals("TUTTO")){
+				distretto.setDisabled(true);
+				presidio_comune_area.setDisabled(true);
+				distretto.setSelectedValue("TUTTI");
+				presidio_comune_area.setSelectedValue("TUTTI");
+			}
+
+
+		}catch(Exception e){
+			doShowException(e);
+		}
+	}
+
+	public void setDbNameZona(String dbNameZona){
+		zona.setDb_name(dbNameZona);
+	}
+
+	public void setDbNameDistretto(String dbNameDistretto){
+		distretto.setDb_name(dbNameDistretto);
+	}
+
+	public void setDistrettoRequired(boolean required){
+		distretto.setRequired(required);
+	}
+
+	public void setDbNamePresidioComuneArea(String dbNamePresidioComuneArea){
+		presidio_comune_area.setDb_name(dbNamePresidioComuneArea);
+	}
+
+	public void onSelect$distretto(Event event)
+	{
+		try{
+			if (!distretto.getSelectedItem().getValue().equals("TUTTO")){
+				presidio_comune_area.clear();
+				presidio_comune_area.setDisabled(false);
+				Hashtable<String, Object> h = new Hashtable();	
+
+				String strDISTR =distretto.getSelectedValue();							
+				h.put("cod_distr",strDISTR);
+		        if (!conVoceTutti){
+		            h.put("senzaTutti", "S");
+		        }
+				if (presidio.isChecked())
+					CaribelComboRepository.comboPreLoad("combo_presidio"+strDISTR+ (conVoceTutti ? "" : "NoTutti"), new PresidiEJB(), "queryComboxDistretti",h, presidio_comune_area, null, "codpres", "despres", false);
+				if (comune.isChecked())
+					CaribelComboRepository.comboPreLoad("combo_comune"+strDISTR+ (conVoceTutti ? "" : "NoTutti"), new ComuniEJB(), "queryComboxDistretti",h, presidio_comune_area, null, "codice", "descrizione", false);
+				if (area_dis.isChecked())
+					CaribelComboRepository.comboPreLoad("combo_area_dis"+strDISTR+ (conVoceTutti ? "" : "NoTutti"), new AreaDisEJB(), "queryComboxDistretti",h, presidio_comune_area, null, "codice", "descrizione", false);
+
+				if(presidio_comune_area.getItemCount()>0){	
+					if(conVoceTutti){
+					presidio_comune_area.setSelectedValue("TUTTO");
+					presidio_comune_area.getSelectedItem().setValue("");
+					}
+				}	
+			}
+		}catch(Exception e){
+			doShowException(e);
+		}
+	}
+
+	public void initCombo() {
+		try {
+			zona.clear();
+			zona.setDisabled(false);
+			Hashtable<String, Object> h = new Hashtable();
+
+			String metodo = "query" + (conVoceTutti ? "Combo" : "_combo");
+			String keyCombo = "combo_zona"+ cod_oper + (conVoceTutti ? "" : "NoTutti");
+			CaribelComboRepository.comboPreLoad(keyCombo, new ZoneEJB(), metodo, h, zona, null, "codice_zona", "descrizione_zona", !conVoceTutti);
+			if(zona.getItemCount()>0){
+				zona.setSelectedIndex(0);
+				if(conVoceTutti){
+					presidio_comune_area.setSelectedValue("TUTTI");
+					distretto.setSelectedValue("TUTTI");
+				}
+			}
+
+
+			String strZONA =zona.getSelectedValue();
+
+			h.put("cod_zona",strZONA);
+			h.put("rec_vuoto", "S");
+			h.put("cod_zona",strZONA);
+			h.put(Costanti.CTS_DISTRETTI_VOCE_TUTTI, (distrettiVoceTutti? "": Costanti.CTS_NO));
+			CaribelComboRepository.comboPreLoad("combo_distr"+strZONA+ (distrettiVoceTutti? "": Costanti.CTS_NO), new DistrettiEJB(), "queryCombo",h, distretto, null, "cod_distr", "des_distr", false);
+			if(distrettiVoceTutti)
+				distretto.setSelectedValue("TUTTI");
+			else
+				distretto.setSelectedValue("");
+			if (strZONA.equals("TUTTO")){ //così è diventato nullSafe
+				distretto.setDisabled(true);
+				distretto.setSelectedValue("TUTTI");
+				presidio_comune_area.setDisabled(true);
+			}
+
+
+		}catch(Exception e){
+			doShowException(e);
+		}
+
+	}
+
+	public void onCheck$raggruppamento() throws Exception {
+		Hashtable<String, Object> h = new Hashtable();	
+		String strDISTR =distretto.getSelectedValue();							
+		h.put("cod_distr",strDISTR);
+        if (!conVoceTutti){
+            h.put("senzaTutti", "S");
+        }
+		if(!presidio.isChecked() && !comune.isChecked())
+			presidio_comune_areadis.setValue(this.lblArea);
+
+		else if(!presidio.isChecked() && !area_dis.isChecked())
+			presidio_comune_areadis.setValue(this.lblComune);
+
+		else 
+			presidio_comune_areadis.setValue(this.lblPresidio);
+
+
+
+		if(comune.isChecked()){
+			if (!iu.canIUse("U_SOCSAN")) {		
+				System.out.println("ENTRA1");
+				soc_san.setSelectedValue(tipo_oper);
+				soc_san.setDisabled(true);
+				sociale.setDisabled(true);
+				sanitaria.setDisabled(true);
+				res_dom.setDisabled(false);
+			} else {		
+				System.out.println("ENTRA2");
+				soc_san.setDisabled(false);
+				res_dom.setDisabled(false);
+				sociale.setDisabled(false);
+				sanitaria.setDisabled(false);
+
+			}
+
+			CaribelComboRepository.comboPreLoad("combo_comune"+strDISTR+ (conVoceTutti ? "" : "NoTutti"), new ComuniEJB(), "queryComboxDistretti",h, presidio_comune_area, null, "codice", "descrizione", false);
+			presidio_comune_area.setSelectedValue("TUTTI");
+		}
+		else if (presidio.isChecked()){
+			res_dom.setDisabled(true);
+			soc_san.setDisabled(true);
+			domicilio.setChecked(true);
+			sanitaria.setChecked(true);
+			CaribelComboRepository.comboPreLoad("combo_presidio"+strDISTR+ (conVoceTutti ? "" : "NoTutti"), new PresidiEJB(), "queryComboxDistretti",h, presidio_comune_area, null, "codpres", "despres", false);
+			presidio_comune_area.setSelectedValue("TUTTI");
+		}
+		else if (area_dis.isChecked()){
+			if (!iu.canIUse("U_SOCSAN")) {		
+				System.out.println("ENTRA1");
+				soc_san.setSelectedValue(tipo_oper);
+				soc_san.setDisabled(true);
+				sociale.setDisabled(true);
+				sanitaria.setDisabled(true);
+				res_dom.setDisabled(false);
+			} else {		
+				System.out.println("ENTRA2");
+				soc_san.setDisabled(false);
+				res_dom.setDisabled(false);
+				sociale.setDisabled(false);
+				sanitaria.setDisabled(false);
+
+			}
+
+			CaribelComboRepository.comboPreLoad("combo_area_dis"+strDISTR+ (conVoceTutti ? "" : "NoTutti"), new AreaDisEJB(), "queryComboxDistretti",h, presidio_comune_area, null, "codice", "descrizione", false);
+			presidio_comune_area.setSelectedValue("TUTTI");
+		}
+	}
+
+	public void setVisibleZona(boolean visible){
+		riga_zona.setVisible(visible);
+	}
+
+	public void setVisibleDistretto(boolean visible){
+		riga_distretto.setVisible(visible);
+	}
+
+	public void setVisiblePresidioComuneAreaDis(boolean visible){
+		riga_presidio_comune_areadis.setVisible(visible);
+	}
+
+	public void setVisibleUbicazione(boolean visible){
+		riga_ubicazione.setVisible(visible);
+	}
+
+	public void setLabelPresidio(String label){
+		this.lblPresidio = label;
+		presidio_comune_areadis.setValue(this.lblPresidio); 
+	}
+
+	public void setLabelPresidio1(String label){
+		this.lblPresidio1 = label;
+		presidio_comune_areadis.setValue(this.lblPresidio1); 
+	}
+
+	public void setLabelArea(String label){
+		this.lblArea = label;
+		presidio_comune_areadis.setValue(this.lblArea); 
+	}
+
+	public void setLabelComune(String label){
+		this.lblComune = label;
+		presidio_comune_areadis.setValue(this.lblComune); 
+	}
+
+	public void setVisibleRaggruppamento(boolean visible){
+		riga_raggruppamento.setVisible(visible);
+	}
+
+	public void settaRaggruppamento(String valori) {
+		String raggr = raggruppamento.getSelectedItem().getValue();
+		raggr = valori;
+
+		if (raggr.indexOf("P") == -1){
+			presidio.setVisible(false);
+			setLabelComune(lblComune);
+			comune.setChecked(true);
+			res_dom.setDisabled(false);
+			soc_san.setDisabled(false);	
+		}
+
+		if (raggr.indexOf("C") == -1){
+			comune.setVisible(false);			
+		}
+		if (raggr.indexOf("A") == -1){
+			area_dis.setVisible(false);
+		}
+
+
+	}
+
+	public void settaRaggruppamentoNoUbic(String valori) {
+		String raggr = raggruppamento.getSelectedItem().getValue();
+		raggr = valori;
+
+		if (raggr.indexOf("P") == -1){
+			presidio.setVisible(false);
+			setLabelComune(lblComune);
+			comune.setChecked(true);
+			res_dom.setDisabled(false);
+			soc_san.setDisabled(false);	
+		}
+
+		if (raggr.indexOf("C") == -1){
+			comune.setVisible(false);			
+		}
+		if (raggr.indexOf("A") == -1){
+			area_dis.setVisible(false);
+		}
+		if (raggr.indexOf("N") == -1){
+			riga_ubicazione.setVisible(false);
+			res_dom.setVisible(false);
+			soc_san.setVisible(false);
+			lbl_ubicazione.setVisible(false);
+		}
+
+
+	}
+
+	public void settaRaggr(String valori) {
+		String raggr = raggruppamento.getSelectedItem().getValue();
+		raggr = valori;
+
+		if (raggr.indexOf("P") == -1){
+			riga_raggruppamento.setVisible(false);
+			riga_ubicazione.setVisible(false);
+			setLabelArea(lblArea);
+			if(conVoceTutti){
+				presidio_comune_area.setSelectedValue("TUTTI");
+				zona.setSelectedValue("TUTTI");
+				presidio_comune_area.setSelectedValue("TUTTI");
+			}
+
+		}
+
+		if (raggr.indexOf("C") == -1){
+			comune.setVisible(false);			
+		}
+		if (raggr.indexOf("A") == -1){
+			area_dis.setVisible(false);
+		}
+
+	}
+	
+	public void settaRaggrContatti(String valori) {
+		String raggr = raggruppamento.getSelectedItem().getValue();
+		raggr = valori;
+
+		if (raggr.indexOf("P") == -1){
+			riga_raggruppamento.setVisible(false);
+			riga_ubicazione.setVisible(false);
+			setLabelPresidio1(lblPresidio1);
+			if(conVoceTutti){
+				presidio_comune_area.setSelectedValue("TUTTI");
+				zona.setSelectedValue("TUTTI");
+				presidio_comune_area.setSelectedValue("TUTTI");
+			}
+		}
+
+		if (raggr.indexOf("C") == -1){
+			comune.setVisible(false);			
+		}
+		if (raggr.indexOf("A") == -1){
+			area_dis.setVisible(false);
+		}
+	}
+
+	public void setDistrettoDisabilita(boolean disabled){
+		this.distretto.setDisabled(disabled);
+	}
+	
+	public void setDistrettoFirst() {
+		String punto = "setDistrettoFirst ";
+		try {
+			if (distretto !=null){
+				distretto.setSelectedIndex(0);
+			}
+		} catch (Exception e) {
+			logger.error(punto + " codice distretto non caricati ");
+		}
+	}
+	
+	public void setPresidioComuneAreaFirst() {
+		String punto = "setPresidioComuneAreaFirst ";
+		try {
+			if (presidio_comune_area !=null){
+				presidio_comune_area.setSelectedIndex(0);
+			}
+		} catch (Exception e) {
+			logger.error(punto + " codice presidioComuneArea non caricati ");
+		}
+	}
+
+	public void setPresidioComuneArea(String codPresidioComuneArea) {
+		if (codPresidioComuneArea !=null){
+			presidio_comune_area.setSelectedValue(codPresidioComuneArea);		
+		}
+	}
+
+	public void setPresidioComuneAreaDisabilita(boolean disabled) {
+			this.presidio_comune_area.setDisabled(disabled);
+	}
+	
+	public String getPresidioComuneAreaValue() {
+		return this.presidio_comune_area.getSelectedValue();
+	}
+}

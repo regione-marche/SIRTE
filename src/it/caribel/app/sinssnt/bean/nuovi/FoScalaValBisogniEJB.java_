@@ -1,0 +1,666 @@
+package it.caribel.app.sinssnt.bean.nuovi;
+
+//==========================================================================
+// CARIBEL S.r.l.
+// --------------------------------------------------------------------------
+//
+// 03/11/2014 - EJB di stampa della scala di valutazione di Bisogni
+//
+// ==========================================================================
+
+import it.caribel.app.common.ejb.Anagra_cEJB;
+import it.caribel.app.sinssnt.bean.CartellaEJB;
+import it.caribel.app.sinssnt.controllers.scaleValutazione.ComboRugSiadRepository;
+import it.caribel.app.sinssnt.util.Costanti;
+import it.caribel.app.sinssnt.util.ManagerDate;
+import it.pisa.caribel.isas2.ISASConnection;
+import it.pisa.caribel.isas2.ISASRecord;
+import it.pisa.caribel.merge.mergeDocument;
+import it.pisa.caribel.profile2.myLogin;
+import it.pisa.caribel.sinssnt.connection.SINSSNTConnectionEJB;
+import it.pisa.caribel.util.ISASUtil;
+import it.pisa.caribel.util.ServerUtility;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.Date;
+import java.util.Enumeration;
+import java.util.Hashtable;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Map;
+import org.zkoss.util.resource.Labels;
+
+public class FoScalaValBisogniEJB extends SINSSNTConnectionEJB {
+	private String ver = "10-";
+	private String CST_TIPO_MODELLO = "tp";
+	private String CST_TIPO_MODELLO_DATI = "1"; // 2 vuoto
+
+	public FoScalaValBisogniEJB() {
+	}
+
+	private void preparaLayout(mergeDocument md, ISASConnection dbc, Hashtable<String, Object> datiAnagrafici,
+			String dataScheda) {
+		String punto = ver + "preparaLayout ";
+		Hashtable<String, String> htxt = new Hashtable<String, String>();
+		try {
+			String mysel = "SELECT conf_txt FROM conf WHERE " + "conf_kproc='SINS' AND conf_key='ragione_sociale'";
+			ISASRecord dbtxt = dbc.readRecord(mysel);
+			htxt.put("#txt#", ISASUtil.getValoreStringa(dbtxt, "conf_txt"));
+
+			String cognome = ISASUtil.getValoreStringa(datiAnagrafici, "cognome");
+			String nome = ISASUtil.getValoreStringa(datiAnagrafici, "nome");
+
+			String assistito = cognome + " " + nome;
+			String codiceFiscale = ISASUtil.getValoreStringa(datiAnagrafici, "cod_fisc");
+			String dataNascita = ISASUtil.getValoreStringa(datiAnagrafici, "data_nasc");
+
+			htxt.put("#assistito#", assistito);
+			htxt.put("#codice_fiscale#", codiceFiscale);
+			htxt.put("#data_nascita#", ManagerDate.formattaDataIta(dataNascita, "/"));
+			htxt.put("#data_scheda#", dataScheda);
+
+		} catch (Exception ex) {
+			htxt.put("#txt#", "ragione_sociale");
+		}
+		ServerUtility su = new ServerUtility();
+		htxt.put("#data_stampa#", su.getTodayDate("dd/MM/yyyy"));
+
+		LOG.trace(punto + " dati>>" + htxt);
+		md.writeSostituisci("layout", htxt);
+	}
+
+	public byte[] query_report(String utente, String passwd, Hashtable par, mergeDocument eve) throws SQLException,
+			IOException {
+		String punto = ver + "query_report ";
+		LOG.debug(punto + " inizio con dati>>" + par + "<<");
+		ISASConnection dbc = null;
+		String tipoModello = ISASUtil.getValoreStringa(par, CST_TIPO_MODELLO);
+		boolean tipoModelloDati = true;
+		String nCartella = ISASUtil.getValoreStringa(par, "cartella");
+		String dataScala = ISASUtil.getValoreStringa(par, "data");
+		try {
+			myLogin lg = new myLogin();
+			lg.put(utente, passwd);
+			dbc = super.logIn(lg);
+
+			tipoModelloDati = (ISASUtil.valida(tipoModello) && tipoModello.equals(CST_TIPO_MODELLO_DATI));
+			LOG.debug(punto + "Recuperare i dati dell' assistito:" + nCartella + "< ");
+
+			Hashtable<String, Object> datiAnagrafici = recuperaAnagrafica(dbc, nCartella);
+			preparaLayout(eve, dbc, datiAnagrafici, dataScala);
+			ISASRecord dbrValutazioneBisogni = null;
+			if (tipoModelloDati) {
+				LOG.debug(punto + " stampo il modello con dati compilati in data: " + dataScala);
+				dbrValutazioneBisogni = recuperaScalaValutazioneBisogni(dbc, nCartella, dataScala);
+			} else {
+				LOG.debug(punto + " stampo il modello vuoto ");
+			}
+			generaModuloValutazioneBisogni(dbc, datiAnagrafici, dbrValutazioneBisogni, eve);
+
+			eve.write("finale");
+			eve.close();
+			LOG.debug(punto + " dati che restituisco>>" + new String(eve.get()));
+
+		} catch (Exception e) {
+			LOG.error(punto + " Errore nel generare la stampa", e);
+		} finally {
+			logout_nothrow(punto, dbc);
+		}
+		return eve.get(); // restituisco il bytearray
+	}
+
+	private void generaModuloValutazioneBisogni(ISASConnection dbc, Hashtable<String, Object> datiAnagrafici,
+			ISASRecord dbrValutazioneBisogni, mergeDocument eve) {
+		generaInfoDettaglioAssistito(dbc, datiAnagrafici, eve);
+		generaInfoInformazioniGenerali(dbc, dbrValutazioneBisogni, eve);
+	}
+
+	private void generaInfoInformazioniGenerali(ISASConnection dbc, ISASRecord dbrValutazioneBisogni, mergeDocument eve) {
+		String punto = ver + "generaInfoDettaglioAssistito ";
+		LOG.debug(punto + " inizio con dati>>" + dbrValutazioneBisogni);
+		informazioniGenerali(dbrValutazioneBisogni, eve);
+		informazioniSanitari(dbrValutazioneBisogni, eve);
+		informazioniAutonomia(dbrValutazioneBisogni, eve);
+		informazioneRiabilitazione(dbrValutazioneBisogni, eve);
+		informazioneApparatoRespiratorio(dbrValutazioneBisogni, eve);
+		
+		informazioneStatoNutrizione(dbrValutazioneBisogni, eve);
+		informazioneApparatoGastroIntestinale(dbrValutazioneBisogni, eve);
+		informazioneApparatoGenitoUrinario(dbrValutazioneBisogni, eve);
+		informazioneApparatoTegumentario(dbrValutazioneBisogni, eve);
+		informazioneComporamento(dbrValutazioneBisogni, eve);
+		informazioneRitmoSonnoVegliaRischioInfetttivo(dbrValutazioneBisogni, eve);
+		informazioneOncologicoTerminale(dbrValutazioneBisogni, eve);
+		informazionePrestazioni(dbrValutazioneBisogni, eve);
+
+	}
+
+	private void informazionePrestazioni(ISASRecord dbrValutazioneBisogni, mergeDocument eve) {
+		String labelSezione = Labels.getLabel("scalaBisogni.prestazioni");
+		
+		
+		eve.write("sezione_intestazione");
+		LinkedList<InfoCheck> listaInfoCheck = new LinkedList<InfoCheck>();
+		InfoCheck infoCheck = new InfoCheck("scalaBisogni.prestazioni.prelievo", "prest_prelievo");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.prestazioni.ecg", "prest_ecg");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.prestazioni.telemetria", "prest_telemetria");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.prestazioni.trasfusioni", "prest_trasfusioni");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.prestazioni.terapia", "prest_terapia_ev");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.prestazioni.terapia_sotcut", "prest_terapia_sotcut");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.prestazioni.gestione_cvc", "prest_gestione_cvc");
+		listaInfoCheck.add(infoCheck);
+
+		stampaAllCheckBox(dbrValutazioneBisogni, eve, listaInfoCheck, labelSezione);
+		eve.write("sezione_fine");
+	}
+
+	private void informazioneOncologicoTerminale(ISASRecord dbrValutazioneBisogni, mergeDocument eve) {
+		String labelSezione = Labels.getLabel("scalaBisogni.oncologicoTerminale");
+		eve.write("sezione_intestazione");
+		
+		LinkedList<InfoCheck> listaInfoCheck = new LinkedList<InfoCheck>();
+		InfoCheck infoCheck = new InfoCheck("scalaBisogni.onco.normale", "onco_normale");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.onco.term_non_onco", "onco_term_non_onco");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.onco.term_onco", "onco_term_onco");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.onco.onco", "onco_oncologico");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.onco.chemio", "onco_chemioterapia");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.onco.radio", "onco_radioterapia");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.onco.dolore", "onco_dolore");
+		listaInfoCheck.add(infoCheck);
+		stampaAllCheckBox(dbrValutazioneBisogni, eve, listaInfoCheck, labelSezione);
+
+		eve.write("sezione_fine");
+	}
+
+	private void informazioneRitmoSonnoVegliaRischioInfetttivo(ISASRecord dbrValutazioneBisogni, mergeDocument eve) {
+		String labelSezione = Labels.getLabel("scalaBisogni.ritmoSonnoVeglia") + " - "
+				+ Labels.getLabel("scalaBisogni.rischioInfettivo");
+		eve.write("sezione_intestazione");
+
+		
+		
+		LinkedList<InfoCheck> listaInfoCheck = new LinkedList<InfoCheck>();
+		InfoCheck infoCheck = new InfoCheck("scalaBisogni.sonno.alterato", "ritmo_alterato");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.rischio.presente", "rischio_presente");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaRUG-HC.j3r", "rischio_febbre");
+		listaInfoCheck.add(infoCheck);
+		
+		stampaAllCheckBox(dbrValutazioneBisogni, eve, listaInfoCheck, labelSezione);
+		eve.write("sezione_fine");
+	}
+
+	private void informazioneComporamento(ISASRecord dbrValutazioneBisogni, mergeDocument eve) {
+		String labelSezione = Labels.getLabel("scalaBisogni.comportamento");
+		eve.write("sezione_intestazione");
+		
+		LinkedList<InfoCheck> listaInfoCheck = new LinkedList<InfoCheck>();
+		InfoCheck infoCheck =  new InfoCheck("scalaBisogni.comportamento.normale", "comp_normale");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.comportamento.cogn_moderato", "comp_dist_cogn_moderato");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.comportamento.cogn_grave", "comp_dist_cogn_grave");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.comportamento.comportamentale", "comp_dist_comp");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.comportamento.condizioni_salute_psi", "comp_psico_salute");
+		listaInfoCheck.add(infoCheck);
+		stampaAllCheckBox(dbrValutazioneBisogni, eve, listaInfoCheck, labelSezione);
+
+		eve.write("sezione_fine");
+	}
+
+	private void informazioneApparatoTegumentario(ISASRecord dbrValutazioneBisogni, mergeDocument eve) {
+		String labelSezione = Labels.getLabel("scalaBisogni.apparatoTegumentario");
+		eve.write("sezione_intestazione");
+
+		LinkedList<InfoCheck> listaInfoCheck = new LinkedList<InfoCheck>();
+		InfoCheck infoCheck = new InfoCheck("scalaBisogni.tegumentario.normale", "cute_normale");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaSIAD.ulcere_cutanee_1_2", "cute_ulcere12");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaSIAD.ulcere_cutanee_3_4", "cute_ulcere34");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.tegumentario.pressione", "cute_pressione");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.tegumentario.lacerazioni", "cute_lacerazioni");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.tegumentario.altro", "cute_altro");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.tegumentario.cura", "cute_cura");
+		listaInfoCheck.add(infoCheck);
+		stampaAllCheckBox(dbrValutazioneBisogni, eve, listaInfoCheck, labelSezione);
+
+		eve.write("sezione_fine");
+	}
+
+	private void informazioneApparatoGenitoUrinario(ISASRecord dbrValutazioneBisogni, mergeDocument eve) {
+		String labelSezione = Labels.getLabel("scalaBisogni.apparatoGenitourinario");
+		eve.write("sezione_intestazione");
+
+		LinkedList<InfoCheck> listaInfoCheck = new LinkedList<InfoCheck>();
+		InfoCheck infoCheck = new InfoCheck("scalaBisogni.genitourinaria.normale", "genuri_normale");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.genitourinaria.incontinenza_uri", "genuri_incont");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.genitourinaria.cateterismo", "genuri_cateterismo");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.genitourinaria.urostomia", "genuri_urostomia");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.genitourinaria.ematuria", "genuri_ematuria");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.genitourinaria.dialisi", "genuri_dialisi");
+		listaInfoCheck.add(infoCheck);
+		stampaAllCheckBox(dbrValutazioneBisogni, eve, listaInfoCheck, labelSezione);
+
+		eve.write("sezione_fine");
+	}
+
+	private void stampaAllCheckBox(ISASRecord dbrValutazioneBisogni, mergeDocument eve,
+			LinkedList<InfoCheck> listaInfoCheck, String labelSezione) {
+		boolean stampaSezione = false;
+		for (Iterator<InfoCheck> iterator = listaInfoCheck.iterator(); iterator.hasNext();) {
+			InfoCheck infoCheck = (InfoCheck) iterator.next();
+			stampaSezioneCheckBox(dbrValutazioneBisogni, eve, infoCheck.getLabel(), infoCheck.getDbName(),
+					infoCheck.getValueDb(), labelSezione, stampaSezione);
+			stampaSezione = true;
+		}
+	}
+
+	private void informazioneApparatoGastroIntestinale(ISASRecord dbrValutazioneBisogni, mergeDocument eve) {
+		String labelSezione = Labels.getLabel("scalaBisogni.apparatoGastrointestinale");
+		eve.write("sezione_intestazione");
+		LinkedList<InfoCheck> listaInfoCheck = new LinkedList<InfoCheck>();
+		InfoCheck infoCheck = new InfoCheck("scalaBisogni.gastrointestinale.normale", "gastr_normale");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.gastrointestinale.incont", "gastr_incont");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.gastrointestinale.vomito", "gastr_vomito");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.gastrointestinale.sang", "gastr_sang");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.gastrointestinale.stomia", "gastr_incont");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.gastrointestinale.stipsi", "gastr_stipsi");
+		listaInfoCheck.add(infoCheck);
+		stampaAllCheckBox(dbrValutazioneBisogni, eve, listaInfoCheck, labelSezione);
+
+		eve.write("sezione_fine");
+
+	}
+
+	private void informazioneStatoNutrizione(ISASRecord dbrValutazioneBisogni, mergeDocument eve) {
+		String labelSezione = Labels.getLabel("scalaBisogni.statoNutrizionale");
+		eve.write("sezione_intestazione");
+
+		LinkedList<InfoCheck> listaInfoCheck = new LinkedList<InfoCheck>();
+		InfoCheck infoCheck = new InfoCheck("scalaBisogni.nutrizionale.normale", "nutr_normale");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.nutrizionale.dimagrimento", "nutr_dimagrimento");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.nutrizionale.disidratazione", "nutr_disidratazione");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.nutrizionale.disfagia", "nutr_disfagia");
+		listaInfoCheck.add(infoCheck);
+		stampaAllCheckBox(dbrValutazioneBisogni, eve, listaInfoCheck, labelSezione);
+
+		eve.write("sezione_fine");
+	}
+
+	private void informazioneApparatoRespiratorio(ISASRecord dbrValutazioneBisogni, mergeDocument eve) {
+		String labelSezione = Labels.getLabel("scalaBisogni.apparatoRespiratorio");
+		eve.write("sezione_intestazione");
+
+		LinkedList<InfoCheck> listaInfoCheck = new LinkedList<InfoCheck>();
+		InfoCheck infoCheck = new InfoCheck("scalaBisogni.respiratorio.normale", "resp_normale");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.respiratorio.tosse_secr", "resp_tosse_secr");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.respiratorio.ossigenoterapia", "resp_ossigenoterapia");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.respiratorio.ventiloterapia", "resp_ventiloterapia");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.respiratorio.tracheostomia", "resp_tracheostomia");
+		listaInfoCheck.add(infoCheck);
+		stampaAllCheckBox(dbrValutazioneBisogni, eve, listaInfoCheck, labelSezione);
+
+		eve.write("sezione_fine");
+	}
+
+	private void informazioneRiabilitazione(ISASRecord dbrValutazioneBisogni, mergeDocument eve) {
+		String labelSezione = Labels.getLabel("scalaBisogni.riabilitazione");
+		eve.write("sezione_intestazione");
+
+		LinkedList<InfoCheck> listaInfoCheck = new LinkedList<InfoCheck>();
+		InfoCheck infoCheck = new InfoCheck("scalaBisogni.riabilitazione.nessuna", "riab_nessuna");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.riabilitazione.neurologica", "riab_neurologica");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.riabilitazione.afasia", "riab_afasia");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.riabilitazione.ortopedica", "riab_ortopedica");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.riabilitazione.mantenimento", "riab_mantenimento");
+		listaInfoCheck.add(infoCheck);
+		stampaAllCheckBox(dbrValutazioneBisogni, eve, listaInfoCheck, labelSezione);
+
+		eve.write("sezione_fine");
+	}
+
+	private void informazioniAutonomia(ISASRecord dbrValutazioneBisogni, mergeDocument eve) {
+		String labelSezione = Labels.getLabel("scalaBisogni.autonomia");
+		eve.write("sezione_intestazione");
+
+		LinkedList<InfoCheck> listaInfoCheck = new LinkedList<InfoCheck>();
+		InfoCheck infoCheck = new InfoCheck("scalaBisogni.autonomia.1", "autonomia", "1");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.autonomia.2", "autonomia", "2");
+		listaInfoCheck.add(infoCheck);
+		infoCheck = new InfoCheck("scalaBisogni.autonomia.3", "autonomia", "3");
+		listaInfoCheck.add(infoCheck);
+
+		stampaAllCheckBox(dbrValutazioneBisogni, eve, listaInfoCheck, labelSezione);
+
+		eve.write("sezione_fine");
+	}
+
+	private void informazioniSanitari(ISASRecord dbrValutazioneBisogni, mergeDocument eve) {
+
+		String label = Labels.getLabel("scalaBisogni.infoGenerali.parteSanitaria");
+		Hashtable<String, String> dati = new Hashtable<String, String>();
+		dati.put("#nome_sezione#", label);
+		eve.write("sezione_intestazione");
+		
+		eve.writeSostituisci("sezione_intestazione_prima_riga", dati);
+		
+		String labelCombo = "scalaRUG-HC.i1e";
+		Map<String, String> motivoValutazione = ComboRugSiadRepository.DIAGNOSI;
+		String dbName = "i1e";
+		stampaSezioneCombo(dbrValutazioneBisogni, eve, labelCombo, motivoValutazione, dbName);
+		
+		eve.write("sezione_intestazione_prima_riga_fine");
+		
+		labelCombo = "scalaRUG-HC.i1f";
+		motivoValutazione = ComboRugSiadRepository.DIAGNOSI;
+		dbName = "i1f";
+		stampaSezioneCombo(dbrValutazioneBisogni, eve, labelCombo, motivoValutazione, dbName);
+
+		labelCombo = "scalaRUG-HC.i1i";
+		motivoValutazione = ComboRugSiadRepository.DIAGNOSI;
+		dbName = "i1i";
+		stampaSezioneCombo(dbrValutazioneBisogni, eve, labelCombo, motivoValutazione, dbName);
+
+		labelCombo = "scalaRUG-HC.i1r";
+		motivoValutazione = ComboRugSiadRepository.DIAGNOSI;
+		dbName = "i1r";
+		stampaSezioneCombo(dbrValutazioneBisogni, eve, labelCombo, motivoValutazione, dbName);
+
+		labelCombo = "scalaRUG-HC.i1u";
+		motivoValutazione = ComboRugSiadRepository.DIAGNOSI;
+		dbName = "i1u";
+		stampaSezioneCombo(dbrValutazioneBisogni, eve, labelCombo, motivoValutazione, dbName);
+
+		labelCombo = "scalaRUG-HC.i2a";
+		dbName = "i2a";
+		stampaSezioneCheckBox(dbrValutazioneBisogni, eve, labelCombo, dbName, null, "", false);
+
+		labelCombo = "scalaRUG-HC.i2b";
+		dbName = "i2b";
+		stampaSezioneCheckBox(dbrValutazioneBisogni, eve, labelCombo, dbName, null, "", false);
+
+		eve.write("sezione_fine");
+	}
+
+	private void stampaSezioneCheckBox(ISASRecord dbrValutazioneBisogni, mergeDocument eve, String labelCeckBox,
+			String dbName, String valoreDbCheck, String labelSezione, boolean stampaSezione) {
+		Hashtable<String, String> dati = new Hashtable<String, String>();
+		if (!stampaSezione && ISASUtil.valida(labelSezione)){
+			dati.put("#nome_sezione#", labelSezione);
+			eve.writeSostituisci("sezione_intestazione_prima_riga", dati);
+		}
+		
+		String label = Labels.getLabel(labelCeckBox);
+		eve.write("sezione_check_intestazione");
+		String valDbSettato = ISASUtil.getValoreStringa(dbrValutazioneBisogni, dbName);
+		boolean settaCampo = false;
+		if (valoreDbCheck != null) {
+			if (ISASUtil.valida(valDbSettato) && ISASUtil.valida(valoreDbCheck) && valDbSettato.equals(valoreDbCheck)) {
+				settaCampo = true;
+			}
+		} else {
+			if (ISASUtil.valida(valDbSettato)
+					&& (valDbSettato.equalsIgnoreCase(Costanti.CTS_S) || valDbSettato.equalsIgnoreCase(Costanti.CTS_SI) || valDbSettato
+							.equalsIgnoreCase(Costanti.CTS_AFFERMATIVO_1))) {
+				settaCampo = true;
+			}
+		}
+		dati.put("#label#", label);
+		dati.put("#settacampo#", (settaCampo ? "X" : ""));
+		eve.writeSostituisci("sezione_check_corpo", dati);
+		eve.write("sezione_check_fine");
+		
+		if (!stampaSezione && ISASUtil.valida(labelSezione)){
+			eve.write("sezione_intestazione_prima_riga_fine");
+		}
+	}
+
+	private void informazioniGenerali(ISASRecord dbrValutazioneBisogni, mergeDocument eve) {
+
+		String label = Labels.getLabel("scalaBisogni.infoGenerali.parteGenerale");
+		Hashtable<String, String> dati = new Hashtable<String, String>();
+		dati.put("#nome_sezione#", label);
+		eve.write("sezione_intestazione");
+		eve.writeSostituisci("sezione_intestazione_prima_riga", dati);
+		
+		String labelCombo = "scalaBisogni.infoGenerali.motivoValutazione";
+		Map<String, String> motivoValutazione = ComboRugSiadRepository.MOTIVO_VALUTAZIONE;
+		String dbName = "a8";
+		stampaSezioneCombo(dbrValutazioneBisogni, eve, labelCombo, motivoValutazione, dbName);
+		eve.write("sezione_intestazione_prima_riga_fine");
+		
+		labelCombo = "scalaBisogni.infoGenerali.doveVive";
+		motivoValutazione = ComboRugSiadRepository.DOVE_VIVE;
+		dbName = "a12";
+		stampaSezioneCombo(dbrValutazioneBisogni, eve, labelCombo, motivoValutazione, dbName);
+
+		labelCombo = "scalaBisogni.infoGenerali.ConChiVive_att";
+		motivoValutazione = ComboRugSiadRepository.CON_CHI_VIVE;
+		dbName = "a13a";
+		stampaSezioneCombo(dbrValutazioneBisogni, eve, labelCombo, motivoValutazione, dbName);
+
+		labelCombo = "scalaBisogni.infoGenerali.ConChiVive_90fa";
+		motivoValutazione = ComboRugSiadRepository.RUG_NO_SI;
+		dbName = "a13b";
+		stampaSezioneCombo(dbrValutazioneBisogni, eve, labelCombo, motivoValutazione, dbName);
+
+		labelCombo = "scalaBisogni.infoGenerali.ConChiVive_altrove";
+		motivoValutazione = ComboRugSiadRepository.CON_CHI_VIVE_C;
+		dbName = "a13c";
+		stampaSezioneCombo(dbrValutazioneBisogni, eve, labelCombo, motivoValutazione, dbName);
+
+		labelCombo = "scalaBisogni.infoGenerali.ultimoRicovero";
+		motivoValutazione = ComboRugSiadRepository.ULTIMO_RICOVERO;
+		dbName = "a14";
+		stampaSezioneCombo(dbrValutazioneBisogni, eve, labelCombo, motivoValutazione, dbName);
+
+		labelCombo = "scalaSIAD.supporto_caregiver";
+		motivoValutazione = ComboRugSiadRepository.SIAD_ASS_PRES;
+		dbName = "care_giver";
+		stampaSezioneCombo(dbrValutazioneBisogni, eve, labelCombo, motivoValutazione, dbName);
+
+		labelCombo = "scalaSIAD.educ_terapeutica";
+		motivoValutazione = ComboRugSiadRepository.SIAD_ASS_PRES;
+		dbName = "educ_terap";
+		stampaSezioneCombo(dbrValutazioneBisogni, eve, labelCombo, motivoValutazione, dbName);
+
+		labelCombo = "scalaSIAD.supp_sociale";
+		motivoValutazione = ComboRugSiadRepository.SUPPORTO_SOCIALE;
+		dbName = "supp_sociale";
+		stampaSezioneCombo(dbrValutazioneBisogni, eve, labelCombo, motivoValutazione, dbName);
+		eve.write("sezione_fine");
+
+	}
+
+	private void stampaSezioneCombo(ISASRecord dbrValutazioneBisogni, mergeDocument eve, String labelCombo,
+			Map<String, String> combo, String dbName) {
+		String labelCb = Labels.getLabel(labelCombo);
+
+		Hashtable<String, String> dati = new Hashtable<String, String>();
+		dati.put("#nome_sezione#", labelCb);
+		eve.writeSostituisci("sezione_combo_intestazione", dati);
+		String valDbSettato = ISASUtil.getValoreStringa(dbrValutazioneBisogni, dbName);
+		String key = "";
+		String label = "";
+		boolean settaCampo = false;
+		for (Iterator<String> iterator = combo.keySet().iterator(); iterator.hasNext();) {
+			key = iterator.next();
+			label = combo.get(key);
+			dati.put("#label#", label);
+			dati.put("#nome_sezione#", labelCb);
+			settaCampo = (ISASUtil.valida(valDbSettato) && valDbSettato.equals(key));
+			dati.put("#settacampo#", (settaCampo ? "X" : ""));
+			eve.writeSostituisci("sezione_combo_corpo", dati);
+			labelCb = "";
+		}
+		eve.write("sezione_combo_fine");
+	}
+
+	private void generaInfoDettaglioAssistito(ISASConnection dbc, Hashtable<String, Object> datiAnagrafici,
+			mergeDocument eve) {
+		String punto = ver + "generaInfoDettaglioAssistito ";
+		LOG.debug(punto + " inizio con dati>>" + datiAnagrafici);
+		Hashtable<String, String> dati = settaDatiDaRecord(datiAnagrafici);
+
+		eve.writeSostituisci("info_assitito", dati);
+	}
+
+	private Hashtable<String, String> settaDatiDaRecord(Hashtable<String, Object> datiAnagrafici) {
+		Hashtable<String, String> dati = settaDatiAssistito();
+		Enumeration<String> keys = datiAnagrafici.keys();
+		String valoreKey = "";
+		while (keys.hasMoreElements()) {
+			String key = (String) keys.nextElement();
+			Object valore = datiAnagrafici.get(key);
+			if (valore != null) {
+				if (valore instanceof Date) {
+					valoreKey = ManagerDate.formattaDataIta(valore, "/");
+				} else {
+					valoreKey = ISASUtil.getValoreStringa(datiAnagrafici, key);
+				}
+			}
+			dati.put("#" + key + "#", valoreKey);
+		}
+
+		return dati;
+	}
+
+	private Hashtable<String, String> settaDatiAssistito() {
+		Hashtable<String, String> dati = new Hashtable<String, String>();
+		String codice = "____________________";
+		String descrizione = "__________________________________________";
+		dati.put("#cod_com_nasc#",codice);
+		dati.put("#desc_com_nasc#",descrizione);
+		dati.put("#cittadinanza#",codice);
+		dati.put("#des_cittadin#",descrizione);
+		dati.put("#indirizzo_rep#",descrizione);
+		dati.put("#nome_camp#",descrizione);
+		dati.put("#comune_rep#",descrizione);
+		dati.put("#comreperibdescr#",descrizione);
+		dati.put("#rep_cap#",codice);
+		dati.put("#prov_rep#",codice);
+		dati.put("#telefono1_rep#",descrizione);
+		dati.put("#telefono2_rep#",descrizione);
+		dati.put("#areadis_rep#",codice);
+		dati.put("#desc_area_reperib#",descrizione);
+		return dati;
+	}
+
+	private ISASRecord recuperaScalaValutazioneBisogni(ISASConnection dbc, String nCartella, String dataScala)
+			throws Exception {
+		String punto = ver + "recuperaScalaValutazioneBisogni ";
+		LOG.debug(punto + " Recupero scala valutazione ");
+		SCBisogniEJB scBisogniEJB = new SCBisogniEJB();
+		Hashtable<String, String> dati = new Hashtable<String, String>();
+		dati.put(Costanti.N_CARTELLA, nCartella);
+		dati.put("data", dataScala);
+		ISASRecord dbrValutazioneBisogni = scBisogniEJB.queryKey(dbc, dati);
+
+		return dbrValutazioneBisogni;
+	}
+
+	private Hashtable<String, Object> recuperaAnagrafica(ISASConnection dbc, String nCartella) throws Exception {
+		String punto = ver + "recuperaAnagrafica ";
+		LOG.debug(punto + " Recupero anagrafica assistito ");
+		Hashtable<String, Object> datiAssistito = new Hashtable<String, Object>();
+		ISASRecord dbrCartella = recuperaCartella(dbc, nCartella);
+		if (dbrCartella != null) {
+			datiAssistito.putAll(dbrCartella.getHashtable());
+			Anagra_cEJB anagra_cEJB = new Anagra_cEJB();
+			ISASRecord dbrAnagra = anagra_cEJB.selectLastValue(dbc, nCartella);
+			if (dbrAnagra != null) {
+				datiAssistito.putAll(dbrAnagra.getHashtable());
+			}
+		} else {
+			LOG.trace(punto + " non ho recuperato la cartella ");
+		}
+		LOG.trace(punto + " dati>" + (datiAssistito != null ? datiAssistito.toString() : " non dati"));
+
+		return datiAssistito;
+	}
+
+	private ISASRecord recuperaCartella(ISASConnection dbc, String nCartella) throws Exception {
+		String punto = ver + "recuperaCartella ";
+		String query = " select * from cartella where n_cartella = " + nCartella;
+		LOG.debug(punto + " query>" + query);
+		ISASRecord dbrCartella = dbc.readRecord(query);
+		CartellaEJB cartellaEJB = new CartellaEJB();
+		cartellaEJB.decodificaDatiCartella(dbrCartella, dbc);
+		return dbrCartella;
+	}
+
+} 
+
+class InfoCheck {
+	private String label = "";
+	private String dbName = "";
+	private String valueDb = null;
+
+	public InfoCheck(String label, String dbName, String valueDb) {
+		super();
+		this.label = label;
+		this.dbName = dbName;
+		this.valueDb = valueDb;
+	}
+
+	public InfoCheck(String label, String dbName) {
+		super();
+		this.label = label;
+		this.dbName = dbName;
+	}
+
+	public String getLabel() {
+		return label;
+	}
+
+	public String getDbName() {
+		return dbName;
+	}
+
+	public String getValueDb() {
+		return valueDb;
+	}
+
+}

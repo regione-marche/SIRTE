@@ -1,0 +1,203 @@
+
+  <!-- LOG MONITORAGGIO CONNESSIONI ATTIVE -->
+  <appender name="FILE4DBC" class="org.apache.log4j.rolling.RollingFileAppender">
+    <param name="file" value="${catalina.home}/logs/sinssnt_web2_dbc.log" />
+    <param name="append" value="true" />
+    <param name="encoding" value="UTF-8" />
+    <param name="Threshold" value="INFO" />
+
+    <rollingPolicy class="org.apache.log4j.rolling.TimeBasedRollingPolicy">
+      <param name="FileNamePattern" value="${catalina.home}/logs/old/sinssnt_web2_dbc.log.%d{yyyy-MM-dd}.gz" />
+    </rollingPolicy>
+
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%d{dd MMM yyyy HH:mm:ss} %-5p %m%n" />
+    </layout>
+  </appender>
+
+  <logger name="it.pisa.caribel.sinssnt.connection" additivity="false">
+    <level value="INFO" />
+    <appender-ref ref="FILE4DBC" />
+  </logger>
+  <logger name="it.caribel.app.common.connection" additivity="false">
+    <level value="INFO" />
+    <appender-ref ref="FILE4DBC" />
+  </logger>
+<!-- FINE LOG MONITORAGGIO CONNESSIONI ATTIVE  -->     
+
+
+
+<!-- Comunicazione vvento conclusione per decesso -->
+<appender name="COMDECESSO" class="org.apache.log4j.rolling.RollingFileAppender">
+    <param name="file" value="${catalina.home}/logs/sinssnt_comDecesso.log" />
+    <param name="append" value="true" />
+    <param name="encoding" value="UTF-8" />
+    <param name="Threshold" value="DEBUG" />
+
+    <rollingPolicy class="org.apache.log4j.rolling.TimeBasedRollingPolicy">
+       <param name="FileNamePattern" value="${catalina.home}/logs/sinssnt_comDecesso.log.%d{yyyy-MM-dd}.gz" />
+    </rollingPolicy>
+
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%d{HH:mm:ss} %-5p [%c]%X{_user} %m%n" />
+    </layout>
+  </appender>
+
+  <logger name="it.pisa.caribel.sinssnt.evento_decesso" additivity="false">
+    <appender-ref ref="COMDECESSO" />
+    <appender-ref ref="STDOUT" />
+  </logger>
+  <logger name="GenEveADRSAEJB" additivity="false">
+    <appender-ref ref="COMDECESSO" />
+    <appender-ref ref="STDOUT" />
+  </logger>
+  <logger name="it.pisa.caribel.sinssnt.casi_adrsa" additivity="false">
+    <appender-ref ref="COMDECESSO" />
+    <appender-ref ref="STDOUT" />
+    <appender-ref ref="ISED_MMG" />
+  </logger> 
+<!-- FINE Comunicazione vvento conclusione per decesso -->     
+
+  <!-- LOG PER LOGIN DA SISTEMI ESTERNI per procedura PHT-->
+  <appender name="FILE4EXTLOGIN" class="org.apache.log4j.rolling.RollingFileAppender">
+    <param name="file" value="${catalina.home}/logs/sinssnt_pht_ext_login.log" />
+    <param name="append" value="true" />
+    <param name="encoding" value="UTF-8" />
+    <param name="Threshold" value="DEBUG" />
+
+    <rollingPolicy class="org.apache.log4j.rolling.TimeBasedRollingPolicy">
+      <param name="FileNamePattern" value="${catalina.home}/logs/old/sinssnt_pht_ext_login.log.%d{yyyy-MM-dd}.gz" />
+    </rollingPolicy>
+
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%d{HH:mm:ss} %-5p [%c]%X{_user} %m%n" />
+    </layout>
+  </appender>
+
+  <logger name="ExtLoginEJB" additivity="true">
+    <level value="INFO" />
+    <appender-ref ref="FILE4EXTLOGIN" />
+  </logger>
+  
+  <logger name="it.pisa.caribel.sinssnt_pht.ext_login" additivity="false">
+    <level value="INFO" />
+    <appender-ref ref="FILE4EXTLOGIN" />
+  </logger>
+  <!-- FINE LOG PER LOGIN DA SISTEMI ESTERNI per procedura PHT -->
+  
+    <!-- LOG PER GESTIONE PRESTAZIONI ISED-MMG -->
+  <appender name="ISED_MMG" class="org.apache.log4j.rolling.RollingFileAppender">
+    <param name="file" value="${catalina.home}/logs/sinssnt_ised_mmg.log" />
+    <param name="append" value="true" />
+    <param name="encoding" value="UTF-8" />
+    <param name="Threshold" value="DEBUG" />
+
+    <rollingPolicy class="org.apache.log4j.rolling.TimeBasedRollingPolicy">
+      <param name="FileNamePattern" value="${catalina.home}/logs/old/sinssnt_ised_mmg.log.%d{yyyy-MM-dd}.gz" />
+    </rollingPolicy>
+
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%d{HH:mm:ss} %-5p [%c]%X{_user} %m%n" />
+    </layout>
+  </appender>
+
+  <logger name="it.pisa.caribel.sinssnt.ised_mmg" additivity="true">
+    <level value="DEBUG" />
+    <appender-ref ref="ISED_MMG" />
+  </logger>
+  
+  <logger name="it.pisa.caribel.sinssnt.millewin.dbmanager.InsertDBManager" additivity="false">
+    <level value="DEBUG" />
+    <appender-ref ref="ISED_MMG" />
+  </logger>
+  <!--  
+   <logger name="it.pisa.caribel.sinssnt.casi_adrsa" additivity="false">
+    <level value="DEBUG" />
+    <appender-ref ref="ISED_MMG" />
+  </logger>
+  -->
+  
+  <logger name="it.pisa.caribel.sinssnt.rt_ad.business" additivity="false">
+    <level value="DEBUG" />
+    <appender-ref ref="ISED_MMG" />
+  </logger>
+  
+  <logger name="it.pisa.caribel.sinssnt.rt_ad.SinsProperties" additivity="false">
+    <level value="DEBUG" />
+    <appender-ref ref="ISED_MMG" />
+  </logger>
+  
+  <!-- FINE LOG PER GESTIONE PRESTAZIONI ISED-MMG -->
+  
+  
+  
+  <!-- Disabilito LOG4j per CASTOR -->
+   <logger name="org.exolab.castor" additivity="false">
+    <level value="INFO" />
+    <appender-ref ref="STDOUT" />
+    <appender-ref ref="FILE" />
+  </logger>
+  
+   <!-- LOG Servizio gestione variazioni anagrafiche ricevute da anag. centrale -->
+  <appender name="VARIAZ_ANAG" class="org.apache.log4j.rolling.RollingFileAppender">
+    <param name="file" value="${catalina.home}/logs/sinssnt_variazioni_anag.log" />
+    <param name="append" value="true" />
+    <param name="encoding" value="UTF-8" />
+    <param name="Threshold" value="DEBUG" />
+
+    <rollingPolicy class="org.apache.log4j.rolling.TimeBasedRollingPolicy">
+      <param name="FileNamePattern" value="${catalina.home}/logs/old/ssinssnt_variazioni_anag.log.%d{yyyy-MM-dd}.gz" />
+    </rollingPolicy>
+
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%d{HH:mm:ss} %-5p [%c]%X{_user} %m%n" />
+    </layout>
+  </appender>
+
+  <logger name="it.pisa.caribel.sinssnt.qryAnagraficheHL7.servlet.ServletVariazioniAnagrafiche" additivity="true">
+    <level value="DEBUG" />
+    <appender-ref ref="VARIAZ_ANAG" />
+  </logger>
+  
+  <logger name="CartellaEJB" additivity="false">
+    <level value="DEBUG" />
+    <appender-ref ref="VARIAZ_ANAG" />
+  </logger>
+  <!-- FINE  --> 
+  
+  <!-- LOG Servizio query HL7 -->
+  <appender name="QRY_ANAG_HL7" class="org.apache.log4j.rolling.RollingFileAppender">
+    <param name="file" value="${catalina.home}/logs/sinssnt_qry_hl7.log" />
+    <param name="append" value="true" />
+    <param name="encoding" value="UTF-8" />
+    <param name="Threshold" value="DEBUG" />
+
+    <rollingPolicy class="org.apache.log4j.rolling.TimeBasedRollingPolicy">
+      <param name="FileNamePattern" value="${catalina.home}/logs/old/sinssnt_qry_hl7.log.%d{yyyy-MM-dd}.gz" />
+    </rollingPolicy>
+
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%d{HH:mm:ss} %-5p [%c]%X{_user} %m%n" />
+    </layout>
+  </appender>
+
+  <logger name="it.insielmercato.anagraficaHL7.QryAnagraficaHL7" additivity="true">
+    <level value="DEBUG" />
+    <appender-ref ref="QRY_ANAG_HL7" />
+  </logger>
+    <logger name="it.insielmercato.anagraficaHL7.Sa4Hl7ResponseParser" additivity="true">
+    <level value="DEBUG" />
+    <appender-ref ref="QRY_ANAG_HL7" />
+  </logger>
+    <logger name="it.insielmercato.anagraficaHL7.AnagUtils" additivity="true">
+    <level value="DEBUG" />
+    <appender-ref ref="QRY_ANAG_HL7" />
+  </logger>
+  
+  <logger name="FassiMarcheEJB" additivity="false">
+    <level value="DEBUG" />
+    <appender-ref ref="QRY_ANAG_HL7" />
+  </logger>
+  <!-- FINE  --> 
+  
+ 

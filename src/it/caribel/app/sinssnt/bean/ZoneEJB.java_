@@ -1,0 +1,453 @@
+package it.caribel.app.sinssnt.bean;
+// ============================================================================
+// CARIBEL S.r.l.
+// ----------------------------------------------------------------------------
+//
+// 30/05/2000 - EJB di connessione alla procedura SINS Tabella Zone
+//
+// paolo ciampolini
+//
+// ============================================================================
+
+import java.rmi.RemoteException;
+import java.util.*;
+import java.sql.*;
+
+import it.pisa.caribel.isas2.*;
+import it.pisa.caribel.dbinterf2.*;
+import it.pisa.caribel.profile2.*;
+import it.pisa.caribel.exception.*;
+import it.pisa.caribel.sinssnt.connection.*;
+
+public class ZoneEJB extends SINSSNTConnectionEJB  {
+
+	// 08/06/07 m.: 
+	//	1) Nel metodo "queryKey()" -> aggiunto "catch" dell'ISASPermissioneDenied  
+	//		x rilanciare una CariException da gestire latoClient;
+	// 	2) Nei metodi "query()" e "query_combo()" -> non c'e' stato bisogno di fare niente:
+	//		la chiamata "dbcur.next()", interna al metodo "dbcur.getAllRecord()", provvede ad escludere
+	// 		il record se non si hanno diritti di lettura. Quindi, ritornano 1 vettore con i soli record
+	//		su cui si � abilitati.
+	//	3) Invece, nei metodi "queryCombo()" e "queryCombo_NesDiv()" -> utilizzando sempre il 
+	//		metodo "dbcur.getAllRecord()", si verifica che il numero dei record letti sia = a quello dei
+	//		record caricati nel vettore, dopo l'eventuale scarto dei record su cui non si hanno diritti,
+	// 		per aggiungere i consueti valori "TUTTE" e "NESSUNA DIVISIONE".
+	//	N.B. 2): La paginate invece necessita modifica nelle librerie.
+
+public ZoneEJB() {}
+
+	// 08/06/07
+	private String msg = "Mancano i diritti per leggere il record";
+
+public ISASRecord queryKey(myLogin mylogin,Hashtable h) throws  SQLException, CariException {
+	boolean done = false;
+	ISASConnection dbc = null;
+	try{
+		dbc = super.logIn(mylogin);
+		String myselect = "SELECT * FROM zone WHERE codice_zona='"+
+			(String)h.get("codice_zona")+"'";
+		ISASRecord dbr = dbc.readRecord(myselect);
+		dbc.close();
+		super.close(dbc);
+		done=true;
+		return dbr;
+	} 
+	// 08/06/07 ---
+	catch(ISASPermissionDeniedException e){
+      	System.out.println("ZoneEJB.queryKey(): "+e);
+		throw new CariException(msg, -2);
+    }
+	catch(Exception e) {
+		System.out.println("ZoneEJB.query_key(): "+e);
+		throw new SQLException("Errore eseguendo una queryKey()");
+	} finally {
+		if(!done) {
+			try {
+				dbc.close();
+				super.close(dbc);
+			} catch(Exception e1) {
+				System.out.println(e1);
+			}
+		}
+	}
+}
+
+public String duplicateChar(String s, String c) {
+        if ((s == null) || (c == null)) return s;
+        String mys = new String(s);
+        int p = 0;
+        while (true) {
+                int q = mys.indexOf(c, p);
+                if (q < 0) return mys;
+                StringBuffer sb = new StringBuffer(mys);
+                StringBuffer sb1 = sb.insert(q, c);
+                mys = sb1.toString();
+                p = q + c.length() + 1;
+        }
+}
+
+
+public Vector queryCombo(myLogin mylogin,Hashtable h) throws SQLException, CariException {
+	boolean done = false;
+	ISASConnection dbc = null;
+	try {
+              dbc=super.logIn(mylogin);
+              String myselect="SELECT * FROM zone WHERE codice_zona <> '0'" +
+                                " ORDER BY descrizione_zona";
+              ISASCursor dbcur=dbc.startCursor(myselect);
+
+				// 08/06/07 -----
+				int dimCur = 0;
+				if (dbcur != null)
+					dimCur = dbcur.getDimension();
+				// 08/06/07 -----
+
+			  Vector v=dbcur.getAllRecord();
+
+				// 08/06/07 -----
+				boolean isTuttoOk = ((dimCur > 0) && (dimCur == v.size()));
+
+				if (isTuttoOk) {
+				// 08/06/07 ----
+	            	ISASRecord dbr = dbc.newRecord("zone");
+				  	dbr.put("codice_zona", "TUTTO");
+	              	dbr.put("descrizione_zona", "TUTTE");
+	              	v.insertElementAt((Object)dbr,0);
+				}
+
+			  dbcur.close();
+              dbc.close();
+              super.close(dbc);
+              done = true;
+              return v;
+        } 				
+		catch(Exception e) {
+                System.out.println(e);
+                throw new SQLException("Errore eseguendo una query()  ");
+        } finally {
+                if(!done) {
+                        try {
+                                dbc.close();
+                                super.close(dbc);
+                        }catch(Exception e1) {
+                                System.out.println(e1);
+                        }
+                }
+        }
+}
+
+
+/**
+* MEtodo che carica una combo senza la voce "tutte"
+*/
+public Vector query_combo(myLogin mylogin,Hashtable h) throws SQLException, CariException {
+	boolean done = false;
+	ISASConnection dbc = null;
+	try {
+              dbc=super.logIn(mylogin);
+              String myselect="SELECT * FROM zone WHERE codice_zona <> '0' "+
+                                " ORDER BY descrizione_zona ";
+              ISASCursor dbcur=dbc.startCursor(myselect);
+			  Vector v=dbcur.getAllRecord();
+			  dbcur.close();			
+              dbc.close();
+              super.close(dbc);
+              done = true;
+              return v;
+        }		
+		catch(Exception e) {
+                System.out.println(e);
+                throw new SQLException("Errore eseguendo una query()  ");
+        } finally {
+                if(!done) {
+                        try {
+                                dbc.close();
+                                super.close(dbc);
+                        }catch(Exception e1) {
+                                System.out.println(e1);
+                        }
+                }
+        }
+}
+
+
+public Vector query(myLogin mylogin,Hashtable h) throws  SQLException, CariException {
+    boolean done=false;
+    ISASConnection dbc=null;
+    String scr=" ";
+    try{
+        dbc=super.logIn(mylogin);
+        String myselect="Select * from zone";
+
+       //controllo valore corretto descrizione_zona
+
+        scr=(String)(h.get("descrizione_zona"));
+	    if (!(scr==null))
+            if (!(scr.equals(" ")))
+              {
+               scr=duplicateChar(scr,"'");
+               myselect=myselect+" where descrizione_zona like '"+scr+"%'";
+              }
+        myselect=myselect+" ORDER BY descrizione_zona ";
+        System.out.println("query GridZone: "+myselect);
+        ISASCursor dbcur=dbc.startCursor(myselect);
+        System.out.println("Fatta la startcursor");
+		Vector v=dbcur.getAllRecord();
+        System.out.println("Creato il vettore");
+	    dbcur.close();
+		dbc.close();
+	    super.close(dbc);
+	    done=true;
+		return v;
+    }	
+	catch(Exception e){
+		System.out.println(e);
+		throw new SQLException("Errore eseguendo una query()  ");
+   	}
+   	finally{
+   	    if(!done){
+   	        try{
+		dbc.close();
+			super.close(dbc);
+			}catch(Exception e1){System.out.println(e1);}
+   	        }
+   	}
+
+}
+
+public Vector queryPaginate(myLogin mylogin,Hashtable h)
+throws  SQLException, CariException {
+    boolean done=false;
+    ISASConnection dbc=null;
+    String scr=" ";
+    try{
+        dbc=super.logIn(mylogin);
+        String myselect="Select * from zone";
+
+       //controllo valore corretto descrizione_zona
+
+        scr=(String)(h.get("descrizione_zona"));
+	    if (!(scr==null))
+            if (!(scr.equals(" ")))
+              {
+               scr=duplicateChar(scr,"'");
+               myselect=myselect+" where descrizione_zona like '"+scr+"%'";
+              }
+        myselect=myselect+" ORDER BY descrizione_zona ";
+        System.out.println("query GridZone: "+myselect);
+        ISASCursor dbcur=dbc.startCursor(myselect);
+	//Vector vdbr=dbcur.getAllRecord();
+        int start = Integer.parseInt((String)h.get("start"));
+        int stop = Integer.parseInt((String)h.get("stop"));
+        Vector vdbr = dbcur.paginate(start, stop);
+	dbcur.close();
+	dbc.close();
+	super.close(dbc);
+	done=true;
+	return vdbr;
+    }
+	catch(Exception e) {
+		System.out.println(e);
+		throw new SQLException("Errore eseguendo una query()  ");
+   	}
+   	finally{
+   	    if(!done){
+   	        try{
+		dbc.close();
+			super.close(dbc);
+			}catch(Exception e1){System.out.println(e1);}
+   	        }
+   	}
+
+}
+
+
+public ISASRecord insert(myLogin mylogin,Hashtable h) throws DBRecordChangedException, ISASPermissionDeniedException, SQLException {
+    boolean done=false;
+    String codice=null;
+    ISASConnection dbc=null;
+    try {
+        codice=(String)h.get("codice_zona");
+    }
+    catch (Exception e){
+        System.out.println(e);
+		throw new SQLException("Errore: manca la chiave primaria");
+    }
+    try{
+        dbc=super.logIn(mylogin);
+        ISASRecord dbr=dbc.newRecord("zone");
+        Enumeration n=h.keys();
+        while(n.hasMoreElements()){
+            String e=(String)n.nextElement();
+            dbr.put(e,h.get(e));
+        }
+        dbc.writeRecord(dbr);
+        String myselect="Select * from zone where codice_zona='"+codice+"'";
+		dbr=dbc.readRecord(myselect);
+		dbc.close();
+		super.close(dbc);
+		done=true;
+		return dbr;
+    }
+    catch(DBRecordChangedException e){
+        System.out.println(e);
+		throw e;
+    }
+    catch(ISASPermissionDeniedException e){
+        System.out.println(e);
+		throw e;
+    }
+
+    catch(Exception e1){
+        System.out.println(e1);
+		throw new SQLException("Errore eseguendo una insert() - "+  e1);
+    }
+    finally{
+   	    if(!done){
+   	        try{
+		dbc.close();
+			super.close(dbc);
+			}catch(Exception e2){System.out.println(e2);}
+   	        }
+   	}
+
+}
+
+
+public ISASRecord update(myLogin mylogin,ISASRecord dbr) throws DBRecordChangedException, ISASPermissionDeniedException, SQLException {
+    boolean done=false;
+    String codice=null;
+    ISASConnection dbc=null;
+    try {
+        codice=(String)dbr.get("codice_zona");
+    }
+    catch (Exception e){
+        System.out.println(e);
+		throw new SQLException("Errore: manca la chiave primaria");
+    }
+    try{
+        dbc=super.logIn(mylogin);
+        dbc.writeRecord(dbr);
+        String myselect="Select * from zone where codice_zona='"+codice+"'";
+		dbr=dbc.readRecord(myselect);
+		dbc.close();
+		super.close(dbc);
+		done=true;
+		return dbr;
+    }
+    catch(DBRecordChangedException e){
+        System.out.println(e);
+		throw e;
+    }
+    catch(ISASPermissionDeniedException e){
+        System.out.println(e);
+		throw e;
+    }
+
+    catch(Exception e1){
+        System.out.println(e1);
+		throw new SQLException("Errore eseguendo una update() - "+  e1);
+    }
+    finally{
+   	    if(!done){
+   	        try{
+		dbc.close();
+			super.close(dbc);
+			}catch(Exception e2){System.out.println(e2);}
+   	        }
+   	}
+
+}
+
+
+public void delete(myLogin mylogin,ISASRecord dbr)throws DBRecordChangedException, ISASPermissionDeniedException, SQLException {
+    boolean done=false;
+    ISASConnection dbc=null;
+    try{
+        dbc=super.logIn(mylogin);
+        dbc.deleteRecord(dbr);
+		dbc.close();
+		super.close(dbc);
+		done=true;
+    }
+    catch(DBRecordChangedException e){
+        System.out.println(e);
+		throw e;
+    }
+
+    catch(ISASPermissionDeniedException e){
+        System.out.println(e);
+		throw e;
+    }
+
+    catch(Exception e1){
+        System.out.println(e1);
+		throw new SQLException("Errore eseguendo una delete() - "+  e1);
+    }
+    finally{
+   	    if(!done){
+   	        try{
+		dbc.close();
+			super.close(dbc);
+			}catch(Exception e2){System.out.println(e2);}
+   	        }
+   	}
+
+}
+
+//Ilaria 31/01/2005 INIZIO
+public Vector queryCombo_NesDiv(myLogin mylogin,Hashtable h) throws
+SQLException, CariException {
+        boolean done = false;
+        ISASConnection dbc = null;
+        try {
+              dbc=super.logIn(mylogin);
+              String myselect="SELECT * FROM zone WHERE codice_zona <> '0'"+
+                                " ORDER BY descrizione_zona";
+              ISASCursor dbcur=dbc.startCursor(myselect);
+
+				// 08/06/07 -----
+				int dimCur = 0;
+				if (dbcur != null)
+					dimCur = dbcur.getDimension();
+				// 08/06/07 -----
+
+			  Vector v=dbcur.getAllRecord();
+
+				// 08/06/07 -----
+				boolean isTuttoOk = ((dimCur > 0) && (dimCur == v.size()));
+
+				if (isTuttoOk) {
+				// 08/06/07 ----
+              		ISASRecord dbr = dbc.newRecord("zone");
+					dbr.put("codice_zona", "NESDIV");
+		            dbr.put("descrizione_zona", "NESSUNA DIVISIONE");
+        		    v.insertElementAt((Object)dbr,0);
+              		dbr = dbc.newRecord("zone");
+					dbr.put("codice_zona", "TUTTO");
+              		dbr.put("descrizione_zona", "TUTTE");
+              		v.insertElementAt((Object)dbr,0);
+				} 
+
+			  dbcur.close();
+              dbc.close();
+              super.close(dbc);
+              done = true;
+              return v;
+        }		
+		catch(Exception e) {
+                System.out.println(e);
+                throw new SQLException("Errore eseguendo una querycombo_NesDiv()  ");
+        } finally {
+                if(!done) {
+                        try {
+                                dbc.close();
+                                super.close(dbc);
+                        }catch(Exception e1) {
+                                System.out.println(e1);
+                        }
+                }
+        }
+}
+//Ilaria 31/01/2005 FINE
+}
