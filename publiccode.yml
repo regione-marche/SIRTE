@@ -16,6 +16,7 @@ inputTypes:
   - text/plan
 usedBy:
   - Regione Marche
+  - Azienda USL VDA
 categories:
   - workflow-management
   - data-visualization
