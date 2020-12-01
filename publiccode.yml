@@ -33,8 +33,8 @@ maintenance:
       email: info@gpi.it
       website: https://www.gpi.it/
   contacts:
-    - name: 'Leonardo Serratore'
-      email: leonardo.serratore@gpi.it
+    - name: 'Valerio Franchi'
+      email: valerio.franchi@gpi.it
 legal:
   license: GPL-3.0
   mainCopyrightOwner: Regione Marche
